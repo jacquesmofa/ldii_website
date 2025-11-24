@@ -1,0 +1,414 @@
+import { useState } from 'react';
+
+export default function GalleryPage() {
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
+  const pastEvents = [
+    {
+      title: 'Second International Post Covid Pandemic Conference',
+      year: '2025',
+      date: 'March 15-17, 2025',
+      location: 'Toronto, Canada',
+      description: 'Building resilient health systems and economic recovery strategies in the post-pandemic era.',
+      images: [
+        'https://readdy.ai/api/search-image?query=International%20conference%20with%20diverse%20global%20health%20experts%20discussing%20post-pandemic%20recovery%2C%20modern%20conference%20hall%20with%20LDII%20branding%2C%20professional%20event%20photography&width=400&height=300&seq=conf-2025-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Panel%20discussion%20on%20health%20system%20resilience%20with%20international%20speakers%2C%20conference%20stage%20with%20large%20screens%2C%20professional%20event%20documentation&width=400&height=300&seq=conf-2025-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Networking%20session%20at%20international%20health%20conference%2C%20diverse%20professionals%20exchanging%20ideas%2C%20modern%20venue%20with%20LDII%20banners&width=400&height=300&seq=conf-2025-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=International%20Conference%20session%20on%20economic%20recovery%20strategies%2C%20small%20group%20discussions%2C%20interactive%20conference%20setting&width=400&height=300&seq=conf-2025-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Conference Opening Ceremony',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Conference%20opening%20ceremony%20with%20keynote%20speaker%2C%20large%20audience%2C%20professional%20stage%20setup%20with%20LDII%20branding&width=400&height=300&seq=conf-2025-video-1&orientation=landscape'
+        },
+        {
+          title: 'Health Systems Panel Discussion',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Expert%20panel%20discussion%20on%20health%20systems%2C%20multiple%20speakers%20on%20stage%2C%20engaged%20audience%20in%20conference%20hall&width=400&height=300&seq=conf-2025-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'First International Post Covid Pandemic Conference',
+      year: '2024',
+      date: 'October 12-14, 2024',
+      location: 'Toronto, Canada',
+      description: 'Addressing global challenges and building resilience in the aftermath of the COVID-19 pandemic.',
+      images: [
+        'https://readdy.ai/api/search-image?query=First%20post-covid%20conference%20with%20international%20delegates%2C%20conference%20hall%20with%20health%20safety%20protocols%2C%20professional%20documentation&width=400&height=300&seq=conf-2024-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Keynote%20presentation%20on%20pandemic%20preparedness%2C%20speaker%20on%20stage%20with%20presentation%20slides%2C%20attentive%20audience&width=400&height=300&seq=conf-2024-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Breakout%20sessions%20on%20global%20health%20policy%2C%20small%20group%20discussions%2C%20collaborative%20workshop%20environment&width=400&height=300&seq=conf-2024-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Conference%20exhibition%20area%20with%20health%20technology%20displays%2C%20attendees%20exploring%20innovative%20solutions&width=400&height=300&seq=conf-2024-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Pandemic Preparedness Keynote',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Keynote%20speaker%20presenting%20on%20pandemic%20preparedness%2C%20professional%20stage%20with%20large%20screen%2C%20engaged%20conference%20audience&width=400&height=300&seq=conf-2024-video-1&orientation=landscape'
+        },
+        {
+          title: 'Global Health Policy International Conference',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Interactive%20workshop%20on%20global%20health%20policy%2C%20facilitator%20with%20participants%2C%20collaborative%20learning%20environment&width=400&height=300&seq=conf-2024-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'First International Post Covid Parade',
+      year: '2023',
+      date: 'October 15, 2023',
+      location: 'Toronto, Canada',
+      description: 'A celebration of resilience and hope, bringing communities together to mark recovery and renewal.',
+      images: [
+        'https://readdy.ai/api/search-image?query=Colorful%20community%20parade%20celebrating%20post-covid%20recovery%2C%20diverse%20participants%20with%20banners%20and%20flags%2C%20street%20celebration%20atmosphere&width=400&height=300&seq=parade-2023-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Community%20groups%20marching%20in%20post-covid%20celebration%20parade%2C%20vibrant%20costumes%20and%20cultural%20displays%2C%20joyful%20street%20event&width=400&height=300&seq=parade-2023-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=LDII%20float%20in%20community%20parade%2C%20organization%20branding%20and%20messaging%2C%20participants%20waving%20to%20crowds&width=400&height=300&seq=parade-2023-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Parade%20spectators%20celebrating%20community%20resilience%2C%20families%20and%20children%20enjoying%20street%20festival%2C%20positive%20community%20atmosphere&width=400&height=300&seq=parade-2023-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Parade Highlights Reel',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Aerial%20view%20of%20community%20parade%20with%20colorful%20floats%20and%20participants%2C%20celebration%20of%20post-covid%20recovery&width=400&height=300&seq=parade-2023-video-1&orientation=landscape'
+        },
+        {
+          title: 'Community Speeches',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Community%20leaders%20giving%20speeches%20at%20parade%20event%2C%20outdoor%20stage%20with%20microphone%2C%20engaged%20audience&width=400&height=300&seq=parade-2023-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'East Africa Food Security Symposium and Expo',
+      year: '2022',
+      date: 'September 8-10, 2022',
+      location: 'Helsinki, Finland',
+      description: 'Addressing food security challenges and sustainable agriculture solutions across East Africa.',
+      images: [
+        'https://readdy.ai/api/search-image?query=East%20Africa%20food%20security%20symposium%20with%20agricultural%20experts%2C%20conference%20venue%20in%20Nairobi%2C%20professional%20agricultural%20event&width=400&height=300&seq=food-2022-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Agricultural%20expo%20with%20farming%20technology%20displays%2C%20farmers%20and%20experts%20examining%20equipment%2C%20outdoor%20exhibition%20setting&width=400&height=300&seq=food-2022-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Panel%20discussion%20on%20sustainable%20agriculture%2C%20African%20agricultural%20experts%20on%20stage%2C%20engaged%20audience%20of%20farmers%20and%20policymakers&width=400&height=300&seq=food-2022-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Food%20security%20workshop%20with%20East%20African%20participants%2C%20collaborative%20learning%20session%2C%20agricultural%20training%20environment&width=400&height=300&seq=food-2022-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Sustainable Agriculture Panel',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Expert%20panel%20on%20sustainable%20agriculture%20in%20East%20Africa%2C%20conference%20stage%20with%20agricultural%20imagery%2C%20professional%20documentation&width=400&height=300&seq=food-2022-video-1&orientation=landscape'
+        },
+        {
+          title: 'Farming Technology Demonstrations',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Agricultural%20technology%20demonstration%20at%20expo%2C%20farmers%20learning%20new%20techniques%2C%20hands-on%20training%20session&width=400&height=300&seq=food-2022-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'River Nile Conservation with Climate Change Action East Africa (CCAE)',
+      year: '2020',
+      date: 'November 20-22, 2020',
+      location: 'Kampala, Uganda',
+      description: 'Collaborative initiative focusing on Nile River conservation and climate adaptation strategies.',
+      images: [
+        'https://readdy.ai/api/search-image?query=Nile%20River%20conservation%20conference%20in%20Uganda%2C%20environmental%20experts%20discussing%20water%20management%2C%20riverside%20venue%20setting&width=400&height=300&seq=nile-2020-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Climate%20action%20workshop%20with%20East%20African%20environmental%20leaders%2C%20collaborative%20planning%20session%2C%20sustainability%20focus&width=400&height=300&seq=nile-2020-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Field%20visit%20to%20Nile%20River%20conservation%20project%2C%20experts%20examining%20water%20quality%2C%20environmental%20monitoring%20activities&width=400&height=300&seq=nile-2020-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Community%20engagement%20session%20on%20river%20conservation%2C%20local%20stakeholders%20and%20environmental%20experts%2C%20participatory%20planning&width=400&height=300&seq=nile-2020-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Nile Conservation Strategy Presentation',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Environmental%20expert%20presenting%20Nile%20conservation%20strategies%2C%20conference%20presentation%20with%20river%20imagery%2C%20professional%20documentation&width=400&height=300&seq=nile-2020-video-1&orientation=landscape'
+        },
+        {
+          title: 'Community Conservation International Conference',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Community%20workshop%20on%20river%20conservation%2C%20local%20participants%20learning%20environmental%20protection%20methods&width=400&height=300&seq=nile-2020-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'Climate Change Project Climate Change Action East Africa (CCAE)',
+      year: '2020',
+      date: 'August 15-17, 2020',
+      location: 'Helsinki, Finland',
+      description: 'Regional climate action initiative bringing together stakeholders to address climate challenges.',
+      images: [
+        'https://readdy.ai/api/search-image?query=Climate%20change%20action%20conference%20in%20East%20Africa%2C%20environmental%20scientists%20and%20policymakers%2C%20modern%20conference%20facility&width=400&height=300&seq=climate-2020-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Climate%20adaptation%20workshop%20with%20African%20participants%2C%20collaborative%20planning%20for%20climate%20resilience%2C%20interactive%20session&width=400&height=300&seq=climate-2020-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Environmental%20policy%20discussion%20with%20East%20African%20leaders%2C%20conference%20table%20with%20climate%20data%20presentations&width=400&height=300&seq=climate-2020-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Climate%20action%20planning%20session%2C%20diverse%20stakeholders%20working%20on%20adaptation%20strategies%2C%20collaborative%20environment&width=400&height=300&seq=climate-2020-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Climate Adaptation Strategies',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Climate%20expert%20presenting%20adaptation%20strategies%20for%20East%20Africa%2C%20conference%20stage%20with%20climate%20data%20visualizations&width=400&height=300&seq=climate-2020-video-1&orientation=landscape'
+        },
+        {
+          title: 'Regional Climate Action Planning',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Regional%20stakeholders%20planning%20climate%20action%20initiatives%2C%20collaborative%20workshop%20with%20mapping%20activities&width=400&height=300&seq=climate-2020-video-2&orientation=landscape'
+        }
+      ]
+    },
+    {
+      title: 'NEABEC Finland International Business Forum',
+      year: '2019',
+      date: 'June 10-12, 2019',
+      location: 'Helsinki, Finland',
+      description: 'International business forum fostering economic partnerships between Nordic and East African countries.',
+      images: [
+        'https://readdy.ai/api/search-image?query=International%20business%20forum%20in%20Helsinki%2C%20Nordic%20and%20African%20business%20leaders%20networking%2C%20modern%20conference%20center&width=400&height=300&seq=finland-2019-1&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Business%20partnership%20discussions%20between%20Finnish%20and%20East%20African%20entrepreneurs%2C%20formal%20meeting%20setting&width=400&height=300&seq=finland-2019-2&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Trade%20exhibition%20at%20international%20business%20forum%2C%20companies%20showcasing%20products%20and%20services%2C%20professional%20expo%20environment&width=400&height=300&seq=finland-2019-3&orientation=landscape',
+        'https://readdy.ai/api/search-image?query=Economic%20development%20panel%20with%20Nordic%20and%20African%20speakers%2C%20business%20conference%20stage%2C%20international%20cooperation%20theme&width=400&height=300&seq=finland-2019-4&orientation=landscape'
+      ],
+      videos: [
+        {
+          title: 'Nordic-Africa Business Partnerships',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Business%20leaders%20discussing%20Nordic-Africa%20partnerships%2C%20conference%20presentation%20with%20economic%20data%20and%20maps&width=400&height=300&seq=finland-2019-video-1&orientation=landscape'
+        },
+        {
+          title: 'Trade Opportunities International Conference',
+          thumbnail: 'https://readdy.ai/api/search-image?query=Interactive%20workshop%20on%20trade%20opportunities%2C%20business%20professionals%20collaborating%20on%20partnership%20strategies&width=400&height=300&seq=finland-2019-video-2&orientation=landscape'
+        }
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section id="hero" className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-700">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20event%20photography%20gallery%20with%20diverse%20international%20conferences%20and%20community%20events%2C%20photo%20exhibition%20display%2C%20modern%20gallery%20setting&width=1920&height=800&seq=gallery-hero&orientation=landscape)`
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Event Gallery
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+            Explore our journey through images and videos from major events, conferences, and community initiatives that have shaped our global impact.
+          </p>
+        </div>
+      </section>
+
+      {/* Upload Section */}
+      <section className="py-12 bg-gradient-to-br from-green-50 to-emerald-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
+            <div className="text-center mb-8">
+              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-upload-cloud-line w-10 h-10 flex items-center justify-center text-green-600"></i>
+              </div>
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Share Your Event Photos & Videos</h2>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                Were you part of one of our events? We'd love to feature your photos and videos in our gallery! Share your memories and help us showcase the impact of our work.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i className="ri-image-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Photos</h3>
+                <p className="text-sm text-gray-600">Upload high-resolution event photos (JPG, PNG)</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i className="ri-video-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Videos</h3>
+                <p className="text-sm text-gray-600">Share event videos and recordings (MP4, MOV)</p>
+              </div>
+              <div className="text-center p-6 bg-gray-50 rounded-lg">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <i className="ri-folder-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                </div>
+                <h3 className="font-semibold text-gray-900 mb-2">Bulk Upload</h3>
+                <p className="text-sm text-gray-600">Upload multiple files at once via cloud storage</p>
+              </div>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
+              <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                <i className="ri-information-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2"></i>
+                How to Upload Your Media
+              </h4>
+              <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700 ml-4">
+                <li>Contact our media team at <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 font-semibold">info@ldiinitiatives.org</a></li>
+                <li>Include the event name, date, and your name in your email</li>
+                <li>For large files, we'll provide you with a secure upload link</li>
+                <li>Our team will review and add your media to the gallery within 3-5 business days</li>
+              </ol>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="mailto:info@ldiinitiatives.org?subject=Event Media Upload Request"
+                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap text-center"
+              >
+                Contact Media Team
+              </a>
+              <a
+                href="/contact/media-inquiries#hero"
+                className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap text-center"
+              >
+                Media Guidelines
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Navigation */}
+      <section className="py-12 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-4">
+            <button
+              onClick={() => setSelectedCategory('all')}
+              className={`px-6 py-2 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap ${
+                selectedCategory === 'all'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-gray-700 border border-gray-200 hover:border-green-300'
+              }`}
+            >
+              All Events
+            </button>
+            {pastEvents.map((event, index) => (
+              <a
+                key={index}
+                href={`#event-${event.year}`}
+                className="bg-white hover:bg-green-50 border border-gray-200 hover:border-green-300 px-4 py-2 rounded-lg font-semibold text-gray-700 hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
+              >
+                {event.year} - {event.title.split(' ').slice(0, 3).join(' ')}...
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Events Gallery */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="space-y-20">
+            {pastEvents.map((event, eventIndex) => (
+              <div key={eventIndex} id={`event-${event.year}`} className="scroll-mt-20">
+                {/* Event Header */}
+                <div className="text-center mb-12">
+                  <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold mb-4">
+                    {event.year}
+                  </div>
+                  <h2 className="text-4xl font-bold text-gray-900 mb-4">{event.title}</h2>
+                  <div className="text-lg text-gray-600 mb-2">{event.date}</div>
+                  <div className="text-lg text-green-600 font-semibold mb-4">{event.location}</div>
+                  <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">{event.description}</p>
+                </div>
+
+                {/* Event Images */}
+                <div className="mb-12">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Event Photos</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {event.images.map((image, imageIndex) => (
+                      <div key={imageIndex} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <img
+                          src={image}
+                          alt={`${event.title} - Photo ${imageIndex + 1}`}
+                          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
+                          <i className="ri-zoom-in-line w-8 h-8 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Event Videos */}
+                <div className="mb-12">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Event Videos</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {event.videos.map((video, videoIndex) => (
+                      <div key={videoIndex} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="relative">
+                          <img
+                            src={video.thumbnail}
+                            alt={video.title}
+                            className="w-full h-64 object-cover"
+                          />
+                          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-700 transition-colors cursor-pointer">
+                              <i className="ri-play-fill w-8 h-8 flex items-center justify-center text-white ml-1"></i>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="p-4 bg-white">
+                          <h4 className="text-lg font-semibold text-gray-900">{video.title}</h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Event Links */}
+                <div className="text-center">
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href={`/events/past/${event.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
+                    >
+                      View Event Details
+                    </a>
+                    <a
+                      href={`/events/past/${event.title.toLowerCase().replace(/\s+/g, '-')}/media`}
+                      className="bg-white text-green-600 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+                    >
+                      Download Media Kit
+                    </a>
+                  </div>
+                </div>
+
+                {/* Divider */}
+                {eventIndex < pastEvents.length - 1 && (
+                  <div className="mt-20 border-t border-gray-200"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Media Request Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Request Event Media</h2>
+          <p className="text-xl text-gray-600 mb-8">
+            Need high-resolution photos or videos from our events? Contact our media team for access to our complete archive.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/contact/media-inquiries#hero"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+            >
+              Contact Media Team
+            </a>
+            <a
+              href="/events/news/press-releases#hero"
+              className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              View Press Releases
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Back to Events */}
+      <section className="py-12 bg-green-600">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <a
+            href="/events#hero"
+            className="inline-flex items-center space-x-2 bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+          >
+            <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center"></i>
+            <span>Back to Events & News</span>
+          </a>
+        </div>
+      </section>
+    </div>
+  );
+}

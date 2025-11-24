@@ -1,0 +1,297 @@
+export default function PastEventsPage() {
+  const pastEvents = [
+    {
+      title: '2nd International Post-COVID Conference',
+      date: 'September 8-10, 2024',
+      location: 'Brampton, ON, Canada',
+      venue: 'Pearson Convention Centre',
+      description: 'Theme: Building Planetary Health in Response to Global Shocks. This landmark conference convened over 500 delegates from 40+ countries to address critical post-pandemic recovery challenges. The conference focused on four key questions: When will the next shock hit the world? As AI takes over, how safe is humanity? What is the future of local, regional, and international trade? Who shall feed the world?',
+      image: 'https://readdy.ai/api/search-image?query=Large%20international%20conference%20with%20500%20diverse%20delegates%20from%20multiple%20countries%20in%20modern%20convention%20center%2C%20professional%20conference%20hall%20with%20stage%20and%20screens%2C%20global%20summit%20atmosphere%2C%20high-resolution%20event%20photography&width=800&height=500&seq=postcovid-2024&orientation=landscape',
+      attendees: '500+ delegates',
+      countries: '40+ countries',
+      outcomes: [
+        'Brampton Declaration on Global Resilience adopted by 35 nations',
+        'International Post-COVID Recovery Network established',
+        '$50 million in funding commitments secured',
+        '20 comprehensive policy recommendations developed',
+        '35 new international partnerships formed',
+        'Global Health Resilience Framework launched'
+      ],
+      speakers: [
+        { name: 'Dr. Tedros Adhanom', role: 'WHO Director-General (Video Message)' },
+        { name: 'Hon. Patrick Brown', role: 'Mayor of Brampton' },
+        { name: 'Dr. Sarah Johnson', role: 'Global Health Expert' },
+        { name: 'Prof. Michael Chen', role: 'Climate Resilience Researcher' }
+      ],
+      resources: [
+        { title: 'Conference Report', type: 'PDF', size: '8.5 MB' },
+        { title: 'Brampton Declaration', type: 'PDF', size: '2.1 MB' },
+        { title: 'Policy Recommendations', type: 'PDF', size: '4.3 MB' },
+        { title: 'Photo Gallery', type: 'Link', size: '150+ photos' }
+      ]
+    },
+    {
+      title: '1st International Post-COVID Conference',
+      date: 'July 15-17, 2024',
+      location: 'Toronto, ON, Canada',
+      venue: 'Metro Toronto Convention Centre',
+      description: 'The groundbreaking inaugural conference that launched our global platform for post-pandemic recovery dialogue. This event established LDII as a leading voice in international resilience building, bringing together distinguished delegates for intensive workshops, panel discussions, and strategic planning sessions.',
+      image: 'https://readdy.ai/api/search-image?query=International%20conference%20with%20300%20diverse%20delegates%20in%20Toronto%20convention%20center%2C%20inaugural%20event%20atmosphere%2C%20professional%20conference%20setup%2C%20multicultural%20audience%20engagement%2C%20high-resolution%20photography&width=800&height=500&seq=postcovid-2024-1&orientation=landscape',
+      attendees: '300+ delegates',
+      countries: '25 countries',
+      outcomes: [
+        'Toronto Framework for Post-Pandemic Recovery launched',
+        '15 specialized working groups formed',
+        'Multi-stakeholder partnership agreements signed',
+        'Research collaboration network established',
+        'Youth engagement program initiated'
+      ],
+      speakers: [
+        { name: 'Dr. Amara Okafor', role: 'LDII Executive Director' },
+        { name: 'Prof. David Kim', role: 'Economic Recovery Expert' },
+        { name: 'Dr. Fatima Al-Rashid', role: 'Public Health Specialist' },
+        { name: 'James Rodriguez', role: 'Climate Policy Advisor' }
+      ],
+      resources: [
+        { title: 'Conference Proceedings', type: 'PDF', size: '6.2 MB' },
+        { title: 'Toronto Framework', type: 'PDF', size: '3.5 MB' },
+        { title: 'Working Group Reports', type: 'PDF', size: '5.8 MB' }
+      ]
+    },
+    {
+      title: 'African Leadership Forum 2024',
+      date: 'March 10-12, 2024',
+      location: 'Accra, Ghana',
+      venue: 'Accra International Conference Centre',
+      description: 'Regional forum bringing together African leaders to discuss continental challenges and develop collaborative solutions. The forum focused on African-led approaches to climate adaptation, economic development, health systems strengthening, and youth empowerment.',
+      image: 'https://readdy.ai/api/search-image?query=African%20leadership%20forum%20with%20diverse%20African%20leaders%20and%20delegates%20in%20modern%20conference%20center%20in%20Accra%20Ghana%2C%20professional%20event%20with%20African%20cultural%20elements%2C%20high-quality%20event%20photography&width=800&height=500&seq=africa-forum-2024&orientation=landscape',
+      attendees: '200+ leaders',
+      countries: '30 African nations',
+      outcomes: [
+        'African Resilience Charter adopted',
+        '12 bilateral cooperation agreements signed',
+        'Pan-African Youth Leadership Program launched',
+        'Climate Adaptation Fund for Africa proposed',
+        'Health Systems Collaboration Network established'
+      ],
+      speakers: [
+        { name: 'H.E. Nana Akufo-Addo', role: 'President of Ghana (Opening Address)' },
+        { name: 'Dr. Ngozi Okonjo-Iweala', role: 'WTO Director-General (Video Message)' },
+        { name: 'Prof. Wangari Maathai Foundation', role: 'Environmental Leadership' }
+      ],
+      resources: [
+        { title: 'Forum Report', type: 'PDF', size: '5.4 MB' },
+        { title: 'African Resilience Charter', type: 'PDF', size: '1.8 MB' },
+        { title: 'Photo Gallery', type: 'Link', size: '100+ photos' }
+      ]
+    },
+    {
+      title: 'Climate Action Summit 2023',
+      date: 'November 5-7, 2023',
+      location: 'Nairobi, Kenya',
+      venue: 'Kenyatta International Convention Centre',
+      description: 'Intensive summit focused on climate adaptation and mitigation strategies for African communities. The summit brought together climate scientists, policy makers, community leaders, and youth activists to develop actionable climate resilience plans.',
+      image: 'https://readdy.ai/api/search-image?query=Climate%20action%20summit%20in%20Nairobi%20Kenya%20with%20environmental%20experts%20and%20community%20leaders%2C%20sustainable%20development%20conference%2C%20climate-focused%20event%20with%20African%20delegates%2C%20professional%20photography&width=800&height=500&seq=climate-summit-2023&orientation=landscape',
+      attendees: '250+ participants',
+      countries: '20 countries',
+      outcomes: [
+        'Nairobi Climate Action Plan developed',
+        'Community-based adaptation toolkit launched',
+        '500,000 tree planting commitment secured',
+        'Climate finance mobilization strategy adopted',
+        'Youth Climate Ambassador Program initiated'
+      ],
+      speakers: [
+        { name: 'Dr. Richard Munang', role: 'UNEP Africa Climate Change Expert' },
+        { name: 'Vanessa Nakate', role: 'Climate Activist' },
+        { name: 'Prof. Sunita Narain', role: 'Environmental Researcher' }
+      ],
+      resources: [
+        { title: 'Summit Report', type: 'PDF', size: '4.7 MB' },
+        { title: 'Climate Action Toolkit', type: 'PDF', size: '3.2 MB' }
+      ]
+    },
+    {
+      title: 'Digital Innovation Conference 2023',
+      date: 'August 20-22, 2023',
+      location: 'Kigali, Rwanda',
+      venue: 'Kigali Convention Centre',
+      description: 'Conference exploring digital transformation and innovation for sustainable development. The event showcased successful tech startups, discussed digital inclusion strategies, and launched new innovation hub partnerships.',
+      image: 'https://readdy.ai/api/search-image?query=Digital%20innovation%20conference%20in%20Kigali%20Rwanda%20with%20tech%20entrepreneurs%20and%20innovators%2C%20modern%20technology%20event%2C%20startup%20showcase%2C%20professional%20technology%20photography&width=800&height=500&seq=digital-conf-2023&orientation=landscape',
+      attendees: '300+ participants',
+      countries: '15 countries',
+      outcomes: [
+        '3 new innovation hubs announced',
+        'Digital Skills Training Program launched',
+        '$5 million startup fund established',
+        'Tech mentorship network created',
+        '50 startup pitches showcased'
+      ],
+      speakers: [
+        { name: 'Dr. Clare Akamanzi', role: 'Rwanda Development Board CEO' },
+        { name: 'Juliana Rotich', role: 'Tech Entrepreneur & Investor' },
+        { name: 'Iyinoluwa Aboyeji', role: 'Andela Co-founder' }
+      ],
+      resources: [
+        { title: 'Conference Proceedings', type: 'PDF', size: '5.1 MB' },
+        { title: 'Startup Directory', type: 'PDF', size: '2.8 MB' }
+      ]
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Past%20conferences%20and%20events%2C%20professional%20conference%20setting%2C%20international%20gatherings%2C%20professional%20event%20photography&width=1920&height=1080&seq=past-events-hero&orientation=landscape)`
+          }}
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Past Events & Resources
+          </h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+            Explore the outcomes, resources, and lasting impact of our previous conferences and events.
+          </p>
+        </div>
+      </section>
+
+      {/* Past Events */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Event Archive</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Access comprehensive documentation, reports, and resources from our past events.
+            </p>
+          </div>
+
+          <div className="space-y-16">
+            {pastEvents.map((event, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  <div>
+                    <img
+                      src={event.image}
+                      alt={event.title}
+                      className="w-full h-full object-cover min-h-[400px]"
+                    />
+                  </div>
+                  <div className="p-10">
+                    <div className="flex items-center flex-wrap gap-3 mb-4">
+                      <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        {event.date}
+                      </span>
+                      <span className="text-blue-600 font-semibold">{event.attendees}</span>
+                    </div>
+                    <h3 className="text-3xl font-bold text-gray-900 mb-4">{event.title}</h3>
+                    <div className="flex items-center mb-2">
+                      <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-gray-600 mr-2"></i>
+                      <span className="text-gray-600">{event.location}</span>
+                    </div>
+                    <div className="flex items-center mb-4">
+                      <i className="ri-building-line w-5 h-5 flex items-center justify-center text-gray-600 mr-2"></i>
+                      <span className="text-gray-600">{event.venue}</span>
+                    </div>
+                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">{event.description}</p>
+                    
+                    <div className="flex items-center mb-6">
+                      <i className="ri-global-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2"></i>
+                      <span className="text-blue-600 font-semibold">{event.countries}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">Key Outcomes</h4>
+                      <ul className="space-y-3">
+                        {event.outcomes.map((outcome, oIndex) => (
+                          <li key={oIndex} className="flex items-start">
+                            <i className="ri-check-double-line w-5 h-5 flex items-center justify-center text-green-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <span className="text-gray-700 text-sm">{outcome}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">Featured Speakers</h4>
+                      <ul className="space-y-3">
+                        {event.speakers.map((speaker, sIndex) => (
+                          <li key={sIndex} className="flex items-start">
+                            <i className="ri-user-star-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2 mt-0.5 flex-shrink-0"></i>
+                            <div>
+                              <span className="text-gray-900 font-semibold text-sm block">{speaker.name}</span>
+                              <span className="text-gray-600 text-xs">{speaker.role}</span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-xl font-bold text-gray-900 mb-4">Resources</h4>
+                      <ul className="space-y-3">
+                        {event.resources.map((resource, rIndex) => (
+                          <li key={rIndex}>
+                            <a href="#" className="flex items-center justify-between p-3 bg-white rounded-lg hover:bg-blue-50 transition-colors cursor-pointer">
+                              <div className="flex items-center">
+                                <i className={`${resource.type === 'PDF' ? 'ri-file-pdf-line' : 'ri-image-line'} w-5 h-5 flex items-center justify-center text-blue-600 mr-2`}></i>
+                                <span className="text-gray-700 text-sm font-medium">{resource.title}</span>
+                              </div>
+                              <span className="text-gray-500 text-xs">{resource.size}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section 
+        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
+      >
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Conference%20and%20event%20participation%2C%20professional%20networking%2C%20international%20collaboration%2C%20professional%20photography&width=1920&height=800&seq=past-events-cta&orientation=landscape)`
+          }}
+        />
+        <div className="absolute inset-0 bg-green-900/80"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Join Our Next Event
+          </h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+            Be part of our upcoming conferences and contribute to building global resilience.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="/events/upcoming"
+              className="relative z-20 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              View Upcoming Events
+            </a>
+            <a
+              href="/events/gallery"
+              className="relative z-20 bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+            >
+              Browse Photo Gallery
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
