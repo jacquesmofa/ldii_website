@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react';
+
 export default function DigitalInclusionPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=People%20from%20diverse%20backgrounds%20using%20computers%20and%20internet%20technology%2C%20digital%20literacy%20training%2C%20technology%20education%20center%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=digital-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Rural%20community%20digital%20hub%20with%20internet%20access%2C%20people%20learning%20technology%20skills%2C%20bridging%20digital%20divide%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=digital-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Global%20connectivity%20network%2C%20people%20worldwide%20accessing%20information%20online%2C%20digital%20inclusion%2C%20knowledge%20sharing%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=digital-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const challenges = [
     {
       title: 'Digital Divide',
@@ -110,14 +127,18 @@ export default function DigitalInclusionPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Digital%20inclusion%20and%20technology%20access%2C%20people%20using%20computers%20and%20internet%2C%20digital%20literacy%20training%2C%20technology%20education%2C%20bridging%20digital%20divide%2C%20professional%20technology%20photography&width=1920&height=1080&seq=digital-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Communication &amp; Digital Inclusion
@@ -125,6 +146,19 @@ export default function DigitalInclusionPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Communication and information are essential pillars for building inclusive knowledge societies, promoting freedom of expression, pluralism, and universal access to information.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -252,17 +286,15 @@ export default function DigitalInclusionPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
-      >
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Digital%20empowerment%20and%20technology%20access%2C%20people%20learning%20technology%2C%20digital%20literacy%2C%20professional%20technology%20photography%2C%20hope%20and%20progress&width=1920&height=800&seq=digital-cta&orientation=landscape)`
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Digital%20empowerment%20and%20technology%20access%2C%20people%20learning%20technology%2C%20digital%20literacy%2C%20community%20technology%20center%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=digital-cta&orientation=landscape)`
           }}
-        />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Bridge the Digital Divide
@@ -270,16 +302,16 @@ export default function DigitalInclusionPage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Help us ensure everyone has access to the information and technologies they need to thrive.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/contact"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
               Get Involved
             </a>

@@ -1,5 +1,21 @@
+import { useState, useEffect } from 'react';
 
 export default function UpcomingProjectsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Future%20development%20projects%20planning%20with%20diverse%20international%20team%2C%20modern%20project%20management%2C%20innovative%20solutions%20for%20global%20challenges%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=upcoming-projects-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Strategic%20planning%20for%20sustainable%20development%2C%20project%20blueprints%20and%20innovation%2C%20future-focused%20initiatives%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=upcoming-projects-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Next%20generation%20development%20programs%2C%20cutting-edge%20technology%20for%20social%20impact%2C%20visionary%20projects%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=upcoming-projects-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const upcomingProjects = [
     {
       title: "Global South Climate Adaptation Program",
@@ -80,21 +96,38 @@ export default function UpcomingProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section id="hero" className="relative bg-gradient-to-br from-green-600 to-emerald-700 text-white py-20">
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
-          style={{
-            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Future%20development%20projects%20planning%20with%20diverse%20international%20team%2C%20modern%20project%20management%2C%20innovative%20solutions%20for%20global%20challenges%2C%20professional%20photography%20with%20inspiring%20atmosphere&width=1920&height=800&seq=upcoming-projects-hero&orientation=landscape)'
-          }}
-        ></div>
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 text-white overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Upcoming Projects</h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
               Pioneering the future of sustainable development with innovative projects designed to create lasting impact and build resilient communities.
             </p>
           </div>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -177,14 +210,15 @@ export default function UpcomingProjectsPage() {
         </div>
       </section>
 
-      {/* Partnership Opportunities */}
-      <section className="bg-green-600 text-white py-16 relative overflow-hidden">
+      {/* Partnership Opportunities with Background */}
+      <section className="relative py-20 text-white overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20success%20celebration&width=1200&height=400&seq=partnership-opportunities-bg&orientation=landscape)'
+            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=partnership-opportunities-bg&orientation=landscape)'
           }}
         ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Partnership Opportunities</h2>
@@ -211,7 +245,7 @@ export default function UpcomingProjectsPage() {
             </div>
           </div>
           
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 relative z-20">
             <a
               href="/partners#hero"
               className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"

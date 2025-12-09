@@ -1,7 +1,21 @@
-
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function AchievementsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Celebration%20of%20achievements%20and%20success%20with%20diverse%20people%20celebrating%20milestones%2C%20awards%20and%20recognition%2C%20global%20impact%20visualization%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=achievements-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=International%20conference%20success%2C%20global%20leaders%20celebrating%20achievements%2C%20milestone%20celebrations%2C%20professional%20event%20photography%2C%20ultra%20high%20resolution%208k&width=1920&height=800&seq=achievements-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Community%20transformation%20success%20stories%2C%20people%20celebrating%20development%20achievements%2C%20sustainable%20development%20milestones%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=achievements-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   useEffect(() => {
     // Add Remix Icons CDN
     const link = document.createElement('link');
@@ -115,14 +129,18 @@ export default function AchievementsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Celebration%20of%20achievements%20and%20success%20with%20diverse%20people%20celebrating%20milestones%2C%20awards%20and%20recognition%2C%20global%20impact%20visualization%2C%20inspiring%20achievement%20atmosphere%2C%20professional%20photography%20with%20uplifting%20lighting&width=1920&height=800&seq=achievements-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Our Achievements
@@ -130,6 +148,19 @@ export default function AchievementsPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Celebrating landmark accomplishments that demonstrate our commitment to building global resilience and creating lasting positive change.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -209,16 +240,23 @@ export default function AchievementsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-green-600">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://readdy.ai/api/search-image?query=People%20joining%20hands%20together%20for%20global%20impact%2C%20diverse%20community%20united%20for%20positive%20change%2C%20hope%20and%20determination%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=achievements-cta-bg&orientation=landscape)'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Be Part of Our Next Achievement
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Join us in creating even greater impact and building a more resilient future for communities worldwide.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"

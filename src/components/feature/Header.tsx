@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import LanguageSwitcher from '../base/LanguageSwitcher';
 
@@ -21,11 +20,12 @@ export default function Header() {
       title: 'What We Do',
       href: '/what-we-do',
       dropdown: [
+        { title: 'Technology Transfer, AI Governance & Research', href: '/what-we-do/technology-ai-research' },
         { title: 'Climate Action & Mitigation', href: '/what-we-do/climate-action' },
-        { title: 'Poverty Eradication & Inclusive Growth', href: '/what-we-do/poverty-eradication' },
+        { title: 'Health & Resilience', href: '/what-we-do/global-health' },
+        { title: 'Communication & Digital Inclusion', href: '/what-we-do/digital-inclusion' },
         { title: 'Sustainable Food Systems', href: '/what-we-do/sustainable-food' },
-        { title: 'Global Health & Resilience', href: '/what-we-do/global-health' },
-        { title: 'Communication & Digital Inclusion', href: '/what-we-do/digital-inclusion' }
+        { title: 'Poverty Eradication & Inclusive Growth', href: '/what-we-do/poverty-eradication' }
       ]
     },
     {
@@ -52,16 +52,6 @@ export default function Header() {
         { title: 'Latest News', href: '/events/news' },
         { title: 'Press Releases', href: '/events/press-releases' },
         { title: 'Gallery', href: '/events/gallery' }
-      ]
-    },
-    {
-      title: 'Research',
-      href: '/research',
-      dropdown: [
-        { title: 'Policy Briefs', href: '/research/policy-briefs' },
-        { title: 'Publications', href: '/research/publications' },
-        { title: 'Data & Statistics', href: '/research/data-statistics' },
-        { title: 'White Papers', href: '/research/white-papers' }
       ]
     },
     {

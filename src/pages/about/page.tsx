@@ -205,7 +205,7 @@ export default function AboutPage() {
                     <i className="ri-award-line w-8 h-8 flex items-center justify-center text-blue-600"></i>
                   </div>
                   <div>
-                    <p className="text-3xl font-bold text-blue-900">30+ Years</p>
+                    <p className="text-3xl font-bold text-blue-900">10+ Years</p>
                     <p className="text-blue-700 font-medium">of Work Experience</p>
                   </div>
                 </div>

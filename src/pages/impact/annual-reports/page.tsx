@@ -1,6 +1,22 @@
+import { useState, useEffect } from 'react';
 import React from 'react';
 
 export default function AnnualReportsPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Annual%20reports%20and%20transparency%2C%20professional%20business%20documents%2C%20accountability%20and%20reporting%2C%20corporate%20publications%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=reports-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Financial%20transparency%20and%20accountability%2C%20professional%20reporting%20documents%2C%20business%20analytics%20and%20data%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=reports-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Impact%20reporting%20and%20documentation%2C%20professional%20publications%2C%20organizational%20transparency%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=reports-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const reports = [
     {
       year: '2024',
@@ -125,14 +141,18 @@ export default function AnnualReportsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Annual%20reports%20and%20transparency%2C%20professional%20business%20documents%2C%20accountability%20and%20reporting%2C%20professional%20photography&width=1920&height=1080&seq=reports-hero&orientation=landscape)`
-          }}
-        ></div>
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Annual Reports
@@ -140,6 +160,19 @@ export default function AnnualReportsPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Transparent documentation of our achievements, financial stewardship, and commitment to accountability.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -300,17 +333,15 @@ export default function AnnualReportsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
-      >
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Transparency%20and%20accountability%2C%20professional%20business%20environment%2C%20reporting%20and%20documentation%2C%20professional%20photography&width=1920&height=800&seq=reports-cta&orientation=landscape)`
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Transparency%20and%20accountability%2C%20professional%20business%20environment%2C%20reporting%20and%20documentation%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=reports-cta&orientation=landscape)`
           }}
-        />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Stay Informed
@@ -318,16 +349,16 @@ export default function AnnualReportsPage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Subscribe to receive our latest reports and updates on our global impact.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/contact"
-              className="relative z-20 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Subscribe to Updates
             </a>
             <a
               href="/impact"
-              className="relative z-20 bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
               View All Impact
             </a>

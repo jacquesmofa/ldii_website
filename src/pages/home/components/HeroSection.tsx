@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 export default function HeroSection() {
@@ -58,7 +57,7 @@ export default function HeroSection() {
     };
 
     setTimeout(() => animateCounter(10, 'years', 2000), 500);
-    setTimeout(() => animateCounter(5, 'offices', 1500), 700);
+    setTimeout(() => animateCounter(4, 'offices', 1500), 700);
     setTimeout(() => animateCounter(1000, 'trees', 2500), 900);
 
     setTimeout(() => animateMissionCounter(250, 'communities', 2200), 1500);

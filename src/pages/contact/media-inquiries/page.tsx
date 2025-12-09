@@ -113,6 +113,58 @@ export default function MediaInquiriesPage() {
         </div>
       </section>
 
+      {/* Press Contact Information */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Press Contact Information</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our communications team is available to assist journalists, bloggers, and media professionals with information about LDII's programs, impact, and initiatives. We can arrange interviews with our leadership team, provide expert commentary, and supply multimedia resources.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-gray-50 rounded-xl p-6 text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Media Relations Team</h3>
+              <p className="text-sm text-gray-600">Communications Department</p>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-6 text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
+              <a href="mailto:info@ldiinitiatives.org" className="text-sm text-green-600 hover:text-green-700 cursor-pointer">
+                info@ldiinitiatives.org
+              </a>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-6 text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Press Line</h3>
+              <a href="tel:+14166604233" className="text-sm text-green-600 hover:text-green-700 cursor-pointer">
+                +1 (416) 660-4233
+              </a>
+              <p className="text-xs text-gray-500 mt-2">Available 24/7 for urgent inquiries</p>
+            </div>
+
+            <div className="bg-gray-50 rounded-xl p-6 text-center">
+              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
+                <i className="ri-time-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Response Time</h3>
+              <p className="text-sm text-gray-600">Within 24 hours for standard inquiries</p>
+              <p className="text-xs text-gray-500 mt-2">Same-day for urgent requests</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Media Contact */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -140,8 +192,8 @@ export default function MediaInquiriesPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:media@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
-                      media@ldiinitiatives.org
+                    <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
+                      info@ldiinitiatives.org
                     </a>
                   </div>
                 </div>
@@ -152,8 +204,8 @@ export default function MediaInquiriesPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Press Line</div>
-                    <a href="tel:+14165550199" className="text-green-600 hover:text-green-700">
-                      +1 (416) 555-0199
+                    <a href="tel:+14166604233" className="text-green-600 hover:text-green-700">
+                      +1 (416) 660-4233
                     </a>
                     <div className="text-sm text-gray-600 mt-1">Available 24/7 for urgent inquiries</div>
                   </div>
@@ -354,7 +406,7 @@ export default function MediaInquiriesPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:media@ldiinitiatives.org"
+              href="mailto:info@ldiinitiatives.org"
               className="inline-block bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
             >
               Request an Interview

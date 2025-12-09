@@ -1,5 +1,21 @@
+import { useState, useEffect } from 'react';
 
 export default function SuccessStoriesPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Success%20stories%20and%20community%20transformation%2C%20happy%20people%20celebrating%20achievements%2C%20community%20development%20success%2C%20hope%20and%20progress%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=success-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=People%20overcoming%20challenges%20and%20achieving%20success%2C%20inspiring%20transformation%20stories%2C%20community%20empowerment%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=success-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Lives%20transformed%20through%20development%20programs%2C%20success%20and%20achievement%20celebration%2C%20sustainable%20development%20impact%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=success-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const stories = [
     {
       title: 'From Drought to Abundance: Climate-Resilient Farming in Kenya',
@@ -127,14 +143,18 @@ export default function SuccessStoriesPage() {
   
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Success%20stories%20and%20community%20transformation%2C%20happy%20people%20celebrating%20achievements%2C%20community%20development%20success%2C%20hope%20and%20progress%2C%20professional%20photography&width=1920&height=1080&seq=success-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Success Stories
@@ -142,6 +162,19 @@ export default function SuccessStoriesPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Real stories of transformation, resilience, and hope from communities we serve around the world.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -211,17 +244,15 @@ export default function SuccessStoriesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
-      >
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20positive%20change%2C%20people%20working%20together%2C%20sustainable%20development%2C%20professional%20photography%2C%20hope%20and%20progress&width=1920&height=800&seq=success-cta&orientation=landscape)`
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20positive%20change%2C%20people%20working%20together%2C%20sustainable%20development%2C%20hope%20and%20progress%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=success-cta&orientation=landscape)`
           }}
-        />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Create Your Own Success Story
@@ -229,16 +260,16 @@ export default function SuccessStoriesPage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Join our programs and become part of a global community creating positive change.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/local-programs"
-              className="relative z-20 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Explore Programs
             </a>
             <a
               href="/contact"
-              className="relative z-20 bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
               Get Involved
             </a>

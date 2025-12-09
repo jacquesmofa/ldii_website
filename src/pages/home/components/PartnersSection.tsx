@@ -37,7 +37,7 @@ export default function PartnersSection() {
       title: 'Private Sector',
       description: 'Partnering with corporations committed to sustainable development',
       icon: 'ri-building-line',
-      count: '20+'
+      count: '30+'
     },
     {
       title: 'Academic Institutions',
@@ -149,6 +149,42 @@ export default function PartnersSection() {
       logo: 'https://readdy.ai/api/search-image?query=Government%20of%20Canada%20official%20logo%20Canadian%20flag%20maple%20leaf%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=200&seq=canada-gov-logo&orientation=squarish',
       website: 'https://www.canada.ca',
       category: 'Federal Government'
+    },
+    {
+      name: 'Province of Ontario',
+      logo: 'https://readdy.ai/api/search-image?query=Province%20of%20Ontario%20official%20government%20logo%20Canadian%20provincial%20emblem%20trillium%20flower%20clean%20white%20background%20professional%20branding&width=200&height=200&seq=ontario-prov-logo&orientation=squarish',
+      website: 'https://www.ontario.ca',
+      category: 'Provincial Government'
+    },
+    {
+      name: 'RBC Royal Bank',
+      logo: 'https://readdy.ai/api/search-image?query=RBC%20Royal%20Bank%20of%20Canada%20official%20logo%20blue%20and%20yellow%20lion%20shield%20emblem%20clean%20white%20background%20professional%20banking%20branding&width=200&height=200&seq=rbc-logo&orientation=squarish',
+      website: 'https://www.rbc.com',
+      category: 'Financial Institution'
+    },
+    {
+      name: 'Ethiopian Airlines',
+      logo: 'https://readdy.ai/api/search-image?query=Ethiopian%20Airlines%20official%20logo%20green%20yellow%20red%20colors%20airline%20emblem%20clean%20white%20background%20professional%20aviation%20branding&width=200&height=200&seq=ethiopian-airlines-logo&orientation=squarish',
+      website: 'https://www.ethiopianairlines.com',
+      category: 'Aviation Partner'
+    },
+    {
+      name: 'Pearson Convention Centre',
+      logo: 'https://readdy.ai/api/search-image?query=Pearson%20Convention%20Centre%20Toronto%20official%20logo%20modern%20venue%20emblem%20clean%20white%20background%20professional%20event%20space%20branding&width=200&height=200&seq=pearson-convention-logo&orientation=squarish',
+      website: 'https://www.torontopearson.com',
+      category: 'Venue Partner'
+    },
+    {
+      name: 'KWETU Connect Australia',
+      logo: 'https://readdy.ai/api/search-image?query=KWETU%20Connect%20Australia%20official%20logo%20community%20organization%20emblem%20clean%20white%20background%20professional%20networking%20branding&width=200&height=200&seq=kwetu-logo&orientation=squarish',
+      website: 'https://www.kwetuconnect.com.au',
+      category: 'Community Organization'
+    },
+    {
+      name: 'IGAD',
+      logo: 'https://readdy.ai/api/search-image?query=IGAD%20Intergovernmental%20Authority%20on%20Development%20official%20logo%20East%20Africa%20regional%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding&width=200&height=200&seq=igad-logo&orientation=squarish',
+      website: 'https://igad.int',
+      category: 'Regional Organization'
     },
     {
       name: 'Mamy Kaya',

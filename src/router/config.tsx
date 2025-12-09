@@ -9,6 +9,7 @@ const OurWorkPage = lazy(() => import('../pages/about/our-work/page'));
 const PastProjectsPage = lazy(() => import('../pages/about/past-projects/page'));
 const UpcomingProjectsPage = lazy(() => import('../pages/about/upcoming-projects/page'));
 const WhatWeDoPage = lazy(() => import('../pages/what-we-do/page'));
+const TechnologyAIResearchPage = lazy(() => import('../pages/what-we-do/technology-ai-research/page'));
 const ClimateActionPage = lazy(() => import('../pages/what-we-do/climate-action/page'));
 const PovertyEradicationPage = lazy(() => import('../pages/what-we-do/poverty-eradication/page'));
 const SustainableFoodPage = lazy(() => import('../pages/what-we-do/sustainable-food/page'));
@@ -26,11 +27,6 @@ const PastEventsPage = lazy(() => import('../pages/events/past/page'));
 const NewsPage = lazy(() => import('../pages/events/news/page'));
 const PressReleasesPage = lazy(() => import('../pages/events/news/press-releases/page'));
 const GalleryPage = lazy(() => import('../pages/events/gallery/page'));
-const ResearchPage = lazy(() => import('../pages/research/page'));
-const PolicyBriefsPage = lazy(() => import('../pages/research/policy-briefs/page'));
-const PublicationsPage = lazy(() => import('../pages/research/publications/page'));
-const DataStatisticsPage = lazy(() => import('../pages/research/data-statistics/page'));
-const WhitePapersPage = lazy(() => import('../pages/research/white-papers/page'));
 const PartnersPage = lazy(() => import('../pages/partners/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const GetInTouchPage = lazy(() => import('../pages/contact/get-in-touch/page'));
@@ -74,6 +70,10 @@ const routes: RouteObject[] = [
   {
     path: '/what-we-do',
     element: <WhatWeDoPage />
+  },
+  {
+    path: '/what-we-do/technology-ai-research',
+    element: <TechnologyAIResearchPage />
   },
   {
     path: '/what-we-do/climate-action',
@@ -142,26 +142,6 @@ const routes: RouteObject[] = [
   {
     path: '/events/gallery',
     element: <GalleryPage />
-  },
-  {
-    path: '/research',
-    element: <ResearchPage />
-  },
-  {
-    path: '/research/policy-briefs',
-    element: <PolicyBriefsPage />
-  },
-  {
-    path: '/research/publications',
-    element: <PublicationsPage />
-  },
-  {
-    path: '/research/data-statistics',
-    element: <DataStatisticsPage />
-  },
-  {
-    path: '/research/white-papers',
-    element: <WhitePapersPage />
   },
   {
     path: '/partners',

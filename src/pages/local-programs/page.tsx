@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 export default function LocalProgramsPage() {
@@ -19,19 +18,6 @@ export default function LocalProgramsPage() {
   };
 
   const youthPrograms = [
-    {
-      id: 'mental-health',
-      title: 'Mental Health Awareness & Support',
-      description: 'Providing accessible mental health resources, counseling services, and peer support networks to help youth navigate emotional and psychological challenges. Our comprehensive approach includes individual therapy, group counseling, crisis intervention, and preventive mental health education to build resilience and emotional well-being.',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20in%20supportive%20group%20therapy%20session%2C%20mental%20health%20counseling%2C%20professional%20therapist%20leading%20discussion%2C%20warm%20welcoming%20environment%2C%20multicultural%20participants%2C%20professional%20photography%20with%20natural%20lighting&width=600&height=400&seq=mental-health-youth&orientation=landscape',
-      services: [
-        'Individual and group counseling sessions',
-        'Mental health awareness workshops',
-        'Crisis intervention and support hotlines',
-        'Peer mentorship programs',
-        'Stress management and coping strategies'
-      ]
-    },
     {
       id: 'violence-prevention',
       title: 'Gun Violence & Gang Prevention',
@@ -82,32 +68,6 @@ export default function LocalProgramsPage() {
         'Cultural celebration events',
         'Arts mentorship and career guidance',
         'Community art projects and exhibitions'
-      ]
-    },
-    {
-      id: 'sports-recreation',
-      title: 'Sports & Recreation Programs',
-      description: 'Promoting physical health, teamwork, and leadership through organized sports and recreational activities. Our programs provide safe, structured environments where youth can develop athletic skills, build friendships, and learn valuable life lessons about discipline, perseverance, and collaboration while staying active and healthy.',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20playing%20basketball%20in%20community%20sports%20program%2C%20team%20activities%2C%20recreational%20facility%2C%20coaches%20mentoring%20young%20athletes%2C%20professional%20photography%20with%20dynamic%20action&width=600&height=400&seq=sports-youth&orientation=landscape',
-      services: [
-        'Team sports leagues and tournaments',
-        'Individual fitness and wellness programs',
-        'Outdoor adventure activities',
-        'Sports leadership and coaching training',
-        'Health and nutrition education'
-      ]
-    },
-    {
-      id: 'academic-support',
-      title: 'Academic Support & Tutoring',
-      description: 'Providing comprehensive academic assistance to help youth excel in their studies and achieve their educational goals. Our tutoring programs offer personalized support in core subjects, homework help, exam preparation, and study skills development, ensuring every student has the resources they need to succeed academically.',
-      image: 'https://readdy.ai/api/search-image?query=Youth%20tutoring%20session%20in%20library%2C%20diverse%20students%20receiving%20academic%20support%2C%20one-on-one%20mentoring%2C%20study%20group%20environment%2C%20professional%20photography%20with%20focused%20atmosphere&width=600&height=400&seq=academic-support&orientation=landscape',
-      services: [
-        'One-on-one tutoring in core subjects',
-        'Homework help and study groups',
-        'Exam preparation and test-taking strategies',
-        'College and university application support',
-        'Scholarship and bursary assistance'
       ]
     },
     {

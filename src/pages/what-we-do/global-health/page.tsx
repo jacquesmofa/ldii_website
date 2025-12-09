@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react';
+
 export default function GlobalHealthPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Modern%20healthcare%20facility%20with%20advanced%20medical%20technology%2C%20doctors%20and%20nurses%20providing%20quality%20care%2C%20hospital%20environment%2C%20ultra%20high%20resolution%208k%20medical%20photography&width=1920&height=800&seq=health-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Global%20health%20workers%20vaccinating%20communities%2C%20pandemic%20preparedness%2C%20public%20health%20programs%2C%20diverse%20medical%20team%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=health-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Healthcare%20access%20in%20rural%20communities%2C%20mobile%20health%20clinics%2C%20community%20health%20workers%2C%20medical%20outreach%20programs%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=health-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const challenges = [
     {
       title: 'Pandemic Preparedness',
@@ -110,21 +127,38 @@ export default function GlobalHealthPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Global%20health%20systems%2C%20healthcare%20workers%2C%20medical%20facilities%2C%20pandemic%20preparedness%2C%20health%20resilience%2C%20universal%20healthcare%20access%2C%20professional%20medical%20photography&width=1920&height=1080&seq=health-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Global Health &amp; Resilience
+            Health &amp; Resilience
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Advancing global health outcomes, particularly underscored by post-COVID needs. We focus on targeted interventions and ensuring universal access to high-quality healthcare services for all.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -252,17 +286,15 @@ export default function GlobalHealthPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
-      >
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Healthcare%20professionals%20working%20together%2C%20medical%20teamwork%2C%20health%20system%20strengthening%2C%20professional%20medical%20photography%2C%20hope%20and%20healing&width=1920&height=800&seq=health-cta&orientation=landscape)`
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Healthcare%20professionals%20working%20together%2C%20medical%20teamwork%2C%20health%20system%20strengthening%2C%20diverse%20medical%20staff%20collaboration%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=health-cta&orientation=landscape)`
           }}
-        />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Support Global Health
@@ -270,16 +302,16 @@ export default function GlobalHealthPage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Help us build resilient health systems and ensure everyone has access to quality healthcare.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/contact"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
               Learn More
             </a>

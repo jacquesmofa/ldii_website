@@ -28,7 +28,7 @@ For more information about the 2026 conference series, visit www.ldiinitiatives.
 Media Contact:
 David Thompson
 Director of Communications
-media@ldiinitiatives.org
+info@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -58,7 +58,7 @@ The initiative goes beyond simple tree planting, integrating community developme
 Media Contact:
 David Thompson
 Director of Communications
-media@ldiinitiatives.org
+info@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -91,7 +91,7 @@ The full conference report and Brampton Declaration are available at www.ldiinit
 Media Contact:
 David Thompson
 Director of Communications
-media@ldiinitiatives.org
+info@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -120,7 +120,7 @@ The partnership will initially focus on 15 priority countries across Africa and 
 Media Contact:
 David Thompson
 Director of Communications
-media@ldiinitiatives.org
+info@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -150,7 +150,7 @@ The initiative provides comprehensive business training, microfinance access, an
 Media Contact:
 David Thompson
 Director of Communications
-media@ldiinitiatives.org
+info@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     }
@@ -231,8 +231,8 @@ media@ldiinitiatives.org
                   <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-white"></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:media@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer">
-                  media@ldiinitiatives.org
+                <a href="mailto:info@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer">
+                  info@ldiinitiatives.org
                 </a>
               </div>
               <div className="text-center">

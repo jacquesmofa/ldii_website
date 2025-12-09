@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 export default function PartnersPage() {
@@ -82,6 +81,27 @@ export default function PartnersPage() {
       focus: 'Hispanic Business Community, Advocacy'
     },
     {
+      name: 'RBC Royal Bank',
+      description: 'Canada\'s largest bank partnering on financial inclusion, economic development, and community investment initiatives.',
+      logo: 'https://readdy.ai/api/search-image?query=RBC%20Royal%20Bank%20of%20Canada%20official%20logo%20blue%20and%20yellow%20lion%20shield%20emblem%20clean%20white%20background%20professional%20banking%20branding&width=200&height=120&seq=rbc-partner&orientation=landscape',
+      website: 'https://www.rbc.com',
+      focus: 'Financial Inclusion, Community Investment'
+    },
+    {
+      name: 'Ethiopian Airlines',
+      description: 'Africa\'s largest airline supporting international connectivity, trade facilitation, and humanitarian logistics.',
+      logo: 'https://readdy.ai/api/search-image?query=Ethiopian%20Airlines%20official%20logo%20green%20yellow%20red%20colors%20airline%20emblem%20clean%20white%20background%20professional%20aviation%20branding&width=200&height=120&seq=ethiopian-airlines-partner&orientation=landscape',
+      website: 'https://www.ethiopianairlines.com',
+      focus: 'International Connectivity, Trade Facilitation'
+    },
+    {
+      name: 'Pearson Convention Centre',
+      description: 'Premier event venue partner providing space for conferences, community gatherings, and international forums.',
+      logo: 'https://readdy.ai/api/search-image?query=Pearson%20Convention%20Centre%20Toronto%20official%20logo%20modern%20venue%20emblem%20clean%20white%20background%20professional%20event%20space%20branding&width=200&height=120&seq=pearson-convention-partner&orientation=landscape',
+      website: 'https://www.torontopearson.com',
+      focus: 'Event Hosting, Conference Facilities'
+    },
+    {
       name: 'Hilton Garden Inn Brampton',
       description: 'Hospitality partner providing venue support for events, conferences, and community gatherings.',
       logo: 'https://readdy.ai/api/search-image?query=Hilton%20Garden%20Inn%20official%20hotel%20logo%20hospitality%20brand%20emblem%20clean%20white%20background%20professional%20hotel%20branding&width=200&height=120&seq=hilton-partner&orientation=landscape',
@@ -104,6 +124,20 @@ export default function PartnersPage() {
       logo: 'https://readdy.ai/api/search-image?query=CPLP%20Community%20Portuguese%20Language%20Countries%20official%20logo%20blue%20and%20white%20lusophone%20organization%20emblem%20clean%20background%20professional%20diplomatic%20branding&width=200&height=120&seq=cplp-partner&orientation=landscape',
       website: 'https://www.cplp.org',
       focus: 'Cultural Exchange, Development Cooperation'
+    },
+    {
+      name: 'IGAD',
+      description: 'Regional partnership with the Intergovernmental Authority on Development supporting peace, security, and sustainable development in East Africa.',
+      logo: 'https://readdy.ai/api/search-image?query=IGAD%20Intergovernmental%20Authority%20on%20Development%20official%20logo%20East%20Africa%20regional%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding&width=200&height=120&seq=igad-partner&orientation=landscape',
+      website: 'https://igad.int',
+      focus: 'Regional Development, Peace & Security'
+    },
+    {
+      name: 'KWETU Connect Australia',
+      description: 'Community organization partnership supporting diaspora engagement, cultural exchange, and international development connections.',
+      logo: 'https://readdy.ai/api/search-image?query=KWETU%20Connect%20Australia%20official%20logo%20community%20organization%20emblem%20clean%20white%20background%20professional%20networking%20branding&width=200&height=120&seq=kwetu-partner&orientation=landscape',
+      website: 'https://www.kwetuconnect.com.au',
+      focus: 'Diaspora Engagement, Community Development'
     },
     {
       name: 'Mamy Kaya',

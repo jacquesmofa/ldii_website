@@ -1,5 +1,21 @@
+import { useState, useEffect } from 'react';
 
 export default function ClimateActionPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Renewable%20energy%20wind%20turbines%20and%20solar%20panels%20at%20sunset%2C%20clean%20energy%20infrastructure%2C%20sustainable%20future%2C%20dramatic%20golden%20hour%20lighting%2C%20ultra%20high%20resolution%208k%20professional%20photography&width=1920&height=800&seq=climate-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Climate%20scientists%20analyzing%20environmental%20data%20on%20advanced%20technology%20screens%2C%20research%20laboratory%2C%20climate%20monitoring%2C%20professional%20team%20collaboration%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=climate-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Lush%20green%20forest%20ecosystem%20with%20pristine%20nature%2C%20carbon%20sequestration%2C%20biodiversity%20conservation%2C%20environmental%20protection%2C%20ultra%20high%20resolution%208k%20nature%20photography&width=1920&height=800&seq=climate-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const challenges = [
     {
       title: 'Rising Sea Levels',
@@ -100,14 +116,18 @@ export default function ClimateActionPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Climate%20action%20and%20environmental%20sustainability%2C%20renewable%20energy%20wind%20turbines%20and%20solar%20panels%2C%20green%20technology%2C%20sustainable%20future%2C%20dramatic%20sky%20with%20hope%20and%20determination%2C%20professional%20environmental%20photography&width=1920&height=800&seq=climate-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Climate Action & Mitigation
@@ -115,6 +135,19 @@ export default function ClimateActionPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Addressing the profound and far-reaching impacts of climate change through comprehensive strategies that tackle underlying causes and build resilient communities.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -221,16 +254,23 @@ export default function ClimateActionPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-green-600">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://readdy.ai/api/search-image?query=People%20joining%20hands%20together%20for%20climate%20action%20movement%2C%20diverse%20community%20united%20for%20environmental%20cause%2C%20hope%20and%20determination%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=climate-cta-bg&orientation=landscape)'
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join the Climate Action Movement
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Together, we can build a sustainable future and protect our planet for generations to come.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"

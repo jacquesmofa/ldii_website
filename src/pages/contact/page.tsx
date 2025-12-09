@@ -44,7 +44,7 @@ export default function ContactPage() {
     {
       title: 'Media Inquiries',
       description: 'Press releases, interviews, and media-related requests.',
-      email: 'media@ldiinitiatives.org',
+      email: 'info@ldiinitiatives.org',
       phone: '+1 416 660-4234',
       icon: 'ri-newspaper-line'
     },
@@ -106,7 +106,7 @@ export default function ContactPage() {
         form.reset();
       }
     } catch (error) {
-      alert('There was an error submitting your inquiry. Please contact us directly at media@ldiinitiatives.org');
+      alert('There was an error submitting your inquiry. Please contact us directly at info@ldiinitiatives.org');
     }
   };
 

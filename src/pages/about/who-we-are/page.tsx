@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react';
+
 export default function WhoWeArePage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Diverse%20international%20team%20of%20professionals%20from%20different%20ethnicities%20working%20together%20in%20modern%20collaborative%20workspace%2C%20multicultural%20office%20environment%2C%20teamwork%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=team-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Global%20organization%20leadership%20team%20meeting%2C%20diverse%20executives%20collaborating%2C%20international%20business%20professionals%2C%20modern%20conference%20room%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=team-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Multicultural%20team%20celebrating%20success%20together%2C%20diverse%20professionals%2C%20collaborative%20achievement%2C%20inclusive%20workplace%20culture%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=team-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const leadership = [
     {
       name: 'Dr. Sarah Johnson',
@@ -51,14 +68,18 @@ export default function WhoWeArePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Diverse%20international%20team%20of%20professionals%20from%20different%20ethnicities%20and%20backgrounds%20working%20together%20in%20modern%20collaborative%20workspace%2C%20multicultural%20office%20environment%2C%20teamwork%20and%20collaboration%2C%20professional%20photography%2C%20bright%20natural%20lighting%2C%20contemporary%20office%20design%20with%20global%20elements&width=1920&height=800&seq=team-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Who We Are
@@ -66,6 +87,19 @@ export default function WhoWeArePage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             Meet the dedicated professionals driving global resilience through innovative solutions and collaborative leadership.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -186,14 +220,15 @@ export default function WhoWeArePage() {
         </div>
       </section>
 
-      {/* Join Our Team */}
-      <section className="py-20 bg-green-600 relative overflow-hidden">
+      {/* Join Our Team with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20career%20opportunities%20diverse%20team%20recruitment%20global%20organization%20hiring%20talented%20professionals%20modern%20workplace%20culture%20international%20team%20building&width=1200&height=400&seq=join-team-bg&orientation=landscape)'
+            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20career%20opportunities%20diverse%20team%20recruitment%20global%20organization%20hiring%20talented%20professionals%20modern%20workplace%20culture%20international%20team%20building%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=join-team-bg&orientation=landscape)'
           }}
         ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Our Global Team
@@ -201,7 +236,7 @@ export default function WhoWeArePage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             We're always looking for passionate professionals who share our commitment to building global resilience.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/careers#hero"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"

@@ -5,9 +5,9 @@ export default function OurLocationsPage() {
       address: '3701 Chesswood Drive, Unit 315',
       city: 'Toronto, Ontario M3J 2P6',
       country: 'Canada',
-      phone: '+1 (416) 555-0123',
-      email: 'toronto@ldiinitiatives.org',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM EST',
+      phone: '+1 (416) 660-4233',
+      email: 'info@ldiinitiatives.org',
+      hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.4!2d-79.4782!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjgnNDEuNSJX!5e0!3m2!1sen!2sca!4v1234567890',
       image: 'https://readdy.ai/api/search-image?query=modern%20professional%20office%20building%20in%20Toronto%20downtown%20area%2C%20glass%20facade%2C%20contemporary%20architecture%2C%20Canadian%20business%20district&width=800&height=600&seq=toronto-office&orientation=landscape',
       description: 'Our Toronto headquarters serves as the central hub for our Canadian operations and international coordination. The office houses our executive team, program management, research, and communications departments.'
@@ -17,33 +17,36 @@ export default function OurLocationsPage() {
       address: '101 West Dr C',
       city: 'Brampton, ON L6T 2J6',
       country: 'Canada',
-      phone: '+1 (905) 555-0456',
-      email: 'brampton@ldiinitiatives.org',
+      phone: '+1 (905) 123-4567',
+      email: 'info@ldiinitiatives.org',
       hours: 'Monday - Friday: 9:00 AM - 5:00 PM EST',
       mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.5!2d-79.7234!3d43.6845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQxJzA0LjIiTiA3OcKwNDMnMjQuMiJX!5e0!3m2!1sen!2sca!4v1234567891',
       image: 'https://readdy.ai/api/search-image?query=professional%20office%20building%20in%20Brampton%20Ontario%2C%20modern%20business%20center%2C%20welcoming%20entrance%2C%20suburban%20commercial%20area&width=800&height=600&seq=brampton-office&orientation=landscape',
       description: 'Our Brampton office focuses on local community programs including youth empowerment, newcomer services, and business networking. This location serves as a vital connection point for our Ontario-based initiatives.'
-    }
-  ];
-
-  const regionalOffices = [
-    {
-      region: 'Africa Regional Office',
-      location: 'Nairobi, Kenya',
-      description: 'Coordinating programs across East, West, and Southern Africa',
-      image: 'https://readdy.ai/api/search-image?query=modern%20office%20building%20in%20Nairobi%20Kenya%2C%20African%20business%20district%2C%20contemporary%20architecture%2C%20vibrant%20city%20atmosphere&width=600&height=400&seq=nairobi-office&orientation=landscape'
     },
     {
-      region: 'Asia-Pacific Regional Office',
-      location: 'Bangkok, Thailand',
-      description: 'Managing initiatives throughout Southeast Asia and the Pacific',
-      image: 'https://readdy.ai/api/search-image?query=professional%20office%20building%20in%20Bangkok%20Thailand%2C%20modern%20Asian%20business%20center%2C%20urban%20skyline%2C%20tropical%20setting&width=600&height=400&seq=bangkok-office&orientation=landscape'
+      name: 'Nairobi Office',
+      address: 'Westlands Business District',
+      city: 'Nairobi',
+      country: 'Kenya',
+      phone: '+254 20 123-4567',
+      email: 'info@ldiinitiatives.org',
+      hours: 'Monday - Friday: 8:00 AM - 5:00 PM EAT',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8!2d36.8!3d-1.27!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnMTIuMCJTIDM2wrA0OCcwMC4wIkU!5e0!3m2!1sen!2ske!4v1234567892',
+      image: 'https://readdy.ai/api/search-image?query=modern%20office%20building%20in%20Nairobi%20Kenya%20Westlands%20business%20district%2C%20contemporary%20African%20architecture%2C%20professional%20business%20center%2C%20urban%20skyline&width=800&height=600&seq=nairobi-office&orientation=landscape',
+      description: 'Our Nairobi office coordinates programs across East Africa, focusing on climate resilience, sustainable agriculture, and health systems strengthening. This strategic location enables us to serve communities throughout the region with culturally relevant solutions.'
     },
     {
-      region: 'Latin America Regional Office',
-      location: 'São Paulo, Brazil',
-      description: 'Overseeing programs across Central and South America',
-      image: 'https://readdy.ai/api/search-image?query=contemporary%20office%20building%20in%20Sao%20Paulo%20Brazil%2C%20Latin%20American%20business%20district%2C%20modern%20architecture%2C%20urban%20landscape&width=600&height=400&seq=saopaulo-office&orientation=landscape'
+      name: 'Kampala Office',
+      address: 'Nakasero Business District',
+      city: 'Kampala',
+      country: 'Uganda',
+      phone: '+256 41 123-4567',
+      email: 'info@ldiinitiatives.org',
+      hours: 'Monday - Friday: 8:00 AM - 5:00 PM EAT',
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7!2d32.58!3d0.32!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwMTknMTIuMCJOIDMywrAzNCc0OC4wIkU!5e0!3m2!1sen!2sug!4v1234567893',
+      image: 'https://readdy.ai/api/search-image?query=professional%20office%20building%20in%20Kampala%20Uganda%2C%20modern%20business%20center%2C%20East%20African%20commercial%20district%2C%20contemporary%20architecture&width=800&height=600&seq=kampala-office&orientation=landscape',
+      description: 'Our Kampala office supports community development initiatives across Uganda, with emphasis on youth empowerment, food security, and digital inclusion. We work closely with local partners to create sustainable impact in rural and urban communities.'
     }
   ];
 
@@ -55,15 +58,15 @@ export default function OurLocationsPage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Locations</h1>
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
-            With offices across Canada and regional hubs worldwide, we're positioned to serve communities globally
+            With offices across Canada and Africa, we're positioned to serve communities globally
           </p>
         </div>
       </section>
 
-      {/* Canadian Offices */}
+      {/* Global Offices */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Canadian Offices</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Our Global Offices</h2>
           
           <div className="space-y-12">
             {offices.map((office, index) => (
@@ -153,40 +156,10 @@ export default function OurLocationsPage() {
         </div>
       </section>
 
-      {/* Regional Offices */}
+      {/* Global Presence */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Regional Offices</h2>
-          <p className="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
-            Our regional offices coordinate programs and partnerships across multiple countries, ensuring local relevance and cultural sensitivity
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {regionalOffices.map((office, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
-                <img
-                  src={office.image}
-                  alt={office.region}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{office.region}</h3>
-                  <div className="flex items-center text-green-600 mb-3">
-                    <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center mr-2"></i>
-                    <span className="font-semibold">{office.location}</span>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed">{office.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Global Presence */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl">
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 md:p-12 shadow-xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Global Presence</h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -200,8 +173,8 @@ export default function OurLocationsPage() {
                 <div className="text-gray-600">Countries</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">5</div>
-                <div className="text-gray-600">Regional Offices</div>
+                <div className="text-4xl font-bold text-green-600 mb-2">4</div>
+                <div className="text-gray-600">Global Offices</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-green-600 mb-2">200+</div>

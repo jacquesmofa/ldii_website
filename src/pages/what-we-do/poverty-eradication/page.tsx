@@ -1,4 +1,21 @@
+import { useState, useEffect } from 'react';
+
 export default function PovertyEradicationPage() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroImages = [
+    'https://readdy.ai/api/search-image?query=Economic%20empowerment%20programs%2C%20small%20business%20entrepreneurs%2C%20microfinance%20success%2C%20community%20development%2C%20prosperity%20and%20growth%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=poverty-hero-1&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Vocational%20training%20and%20skills%20development%2C%20people%20learning%20trades%2C%20employment%20opportunities%2C%20economic%20inclusion%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=poverty-hero-2&orientation=landscape',
+    'https://readdy.ai/api/search-image?query=Community%20cooperatives%20and%20collective%20enterprises%2C%20people%20working%20together%2C%20sustainable%20livelihoods%2C%20inclusive%20growth%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=800&seq=poverty-hero-3&orientation=landscape'
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   const challenges = [
     {
       title: 'Extreme Poverty',
@@ -110,14 +127,18 @@ export default function PovertyEradicationPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Poverty%20eradication%20and%20economic%20empowerment%2C%20community%20development%2C%20microfinance%20programs%2C%20small%20business%20support%2C%20economic%20inclusion%2C%20sustainable%20livelihoods%2C%20professional%20development%20photography&width=1920&height=1080&seq=poverty-hero&orientation=landscape)`
-          }}
-        />
+      {/* Hero Section with Slideshow */}
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+        {heroImages.map((image, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+              index === currentSlide ? 'opacity-30' : 'opacity-0'
+            }`}
+            style={{ backgroundImage: `url(${image})` }}
+          />
+        ))}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Poverty Eradication & Inclusive Growth
@@ -125,6 +146,19 @@ export default function PovertyEradicationPage() {
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
             The persistence of poverty is a formidable obstacle to human development. Our comprehensive strategy targets underlying causes while empowering individuals and communities for inclusive, sustainable growth.
           </p>
+        </div>
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all cursor-pointer ${
+                index === currentSlide ? 'bg-white w-8' : 'bg-white/50'
+              }`}
+            />
+          ))}
         </div>
       </section>
 
@@ -252,17 +286,15 @@ export default function PovertyEradicationPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
-      >
+      {/* CTA Section with Background */}
+      <section className="relative py-20 overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20economic%20development%2C%20people%20working%20together%2C%20sustainable%20livelihoods%2C%20professional%20development%20photography%2C%20hope%20and%20progress&width=1920&height=800&seq=poverty-cta&orientation=landscape)`
+            backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20economic%20development%2C%20people%20working%20together%2C%20sustainable%20livelihoods%2C%20hope%20and%20progress%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=poverty-cta&orientation=landscape)`
           }}
-        />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        ></div>
+        <div className="absolute inset-0 bg-green-600/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join the Fight Against Poverty
@@ -270,16 +302,16 @@ export default function PovertyEradicationPage() {
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
             Together, we can create a world where everyone has the opportunity to thrive.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Programs
             </a>
             <a
               href="/partners#volunteer"
-              className="relative z-20 bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
               Volunteer With Us
             </a>
