@@ -82,7 +82,7 @@ export default function UpcomingProjectsPage() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Funding Secured':
-        return 'bg-green-100 text-green-800';
+        return 'bg-cyan-100 text-cyan-800';
       case 'Planning Phase':
         return 'bg-blue-100 text-blue-800';
       case 'Partnership Development':
@@ -107,7 +107,7 @@ export default function UpcomingProjectsPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Upcoming Projects</h1>
@@ -218,7 +218,7 @@ export default function UpcomingProjectsPage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=partnership-opportunities-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Partnership Opportunities</h2>
@@ -248,7 +248,7 @@ export default function UpcomingProjectsPage() {
           <div className="text-center mt-12 relative z-20">
             <a
               href="/partners#hero"
-              className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Explore Partnership Opportunities
             </a>

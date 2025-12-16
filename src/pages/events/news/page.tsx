@@ -84,6 +84,7 @@ export default function LatestNewsPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=News%20and%20media%20with%20newspapers%20magazines%20and%20digital%20screens%20showing%20headlines%2C%20journalism%20and%20communication%2C%20professional%20news%20environment%2C%20high-quality%20photography&width=1920&height=800&seq=news-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Latest News
@@ -117,7 +118,7 @@ export default function LatestNewsPage() {
                   </div>
                   <div className="lg:col-span-2 p-8">
                     <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {article.category}
                       </span>
                       <span className="text-gray-500">{article.date}</span>
@@ -144,7 +145,7 @@ export default function LatestNewsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-orange-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Stay Informed
@@ -155,13 +156,13 @@ export default function LatestNewsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Subscribe to Newsletter
             </a>
             <a
               href="/events/news/press-releases"
-              className="bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-orange-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               View Press Releases
             </a>

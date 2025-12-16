@@ -3,7 +3,7 @@ export default function AccessibilityPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Accessibility Statement</h1>
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
@@ -74,124 +74,41 @@ export default function AccessibilityPage() {
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-text w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Text Alternatives</h3>
-                      <p className="text-gray-700 text-sm">All images include descriptive alt text for screen readers</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-text w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-keyboard-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Keyboard Navigation</h3>
-                      <p className="text-gray-700 text-sm">Full keyboard accessibility without requiring a mouse</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-keyboard-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-contrast-2-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Color Contrast</h3>
-                      <p className="text-gray-700 text-sm">Sufficient color contrast ratios for readability</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-contrast-2-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-font-size w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Resizable Text</h3>
-                      <p className="text-gray-700 text-sm">Text can be resized up to 200% without loss of functionality</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-font-size w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-layout-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Semantic HTML</h3>
-                      <p className="text-gray-700 text-sm">Proper heading structure and semantic markup</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-layout-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-focus-3-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Focus Indicators</h3>
-                      <p className="text-gray-700 text-sm">Clear visual focus indicators for keyboard navigation</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-focus-3-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-links-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Descriptive Links</h3>
-                      <p className="text-gray-700 text-sm">Link text clearly describes destination or purpose</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-links-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-file-list-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Form Labels</h3>
-                      <p className="text-gray-700 text-sm">All form fields have clear, associated labels</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-file-list-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-smartphone-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Responsive Design</h3>
-                      <p className="text-gray-700 text-sm">Mobile-friendly and works on various devices</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-smartphone-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-video-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Captions & Transcripts</h3>
-                      <p className="text-gray-700 text-sm">Video content includes captions and transcripts</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-video-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-error-warning-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Error Identification</h3>
-                      <p className="text-gray-700 text-sm">Clear error messages and correction suggestions</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-error-warning-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
-
-                <div className="bg-green-50 rounded-xl p-6">
-                  <div className="flex items-start mb-3">
-                    <i className="ri-time-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-2">Timing Adjustable</h3>
-                      <p className="text-gray-700 text-sm">Users can extend time limits when needed</p>
-                    </div>
-                  </div>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                  <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                 </div>
               </div>
             </div>

@@ -1,5 +1,8 @@
+import { useTranslation } from 'react-i18next';
 
 export default function FocusAreasSection() {
+  const { t } = useTranslation();
+  
   const focusAreas = [
     {
       title: 'Climate Crisis Response',
@@ -60,8 +63,8 @@ export default function FocusAreasSection() {
                 className="w-full h-48 object-cover"
               />
               <div className="p-6">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mb-4">
-                  <i className={`${area.icon} w-6 h-6 flex items-center justify-center text-white`}></i>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                  <i className={`${area.icon} text-3xl text-[#00D9FF]`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{area.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{area.description}</p>
@@ -71,12 +74,9 @@ export default function FocusAreasSection() {
         </div>
         
         <div className="text-center mt-12">
-          <a
-            href="/focus-areas"
-            className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Explore All Focus Areas
-          </a>
+          <button className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
+            {t('focusAreas.cta')}
+          </button>
         </div>
       </div>
     </section>

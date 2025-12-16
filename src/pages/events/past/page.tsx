@@ -149,6 +149,7 @@ export default function PastEventsPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Past%20conferences%20and%20events%2C%20professional%20conference%20setting%2C%20international%20gatherings%2C%20professional%20event%20photography&width=1920&height=1080&seq=past-events-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Past Events & Resources
@@ -182,7 +183,7 @@ export default function PastEventsPage() {
                   </div>
                   <div className="p-10">
                     <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {event.date}
                       </span>
                       <span className="text-blue-600 font-semibold">{event.attendees}</span>
@@ -260,7 +261,7 @@ export default function PastEventsPage() {
 
       {/* CTA Section */}
       <section 
-        className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 relative overflow-hidden"
+        className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#0A1E3D] relative overflow-hidden"
       >
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
@@ -268,7 +269,7 @@ export default function PastEventsPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Conference%20and%20event%20participation%2C%20professional%20networking%2C%20international%20collaboration%2C%20professional%20photography&width=1920&height=800&seq=past-events-cta&orientation=landscape)`
           }}
         />
-        <div className="absolute inset-0 bg-green-900/80"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Our Next Event
@@ -279,13 +280,13 @@ export default function PastEventsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/events/upcoming"
-              className="relative z-20 bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="relative z-20 bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               View Upcoming Events
             </a>
             <a
               href="/events/gallery"
-              className="relative z-20 bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="relative z-20 bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Browse Photo Gallery
             </a>

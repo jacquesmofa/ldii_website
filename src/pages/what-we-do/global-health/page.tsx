@@ -138,7 +138,7 @@ export default function GlobalHealthPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Health &amp; Resilience
@@ -278,7 +278,7 @@ export default function GlobalHealthPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactMetrics.map((metric, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold mb-2">{metric.number}</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">{metric.number}</div>
                 <div className="font-medium">{metric.label}</div>
               </div>
             ))}

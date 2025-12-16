@@ -1,4 +1,3 @@
-
 export default function EventsSection() {
   const upcomingEvents = [
     {
@@ -50,12 +49,12 @@ export default function EventsSection() {
 
   return (
     <section 
-      className="py-20 bg-gradient-to-br from-green-50 to-emerald-50 relative"
+      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative"
       style={{
         backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20corporate%20background%20with%20modern%20geometric%20patterns%2C%20light%20green%20and%20white%20gradient%2C%20elegant%20business%20aesthetic%2C%20clean%20minimalist%20design%2C%20soft%20professional%20lighting%2C%20contemporary%20office%20environment%2C%20high-quality%20corporate%20photography%20with%20subtle%20texture&width=1920&height=1200&seq=corporate-events-bg&orientation=landscape)`
       }}
     >
-      <div className="absolute inset-0 bg-green-50/85"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-50/85 to-gray-50/85"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -72,7 +71,7 @@ export default function EventsSection() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Upcoming Events</h3>
             <div className="space-y-6">
               {upcomingEvents.map((event, index) => (
-                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-lg transition-shadow border border-green-100">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-lg transition-shadow border border-corporate-blue-100">
                   <img
                     src={event.image}
                     alt={event.title}
@@ -80,7 +79,7 @@ export default function EventsSection() {
                   />
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-tech-teal-100 text-tech-teal-800 px-3 py-1 rounded-full text-sm font-semibold">
                         {event.type}
                       </span>
                       <span className="text-gray-500 text-sm">{event.date}</span>
@@ -102,9 +101,9 @@ export default function EventsSection() {
             <h3 className="text-2xl font-bold text-gray-900 mb-8">Latest News</h3>
             <div className="space-y-6">
               {recentNews.map((news, index) => (
-                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-green-600 shadow-sm">
+                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-corporate-blue-600 shadow-sm">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold">
+                    <span className="bg-[#00D9FF] text-[#0A1E3D] px-2 py-1 rounded text-xs font-semibold">
                       {news.category}
                     </span>
                     <span className="text-gray-500 text-sm">{news.date}</span>
@@ -118,7 +117,7 @@ export default function EventsSection() {
             <div className="mt-8">
               <a
                 href="/events"
-                className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap shadow-lg"
+                className="bg-tech-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap shadow-lg"
               >
                 View All News & Events
               </a>

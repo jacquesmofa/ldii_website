@@ -166,6 +166,7 @@ info@ldiinitiatives.org
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20press%20room%20with%20microphones%20and%20media%20equipment%2C%20press%20conference%20setup%2C%20journalism%20and%20media%20relations%2C%20high-quality%20photography&width=1920&height=800&seq=press-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Press Releases
@@ -190,7 +191,7 @@ info@ldiinitiatives.org
             {pressReleases.map((release, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-center flex-wrap gap-3 mb-4">
-                  <span className="bg-gray-800 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                     {release.type}
                   </span>
                   <span className="text-gray-500">{release.date}</span>
@@ -206,7 +207,7 @@ info@ldiinitiatives.org
                 
                 <div className="flex items-center justify-between">
                   <span className="text-gray-500 text-sm">Contact: {release.contact}</span>
-                  <button className="text-gray-800 hover:text-gray-900 font-semibold cursor-pointer inline-flex items-center space-x-2">
+                  <button className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
                     <i className="ri-download-line w-4 h-4 flex items-center justify-center"></i>
                     <span>Download PDF</span>
                   </button>
@@ -250,7 +251,7 @@ info@ldiinitiatives.org
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Media Resources
@@ -261,13 +262,13 @@ info@ldiinitiatives.org
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact#media"
-              className="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Contact Media Team
             </a>
             <a
               href="/events/news"
-              className="bg-gray-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-600 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               View Latest News
             </a>

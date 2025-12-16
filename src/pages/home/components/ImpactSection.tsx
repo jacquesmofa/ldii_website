@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 
 export default function ImpactSection() {
@@ -102,13 +101,10 @@ export default function ImpactSection() {
 
   return (
     <section 
-      className="py-20 relative overflow-hidden"
-      style={{
-        backgroundImage: `url(https://readdy.ai/api/search-image?query=Beautiful%20global%20environmental%20landscape%20with%20lush%20green%20forests%2C%20mountains%2C%20rivers%2C%20and%20sustainable%20communities%2C%20aerial%20view%20of%20reforestation%20projects%2C%20vibrant%20green%20nature%2C%20environmental%20conservation%2C%20climate%20resilience%2C%20beautiful%20earth%20from%20above%2C%20professional%20environmental%20photography%20with%20natural%20lighting%20and%20rich%20green%20colors&width=1920&height=1200&seq=global-impact-bg&orientation=landscape)`
-      }}
+      className="py-20 bg-gradient-to-br from-[#0A1E3D] via-[#1a2f4d] to-[#6600CC] relative overflow-hidden"
     >
-      {/* Background overlay with light green color and special effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-600/85 via-emerald-600/80 to-green-700/85"></div>
+      {/* Background overlay with corporate blue and digital purple gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-600/85 via-corporate-blue-700/80 to-digital-purple-700/85"></div>
       
       {/* Floating animated elements for special effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -130,8 +126,8 @@ export default function ImpactSection() {
         </div>
         
         {/* Gradient overlays for depth */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-green-600/20 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-green-700/30 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-corporate-blue-600/20 to-transparent"></div>
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-digital-purple-700/30 to-transparent"></div>
       </div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
@@ -149,7 +145,7 @@ export default function ImpactSection() {
           {impactStats.map((stat, index) => (
             <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-swing-in group" style={{ animationDelay: `${index * 200}ms` }}>
               <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 animate-number-swing drop-shadow-lg group-hover:text-green-100 transition-colors" style={{ animationDelay: `${index * 200}ms` }}>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2 animate-number-swing drop-shadow-lg group-hover:text-tech-teal-200 transition-colors" style={{ animationDelay: `${index * 200}ms` }}>
                   {stat.key === 'trees' ? `${animatedStats.trees}K+` :
                    stat.key === 'partners' ? `${animatedStats.partners}+` :
                    stat.key === 'years' ? `${animatedStats.years}+` :
@@ -182,7 +178,7 @@ export default function ImpactSection() {
         <div className="text-center mt-12">
           <a
             href="/impact"
-            className="bg-white/90 text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:scale-105 transition-all duration-300 cursor-pointer whitespace-nowrap shadow-xl backdrop-blur-sm border border-white/30"
+            className="bg-white/90 text-corporate-blue-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:scale-105 transition-all duration-300 cursor-pointer whitespace-nowrap shadow-xl backdrop-blur-sm border border-white/30"
           >
             View Full Impact Report
           </a>

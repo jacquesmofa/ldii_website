@@ -168,7 +168,7 @@ export default function FAQPage() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between cursor-pointer hover:bg-gray-50 transition-colors"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-300 border-b-2 border-transparent hover:border-[#00D9FF]"
                 >
                   <div className="flex-1">
                     <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-2">
@@ -178,8 +178,12 @@ export default function FAQPage() {
                       {faq.question}
                     </h3>
                   </div>
-                  <div className={`ml-4 transform transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''}`}>
-                    <i className="ri-arrow-down-s-line text-2xl text-gray-600"></i>
+                  <div className={`ml-4 transform transition-transform duration-300 ${
+                    openIndex === index ? 'rotate-180' : ''
+                  }`}>
+                    <i className="ri-arrow-down-s-line text-2xl transition-colors duration-300 ${
+                      openIndex === index ? 'text-[#00D9FF]' : 'text-gray-400'
+                    }"></i>
                   </div>
                 </button>
                 

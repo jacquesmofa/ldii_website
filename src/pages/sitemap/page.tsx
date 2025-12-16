@@ -109,6 +109,7 @@ export default function SitemapPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section id="hero" className="bg-gradient-to-br from-green-600 to-emerald-700 py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl font-bold text-white mb-6">
             Sitemap

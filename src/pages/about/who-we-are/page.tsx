@@ -79,7 +79,7 @@ export default function WhoWeArePage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Who We Are
@@ -117,11 +117,11 @@ export default function WhoWeArePage() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-teal-600 mb-2">45+</div>
+                  <div className="text-3xl font-bold text-cyan-500 mb-2">45+</div>
                   <div className="text-gray-600">Team Members</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-teal-600 mb-2">25+</div>
+                  <div className="text-3xl font-bold text-cyan-500 mb-2">25+</div>
                   <div className="text-gray-600">Nationalities</div>
                 </div>
               </div>
@@ -156,7 +156,7 @@ export default function WhoWeArePage() {
                   className="w-full h-64 object-cover rounded-xl mb-4"
                 />
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h3>
-                <p className="text-teal-600 font-semibold mb-3">{leader.position}</p>
+                <p className="text-cyan-500 font-semibold mb-3">{leader.position}</p>
                 <p className="text-gray-600 text-sm leading-relaxed">{leader.bio}</p>
               </div>
             ))}
@@ -178,7 +178,7 @@ export default function WhoWeArePage() {
             {team.map((dept, index) => (
               <div key={index} className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mr-4">
                     <span className="text-white font-bold text-lg">{dept.members}</span>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900">{dept.department}</h3>
@@ -228,7 +228,7 @@ export default function WhoWeArePage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20career%20opportunities%20diverse%20team%20recruitment%20global%20organization%20hiring%20talented%20professionals%20modern%20workplace%20culture%20international%20team%20building%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=join-team-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Our Global Team

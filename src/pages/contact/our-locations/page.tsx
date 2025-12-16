@@ -53,11 +53,11 @@ export default function OurLocationsPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-[#0A1E3D] to-[#0A1E3D] text-white py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Our Locations</h1>
-          <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl">
             With offices across Canada and Africa, we're positioned to serve communities globally
           </p>
         </div>
@@ -88,7 +88,9 @@ export default function OurLocationsPage() {
                     
                     <div className="space-y-4 mb-6">
                       <div className="flex items-start">
-                        <i className="ri-map-pin-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
+                        <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
+                          <i className="ri-map-pin-line text-3xl text-[#00D9FF]"></i>
+                        </div>
                         <div>
                           <div className="font-semibold text-gray-900">{office.address}</div>
                           <div className="text-gray-600">{office.city}</div>
@@ -97,21 +99,21 @@ export default function OurLocationsPage() {
                       </div>
                       
                       <div className="flex items-center">
-                        <i className="ri-phone-line w-6 h-6 flex items-center justify-center text-green-600 mr-3"></i>
-                        <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-gray-700 hover:text-green-600 transition-colors">
+                        <i className="ri-phone-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3"></i>
+                        <a href={`tel:${office.phone.replace(/\s/g, '')}`} className="text-gray-700 hover:text-[#00D9FF] transition-colors">
                           {office.phone}
                         </a>
                       </div>
                       
                       <div className="flex items-center">
-                        <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-green-600 mr-3"></i>
-                        <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-green-600 transition-colors">
+                        <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3"></i>
+                        <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-[#00D9FF] transition-colors">
                           {office.email}
                         </a>
                       </div>
                       
                       <div className="flex items-start">
-                        <i className="ri-time-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
+                        <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
                         <div className="text-gray-700">{office.hours}</div>
                       </div>
                     </div>
@@ -121,14 +123,14 @@ export default function OurLocationsPage() {
                         href={office.mapUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors cursor-pointer whitespace-nowrap"
+                        className="inline-flex items-center px-6 py-3 bg-[#00D9FF] hover:bg-[#00C4E6] text-[#0A1E3D] font-semibold rounded-lg transition-colors cursor-pointer whitespace-nowrap"
                       >
                         <i className="ri-map-line w-5 h-5 flex items-center justify-center mr-2"></i>
                         View on Map
                       </a>
                       <a
                         href="/contact#get-in-touch"
-                        className="inline-flex items-center px-6 py-3 border-2 border-green-600 text-green-600 hover:bg-green-50 font-semibold rounded-lg transition-colors cursor-pointer whitespace-nowrap"
+                        className="inline-flex items-center px-6 py-3 border-2 border-[#00D9FF] text-[#00D9FF] hover:bg-[#00D9FF]/10 font-semibold rounded-lg transition-colors cursor-pointer whitespace-nowrap"
                       >
                         <i className="ri-mail-line w-5 h-5 flex items-center justify-center mr-2"></i>
                         Contact This Office
@@ -159,7 +161,7 @@ export default function OurLocationsPage() {
       {/* Global Presence */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8 md:p-12 shadow-xl">
+          <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12 shadow-xl">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Global Presence</h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -169,19 +171,19 @@ export default function OurLocationsPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">50+</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">50+</div>
                 <div className="text-gray-600">Countries</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">4</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">4</div>
                 <div className="text-gray-600">Global Offices</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">200+</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">200+</div>
                 <div className="text-gray-600">Field Locations</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-green-600 mb-2">1000+</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">1000+</div>
                 <div className="text-gray-600">Local Partners</div>
               </div>
             </div>
@@ -190,15 +192,15 @@ export default function OurLocationsPage() {
       </section>
 
       {/* Visit Us CTA */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-[#0A1E3D] text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Plan Your Visit</h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             We welcome visitors to our offices. Please contact us in advance to schedule an appointment.
           </p>
           <a
             href="/contact#get-in-touch"
-            className="inline-block bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
+            className="inline-block bg-[#00D9FF] text-[#0A1E3D] hover:bg-[#00C4E6] px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
           >
             Schedule a Visit
           </a>

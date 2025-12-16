@@ -84,7 +84,7 @@ export default function GetInTouchPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Get in Touch</h1>
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
@@ -133,7 +133,7 @@ export default function GetInTouchPage() {
                     name="firstName"
                     value={formData.firstName}
                     onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     required
                   />
                 </div>
@@ -144,7 +144,7 @@ export default function GetInTouchPage() {
                     name="lastName"
                     value={formData.lastName}
                     onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     required
                   />
                 </div>
@@ -158,7 +158,7 @@ export default function GetInTouchPage() {
                     name="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     required
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function GetInTouchPage() {
                     name="phone"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                   />
                 </div>
               </div>
@@ -202,7 +202,7 @@ export default function GetInTouchPage() {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   rows={6}
                   maxLength={500}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] resize-none text-base"
                   placeholder="Tell us how we can help you..."
                   required
                 ></textarea>
@@ -211,7 +211,7 @@ export default function GetInTouchPage() {
 
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap"
+                className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-50"
               >
                 Send Message
               </button>

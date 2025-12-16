@@ -84,7 +84,7 @@ export default function PastProjectsPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Past Projects</h1>
@@ -121,19 +121,19 @@ export default function PastProjectsPage() {
           {/* Impact Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-green-600 mb-2">25+</div>
+              <div className="text-3xl font-bold text-[#00D9FF] mb-2">25+</div>
               <div className="text-gray-600">Completed Projects</div>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-green-600 mb-2">15</div>
+              <div className="text-3xl font-bold text-[#00D9FF] mb-2">15</div>
               <div className="text-gray-600">Countries Reached</div>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-green-600 mb-2">5M+</div>
+              <div className="text-3xl font-bold text-[#00D9FF] mb-2">5M+</div>
               <div className="text-gray-600">Lives Impacted</div>
             </div>
             <div className="text-center bg-white p-6 rounded-lg shadow-md">
-              <div className="text-3xl font-bold text-green-600 mb-2">$50M+</div>
+              <div className="text-3xl font-bold text-[#00D9FF] mb-2">$50M+</div>
               <div className="text-gray-600">Total Investment</div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function PastProjectsPage() {
                 <div className="lg:w-1/2">
                   <div className="bg-white p-8 rounded-lg shadow-lg">
                     <div className="flex items-center gap-4 mb-4">
-                      <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {project.period}
                       </span>
                       <span className="text-gray-500 text-sm">
@@ -167,7 +167,7 @@ export default function PastProjectsPage() {
                       <ul className="space-y-2">
                         {project.outcomes.map((outcome, outcomeIndex) => (
                           <li key={outcomeIndex} className="flex items-start">
-                            <i className="ri-check-line text-green-600 mr-2 mt-1"></i>
+                            <i className="ri-check-line text-[#00D9FF] mr-2 mt-1"></i>
                             <span className="text-gray-600">{outcome}</span>
                           </li>
                         ))}
@@ -189,7 +189,7 @@ export default function PastProjectsPage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=cta-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">Ready to Create Impact Together?</h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
@@ -198,13 +198,13 @@ export default function PastProjectsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/donate#hero"
-              className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/contact#hero"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#0A1E3D] transition-colors cursor-pointer whitespace-nowrap"
             >
               Partner With Us
             </a>

@@ -1,8 +1,8 @@
-
 import { useState, useEffect } from 'react';
 
 export default function TechnologyAIResearchPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
 
   const heroImages = [
     'https://readdy.ai/api/search-image?query=Modern%20corporate%20boardroom%20with%20AI%20technology%20displays%2C%20business%20executives%20analyzing%20artificial%20intelligence%20data%20on%20large%20screens%2C%20futuristic%20technology%20integration%20in%20professional%20setting%2C%20ultra%20high%20definition%208k%20photography%20with%20dramatic%20lighting%20and%20glass%20architecture&width=1920&height=800&seq=tech-ai-hero-1&orientation=landscape',
@@ -19,6 +19,13 @@ export default function TechnologyAIResearchPage() {
     return () => clearInterval(interval);
   }, [heroImages.length]);
 
+  const toggleSection = (sectionId: string) => {
+    setExpandedSections(prev => ({
+      ...prev,
+      [sectionId]: !prev[sectionId]
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Image Slider */}
@@ -34,7 +41,7 @@ export default function TechnologyAIResearchPage() {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${image})` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
           </div>
         ))}
         
@@ -49,13 +56,13 @@ export default function TechnologyAIResearchPage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact"
-                className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap inline-block"
+                className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap inline-block"
               >
                 Partner With Us
               </a>
               <a
                 href="#our-approach"
-                className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
+                className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
               >
                 Learn More
               </a>
@@ -79,7 +86,7 @@ export default function TechnologyAIResearchPage() {
       </section>
 
       {/* Mission Statement Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#194A84] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Mission</h2>
@@ -117,7 +124,7 @@ export default function TechnologyAIResearchPage() {
               <img
                 src="https://readdy.ai/api/search-image?query=Diverse%20team%20of%20AI%20researchers%20and%20technology%20experts%20collaborating%20on%20innovation%20project%2C%20international%20cooperation%20in%20artificial%20intelligence%20development%2C%20modern%20research%20facility%20with%20advanced%20technology%2C%20professional%20photography%20with%20inspiring%20atmosphere&width=800&height=600&seq=tech-intro&orientation=landscape"
                 alt="Technology Research Collaboration"
-                className="w-full h-full object-cover rounded-2xl shadow-lg"
+                className="w-full h-full object-cover object-top rounded-2xl shadow-lg"
               />
             </div>
           </div>
@@ -142,49 +149,60 @@ export default function TechnologyAIResearchPage() {
                   <img
                     src="https://readdy.ai/api/search-image?query=Digital%20transformation%20and%20smart%20city%20technology%20infrastructure%2C%20modern%20data%20centers%2C%20cloud%20computing%20systems%2C%20enterprise%20technology%20platforms%2C%20government%20digital%20services%2C%20ultra%20high%20definition%208k%20photography%20with%20futuristic%20blue%20lighting&width=800&height=600&seq=digital-transform&orientation=landscape"
                     alt="Digital Transformation"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                      <i className="ri-computer-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                    <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                      <i className="ri-computer-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">Technology & Digital Transformation</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     We guide national and enterprise-level digital transformation strategies that modernize infrastructure, enhance service delivery, and build scalable digital ecosystems.
                   </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">National and enterprise digital transformation strategies</span>
+                  
+                  <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar1'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                    <div className="space-y-3 mb-6">
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">National and enterprise digital transformation strategies</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">E-government and smart public services modernization</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">AI, cloud, and data infrastructure road-mapping</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Digital health, fintech, GovTech, and EdTech platforms</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Automation, workflow digitization, and legacy system transformation</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Cybersecurity, digital identity, and data protection architecture</span>
+                      </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">E-government and smart public services modernization</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">AI, cloud, and data infrastructure road-mapping</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Digital health, fintech, GovTech, and EdTech platforms</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Automation, workflow digitization, and legacy system transformation</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Cybersecurity, digital identity, and data protection architecture</span>
+                    <div className="bg-[#00D9FF]/10 rounded-lg p-4">
+                      <strong className="text-[#0A1E3D]">Impact:</strong>
+                      <p className="text-gray-700 mt-2">Increased efficiency, reduced service delivery costs, improved trust, and scalable infrastructure.</p>
                     </div>
                   </div>
-                  <div className="mt-6 bg-green-50 rounded-lg p-4">
-                    <strong className="text-green-900">Impact:</strong>
-                    <p className="text-gray-700 mt-2">Increased efficiency, reduced service delivery costs, improved trust, and scalable infrastructure.</p>
-                  </div>
+                  
+                  <button
+                    onClick={() => toggleSection('pillar1')}
+                    className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                  >
+                    {expandedSections['pillar1'] ? 'Read Less' : 'Read More'}
+                    <i className={`ri-arrow-${expandedSections['pillar1'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -195,39 +213,50 @@ export default function TechnologyAIResearchPage() {
                 <div className="w-full h-96 lg:h-auto order-2 lg:order-1">
                   <div className="p-8 lg:p-12 h-full flex flex-col justify-center">
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                        <i className="ri-shield-check-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                      <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                        <i className="ri-shield-check-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-900">AI Governance, Safety & Policy Frameworks</h3>
                     </div>
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
                       Developing ethical frameworks, regulatory guidelines, and governance structures that ensure artificial intelligence is deployed responsibly, transparently, and in alignment with international standards.
                     </p>
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">National AI policy and regulatory frameworks</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Algorithmic audits and responsible procurement</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Risk classification and AI ethics boards</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Aligned with OECD, UNESCO, ISO, and GPAI standards</span>
+                    
+                    <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar2'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                      <div className="space-y-3 mb-6">
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">National AI policy and regulatory frameworks</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Algorithmic audits and responsible procurement</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Risk classification and AI ethics boards</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Aligned with OECD, UNESCO, ISO, and GPAI standards</span>
+                        </div>
                       </div>
                     </div>
+                    
+                    <button
+                      onClick={() => toggleSection('pillar2')}
+                      className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                    >
+                      {expandedSections['pillar2'] ? 'Read Less' : 'Read More'}
+                      <i className={`ri-arrow-${expandedSections['pillar2'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                    </button>
                   </div>
                 </div>
                 <div className="w-full h-96 lg:h-auto order-1 lg:order-2">
                   <img
                     src="https://readdy.ai/api/search-image?query=AI%20ethics%20committee%20meeting%20with%20diverse%20stakeholders%2C%20policymakers%20discussing%20artificial%20intelligence%20governance%2C%20regulatory%20framework%20development%2C%20professional%20conference%20room%2C%20high-quality%20photography%20with%20serious%20professional%20atmosphere&width=800&height=600&seq=ai-governance-main&orientation=landscape"
                     alt="AI Governance"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
@@ -240,44 +269,55 @@ export default function TechnologyAIResearchPage() {
                   <img
                     src="https://readdy.ai/api/search-image?query=Research%20scientists%20analyzing%20AI%20and%20technology%20data%2C%20advanced%20research%20laboratory%20with%20computer%20systems%2C%20data%20visualization%20on%20screens%2C%20collaborative%20research%20environment%2C%20professional%20photography%20with%20high-tech%20atmosphere&width=800&height=600&seq=research-main&orientation=landscape"
                     alt="AI Research"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                      <i className="ri-microscope-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                    <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                      <i className="ri-microscope-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">AI & Emerging Technology Research</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     Conducting cutting-edge research on emerging technologies, their societal impacts, and optimal implementation strategies, producing evidence-based insights that inform policy and practice globally.
                   </p>
-                  <div className="bg-green-50 rounded-xl p-6 mb-6">
-                    <h4 className="font-bold text-gray-900 mb-4">Research Focus Areas:</h4>
-                    <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                        <span className="text-gray-700">AI in health, education, agriculture, and governance</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                        <span className="text-gray-700">Automation impact on labor markets</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                        <span className="text-gray-700">Data governance and cybersecurity</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                        <span className="text-gray-700">Smart cities and digital inclusion</span>
-                      </li>
-                    </ul>
+                  
+                  <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar3'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                    <div className="bg-[#00D9FF]/10 rounded-xl p-6 mb-6">
+                      <h4 className="font-bold text-gray-900 mb-4">Research Focus Areas:</h4>
+                      <ul className="space-y-2">
+                        <li className="flex items-start space-x-2">
+                          <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-0.5"></i>
+                          <span className="text-gray-700">AI in health, education, agriculture, and governance</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-0.5"></i>
+                          <span className="text-gray-700">Automation impact on labor markets</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-0.5"></i>
+                          <span className="text-gray-700">Data governance and cybersecurity</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <i className="ri-arrow-right-s-line w-5 h-5 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-0.5"></i>
+                          <span className="text-gray-700">Smart cities and digital inclusion</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="bg-[#0A1E3D]/10 rounded-lg p-4">
+                      <strong className="text-[#0A1E3D]">Research Outputs:</strong>
+                      <p className="text-gray-700 mt-2">Policy papers, ecosystem mapping, readiness studies, and implementation guidelines.</p>
+                    </div>
                   </div>
-                  <div className="bg-blue-50 rounded-lg p-4">
-                    <strong className="text-blue-900">Research Outputs:</strong>
-                    <p className="text-gray-700 mt-2">Policy papers, ecosystem mapping, readiness studies, and implementation guidelines.</p>
-                  </div>
+                  
+                  <button
+                    onClick={() => toggleSection('pillar3')}
+                    className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                  >
+                    {expandedSections['pillar3'] ? 'Read Less' : 'Read More'}
+                    <i className={`ri-arrow-${expandedSections['pillar3'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -288,43 +328,54 @@ export default function TechnologyAIResearchPage() {
                 <div className="w-full h-96 lg:h-auto order-2 lg:order-1">
                   <div className="p-8 lg:p-12 h-full flex flex-col justify-center">
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                        <i className="ri-building-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                      <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                        <i className="ri-building-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-900">National & Institutional AI Ecosystem Development</h3>
                     </div>
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
                       Building comprehensive AI ecosystems that foster innovation, entrepreneurship, and sustainable growth through strategic infrastructure and support systems.
                     </p>
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">AI innovation hubs and centers of excellence</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Startup acceleration and incubation programs</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Workforce reskilling and upskilling initiatives</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Venture capital mobilization and investment facilitation</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Public sector AI systems deployment</span>
+                    
+                    <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar4'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                      <div className="space-y-3">
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">AI innovation hubs and centers of excellence</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Startup acceleration and incubation programs</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Workforce reskilling and upskilling initiatives</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Venture capital mobilization and investment facilitation</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Public sector AI systems deployment</span>
+                        </div>
                       </div>
                     </div>
+                    
+                    <button
+                      onClick={() => toggleSection('pillar4')}
+                      className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                    >
+                      {expandedSections['pillar4'] ? 'Read Less' : 'Read More'}
+                      <i className={`ri-arrow-${expandedSections['pillar4'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                    </button>
                   </div>
                 </div>
                 <div className="w-full h-96 lg:h-auto order-1 lg:order-2">
                   <img
                     src="https://readdy.ai/api/search-image?query=Innovation%20hub%20with%20startups%20developing%20AI%20solutions%2C%20technology%20incubator%20space%2C%20entrepreneurs%20working%20on%20artificial%20intelligence%20projects%2C%20modern%20coworking%20environment%2C%20ultra%20high%20definition%208k%20photography%20with%20vibrant%20creative%20atmosphere&width=800&height=600&seq=ecosystem-dev&orientation=landscape"
                     alt="AI Ecosystem Development"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
@@ -337,41 +388,52 @@ export default function TechnologyAIResearchPage() {
                   <img
                     src="https://readdy.ai/api/search-image?query=Professional%20training%20workshop%20for%20AI%20and%20technology%20leadership%2C%20diverse%20executives%20in%20modern%20classroom%2C%20digital%20skills%20development%2C%20capacity%20building%20program%2C%20professional%20photography%20with%20collaborative%20learning%20atmosphere&width=800&height=600&seq=capacity-building&orientation=landscape"
                     alt="Capacity Building"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
                 <div className="p-8 lg:p-12">
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                      <i className="ri-team-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                    <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                      <i className="ri-team-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">AI Capacity Building, Leadership & Talent Development</h3>
                   </div>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
                     Empowering leaders, professionals, and communities with the knowledge and skills needed to thrive in the AI-driven economy through comprehensive training programs.
                   </p>
-                  <div className="space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Executive AI bootcamps and leadership programs</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Regulator training and policy maker education</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Digital academies and technical skills development</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Youth innovation labs and STEM programs</span>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                      <span className="text-gray-700">Women in AI leadership initiatives</span>
+                  
+                  <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar5'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                    <div className="space-y-3">
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Executive AI bootcamps and leadership programs</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Regulator training and policy maker education</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Digital academies and technical skills development</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Youth innovation labs and STEM programs</span>
+                      </div>
+                      <div className="flex items-start space-x-3">
+                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                        <span className="text-gray-700">Women in AI leadership initiatives</span>
+                      </div>
                     </div>
                   </div>
+                  
+                  <button
+                    onClick={() => toggleSection('pillar5')}
+                    className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                  >
+                    {expandedSections['pillar5'] ? 'Read Less' : 'Read More'}
+                    <i className={`ri-arrow-${expandedSections['pillar5'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                  </button>
                 </div>
               </div>
             </div>
@@ -382,39 +444,50 @@ export default function TechnologyAIResearchPage() {
                 <div className="w-full h-96 lg:h-auto order-2 lg:order-1">
                   <div className="p-8 lg:p-12 h-full flex flex-col justify-center">
                     <div className="flex items-center mb-6">
-                      <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mr-4">
-                        <i className="ri-shield-user-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+                      <div className="w-16 h-16 flex items-center justify-center bg-[#00D9FF]/20 rounded-full mr-4">
+                        <i className="ri-shield-user-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
                       </div>
                       <h3 className="text-3xl font-bold text-gray-900">Data Governance, Digital Rights & Cybersecurity</h3>
                     </div>
                     <p className="text-lg text-gray-700 leading-relaxed mb-6">
                       Establishing robust frameworks for data protection, digital rights, and cybersecurity that safeguard individuals and institutions while enabling innovation.
                     </p>
-                    <div className="space-y-3">
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">National data strategies and governance frameworks</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Digital identity systems and privacy protection</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">Cyber resilience and security infrastructure</span>
-                      </div>
-                      <div className="flex items-start space-x-3">
-                        <i className="ri-check-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
-                        <span className="text-gray-700">AI accountability and transparency systems</span>
+                    
+                    <div className={`overflow-hidden transition-all duration-500 ${expandedSections['pillar6'] ? 'max-h-[2000px]' : 'max-h-0'}`}>
+                      <div className="space-y-3">
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">National data strategies and governance frameworks</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Digital identity systems and privacy protection</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">Cyber resilience and security infrastructure</span>
+                        </div>
+                        <div className="flex items-start space-x-3">
+                          <i className="ri-check-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
+                          <span className="text-gray-700">AI accountability and transparency systems</span>
+                        </div>
                       </div>
                     </div>
+                    
+                    <button
+                      onClick={() => toggleSection('pillar6')}
+                      className="mt-4 text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
+                    >
+                      {expandedSections['pillar6'] ? 'Read Less' : 'Read More'}
+                      <i className={`ri-arrow-${expandedSections['pillar6'] ? 'up' : 'down'}-s-line w-5 h-5 flex items-center justify-center ml-1`}></i>
+                    </button>
                   </div>
                 </div>
                 <div className="w-full h-96 lg:h-auto order-1 lg:order-2">
                   <img
                     src="https://readdy.ai/api/search-image?query=Cybersecurity%20operations%20center%20with%20professionals%20monitoring%20data%20security%2C%20digital%20rights%20protection%2C%20secure%20network%20infrastructure%2C%20modern%20security%20command%20center%2C%20ultra%20high%20definition%208k%20photography%20with%20blue%20tech%20lighting&width=800&height=600&seq=cybersecurity&orientation=landscape"
                     alt="Data Governance & Cybersecurity"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
@@ -510,27 +583,27 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mb-4 text-xl font-bold">1</div>
+              <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF] text-[#0A1E3D] rounded-full mb-4 text-xl font-bold">1</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Strategic Readiness</h3>
               <p className="text-gray-700 text-sm">Assessment, visioning, and strategic planning</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mb-4 text-xl font-bold">2</div>
+              <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF] text-[#0A1E3D] rounded-full mb-4 text-xl font-bold">2</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Governance & Policy Design</h3>
               <p className="text-gray-700 text-sm">Framework development and regulatory alignment</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mb-4 text-xl font-bold">3</div>
+              <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF] text-[#0A1E3D] rounded-full mb-4 text-xl font-bold">3</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technology Infrastructure</h3>
               <p className="text-gray-700 text-sm">Platform deployment and system integration</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mb-4 text-xl font-bold">4</div>
+              <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF] text-[#0A1E3D] rounded-full mb-4 text-xl font-bold">4</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Talent & Skills Development</h3>
               <p className="text-gray-700 text-sm">Capacity building and workforce transformation</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-              <div className="w-12 h-12 flex items-center justify-center bg-green-600 text-white rounded-full mb-4 text-xl font-bold">5</div>
+              <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF] text-[#0A1E3D] rounded-full mb-4 text-xl font-bold">5</div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Scale & Commercialization</h3>
               <p className="text-gray-700 text-sm">Expansion, optimization, and sustainability</p>
             </div>
@@ -561,8 +634,8 @@ export default function TechnologyAIResearchPage() {
               <div className="space-y-6">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full flex-shrink-0">
-                      <i className="ri-government-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                    <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF]/20 rounded-full flex-shrink-0">
+                      <i className="ri-government-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Policy Development</h4>
@@ -572,8 +645,8 @@ export default function TechnologyAIResearchPage() {
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full flex-shrink-0">
-                      <i className="ri-scales-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                    <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF]/20 rounded-full flex-shrink-0">
+                      <i className="ri-scales-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Ethical Frameworks</h4>
@@ -583,8 +656,8 @@ export default function TechnologyAIResearchPage() {
                 </div>
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full flex-shrink-0">
-                      <i className="ri-team-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                    <div className="w-12 h-12 flex items-center justify-center bg-[#00D9FF]/20 rounded-full flex-shrink-0">
+                      <i className="ri-team-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                     </div>
                     <div>
                       <h4 className="font-bold text-gray-900 mb-2">Multi-Stakeholder Dialogue</h4>
@@ -609,43 +682,43 @@ export default function TechnologyAIResearchPage() {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-user-shield-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-user-shield-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Privacy & Data Protection</h4>
                 <p className="text-gray-700">Ensuring AI systems respect individual privacy and handle data responsibly with robust protection mechanisms.</p>
               </div>
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-contrast-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-contrast-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Bias & Fairness</h4>
                 <p className="text-gray-700">Addressing algorithmic bias and ensuring AI systems treat all individuals and groups fairly and equitably.</p>
               </div>
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-eye-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-eye-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Transparency & Explainability</h4>
                 <p className="text-gray-700">Promoting AI systems that are understandable and whose decision-making processes can be explained and audited.</p>
               </div>
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-shield-check-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-shield-check-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Safety & Security</h4>
                 <p className="text-gray-700">Establishing standards for AI system safety, robustness, and protection against malicious use or unintended harms.</p>
               </div>
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-hand-heart-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-hand-heart-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Human Rights Alignment</h4>
                 <p className="text-gray-700">Ensuring AI development and deployment respect and uphold fundamental human rights and dignity.</p>
               </div>
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                  <i className="ri-global-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+                <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                  <i className="ri-global-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
                 </div>
                 <h4 className="text-xl font-bold text-gray-900 mb-3">Global Cooperation</h4>
                 <p className="text-gray-700">Fostering international collaboration on AI governance to address cross-border challenges and harmonize approaches.</p>
@@ -672,7 +745,7 @@ export default function TechnologyAIResearchPage() {
               <img
                 src="https://readdy.ai/api/search-image?query=Research%20scientists%20analyzing%20AI%20and%20technology%20data%2C%20advanced%20research%20laboratory%20with%20computer%20systems%2C%20data%20visualization%20on%20screens%2C%20collaborative%20research%20environment%2C%20professional%20photography%20with%20high-tech%20atmosphere&width=800&height=600&seq=research-1&orientation=landscape"
                 alt="Technology Research Laboratory"
-                className="w-full h-full object-cover rounded-2xl shadow-lg"
+                className="w-full h-full object-cover object-top rounded-2xl shadow-lg"
               />
             </div>
             <div>
@@ -684,28 +757,28 @@ export default function TechnologyAIResearchPage() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <i className="ri-flask-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
+                  <i className="ri-flask-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
                   <div>
                     <strong className="text-gray-900">Applied AI Research:</strong>
                     <p className="text-gray-700">Investigating AI applications in healthcare, agriculture, education, and climate action for development contexts.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <i className="ri-line-chart-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
+                  <i className="ri-line-chart-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
                   <div>
                     <strong className="text-gray-900">Impact Assessment:</strong>
                     <p className="text-gray-700">Evaluating the social, economic, and environmental impacts of technology interventions.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <i className="ri-book-open-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
+                  <i className="ri-book-open-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
                   <div>
                     <strong className="text-gray-900">Policy Research:</strong>
                     <p className="text-gray-700">Analyzing regulatory approaches, governance models, and policy effectiveness across jurisdictions.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <i className="ri-lightbulb-line w-6 h-6 flex items-center justify-center text-green-600 flex-shrink-0 mt-1"></i>
+                  <i className="ri-lightbulb-line w-6 h-6 flex items-center justify-center text-[#00D9FF] flex-shrink-0 mt-1"></i>
                   <div>
                     <strong className="text-gray-900">Innovation Studies:</strong>
                     <p className="text-gray-700">Examining innovation ecosystems, technology adoption patterns, and barriers to implementation.</p>
@@ -715,7 +788,7 @@ export default function TechnologyAIResearchPage() {
             </div>
           </div>
 
-          <div className="bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl p-8 lg:p-12 text-white mb-16">
+          <div className="bg-gradient-to-br from-[#0A1E3D] to-[#194A84] rounded-2xl p-8 lg:p-12 text-white mb-16">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="text-3xl font-bold mb-6">Research Partnerships</h3>
@@ -753,8 +826,8 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-gray-50 rounded-xl p-8">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-6">
-                <i className="ri-file-text-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-file-text-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Publications & Reports</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -762,15 +835,15 @@ export default function TechnologyAIResearchPage() {
               </p>
               <a
                 href="/contact"
-                className="text-green-600 hover:text-green-700 font-semibold cursor-pointer inline-flex items-center"
+                className="text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
               >
                 Access Research Library
                 <i className="ri-arrow-right-line w-5 h-5 flex items-center justify-center ml-2"></i>
               </a>
             </div>
             <div className="bg-gray-50 rounded-xl p-8">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mb-6">
-                <i className="ri-presentation-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-presentation-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Knowledge Dissemination</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -778,7 +851,7 @@ export default function TechnologyAIResearchPage() {
               </p>
               <a
                 href="/events"
-                className="text-green-600 hover:text-green-700 font-semibold cursor-pointer inline-flex items-center"
+                className="text-[#00D9FF] hover:text-[#00C4E6] font-semibold cursor-pointer inline-flex items-center"
               >
                 View Upcoming Events
                 <i className="ri-arrow-right-line w-5 h-5 flex items-center justify-center ml-2"></i>
@@ -800,29 +873,29 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-600 rounded-full mb-6">
-                <i className="ri-trophy-line w-8 h-8 flex items-center justify-center text-white"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-trophy-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Cross-Sector Expertise</h3>
               <p className="text-gray-700">Deep experience across government, healthcare, finance, education, and enterprise sectors.</p>
             </div>
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 flex items-center justify-center bg-blue-600 rounded-full mb-6">
-                <i className="ri-earth-line w-8 h-8 flex items-center justify-center text-white"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-earth-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Global Experience</h3>
               <p className="text-gray-700">Proven track record delivering transformation projects across 50+ countries worldwide.</p>
             </div>
             <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 flex items-center justify-center bg-purple-600 rounded-full mb-6">
-                <i className="ri-lightbulb-line w-8 h-8 flex items-center justify-center text-white"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-lightbulb-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Future-Ready Design</h3>
               <p className="text-gray-700">Forward-thinking governance frameworks that anticipate emerging challenges and opportunities.</p>
             </div>
             <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-xl p-8 hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 flex items-center justify-center bg-pink-600 rounded-full mb-6">
-                <i className="ri-heart-line w-8 h-8 flex items-center justify-center text-white"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                <i className="ri-heart-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Ethical-First Approach</h3>
               <p className="text-gray-700">Commitment to responsible AI that prioritizes human rights, fairness, and societal benefit.</p>
@@ -843,42 +916,42 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-green-100 rounded-full mb-4">
-                <i className="ri-service-line w-7 h-7 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <i className="ri-service-line w-7 h-7 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">AI-Powered Public Services</h3>
               <p className="text-gray-700">Transforming government service delivery through intelligent automation and citizen-centric platforms.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <i className="ri-group-line w-7 h-7 flex items-center justify-center text-blue-600"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Inclusive Innovation</h3>
               <p className="text-gray-700">Ensuring technology benefits reach marginalized communities and underserved populations.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-purple-100 rounded-full mb-4">
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <i className="ri-line-chart-line w-7 h-7 flex items-center justify-center text-purple-600"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">National Competitiveness</h3>
               <p className="text-gray-700">Building digital economies that compete effectively in the global innovation landscape.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-pink-100 rounded-full mb-4">
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <i className="ri-shield-check-line w-7 h-7 flex items-center justify-center text-pink-600"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Secure Infrastructure</h3>
               <p className="text-gray-700">Establishing resilient, secure digital infrastructure that protects against cyber threats.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-orange-100 rounded-full mb-4">
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <i className="ri-money-dollar-circle-line w-7 h-7 flex items-center justify-center text-orange-600"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Economic Growth</h3>
               <p className="text-gray-700">Driving productivity gains and new economic opportunities through digital transformation.</p>
             </div>
             <div className="bg-white rounded-xl p-8 shadow-lg">
-              <div className="w-14 h-14 flex items-center justify-center bg-teal-100 rounded-full mb-4">
+              <div className="bg-[#0A1E3D] w-14 h-14 rounded-full flex items-center justify-center mb-4">
                 <i className="ri-user-heart-line w-7 h-7 flex items-center justify-center text-teal-600"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Social Well-being</h3>
@@ -889,7 +962,7 @@ export default function TechnologyAIResearchPage() {
       </section>
 
       {/* Commitment to Responsible AI Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#194A84] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-6">Our Commitment to Responsible AI</h2>
@@ -900,35 +973,35 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full mx-auto mb-4">
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <i className="ri-user-heart-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="font-bold text-lg mb-2">Human-Centered</h3>
               <p className="text-sm text-white/80">AI that serves human needs and enhances human capabilities</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full mx-auto mb-4">
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <i className="ri-eye-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="font-bold text-lg mb-2">Transparent</h3>
               <p className="text-sm text-white/80">Clear, explainable AI systems and decision-making processes</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full mx-auto mb-4">
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <i className="ri-shield-check-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="font-bold text-lg mb-2">Accountable</h3>
               <p className="text-sm text-white/80">Clear responsibility and oversight for AI system outcomes</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full mx-auto mb-4">
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <i className="ri-group-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="font-bold text-lg mb-2">Inclusive</h3>
               <p className="text-sm text-white/80">AI that benefits all people, especially marginalized communities</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-white/20 rounded-full mx-auto mb-4">
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto">
                 <i className="ri-lock-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="font-bold text-lg mb-2">Secure</h3>
@@ -950,22 +1023,22 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white rounded-xl p-8 text-center shadow-lg">
-              <div className="text-5xl font-bold text-green-600 mb-2">150+</div>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">150+</div>
               <div className="text-gray-900 font-semibold mb-2">Technology Transfer Projects</div>
               <div className="text-sm text-gray-600">Across 40+ countries</div>
             </div>
             <div className="bg-white rounded-xl p-8 text-center shadow-lg">
-              <div className="text-5xl font-bold text-green-600 mb-2">25+</div>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">25+</div>
               <div className="text-gray-900 font-semibold mb-2">AI Governance Frameworks</div>
               <div className="text-sm text-gray-600">Developed and implemented</div>
             </div>
             <div className="bg-white rounded-xl p-8 text-center shadow-lg">
-              <div className="text-5xl font-bold text-green-600 mb-2">200+</div>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">200+</div>
               <div className="text-gray-900 font-semibold mb-2">Research Publications</div>
               <div className="text-sm text-gray-600">In peer-reviewed journals</div>
             </div>
             <div className="bg-white rounded-xl p-8 text-center shadow-lg">
-              <div className="text-5xl font-bold text-green-600 mb-2">5,000+</div>
+              <div className="text-5xl font-bold text-[#00D9FF] mb-2">5,000+</div>
               <div className="text-gray-900 font-semibold mb-2">Professionals Trained</div>
               <div className="text-sm text-gray-600">In AI ethics and governance</div>
             </div>
@@ -1085,8 +1158,8 @@ export default function TechnologyAIResearchPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-8 text-center shadow-md">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-government-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <i className="ri-government-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Government Agencies</h3>
               <p className="text-gray-700">
@@ -1094,8 +1167,8 @@ export default function TechnologyAIResearchPage() {
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 text-center shadow-md">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-building-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <i className="ri-building-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Technology Companies</h3>
               <p className="text-gray-700">
@@ -1103,8 +1176,8 @@ export default function TechnologyAIResearchPage() {
               </p>
             </div>
             <div className="bg-white rounded-xl p-8 text-center shadow-md">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-school-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-4">
+                <i className="ri-school-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Academic Institutions</h3>
               <p className="text-gray-700">
@@ -1116,7 +1189,7 @@ export default function TechnologyAIResearchPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
+      <section className="relative py-20 bg-gradient-to-br from-[#0A1E3D] to-[#194A84] overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-20"
           style={{
@@ -1133,13 +1206,13 @@ export default function TechnologyAIResearchPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
               Start a Conversation
             </a>
             <a
               href="/partners"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
               Explore Partnerships
             </a>

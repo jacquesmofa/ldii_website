@@ -16,19 +16,19 @@ export default function AboutSection() {
             </p>
             
             <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600 mb-2">10+</div>
+              <div className="text-center p-4 bg-corporate-blue-50 rounded-lg">
+                <div className="text-3xl font-bold text-corporate-blue-600 mb-2">10+</div>
                 <div className="text-gray-700">Years Experience</div>
               </div>
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-3xl font-bold text-green-600 mb-2">5</div>
+              <div className="text-center p-4 bg-corporate-blue-50 rounded-lg">
+                <div className="text-3xl font-bold text-corporate-blue-600 mb-2">5</div>
                 <div className="text-gray-700">Global Offices</div>
               </div>
             </div>
             
             <a
               href="/about"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-tech-teal-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
               Learn More About Us
             </a>
@@ -40,9 +40,9 @@ export default function AboutSection() {
               alt="LDII Team"
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
             />
-            <div className="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-xl shadow-lg">
+            <div className="absolute -bottom-6 -right-6 bg-corporate-blue-600 text-white p-6 rounded-xl shadow-lg">
               <div className="text-2xl font-bold">Global Impact</div>
-              <div className="text-green-100">Building Resilience</div>
+              <div className="text-tech-teal-200">Building Resilience</div>
             </div>
           </div>
         </div>

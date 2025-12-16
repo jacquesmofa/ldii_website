@@ -150,6 +150,7 @@ export default function UpcomingEventsPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Exciting%20upcoming%20international%20conference%20with%20modern%20venue%20setup%2C%20anticipation%20and%20preparation%20for%20major%20event%2C%20professional%20event%20planning%2C%20inspiring%20conference%20atmosphere%2C%20high-resolution%20photography&width=1920&height=800&seq=upcoming-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Upcoming Events
@@ -183,7 +184,7 @@ export default function UpcomingEventsPage() {
                   </div>
                   <div className="p-10">
                     <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {event.type}
                       </span>
                       <span className="text-green-600 font-bold text-lg">{event.date}</span>
@@ -248,7 +249,7 @@ export default function UpcomingEventsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Stay Updated on Our Events
@@ -259,13 +260,13 @@ export default function UpcomingEventsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Subscribe to Updates
             </a>
             <a
               href="/events"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               View All Events
             </a>

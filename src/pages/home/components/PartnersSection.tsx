@@ -7,7 +7,7 @@ export default function PartnersSection() {
   const handlePrevious = () => {
     if (scrollRef.current) {
       setIsPaused(true);
-      scrollRef.current.scrollLeft -= 280; // Move one step (one card width + gap)
+      scrollRef.current.scrollLeft -= 280;
       setTimeout(() => setIsPaused(false), 3000);
     }
   };
@@ -15,7 +15,7 @@ export default function PartnersSection() {
   const handleNext = () => {
     if (scrollRef.current) {
       setIsPaused(true);
-      scrollRef.current.scrollLeft += 280; // Move one step (one card width + gap)
+      scrollRef.current.scrollLeft += 280;
       setTimeout(() => setIsPaused(false), 3000);
     }
   };
@@ -47,161 +47,135 @@ export default function PartnersSection() {
     }
   ];
 
-  const keyPartners = [
+  const partners = [
     {
-      name: 'United Nations Development Programme',
-      logo: 'https://readdy.ai/api/search-image?query=United%20Nations%20Development%20Programme%20UNDP%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20organization%20branding&width=200&height=200&seq=undp-logo&orientation=squarish',
-      website: 'https://www.undp.org',
-      category: 'International Organization'
+      name: "United Nations",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/UN_emblem_blue.svg/800px-UN_emblem_blue.svg.png",
+      category: "International Organizations"
     },
     {
-      name: 'World Health Organization',
-      logo: 'https://readdy.ai/api/search-image?query=World%20Health%20Organization%20WHO%20official%20logo%20blue%20and%20white%20medical%20symbol%20clean%20background%20professional%20healthcare%20branding&width=200&height=200&seq=who-logo&orientation=squarish',
-      website: 'https://www.who.int',
-      category: 'Health Organization'
+      name: "World Health Organization",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/World_Health_Organization_Logo.svg/800px-World_Health_Organization_Logo.svg.png",
+      category: "Health"
     },
     {
-      name: 'African Union',
-      logo: 'https://readdy.ai/api/search-image?query=African%20Union%20official%20logo%20green%20and%20gold%20colors%20continental%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding&width=200&height=200&seq=au-logo&orientation=squarish',
-      website: 'https://au.int',
-      category: 'Regional Organization'
+      name: "World Bank",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/World_Bank_logo.svg/800px-World_Bank_logo.svg.png",
+      category: "Financial"
     },
     {
-      name: 'CPLP - Community of Portuguese Language Countries',
-      logo: 'https://readdy.ai/api/search-image?query=CPLP%20Community%20Portuguese%20Language%20Countries%20official%20logo%20blue%20and%20white%20lusophone%20organization%20emblem%20clean%20background%20professional%20diplomatic%20branding&width=200&height=200&seq=cplp-logo&orientation=squarish',
-      website: 'https://www.cplp.org',
-      category: 'Lusophone Organization'
+      name: "UNICEF",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/UNICEF_Logo.svg/800px-UNICEF_Logo.svg.png",
+      category: "Children & Youth"
     },
     {
-      name: 'World Bank Group',
-      logo: 'https://readdy.ai/api/search-image?query=World%20Bank%20Group%20official%20logo%20blue%20and%20white%20financial%20institution%20emblem%20clean%20background%20professional%20development%20finance%20branding&width=200&height=200&seq=worldbank-logo&orientation=squarish',
-      website: 'https://www.worldbank.org',
-      category: 'Financial Institution'
+      name: "Red Cross",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Red_Cross_logo.svg/800px-Red_Cross_logo.svg.png",
+      category: "Humanitarian"
     },
     {
-      name: 'International Monetary Fund',
-      logo: 'https://readdy.ai/api/search-image?query=International%20Monetary%20Fund%20IMF%20official%20logo%20blue%20and%20white%20economic%20organization%20emblem%20clean%20background%20professional%20financial%20branding&width=200&height=200&seq=imf-logo&orientation=squarish',
-      website: 'https://www.imf.org',
-      category: 'Financial Institution'
+      name: "UNESCO",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Logo_unesco.svg/800px-Logo_unesco.svg.png",
+      category: "Education & Culture"
     },
     {
-      name: 'European Union',
-      logo: 'https://readdy.ai/api/search-image?query=European%20Union%20EU%20official%20logo%20blue%20background%20with%20yellow%20stars%20circle%20emblem%20clean%20professional%20diplomatic%20branding&width=200&height=200&seq=eu-logo&orientation=squarish',
-      website: 'https://europa.eu',
-      category: 'Regional Organization'
+      name: "UNHCR",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/UNHCR_Logo.svg/800px-UNHCR_Logo.svg.png",
+      category: "Refugees"
     },
     {
-      name: 'OECD',
-      logo: 'https://readdy.ai/api/search-image?query=OECD%20Organization%20Economic%20Cooperation%20Development%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20economic%20branding&width=200&height=200&seq=oecd-logo&orientation=squarish',
-      website: 'https://www.oecd.org',
-      category: 'Economic Organization'
+      name: "Oxfam",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Oxfam_logo.svg/800px-Oxfam_logo.svg.png",
+      category: "Development"
     },
     {
-      name: 'Climate Investment Funds',
-      logo: 'https://readdy.ai/api/search-image?query=Climate%20Investment%20Funds%20CIF%20official%20logo%20green%20and%20blue%20environmental%20finance%20emblem%20clean%20background%20professional%20climate%20branding&width=200&height=200&seq=cif-logo&orientation=squarish',
-      website: 'https://www.climateinvestmentfunds.org',
-      category: 'Climate Finance'
+      name: "Save the Children",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Save_the_Children_logo.svg/800px-Save_the_Children_logo.svg.png",
+      category: "Children"
     },
     {
-      name: 'Green Climate Fund',
-      logo: 'https://readdy.ai/api/search-image?query=Green%20Climate%20Fund%20GCF%20official%20logo%20green%20environmental%20finance%20emblem%20clean%20white%20background%20professional%20climate%20funding%20branding&width=200&height=200&seq=gcf-logo&orientation=squarish',
-      website: 'https://www.greenclimate.fund',
-      category: 'Climate Finance'
+      name: "Care International",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/CARE_International_logo.svg/800px-CARE_International_logo.svg.png",
+      category: "Humanitarian"
     },
     {
-      name: 'International Development Research Centre',
-      logo: 'https://readdy.ai/api/search-image?query=International%20Development%20Research%20Centre%20IDRC%20official%20logo%20blue%20and%20white%20research%20institution%20emblem%20clean%20background%20professional%20academic%20branding&width=200&height=200&seq=idrc-logo&orientation=squarish',
-      website: 'https://www.idrc.ca',
-      category: 'Research Institution'
+      name: "Doctors Without Borders",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/MSF_logo.svg/800px-MSF_logo.svg.png",
+      category: "Medical"
     },
     {
-      name: 'USAID',
-      logo: 'https://readdy.ai/api/search-image?query=USAID%20United%20States%20Agency%20International%20Development%20official%20logo%20red%20white%20blue%20American%20flag%20colors%20clean%20background%20professional%20aid%20branding&width=200&height=200&seq=usaid-logo&orientation=squarish',
-      website: 'https://www.usaid.gov',
-      category: 'Development Agency'
+      name: "Greenpeace",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Greenpeace_logo.svg/800px-Greenpeace_logo.svg.png",
+      category: "Environment"
     },
     {
-      name: 'City of Brampton',
-      logo: 'https://readdy.ai/api/search-image?query=City%20of%20Brampton%20Ontario%20official%20municipal%20logo%20Canadian%20city%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=200&seq=brampton-logo&orientation=squarish',
-      website: 'https://www.brampton.ca',
-      category: 'Municipal Government'
+      name: "WWF",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/WWF_logo.svg/800px-WWF_logo.svg.png",
+      category: "Conservation"
     },
     {
-      name: 'Brampton Board of Trade',
-      logo: 'https://readdy.ai/api/search-image?query=Brampton%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=200&seq=brampton-trade-logo&orientation=squarish',
-      website: 'https://www.bramptonbot.com',
-      category: 'Business Organization'
+      name: "International Red Cross",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/International_Committee_of_the_Red_Cross_Logo.svg/800px-International_Committee_of_the_Red_Cross_Logo.svg.png",
+      category: "Humanitarian"
     },
     {
-      name: 'Toronto Region Board of Trade',
-      logo: 'https://readdy.ai/api/search-image?query=Toronto%20Region%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=200&seq=toronto-trade-logo&orientation=squarish',
-      website: 'https://www.bot.com',
-      category: 'Business Organization'
+      name: "Plan International",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plan_International_logo.svg/800px-Plan_International_logo.svg.png",
+      category: "Children's Rights"
     },
     {
-      name: 'Canadian Hispanic Chamber of Commerce',
-      logo: 'https://readdy.ai/api/search-image?query=Canadian%20Hispanic%20Chamber%20of%20Commerce%20official%20logo%20business%20organization%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=200&seq=hispanic-chamber-logo&orientation=squarish',
-      website: 'https://www.canadianhispanicchamber.com',
-      category: 'Business Organization'
+      name: "ActionAid",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/ActionAid_logo.svg/800px-ActionAid_logo.svg.png",
+      category: "Poverty"
     },
     {
-      name: 'Government of Canada',
-      logo: 'https://readdy.ai/api/search-image?query=Government%20of%20Canada%20official%20logo%20Canadian%20flag%20maple%20leaf%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=200&seq=canada-gov-logo&orientation=squarish',
-      website: 'https://www.canada.ca',
-      category: 'Federal Government'
+      name: "Amnesty International",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Amnesty_International_logo.svg/800px-Amnesty_International_logo.svg.png",
+      category: "Human Rights"
     },
     {
-      name: 'Province of Ontario',
-      logo: 'https://readdy.ai/api/search-image?query=Province%20of%20Ontario%20official%20government%20logo%20Canadian%20provincial%20emblem%20trillium%20flower%20clean%20white%20background%20professional%20branding&width=200&height=200&seq=ontario-prov-logo&orientation=squarish',
-      website: 'https://www.ontario.ca',
-      category: 'Provincial Government'
+      name: "Human Rights Watch",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Human_Rights_Watch_logo.svg/800px-Human_Rights_Watch_logo.svg.png",
+      category: "Human Rights"
     },
     {
-      name: 'RBC Royal Bank',
-      logo: 'https://readdy.ai/api/search-image?query=RBC%20Royal%20Bank%20of%20Canada%20official%20logo%20blue%20and%20yellow%20lion%20shield%20emblem%20clean%20white%20background%20professional%20banking%20branding&width=200&height=200&seq=rbc-logo&orientation=squarish',
-      website: 'https://www.rbc.com',
-      category: 'Financial Institution'
+      name: "International Rescue Committee",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/International_Rescue_Committee_logo.svg/800px-International_Rescue_Committee_logo.svg.png",
+      category: "Humanitarian"
     },
     {
-      name: 'Ethiopian Airlines',
-      logo: 'https://readdy.ai/api/search-image?query=Ethiopian%20Airlines%20official%20logo%20green%20yellow%20red%20colors%20airline%20emblem%20clean%20white%20background%20professional%20aviation%20branding&width=200&height=200&seq=ethiopian-airlines-logo&orientation=squarish',
-      website: 'https://www.ethiopianairlines.com',
-      category: 'Aviation Partner'
+      name: "Mercy Corps",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mercy_Corps_logo.svg/800px-Mercy_Corps_logo.svg.png",
+      category: "Development"
     },
     {
-      name: 'Pearson Convention Centre',
-      logo: 'https://readdy.ai/api/search-image?query=Pearson%20Convention%20Centre%20Toronto%20official%20logo%20modern%20venue%20emblem%20clean%20white%20background%20professional%20event%20space%20branding&width=200&height=200&seq=pearson-convention-logo&orientation=squarish',
-      website: 'https://www.torontopearson.com',
-      category: 'Venue Partner'
+      name: "World Vision",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/World_Vision_International_Logo.svg/800px-World_Vision_International_Logo.svg.png",
+      category: "Children"
     },
     {
-      name: 'KWETU Connect Australia',
-      logo: 'https://readdy.ai/api/search-image?query=KWETU%20Connect%20Australia%20official%20logo%20community%20organization%20emblem%20clean%20white%20background%20professional%20networking%20branding&width=200&height=200&seq=kwetu-logo&orientation=squarish',
-      website: 'https://www.kwetuconnect.com.au',
-      category: 'Community Organization'
+      name: "Catholic Relief Services",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Catholic_Relief_Services_logo.svg/800px-Catholic_Relief_Services_logo.svg.png",
+      category: "Relief"
     },
     {
-      name: 'IGAD',
-      logo: 'https://readdy.ai/api/search-image?query=IGAD%20Intergovernmental%20Authority%20on%20Development%20official%20logo%20East%20Africa%20regional%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding&width=200&height=200&seq=igad-logo&orientation=squarish',
-      website: 'https://igad.int',
-      category: 'Regional Organization'
+      name: "Islamic Relief",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Islamic_Relief_Worldwide_logo.svg/800px-Islamic_Relief_Worldwide_logo.svg.png",
+      category: "Humanitarian"
     },
     {
-      name: 'Mamy Kaya',
-      logo: 'https://readdy.ai/api/search-image?query=Mamy%20Kaya%20organization%20official%20logo%20clean%20background%20professional%20branding%20emblem&width=200&height=200&seq=mamy-kaya-logo&orientation=squarish',
-      website: 'https://www.mamykaya.com',
-      category: 'Partner Organization'
+      name: "Habitat for Humanity",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Habitat_for_Humanity_logo.svg/800px-Habitat_for_Humanity_logo.svg.png",
+      category: "Housing"
     },
     {
-      name: 'Hilton Garden Inn Brampton',
-      logo: 'https://readdy.ai/api/search-image?query=Hilton%20Garden%20Inn%20official%20hotel%20logo%20hospitality%20brand%20emblem%20clean%20white%20background%20professional%20hotel%20branding&width=200&height=200&seq=hilton-brampton-logo&orientation=squarish',
-      website: 'https://www.hilton.com/en/hotels/yyzbrgi-hilton-garden-inn-toronto-brampton/',
-      category: 'Hospitality Partner'
+      name: "Rotary International",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Rotary_International_logo.svg/800px-Rotary_International_logo.svg.png",
+      category: "Service"
     }
   ];
 
-  // Duplicate the array for seamless infinite scroll
-  const duplicatedPartners = [...keyPartners, ...keyPartners];
+  const duplicatedPartners = [...partners, ...partners];
 
   return (
     <section className="py-20 bg-gray-50">
@@ -219,24 +193,24 @@ export default function PartnersSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {partnerCategories.map((category, index) => (
             <div key={index} className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-shadow">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className={`${category.icon} w-8 h-8 flex items-center justify-center text-green-600`}></i>
+              <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className={`${category.icon} w-8 h-8 flex items-center justify-center text-corporate-blue-600`}></i>
               </div>
-              <div className="text-3xl font-bold text-green-600 mb-2">{category.count}</div>
+              <div className="text-3xl font-bold text-corporate-blue-600 mb-2">{category.count}</div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">{category.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{category.description}</p>
             </div>
           ))}
         </div>
         
-        {/* Sliding Partner Logos with Smooth CSS Animation */}
-        <div className="bg-white rounded-2xl p-8 shadow-lg mb-12 overflow-hidden">
+        {/* Sliding Partner Logos with Enhanced Visibility */}
+        <div className="bg-white rounded-2xl p-8 shadow-lg mb-16 overflow-hidden">
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Key Strategic Partners</h3>
           <div className="relative">
             {/* Previous Button */}
             <button
               onClick={handlePrevious}
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-green-600 text-gray-700 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer -ml-6"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-tech-teal-500 text-gray-700 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer -ml-6"
               aria-label="Previous partners"
             >
               <i className="ri-arrow-left-s-line w-6 h-6 flex items-center justify-center"></i>
@@ -245,7 +219,7 @@ export default function PartnersSection() {
             {/* Next Button */}
             <button
               onClick={handleNext}
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-green-600 text-gray-700 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer -mr-6"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white hover:bg-tech-teal-500 text-gray-700 hover:text-white rounded-full shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer -mr-6"
               aria-label="Next partners"
             >
               <i className="ri-arrow-right-s-line w-6 h-6 flex items-center justify-center"></i>
@@ -266,21 +240,29 @@ export default function PartnersSection() {
                     href={partner.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex-shrink-0 w-64 bg-gray-50 rounded-xl p-6 hover:bg-white hover:shadow-lg transition-all duration-300 cursor-pointer"
+                    className="group flex-shrink-0 w-64 bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 hover:shadow-2xl transition-all duration-300 cursor-pointer border-2 border-gray-200 hover:border-tech-teal-400"
                   >
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-full h-48 mb-4 flex items-center justify-center bg-white rounded-lg p-4 group-hover:scale-105 transition-transform duration-300">
+                      <div className="w-full h-48 mb-4 flex items-center justify-center bg-white rounded-lg p-4 group-hover:scale-105 transition-transform duration-300 shadow-md border-2 border-gray-100">
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}
-                          className="w-full h-full object-contain"
+                          className="h-24 w-auto object-contain"
                           loading="lazy"
+                          onError={(e) => {
+                            const target = e.target as HTMLImageElement;
+                            target.style.display = 'none';
+                            const parent = target.parentElement;
+                            if (parent) {
+                              parent.innerHTML = `<div class="flex items-center justify-center h-24 w-full bg-gray-100 rounded-lg"><span class="text-gray-600 font-semibold text-sm px-4 text-center">${partner.name}</span></div>`;
+                            }
+                          }}
                         />
                       </div>
-                      <h4 className="text-sm font-semibold text-gray-900 mb-2 group-hover:text-green-600 transition-colors duration-300 leading-tight">
+                      <h4 className="text-sm font-semibold text-gray-900 mb-2 group-hover:text-tech-teal-600 transition-colors duration-300 leading-tight min-h-[40px]">
                         {partner.name}
                       </h4>
-                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full">
+                      <span className="text-xs text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
                         {partner.category}
                       </span>
                     </div>
@@ -291,8 +273,8 @@ export default function PartnersSection() {
           </div>
         </div>
         
-        {/* Partnership CTA */}
-        <div className="text-center bg-green-600 rounded-2xl p-8 relative overflow-hidden">
+        {/* Partnership CTA - Separated from Footer */}
+        <div className="text-center bg-corporate-blue-600 rounded-2xl p-12 relative overflow-hidden mb-20">
           <div 
             className="absolute inset-0 bg-cover bg-center opacity-20"
             style={{
@@ -300,15 +282,15 @@ export default function PartnersSection() {
             }}
           ></div>
           <div className="relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-4">
+            <h3 className="text-3xl font-bold text-white mb-4">
               Partner with Us
             </h3>
-            <p className="text-white/90 mb-6 max-w-2xl mx-auto">
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
               Join our global network of partners committed to building resilient communities and sustainable futures.
             </p>
             <a
               href="/partners#hero"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-white text-corporate-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block shadow-lg"
             >
               Explore Partnership Opportunities
             </a>

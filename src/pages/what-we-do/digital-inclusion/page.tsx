@@ -138,7 +138,7 @@ export default function DigitalInclusionPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Communication &amp; Digital Inclusion
@@ -278,7 +278,7 @@ export default function DigitalInclusionPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactMetrics.map((metric, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-white mb-2">{metric.number}</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">{metric.number}</div>
                 <div className="text-white/90 font-medium">{metric.label}</div>
               </div>
             ))}
@@ -294,7 +294,7 @@ export default function DigitalInclusionPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Digital%20empowerment%20and%20technology%20access%2C%20people%20learning%20technology%2C%20digital%20literacy%2C%20community%20technology%20center%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=digital-cta&orientation=landscape)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Bridge the Digital Divide
@@ -305,13 +305,13 @@ export default function DigitalInclusionPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/contact"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Get Involved
             </a>

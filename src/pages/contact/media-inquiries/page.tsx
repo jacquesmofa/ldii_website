@@ -103,11 +103,11 @@ export default function MediaInquiriesPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative bg-gradient-to-br from-[#0A1E3D] to-[#0A1E3D] text-white py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Media Inquiries</h1>
-          <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl">
             Press contacts, media resources, and information for journalists covering our work
           </p>
         </div>
@@ -125,37 +125,37 @@ export default function MediaInquiriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-gray-50 rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="w-16 h-16 flex items-center justify-center bg-[#0A1E3D] rounded-full mx-auto mb-4">
+                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Media Relations Team</h3>
               <p className="text-sm text-gray-600">Communications Department</p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="w-16 h-16 flex items-center justify-center bg-[#0A1E3D] rounded-full mx-auto mb-4">
+                <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:info@ldiinitiatives.org" className="text-sm text-green-600 hover:text-green-700 cursor-pointer">
+              <a href="mailto:info@ldiinitiatives.org" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer">
                 info@ldiinitiatives.org
               </a>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="w-16 h-16 flex items-center justify-center bg-[#0A1E3D] rounded-full mx-auto mb-4">
+                <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Press Line</h3>
-              <a href="tel:+14166604233" className="text-sm text-green-600 hover:text-green-700 cursor-pointer">
+              <a href="tel:+14166604233" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer">
                 +1 (416) 660-4233
               </a>
               <p className="text-xs text-gray-500 mt-2">Available 24/7 for urgent inquiries</p>
             </div>
 
             <div className="bg-gray-50 rounded-xl p-6 text-center">
-              <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4">
-                <i className="ri-time-line w-8 h-8 flex items-center justify-center text-green-600"></i>
+              <div className="w-16 h-16 flex items-center justify-center bg-[#0A1E3D] rounded-full mx-auto mb-4">
+                <i className="ri-time-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Response Time</h3>
               <p className="text-sm text-gray-600">Within 24 hours for standard inquiries</p>
@@ -177,8 +177,8 @@ export default function MediaInquiriesPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mr-4 flex-shrink-0">
-                    <i className="ri-user-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#0A1E3D] rounded-lg mr-4 flex-shrink-0">
+                    <i className="ri-user-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Media Relations Team</div>
@@ -187,24 +187,24 @@ export default function MediaInquiriesPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mr-4 flex-shrink-0">
-                    <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#0A1E3D] rounded-lg mr-4 flex-shrink-0">
+                    <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
+                    <a href="mailto:info@ldiinitiatives.org" className="text-[#00D9FF] hover:text-[#00C4E6]">
                       info@ldiinitiatives.org
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mr-4 flex-shrink-0">
-                    <i className="ri-phone-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#0A1E3D] rounded-lg mr-4 flex-shrink-0">
+                    <i className="ri-phone-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Press Line</div>
-                    <a href="tel:+14166604233" className="text-green-600 hover:text-green-700">
+                    <a href="tel:+14166604233" className="text-[#00D9FF] hover:text-[#00C4E6]">
                       +1 (416) 660-4233
                     </a>
                     <div className="text-sm text-gray-600 mt-1">Available 24/7 for urgent inquiries</div>
@@ -212,8 +212,8 @@ export default function MediaInquiriesPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="w-12 h-12 flex items-center justify-center bg-green-100 rounded-lg mr-4 flex-shrink-0">
-                    <i className="ri-time-line w-6 h-6 flex items-center justify-center text-green-600"></i>
+                  <div className="w-12 h-12 flex items-center justify-center bg-[#0A1E3D] rounded-lg mr-4 flex-shrink-0">
+                    <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#00D9FF]"></i>
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Response Time</div>
@@ -234,7 +234,7 @@ export default function MediaInquiriesPage() {
                     name="name"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     required
                   />
                 </div>
@@ -246,7 +246,7 @@ export default function MediaInquiriesPage() {
                     name="organization"
                     value={formData.organization}
                     onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     required
                   />
                 </div>
@@ -259,7 +259,7 @@ export default function MediaInquiriesPage() {
                       name="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                       required
                     />
                   </div>
@@ -270,7 +270,7 @@ export default function MediaInquiriesPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                       required
                     />
                   </div>
@@ -283,7 +283,7 @@ export default function MediaInquiriesPage() {
                       name="mediaType"
                       value={formData.mediaType}
                       onChange={(e) => setFormData({ ...formData, mediaType: e.target.value })}
-                      className="w-full px-4 py-3 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                      className="w-full px-4 py-3 pr-8 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                       required
                     >
                       <option value="">Select type</option>
@@ -304,7 +304,7 @@ export default function MediaInquiriesPage() {
                       name="deadline"
                       value={formData.deadline}
                       onChange={(e) => setFormData({ ...formData, deadline: e.target.value })}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     />
                   </div>
                 </div>
@@ -316,7 +316,7 @@ export default function MediaInquiriesPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] text-base"
                     placeholder="Brief description of your story"
                     required
                   />
@@ -330,7 +330,7 @@ export default function MediaInquiriesPage() {
                     onChange={(e) => setFormData({ ...formData, inquiry: e.target.value })}
                     rows={5}
                     maxLength={500}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#00D9FF] resize-none text-base"
                     placeholder="Please provide details about your inquiry, interview requests, or information needed..."
                     required
                   ></textarea>
@@ -339,7 +339,7 @@ export default function MediaInquiriesPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
+                  className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-50"
                 >
                   Submit Inquiry
                 </button>
@@ -360,10 +360,10 @@ export default function MediaInquiriesPage() {
                 href={resource.link}
                 className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all cursor-pointer group"
               >
-                <div className="w-16 h-16 flex items-center justify-center bg-green-100 rounded-full mx-auto mb-4 group-hover:bg-green-600 transition-colors">
-                  <i className={`${resource.icon} w-8 h-8 flex items-center justify-center text-green-600 group-hover:text-white transition-colors`}></i>
+                <div className="w-16 h-16 flex items-center justify-center bg-[#0A1E3D] rounded-full mx-auto mb-4 group-hover:bg-[#00D9FF] transition-colors">
+                  <i className={`${resource.icon} w-8 h-8 flex items-center justify-center text-[#00D9FF] group-hover:text-[#0A1E3D] transition-colors`}></i>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-green-600">{resource.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#00D9FF]">{resource.title}</h3>
                 <p className="text-sm text-gray-600">{resource.description}</p>
               </a>
             ))}
@@ -384,9 +384,9 @@ export default function MediaInquiriesPage() {
                   className="w-full h-48 object-cover object-top"
                 />
                 <div className="p-6">
-                  <div className="text-sm text-green-600 font-semibold mb-2">{news.date}</div>
+                  <div className="text-sm text-[#00D9FF] font-semibold mb-2">{news.date}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{news.title}</h3>
-                  <a href="/events/news" className="text-green-600 hover:text-green-700 font-semibold inline-flex items-center">
+                  <a href="/events/news" className="text-[#00D9FF] hover:text-[#00C4E6] font-semibold inline-flex items-center">
                     Read More
                     <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center ml-1"></i>
                   </a>
@@ -398,22 +398,22 @@ export default function MediaInquiriesPage() {
       </section>
 
       {/* Interview Requests */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-[#0A1E3D] text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Interview Requests</h2>
-          <p className="text-xl text-green-100 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Our leadership team and subject matter experts are available for interviews on topics related to international development, climate action, health systems, and more.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="mailto:info@ldiinitiatives.org"
-              className="inline-block bg-white text-green-600 hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-block bg-[#00D9FF] text-[#0A1E3D] hover:bg-[#00C4E6] px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
             >
               Request an Interview
             </a>
             <a
               href="/about/who-we-are"
-              className="inline-block bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-block bg-white text-[#0A1E3D] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
             >
               Meet Our Team
             </a>

@@ -85,8 +85,25 @@ export default function HeroSection() {
 
     const initialTimer = setTimeout(startContinuousLoop, 1000);
 
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
     return () => {
       clearTimeout(initialTimer);
+      observer.disconnect();
     };
   }, []);
 
@@ -132,7 +149,7 @@ export default function HeroSection() {
   return (
     <div>
       {/* Enhanced Hero Section with Continuous World Map to Video Loop */}
-      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-corporate-blue-700 via-corporate-blue-600 to-corporate-blue-800 overflow-hidden">
         
         {/* World Map Background - Shows for 10 seconds in continuous loop */}
         <div className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${showVideo ? 'opacity-0' : 'opacity-100'}`}>
@@ -142,20 +159,20 @@ export default function HeroSection() {
               backgroundImage: `url(https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design&width=1920&height=1080&seq=networked-world-map-hq&orientation=landscape)`
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-green-800/60 via-emerald-700/50 to-green-600/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-800/60 via-corporate-blue-700/50 to-digital-purple-900/60"></div>
             
             <div className="absolute inset-0 opacity-40">
               <div className="relative w-full h-full overflow-hidden">
-                <div className="absolute top-1/4 left-1/6 w-2 h-32 bg-gradient-to-b from-cyan-300/60 via-cyan-400/40 to-transparent animate-pulse transform rotate-45 transition-transform duration-4000"></div>
-                <div className="absolute top-1/3 right-1/6 w-2 h-28 bg-gradient-to-b from-emerald-300/60 via-emerald-400/40 to-transparent animate-pulse transform -rotate-30 transition-transform duration-5000"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-2 h-36 bg-gradient-to-b from-yellow-300/60 via-yellow-400/40 to-transparent animate-pulse transform rotate-60 transition-transform duration-4500"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-2 h-24 bg-gradient-to-b from-pink-300/60 via-pink-400/40 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3800"></div>
+                <div className="absolute top-1/4 left-1/6 w-2 h-32 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform rotate-45 transition-transform duration-4000"></div>
+                <div className="absolute top-1/3 right-1/6 w-2 h-28 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform -rotate-30 transition-transform duration-5000"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-2 h-36 bg-gradient-to-b from-digital-purple-300/60 via-digital-purple-400/40 to-transparent animate-pulse transform rotate-60 transition-transform duration-4500"></div>
+                <div className="absolute bottom-1/3 right-1/4 w-2 h-24 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3800"></div>
                 
-                <div className="absolute top-1/5 left-1/5 w-3 h-3 bg-cyan-300/80 rounded-full animate-ping"></div>
-                <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-emerald-300/80 rounded-full animate-ping animation-delay-1000"></div>
-                <div className="absolute bottom-1/5 left-1/3 w-3 h-3 bg-yellow-300/80 rounded-full animate-ping animation-delay-2000"></div>
-                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-pink-300/80 rounded-full animate-ping animation-delay-1500"></div>
-                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-indigo-300/80 rounded-full animate-ping animation-delay-500"></div>
+                <div className="absolute top-1/5 left-1/5 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping"></div>
+                <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping animation-delay-1000"></div>
+                <div className="absolute bottom-1/5 left-1/3 w-3 h-3 bg-digital-purple-300/80 rounded-full animate-ping animation-delay-2000"></div>
+                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping animation-delay-1500"></div>
+                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-tech-teal-400/80 rounded-full animate-ping animation-delay-500"></div>
               </div>
             </div>
           </div>
@@ -172,6 +189,7 @@ export default function HeroSection() {
               playsInline
               className="w-full h-full object-cover opacity-80"
               poster="https://readdy.ai/api/search-image?query=Beautiful%20rotating%20Earth%20globe%20with%20bright%20network%20connections%2C%20global%20connectivity%20visualization%2C%20spinning%20planet%20with%20glowing%20network%20lines%2C%20digital%20world%20map%20with%20bright%20connection%20points%2C%20professional%20space%20view%20of%20Earth%20with%20moving%20data%20streams&width=1920&height=1080&seq=globe-poster&orientation=landscape"
+              loading="lazy"
             >
               <source
                 src="https://videos.pexels.com/video-files/3141207/3141207-uhd_3840_2160_25fps.mp4"
@@ -197,117 +215,117 @@ export default function HeroSection() {
               <div className="relative w-full h-full overflow-hidden">
                 
                 {/* Bright Animated Network Lines - Moving Around Entire Globe */}
-                <div className="absolute top-1/6 left-1/6 w-3 h-48 bg-gradient-to-b from-cyan-200 via-cyan-400 to-transparent animate-pulse transform rotate-45 transition-transform duration-3000 animate-float-1 shadow-2xl shadow-cyan-400/80"></div>
-                <div className="absolute top-1/4 right-1/6 w-3 h-40 bg-gradient-to-b from-emerald-200 via-emerald-400 to-transparent animate-pulse transform -rotate-12 transition-transform duration-4000 animate-float-2 shadow-2xl shadow-emerald-400/80"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-3 h-44 bg-gradient-to-b from-yellow-200 via-yellow-400 to-transparent animate-pulse transform rotate-75 transition-transform duration-5000 animate-float-3 shadow-2xl shadow-yellow-400/80"></div>
-                <div className="absolute bottom-1/6 right-1/4 w-3 h-36 bg-gradient-to-b from-pink-200 via-pink-400 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3500 animate-float-4 shadow-2xl shadow-pink-400/80"></div>
-                <div className="absolute top-1/8 right-1/8 w-3 h-32 bg-gradient-to-b from-indigo-200 via-indigo-400 to-transparent animate-pulse transform rotate-30 transition-transform duration-4500 animate-float-1 shadow-2xl shadow-indigo-400/80"></div>
-                <div className="absolute bottom-1/8 left-1/8 w-3 h-40 bg-gradient-to-b from-teal-200 via-teal-400 to-transparent animate-pulse transform -rotate-60 transition-transform duration-3800 animate-float-2 shadow-2xl shadow-teal-400/80"></div>
-                <div className="absolute top-2/5 left-2/5 w-3 h-36 bg-gradient-to-b from-orange-200 via-orange-400 to-transparent animate-pulse transform rotate-15 transition-transform duration-4200 animate-float-3 shadow-2xl shadow-orange-400/80"></div>
-                <div className="absolute bottom-2/5 right-2/5 w-3 h-32 bg-gradient-to-b from-purple-200 via-purple-400 to-transparent animate-pulse transform -rotate-75 transition-transform duration-3600 animate-float-4 shadow-2xl shadow-purple-400/80"></div>
+                <div className="absolute top-1/6 left-1/6 w-3 h-48 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-45 transition-transform duration-3000 animate-float-1 shadow-2xl shadow-tech-teal-400/80"></div>
+                <div className="absolute top-1/4 right-1/6 w-3 h-40 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform -rotate-12 transition-transform duration-4000 animate-float-2 shadow-2xl shadow-tech-teal-400/80"></div>
+                <div className="absolute bottom-1/4 left-1/4 w-3 h-44 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform rotate-75 transition-transform duration-5000 animate-float-3 shadow-2xl shadow-digital-purple-400/80"></div>
+                <div className="absolute bottom-1/6 right-1/4 w-3 h-36 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3500 animate-float-4 shadow-2xl shadow-tech-teal-400/80"></div>
+                <div className="absolute top-1/8 right-1/8 w-3 h-32 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-30 transition-transform duration-4500 animate-float-1 shadow-2xl shadow-tech-teal-400/80"></div>
+                <div className="absolute bottom-1/8 left-1/8 w-3 h-40 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform -rotate-60 transition-transform duration-3800 animate-float-2 shadow-2xl shadow-digital-purple-400/80"></div>
+                <div className="absolute top-2/5 left-2/5 w-3 h-36 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-15 transition-transform duration-4200 animate-float-3 shadow-2xl shadow-tech-teal-400/80"></div>
+                <div className="absolute bottom-2/5 right-2/5 w-3 h-32 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform -rotate-75 transition-transform duration-3600 animate-float-4 shadow-2xl shadow-digital-purple-400/80"></div>
                 
                 {/* Additional Network Lines for Full Globe Coverage */}
-                <div className="absolute top-1/3 left-1/2 w-3 h-52 bg-gradient-to-r from-transparent via-cyan-200 to-transparent animate-pulse transform rotate-90 transition-transform duration-4800 animate-float-1 shadow-2xl shadow-cyan-300/80"></div>
-                <div className="absolute bottom-1/3 right-1/2 w-3 h-48 bg-gradient-to-r from-transparent via-emerald-200 to-transparent animate-pulse transform -rotate-30 transition-transform duration-3200 animate-float-2 shadow-2xl shadow-emerald-300/80"></div>
-                <div className="absolute top-3/4 left-3/4 w-3 h-40 bg-gradient-to-r from-transparent via-yellow-200 to-transparent animate-pulse transform rotate-60 transition-transform duration-5200 animate-float-3 shadow-2xl shadow-yellow-300/80"></div>
-                <div className="absolute top-1/5 right-3/4 w-3 h-44 bg-gradient-to-r from-transparent via-pink-200 to-transparent animate-pulse transform -rotate-15 transition-transform duration-4600 animate-float-4 shadow-2xl shadow-pink-300/80"></div>
+                <div className="absolute top-1/3 left-1/2 w-3 h-52 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-90 transition-transform duration-4800 animate-float-1 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute bottom-1/3 right-1/2 w-3 h-48 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-30 transition-transform duration-3200 animate-float-2 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute top-3/4 left-3/4 w-3 h-40 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform rotate-60 transition-transform duration-5200 animate-float-3 shadow-2xl shadow-digital-purple-300/80"></div>
+                <div className="absolute top-1/5 right-3/4 w-3 h-44 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-15 transition-transform duration-4600 animate-float-4 shadow-2xl shadow-tech-teal-300/80"></div>
                 
                 {/* Bright Moving Network Arcs - Covering Globe Circumference */}
-                <div className="absolute top-1/5 left-1/5 w-48 h-3 bg-gradient-to-r from-transparent via-cyan-200 to-transparent animate-pulse transform rotate-12 animate-arc-move-1 shadow-2xl shadow-cyan-300/80"></div>
-                <div className="absolute top-2/5 right-1/5 w-40 h-3 bg-gradient-to-r from-transparent via-emerald-200 to-transparent animate-pulse transform -rotate-45 animate-arc-move-2 shadow-2xl shadow-emerald-300/80"></div>
-                <div className="absolute bottom-1/5 left-2/5 w-44 h-3 bg-gradient-to-r from-transparent via-yellow-200 to-transparent animate-pulse transform rotate-75 animate-arc-move-3 shadow-2xl shadow-yellow-300/80"></div>
-                <div className="absolute top-1/2 right-1/3 w-36 h-3 bg-gradient-to-r from-transparent via-pink-200 to-transparent animate-pulse transform -rotate-30 animate-arc-move-1 shadow-2xl shadow-pink-300/80"></div>
-                <div className="absolute bottom-1/2 left-1/3 w-52 h-3 bg-gradient-to-r from-transparent via-indigo-200 to-transparent animate-pulse transform rotate-60 animate-arc-move-2 shadow-2xl shadow-indigo-300/80"></div>
-                <div className="absolute top-3/5 left-1/6 w-38 h-3 bg-gradient-to-r from-transparent via-teal-200 to-transparent animate-pulse transform -rotate-75 animate-arc-move-3 shadow-2xl shadow-teal-300/80"></div>
-                <div className="absolute bottom-3/5 right-1/6 w-42 h-3 bg-gradient-to-r from-transparent via-orange-200 to-transparent animate-pulse transform rotate-45 animate-arc-move-1 shadow-2xl shadow-orange-300/80"></div>
+                <div className="absolute top-1/5 left-1/5 w-48 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-12 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute top-2/5 right-1/5 w-40 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-45 animate-arc-move-2 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute bottom-1/5 left-2/5 w-44 h-3 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform rotate-75 animate-arc-move-3 shadow-2xl shadow-digital-purple-300/80"></div>
+                <div className="absolute top-1/2 right-1/3 w-36 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-30 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute bottom-1/2 left-1/3 w-52 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-60 animate-arc-move-2 shadow-2xl shadow-tech-teal-300/80"></div>
+                <div className="absolute top-3/5 left-1/6 w-38 h-3 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform -rotate-75 animate-arc-move-3 shadow-2xl shadow-digital-purple-300/80"></div>
+                <div className="absolute bottom-3/5 right-1/6 w-42 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-45 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
                 
                 {/* Bright Floating Network Nodes - Distributed Around Entire Globe */}
-                <div className="absolute top-1/6 left-1/6 w-5 h-5 bg-cyan-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-cyan-300/90"></div>
-                <div className="absolute top-1/4 right-1/6 w-4 h-4 bg-emerald-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-emerald-300/90"></div>
-                <div className="absolute bottom-1/6 left-1/4 w-6 h-6 bg-yellow-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-yellow-300/90"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-4 h-4 bg-pink-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-pink-300/90"></div>
-                <div className="absolute top-1/2 left-1/2 w-5 h-5 bg-indigo-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-indigo-300/90"></div>
-                <div className="absolute top-3/4 left-3/4 w-4 h-4 bg-teal-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-teal-300/90"></div>
-                <div className="absolute top-1/8 right-1/8 w-5 h-5 bg-orange-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-orange-300/90"></div>
-                <div className="absolute bottom-1/8 left-1/8 w-4 h-4 bg-purple-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-purple-300/90"></div>
-                <div className="absolute top-2/3 right-2/3 w-5 h-5 bg-blue-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-blue-300/90"></div>
-                <div className="absolute bottom-2/3 left-2/3 w-4 h-4 bg-red-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-red-300/90"></div>
-                <div className="absolute top-1/3 right-1/5 w-5 h-5 bg-lime-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-lime-300/90"></div>
-                <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-violet-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-violet-300/90"></div>
+                <div className="absolute top-1/6 left-1/6 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute top-1/4 right-1/6 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute bottom-1/6 left-1/4 w-6 h-6 bg-digital-purple-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-digital-purple-300/90"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute top-1/2 left-1/2 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute top-3/4 left-3/4 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-digital-purple-300/90"></div>
+                <div className="absolute top-1/8 right-1/8 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute bottom-1/8 left-1/8 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-digital-purple-300/90"></div>
+                <div className="absolute top-2/3 right-2/3 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute bottom-2/3 left-2/3 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute top-1/3 right-1/5 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-tech-teal-300/90"></div>
+                <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-digital-purple-300/90"></div>
                 
                 {/* Enhanced Rotating Globe Effect - Multiple Concentric Layers */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[600px] h-[600px] border-3 border-cyan-200/50 rounded-full animate-spin-slow shadow-2xl shadow-cyan-300/40"></div>
-                  <div className="absolute w-[520px] h-[520px] border-3 border-emerald-200/45 rounded-full animate-spin-reverse shadow-2xl shadow-emerald-300/35"></div>
-                  <div className="absolute w-[440px] h-[440px] border-2 border-yellow-200/40 rounded-full animate-pulse shadow-2xl shadow-yellow-300/30"></div>
-                  <div className="absolute w-[360px] h-[360px] border-2 border-pink-200/35 rounded-full animate-spin-slow-reverse shadow-2xl shadow-pink-300/25"></div>
-                  <div className="absolute w-[280px] h-[280px] border-2 border-indigo-200/30 rounded-full animate-spin-slow shadow-2xl shadow-indigo-300/20"></div>
-                  <div className="absolute w-[200px] h-[200px] border border-teal-200/25 rounded-full animate-spin-reverse shadow-2xl shadow-teal-300/15"></div>
+                  <div className="w-[600px] h-[600px] border-3 border-tech-teal-200/50 rounded-full animate-spin-slow shadow-2xl shadow-tech-teal-300/40"></div>
+                  <div className="absolute w-[520px] h-[520px] border-3 border-tech-teal-200/45 rounded-full animate-spin-reverse shadow-2xl shadow-tech-teal-300/35"></div>
+                  <div className="absolute w-[440px] h-[440px] border-2 border-digital-purple-200/40 rounded-full animate-pulse shadow-2xl shadow-digital-purple-300/30"></div>
+                  <div className="absolute w-[360px] h-[360px] border-2 border-tech-teal-200/35 rounded-full animate-spin-slow-reverse shadow-2xl shadow-tech-teal-300/25"></div>
+                  <div className="absolute w-[280px] h-[280px] border-2 border-tech-teal-200/30 rounded-full animate-spin-slow shadow-2xl shadow-tech-teal-300/20"></div>
+                  <div className="absolute w-[200px] h-[200px] border border-digital-purple-200/25 rounded-full animate-spin-reverse shadow-2xl shadow-digital-purple-300/15"></div>
                 </div>
                 
                 {/* Additional Bright Moving Elements Around Globe Perimeter */}
-                <div className="absolute top-1/4 left-1/2 w-24 h-24 border-3 border-cyan-200/40 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-cyan-300/50"></div>
-                <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border-3 border-emerald-200/40 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-emerald-300/50"></div>
-                <div className="absolute top-1/8 left-3/4 w-16 h-16 border-2 border-yellow-200/35 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-yellow-300/45"></div>
-                <div className="absolute bottom-1/8 right-3/4 w-18 h-18 border-2 border-pink-200/35 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-pink-300/45"></div>
-                <div className="absolute top-3/8 right-1/8 w-14 h-14 border-2 border-indigo-200/30 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-indigo-300/40"></div>
-                <div className="absolute bottom-3/8 left-1/8 w-16 h-16 border-2 border-teal-200/30 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-teal-300/40"></div>
+                <div className="absolute top-1/4 left-1/2 w-24 h-24 border-3 border-tech-teal-200/40 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-tech-teal-300/50"></div>
+                <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border-3 border-tech-teal-200/40 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-tech-teal-300/50"></div>
+                <div className="absolute top-1/8 left-3/4 w-16 h-16 border-2 border-digital-purple-200/35 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-digital-purple-300/45"></div>
+                <div className="absolute bottom-1/8 right-3/4 w-18 h-18 border-2 border-tech-teal-200/35 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-tech-teal-300/45"></div>
+                <div className="absolute top-3/8 right-1/8 w-14 h-14 border-2 border-tech-teal-200/30 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-tech-teal-300/40"></div>
+                <div className="absolute bottom-3/8 left-1/8 w-16 h-16 border-2 border-digital-purple-200/30 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-digital-purple-300/40"></div>
                 
                 {/* Bright Connection Lines Between Network Nodes */}
-                <div className="absolute top-1/5 left-1/5 w-2 h-24 bg-gradient-to-b from-cyan-100 to-emerald-100 animate-pulse transform rotate-45 animate-float-1 shadow-lg shadow-cyan-200/60"></div>
-                <div className="absolute top-2/5 right-1/5 w-2 h-20 bg-gradient-to-b from-emerald-100 to-yellow-100 animate-pulse transform -rotate-30 animate-float-2 shadow-lg shadow-emerald-200/60"></div>
-                <div className="absolute bottom-1/5 left-2/5 w-2 h-22 bg-gradient-to-b from-yellow-100 to-pink-100 animate-pulse transform rotate-60 animate-float-3 shadow-lg shadow-yellow-200/60"></div>
-                <div className="absolute bottom-2/5 right-2/5 w-2 h-18 bg-gradient-to-b from-pink-100 to-indigo-100 animate-pulse transform -rotate-45 animate-float-4 shadow-lg shadow-pink-200/60"></div>
-                <div className="absolute top-1/3 left-1/3 w-2 h-26 bg-gradient-to-b from-indigo-100 to-teal-100 animate-pulse transform rotate-75 animate-float-5 shadow-lg shadow-indigo-200/60"></div>
-                <div className="absolute bottom-1/3 right-1/3 w-2 h-24 bg-gradient-to-b from-teal-100 to-orange-100 animate-pulse transform -rotate-60 animate-float-1 shadow-lg shadow-teal-200/60"></div>
+                <div className="absolute top-1/5 left-1/5 w-2 h-24 bg-gradient-to-b from-tech-teal-100 to-tech-teal-100 animate-pulse transform rotate-45 animate-float-1 shadow-lg shadow-tech-teal-200/60"></div>
+                <div className="absolute top-2/5 right-1/5 w-2 h-20 bg-gradient-to-b from-tech-teal-100 to-digital-purple-100 animate-pulse transform -rotate-30 animate-float-2 shadow-lg shadow-tech-teal-200/60"></div>
+                <div className="absolute bottom-1/5 left-2/5 w-2 h-22 bg-gradient-to-b from-digital-purple-100 to-tech-teal-100 animate-pulse transform rotate-60 animate-float-3 shadow-lg shadow-digital-purple-200/60"></div>
+                <div className="absolute bottom-2/5 right-2/5 w-2 h-18 bg-gradient-to-b from-tech-teal-100 to-tech-teal-100 animate-pulse transform -rotate-45 animate-float-4 shadow-lg shadow-tech-teal-200/60"></div>
+                <div className="absolute top-1/3 left-1/3 w-2 h-26 bg-gradient-to-b from-tech-teal-100 to-digital-purple-100 animate-pulse transform rotate-75 animate-float-5 shadow-lg shadow-tech-teal-200/60"></div>
+                <div className="absolute bottom-1/3 right-1/3 w-2 h-24 bg-gradient-to-b from-digital-purple-100 to-tech-teal-100 animate-pulse transform -rotate-60 animate-float-1 shadow-lg shadow-digital-purple-200/60"></div>
               </div>
             </div>
           </div>
         </div>
         
         {/* Enhanced overlay for better text readability */}
-        <div className="absolute inset-0 bg-green-900/25"></div>
+        <div className="absolute inset-0 bg-corporate-blue-900/25"></div>
         
         {/* Content overlay - Responsive */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 leading-tight drop-shadow-2xl animate-fade-in">
             <span className="text-white animate-glow-blink">Livelihood Development International Initiatives</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-lg animate-slide-up font-semibold px-4">
+          <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed drop-shadow-lg animate-slide-up font-semibold px-4 reveal">
             We have 10+ Years of Experience. Livelihood Development International Initiatives (LDII) is a non-profit organization committed to creating a brighter future through the promotion of social cohesion and empowerment.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-slide-up-delay px-4">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-slide-up-delay px-4 reveal">
             <a
               href="/about#hero"
-              className="w-full sm:w-auto bg-emerald-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-2xl animate-bounce-subtle"
+              className="w-full sm:w-auto bg-tech-teal-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-tech-teal-600 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-2xl animate-bounce-subtle btn-micro elevate"
             >
               Learn About Our Mission
             </a>
             <a
               href="/focus-areas#hero"
-              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-2xl animate-bounce-subtle-delay"
+              className="w-full sm:w-auto bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-2xl animate-bounce-subtle-delay btn-micro elevate"
             >
               Explore Our Work
             </a>
           </div>
           
           {/* Enhanced Animated Counter Cards - Responsive Grid */}
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 text-white px-4">
-            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in">
-              <div className="text-3xl sm:text-4xl font-bold mb-2 text-emerald-300 animate-number-swing">
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 justify-center items-center text-white px-4 reveal">
+            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in elevate glow-hover">
+              <div className="text-3xl sm:text-4xl font-bold mb-2 text-tech-teal-300 animate-number-swing">
                 {counters.years}+
               </div>
               <div className="text-white/90 text-sm sm:text-base">Years of Impact</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in-delay">
-              <div className="text-3xl sm:text-4xl font-bold mb-2 text-emerald-300 animate-number-swing-delay">
+            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in-delay elevate glow-hover">
+              <div className="text-3xl sm:text-4xl font-bold mb-2 text-tech-teal-300 animate-number-swing-delay">
                 {counters.offices}
               </div>
               <div className="text-white/90 text-sm sm:text-base">Global Offices</div>
             </div>
-            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in-delay-2">
-              <div className="text-3xl sm:text-4xl font-bold mb-2 text-emerald-300 animate-number-swing-delay-2">
+            <div className="text-center backdrop-blur-sm bg-white/10 rounded-xl p-4 sm:p-6 border border-white/20 transform transition-all duration-500 hover:scale-105 animate-swing-in-delay-2 elevate glow-hover">
+              <div className="text-3xl sm:text-4xl font-bold mb-2 text-tech-teal-300 animate-number-swing-delay-2">
                 {counters.trees}K+
               </div>
               <div className="text-white/90 text-sm sm:text-base">Trees Planted</div>
@@ -324,15 +342,15 @@ export default function HeroSection() {
       </section>
 
       {/* Mission Highlights Section */}
-      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-emerald-50 to-green-100 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-green-400 rounded-full animate-pulse"></div>
-          <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-400 rounded-full animate-ping"></div>
-          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-300 rounded-full animate-bounce"></div>
+          <div className="absolute top-10 left-10 w-32 h-32 bg-corporate-blue-400 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 right-20 w-24 h-24 bg-tech-teal-400 rounded-full animate-ping"></div>
+          <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-digital-purple-300 rounded-full animate-bounce"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12 sm:mb-16">
+          <div className="text-center mb-12 sm:mb-16 reveal">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 animate-fade-in">
               Transforming Communities Worldwide
             </h2>
@@ -341,37 +359,37 @@ export default function HeroSection() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
-            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-green-600 animate-number-swing">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16 reveal">
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in elevate">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-corporate-blue-600 animate-number-swing">
                 {missionCounters.communities}+
               </div>
               <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Communities Served</div>
             </div>
-            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-green-600 animate-number-swing-delay">
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay elevate">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-corporate-blue-600 animate-number-swing-delay">
                 {missionCounters.projects}+
               </div>
               <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Active Projects</div>
             </div>
-            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay-2">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-green-600 animate-number-swing-delay-2">
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay-2 elevate">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-corporate-blue-600 animate-number-swing-delay-2">
                 {missionCounters.partners}+
               </div>
               <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Global Partners</div>
             </div>
-            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay-3">
-              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-green-600 animate-number-swing-delay-3">
+            <div className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-swing-in-delay-3 elevate">
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 text-corporate-blue-600 animate-number-swing-delay-3">
                 {missionCounters.countries}+
               </div>
               <div className="text-gray-700 font-semibold text-xs sm:text-sm lg:text-base">Countries Reached</div>
             </div>
           </div>
           
-          <div className="text-center px-4">
+          <div className="text-center px-4 reveal">
             <a
               href="/impact#hero"
-              className="inline-block bg-green-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
+              className="inline-block bg-tech-teal-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-tech-teal-600 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg btn-micro elevate"
             >
               Explore Our Impact
             </a>
@@ -381,12 +399,12 @@ export default function HeroSection() {
 
       {/* Global Unity Section */}
       <section 
-        className="py-16 bg-gradient-to-br from-green-50 to-emerald-50 relative"
+        className="py-16 bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 relative"
         style={{
           backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20corporate%20background%20with%20subtle%20geometric%20patterns%2C%20light%20green%20and%20white%20gradient%2C%20modern%20business%20aesthetic%2C%20clean%20minimalist%20design%2C%20soft%20lighting%2C%20professional%20office%20environment%20feel%2C%20high-quality%20corporate%20photography&width=1920&height=800&seq=corporate-bg&orientation=landscape)`
         }}
       >
-        <div className="absolute inset-0 bg-green-50/80"></div>
+        <div className="absolute inset-0 bg-corporate-blue-50/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Global Unity & Collaboration</h2>
@@ -539,13 +557,13 @@ export default function HeroSection() {
                 alt="Climate Resilience"
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-corporate-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-bold mb-2">Climate Resilience</h3>
                 <p className="text-sm opacity-90 mb-4">Building adaptive capacity against climate change impacts</p>
                 <a
                   href="/what-we-do/climate-action#hero"
-                  className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-colors cursor-pointer whitespace-nowrap"
+                  className="inline-block bg-tech-teal-500/80 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap"
                 >
                   Learn More
                 </a>
@@ -558,13 +576,13 @@ export default function HeroSection() {
                 alt="Health Systems"
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-corporate-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-bold mb-2">Health Systems</h3>
                 <p className="text-sm opacity-90 mb-4">Strengthening healthcare infrastructure and pandemic preparedness</p>
                 <a
                   href="/what-we-do/global-health#hero"
-                  className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-colors cursor-pointer whitespace-nowrap"
+                  className="inline-block bg-tech-teal-500/80 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap"
                 >
                   Learn More
                 </a>
@@ -577,13 +595,13 @@ export default function HeroSection() {
                 alt="Food Security"
                 className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-corporate-blue-900/80 to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <h3 className="text-xl font-bold mb-2">Food Security</h3>
                 <p className="text-sm opacity-90 mb-4">Ensuring sustainable food systems and agricultural resilience</p>
                 <a
                   href="/what-we-do/sustainable-food#hero"
-                  className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-white/30 transition-colors cursor-pointer whitespace-nowrap"
+                  className="inline-block bg-tech-teal-500/80 backdrop-blur-sm px-4 py-2 rounded-lg text-sm font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap"
                 >
                   Learn More
                 </a>
@@ -594,7 +612,7 @@ export default function HeroSection() {
           <div className="text-center mt-12">
             <a
               href="/focus-areas#hero"
-              className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
+              className="bg-tech-teal-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-tech-teal-600 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
             >
               View All Focus Areas
             </a>
@@ -777,12 +795,12 @@ export default function HeroSection() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-green-700 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-corporate-blue-600 to-corporate-blue-700 relative overflow-hidden mb-20">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 left-0 w-full h-full">
             <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-24 h-24 bg-emerald-300 rounded-full animate-ping"></div>
-            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-green-300 rounded-full animate-bounce"></div>
+            <div className="absolute bottom-20 right-20 w-24 h-24 bg-tech-teal-300 rounded-full animate-ping"></div>
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-digital-purple-300 rounded-full animate-bounce"></div>
             <div className="absolute bottom-1/4 left-1/2 w-20 h-20 bg-white/50 rounded-full animate-pulse"></div>
           </div>
         </div>
@@ -804,7 +822,7 @@ export default function HeroSection() {
               <p className="text-white/90 mb-6">Make a donation to support our global resilience initiatives and community programs.</p>
               <a
                 href="/donate#hero"
-                className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+                className="bg-white text-tech-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
               >
                 Donate Now
               </a>
@@ -818,7 +836,7 @@ export default function HeroSection() {
               <p className="text-white/90 mb-6">Collaborate with LDII to amplify your organization's impact on global challenges.</p>
               <a
                 href="/partners#hero"
-                className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+                className="bg-white text-tech-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
               >
                 Become a Partner
               </a>
@@ -832,7 +850,7 @@ export default function HeroSection() {
               <p className="text-white/90 mb-6">Get updates on our latest research, events, and global resilience initiatives.</p>
               <a
                 href="/contact#hero"
-                className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+                className="bg-white text-tech-teal-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
               >
                 Contact Us
               </a>

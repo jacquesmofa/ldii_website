@@ -140,7 +140,7 @@ export default function AchievementsPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Our Achievements
@@ -248,7 +248,7 @@ export default function AchievementsPage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=People%20joining%20hands%20together%20for%20global%20impact%2C%20diverse%20community%20united%20for%20positive%20change%2C%20hope%20and%20determination%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=achievements-cta-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Be Part of Our Next Achievement
@@ -259,13 +259,13 @@ export default function AchievementsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/partners"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Partner With Us
             </a>

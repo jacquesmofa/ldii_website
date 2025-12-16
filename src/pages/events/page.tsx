@@ -107,6 +107,7 @@ export default function EventsPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Dynamic%20international%20conference%20with%20diverse%20global%20participants%2C%20modern%20event%20venue%20with%20multiple%20screens%20and%20presentations%2C%20professional%20conference%20photography%2C%20multicultural%20audience%20engagement%2C%20high-resolution%20image%20with%20excellent%20lighting&width=1920&height=800&seq=events-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Events & News
@@ -133,7 +134,7 @@ export default function EventsPage() {
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold mr-3">
                         {event.type}
                       </span>
                       <span className="text-green-600 font-semibold">{event.date}</span>
@@ -252,7 +253,7 @@ export default function EventsPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-green-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Stay Informed
@@ -267,7 +268,7 @@ export default function EventsPage() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
               />
-              <button className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap">
+              <button className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
                 Subscribe
               </button>
             </div>

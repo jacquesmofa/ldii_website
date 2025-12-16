@@ -10,6 +10,7 @@ export default function Header() {
       title: 'About Us',
       href: '/about',
       dropdown: [
+        { title: 'About LDII', href: '/about' },
         { title: 'Who We Are', href: '/about/who-we-are' },
         { title: 'Our Work', href: '/about/our-work' },
         { title: 'Past Projects', href: '/about/past-projects' },
@@ -20,6 +21,7 @@ export default function Header() {
       title: 'What We Do',
       href: '/what-we-do',
       dropdown: [
+        { title: 'What We Do', href: '/what-we-do' },
         { title: 'Technology Transfer, AI Governance & Research', href: '/what-we-do/technology-ai-research' },
         { title: 'Climate Action & Mitigation', href: '/what-we-do/climate-action' },
         { title: 'Health & Resilience', href: '/what-we-do/global-health' },
@@ -37,6 +39,7 @@ export default function Header() {
       title: 'Impact',
       href: '/impact',
       dropdown: [
+        { title: 'Our Impact', href: '/impact' },
         { title: 'Achievements', href: '/impact/achievements' },
         { title: 'Success Stories', href: '/impact/success-stories' },
         { title: 'Annual Reports', href: '/impact/annual-reports' },
@@ -47,6 +50,7 @@ export default function Header() {
       title: 'Events & News',
       href: '/events',
       dropdown: [
+        { title: 'Events & News', href: '/events' },
         { title: 'Upcoming Events', href: '/events/upcoming' },
         { title: 'Past Events & Resources', href: '/events/past' },
         { title: 'Latest News', href: '/events/news' },
@@ -71,6 +75,7 @@ export default function Header() {
       title: 'Contact',
       href: '/contact',
       dropdown: [
+        { title: 'Contact Us', href: '/contact' },
         { title: 'Get in Touch', href: '/contact/get-in-touch' },
         { title: 'Our Locations', href: '/contact/our-locations' },
         { title: 'Media Inquiries', href: '/contact/media-inquiries' }
@@ -84,21 +89,20 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/#hero" className="flex items-center space-x-3 cursor-pointer group">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 flex items-center justify-center overflow-hidden">
+            <a href="/#hero" className="flex items-center cursor-pointer group">
+              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src="https://static.readdy.ai/image/2e117e8c7ffa34e61699363cecaf86d3/0d2f293969006eba1eb1567c17a42468.png"
+                  src="https://i.imgur.com/2Paka7g.png"
                   alt="LDII Logo"
-                  className="w-full h-full object-contain"
+                  className="h-full w-auto object-contain"
                 />
               </div>
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-green-600 transition-colors duration-300" style={{ fontFamily: '"Roboto", sans-serif', letterSpacing: '0.05em' }}>LDII</div>
             </a>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden xl:flex items-center">
-            <div className="flex items-center space-x-4 2xl:space-x-6">
+            <div className="flex items-center space-x-1">
               {navigationItems.map((item, index) => (
                 <div
                   key={index}
@@ -108,7 +112,7 @@ export default function Header() {
                 >
                   <a
                     href={item.href}
-                    className="text-gray-700 hover:text-white hover:bg-green-600 font-medium transition-all duration-300 cursor-pointer flex items-center space-x-1 px-3 2xl:px-4 py-2 rounded-lg transform hover:scale-105 text-sm 2xl:text-base"
+                    className="flex items-center gap-1 px-4 py-2 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap"
                   >
                     <span className="whitespace-nowrap">{item.title}</span>
                     {item.dropdown && (
@@ -118,7 +122,7 @@ export default function Header() {
                   
                   {/* Dropdown Menu */}
                   {item.dropdown && (
-                    <div className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 transition-all duration-300 transform ${
+                    <div className={`absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 transition-all duration-300 transform ${
                       activeDropdown === item.title 
                         ? 'opacity-100 translate-y-0 visible' 
                         : 'opacity-0 translate-y-2 invisible'
@@ -127,7 +131,7 @@ export default function Header() {
                         <a
                           key={dropdownIndex}
                           href={dropdownItem.href}
-                          className="block px-4 py-3 text-gray-700 hover:text-white hover:bg-green-600 transition-all duration-200 cursor-pointer transform hover:translate-x-1"
+                          className="block px-5 py-3 text-gray-700 hover:bg-[#0A1E3D] hover:text-[#00D9FF] transition-all duration-300 whitespace-normal text-sm leading-relaxed"
                         >
                           {dropdownItem.title}
                         </a>
@@ -163,7 +167,7 @@ export default function Header() {
               <div key={index} className="space-y-1">
                 <a
                   href={item.href}
-                  className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-white hover:bg-green-600 rounded-lg transition-colors cursor-pointer font-medium"
+                  className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap"
                   onClick={(e) => {
                     if (item.dropdown) {
                       e.preventDefault();
@@ -189,7 +193,7 @@ export default function Header() {
                         <a
                           key={dropdownIndex}
                           href={dropdownItem.href}
-                          className="block px-4 py-2 text-sm text-gray-600 hover:text-white hover:bg-green-600 rounded-lg transition-colors cursor-pointer"
+                          className="block pl-4 py-2 text-gray-600 hover:text-[#00D9FF] hover:bg-[#0A1E3D]/10 rounded transition-all duration-300 text-sm whitespace-normal leading-relaxed"
                         >
                           {dropdownItem.title}
                         </a>

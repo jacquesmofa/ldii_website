@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 export default function NewsletterSection() {
@@ -37,7 +36,7 @@ export default function NewsletterSection() {
   };
 
   return (
-    <section className="py-12 bg-green-600 relative overflow-hidden">
+    <section className="py-20 bg-[#0A1E3D]">
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-20"
         style={{
@@ -66,7 +65,7 @@ export default function NewsletterSection() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap disabled:opacity-50"
+              className="bg-tech-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap disabled:opacity-50"
             >
               {isSubmitting ? 'Subscribing...' : 'Subscribe'}
             </button>

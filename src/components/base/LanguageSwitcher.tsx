@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 interface Language {
@@ -29,7 +28,7 @@ export default function LanguageSwitcher() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-3 py-2 text-white hover:text-teal-300 transition-colors cursor-pointer"
+        className="flex items-center space-x-2 px-3 py-2 text-white hover:text-[#00D9FF] transition-colors cursor-pointer"
       >
         <i className="ri-global-line w-4 h-4 flex items-center justify-center"></i>
         <span className="text-sm font-medium">{selectedLanguage.code.toUpperCase()}</span>

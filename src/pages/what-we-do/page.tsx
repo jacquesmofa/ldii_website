@@ -53,6 +53,7 @@ export default function WhatWeDoPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Global%20development%20and%20international%20cooperation%20with%20diverse%20communities%20working%20together%20on%20sustainable%20development%20projects%2C%20environmental%20conservation%2C%20healthcare%2C%20education%2C%20professional%20documentary%20photography%20with%20inspiring%20atmosphere&width=1920&height=800&seq=whatwedo-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             What We Do
@@ -216,7 +217,7 @@ export default function WhatWeDoPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join Us in Building Global Resilience
@@ -227,13 +228,13 @@ export default function WhatWeDoPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/partners"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Partner With Us
             </a>
             <a
               href="/contact"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Get in Touch
             </a>

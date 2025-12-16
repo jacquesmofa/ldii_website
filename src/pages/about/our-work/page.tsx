@@ -129,7 +129,7 @@ export default function OurWorkPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Slideshow */}
-      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-corporate-blue-900 to-corporate-blue-700 overflow-hidden">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -139,7 +139,7 @@ export default function OurWorkPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Our Work
@@ -178,8 +178,8 @@ export default function OurWorkPage() {
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-6">
-                      <i className={`${activity.icon} w-8 h-8 flex items-center justify-center text-green-600`}></i>
+                    <div className="w-16 h-16 bg-[#0A1E3D]/10 rounded-full flex items-center justify-center mr-6">
+                      <i className={`${activity.icon} w-8 h-8 flex items-center justify-center text-[#00D9FF]`}></i>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">{activity.title}</h3>
                   </div>
@@ -187,7 +187,7 @@ export default function OurWorkPage() {
                   <ul className="space-y-3">
                     {activity.details.map((detail, detailIndex) => (
                       <li key={detailIndex} className="flex items-center space-x-3">
-                        <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600"></i>
+                        <i className="ri-check-line w-5 h-5 flex items-center justify-center text-[#00D9FF]"></i>
                         <span className="text-gray-700">{detail}</span>
                       </li>
                     ))}
@@ -237,31 +237,31 @@ export default function OurWorkPage() {
       </section>
 
       {/* Impact Metrics */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#1a3a5f]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Impact</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold text-white mb-6">Our Impact</h2>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Measurable results from our comprehensive approach to global resilience building.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-600 mb-2">150+</div>
-              <div className="text-gray-600 font-medium">Policy Briefs Published</div>
+              <div className="text-4xl font-bold text-[#00D9FF] mb-2">150+</div>
+              <div className="text-white/90 font-medium">Policy Briefs Published</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-600 mb-2">75+</div>
-              <div className="text-gray-600 font-medium">International Events</div>
+              <div className="text-4xl font-bold text-[#00D9FF] mb-2">75+</div>
+              <div className="text-white/90 font-medium">International Events</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-600 mb-2">500+</div>
-              <div className="text-gray-600 font-medium">Leaders Trained</div>
+              <div className="text-4xl font-bold text-[#00D9FF] mb-2">500+</div>
+              <div className="text-white/90 font-medium">Leaders Trained</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-teal-600 mb-2">25+</div>
-              <div className="text-gray-600 font-medium">Countries Reached</div>
+              <div className="text-4xl font-bold text-[#00D9FF] mb-2">25+</div>
+              <div className="text-white/90 font-medium">Countries Reached</div>
             </div>
           </div>
         </div>
@@ -275,7 +275,7 @@ export default function OurWorkPage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=partnership-cta-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Partner With Us
@@ -286,13 +286,13 @@ export default function OurWorkPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#hero"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Explore Partnerships
             </a>
             <a
               href="/contact#hero"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Contact Us
             </a>

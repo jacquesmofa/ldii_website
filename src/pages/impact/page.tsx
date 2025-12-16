@@ -201,6 +201,7 @@ export default function ImpactPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Inspiring%20visual%20representation%20of%20global%20positive%20impact%20with%20diverse%20communities%20thriving%2C%20sustainable%20development%20in%20action%2C%20environmental%20restoration%2C%20people%20celebrating%20achievements%2C%20professional%20photography%20with%20warm%20lighting%20and%20uplifting%20atmosphere&width=1920&height=800&seq=impact-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Our Impact
@@ -369,7 +370,7 @@ export default function ImpactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-teal-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Be Part of Our Impact
@@ -380,13 +381,13 @@ export default function ImpactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/support/donate"
-              className="bg-white text-teal-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Work
             </a>
             <a
               href="/partners"
-              className="bg-teal-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-teal-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Partner With Us
             </a>

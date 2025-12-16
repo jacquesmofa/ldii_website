@@ -143,6 +143,7 @@ export default function ContactPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20international%20communication%20and%20contact%20with%20diverse%20people%20from%20different%20countries%20connecting%20globally%2C%20modern%20communication%20technology%2C%20multicultural%20business%20interaction%2C%20professional%20photography%20with%20warm%20lighting&width=1920&height=800&seq=contact-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Contact Us
@@ -206,8 +207,8 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactTypes.map((type, index) => (
               <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mb-4">
-                  <i className={`${type.icon} w-8 h-8 flex items-center justify-center text-white`}></i>
+                <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform hover:scale-110 transition-all duration-300">
+                  <i className={`${type.icon} text-3xl text-[#00D9FF]`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{type.title}</h3>
                 <p className="text-gray-700 mb-4 leading-relaxed">{type.description}</p>
@@ -682,7 +683,7 @@ export default function ContactPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-green-600">
+      <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Let's Work Together
@@ -693,13 +694,13 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:partnerships@ldiinitiatives.org"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Start a Partnership
             </a>
             <a
               href="/partners"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Mission
             </a>

@@ -131,7 +131,7 @@ export default function SustainableFoodPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Sustainable Food Systems
@@ -266,7 +266,7 @@ export default function SustainableFoodPage() {
             backgroundImage: 'url(https://readdy.ai/api/search-image?query=Community%20gathering%20around%20abundant%20food%20harvest%20celebration%2C%20diverse%20people%20sharing%20nutritious%20meals%2C%20food%20security%20success%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=food-cta-bg&orientation=landscape)'
           }}
         ></div>
-        <div className="absolute inset-0 bg-emerald-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-4xl font-bold text-white mb-6">
             Support Sustainable Food Systems
@@ -277,13 +277,13 @@ export default function SustainableFoodPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="bg-white text-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Donate Now
             </a>
             <a
               href="/contact"
-              className="bg-emerald-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Learn More
             </a>

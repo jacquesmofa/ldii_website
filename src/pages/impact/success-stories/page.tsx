@@ -154,7 +154,7 @@ export default function SuccessStoriesPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Success Stories
@@ -194,7 +194,7 @@ export default function SuccessStoriesPage() {
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-10 shadow-xl hover:shadow-2xl transition-shadow">
                     <div className="flex items-center mb-4">
-                      <span className="bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {story.category}
                       </span>
                     </div>
@@ -252,7 +252,7 @@ export default function SuccessStoriesPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20positive%20change%2C%20people%20working%20together%2C%20sustainable%20development%2C%20hope%20and%20progress%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=success-cta&orientation=landscape)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-[#0A1E3D]/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Create Your Own Success Story
@@ -263,13 +263,13 @@ export default function SuccessStoriesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/local-programs"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Explore Programs
             </a>
             <a
               href="/contact"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
               Get Involved
             </a>

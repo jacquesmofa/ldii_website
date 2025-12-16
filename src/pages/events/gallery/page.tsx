@@ -177,6 +177,7 @@ export default function GalleryPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20event%20photography%20gallery%20with%20diverse%20international%20conferences%20and%20community%20events%2C%20photo%20exhibition%20display%2C%20modern%20gallery%20setting&width=1920&height=800&seq=gallery-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Event Gallery
@@ -398,11 +399,11 @@ export default function GalleryPage() {
       </section>
 
       {/* Back to Events */}
-      <section className="py-12 bg-green-600">
+      <section className="py-12 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <a
             href="/events#hero"
-            className="inline-flex items-center space-x-2 bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+            className="inline-flex items-center space-x-2 bg-[#00D9FF] text-[#0A1E3D] px-6 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-colors cursor-pointer"
           >
             <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center"></i>
             <span>Back to Events & News</span>

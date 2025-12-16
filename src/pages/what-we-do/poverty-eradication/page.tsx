@@ -128,7 +128,7 @@ export default function PovertyEradicationPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section with Slideshow */}
-      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 via-emerald-700 to-green-800 overflow-hidden">
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-[#0A1E3D] via-[#0D2847] to-[#0A1E3D] overflow-hidden">
         {heroImages.map((image, index) => (
           <div
             key={index}
@@ -138,7 +138,7 @@ export default function PovertyEradicationPage() {
             style={{ backgroundImage: `url(${image})` }}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Poverty Eradication & Inclusive Growth
@@ -266,7 +266,7 @@ export default function PovertyEradicationPage() {
       </section>
 
       {/* Impact Metrics */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
+      <section className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#0D2847] text-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6">Our Impact</h2>
@@ -278,7 +278,7 @@ export default function PovertyEradicationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactMetrics.map((metric, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl font-bold mb-2">{metric.number}</div>
+                <div className="text-4xl font-bold text-[#00D9FF] mb-2">{metric.number}</div>
                 <div className="font-medium">{metric.label}</div>
               </div>
             ))}
@@ -294,7 +294,7 @@ export default function PovertyEradicationPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Community%20empowerment%20and%20economic%20development%2C%20people%20working%20together%2C%20sustainable%20livelihoods%2C%20hope%20and%20progress%2C%20ultra%20high%20resolution%208k%20photography&width=1920&height=600&seq=poverty-cta&orientation=landscape)`
           }}
         ></div>
-        <div className="absolute inset-0 bg-green-600/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0A1E3D]/90 to-[#0D2847]/90"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Join the Fight Against Poverty
@@ -305,13 +305,13 @@ export default function PovertyEradicationPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
               href="/partners#donate"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Support Our Programs
             </a>
             <a
               href="/partners#volunteer"
-              className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-white/10 text-white border-2 border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-colors cursor-pointer whitespace-nowrap"
             >
               Volunteer With Us
             </a>

@@ -91,6 +91,7 @@ export default function FocusAreasPage() {
             backgroundImage: `url(https://readdy.ai/api/search-image?query=Comprehensive%20global%20development%20showing%20multiple%20focus%20areas%20including%20climate%20action%2C%20healthcare%2C%20agriculture%2C%20technology%2C%20and%20economic%20development%2C%20diverse%20communities%20working%20together%2C%20professional%20photography%20with%20inspiring%20lighting%20and%20hopeful%20atmosphere&width=1920&height=800&seq=focus-areas-hero&orientation=landscape)`
           }}
         />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
             Focus Areas
@@ -116,8 +117,8 @@ export default function FocusAreasPage() {
               <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mr-6">
-                      <i className={`${area.icon} w-8 h-8 flex items-center justify-center text-green-600`}></i>
+                    <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform group-hover:scale-110 transition-all duration-300">
+                      <i className={`${area.icon} text-3xl text-[#00D9FF]`}></i>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900">{area.title}</h3>
                   </div>
