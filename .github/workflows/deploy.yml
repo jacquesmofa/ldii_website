@@ -41,7 +41,7 @@ jobs:
           # we must tell it to go into the public_html folder.
           server-dir: "public_html/" 
           
-          # Prevent the cleanup crash we saw on the other site
+          # Prevent the cleanup crash clash we saw on the other site
           exclude: |
             **/.git*
             **/.git*/**
