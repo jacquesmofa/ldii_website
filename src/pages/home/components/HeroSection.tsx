@@ -163,16 +163,11 @@ export default function HeroSection() {
             
             <div className="absolute inset-0 opacity-40">
               <div className="relative w-full h-full overflow-hidden">
-                <div className="absolute top-1/4 left-1/6 w-2 h-32 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform rotate-45 transition-transform duration-4000"></div>
-                <div className="absolute top-1/3 right-1/6 w-2 h-28 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform -rotate-30 transition-transform duration-5000"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-2 h-36 bg-gradient-to-b from-digital-purple-300/60 via-digital-purple-400/40 to-transparent animate-pulse transform rotate-60 transition-transform duration-4500"></div>
-                <div className="absolute bottom-1/3 right-1/4 w-2 h-24 bg-gradient-to-b from-tech-teal-300/60 via-tech-teal-400/40 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3800"></div>
-                
-                <div className="absolute top-1/5 left-1/5 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping"></div>
-                <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping animation-delay-1000"></div>
-                <div className="absolute bottom-1/5 left-1/3 w-3 h-3 bg-digital-purple-300/80 rounded-full animate-ping animation-delay-2000"></div>
-                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-tech-teal-300/80 rounded-full animate-ping animation-delay-1500"></div>
-                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-tech-teal-400/80 rounded-full animate-ping animation-delay-500"></div>
+                <div className="absolute top-1/5 left-1/5 w-3 h-3 bg-[#00D9FF]/300/80 rounded-full animate-ping"></div>
+                <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-[#00D9FF]/300/80 rounded-full animate-ping animation-delay-1000"></div>
+                <div className="absolute bottom-1/5 left-1/3 w-3 h-3 bg-[#00D9FF]/300/80 rounded-full animate-ping animation-delay-2000"></div>
+                <div className="absolute bottom-1/3 right-1/3 w-3 h-3 bg-[#00D9FF]/300/80 rounded-full animate-ping animation-delay-1500"></div>
+                <div className="absolute top-1/2 left-1/2 w-4 h-4 bg-[#00D9FF]/400/80 rounded-full animate-ping animation-delay-500"></div>
               </div>
             </div>
           </div>
@@ -210,74 +205,33 @@ export default function HeroSection() {
               Your browser does not support the video tag.
             </video>
             
-            {/* Enhanced Bright Moving Network Effects Overlay - Covering Entire Globe */}
+            {/* Clean Network Effects Overlay - ONLY DOTS AND RINGS */}
             <div className="absolute inset-0 opacity-70">
               <div className="relative w-full h-full overflow-hidden">
                 
-                {/* Bright Animated Network Lines - Moving Around Entire Globe */}
-                <div className="absolute top-1/6 left-1/6 w-3 h-48 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-45 transition-transform duration-3000 animate-float-1 shadow-2xl shadow-tech-teal-400/80"></div>
-                <div className="absolute top-1/4 right-1/6 w-3 h-40 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform -rotate-12 transition-transform duration-4000 animate-float-2 shadow-2xl shadow-tech-teal-400/80"></div>
-                <div className="absolute bottom-1/4 left-1/4 w-3 h-44 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform rotate-75 transition-transform duration-5000 animate-float-3 shadow-2xl shadow-digital-purple-400/80"></div>
-                <div className="absolute bottom-1/6 right-1/4 w-3 h-36 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform -rotate-45 transition-transform duration-3500 animate-float-4 shadow-2xl shadow-tech-teal-400/80"></div>
-                <div className="absolute top-1/8 right-1/8 w-3 h-32 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-30 transition-transform duration-4500 animate-float-1 shadow-2xl shadow-tech-teal-400/80"></div>
-                <div className="absolute bottom-1/8 left-1/8 w-3 h-40 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform -rotate-60 transition-transform duration-3800 animate-float-2 shadow-2xl shadow-digital-purple-400/80"></div>
-                <div className="absolute top-2/5 left-2/5 w-3 h-36 bg-gradient-to-b from-tech-teal-200 via-tech-teal-400 to-transparent animate-pulse transform rotate-15 transition-transform duration-4200 animate-float-3 shadow-2xl shadow-tech-teal-400/80"></div>
-                <div className="absolute bottom-2/5 right-2/5 w-3 h-32 bg-gradient-to-b from-digital-purple-200 via-digital-purple-400 to-transparent animate-pulse transform -rotate-75 transition-transform duration-3600 animate-float-4 shadow-2xl shadow-digital-purple-400/80"></div>
-                
-                {/* Additional Network Lines for Full Globe Coverage */}
-                <div className="absolute top-1/3 left-1/2 w-3 h-52 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-90 transition-transform duration-4800 animate-float-1 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute bottom-1/3 right-1/2 w-3 h-48 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-30 transition-transform duration-3200 animate-float-2 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute top-3/4 left-3/4 w-3 h-40 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform rotate-60 transition-transform duration-5200 animate-float-3 shadow-2xl shadow-digital-purple-300/80"></div>
-                <div className="absolute top-1/5 right-3/4 w-3 h-44 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-15 transition-transform duration-4600 animate-float-4 shadow-2xl shadow-tech-teal-300/80"></div>
-                
-                {/* Bright Moving Network Arcs - Covering Globe Circumference */}
-                <div className="absolute top-1/5 left-1/5 w-48 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-12 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute top-2/5 right-1/5 w-40 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-45 animate-arc-move-2 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute bottom-1/5 left-2/5 w-44 h-3 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform rotate-75 animate-arc-move-3 shadow-2xl shadow-digital-purple-300/80"></div>
-                <div className="absolute top-1/2 right-1/3 w-36 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform -rotate-30 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute bottom-1/2 left-1/3 w-52 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-60 animate-arc-move-2 shadow-2xl shadow-tech-teal-300/80"></div>
-                <div className="absolute top-3/5 left-1/6 w-38 h-3 bg-gradient-to-r from-transparent via-digital-purple-200 to-transparent animate-pulse transform -rotate-75 animate-arc-move-3 shadow-2xl shadow-digital-purple-300/80"></div>
-                <div className="absolute bottom-3/5 right-1/6 w-42 h-3 bg-gradient-to-r from-transparent via-tech-teal-200 to-transparent animate-pulse transform rotate-45 animate-arc-move-1 shadow-2xl shadow-tech-teal-300/80"></div>
-                
                 {/* Bright Floating Network Nodes - Distributed Around Entire Globe */}
-                <div className="absolute top-1/6 left-1/6 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute top-1/4 right-1/6 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute bottom-1/6 left-1/4 w-6 h-6 bg-digital-purple-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-digital-purple-300/90"></div>
-                <div className="absolute bottom-1/4 right-1/4 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute top-1/2 left-1/2 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute top-3/4 left-3/4 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-digital-purple-300/90"></div>
-                <div className="absolute top-1/8 right-1/8 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute bottom-1/8 left-1/8 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-3 shadow-2xl shadow-digital-purple-300/90"></div>
-                <div className="absolute top-2/3 right-2/3 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-4 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute bottom-2/3 left-2/3 w-4 h-4 bg-tech-teal-200 rounded-full animate-ping animate-node-float-5 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute top-1/3 right-1/5 w-5 h-5 bg-tech-teal-200 rounded-full animate-ping animate-node-float-1 shadow-2xl shadow-tech-teal-300/90"></div>
-                <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-digital-purple-200 rounded-full animate-ping animate-node-float-2 shadow-2xl shadow-digital-purple-300/90"></div>
+                <div className="absolute top-1/6 left-1/6 w-5 h-5 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-1/4 right-1/6 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute bottom-1/6 left-1/4 w-6 h-6 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute bottom-1/4 right-1/4 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-1/2 left-1/2 w-5 h-5 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-3/4 left-3/4 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-1/8 right-1/8 w-5 h-5 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute bottom-1/8 left-1/8 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-2/3 right-2/3 w-5 h-5 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute bottom-2/3 left-2/3 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute top-1/3 right-1/5 w-5 h-5 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
+                <div className="absolute bottom-1/3 left-1/5 w-4 h-4 bg-[#00D9FF] rounded-full animate-ping shadow-2xl shadow-[#00D9FF]/90"></div>
                 
                 {/* Enhanced Rotating Globe Effect - Multiple Concentric Layers */}
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[600px] h-[600px] border-3 border-tech-teal-200/50 rounded-full animate-spin-slow shadow-2xl shadow-tech-teal-300/40"></div>
-                  <div className="absolute w-[520px] h-[520px] border-3 border-tech-teal-200/45 rounded-full animate-spin-reverse shadow-2xl shadow-tech-teal-300/35"></div>
-                  <div className="absolute w-[440px] h-[440px] border-2 border-digital-purple-200/40 rounded-full animate-pulse shadow-2xl shadow-digital-purple-300/30"></div>
-                  <div className="absolute w-[360px] h-[360px] border-2 border-tech-teal-200/35 rounded-full animate-spin-slow-reverse shadow-2xl shadow-tech-teal-300/25"></div>
-                  <div className="absolute w-[280px] h-[280px] border-2 border-tech-teal-200/30 rounded-full animate-spin-slow shadow-2xl shadow-tech-teal-300/20"></div>
-                  <div className="absolute w-[200px] h-[200px] border border-digital-purple-200/25 rounded-full animate-spin-reverse shadow-2xl shadow-digital-purple-300/15"></div>
+                  <div className="w-[600px] h-[600px] border-3 border-[#00D9FF]/50 rounded-full animate-spin-slow shadow-2xl shadow-[#00D9FF]/40"></div>
+                  <div className="absolute w-[520px] h-[520px] border-3 border-[#00D9FF]/45 rounded-full animate-spin-reverse shadow-2xl shadow-[#00D9FF]/35"></div>
+                  <div className="absolute w-[440px] h-[440px] border-2 border-[#00D9FF]/40 rounded-full animate-pulse shadow-2xl shadow-[#00D9FF]/30"></div>
+                  <div className="absolute w-[360px] h-[360px] border-2 border-[#00D9FF]/35 rounded-full animate-spin-slow-reverse shadow-2xl shadow-[#00D9FF]/25"></div>
+                  <div className="absolute w-[280px] h-[280px] border-2 border-[#00D9FF]/30 rounded-full animate-spin-slow shadow-2xl shadow-[#00D9FF]/20"></div>
+                  <div className="absolute w-[200px] h-[200px] border border-[#00D9FF]/25 rounded-full animate-spin-reverse shadow-2xl shadow-[#00D9FF]/15"></div>
                 </div>
-                
-                {/* Additional Bright Moving Elements Around Globe Perimeter */}
-                <div className="absolute top-1/4 left-1/2 w-24 h-24 border-3 border-tech-teal-200/40 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-tech-teal-300/50"></div>
-                <div className="absolute bottom-1/4 right-1/2 w-20 h-20 border-3 border-tech-teal-200/40 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-tech-teal-300/50"></div>
-                <div className="absolute top-1/8 left-3/4 w-16 h-16 border-2 border-digital-purple-200/35 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-digital-purple-300/45"></div>
-                <div className="absolute bottom-1/8 right-3/4 w-18 h-18 border-2 border-tech-teal-200/35 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-tech-teal-300/45"></div>
-                <div className="absolute top-3/8 right-1/8 w-14 h-14 border-2 border-tech-teal-200/30 rounded-full animate-ping animate-orbit-1 shadow-2xl shadow-tech-teal-300/40"></div>
-                <div className="absolute bottom-3/8 left-1/8 w-16 h-16 border-2 border-digital-purple-200/30 rounded-full animate-ping animate-orbit-2 shadow-2xl shadow-digital-purple-300/40"></div>
-                
-                {/* Bright Connection Lines Between Network Nodes */}
-                <div className="absolute top-1/5 left-1/5 w-2 h-24 bg-gradient-to-b from-tech-teal-100 to-tech-teal-100 animate-pulse transform rotate-45 animate-float-1 shadow-lg shadow-tech-teal-200/60"></div>
-                <div className="absolute top-2/5 right-1/5 w-2 h-20 bg-gradient-to-b from-tech-teal-100 to-digital-purple-100 animate-pulse transform -rotate-30 animate-float-2 shadow-lg shadow-tech-teal-200/60"></div>
-                <div className="absolute bottom-1/5 left-2/5 w-2 h-22 bg-gradient-to-b from-digital-purple-100 to-tech-teal-100 animate-pulse transform rotate-60 animate-float-3 shadow-lg shadow-digital-purple-200/60"></div>
-                <div className="absolute bottom-2/5 right-2/5 w-2 h-18 bg-gradient-to-b from-tech-teal-100 to-tech-teal-100 animate-pulse transform -rotate-45 animate-float-4 shadow-lg shadow-tech-teal-200/60"></div>
-                <div className="absolute top-1/3 left-1/3 w-2 h-26 bg-gradient-to-b from-tech-teal-100 to-digital-purple-100 animate-pulse transform rotate-75 animate-float-5 shadow-lg shadow-tech-teal-200/60"></div>
-                <div className="absolute bottom-1/3 right-1/3 w-2 h-24 bg-gradient-to-b from-digital-purple-100 to-tech-teal-100 animate-pulse transform -rotate-60 animate-float-1 shadow-lg shadow-digital-purple-200/60"></div>
               </div>
             </div>
           </div>

@@ -92,7 +92,7 @@ export default function Header() {
             <a href="/#hero" className="flex items-center cursor-pointer group">
               <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src="https://i.imgur.com/2Paka7g.png"
+                  src="https://i.imgur.com/7LGjh8Y.png"
                   alt="LDII Logo"
                   className="h-full w-auto object-contain"
                 />

@@ -92,7 +92,7 @@ export default function Footer() {
             <a href="/#hero" className="inline-block mb-4 cursor-pointer group">
               <div className="transition-transform duration-300 group-hover:scale-105">
                 <img
-                  src="https://i.imgur.com/c3l5H0y.png"
+                  src="https://i.imgur.com/7LGjh8Y.png"
                   alt="LDII Logo"
                   className="h-16 w-auto mb-3"
                 />
@@ -315,7 +315,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-white text-sm" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-            © 2025 Livelihood Development International Initiatives (LDII). All Rights Reserved. | <a href="https://jacquesmofa.netlify.app/" target="_blank" rel="noopener noreferrer" className="text-[#00D9FF] hover:text-[#00C4E6] transition-colors">MJ</a>
+            © 2025 Livelihood Development International Initiatives (LDII). All Rights Reserved.
           </p>
         </div>
       </div>
