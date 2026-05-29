@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useMedia } from '../../../context/MediaContext';
 
 export default function HeroSection() {
   const [counters, setCounters] = useState({
@@ -15,6 +16,7 @@ export default function HeroSection() {
   });
 
   const [showVideo, setShowVideo] = useState(false);
+  const { assets, loading } = useMedia();
 
   // Enhanced animated counter effect with swing animation
   useEffect(() => {
@@ -156,7 +158,9 @@ export default function HeroSection() {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url(https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design&width=1920&height=1080&seq=networked-world-map-hq&orientation=landscape)`
+              backgroundImage: loading 
+                ? 'none' 
+                : `url(${assets.videos.hero_world_map_bg || 'https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design&width=1920&height=1080&seq=networked-world-map-hq&orientation=landscape'})`
             }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-800/60 via-corporate-blue-700/50 to-digital-purple-900/60"></div>
@@ -177,33 +181,35 @@ export default function HeroSection() {
         <div className={`absolute inset-0 transition-opacity duration-[2000ms] ease-in-out ${showVideo ? 'opacity-100' : 'opacity-0'}`}>
           <div className="relative w-full h-full">
             {/* Primary Rotating Globe Video */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover opacity-80"
-              poster="https://readdy.ai/api/search-image?query=Beautiful%20rotating%20Earth%20globe%20with%20bright%20network%20connections%2C%20global%20connectivity%20visualization%2C%20spinning%20planet%20with%20glowing%20network%20lines%2C%20digital%20world%20map%20with%20bright%20connection%20points%2C%20professional%20space%20view%20of%20Earth%20with%20moving%20data%20streams&width=1920&height=1080&seq=globe-poster&orientation=landscape"
-              loading="lazy"
-            >
-              <source
-                src="https://videos.pexels.com/video-files/3141207/3141207-uhd_3840_2160_25fps.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://videos.pexels.com/video-files/3129671/3129671-uhd_3840_2160_25fps.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://videos.pexels.com/video-files/2086113/2086113-uhd_3840_2160_25fps.mp4"
-                type="video/mp4"
-              />
-              <source
-                src="https://videos.pexels.com/video-files/855564/855564-uhd_3840_2160_25fps.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
+            {!loading && (
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover opacity-80"
+                poster={assets.videos.hero_globe_poster || "https://readdy.ai/api/search-image?query=Beautiful%20rotating%20Earth%20globe%20with%20bright%20network%20connections%2C%20global%20connectivity%20visualization%2C%20spinning%20planet%20with%20glowing%20network%20lines%2C%20digital%20world%20map%20with%20bright%20connection%20points%2C%20professional%20space%20view%20of%20Earth%20with%20moving%20data%20streams&width=1920&height=1080&seq=globe-poster&orientation=landscape"}
+                loading="lazy"
+              >
+                <source
+                  src={assets.videos.hero_globe_video || "https://videos.pexels.com/video-files/3141207/3141207-uhd_3840_2160_25fps.mp4"}
+                  type="video/mp4"
+                />
+                <source
+                  src="https://videos.pexels.com/video-files/3129671/3129671-uhd_3840_2160_25fps.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="https://videos.pexels.com/video-files/2086113/2086113-uhd_3840_2160_25fps.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="https://videos.pexels.com/video-files/855564/855564-uhd_3840_2160_25fps.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            )}
             
             {/* Clean Network Effects Overlay - ONLY DOTS AND RINGS */}
             <div className="absolute inset-0 opacity-70">
@@ -355,7 +361,9 @@ export default function HeroSection() {
       <section 
         className="py-16 bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 relative"
         style={{
-          backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20corporate%20background%20with%20subtle%20geometric%20patterns%2C%20light%20green%20and%20white%20gradient%2C%20modern%20business%20aesthetic%2C%20clean%20minimalist%20design%2C%20soft%20lighting%2C%20professional%20office%20environment%20feel%2C%20high-quality%20corporate%20photography&width=1920&height=800&seq=corporate-bg&orientation=landscape)`
+          backgroundImage: loading 
+            ? 'none' 
+            : `url(${assets.gallery.backgrounds?.corporate_bg || 'https://readdy.ai/api/search-image?query=Professional%20corporate%20background%20with%20subtle%20geometric%20patterns%2C%20light%20green%20and%20white%20gradient%2C%20modern%20business%20aesthetic%2C%20clean%20minimalist%20design%2C%20soft%20lighting%2C%20professional%20office%20environment%20feel%2C%20high-quality%20corporate%20photography&width=1920&height=800&seq=corporate-bg&orientation=landscape'})`
         }}
       >
         <div className="absolute inset-0 bg-corporate-blue-50/80"></div>
@@ -369,11 +377,15 @@ export default function HeroSection() {
           
           {/* World Map Image */}
           <div className="mb-16">
-            <img
-              src="https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design&width=1200&height=600&seq=networked-world-map-hq&orientation=landscape"
-              alt="World Map - LDII Global Network Connections"
-              className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-            />
+            {loading ? (
+              <div className="w-full h-96 bg-gray-200 animate-pulse rounded-2xl"></div>
+            ) : (
+              <img
+                src={assets.gallery.maps?.world_network || "https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design&width=1200&height=600&seq=networked-world-map-hq&orientation=landscape"}
+                alt="World Map - LDII Global Network Connections"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+              />
+            )}
           </div>
 
           {/* One Canada Section */}
@@ -386,11 +398,15 @@ export default function HeroSection() {
 
           {/* Canada Flag with Provincial Flags */}
           <div className="mb-16">
-            <img
-              src="https://readdy.ai/api/search-image?query=Canadian%20flag%20in%20center%20surrounded%20by%20all%20provincial%20and%20territorial%20flags%20of%20Canada%20arranged%20in%20circle%2C%20official%20flags%20of%20all%20Canadian%20provinces%20and%20territories%2C%20Alberta%20British%20Columbia%20Manitoba%20New%20Brunswick%20Newfoundland%20Northwest%20Territories%20Nova%20Scotia%20Nunavut%20Ontario%20Prince%20Edward%20Island%20Quebec%20Saskatchewan%20Yukon%20flags%2C%20professional%20government%20photography%2C%20national%20unity%20symbol&width=1200&height=600&seq=canada-provincial-flags&orientation=landscape"
-              alt="Canada Flag with Provincial and Territorial Flags"
-              className="w-full h-96 object-contain rounded-2xl shadow-2xl bg-white p-8"
-            />
+            {loading ? (
+              <div className="w-full h-96 bg-gray-200 animate-pulse rounded-2xl"></div>
+            ) : (
+              <img
+                src={assets.gallery.maps?.canada_flags || "https://readdy.ai/api/search-image?query=Canadian%20flag%20in%20center%20surrounded%20by%20all%20provincial%20and%20territorial%20flags%20of%20Canada%20arranged%20in%20circle%2C%20official%20flags%20of%20all%20Canadian%20provinces%20and%20territories%2C%20Alberta%20British%20Columbia%20Manitoba%20New%20Brunswick%20Newfoundland%20Northwest%20Territories%20Nova%20Scotia%20Nunavut%20Ontario%20Prince%20Edward%20Island%20Quebec%20Saskatchewan%20Yukon%20flags%2C%20professional%20government%20photography%2C%20national%20unity%20symbol&width=1200&height=600&seq=canada-provincial-flags&orientation=landscape"}
+                alt="Canada Flag with Provincial and Territorial Flags"
+                className="w-full h-96 object-contain rounded-2xl shadow-2xl bg-white p-8"
+              />
+            )}
           </div>
         </div>
       </section>
@@ -409,7 +425,9 @@ export default function HeroSection() {
             <div 
               className="relative h-96 bg-cover bg-center bg-no-repeat flex items-center justify-center"
               style={{
-                backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20YouTube%20video%20thumbnail%20for%20international%20development%20organization%2C%20LDII%20conference%20presentation%20with%20speakers%20on%20stage%2C%20modern%20conference%20setup%20with%20professional%20lighting%2C%20play%20button%20overlay%2C%20high-quality%20video%20production%20aesthetic&width=1200&height=600&seq=youtube-bg&orientation=landscape)`
+                backgroundImage: loading 
+                  ? 'none' 
+                  : `url(${assets.videos.youtube_bg || 'https://readdy.ai/api/search-image?query=Professional%20YouTube%20video%20thumbnail%20for%20international%20development%20organization%2C%20LDII%20conference%20presentation%20with%20speakers%20on%20stage%2C%20modern%20conference%20setup%20with%20professional%20lighting%2C%20play%20button%20overlay%2C%20high-quality%20video%20production%20aesthetic&width=1200&height=600&seq=youtube-bg&orientation=landscape'})`
               }}
             >
               <div className="absolute inset-0 bg-black/40"></div>

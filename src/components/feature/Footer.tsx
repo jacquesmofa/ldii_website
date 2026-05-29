@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useMedia } from '../../context/MediaContext';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const { assets, loading } = useMedia();
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -91,11 +93,15 @@ export default function Footer() {
           <div className="md:col-span-1">
             <a href="/#hero" className="inline-block mb-4 cursor-pointer group">
               <div className="transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://i.imgur.com/7LGjh8Y.png"
-                  alt="LDII Logo"
-                  className="h-16 w-auto mb-3"
-                />
+                {loading ? (
+                  <div className="h-16 w-32 bg-gray-700 animate-pulse rounded mb-3"></div>
+                ) : (
+                  <img
+                    src={assets.branding.logo_white || assets.branding.logo_main}
+                    alt="LDII Logo"
+                    className="h-16 w-auto mb-3"
+                  />
+                )}
                 <p className="text-white text-sm font-semibold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
                   Livelihood Development International Initiatives
                 </p>
@@ -144,8 +150,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/local-programs#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Local Programs (Canada & Ontario)
+                <a href="/programs#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  Programs
                 </a>
               </li>
               <li>

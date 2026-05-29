@@ -27,6 +27,7 @@ const PastEventsPage = lazy(() => import('../pages/events/past/page'));
 const NewsPage = lazy(() => import('../pages/events/news/page'));
 const PressReleasesPage = lazy(() => import('../pages/events/news/press-releases/page'));
 const GalleryPage = lazy(() => import('../pages/events/gallery/page'));
+const GalleryEventPage = lazy(() => import('../pages/events/gallery/event/page'));
 const PartnersPage = lazy(() => import('../pages/partners/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const GetInTouchPage = lazy(() => import('../pages/contact/get-in-touch/page'));
@@ -41,6 +42,7 @@ const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 const FAQPage = lazy(() => import('../pages/faq/page'));
 const SitemapPage = lazy(() => import('../pages/sitemap/page'));
+const PresidentProfilePage = lazy(() => import('../pages/about/who-we-are/president-profile/page'));
 
 const routes: RouteObject[] = [
   {
@@ -54,6 +56,10 @@ const routes: RouteObject[] = [
   {
     path: '/about/who-we-are',
     element: <WhoWeArePage />
+  },
+  {
+    path: '/about/who-we-are/president-profile',
+    element: <PresidentProfilePage />
   },
   {
     path: '/about/our-work',
@@ -96,7 +102,7 @@ const routes: RouteObject[] = [
     element: <DigitalInclusionPage />
   },
   {
-    path: '/local-programs',
+    path: '/programs',
     element: <LocalProgramsPage />
   },
   {
@@ -142,6 +148,10 @@ const routes: RouteObject[] = [
   {
     path: '/events/gallery',
     element: <GalleryPage />
+  },
+  {
+    path: '/events/gallery/:slug',
+    element: <GalleryEventPage />
   },
   {
     path: '/partners',

@@ -1,0 +1,199 @@
+# ============================================================================
+# PROFESSIONAL MEDIA MANAGEMENT - PERFORMANCE & SECURITY CONFIGURATION
+# ============================================================================
+# Place this file in your cPanel public_html/media/ directory
+# This configuration ensures optimal performance, security, and user experience
+# ============================================================================
+
+# ----------------------------------------------------------------------------
+# 1. BROWSER CACHING - Reduce Server Load & Speed Up Repeat Visits
+# ----------------------------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images - Cache for 1 year (static assets rarely change)
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  
+  # Documents - Cache for 1 month (allows periodic updates)
+  ExpiresByType application/pdf "access plus 1 month"
+  ExpiresByType text/plain "access plus 1 month"
+  ExpiresByType application/msword "access plus 1 month"
+  ExpiresByType application/vnd.openxmlformats-officedocument.wordprocessingml.document "access plus 1 month"
+  
+  # Videos - Cache for 1 year (large files benefit from long caching)
+  ExpiresByType video/mp4 "access plus 1 year"
+  ExpiresByType video/webm "access plus 1 year"
+  ExpiresByType video/ogg "access plus 1 year"
+  
+  # JSON manifest - Cache for 1 day (allows quick updates without full cache clear)
+  ExpiresByType application/json "access plus 1 day"
+  
+  # Default - Cache for 2 days
+  ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Cache-Control headers for better browser compatibility
+<IfModule mod_headers.c>
+  # Images - Immutable for 1 year
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Videos - Immutable for 1 year
+  <FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  
+  # Documents - Cache for 1 month
+  <FilesMatch "\.(pdf|txt|doc|docx)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  
+  # JSON - Cache for 1 day
+  <FilesMatch "\.json$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 2. GZIP COMPRESSION - Reduce File Sizes for Faster Downloads
+# ----------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+  # Compress JSON manifests
+  AddOutputFilterByType DEFLATE application/json
+  
+  # Compress text-based documents
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE application/xml
+  AddOutputFilterByType DEFLATE application/xhtml+xml
+  AddOutputFilterByType DEFLATE application/rss+xml
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  
+  # Compress SVG images
+  AddOutputFilterByType DEFLATE image/svg+xml
+  
+  # Note: PDFs and videos are already compressed, no need to deflate
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 3. SECURITY - Protect Your Media Files
+# ----------------------------------------------------------------------------
+
+# Prevent directory listing (users can't browse your folder structure)
+Options -Indexes
+
+# Prevent access to hidden files (.htaccess, .git, etc.)
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Prevent execution of PHP files in media directory (security best practice)
+<FilesMatch "\.(php|php3|php4|php5|phtml)$">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# Prevent hotlinking (other websites stealing your bandwidth)
+# Replace "yourdomain.com" with your actual domain
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_REFERER} !^$
+  RewriteCond %{HTTP_REFERER} !^https?://(www\.)?yourdomain\.com [NC]
+  RewriteRule \.(jpg|jpeg|png|gif|webp|mp4|webm|pdf)$ - [F,L]
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 4. CORS - Allow Assets to Load on Your Website
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Allow your domain to access these files
+  # For production, replace "*" with your specific domain for better security
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, Accept, Origin"
+  Header set Access-Control-Max-Age "3600"
+  
+  # Handle preflight requests
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} OPTIONS
+  RewriteRule ^(.*)$ $1 [R=200,L]
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 5. CONTENT TYPE ENFORCEMENT - Ensure Proper MIME Types
+# ----------------------------------------------------------------------------
+<IfModule mod_mime.c>
+  # Images
+  AddType image/jpeg jpg jpeg
+  AddType image/png png
+  AddType image/gif gif
+  AddType image/webp webp
+  AddType image/svg+xml svg svgz
+  
+  # Videos
+  AddType video/mp4 mp4 m4v
+  AddType video/webm webm
+  AddType video/ogg ogv
+  
+  # Documents
+  AddType application/pdf pdf
+  AddType text/plain txt
+  
+  # JSON
+  AddType application/json json
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 6. VIDEO OPTIMIZATION - Range Requests for Smooth Streaming
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Enable range requests for video files (allows seeking/scrubbing)
+  <FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Accept-Ranges bytes
+  </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------------------
+# 7. PDF OPTIMIZATION - Force Download Instead of Browser Preview
+# ----------------------------------------------------------------------------
+# Uncomment the section below if you want PDFs to download automatically
+# instead of opening in the browser
+
+# <FilesMatch "\.pdf$">
+#   Header set Content-Disposition "attachment"
+# </FilesMatch>
+
+# ----------------------------------------------------------------------------
+# 8. PERFORMANCE - ETags for Better Caching
+# ----------------------------------------------------------------------------
+<IfModule mod_headers.c>
+  # Enable ETags for cache validation
+  FileETag MTime Size
+</IfModule>
+
+# ============================================================================
+# INSTALLATION INSTRUCTIONS
+# ============================================================================
+# 1. Log into your cPanel
+# 2. Open "File Manager"
+# 3. Navigate to public_html/media/
+# 4. Upload this .htaccess file
+# 5. Set file permissions to 644 (read/write for owner, read for others)
+# 6. Test your website to ensure media loads correctly
+#
+# TROUBLESHOOTING:
+# - If you get 500 errors, your server may not support all modules
+# - Comment out sections one by one to identify the problematic module
+# - Contact your hosting provider if issues persist
+# ============================================================================

@@ -1,415 +1,517 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { galleryEvents } from '../../../mocks/galleryData';
+import MasonryGrid from './components/MasonryGrid';
 
-export default function GalleryPage() {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+/* ──────────────────────────────────────────────────────────────────────────
+   GALLERY PAGE  —  TWO VIEW MODES
+   ──────────────────────────────────────────────────────────────────────────
 
-  const pastEvents = [
-    {
-      title: 'Second International Post Covid Pandemic Conference',
-      year: '2025',
-      date: 'March 15-17, 2025',
-      location: 'Toronto, Canada',
-      description: 'Building resilient health systems and economic recovery strategies in the post-pandemic era.',
-      images: [
-        'https://readdy.ai/api/search-image?query=International%20conference%20with%20diverse%20global%20health%20experts%20discussing%20post-pandemic%20recovery%2C%20modern%20conference%20hall%20with%20LDII%20branding%2C%20professional%20event%20photography&width=400&height=300&seq=conf-2025-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Panel%20discussion%20on%20health%20system%20resilience%20with%20international%20speakers%2C%20conference%20stage%20with%20large%20screens%2C%20professional%20event%20documentation&width=400&height=300&seq=conf-2025-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Networking%20session%20at%20international%20health%20conference%2C%20diverse%20professionals%20exchanging%20ideas%2C%20modern%20venue%20with%20LDII%20banners&width=400&height=300&seq=conf-2025-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=International%20Conference%20session%20on%20economic%20recovery%20strategies%2C%20small%20group%20discussions%2C%20interactive%20conference%20setting&width=400&height=300&seq=conf-2025-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Conference Opening Ceremony',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Conference%20opening%20ceremony%20with%20keynote%20speaker%2C%20large%20audience%2C%20professional%20stage%20setup%20with%20LDII%20branding&width=400&height=300&seq=conf-2025-video-1&orientation=landscape'
-        },
-        {
-          title: 'Health Systems Panel Discussion',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Expert%20panel%20discussion%20on%20health%20systems%2C%20multiple%20speakers%20on%20stage%2C%20engaged%20audience%20in%20conference%20hall&width=400&height=300&seq=conf-2025-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'First International Post Covid Pandemic Conference',
-      year: '2024',
-      date: 'October 12-14, 2024',
-      location: 'Toronto, Canada',
-      description: 'Addressing global challenges and building resilience in the aftermath of the COVID-19 pandemic.',
-      images: [
-        'https://readdy.ai/api/search-image?query=First%20post-covid%20conference%20with%20international%20delegates%2C%20conference%20hall%20with%20health%20safety%20protocols%2C%20professional%20documentation&width=400&height=300&seq=conf-2024-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Keynote%20presentation%20on%20pandemic%20preparedness%2C%20speaker%20on%20stage%20with%20presentation%20slides%2C%20attentive%20audience&width=400&height=300&seq=conf-2024-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Breakout%20sessions%20on%20global%20health%20policy%2C%20small%20group%20discussions%2C%20collaborative%20workshop%20environment&width=400&height=300&seq=conf-2024-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Conference%20exhibition%20area%20with%20health%20technology%20displays%2C%20attendees%20exploring%20innovative%20solutions&width=400&height=300&seq=conf-2024-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Pandemic Preparedness Keynote',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Keynote%20speaker%20presenting%20on%20pandemic%20preparedness%2C%20professional%20stage%20with%20large%20screen%2C%20engaged%20conference%20audience&width=400&height=300&seq=conf-2024-video-1&orientation=landscape'
-        },
-        {
-          title: 'Global Health Policy International Conference',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Interactive%20workshop%20on%20global%20health%20policy%2C%20facilitator%20with%20participants%2C%20collaborative%20learning%20environment&width=400&height=300&seq=conf-2024-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'First International Post Covid Parade',
-      year: '2023',
-      date: 'October 15, 2023',
-      location: 'Toronto, Canada',
-      description: 'A celebration of resilience and hope, bringing communities together to mark recovery and renewal.',
-      images: [
-        'https://readdy.ai/api/search-image?query=Colorful%20community%20parade%20celebrating%20post-covid%20recovery%2C%20diverse%20participants%20with%20banners%20and%20flags%2C%20street%20celebration%20atmosphere&width=400&height=300&seq=parade-2023-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Community%20groups%20marching%20in%20post-covid%20celebration%20parade%2C%20vibrant%20costumes%20and%20cultural%20displays%2C%20joyful%20street%20event&width=400&height=300&seq=parade-2023-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=LDII%20float%20in%20community%20parade%2C%20organization%20branding%20and%20messaging%2C%20participants%20waving%20to%20crowds&width=400&height=300&seq=parade-2023-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Parade%20spectators%20celebrating%20community%20resilience%2C%20families%20and%20children%20enjoying%20street%20festival%2C%20positive%20community%20atmosphere&width=400&height=300&seq=parade-2023-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Parade Highlights Reel',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Aerial%20view%20of%20community%20parade%20with%20colorful%20floats%20and%20participants%2C%20celebration%20of%20post-covid%20recovery&width=400&height=300&seq=parade-2023-video-1&orientation=landscape'
-        },
-        {
-          title: 'Community Speeches',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Community%20leaders%20giving%20speeches%20at%20parade%20event%2C%20outdoor%20stage%20with%20microphone%2C%20engaged%20audience&width=400&height=300&seq=parade-2023-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'East Africa Food Security Symposium and Expo',
-      year: '2022',
-      date: 'September 8-10, 2022',
-      location: 'Helsinki, Finland',
-      description: 'Addressing food security challenges and sustainable agriculture solutions across East Africa.',
-      images: [
-        'https://readdy.ai/api/search-image?query=East%20Africa%20food%20security%20symposium%20with%20agricultural%20experts%2C%20conference%20venue%20in%20Nairobi%2C%20professional%20agricultural%20event&width=400&height=300&seq=food-2022-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Agricultural%20expo%20with%20farming%20technology%20displays%2C%20farmers%20and%20experts%20examining%20equipment%2C%20outdoor%20exhibition%20setting&width=400&height=300&seq=food-2022-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Panel%20discussion%20on%20sustainable%20agriculture%2C%20African%20agricultural%20experts%20on%20stage%2C%20engaged%20audience%20of%20farmers%20and%20policymakers&width=400&height=300&seq=food-2022-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Food%20security%20workshop%20with%20East%20African%20participants%2C%20collaborative%20learning%20session%2C%20agricultural%20training%20environment&width=400&height=300&seq=food-2022-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Sustainable Agriculture Panel',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Expert%20panel%20on%20sustainable%20agriculture%20in%20East%20Africa%2C%20conference%20stage%20with%20agricultural%20imagery%2C%20professional%20documentation&width=400&height=300&seq=food-2022-video-1&orientation=landscape'
-        },
-        {
-          title: 'Farming Technology Demonstrations',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Agricultural%20technology%20demonstration%20at%20expo%2C%20farmers%20learning%20new%20techniques%2C%20hands-on%20training%20session&width=400&height=300&seq=food-2022-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'River Nile Conservation with Climate Change Action East Africa (CCAE)',
-      year: '2020',
-      date: 'November 20-22, 2020',
-      location: 'Kampala, Uganda',
-      description: 'Collaborative initiative focusing on Nile River conservation and climate adaptation strategies.',
-      images: [
-        'https://readdy.ai/api/search-image?query=Nile%20River%20conservation%20conference%20in%20Uganda%2C%20environmental%20experts%20discussing%20water%20management%2C%20riverside%20venue%20setting&width=400&height=300&seq=nile-2020-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Climate%20action%20workshop%20with%20East%20African%20environmental%20leaders%2C%20collaborative%20planning%20session%2C%20sustainability%20focus&width=400&height=300&seq=nile-2020-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Field%20visit%20to%20Nile%20River%20conservation%20project%2C%20experts%20examining%20water%20quality%2C%20environmental%20monitoring%20activities&width=400&height=300&seq=nile-2020-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Community%20engagement%20session%20on%20river%20conservation%2C%20local%20stakeholders%20and%20environmental%20experts%2C%20participatory%20planning&width=400&height=300&seq=nile-2020-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Nile Conservation Strategy Presentation',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Environmental%20expert%20presenting%20Nile%20conservation%20strategies%2C%20conference%20presentation%20with%20river%20imagery%2C%20professional%20documentation&width=400&height=300&seq=nile-2020-video-1&orientation=landscape'
-        },
-        {
-          title: 'Community Conservation International Conference',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Community%20workshop%20on%20river%20conservation%2C%20local%20participants%20learning%20environmental%20protection%20methods&width=400&height=300&seq=nile-2020-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'Climate Change Project Climate Change Action East Africa (CCAE)',
-      year: '2020',
-      date: 'August 15-17, 2020',
-      location: 'Helsinki, Finland',
-      description: 'Regional climate action initiative bringing together stakeholders to address climate challenges.',
-      images: [
-        'https://readdy.ai/api/search-image?query=Climate%20change%20action%20conference%20in%20East%20Africa%2C%20environmental%20scientists%20and%20policymakers%2C%20modern%20conference%20facility&width=400&height=300&seq=climate-2020-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Climate%20adaptation%20workshop%20with%20African%20participants%2C%20collaborative%20planning%20for%20climate%20resilience%2C%20interactive%20session&width=400&height=300&seq=climate-2020-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Environmental%20policy%20discussion%20with%20East%20African%20leaders%2C%20conference%20table%20with%20climate%20data%20presentations&width=400&height=300&seq=climate-2020-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Climate%20action%20planning%20session%2C%20diverse%20stakeholders%20working%20on%20adaptation%20strategies%2C%20collaborative%20environment&width=400&height=300&seq=climate-2020-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Climate Adaptation Strategies',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Climate%20expert%20presenting%20adaptation%20strategies%20for%20East%20Africa%2C%20conference%20stage%20with%20climate%20data%20visualizations&width=400&height=300&seq=climate-2020-video-1&orientation=landscape'
-        },
-        {
-          title: 'Regional Climate Action Planning',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Regional%20stakeholders%20planning%20climate%20action%20initiatives%2C%20collaborative%20workshop%20with%20mapping%20activities&width=400&height=300&seq=climate-2020-video-2&orientation=landscape'
-        }
-      ]
-    },
-    {
-      title: 'NEABEC Finland International Business Forum',
-      year: '2019',
-      date: 'June 10-12, 2019',
-      location: 'Helsinki, Finland',
-      description: 'International business forum fostering economic partnerships between Nordic and East African countries.',
-      images: [
-        'https://readdy.ai/api/search-image?query=International%20business%20forum%20in%20Helsinki%2C%20Nordic%20and%20African%20business%20leaders%20networking%2C%20modern%20conference%20center&width=400&height=300&seq=finland-2019-1&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Business%20partnership%20discussions%20between%20Finnish%20and%20East%20African%20entrepreneurs%2C%20formal%20meeting%20setting&width=400&height=300&seq=finland-2019-2&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Trade%20exhibition%20at%20international%20business%20forum%2C%20companies%20showcasing%20products%20and%20services%2C%20professional%20expo%20environment&width=400&height=300&seq=finland-2019-3&orientation=landscape',
-        'https://readdy.ai/api/search-image?query=Economic%20development%20panel%20with%20Nordic%20and%20African%20speakers%2C%20business%20conference%20stage%2C%20international%20cooperation%20theme&width=400&height=300&seq=finland-2019-4&orientation=landscape'
-      ],
-      videos: [
-        {
-          title: 'Nordic-Africa Business Partnerships',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Business%20leaders%20discussing%20Nordic-Africa%20partnerships%2C%20conference%20presentation%20with%20economic%20data%20and%20maps&width=400&height=300&seq=finland-2019-video-1&orientation=landscape'
-        },
-        {
-          title: 'Trade Opportunities International Conference',
-          thumbnail: 'https://readdy.ai/api/search-image?query=Interactive%20workshop%20on%20trade%20opportunities%2C%20business%20professionals%20collaborating%20on%20partnership%20strategies&width=400&height=300&seq=finland-2019-video-2&orientation=landscape'
-        }
-      ]
-    }
-  ];
+   1. OVERVIEW MODE (default when you first visit /events/gallery)
+      • Shows each event as its own section
+      • Each section displays up to 10 preview images
+      • A "View All" button opens the full grid for that event
+      • Visitors scroll down to browse different events
+
+   2. CATEGORY MODE (when you click an event tab or "View All")
+      • Shows the full masonry grid for ONE event only
+      • All photos in that event, scrollable
+      • Lightbox click-to-expand still works
+      • A "Back to Overview" link returns to the landing view
+
+   This keeps the initial gallery page clean and uncluttered while
+   still giving visitors access to every single photo.
+
+   ──────────────────────────────────────────────────────────────────────────
+   DATA SETUP — Adapting existing galleryEvents to the reference format
+   ────────────────────────────────────────────────────────────────────────── */
+
+// Build category tabs from your existing galleryEvents array
+const galleryCategories = galleryEvents.map((event) => ({
+  id: event.slug,
+  name: event.title,
+}));
+
+// Flatten all event images into one array with category tags
+const galleryImages = galleryEvents.flatMap((event) =>
+  event.images.map((image, index) => ({
+    id: `${event.slug}-${index}`,
+    category: event.slug,
+    url: image.url,
+    title: image.title,
+    description: image.title,
+    width: image.width,
+    height: image.height,
+  }))
+);
+
+const GalleryPage = () => {
+  /* ─── STATE ─── */
+  const [viewMode, setViewMode] = useState<'overview' | 'category'>('overview');
+  const [activeCategory, setActiveCategory] = useState<string>(galleryEvents[0]?.slug ?? '');
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [showGridTitles, setShowGridTitles] = useState(true);
+  const [showLightboxCaption, setShowLightboxCaption] = useState(true);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const captionTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  /* ─── FILTERED IMAGES for current category view ─── */
+  const categoryImages = galleryImages.filter(i => i.category === activeCategory);
+  const categoryName = galleryCategories.find(c => c.id === activeCategory)?.name || 'All Photos';
+
+  /* ─── SWITCH TO CATEGORY FULL-GRID VIEW ─── */
+  const enterCategory = useCallback((catId: string) => {
+    setActiveCategory(catId);
+    setViewMode('category');
+    setShowGridTitles(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const timer = setTimeout(() => setShowGridTitles(false), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  /* ─── SWITCH BACK TO OVERVIEW LANDING ─── */
+  const backToOverview = useCallback(() => {
+    setViewMode('overview');
+    setLightboxOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  /* ─── AUTO-HIDE grid titles after 4 seconds ─── */
+  useEffect(() => {
+    if (viewMode !== 'category') return;
+    setShowGridTitles(true);
+    const timer = setTimeout(() => setShowGridTitles(false), 4000);
+    return () => clearTimeout(timer);
+  }, [viewMode, activeCategory]);
+
+  /* ─── AUTO-HIDE lightbox caption after 4 seconds ─── */
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    setShowLightboxCaption(true);
+    if (captionTimerRef.current) clearTimeout(captionTimerRef.current);
+    captionTimerRef.current = setTimeout(() => setShowLightboxCaption(false), 4000);
+    return () => {
+      if (captionTimerRef.current) clearTimeout(captionTimerRef.current);
+    };
+  }, [lightboxOpen, lightboxIndex]);
+
+  /* ─── KEYBOARD NAVIGATION (lightbox) ─── */
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setLightboxOpen(false);
+        document.body.style.overflow = '';
+      }
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex(prev => (prev - 1 + categoryImages.length) % categoryImages.length);
+      }
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex(prev => (prev + 1) % categoryImages.length);
+      }
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxOpen, categoryImages.length]);
+
+  /* ─── LIGHTBOX CONTROLS ─── */
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    document.body.style.overflow = '';
+  };
+
+  const goNext = () => {
+    setLightboxIndex(prev => (prev + 1) % categoryImages.length);
+  };
+
+  const goPrev = () => {
+    setLightboxIndex(prev => (prev - 1 + categoryImages.length) % categoryImages.length);
+  };
+
+  const resetCaptionTimer = () => {
+    setShowLightboxCaption(true);
+    if (captionTimerRef.current) clearTimeout(captionTimerRef.current);
+    captionTimerRef.current = setTimeout(() => setShowLightboxCaption(false), 4000);
+  };
+
+  const selectedItem = categoryImages[lightboxIndex];
+
+  /* ─── COMPUTE PREVIEW IMAGES per category for overview ─── */
+  const getCategoryPreviewImages = (catId: string) => {
+    return galleryImages.filter(i => i.category === catId).slice(0, 10);
+  };
+
+  const getCategoryCount = (catId: string) => {
+    return galleryImages.filter(i => i.category === catId).length;
+  };
+
+  /* ─── CATEGORY TAB COMPONENT ─── */
+  const CategoryTab = ({ cat }: { cat: { id: string; name: string } }) => {
+    const isActive = viewMode === 'category' && activeCategory === cat.id;
+    return (
+      <button
+        onClick={() => enterCategory(cat.id)}
+        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${
+          isActive
+            ? 'bg-[#0A1E3D] text-white shadow-lg'
+            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-green-300'
+        }`}
+      >
+        {cat.name}
+      </button>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative py-20 bg-gradient-to-br from-green-600 to-emerald-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20event%20photography%20gallery%20with%20diverse%20international%20conferences%20and%20community%20events%2C%20photo%20exhibition%20display%2C%20modern%20gallery%20setting&width=1920&height=800&seq=gallery-hero&orientation=landscape)`
-          }}
+      <title>Gallery | LDII — Events &amp; Photo Collections</title>
+      <meta name="description" content="Browse the LDII gallery showcasing international conferences, diplomatic engagements, community programs, and behind-the-scenes moments." />
+      <meta name="keywords" content="LDII gallery, conference photos, diplomatic events, community programs, international gatherings" />
+      <link rel="canonical" href="/events/gallery" />
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          HERO SECTION
+          ═══════════════════════════════════════════════════════════════════ */}
+      <section className="relative h-[45vh] md:h-[50vh] min-h-[300px] overflow-hidden">
+        <img
+          src="https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1779929426/2nd_Post_covid_cvdox1.jpg"
+          alt="LDII Gallery"
+          className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Event Gallery
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Explore our journey through images and videos from major events, conferences, and community initiatives that have shaped our global impact.
-          </p>
-        </div>
-      </section>
-
-      {/* Upload Section */}
-      <section className="py-12 bg-gradient-to-br from-green-50 to-emerald-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-lg p-8 md:p-12">
-            <div className="text-center mb-8">
-              <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <i className="ri-upload-cloud-line w-10 h-10 flex items-center justify-center text-green-600"></i>
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Share Your Event Photos & Videos</h2>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Were you part of one of our events? We'd love to feature your photos and videos in our gallery! Share your memories and help us showcase the impact of our work.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <i className="ri-image-line w-6 h-6 flex items-center justify-center text-green-600"></i>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Photos</h3>
-                <p className="text-sm text-gray-600">Upload high-resolution event photos (JPG, PNG)</p>
-              </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <i className="ri-video-line w-6 h-6 flex items-center justify-center text-green-600"></i>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Videos</h3>
-                <p className="text-sm text-gray-600">Share event videos and recordings (MP4, MOV)</p>
-              </div>
-              <div className="text-center p-6 bg-gray-50 rounded-lg">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <i className="ri-folder-line w-6 h-6 flex items-center justify-center text-green-600"></i>
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Bulk Upload</h3>
-                <p className="text-sm text-gray-600">Upload multiple files at once via cloud storage</p>
-              </div>
-            </div>
-
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 mb-6">
-              <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                <i className="ri-information-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2"></i>
-                How to Upload Your Media
-              </h4>
-              <ol className="list-decimal list-inside space-y-2 text-sm text-gray-700 ml-4">
-                <li>Contact our media team at <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 font-semibold">info@ldiinitiatives.org</a></li>
-                <li>Include the event name, date, and your name in your email</li>
-                <li>For large files, we'll provide you with a secure upload link</li>
-                <li>Our team will review and add your media to the gallery within 3-5 business days</li>
-              </ol>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:info@ldiinitiatives.org?subject=Event Media Upload Request"
-                className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap text-center"
-              >
-                Contact Media Team
-              </a>
-              <a
-                href="/contact/media-inquiries#hero"
-                className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap text-center"
-              >
-                Media Guidelines
-              </a>
-            </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center px-6 max-w-4xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
+            >
+              Gallery
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto"
+            >
+              Moments of Impact, Stories of Transformation
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-5 inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white/80 text-sm"
+            >
+              <i className="ri-image-line w-4 h-4 flex items-center justify-center"></i>
+              <span>{galleryImages.length}+ photographs across {galleryCategories.length} collections</span>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Gallery Navigation */}
-      <section className="py-12 bg-gray-50">
+      {/* ═══════════════════════════════════════════════════════════════════
+          NAVIGATION TABS  +  BACK BUTTON
+          ═══════════════════════════════════════════════════════════════════ */}
+      <section className="py-8 bg-gray-50 border-b border-gray-100 sticky top-[64px] lg:top-[80px] z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => setSelectedCategory('all')}
-              className={`px-6 py-2 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap ${
-                selectedCategory === 'all'
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:border-green-300'
-              }`}
-            >
-              All Events
-            </button>
-            {pastEvents.map((event, index) => (
-              <a
-                key={index}
-                href={`#event-${event.year}`}
-                className="bg-white hover:bg-green-50 border border-gray-200 hover:border-green-300 px-4 py-2 rounded-lg font-semibold text-gray-700 hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                {event.year} - {event.title.split(' ').slice(0, 3).join(' ')}...
-              </a>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {/* Overview tab — only visible when in category mode */}
+            <AnimatePresence>
+              {viewMode === 'category' && (
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.2 }}
+                  onClick={backToOverview}
+                  className="px-5 py-2.5 rounded-full text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-md flex items-center gap-2"
+                >
+                  <i className="ri-arrow-left-line w-4 h-4 flex items-center justify-center"></i>
+                  Back to Overview
+                </motion.button>
+              )}
+            </AnimatePresence>
+
+            {/* Category tabs */}
+            {galleryCategories.map((cat) => (
+              <CategoryTab key={cat.id} cat={cat} />
             ))}
           </div>
+
+          {/* Stats / breadcrumb bar */}
+          <div className="mt-4 text-center">
+            {viewMode === 'overview' ? (
+              <p className="text-sm text-gray-500">
+                Scroll down to explore each collection. Click &quot;View All&quot; to see the complete set.
+              </p>
+            ) : (
+              <p className="text-sm text-gray-600">
+                Showing <span className="font-semibold text-[#0A1E3D]">{categoryImages.length}</span> photos in{' '}
+                <span className="font-semibold text-[#0A1E3D]">{categoryName}</span>
+                <span className="text-gray-400 mx-2">|</span>
+                <span className="text-xs text-gray-400 italic">
+                  Titles auto-hide after 4 seconds — hover any photo to reveal details
+                </span>
+              </p>
+            )}
+          </div>
         </div>
       </section>
 
-      {/* Events Gallery */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="space-y-20">
-            {pastEvents.map((event, eventIndex) => (
-              <div key={eventIndex} id={`event-${event.year}`} className="scroll-mt-20">
-                {/* Event Header */}
-                <div className="text-center mb-12">
-                  <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full font-semibold mb-4">
-                    {event.year}
-                  </div>
-                  <h2 className="text-4xl font-bold text-gray-900 mb-4">{event.title}</h2>
-                  <div className="text-lg text-gray-600 mb-2">{event.date}</div>
-                  <div className="text-lg text-green-600 font-semibold mb-4">{event.location}</div>
-                  <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">{event.description}</p>
-                </div>
+      {/* ═══════════════════════════════════════════════════════════════════
+          VIEW 1  —  OVERVIEW LANDING (default)
+          Shows each category as a section with up to 10 preview images
+          ═══════════════════════════════════════════════════════════════════ */}
+      <AnimatePresence mode="wait">
+        {viewMode === 'overview' && (
+          <motion.div
+            key="overview"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            {galleryCategories.map((cat, catIdx) => {
+              const previews = getCategoryPreviewImages(cat.id);
+              const count = getCategoryCount(cat.id);
+              if (previews.length === 0) return null;
 
-                {/* Event Images */}
-                <div className="mb-12">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Event Photos</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {event.images.map((image, imageIndex) => (
-                      <div key={imageIndex} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <img
-                          src={image}
-                          alt={`${event.title} - Photo ${imageIndex + 1}`}
-                          className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 flex items-center justify-center">
-                          <i className="ri-zoom-in-line w-8 h-8 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
-                        </div>
+              return (
+                <section
+                  key={cat.id}
+                  id={`section-${cat.id}`}
+                  className={`py-14 md:py-20 ${catIdx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}`}
+                >
+                  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                    {/* Section header */}
+                    <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+                      <div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-[#0A1E3D] mb-1">
+                          {cat.name}
+                        </h2>
+                        <p className="text-gray-500 text-sm">
+                          {count} {count === 1 ? 'photo' : 'photos'} — click any to preview
+                        </p>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                      <button
+                        onClick={() => enterCategory(cat.id)}
+                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
+                      >
+                        View All {count} Photos
+                        <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                      </button>
+                    </div>
 
-                {/* Event Videos */}
-                <div className="mb-12">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Event Videos</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {event.videos.map((video, videoIndex) => (
-                      <div key={videoIndex} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                        <div className="relative">
-                          <img
-                            src={video.thumbnail}
-                            alt={video.title}
-                            className="w-full h-64 object-cover"
-                          />
-                          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                            <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-700 transition-colors cursor-pointer">
-                              <i className="ri-play-fill w-8 h-8 flex items-center justify-center text-white ml-1"></i>
+                    {/* Preview grid — masonry style, up to 10 images */}
+                    <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-4 space-y-4">
+                      {previews.map((item, idx) => (
+                        <motion.div
+                          key={item.id}
+                          initial={{ opacity: 0, y: 16 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: '-40px' }}
+                          transition={{ duration: 0.4, delay: idx * 0.05 }}
+                          className="break-inside-avoid group cursor-pointer"
+                          onClick={() => {
+                            enterCategory(cat.id);
+                            // Small delay to let category view render, then open lightbox
+                            setTimeout(() => {
+                              const catImages = galleryImages.filter(i => i.category === cat.id);
+                              const newIndex = catImages.findIndex(i => i.id === item.id);
+                              if (newIndex >= 0) openLightbox(newIndex);
+                            }, 350);
+                          }}
+                        >
+                          <div className="relative overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-lg transition-all duration-500">
+                            <img
+                              src={item.url}
+                              alt={item.title}
+                              className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                              <p className="text-white font-semibold text-sm truncate">{item.title}</p>
                             </div>
                           </div>
-                        </div>
-                        <div className="p-4 bg-white">
-                          <h4 className="text-lg font-semibold text-gray-900">{video.title}</h4>
-                        </div>
-                      </div>
-                    ))}
+                        </motion.div>
+                      ))}
+                    </div>
+
+                    {/* "View All" bottom button (mobile-friendly) */}
+                    <div className="mt-6 text-center sm:hidden">
+                      <button
+                        onClick={() => enterCategory(cat.id)}
+                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer"
+                      >
+                        View All {count} Photos
+                      </button>
+                    </div>
                   </div>
-                </div>
+                </section>
+              );
+            })}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-                {/* Event Links */}
-                <div className="text-center">
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a
-                      href={`/events/past/${event.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
-                    >
-                      View Event Details
-                    </a>
-                    <a
-                      href={`/events/past/${event.title.toLowerCase().replace(/\s+/g, '-')}/media`}
-                      className="bg-white text-green-600 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
-                    >
-                      Download Media Kit
-                    </a>
-                  </div>
-                </div>
-
-                {/* Divider */}
-                {eventIndex < pastEvents.length - 1 && (
-                  <div className="mt-20 border-t border-gray-200"></div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Media Request Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Request Event Media</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Need high-resolution photos or videos from our events? Contact our media team for access to our complete archive.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact/media-inquiries#hero"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Contact Media Team
-            </a>
-            <a
-              href="/events/news/press-releases#hero"
-              className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              View Press Releases
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Back to Events */}
-      <section className="py-12 bg-[#0A1E3D]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <a
-            href="/events#hero"
-            className="inline-flex items-center space-x-2 bg-[#00D9FF] text-[#0A1E3D] px-6 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-colors cursor-pointer"
+      {/* ═══════════════════════════════════════════════════════════════════
+          VIEW 2  —  CATEGORY FULL-GRID (masonry layout via MasonryGrid)
+          Shows ALL images for the selected category with proper previews
+          ═══════════════════════════════════════════════════════════════════ */}
+      <AnimatePresence mode="wait">
+        {viewMode === 'category' && (
+          <motion.div
+            key="category"
+            ref={gridRef}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="py-14 md:py-20 bg-white"
           >
-            <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center"></i>
-            <span>Back to Events & News</span>
-          </a>
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+              {/* Section title */}
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0A1E3D] mb-2">
+                  {categoryName}
+                </h2>
+                <p className="text-gray-500 text-sm">
+                  {categoryImages.length} {categoryImages.length === 1 ? 'photo' : 'photos'} — click any to view full size
+                </p>
+              </div>
+
+              {/* Proper masonry grid with visible previews */}
+              <MasonryGrid
+                images={categoryImages}
+                onImageClick={(index) => openLightbox(index)}
+              />
+
+              {categoryImages.length === 0 && (
+                <div className="text-center py-20">
+                  <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i className="ri-image-line text-2xl text-gray-400 w-8 h-8 flex items-center justify-center"></i>
+                  </div>
+                  <p className="text-gray-500 text-lg">No photos found in this category.</p>
+                  <button
+                    onClick={backToOverview}
+                    className="mt-4 px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-colors cursor-pointer"
+                  >
+                    Back to Gallery Overview
+                  </button>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ═══════════════════════════════════════════════════════════════════
+          LIGHTBOX MODAL
+          Full-screen photo viewer with prev/next, keyboard, captions
+          ═══════════════════════════════════════════════════════════════════ */}
+      {lightboxOpen && selectedItem && (
+        <div
+          className="fixed inset-0 z-50 bg-black/95 flex flex-col"
+          onClick={closeLightbox}
+        >
+          {/* Top bar */}
+          <div className="flex items-center justify-between px-4 md:px-6 py-4 text-white shrink-0">
+            <div className="flex items-center gap-3">
+              <span className="text-sm text-white/60 font-medium">
+                {lightboxIndex + 1} <span className="text-white/30">/</span> {categoryImages.length}
+              </span>
+              <span className="hidden sm:inline text-sm text-white/40">{selectedItem.title}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={(e) => { e.stopPropagation(); setShowLightboxCaption(p => !p); }}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+                title="Toggle caption"
+              >
+                <i className={`${showLightboxCaption ? 'ri-chat-off-line' : 'ri-chat-1-line'} text-lg w-5 h-5 flex items-center justify-center`}></i>
+              </button>
+              <button
+                onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
+              >
+                <i className="ri-close-line text-xl w-5 h-5 flex items-center justify-center"></i>
+              </button>
+            </div>
+          </div>
+
+          {/* Image area with click zones */}
+          <div
+            className="flex-1 flex items-center justify-center px-4 md:px-16 relative overflow-hidden"
+            onMouseMove={resetCaptionTimer}
+          >
+            {/* Left click zone */}
+            <div
+              className="absolute left-0 top-0 bottom-0 w-1/4 z-10 cursor-w-resize hidden md:block"
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              title="Previous image"
+            />
+
+            {/* Right click zone */}
+            <div
+              className="absolute right-0 top-0 bottom-0 w-1/4 z-10 cursor-e-resize hidden md:block"
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              title="Next image"
+            />
+
+            {/* Prev arrow button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white transition-all duration-300 hover:scale-110 cursor-pointer"
+            >
+              <i className="ri-arrow-left-s-line text-2xl md:text-3xl w-6 h-6 flex items-center justify-center"></i>
+            </button>
+
+            {/* Image */}
+            <motion.img
+              key={selectedItem.id}
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              src={selectedItem.url}
+              alt={selectedItem.title}
+              className="max-w-full max-h-[72vh] object-contain rounded-lg select-none"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Next arrow button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/25 text-white transition-all duration-300 hover:scale-110 cursor-pointer"
+            >
+              <i className="ri-arrow-right-s-line text-2xl md:text-3xl w-6 h-6 flex items-center justify-center"></i>
+            </button>
+          </div>
+
+          {/* Caption — auto-fades after 4 seconds */}
+          <div
+            className={`shrink-0 px-6 py-5 text-center transition-opacity duration-700 ${
+              showLightboxCaption ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <h3 className="text-lg md:text-xl font-bold text-white mb-1">{selectedItem.title}</h3>
+            <p className="text-sm text-gray-400 max-w-2xl mx-auto leading-relaxed">{selectedItem.description}</p>
+            <p className="text-xs text-green-500 mt-2 font-medium uppercase tracking-wider">
+              {categoryName}
+            </p>
+          </div>
         </div>
-      </section>
+      )}
     </div>
   );
-}
+};
+
+export default GalleryPage;

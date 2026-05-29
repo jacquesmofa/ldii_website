@@ -262,7 +262,7 @@ export default function SuccessStoriesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
-              href="/local-programs"
+              href="/programs"
               className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Explore Programs

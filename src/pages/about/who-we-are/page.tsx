@@ -1,4 +1,39 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+function BoardMemberCard({ member }: { member: { name: string; title: string; shortBio: string; fullBio: string } }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+      <div className="w-full h-56 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl mb-5 flex items-center justify-center">
+        <div className="w-20 h-20 bg-gray-300 rounded-full flex items-center justify-center">
+          <div className="w-10 h-10 flex items-center justify-center">
+            <i className="ri-user-3-line text-3xl text-gray-500"></i>
+          </div>
+        </div>
+      </div>
+      <h3 className="text-lg font-bold text-gray-900 mb-1">{member.name}</h3>
+      <p className="text-emerald-600 font-semibold text-sm mb-3">{member.title}</p>
+      <p className="text-gray-600 text-sm leading-relaxed">
+        {expanded ? member.fullBio : member.shortBio}
+      </p>
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="mt-4 text-emerald-600 font-semibold text-sm hover:text-emerald-700 transition-colors cursor-pointer inline-flex items-center gap-1"
+      >
+        <span>{expanded ? 'Read Less' : 'Read More'}</span>
+        <div className="w-4 h-4 flex items-center justify-center">
+          {expanded ? (
+            <i className="ri-arrow-up-line"></i>
+          ) : (
+            <i className="ri-arrow-down-line"></i>
+          )}
+        </div>
+      </button>
+    </div>
+  );
+}
 
 export default function WhoWeArePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -16,53 +51,48 @@ export default function WhoWeArePage() {
     return () => clearInterval(timer);
   }, []);
 
-  const leadership = [
+  const boardMembers = [
     {
-      name: 'Dr. Sarah Johnson',
-      position: 'Executive Director',
-      bio: 'Former UN Deputy Secretary-General with 20+ years in international development and crisis management.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20confident%20African%20American%20woman%20executive%20in%20business%20suit%2C%20warm%20smile%2C%20professional%20lighting%2C%20corporate%20portrait%20photography%2C%20high%20resolution%2C%20modern%20office%20background&width=300&height=400&seq=leader-1&orientation=portrait'
+      name: 'Ronald Robert Lwabaayi',
+      title: 'President & Founder, Chairman of the Board',
+      shortBio: 'A distinguished economist and former World Bank researcher leading LDII\'s vision for transformative global development.',
+      fullBio: 'Mr. Ronald Lwabaayi is the Founder and President of Livelihood Development International Initiatives (LDII). A distinguished Economist and Canadian leader in international trade, he brings over a decade of high-level global development experience. As a former World Bank Researcher, he bridges Canadian innovation with the Global South through technology transfer, trade facilitation, and climate action leadership. He also serves as Chairman of the Climate Change Action of East Africa.'
     },
     {
-      name: 'Prof. Michael Chen',
-      position: 'Director of Research',
-      bio: 'Leading economist specializing in global trade and sustainable development policy.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Asian%20male%20professor%20in%20business%20attire%2C%20confident%20expression%2C%20academic%20portrait%20photography%2C%20high%20resolution%2C%20university%20office%20background&width=300&height=400&seq=leader-2&orientation=portrait'
+      name: 'Ann Chidwick',
+      title: 'Board Member',
+      shortBio: 'Dedicated to advancing LDII\'s mission through strategic governance and community engagement.',
+      fullBio: 'Ann Chidwick serves as a valued member of the LDII Board of Directors. With a deep commitment to international development and community empowerment, she contributes strategic oversight and governance expertise to ensure LDII fulfills its mission with integrity and sustainable impact across all programs and initiatives.'
     },
     {
-      name: 'Dr. Amara Okafor',
-      position: 'Director of Global Health',
-      bio: 'Public health expert with extensive experience in pandemic preparedness and health systems strengthening.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20African%20woman%20doctor%20in%20medical%20professional%20attire%2C%20confident%20smile%2C%20healthcare%20portrait%20photography%2C%20high%20resolution%2C%20medical%20facility%20background&width=300&height=400&seq=leader-3&orientation=portrait'
+      name: 'Daniel Kajumba',
+      title: 'Board Member',
+      shortBio: 'Bringing extensive experience in international development and cross-cultural collaboration.',
+      fullBio: 'Daniel Kajumba is a committed Board Member of LDII, bringing extensive experience in international development and cross-cultural collaboration. His insights help shape the organization\'s strategic direction, particularly in strengthening partnerships between Canadian institutions and emerging markets in Africa and beyond.'
     },
     {
-      name: 'James Rodriguez',
-      position: 'Director of Climate Action',
-      bio: 'Environmental scientist and policy advisor with expertise in climate resilience and adaptation strategies.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20headshot%20of%20Hispanic%20male%20environmental%20scientist%20in%20business%20casual%20attire%2C%20professional%20expression%2C%20corporate%20portrait%20photography%2C%20high%20resolution%2C%20modern%20office%20background&width=300&height=400&seq=leader-4&orientation=portrait'
-    }
-  ];
-
-  const team = [
-    {
-      department: 'Policy Research',
-      members: 15,
-      description: 'Expert analysts developing evidence-based policy recommendations for global challenges.'
+      name: 'Zaharah Kayongo',
+      title: 'Board Member',
+      shortBio: 'Passionate advocate for sustainable development and gender-inclusive global health initiatives.',
+      fullBio: 'Zaharah Kayongo serves on the LDII Board of Directors with a passion for sustainable development and gender-inclusive global health initiatives. Her governance contributions help ensure that LDII\'s programs remain equitable, inclusive, and responsive to the needs of vulnerable populations worldwide.'
     },
     {
-      department: 'Program Management',
-      members: 12,
-      description: 'Experienced professionals implementing and overseeing international development programs.'
+      name: 'Victor Amadi Ubah',
+      title: 'Board Member',
+      shortBio: 'Expert in policy analysis and program implementation for international development frameworks.',
+      fullBio: 'Victor Amadi Ubah is a dedicated Board Member whose expertise in policy analysis and program implementation strengthens LDII\'s international development frameworks. He provides valuable guidance on organizational strategy and helps ensure operational excellence across all LDII initiatives.'
     },
     {
-      department: 'Communications',
-      members: 8,
-      description: 'Strategic communicators amplifying our message and engaging global stakeholders.'
+      name: 'Farah Nasseradin',
+      title: 'Board Member',
+      shortBio: 'Committed to fostering multicultural solidarity and interfaith cooperation through development work.',
+      fullBio: 'Farah Nasseradin brings a deep commitment to multicultural solidarity and interfaith cooperation to the LDII Board of Directors. Her perspective enriches the organization\'s approach to inclusive development and helps build bridges across diverse communities in Canada and internationally.'
     },
     {
-      department: 'Operations',
-      members: 10,
-      description: 'Dedicated support staff ensuring efficient organizational operations across all offices.'
+      name: 'Abdullah',
+      title: 'Board Member',
+      shortBio: 'Strategic advisor focused on expanding LDII\'s impact through innovative partnerships.',
+      fullBio: 'Abdullah serves as a Board Member of LDII, contributing strategic advisory expertise focused on expanding the organization\'s impact through innovative partnerships. His guidance supports LDII\'s growth as a recognized leader in international development, climate action, and global health resilience.'
     }
   ];
 
@@ -146,76 +176,53 @@ export default function WhoWeArePage() {
               Our leadership brings decades of experience in international relations, policy development, and global crisis management.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {leadership.map((leader, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
-                <img
-                  src={leader.image}
-                  alt={leader.name}
-                  className="w-full h-64 object-cover rounded-xl mb-4"
-                />
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{leader.name}</h3>
-                <p className="text-cyan-500 font-semibold mb-3">{leader.position}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{leader.bio}</p>
+
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="flex flex-col md:flex-row items-center gap-8">
+                <div className="w-48 h-60 flex-shrink-0 rounded-xl overflow-hidden bg-gray-100">
+                  <img
+                    src="https://storage.readdy-site.link/project_files/836b8318-f1ec-485e-88c4-18bd6440b55d/701ca0d0-fd60-45d3-8075-b92942a7a09f_WhatsApp-Image-2026-05-15-at-17.09.45.jpeg?v=1dbaf5f87cc5c04b8030605dd2f15a5f"
+                    alt="Mr. Ronald Lwabaayi"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <div className="text-center md:text-left flex-1">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Mr. Ronald Lwabaayi</h3>
+                  <p className="text-emerald-600 font-semibold mb-4">President & Founder</p>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    A distinguished Economist and Canadian leader in international trade with over a decade of high-level global development experience. Former World Bank Researcher, bridging Canadian innovation with the Global South through technology transfer, trade facilitation, and climate action leadership.
+                  </p>
+                  <Link
+                    to="/about/who-we-are/president-profile"
+                    className="inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition-colors cursor-pointer group"
+                  >
+                    <span>Read Full Profile</span>
+                    <div className="w-5 h-5 flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                      <i className="ri-arrow-right-line"></i>
+                    </div>
+                  </Link>
+                </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Team Departments */}
+      {/* Board of Directors */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Departments</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Board of Directors</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Specialized teams working collaboratively to deliver comprehensive solutions to global challenges.
+              Our Board of Directors provides strategic oversight and governance, ensuring LDII fulfills its mission with integrity and impact.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {team.map((dept, index) => (
-              <div key={index} className="bg-gradient-to-br from-teal-50 to-blue-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold text-lg">{dept.members}</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">{dept.department}</h3>
-                </div>
-                <p className="text-gray-700 leading-relaxed">{dept.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Advisory Board */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Advisory Board</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Distinguished leaders from government, academia, and civil society guide our strategic direction.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Former Government Officials</h3>
-              <p className="text-gray-600 mb-4">Ex-ministers and senior diplomats from G20 countries</p>
-              <div className="text-teal-600 font-semibold">8 Members</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Academic Leaders</h3>
-              <p className="text-gray-600 mb-4">University presidents and research institute directors</p>
-              <div className="text-teal-600 font-semibold">6 Members</div>
-            </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg">
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Civil Society Leaders</h3>
-              <p className="text-gray-600 mb-4">NGO executives and community organization leaders</p>
-              <div className="text-teal-600 font-semibold">5 Members</div>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {boardMembers.map((member, index) => (
+              <BoardMemberCard key={index} member={member} />
+            ))}
           </div>
         </div>
       </section>

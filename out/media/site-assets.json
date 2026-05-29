@@ -1,0 +1,484 @@
+{
+  "branding": {
+    "logo_main": "https://i.imgur.com/7LGjh8Y.png",
+    "logo_white": "https://i.imgur.com/7LGjh8Y.png",
+    "favicon": "https://i.imgur.com/7LGjh8Y.png",
+    "apple_touch_icon": "https://i.imgur.com/7LGjh8Y.png"
+  },
+  "documents": {
+    "annual_report_2024": {
+      "url": "/media/documents/annual-report-2024.pdf",
+      "title": "Annual Report 2024",
+      "description": "Comprehensive overview of our achievements and impact in 2024",
+      "size": "2.4 MB",
+      "date": "2024-12-31",
+      "category": "Reports"
+    },
+    "annual_report_2023": {
+      "url": "/media/documents/annual-report-2023.pdf",
+      "title": "Annual Report 2023",
+      "description": "Year-end report showcasing 2023 milestones",
+      "size": "2.1 MB",
+      "date": "2023-12-31",
+      "category": "Reports"
+    },
+    "program_guide": {
+      "url": "/media/documents/program-guide.pdf",
+      "title": "Program Guide",
+      "description": "Complete guide to all our programs and initiatives",
+      "size": "1.8 MB",
+      "date": "2024-06-15",
+      "category": "Guides"
+    },
+    "whitepaper_ai": {
+      "url": "/media/documents/ai-research-whitepaper.pdf",
+      "title": "AI Research Whitepaper",
+      "description": "In-depth analysis of our AI and technology research initiatives",
+      "size": "3.2 MB",
+      "date": "2024-09-20",
+      "category": "Research"
+    },
+    "whitepaper_climate": {
+      "url": "/media/documents/climate-action-whitepaper.pdf",
+      "title": "Climate Action Whitepaper",
+      "description": "Strategic framework for climate action and sustainability",
+      "size": "2.9 MB",
+      "date": "2024-08-10",
+      "category": "Research"
+    },
+    "volunteer_handbook": {
+      "url": "/media/documents/volunteer-handbook.pdf",
+      "title": "Volunteer Handbook",
+      "description": "Essential guide for volunteers joining our programs",
+      "size": "1.2 MB",
+      "date": "2024-03-01",
+      "category": "Guides"
+    },
+    "donor_impact_report": {
+      "url": "/media/documents/donor-impact-report.pdf",
+      "title": "Donor Impact Report",
+      "description": "How your contributions are making a difference",
+      "size": "1.5 MB",
+      "date": "2024-11-15",
+      "category": "Reports"
+    }
+  },
+  "videos": {
+    "hero_bg": {
+      "url": "/media/videos/hero-background.mp4",
+      "title": "Hero Background Video",
+      "description": "Animated background for homepage hero section",
+      "duration": "30s",
+      "size": "8.5 MB",
+      "format": "MP4"
+    },
+    "about_intro": {
+      "url": "/media/videos/about-introduction.mp4",
+      "title": "About Us Introduction",
+      "description": "Overview of our mission and vision",
+      "duration": "2m 15s",
+      "size": "45 MB",
+      "format": "MP4"
+    },
+    "impact_showcase": {
+      "url": "/media/videos/impact-showcase.mp4",
+      "title": "Impact Showcase",
+      "description": "Visual journey through our global impact",
+      "duration": "3m 30s",
+      "size": "62 MB",
+      "format": "MP4"
+    },
+    "climate_action_documentary": {
+      "url": "/media/videos/climate-action-documentary.mp4",
+      "title": "Climate Action Documentary",
+      "description": "Documentary on our climate initiatives",
+      "duration": "12m 45s",
+      "size": "180 MB",
+      "format": "MP4"
+    }
+  },
+  "gallery": {
+    "conferences": {
+      "title": "Conferences & Events",
+      "description": "Our global conference and event highlights",
+      "thumbnail": "/media/gallery/conferences/thumbnail.jpg",
+      "images": [],
+      "subcategories": {
+        "2024": {
+          "title": "2024 Events",
+          "description": "Major events and conferences from 2024",
+          "thumbnail": "/media/gallery/conferences/2024/thumbnail.jpg",
+          "images": [],
+          "subcategories": {
+            "spring": {
+              "title": "Spring Technology Conference",
+              "description": "Annual Spring Technology Conference - Innovation in AI and Digital Transformation",
+              "location": "San Francisco, CA",
+              "date": "2024-03-15",
+              "attendees": 850,
+              "thumbnail": "/media/gallery/conferences/2024/spring/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2024/spring/keynote.jpg",
+                  "title": "Opening Keynote Speech",
+                  "description": "Dr. Sarah Chen delivers opening keynote on AI innovation and ethical technology",
+                  "date": "2024-03-15",
+                  "time": "09:00 AM",
+                  "photographer": "John Martinez",
+                  "thumbnail": "/media/gallery/conferences/2024/spring/keynote-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.1 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/spring/networking.jpg",
+                  "title": "Networking Session",
+                  "description": "Attendees networking during morning coffee break, discussing AI applications",
+                  "date": "2024-03-15",
+                  "time": "10:30 AM",
+                  "photographer": "Emily Rodriguez",
+                  "thumbnail": "/media/gallery/conferences/2024/spring/networking-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "1.8 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/spring/workshop.jpg",
+                  "title": "Hands-on AI Workshop",
+                  "description": "Interactive workshop on machine learning implementation",
+                  "date": "2024-03-15",
+                  "time": "02:00 PM",
+                  "photographer": "Michael Chen",
+                  "thumbnail": "/media/gallery/conferences/2024/spring/workshop-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.3 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/spring/panel-discussion.jpg",
+                  "title": "Expert Panel Discussion",
+                  "description": "Industry leaders discuss the future of AI in healthcare",
+                  "date": "2024-03-15",
+                  "time": "04:00 PM",
+                  "photographer": "Sarah Williams",
+                  "thumbnail": "/media/gallery/conferences/2024/spring/panel-discussion-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "1.9 MB"
+                }
+              ]
+            },
+            "summer": {
+              "title": "Summer Digital Inclusion Summit",
+              "description": "Global summit focused on bridging the digital divide",
+              "location": "London, UK",
+              "date": "2024-06-20",
+              "attendees": 620,
+              "thumbnail": "/media/gallery/conferences/2024/summer/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2024/summer/opening-ceremony.jpg",
+                  "title": "Opening Ceremony",
+                  "description": "Grand opening with international delegates from 45 countries",
+                  "date": "2024-06-20",
+                  "time": "09:00 AM",
+                  "photographer": "David Thompson",
+                  "thumbnail": "/media/gallery/conferences/2024/summer/opening-ceremony-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.5 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/summer/youth-panel.jpg",
+                  "title": "Youth Leadership Panel",
+                  "description": "Young leaders share their digital transformation stories",
+                  "date": "2024-06-20",
+                  "time": "11:00 AM",
+                  "photographer": "Lisa Anderson",
+                  "thumbnail": "/media/gallery/conferences/2024/summer/youth-panel-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.0 MB"
+                }
+              ]
+            },
+            "fall": {
+              "title": "Fall Climate Action Summit",
+              "description": "Annual Fall Climate Action Summit - Sustainable Solutions for Tomorrow",
+              "location": "Copenhagen, Denmark",
+              "date": "2024-09-20",
+              "attendees": 1200,
+              "thumbnail": "/media/gallery/conferences/2024/fall/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2024/fall/panel.jpg",
+                  "title": "Climate Experts Panel",
+                  "description": "Leading climate scientists discuss urgent action needed for 2030 goals",
+                  "date": "2024-09-20",
+                  "time": "10:00 AM",
+                  "photographer": "Anders Nielsen",
+                  "thumbnail": "/media/gallery/conferences/2024/fall/panel-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.2 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/fall/renewable-energy-expo.jpg",
+                  "title": "Renewable Energy Expo",
+                  "description": "Exhibition showcasing latest renewable energy technologies",
+                  "date": "2024-09-20",
+                  "time": "01:00 PM",
+                  "photographer": "Maria Larsen",
+                  "thumbnail": "/media/gallery/conferences/2024/fall/renewable-energy-expo-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.4 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2024/fall/youth-climate-march.jpg",
+                  "title": "Youth Climate March",
+                  "description": "Young activists march for climate justice",
+                  "date": "2024-09-21",
+                  "time": "03:00 PM",
+                  "photographer": "Erik Hansen",
+                  "thumbnail": "/media/gallery/conferences/2024/fall/youth-climate-march-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "1.7 MB"
+                }
+              ]
+            },
+            "winter": {
+              "title": "Winter Global Health Forum",
+              "description": "International forum on healthcare innovation and accessibility",
+              "location": "Geneva, Switzerland",
+              "date": "2024-12-05",
+              "attendees": 950,
+              "thumbnail": "/media/gallery/conferences/2024/winter/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2024/winter/health-tech-demo.jpg",
+                  "title": "Health Tech Demonstrations",
+                  "description": "Live demonstrations of breakthrough medical technologies",
+                  "date": "2024-12-05",
+                  "time": "10:00 AM",
+                  "photographer": "Sophie Dubois",
+                  "thumbnail": "/media/gallery/conferences/2024/winter/health-tech-demo-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.6 MB"
+                }
+              ]
+            }
+          }
+        },
+        "2023": {
+          "title": "2023 Events",
+          "description": "Memorable events and conferences from 2023",
+          "thumbnail": "/media/gallery/conferences/2023/thumbnail.jpg",
+          "images": [],
+          "subcategories": {
+            "annual": {
+              "title": "Annual Fundraising Gala",
+              "description": "2023 Annual Fundraising Gala - Celebrating Impact, Building Future",
+              "location": "New York, NY",
+              "date": "2023-11-10",
+              "attendees": 450,
+              "funds_raised": "$2.4M",
+              "thumbnail": "/media/gallery/conferences/2023/annual/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2023/annual/gala.jpg",
+                  "title": "Gala Night",
+                  "description": "Elegant evening celebrating our achievements and honoring major donors",
+                  "date": "2023-11-10",
+                  "time": "07:00 PM",
+                  "photographer": "Robert Johnson",
+                  "thumbnail": "/media/gallery/conferences/2023/annual/gala-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.8 MB"
+                },
+                {
+                  "url": "/media/gallery/conferences/2023/annual/awards-ceremony.jpg",
+                  "title": "Awards Ceremony",
+                  "description": "Recognizing outstanding volunteers and partners",
+                  "date": "2023-11-10",
+                  "time": "08:30 PM",
+                  "photographer": "Jennifer Lee",
+                  "thumbnail": "/media/gallery/conferences/2023/annual/awards-ceremony-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "2.3 MB"
+                }
+              ]
+            },
+            "spring": {
+              "title": "Spring Innovation Workshop",
+              "description": "Collaborative workshop on social innovation",
+              "location": "Boston, MA",
+              "date": "2023-04-15",
+              "attendees": 320,
+              "thumbnail": "/media/gallery/conferences/2023/spring/thumbnail.jpg",
+              "images": [
+                {
+                  "url": "/media/gallery/conferences/2023/spring/brainstorming.jpg",
+                  "title": "Innovation Brainstorming",
+                  "description": "Teams collaborate on innovative solutions for social challenges",
+                  "date": "2023-04-15",
+                  "time": "02:00 PM",
+                  "photographer": "Alex Turner",
+                  "thumbnail": "/media/gallery/conferences/2023/spring/brainstorming-thumb.jpg",
+                  "dimensions": "1920x1080",
+                  "size": "1.9 MB"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "programs": {
+      "title": "Programs & Initiatives",
+      "description": "Our programs in action around the world",
+      "thumbnail": "/media/gallery/programs/thumbnail.jpg",
+      "images": [
+        {
+          "url": "/media/gallery/programs/education-africa.jpg",
+          "title": "Digital Literacy in Kenya",
+          "description": "Students learning computer skills in rural Kenya school",
+          "location": "Nairobi, Kenya",
+          "program": "Digital Inclusion",
+          "date": "2024-01-20",
+          "photographer": "James Omondi",
+          "thumbnail": "/media/gallery/programs/education-africa-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.1 MB"
+        },
+        {
+          "url": "/media/gallery/programs/health-asia.jpg",
+          "title": "Mobile Health Clinic",
+          "description": "Medical team providing healthcare in rural India",
+          "location": "Tamil Nadu, India",
+          "program": "Global Health",
+          "date": "2024-02-15",
+          "photographer": "Priya Sharma",
+          "thumbnail": "/media/gallery/programs/health-asia-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.3 MB"
+        },
+        {
+          "url": "/media/gallery/programs/food-security-latam.jpg",
+          "title": "Sustainable Agriculture Training",
+          "description": "Farmers learning sustainable farming techniques in Peru",
+          "location": "Cusco, Peru",
+          "program": "Sustainable Food",
+          "date": "2024-03-10",
+          "photographer": "Carlos Mendez",
+          "thumbnail": "/media/gallery/programs/food-security-latam-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.0 MB"
+        },
+        {
+          "url": "/media/gallery/programs/clean-water-africa.jpg",
+          "title": "Clean Water Initiative",
+          "description": "New water well bringing clean water to village in Uganda",
+          "location": "Kampala, Uganda",
+          "program": "Poverty Eradication",
+          "date": "2024-04-05",
+          "photographer": "Grace Nakato",
+          "thumbnail": "/media/gallery/programs/clean-water-africa-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "1.8 MB"
+        }
+      ],
+      "subcategories": {
+        "education": {
+          "title": "Education Programs",
+          "description": "Empowering through education and digital literacy",
+          "thumbnail": "/media/gallery/programs/education/thumbnail.jpg",
+          "images": [
+            {
+              "url": "/media/gallery/programs/education/coding-bootcamp.jpg",
+              "title": "Youth Coding Bootcamp",
+              "description": "Teenagers learning programming in community center",
+              "location": "Detroit, MI, USA",
+              "date": "2024-05-12",
+              "photographer": "Marcus Johnson",
+              "thumbnail": "/media/gallery/programs/education/coding-bootcamp-thumb.jpg",
+              "dimensions": "1920x1080",
+              "size": "2.2 MB"
+            }
+          ]
+        },
+        "healthcare": {
+          "title": "Healthcare Initiatives",
+          "description": "Bringing quality healthcare to underserved communities",
+          "thumbnail": "/media/gallery/programs/healthcare/thumbnail.jpg",
+          "images": [
+            {
+              "url": "/media/gallery/programs/healthcare/vaccination-drive.jpg",
+              "title": "Community Vaccination Drive",
+              "description": "Mass vaccination campaign in rural Bangladesh",
+              "location": "Dhaka, Bangladesh",
+              "date": "2024-06-08",
+              "photographer": "Fatima Rahman",
+              "thumbnail": "/media/gallery/programs/healthcare/vaccination-drive-thumb.jpg",
+              "dimensions": "1920x1080",
+              "size": "1.9 MB"
+            }
+          ]
+        }
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Meet the people behind our mission",
+      "thumbnail": "/media/gallery/team/thumbnail.jpg",
+      "images": [
+        {
+          "url": "/media/gallery/team/leadership.jpg",
+          "title": "Executive Leadership Team",
+          "description": "Our executive leadership team at annual strategy retreat",
+          "location": "Seattle, WA",
+          "date": "2024-01-01",
+          "photographer": "Studio Portrait Inc.",
+          "thumbnail": "/media/gallery/team/leadership-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.5 MB"
+        },
+        {
+          "url": "/media/gallery/team/volunteers.jpg",
+          "title": "Volunteer Appreciation Day",
+          "description": "Celebrating our amazing volunteers who make it all possible",
+          "location": "Global",
+          "date": "2024-05-20",
+          "photographer": "Various",
+          "thumbnail": "/media/gallery/team/volunteers-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.1 MB"
+        }
+      ],
+      "subcategories": {
+        "leadership": {
+          "title": "Leadership",
+          "description": "Our executive and senior leadership",
+          "thumbnail": "/media/gallery/team/leadership/thumbnail.jpg",
+          "images": []
+        },
+        "field_staff": {
+          "title": "Field Staff",
+          "description": "Our dedicated team members working on the ground",
+          "thumbnail": "/media/gallery/team/field-staff/thumbnail.jpg",
+          "images": []
+        }
+      }
+    },
+    "partners": {
+      "title": "Partner Events",
+      "description": "Collaborative events with our partners",
+      "thumbnail": "/media/gallery/partners/thumbnail.jpg",
+      "images": [
+        {
+          "url": "/media/gallery/partners/corporate-partnership-signing.jpg",
+          "title": "Corporate Partnership Signing",
+          "description": "Signing ceremony with major tech partner",
+          "location": "Silicon Valley, CA",
+          "date": "2024-07-15",
+          "photographer": "Corporate Communications",
+          "thumbnail": "/media/gallery/partners/corporate-partnership-signing-thumb.jpg",
+          "dimensions": "1920x1080",
+          "size": "2.0 MB"
+        }
+      ]
+    }
+  }
+}

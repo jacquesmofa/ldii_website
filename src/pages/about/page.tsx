@@ -251,62 +251,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Leadership Team Section */}
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Leadership Team</h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Our diverse leadership team brings together decades of experience in international development, policy, and research.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-start mb-6">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=Professional%20female%20executive%20director%2C%20international%20development%20leader%2C%20confident%20business%20woman%20in%20formal%20attire%2C%20professional%20headshot%20photography%2C%20leadership%20portrait&width=120&height=120&seq=leader-1&orientation=squarish"
-                    alt="Dr. Sarah Johnson"
-                    className="w-24 h-24 rounded-full object-cover mr-6"
-                  />
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">Dr. Sarah Johnson</h3>
-                    <p className="text-tech-cyan-500 font-semibold mb-2">Executive Director</p>
-                    <p className="text-sm text-gray-600">15+ years experience</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Dr. Johnson leads LDII with a vision for transformative global health systems. Her extensive experience in policy development and international partnerships has shaped our strategic direction.
-                </p>
-                <p className="text-sm text-gray-600">
-                  <strong>Expertise:</strong> Global Health Policy, International Development
-                </p>
-              </div>
-              
-              <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-                <div className="flex items-start mb-6">
-                  <img
-                    src="https://readdy.ai/api/search-image?query=Professional%20male%20research%20director%2C%20senior%20scientist%2C%20academic%20professional%20in%20formal%20business%20attire%2C%20professional%20headshot%20photography%2C%20research%20leadership%20portrait&width=120&height=120&seq=leader-2&orientation=squarish"
-                    alt="Prof. Michael Chen"
-                    className="w-24 h-24 rounded-full object-cover mr-6"
-                  />
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-1">Prof. Michael Chen</h3>
-                    <p className="text-tech-cyan-500 font-semibold mb-2">Director of Research</p>
-                    <p className="text-sm text-gray-600">20+ years experience</p>
-                  </div>
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Prof. Chen brings decades of climate research expertise to LDII. His groundbreaking work on climate resilience strategies informs our evidence-based approach to environmental challenges.
-                </p>
-                <p className="text-sm text-gray-600">
-                  <strong>Expertise:</strong> Climate Science, Environmental Policy
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Impact Stats Section */}
         <section className="py-20 bg-gradient-to-br from-corporate-blue-600 to-corporate-blue-700">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">

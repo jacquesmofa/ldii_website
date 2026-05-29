@@ -19,19 +19,6 @@ export default function LocalProgramsPage() {
 
   const youthPrograms = [
     {
-      id: 'violence-prevention',
-      title: 'Gun Violence & Gang Prevention',
-      description: 'Evidence-based intervention and prevention strategies to protect youth from violence and gang involvement. Through community outreach, education, and creating safe spaces, we provide alternatives to violence and help young people build positive futures. Our programs address root causes while offering immediate support and protection.',
-      image: 'https://readdy.ai/api/search-image?query=Youth%20community%20outreach%20program%20in%20Toronto%20neighborhood%2C%20diverse%20young%20people%20participating%20in%20positive%20activities%2C%20community%20center%20setting%2C%20mentors%20engaging%20with%20youth%2C%20professional%20photography%20with%20hopeful%20atmosphere&width=600&height=400&seq=violence-prevention&orientation=landscape',
-      services: [
-        'Community outreach and education programs',
-        'Conflict resolution and mediation training',
-        'Safe space creation and youth centers',
-        'Family support and counseling',
-        'Alternative activities and positive engagement'
-      ]
-    },
-    {
       id: 'employment-readiness',
       title: 'Employment Readiness & Career Development',
       description: 'Equipping youth with the skills, knowledge, and connections needed to succeed in the modern workforce. Our comprehensive career development program includes resume building, interview preparation, job placement assistance, and ongoing career counseling to ensure long-term success in the Canadian job market.',
@@ -48,7 +35,7 @@ export default function LocalProgramsPage() {
       id: 'skills-building',
       title: 'Skills Building Workshops',
       description: 'Comprehensive training programs to develop essential life and professional skills for success in the 21st century. From digital literacy to financial management, our workshops provide practical knowledge that empowers youth to navigate modern challenges and seize opportunities for personal and professional growth.',
-      image: 'https://readdy.ai/api/search-image?query=Youth%20participating%20in%20digital%20skills%20workshop%2C%20computer%20training%20session%2C%20diverse%20young%20people%20learning%20technology%2C%20modern%20classroom%20setting%2C%20professional%20photography%20with%20engaging%20atmosphere&width=600&height=400&seq=skills-workshop&orientation=landscape',
+      image: 'https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1779929786/WhatsApp_Image_2026-05-26_at_10.41.48_PM_3_gbdx7o.jpg',
       services: [
         'Digital literacy and technology training',
         'Financial literacy and money management',
@@ -59,30 +46,16 @@ export default function LocalProgramsPage() {
     },
     {
       id: 'arts-culture',
-      title: 'Arts & Cultural Expression',
-      description: 'Fostering creativity and cultural identity through arts programs that provide youth with platforms for self-expression and community engagement. Our arts initiatives include music, visual arts, dance, and theater programs that build confidence, develop talents, and celebrate diverse cultural backgrounds while creating pathways to creative careers.',
+      title: 'Arts, Music & Cultural Expression',
+      description: 'Fostering creativity, cultural identity, and artistic excellence through comprehensive arts and music programs. Our initiatives provide youth with platforms for self-expression across visual arts, music, dance, and theater while building confidence and developing talents. From instrumental lessons and vocal training to creative workshops and cultural celebrations, we create pathways to creative careers and celebrate diverse cultural backgrounds.',
       image: 'https://readdy.ai/api/search-image?query=Diverse%20youth%20participating%20in%20arts%20and%20culture%20program%2C%20creative%20workshop%20with%20painting%20and%20music%2C%20multicultural%20expression%2C%20community%20arts%20center%2C%20professional%20photography%20with%20vibrant%20colors&width=600&height=400&seq=arts-culture-youth&orientation=landscape',
       services: [
-        'Music and performing arts programs',
+        'Music and performing arts programs (instrumental lessons, vocal training, ensembles)',
         'Visual arts and creative workshops',
-        'Cultural celebration events',
+        'Cultural celebration events and community exhibitions',
         'Arts mentorship and career guidance',
-        'Community art projects and exhibitions'
-      ]
-    },
-    {
-      id: 'music-performing-arts',
-      title: 'Music & Performing Arts',
-      description: 'Empowering youth through comprehensive music education and performing arts training. Our program offers instruction in various musical instruments including piano, guitar, drums, violin, and brass instruments, alongside vocal training and singing lessons. Students learn music theory, performance techniques, and stage presence while developing discipline, creativity, and self-expression. We provide opportunities for solo and ensemble performances, recording sessions, and participation in community concerts and cultural events.',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20learning%20musical%20instruments%20in%20music%20class%2C%20young%20people%20playing%20piano%20guitar%20drums%20violin%2C%20singing%20lessons%20vocal%20training%2C%20music%20teacher%20instructing%20students%2C%20modern%20music%20studio%2C%20professional%20photography%20with%20inspiring%20atmosphere&width=600&height=400&seq=music-performing-arts&orientation=landscape',
-      services: [
-        'Instrumental music lessons (piano, guitar, drums, violin, brass)',
-        'Vocal training and singing lessons',
-        'Music theory and composition',
-        'Performance opportunities and recitals',
         'Recording studio access and production basics',
-        'Ensemble and band participation',
-        'Stage presence and performance coaching'
+        'Performance opportunities and recitals'
       ]
     },
     {
@@ -106,45 +79,6 @@ export default function LocalProgramsPage() {
 
   const newcomerPrograms = [
     {
-      id: 'settlement-services',
-      title: 'Settlement Services',
-      description: 'Comprehensive support to help newcomers establish themselves in their new community and navigate the complexities of settling in Canada. From finding housing to understanding government services, we provide the guidance and resources needed for a successful transition to life in Ontario.',
-      image: 'https://readdy.ai/api/search-image?query=Newcomer%20family%20receiving%20settlement%20services%20in%20Canada%2C%20diverse%20immigrants%20meeting%20with%20settlement%20worker%2C%20welcoming%20office%20environment%2C%20professional%20photography%20with%20warm%20atmosphere&width=600&height=400&seq=settlement-services&orientation=landscape',
-      services: [
-        'Housing search and rental assistance',
-        'Government services navigation',
-        'Community orientation and tours',
-        'Documentation and legal support',
-        'Family reunification assistance'
-      ]
-    },
-    {
-      id: 'language-support',
-      title: 'Language Support',
-      description: 'English and French language training to facilitate communication and integration into Canadian society. Our language programs are designed for all proficiency levels, from beginners to advanced learners, with a focus on practical communication skills for everyday life, work, and community engagement.',
-      image: 'https://readdy.ai/api/search-image?query=ESL%20English%20language%20class%20for%20newcomers%20in%20Canada%2C%20diverse%20adult%20students%20learning%20English%2C%20professional%20teacher%20leading%20lesson%2C%20modern%20classroom%20setting%2C%20professional%20photography&width=600&height=400&seq=language-support&orientation=landscape',
-      services: [
-        'ESL/FSL classes at multiple levels',
-        'Conversation practice groups',
-        'Language assessment and placement',
-        'Workplace language training',
-        'Cultural communication workshops'
-      ]
-    },
-    {
-      id: 'cultural-orientation',
-      title: 'Cultural Orientation',
-      description: 'Understanding Canadian culture, values, and social norms for successful integration and meaningful participation in community life. Our cultural orientation programs help newcomers navigate cultural differences, understand Canadian customs, and build bridges between their heritage and their new home.',
-      image: 'https://readdy.ai/api/search-image?query=Newcomers%20participating%20in%20Canadian%20cultural%20orientation%20workshop%2C%20diverse%20immigrants%20learning%20about%20Canadian%20culture%2C%20multicultural%20celebration%2C%20community%20center%2C%20professional%20photography&width=600&height=400&seq=cultural-orientation&orientation=landscape',
-      services: [
-        'Canadian culture and customs workshops',
-        'Rights and responsibilities education',
-        'Social etiquette and norms training',
-        'Cultural celebration events',
-        'Cross-cultural communication skills'
-      ]
-    },
-    {
       id: 'employment-training',
       title: 'Employment Training',
       description: 'Preparing newcomers for the Canadian job market and career success through comprehensive employment services. We help newcomers leverage their international experience and credentials while developing the skills and knowledge needed to thrive in Ontario\'s diverse economy.',
@@ -155,36 +89,6 @@ export default function LocalProgramsPage() {
         'Skills assessment and upgrading',
         'Job search strategies and networking',
         'Mentorship and career coaching'
-      ]
-    },
-    {
-      id: 'health-wellness',
-      title: 'Health & Wellness Services',
-      description: 'Connecting newcomers with essential healthcare services and promoting physical and mental wellness during the settlement process. We help navigate the Canadian healthcare system, access medical services, and understand health insurance options while providing culturally sensitive health education and wellness programs.',
-      image: 'https://readdy.ai/api/search-image?query=Newcomers%20receiving%20health%20services%20orientation%20in%20Canada%2C%20diverse%20immigrants%20learning%20about%20Canadian%20healthcare%20system%2C%20health%20information%20session%2C%20medical%20clinic%20setting%2C%20professional%20photography%20with%20caring%20atmosphere&width=600&height=400&seq=health-wellness-newcomers&orientation=landscape',
-      services: [
-        'Healthcare system navigation and orientation',
-        'Health insurance enrollment assistance',
-        'Medical appointment booking and interpretation',
-        'Mental health support and counseling',
-        'Wellness workshops and health education',
-        'Connection to family doctors and specialists',
-        'Preventive health screening programs'
-      ]
-    },
-    {
-      id: 'youth-family-programs',
-      title: 'Youth & Family Integration Programs',
-      description: 'Supporting newcomer families and youth in their transition to Canadian life through specialized programs that address the unique challenges faced by children and families. We provide educational support, recreational activities, parenting workshops, and family counseling to ensure successful integration for all family members.',
-      image: 'https://readdy.ai/api/search-image?query=Newcomer%20families%20with%20children%20participating%20in%20integration%20program%2C%20diverse%20immigrant%20youth%20and%20parents%20in%20family%20activities%2C%20community%20center%20programs%2C%20multicultural%20family%20support%2C%20professional%20photography%20with%20welcoming%20atmosphere&width=600&height=400&seq=youth-family-integration&orientation=landscape',
-      services: [
-        'School enrollment and educational support',
-        'Youth mentorship and tutoring programs',
-        'Parenting workshops and family counseling',
-        'Recreational and cultural activities for families',
-        'Childcare information and resources',
-        'Youth leadership and skill development',
-        'Family reunification support services'
       ]
     }
   ];
@@ -217,16 +121,20 @@ export default function LocalProgramsPage() {
       ]
     },
     {
-      id: 'small-business-support',
-      title: 'Small Business Support',
-      description: 'Providing resources and assistance to help small businesses thrive in competitive markets. From business planning to financial management, we offer comprehensive support services that address the unique challenges faced by small business owners in Ontario.',
-      image: 'https://readdy.ai/api/search-image?query=Small%20business%20owner%20receiving%20business%20support%20consultation%2C%20diverse%20entrepreneurs%20in%20planning%20session%2C%20professional%20business%20advisor%2C%20modern%20office%2C%20professional%20photography&width=600&height=400&seq=small-business-support&orientation=landscape',
+      id: 'small-business-startup',
+      title: 'Small Business Support & Startup Accelerator',
+      description: 'Comprehensive support for entrepreneurs at every stage — from established small businesses seeking growth to early-stage startups transforming innovative ideas into successful enterprises. Our integrated program provides business planning, financial management, marketing support, and access to workspace facilities. Whether you are refining a business model, preparing for investors, or expanding into new markets, we provide the resources, mentorship, and connections needed to thrive.',
+      image: 'https://readdy.ai/api/search-image?query=Startup%20entrepreneurs%20in%20business%20incubator%20workspace%2C%20diverse%20founders%20working%20on%20innovative%20projects%2C%20modern%20coworking%20space%2C%20pitch%20presentations%2C%20professional%20photography%20with%20entrepreneurial%20energy&width=600&height=400&seq=startup-incubator&orientation=landscape',
       services: [
-        'Business plan development workshops',
-        'Financial management training',
-        'Marketing and branding support',
-        'Access to funding opportunities',
-        'Legal and regulatory guidance'
+        'Business plan development and model validation',
+        'Financial management and funding strategy training',
+        'Marketing, branding, and go-to-market strategy support',
+        'Coworking space and office facilities',
+        'Pitch preparation and investor connections',
+        'Technology and product development support',
+        'Market research and competitive analysis',
+        'Grant applications and access to funding opportunities',
+        'Legal, regulatory, and intellectual property guidance'
       ]
     },
     {
@@ -240,22 +148,6 @@ export default function LocalProgramsPage() {
         'Sales and customer service excellence',
         'Innovation and technology adoption',
         'Industry trends and insights sessions'
-      ]
-    },
-    {
-      id: 'startup-incubator',
-      title: 'Startup Incubator & Accelerator',
-      description: 'Intensive support program for early-stage startups and innovative business ideas. Our incubator provides workspace, mentorship, funding connections, and comprehensive business development resources to help entrepreneurs transform their ideas into successful, scalable businesses. We offer structured programming, access to investors, and a collaborative community of fellow entrepreneurs.',
-      image: 'https://readdy.ai/api/search-image?query=Startup%20entrepreneurs%20in%20business%20incubator%20workspace%2C%20diverse%20founders%20working%20on%20innovative%20projects%2C%20modern%20coworking%20space%2C%20pitch%20presentations%2C%20professional%20photography%20with%20entrepreneurial%20energy&width=600&height=400&seq=startup-incubator&orientation=landscape',
-      services: [
-        'Coworking space and office facilities',
-        'Business model development and validation',
-        'Pitch preparation and investor connections',
-        'Technology and product development support',
-        'Market research and competitive analysis',
-        'Funding strategy and grant applications',
-        'Legal and intellectual property guidance',
-        'Go-to-market strategy development'
       ]
     },
     {
@@ -312,10 +204,10 @@ export default function LocalProgramsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Local Programs
+            Programs
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Empowering communities across Canada and Ontario through comprehensive support programs for youth, newcomers, and entrepreneurs.
+            Empowering communities across Canada and beyond through comprehensive programs for youth, entrepreneurs, and professionals seeking global opportunities.
           </p>
         </div>
       </section>
@@ -360,7 +252,7 @@ export default function LocalProgramsPage() {
               <h2 className="text-4xl font-bold text-white">Youth Empowerment Initiative</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive programs supporting Canadian and Ontario youth through critical life challenges
+              Comprehensive programs empowering youth across Canada and beyond through critical life challenges and global opportunities
             </p>
           </div>
 
@@ -588,7 +480,7 @@ export default function LocalProgramsPage() {
             Get Involved Today
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Whether you're a youth seeking support, a newcomer looking to integrate, or an entrepreneur wanting to connect, we're here to help.
+            Whether you are a youth seeking support, a newcomer looking to integrate, or an entrepreneur wanting to connect, we are here to help.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

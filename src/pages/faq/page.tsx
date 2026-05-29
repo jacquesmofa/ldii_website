@@ -33,13 +33,13 @@ export default function FAQPage() {
     },
     {
       category: 'Programs',
-      question: 'What local programs does LDII offer in Canada?',
-      answer: 'In Canada, LDII offers three main program streams: Youth Empowerment Initiative (including mental health support, employment readiness, arts programs, and more), Empowering Newcomers (settlement services, language training, employment support), and Business Networking (startup incubation, export development, professional networking).'
+      question: 'What programs does LDII offer in Canada and beyond?',
+      answer: 'LDII offers three main program streams: Youth Empowerment Initiative (including employment readiness, skills building, arts and music programs, and media training), Empowering Newcomers (employment training and professional support), and Business Networking (startup incubation, export development, professional networking, and entrepreneurship support).'
     },
     {
       category: 'Programs',
       question: 'How can I participate in LDII programs?',
-      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or calling +1 (416) 660-4233. We offer various programs for youth, newcomers, and business professionals. Visit our Local Programs page for detailed information about eligibility and registration.'
+      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or calling +1 (416) 660-4233. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
     },
     {
       category: 'Partnerships',

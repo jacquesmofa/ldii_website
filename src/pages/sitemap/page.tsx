@@ -36,9 +36,9 @@ export default function SitemapPage() {
       ]
     },
     {
-      title: 'Local Programs',
+      title: 'Programs',
       links: [
-        { name: 'Local Programs (Canada & Ontario)', url: '/local-programs#hero' },
+        { name: 'Programs', url: '/programs#hero' },
       ]
     },
     {
@@ -162,10 +162,10 @@ export default function SitemapPage() {
                 Donate Now
               </a>
               <a
-                href="/local-programs#hero"
+                href="/programs#hero"
                 className="bg-white text-green-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
               >
-                Local Programs
+                Programs
               </a>
               <a
                 href="/events/upcoming#hero"

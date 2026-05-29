@@ -47,7 +47,7 @@ export default function PartnersPage() {
       description: 'Municipal partnership supporting local community programs, newcomer services, and business development in Brampton.',
       logo: 'https://readdy.ai/api/search-image?query=City%20of%20Brampton%20Ontario%20official%20municipal%20logo%20Canadian%20city%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=120&seq=brampton-city&orientation=landscape',
       website: 'https://www.brampton.ca',
-      focus: 'Local Programs, Community Services'
+      focus: 'Programs, Community Services'
     },
     {
       name: 'United Nations Development Programme',

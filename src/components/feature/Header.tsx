@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import LanguageSwitcher from '../base/LanguageSwitcher';
+import { useMedia } from '../../context/MediaContext';
 
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { assets, loading } = useMedia();
 
   const navigationItems = [
     {
@@ -31,8 +33,8 @@ export default function Header() {
       ]
     },
     {
-      title: 'Local Programs',
-      href: '/local-programs',
+      title: 'Programs',
+      href: '/programs',
       dropdown: null
     },
     {
@@ -91,11 +93,15 @@ export default function Header() {
           <div className="flex items-center flex-shrink-0">
             <a href="/#hero" className="flex items-center cursor-pointer group">
               <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                <img
-                  src="https://i.imgur.com/7LGjh8Y.png"
-                  alt="LDII Logo"
-                  className="h-full w-auto object-contain"
-                />
+                {loading ? (
+                  <div className="h-full w-16 bg-gray-200 animate-pulse rounded"></div>
+                ) : (
+                  <img
+                    src={assets.branding.logo_main}
+                    alt="LDII Logo"
+                    className="h-full w-auto object-contain"
+                  />
+                )}
               </div>
             </a>
           </div>
