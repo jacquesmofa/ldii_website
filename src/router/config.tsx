@@ -1,10 +1,13 @@
 import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 
+// Direct imports for pages that were showing blank on static hosting
+// Lazy-loaded chunks can fail on Apache/cPanel when asset paths aren't handled correctly
+import AboutPage from '../pages/about/page';
+import WhoWeArePage from '../pages/about/who-we-are/page';
+
 // Lazy load components
 const HomePage = lazy(() => import('../pages/home/page'));
-const AboutPage = lazy(() => import('../pages/about/page'));
-const WhoWeArePage = lazy(() => import('../pages/about/who-we-are/page'));
 const OurWorkPage = lazy(() => import('../pages/about/our-work/page'));
 const PastProjectsPage = lazy(() => import('../pages/about/past-projects/page'));
 const UpcomingProjectsPage = lazy(() => import('../pages/about/upcoming-projects/page'));

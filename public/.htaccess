@@ -1,0 +1,83 @@
+# LDII Website - Apache Configuration for React SPA
+# =====================================================
+# This file ensures the React/Vite single-page application
+# works correctly on Apache static hosting.
+# Place this file in the ROOT of your deployment folder
+# (same folder as index.html).
+# =====================================================
+
+# --- 1. FORCE HTTPS (optional - remove if you don't have SSL) ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# --- 2. BASIC SECURITY ---
+# Prevent directory listing (shows blank index instead of file list)
+Options -Indexes
+
+# --- 3. DEFAULT FILE ---
+# When someone visits a folder, serve index.html first
+DirectoryIndex index.html
+
+# --- 4. REACT SPA ROUTING (CRITICAL) ---
+# This is the MOST IMPORTANT section. It tells Apache:
+# "If a file or folder doesn't exist, serve index.html instead"
+# This allows React Router to handle all client-side routes like
+# /about, /about/who-we-are, /events/gallery, etc.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # If the request is for an actual file (JS, CSS, images, etc.), serve it
+  RewriteCond %{REQUEST_FILENAME} !-f
+  
+  # If the request is for an actual directory, serve it
+  RewriteCond %{REQUEST_FILENAME} !-d
+  
+  # Otherwise, rewrite everything to index.html so React Router can handle it
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# --- 5. CACHE CONTROL FOR STATIC ASSETS ---
+# Tell browsers to cache JS/CSS/images for better performance
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# --- 6. MIME TYPES (fixes JS files sometimes being served as text) ---
+<IfModule mime_module>
+  AddType application/javascript .js
+  AddType text/css .css
+  AddType image/svg+xml .svg
+</IfModule>
+
+# --- 7. COMPRESSION (makes files smaller and faster) ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+</IfModule>
+
+# =====================================================
+# IMPORTANT NOTES FOR YOUR PIPELINE:
+# =====================================================
+# 1. Build output folder: This project builds to 'out/' (NOT 'dist/')
+#    Make sure your deployment pipeline deploys the 'out/' folder.
+#
+# 2. If deploying to a SUBDIRECTORY (e.g., example.com/ldii/):
+#    Set BASE_PATH environment variable before building:
+#    BASE_PATH=/ldii/ npm run build
+#    And update the RewriteRule above to:
+#    RewriteRule ^ /ldii/index.html [L]
+#
+# 3. If you get 404s on assets (JS/CSS files):
+#    Check that the 'assets/' folder is being deployed alongside index.html.
+#    The assets folder should be in the SAME directory as index.html.
+#
+# 4. After updating this file, clear browser cache (Ctrl+Shift+R)
+#    or wait a few minutes for CDN cache to clear.
+# =====================================================
