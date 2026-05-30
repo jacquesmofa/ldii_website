@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 
 // ============================================================
 // DUAL-BOX TESTIMONIAL PRESENTATION
-// Left and right boxes rotate independently with 5-second offset
+// Two boxes rotate independently with 5-second offset
 // Each box shows a testimonial for 10 seconds, then fades to next
-// 
+//
 // To add more testimonials:
 // 1. Add a new object to the `testimonials` array below
 // 2. Template:
@@ -191,7 +191,6 @@ export default function TestimonialsSection() {
         {/* Progress indicators — dots showing which testimonials are active */}
         <div className="flex justify-center items-center gap-6 mt-8">
           <div className="flex items-center gap-2">
-            <span className="text-xs text-gray-400 uppercase tracking-wider">Left</span>
             <div className="flex gap-1.5">
               {testimonials.map((_, index) => (
                 <button
@@ -206,7 +205,7 @@ export default function TestimonialsSection() {
                   className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
                     index === leftIndex ? 'bg-[#00D9FF]' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
-                  aria-label={`Show testimonial ${index + 1} on left`}
+                  aria-label={`Show testimonial ${index + 1}`}
                 />
               ))}
             </div>
@@ -227,11 +226,10 @@ export default function TestimonialsSection() {
                   className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
                     index === rightIndex ? 'bg-[#00D9FF]' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
-                  aria-label={`Show testimonial ${index + 1} on right`}
+                  aria-label={`Show testimonial ${index + 1}`}
                 />
               ))}
             </div>
-            <span className="text-xs text-gray-400 uppercase tracking-wider">Right</span>
           </div>
         </div>
       </div>
