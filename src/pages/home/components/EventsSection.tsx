@@ -116,11 +116,17 @@ function EventCarouselRow({
             >
               {/* Image */}
               <div className="relative h-52 overflow-hidden flex-shrink-0">
+                {/* ============================================================
+                    EVENT IMAGE: Each event image is defined in src/mocks/eventsData.ts
+                    To replace with Cloudinary, update the `image` field in eventsData.ts
+                    Example:
+                    image: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/EVENT_PHOTO_ID'
+                    ============================================================ */}
                 <img
                   src={event.image}
                   alt={event.title}
                   className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>

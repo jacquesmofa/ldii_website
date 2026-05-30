@@ -132,7 +132,7 @@
     }
     </script>
     
-    <!-- Structured Data - WebSite Schema -->
+    <!-- Structured Data - WebSite Schema with Sitelinks Searchbox -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -153,6 +153,67 @@
         "target": "https://ldiinitiatives.org/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+    
+    <!-- Structured Data - Sitelinks Navigation (Google SEO Enhancement) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Who We Are",
+          "description": "Learn about LDII, our mission, vision, and the team behind our global resilience initiatives.",
+          "url": "https://ldiinitiatives.org/about"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Programs",
+          "description": "Explore our programs in climate action, global health, sustainable food systems, digital inclusion, and more.",
+          "url": "https://ldiinitiatives.org/focus-areas"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Events & News",
+          "description": "Stay updated with upcoming conferences, summits, and the latest news from LDII's global initiatives.",
+          "url": "https://ldiinitiatives.org/events"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Past Events & Resources",
+          "description": "Browse our past conferences, download reports, and access resources from previous events.",
+          "url": "https://ldiinitiatives.org/events/past"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Contact Us",
+          "description": "Get in touch with LDII for partnerships, media inquiries, and general information.",
+          "url": "https://ldiinitiatives.org/contact"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://ldiinitiatives.org/"
+        }
+      ]
     }
     </script>
     

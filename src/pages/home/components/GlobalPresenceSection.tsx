@@ -20,15 +20,22 @@ export default function GlobalPresenceSection() {
           {loading ? (
             <div className="w-full h-80 md:h-96 bg-gray-200 animate-pulse rounded-2xl"></div>
           ) : (
-            <img
-              src={assets.gallery.maps?.world_network || "https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design%20with%20warm%20lighting&width=1200&height=600&seq=ldii-global-network-map&orientation=landscape"}
-              alt="LDII Global Network Connections"
-              className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-lg"
-              loading="lazy"
-              decoding="async"
-              width="1200"
-              height="600"
-            />
+            <>
+              {/* ============================================================
+                  IMAGE: LDII Global Network Map
+                  REPLACE WITH CLOUDINARY:
+                  src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/GLOBAL_MAP_ID"
+                  ============================================================ */}
+              <img
+                src={assets.gallery.maps?.world_network || "https://readdy.ai/api/search-image?query=High%20quality%20detailed%20world%20map%20with%20bright%20glowing%20network%20connections%20between%20continents%2C%20illuminated%20connection%20lines%20showing%20global%20partnerships%2C%20modern%20digital%20cartography%20with%20vibrant%20blue%20and%20green%20network%20nodes%2C%20professional%20geographic%20visualization%20with%20data%20flow%20lines%2C%20international%20connectivity%20map%20with%20bright%20connection%20points%20across%20all%20continents%2C%20clean%20high-resolution%20world%20map%20design%20with%20warm%20lighting&width=1200&height=600&seq=ldii-global-network-map&orientation=landscape"}
+                alt="LDII Global Network Connections"
+                className="w-full h-80 md:h-96 object-cover rounded-2xl shadow-lg"
+                loading="eager"
+                decoding="async"
+                width="1200"
+                height="600"
+              />
+            </>
           )}
         </div>
 

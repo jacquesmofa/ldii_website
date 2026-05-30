@@ -34,11 +34,16 @@ export default function AboutSection() {
           </div>
           
           <div className="relative">
+            {/* ============================================================
+                IMAGE: LDII Team
+                REPLACE WITH CLOUDINARY: 
+                src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/TEAM_PHOTO_ID"
+                ============================================================ */}
             <img
               src="https://readdy.ai/api/search-image?query=Professional%20diverse%20international%20team%20working%20together%20in%20modern%20office%20environment%2C%20global%20cooperation%20and%20leadership%20development%2C%20multicultural%20collaboration%2C%20African%20and%20Canadian%20professionals%2C%20inspiring%20teamwork%2C%20high-quality%20corporate%20photography&width=600&height=500&seq=about-team&orientation=landscape"
               alt="LDII Team"
               className="w-full h-96 object-cover rounded-2xl shadow-lg"
-              loading="lazy"
+              loading="eager"
               decoding="async"
               width="600"
               height="500"

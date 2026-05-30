@@ -20,11 +20,16 @@ export default function LatestFromLDIISection() {
           <div className="relative aspect-video bg-gray-900 rounded-t-2xl overflow-hidden">
             {!isPlaying ? (
               <div className="relative w-full h-full">
+                {/* ============================================================
+                    IMAGE: LDII Latest Conference YouTube Thumbnail
+                    REPLACE WITH CLOUDINARY:
+                    src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/CONFERENCE_THUMBNAIL_ID"
+                    ============================================================ */}
                 <img
                   src="https://readdy.ai/api/search-image?query=Professional%20YouTube%20video%20thumbnail%20for%20international%20development%20organization%2C%20LDII%20conference%20presentation%20with%20speakers%20on%20stage%2C%20modern%20conference%20setup%20with%20professional%20lighting%2C%20play%20button%20overlay%2C%20high-quality%20video%20production%20aesthetic%2C%20clean%20corporate%20background%20with%20subtle%20warm%20tones&width=1200&height=675&seq=ldii-youtube-thumbnail&orientation=landscape"
                   alt="LDII Latest Conference"
                   className="w-full h-full object-cover"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="1200"
                   height="675"
@@ -96,11 +101,16 @@ export default function LatestFromLDIISection() {
                 rel="noopener noreferrer"
                 className="group cursor-pointer"
               >
+                {/* ============================================================
+                    IMAGE: Climate Resilience Conference Thumbnail
+                    REPLACE WITH CLOUDINARY:
+                    src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/CLIMATE_VIDEO_THUMB"
+                    ============================================================ */}
                 <img
                   src="https://readdy.ai/api/search-image?query=LDII%20climate%20conference%20thumbnail%20with%20diverse%20speakers%20from%20Global%20South%2C%20professional%20conference%20setting%2C%20climate%20action%20theme%2C%20clean%20modern%20YouTube%20video%20thumbnail%20style%20with%20warm%20lighting&width=400&height=225&seq=ldii-video-climate&orientation=landscape"
                   alt="Climate Resilience Conference"
                   className="w-full h-32 object-cover rounded-lg mb-2 group-hover:opacity-80 transition-opacity"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="400"
                   height="225"
@@ -114,11 +124,16 @@ export default function LatestFromLDIISection() {
                 rel="noopener noreferrer"
                 className="group cursor-pointer"
               >
+                {/* ============================================================
+                    IMAGE: Health Systems Thumbnail
+                    REPLACE WITH CLOUDINARY:
+                    src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/HEALTH_VIDEO_THUMB"
+                    ============================================================ */}
                 <img
                   src="https://readdy.ai/api/search-image?query=LDII%20health%20systems%20workshop%20thumbnail%2C%20medical%20professionals%20in%20discussion%20at%20African%20health%20conference%2C%20health%20resilience%20theme%2C%20professional%20video%20thumbnail%20with%20clean%20corporate%20lighting&width=400&height=225&seq=ldii-video-health&orientation=landscape"
                   alt="Health Systems"
                   className="w-full h-32 object-cover rounded-lg mb-2 group-hover:opacity-80 transition-opacity"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="400"
                   height="225"
@@ -132,11 +147,16 @@ export default function LatestFromLDIISection() {
                 rel="noopener noreferrer"
                 className="group cursor-pointer"
               >
+                {/* ============================================================
+                    IMAGE: Sustainable Agriculture Thumbnail
+                    REPLACE WITH CLOUDINARY:
+                    src="https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/AGRICULTURE_VIDEO_THUMB"
+                    ============================================================ */}
                 <img
                   src="https://readdy.ai/api/search-image?query=LDII%20sustainable%20agriculture%20project%20thumbnail%2C%20African%20farmers%20working%20with%20modern%20agricultural%20technology%2C%20food%20security%20theme%2C%20educational%20video%20thumbnail%20with%20natural%20green%20tones%20and%20warm%20lighting&width=400&height=225&seq=ldii-video-agriculture&orientation=landscape"
                   alt="Sustainable Agriculture"
                   className="w-full h-32 object-cover rounded-lg mb-2 group-hover:opacity-80 transition-opacity"
-                  loading="lazy"
+                  loading="eager"
                   decoding="async"
                   width="400"
                   height="225"

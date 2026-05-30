@@ -1,5 +1,18 @@
 import { useRef, useState } from 'react';
 
+// ============================================================
+// PARTNERS SECTION - How to add more partners:
+// 1. Add a new object to the `keyPartners` array below
+// 2. Template:
+//    {
+//      name: 'Partner Name',
+//      logo: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/LOGO_ID',
+//      website: 'https://www.partner-website.com',
+//      category: 'Category Name'
+//    }
+// 3. The section supports up to 120+ partners with infinite scrolling
+// ============================================================
+
 export default function PartnersSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [isPaused, setIsPaused] = useState(false);
@@ -47,159 +60,197 @@ export default function PartnersSection() {
     }
   ];
 
+  // ============================================================
+  // KEY PARTNERS ARRAY - Add new partners here
+  // Copy any partner block and replace the details
+  // Logo URL: Replace with Cloudinary link when available
+  // ============================================================
   const keyPartners = [
     {
       name: 'United Nations Development Programme',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=United%20Nations%20Development%20Programme%20UNDP%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20organization%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=undp-logo-v2&orientation=squarish',
       website: 'https://www.undp.org',
       category: 'International Organization'
     },
     {
       name: 'World Health Organization',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=World%20Health%20Organization%20WHO%20official%20logo%20blue%20and%20white%20medical%20symbol%20clean%20background%20professional%20healthcare%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=who-logo-v2&orientation=squarish',
       website: 'https://www.who.int',
       category: 'Health Organization'
     },
     {
       name: 'African Union',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=African%20Union%20official%20logo%20green%20and%20gold%20colors%20continental%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=au-logo-v2&orientation=squarish',
       website: 'https://au.int',
       category: 'Regional Organization'
     },
     {
       name: 'CPLP - Community of Portuguese Language Countries',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=CPLP%20Community%20Portuguese%20Language%20Countries%20official%20logo%20blue%20and%20white%20lusophone%20organization%20emblem%20clean%20background%20professional%20diplomatic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=cplp-logo-v2&orientation=squarish',
       website: 'https://www.cplp.org',
       category: 'Lusophone Organization'
     },
     {
       name: 'World Bank Group',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=World%20Bank%20Group%20official%20logo%20blue%20and%20white%20financial%20institution%20emblem%20clean%20background%20professional%20development%20finance%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=worldbank-logo-v2&orientation=squarish',
       website: 'https://www.worldbank.org',
       category: 'Financial Institution'
     },
     {
       name: 'International Monetary Fund',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=International%20Monetary%20Fund%20IMF%20official%20logo%20blue%20and%20white%20economic%20organization%20emblem%20clean%20background%20professional%20financial%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=imf-logo-v2&orientation=squarish',
       website: 'https://www.imf.org',
       category: 'Financial Institution'
     },
     {
       name: 'European Union',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=European%20Union%20EU%20official%20logo%20blue%20background%20with%20yellow%20stars%20circle%20emblem%20clean%20professional%20diplomatic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=eu-logo-v2&orientation=squarish',
       website: 'https://europa.eu',
       category: 'Regional Organization'
     },
     {
       name: 'OECD',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=OECD%20Organization%20Economic%20Cooperation%20Development%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20economic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=oecd-logo-v2&orientation=squarish',
       website: 'https://www.oecd.org',
       category: 'Economic Organization'
     },
     {
       name: 'Climate Investment Funds',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Climate%20Investment%20Funds%20CIF%20official%20logo%20green%20and%20blue%20environmental%20finance%20emblem%20clean%20background%20professional%20climate%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=cif-logo-v2&orientation=squarish',
       website: 'https://www.climateinvestmentfunds.org',
       category: 'Climate Finance'
     },
     {
       name: 'Green Climate Fund',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Green%20Climate%20Fund%20GCF%20official%20logo%20green%20environmental%20finance%20emblem%20clean%20white%20background%20professional%20climate%20funding%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=gcf-logo-v2&orientation=squarish',
       website: 'https://www.greenclimate.fund',
       category: 'Climate Finance'
     },
     {
       name: 'International Development Research Centre',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=International%20Development%20Research%20Centre%20IDRC%20official%20logo%20blue%20and%20white%20research%20institution%20emblem%20clean%20background%20professional%20academic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=idrc-logo-v2&orientation=squarish',
       website: 'https://www.idrc.ca',
       category: 'Research Institution'
     },
     {
       name: 'USAID',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=USAID%20United%20States%20Agency%20International%20Development%20official%20logo%20red%20white%20blue%20American%20flag%20colors%20clean%20background%20professional%20aid%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=usaid-logo-v2&orientation=squarish',
       website: 'https://www.usaid.gov',
       category: 'Development Agency'
     },
     {
       name: 'City of Brampton',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=City%20of%20Brampton%20Ontario%20official%20municipal%20logo%20Canadian%20city%20emblem%20clean%20white%20background%20professional%20government%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=brampton-logo-v2&orientation=squarish',
       website: 'https://www.brampton.ca',
       category: 'Municipal Government'
     },
     {
       name: 'Brampton Board of Trade',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Brampton%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=brampton-trade-logo-v2&orientation=squarish',
       website: 'https://www.bramptonbot.com',
       category: 'Business Organization'
     },
     {
       name: 'Toronto Region Board of Trade',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Toronto%20Region%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=toronto-trade-logo-v2&orientation=squarish',
       website: 'https://www.bot.com',
       category: 'Business Organization'
     },
     {
       name: 'Canadian Hispanic Chamber of Commerce',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Canadian%20Hispanic%20Chamber%20of%20Commerce%20official%20logo%20business%20organization%20emblem%20clean%20background%20professional%20business%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=hispanic-chamber-logo-v2&orientation=squarish',
       website: 'https://www.canadianhispanicchamber.com',
       category: 'Business Organization'
     },
     {
       name: 'Government of Canada',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Government%20of%20Canada%20official%20logo%20Canadian%20flag%20maple%20leaf%20emblem%20clean%20white%20background%20professional%20government%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=canada-gov-logo-v2&orientation=squarish',
       website: 'https://www.canada.ca',
       category: 'Federal Government'
     },
     {
       name: 'Province of Ontario',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Province%20of%20Ontario%20official%20government%20logo%20Canadian%20provincial%20emblem%20trillium%20flower%20clean%20white%20background%20professional%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=ontario-prov-logo-v2&orientation=squarish',
       website: 'https://www.ontario.ca',
       category: 'Provincial Government'
     },
     {
       name: 'RBC Royal Bank',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=RBC%20Royal%20Bank%20of%20Canada%20official%20logo%20blue%20and%20yellow%20lion%20shield%20emblem%20clean%20white%20background%20professional%20banking%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=rbc-logo-v2&orientation=squarish',
       website: 'https://www.rbc.com',
       category: 'Financial Institution'
     },
     {
       name: 'Ethiopian Airlines',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Ethiopian%20Airlines%20official%20logo%20green%20yellow%20red%20colors%20airline%20emblem%20clean%20white%20background%20professional%20aviation%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=ethiopian-airlines-logo-v2&orientation=squarish',
       website: 'https://www.ethiopianairlines.com',
       category: 'Aviation Partner'
     },
     {
       name: 'Pearson Convention Centre',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Pearson%20Convention%20Centre%20Toronto%20official%20logo%20modern%20venue%20emblem%20clean%20white%20background%20professional%20event%20space%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=pearson-convention-logo-v2&orientation=squarish',
       website: 'https://www.torontopearson.com',
       category: 'Venue Partner'
     },
     {
       name: 'KWETU Connect Australia',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=KWETU%20Connect%20Australia%20official%20logo%20community%20organization%20emblem%20clean%20white%20background%20professional%20networking%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=kwetu-logo-v2&orientation=squarish',
       website: 'https://www.kwetuconnect.com.au',
       category: 'Community Organization'
     },
     {
       name: 'IGAD',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=IGAD%20Intergovernmental%20Authority%20on%20Development%20official%20logo%20East%20Africa%20regional%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=igad-logo-v2&orientation=squarish',
       website: 'https://igad.int',
       category: 'Regional Organization'
     },
     {
       name: 'Mamy Kaya',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Mamy%20Kaya%20organization%20official%20logo%20clean%20background%20professional%20branding%20emblem%20high%20contrast%20clear%20visibility&width=300&height=300&seq=mamy-kaya-logo-v2&orientation=squarish',
       website: 'https://www.mamykaya.com',
       category: 'Partner Organization'
     },
     {
       name: 'Hilton Garden Inn Brampton',
+      // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=Hilton%20Garden%20Inn%20official%20hotel%20logo%20hospitality%20brand%20emblem%20clean%20white%20background%20professional%20hotel%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=hilton-brampton-logo-v2&orientation=squarish',
       website: 'https://www.hilton.com/en/hotels/yyzbrgi-hilton-garden-inn-toronto-brampton/',
       category: 'Hospitality Partner'
     }
+    // ADD NEW PARTNERS HERE:
+    // {
+    //   name: 'New Partner Name',
+    //   logo: 'https://res.cloudinary.com/YOUR_CLOUD_NAME/image/upload/NEW_LOGO_ID',
+    //   website: 'https://www.new-partner.com',
+    //   category: 'Category'
+    // }
   ];
 
+  // Duplicate for infinite scroll effect
   const duplicatedPartners = [...keyPartners, ...keyPartners];
 
   return (
@@ -269,11 +320,16 @@ export default function PartnersSection() {
                   >
                     <div className="flex flex-col items-center text-center">
                       <div className="w-full h-48 mb-4 flex items-center justify-center bg-white rounded-lg p-6 group-hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100">
+                        {/* ============================================================
+                            PARTNER LOGO IMAGE
+                            Defined above in the keyPartners array
+                            Replace with Cloudinary link there
+                            ============================================================ */}
                         <img
                           src={partner.logo}
                           alt={`${partner.name} logo`}
                           className="w-full h-full object-contain filter contrast-125 brightness-100"
-                          loading="lazy"
+                          loading="eager"
                           decoding="async"
                           width="300"
                           height="300"
