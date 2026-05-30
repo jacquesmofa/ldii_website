@@ -1,11 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import LanguageSwitcher from '../base/LanguageSwitcher';
 import { useMedia } from '../../context/MediaContext';
 
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { assets, loading } = useMedia();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // ... existing navigationItems ...
 
   const navigationItems = [
     {
@@ -86,12 +97,16 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      scrolled 
+        ? 'bg-white shadow-sm' 
+        : 'bg-transparent'
+    }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/#hero" className="flex items-center cursor-pointer group">
+            <a href="/" className="flex items-center cursor-pointer group">
               <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 {loading ? (
                   <div className="h-full w-16 bg-gray-200 animate-pulse rounded"></div>
@@ -118,7 +133,11 @@ export default function Header() {
                 >
                   <a
                     href={item.href}
-                    className="flex items-center gap-1 px-4 py-2 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap"
+                    className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 font-medium whitespace-nowrap ${
+                      scrolled
+                        ? 'text-gray-700 hover:text-white hover:bg-[#0A1E3D]'
+                        : 'text-white hover:text-white hover:bg-white/20'
+                    }`}
                   >
                     <span className="whitespace-nowrap">{item.title}</span>
                     {item.dropdown && (
@@ -151,15 +170,19 @@ export default function Header() {
 
           {/* Right Side - Language Switcher & Mobile Menu Button */}
           <div className="flex items-center space-x-2 sm:space-x-4">
-            <LanguageSwitcher />
+            <div className={scrolled ? '' : 'text-white'}>
+              <LanguageSwitcher />
+            </div>
             
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+              className={`xl:hidden p-2 rounded-lg transition-colors cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center ${
+                scrolled ? 'hover:bg-gray-100' : 'hover:bg-white/20'
+              }`}
               aria-label="Toggle menu"
             >
-              <i className={`${mobileMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center text-gray-700`}></i>
+              <i className={`${mobileMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center ${scrolled ? 'text-gray-700' : 'text-white'}`}></i>
             </button>
           </div>
         </div>
@@ -168,12 +191,12 @@ export default function Header() {
         <div className={`xl:hidden transition-all duration-300 ease-in-out overflow-hidden ${
           mobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="py-4 space-y-2 border-t border-gray-200 overflow-y-auto max-h-[70vh]">
+          <div className="py-4 space-y-2 border-t border-gray-200 overflow-y-auto max-h-[70vh] bg-white rounded-b-lg shadow-lg">
             {navigationItems.map((item, index) => (
               <div key={index} className="space-y-1">
                 <a
                   href={item.href}
-                  className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap"
+                  className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap min-h-[48px]"
                   onClick={(e) => {
                     if (item.dropdown) {
                       e.preventDefault();
@@ -199,7 +222,7 @@ export default function Header() {
                         <a
                           key={dropdownIndex}
                           href={dropdownItem.href}
-                          className="block pl-4 py-2 text-gray-600 hover:text-[#00D9FF] hover:bg-[#0A1E3D]/10 rounded transition-all duration-300 text-sm whitespace-normal leading-relaxed"
+                          className="block pl-4 py-2 text-gray-600 hover:text-[#00D9FF] hover:bg-[#0A1E3D]/10 rounded transition-all duration-300 text-sm whitespace-normal leading-relaxed min-h-[44px] flex items-center"
                         >
                           {dropdownItem.title}
                         </a>

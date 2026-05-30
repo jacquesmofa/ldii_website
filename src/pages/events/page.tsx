@@ -1,70 +1,8 @@
+import { getUpcomingEvents, getPastEvents } from '@/mocks/eventsData';
 
 export default function EventsPage() {
-  const upcomingEvents = [
-    {
-      title: 'Global Shocks Global South Conference 2026',
-      date: '2026',
-      location: 'TBA',
-      description: 'Premier international conference addressing systemic global challenges and building resilience strategies specifically for Global South nations.',
-      type: 'Major Conference',
-      attendees: '1000+ expected',
-      image: 'https://readdy.ai/api/search-image?query=Large%20international%20conference%20venue%20in%20Angola%20with%20modern%20architecture%2C%20Global%20South%20delegates%20and%20speakers%2C%20professional%20event%20setup%20with%20multiple%20screens%20and%20stage%2C%20African%20cultural%20elements%20integrated%20into%20modern%20design%2C%20high-resolution%20photography%20with%20excellent%20lighting&width=600&height=400&seq=global-south-conference&orientation=landscape'
-    },
-    {
-      title: 'Cultural Resilience One Planet Conference (CROP) 2026',
-      date: 'November, 2026',
-      location: 'Sydney Australia',
-      description: 'Exploring the role of cultural heritage and traditional knowledge in building community resilience and sustainable development.',
-      type: 'Cultural Conference',
-      attendees: '500+ expected',
-      image: 'https://readdy.ai/api/search-image?query=Cultural%20conference%20in%20Ghana%20with%20traditional%20African%20elements%2C%20diverse%20cultural%20representatives%2C%20modern%20conference%20facility%20with%20cultural%20decorations%2C%20professional%20event%20photography%20with%20vibrant%20colors%20and%20cultural%20displays&width=600&height=400&seq=cultural-conference&orientation=landscape'
-    },
-    {
-      title: 'Nordic East Africa Business Economic Corporation. NEABEC 2026',
-      date: 'April , 2026',
-      location: 'Helsinki, Finland',
-      description: 'Regional summit focusing on Fintech and Technology Transfer, Education, Business Trade & investments between the Global North and Global South, With a focus on East Africa and the Nordics',
-      type: 'Regional Summit',
-      attendees: '300+ expected',
-      image: 'https://readdy.ai/api/search-image?query=Modern%20conference%20center%20in%20Nairobi%20with%20sustainable%20architecture%2C%20climate-focused%20summit%20setup%2C%20African%20delegates%20in%20professional%20attire%2C%20environmental%20themes%20in%20venue%20decoration%2C%20professional%20event%20photography&width=600&height=400&seq=nairobi-summit&orientation=landscape'
-    },
-    {
-      title: 'Global Shocks Global Resilience',
-      date: 'September, 2026',
-      location: 'TBA, Canada',
-      description: 'Intensive workshop on pandemic preparedness and health system resilience for policy makers and health professionals.',
-      type: 'International Conference',
-      attendees: '500+ expected',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20health%20workshop%20in%20modern%20Toronto%20conference%20facility%2C%20medical%20professionals%20and%20policy%20makers%20in%20discussion%2C%20health-themed%20presentation%20materials%2C%20contemporary%20Canadian%20venue%2C%20high-quality%20event%20photography&width=600&height=400&seq=health-workshop&orientation=landscape'
-    }
-  ];
-
-  const pastEvents = [
-    {
-      title: '2nd International Post-COVID Conference',
-      date: 'September 8-10, 2024',
-      location: 'Brampton, ON, Canada',
-      description: 'Theme: Building Planetary Health in Response to Global Shocks. Major event that convened over 350+ delegates and global stakeholders to address post-pandemic recovery strategies and build resilience focused on the following: IT IS NO LONGER A QUESTION OF "IF", BUT WHEN WILL THE NEXT SHOCK WILL HIT THE WORLD? AS AI TAKES OVER, HOW SAFE IS HUMANITY? WHAT IS THE "FUTURE" OF LOCAL, REGIONAL, AND INTERNATIONAL TRADE WHO SHALL FEED THE WORLD?',
-      attendees: '500+ delegates',
-      outcomes: ['20 policy recommendations', '35 new partnerships', '5 major initiatives launched', 'Global Health Resilience Framework']
-    },
-    {
-      title: '1st International Post-COVID Conference',
-      date: 'July 15-17, 2024',
-      location: 'Toronto, ON, Canada',
-      description: 'Groundbreaking inaugural conference focused on global recovery and resilience strategies post-pandemic.',
-      attendees: '300+ delegates',
-      outcomes: ['Global Recovery Framework', '20 country commitments', 'Research collaboration network']
-    },
-    {
-      title: 'African Leadership Forum',
-      date: 'March 10-12, 2024',
-      location: 'Accra, Ghana',
-      description: 'Regional forum bringing together African leaders to discuss continental challenges and solutions.',
-      attendees: '200+ leaders',
-      outcomes: ['African Resilience Charter', '12 bilateral agreements', 'Youth leadership program']
-    }
-  ];
+  const upcomingEvents = getUpcomingEvents();
+  const pastEvents = getPastEvents();
 
   const newsArticles = [
     {
@@ -130,14 +68,14 @@ export default function EventsPage() {
           
           <div className="space-y-12">
             {upcomingEvents.map((event, index) => (
-              <div key={index} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
+              <div key={event.id} id={event.id} className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
                     <div className="flex items-center mb-4">
                       <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold mr-3">
                         {event.type}
                       </span>
-                      <span className="text-green-600 font-semibold">{event.date}</span>
+                      <span className="text-green-600 font-semibold">{event.displayDate}</span>
                     </div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-4">{event.title}</h3>
                     <div className="flex items-center mb-4">
@@ -145,12 +83,14 @@ export default function EventsPage() {
                       <span className="text-gray-600">{event.location}</span>
                     </div>
                     <p className="text-lg text-gray-700 mb-6 leading-relaxed">{event.description}</p>
-                    <div className="flex items-center mb-6">
-                      <i className="ri-team-line w-5 h-5 flex items-center justify-center text-gray-600 mr-2"></i>
-                      <span className="text-gray-600">{event.attendees}</span>
-                    </div>
+                    {event.attendees && (
+                      <div className="flex items-center mb-6">
+                        <i className="ri-team-line w-5 h-5 flex items-center justify-center text-gray-600 mr-2"></i>
+                        <span className="text-gray-600">{event.attendees}</span>
+                      </div>
+                    )}
                     <a
-                      href={`/events/register/${event.title.toLowerCase().replace(/\s+/g, '-')}`}
+                      href={`/events/register/${event.id}`}
                       className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap inline-block"
                     >
                       Register Now
@@ -167,6 +107,18 @@ export default function EventsPage() {
               </div>
             ))}
           </div>
+
+          {upcomingEvents.length === 0 && (
+            <div className="text-center py-16">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Upcoming Events</h3>
+              <p className="text-gray-600 max-w-md mx-auto">
+                Check back soon for our next events. Subscribe to our newsletter to stay updated.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -181,34 +133,50 @@ export default function EventsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {pastEvents.map((event, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+            {pastEvents.map((event) => (
+              <div key={event.id} id={event.id} className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="mb-4">
-                  <span className="text-green-600 font-semibold text-sm">{event.date}</span>
+                  <span className="text-green-600 font-semibold text-sm">{event.displayDate}</span>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{event.title}</h3>
                 <div className="flex items-center mb-3">
                   <i className="ri-map-pin-line w-4 h-4 flex items-center justify-center text-gray-600 mr-2"></i>
                   <span className="text-gray-600 text-sm">{event.location}</span>
                 </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">{event.description}</p>
-                <div className="mb-4">
-                  <span className="text-green-600 font-semibold text-sm">{event.attendees}</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Outcomes:</h4>
-                  <ul className="space-y-1">
-                    {event.outcomes.map((outcome, outcomeIndex) => (
-                      <li key={outcomeIndex} className="text-gray-600 text-sm flex items-center">
-                        <i className="ri-check-line w-4 h-4 flex items-center justify-center text-green-600 mr-2"></i>
-                        {outcome}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="text-gray-700 mb-4 leading-relaxed">{event.shortDescription}</p>
+                {event.attendees && (
+                  <div className="mb-4">
+                    <span className="text-green-600 font-semibold text-sm">{event.attendees}</span>
+                  </div>
+                )}
+                {event.outcomes && event.outcomes.length > 0 && (
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-2">Key Outcomes:</h4>
+                    <ul className="space-y-1">
+                      {event.outcomes.slice(0, 4).map((outcome, outcomeIndex) => (
+                        <li key={outcomeIndex} className="text-gray-600 text-sm flex items-center">
+                          <i className="ri-check-line w-4 h-4 flex items-center justify-center text-green-600 mr-2"></i>
+                          {outcome}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             ))}
           </div>
+
+          {pastEvents.length === 0 && (
+            <div className="text-center py-16">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Past Events</h3>
+              <p className="text-gray-600 max-w-md mx-auto">
+                Check out our upcoming events to see what is coming next.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

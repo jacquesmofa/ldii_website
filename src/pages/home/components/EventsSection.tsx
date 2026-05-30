@@ -1,128 +1,207 @@
-export default function EventsSection() {
-  const upcomingEvents = [
-    {
-      title: 'Global Shocks Global South Conference 2026',
-      date: '2026',
-      location: 'TBA',
-      description: 'Premier international conference addressing systemic global challenges and building resilience strategies specifically for Global South nations.',
-      image: 'https://readdy.ai/api/search-image?query=International%20conference%20with%20diverse%20Global%20South%20delegates%2C%20professional%20conference%20setting%20in%20Angola%2C%20speakers%20on%20stage%2C%20networking%20and%20collaboration%2C%20modern%20African%20conference%20venue%2C%20high-quality%20event%20photography&width=400&height=250&seq=global-south-2026&orientation=landscape',
-      type: 'Conference'
-    },
-    {
-      title: 'International Cultural Resilience Conference 2026',
-      date: 'November, 2026',
-      location: 'Accra, Ghana',
-      description: 'Exploring the role of cultural heritage and traditional knowledge in building community resilience and sustainable development.',
-      image: 'https://readdy.ai/api/search-image?query=Cultural%20conference%20in%20Ghana%20with%20traditional%20African%20elements%2C%20diverse%20cultural%20representatives%2C%20modern%20conference%20facility%20with%20cultural%20decorations%2C%20professional%20event%20photography%20with%20vibrant%20colors&width=400&height=250&seq=cultural-2026&orientation=landscape',
-      type: 'Cultural Conference'
-    },
-    {
-      title: 'Climate Resilience Summit 2026',
-      date: 'April , 2026',
-      location: 'Helsinki, Finland',
-      description: 'Regional summit focusing on Fintech and Technology Transfer, Education, Business Trade & investments between the Global North and Global South, With a focus on East Africa and the Nordics',
-      image: 'https://readdy.ai/api/search-image?query=Climate%20resilience%20summit%20with%20environmental%20experts%2C%20educational%20training%20session%2C%20environmental%20sustainability%2C%20group%20learning%2C%20professional%20workshop%20photography%20in%20Kenya&width=400&height=250&seq=climate-summit-2026&orientation=landscape',
-      type: 'Summit'
-    }
-  ];
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { getUpcomingEvents, getPastEvents, EventItem } from '@/mocks/eventsData';
 
-  const recentNews = [
-    {
-      title: '2nd International Post-COVID Conference: Remarkable Success',
-      date: 'September 2024',
-      excerpt: 'Our most recent major event achieved outstanding results with 500+ delegates and 20 policy recommendations.',
-      category: 'Achievement'
-    },
-    {
-      title: 'LDII Announces Exciting 2026 Conference Series',
-      date: 'January 2025',
-      excerpt: 'Global Shocks Global South Conference and Cultural Resilience Conference among major events planned for 2026.',
-      category: 'Announcement'
-    },
-    {
-      title: 'Partnership with Leading Climate Organizations Expanded',
-      date: 'December 2024',
-      excerpt: 'New strategic partnerships to accelerate climate resilience initiatives across Africa and North America.',
-      category: 'Partnership'
-    }
-  ];
+function EventCarouselRow({
+  events,
+  sectionTitle,
+  linkPrefix,
+}: {
+  events: EventItem[];
+  sectionTitle: string;
+  linkPrefix: string;
+}) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
+  const [cardWidth, setCardWidth] = useState(0);
+
+  const checkScroll = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const left = el.scrollLeft > 1;
+    const right = el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
+    setCanScrollLeft(left);
+    setCanScrollRight(right);
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    const el = scrollRef.current;
+    if (!el || !cardWidth) return;
+    const scrollAmount = cardWidth + 16; // card width + gap
+    el.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+
+    const measure = () => {
+      const firstCard = el.querySelector('[data-card]') as HTMLElement | null;
+      if (firstCard) {
+        setCardWidth(firstCard.offsetWidth);
+      }
+      checkScroll();
+    };
+
+    measure();
+    const resizeObserver = new ResizeObserver(measure);
+    resizeObserver.observe(el);
+    el.addEventListener('scroll', checkScroll);
+
+    return () => {
+      resizeObserver.disconnect();
+      el.removeEventListener('scroll', checkScroll);
+    };
+  }, [events, checkScroll]);
+
+  if (events.length === 0) return null;
 
   return (
-    <section 
-      className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 relative"
-      style={{
-        backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20corporate%20background%20with%20modern%20geometric%20patterns%2C%20light%20green%20and%20white%20gradient%2C%20elegant%20business%20aesthetic%2C%20clean%20minimalist%20design%2C%20soft%20professional%20lighting%2C%20contemporary%20office%20environment%2C%20high-quality%20corporate%20photography%20with%20subtle%20texture&width=1920&height=1200&seq=corporate-events-bg&orientation=landscape)`
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-50/85 to-gray-50/85"></div>
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+    <div className="mb-16">
+      {/* Section Title */}
+      <div className="flex items-center justify-between mb-8">
+        <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+          {sectionTitle}
+        </h3>
+        <span className="text-sm text-gray-500 font-medium">
+          {events.length} {events.length === 1 ? 'event' : 'events'}
+        </span>
+      </div>
+
+      {/* Carousel Container */}
+      <div className="relative">
+        {/* Left Arrow */}
+        <button
+          onClick={() => scroll('left')}
+          disabled={!canScrollLeft}
+          className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 shadow-lg ${
+            canScrollLeft
+              ? 'bg-white border-[#0A1E3D] text-[#0A1E3D] hover:bg-[#0A1E3D] hover:text-white cursor-pointer'
+              : 'bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed opacity-50'
+          }`}
+          aria-label="Previous event"
+        >
+          <i className="ri-arrow-left-s-line text-xl w-6 h-6 flex items-center justify-center"></i>
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={() => scroll('right')}
+          disabled={!canScrollRight}
+          className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center border-2 transition-all duration-300 shadow-lg ${
+            canScrollRight
+              ? 'bg-white border-[#0A1E3D] text-[#0A1E3D] hover:bg-[#0A1E3D] hover:text-white cursor-pointer'
+              : 'bg-gray-100 border-gray-200 text-gray-300 cursor-not-allowed opacity-50'
+          }`}
+          aria-label="Next event"
+        >
+          <i className="ri-arrow-right-s-line text-xl w-6 h-6 flex items-center justify-center"></i>
+        </button>
+
+        {/* Scrollable Track */}
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory px-14"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          {events.map((event) => (
+            <a
+              key={event.id}
+              data-card
+              href={`${linkPrefix}#${event.id}`}
+              className="group flex-shrink-0 w-[calc(100%-0px)] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] snap-start bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#00D9FF]/40 hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
+            >
+              {/* Image */}
+              <div className="relative h-52 overflow-hidden flex-shrink-0">
+                <img
+                  src={event.image}
+                  alt={event.title}
+                  className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                <div className="absolute top-3 left-3">
+                  <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {event.type}
+                  </span>
+                </div>
+                <div className="absolute bottom-3 left-3 right-3">
+                  <div className="flex items-center gap-2 text-white text-sm">
+                    <i className="ri-calendar-line w-4 h-4 flex items-center justify-center"></i>
+                    <span className="font-medium">{event.displayDate}</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-5 flex flex-col flex-1">
+                <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#00D9FF] transition-colors duration-300 line-clamp-2 leading-tight">
+                  {event.title}
+                </h4>
+                <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-3 flex-1">
+                  {event.shortDescription}
+                </p>
+                <div className="flex items-center text-gray-500 text-sm mb-4">
+                  <i className="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2 flex-shrink-0"></i>
+                  <span className="truncate">{event.location}</span>
+                </div>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#00D9FF] group-hover:gap-3 transition-all duration-300 mt-auto">
+                  Learn More
+                  <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function EventsSection() {
+  const upcomingEvents = getUpcomingEvents();
+  const pastEvents = getPastEvents();
+
+  return (
+    <section className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
             Events & Latest News
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Stay updated with our upcoming events and latest developments in global resilience
+            Stay updated with our upcoming events and explore our past conferences and achievements
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Upcoming Events */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Upcoming Events</h3>
-            <div className="space-y-6">
-              {upcomingEvents.map((event, index) => (
-                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-lg transition-shadow border border-corporate-blue-100">
-                  <img
-                    src={event.image}
-                    alt={event.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="bg-tech-teal-100 text-tech-teal-800 px-3 py-1 rounded-full text-sm font-semibold">
-                        {event.type}
-                      </span>
-                      <span className="text-gray-500 text-sm">{event.date}</span>
-                    </div>
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{event.title}</h4>
-                    <div className="flex items-center text-gray-600 mb-3">
-                      <i className="ri-map-pin-line w-4 h-4 flex items-center justify-center mr-2"></i>
-                      <span className="text-sm">{event.location}</span>
-                    </div>
-                    <p className="text-gray-600 leading-relaxed">{event.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Recent News */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Latest News</h3>
-            <div className="space-y-6">
-              {recentNews.map((news, index) => (
-                <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border-l-4 border-corporate-blue-600 shadow-sm">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="bg-[#00D9FF] text-[#0A1E3D] px-2 py-1 rounded text-xs font-semibold">
-                      {news.category}
-                    </span>
-                    <span className="text-gray-500 text-sm">{news.date}</span>
-                  </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{news.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{news.excerpt}</p>
-                </div>
-              ))}
-            </div>
-            
-            <div className="mt-8">
-              <a
-                href="/events"
-                className="bg-tech-teal-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-tech-teal-600 transition-colors cursor-pointer whitespace-nowrap shadow-lg"
-              >
-                View All News & Events
-              </a>
-            </div>
-          </div>
+
+        {/* Upcoming Events Row */}
+        <EventCarouselRow
+          events={upcomingEvents}
+          sectionTitle="Upcoming Events"
+          linkPrefix="/events/upcoming"
+        />
+
+        {/* Past Events Row */}
+        <EventCarouselRow
+          events={pastEvents}
+          sectionTitle="Past Events"
+          linkPrefix="/events/past"
+        />
+
+        {/* View All Events Button */}
+        <div className="text-center mt-8">
+          <a
+            href="/events"
+            className="bg-[#0A1E3D] text-white px-8 py-3.5 rounded-lg font-semibold hover:bg-[#0A1E3D]/90 transition-all duration-300 cursor-pointer whitespace-nowrap inline-flex items-center gap-2"
+          >
+            View All Events
+            <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+          </a>
         </div>
       </div>
     </section>

@@ -274,6 +274,9 @@ export default function PartnersSection() {
                           alt={`${partner.name} logo`}
                           className="w-full h-full object-contain filter contrast-125 brightness-100"
                           loading="lazy"
+                          decoding="async"
+                          width="300"
+                          height="300"
                         />
                       </div>
                       <h4 className="text-sm font-semibold text-gray-900 mb-2 group-hover:text-tech-teal-600 transition-colors duration-300 leading-tight min-h-[40px]">
@@ -290,29 +293,7 @@ export default function PartnersSection() {
           </div>
         </div>
         
-        {/* Partnership CTA - Separated from Footer */}
-        <div className="text-center bg-corporate-blue-600 rounded-2xl p-12 relative overflow-hidden mb-20">
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20"
-            style={{
-              backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20diverse%20team%20collaboration%20global%20network%20connection%20modern%20office%20environment%20corporate%20teamwork%20international%20cooperation%20success%20celebration&width=1200&height=400&seq=partnership-cta-bg&orientation=landscape)'
-            }}
-          ></div>
-          <div className="relative z-10">
-            <h3 className="text-3xl font-bold text-white mb-4">
-              Partner with Us
-            </h3>
-            <p className="text-white/90 mb-8 max-w-2xl mx-auto text-lg">
-              Join our global network of partners committed to building resilient communities and sustainable futures.
-            </p>
-            <a
-              href="/partners#hero"
-              className="bg-white text-corporate-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block shadow-lg"
-            >
-              Explore Partnership Opportunities
-            </a>
-          </div>
-        </div>
+        {/* Partnership CTA - Removed: now part of the unified CTASection */}
       </div>
 
       <style>{`
