@@ -39,7 +39,7 @@ export default function FAQPage() {
     {
       category: 'Programs',
       question: 'How can I participate in LDII programs?',
-      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or calling +1 (416) 660-4233. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
+      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or calling +1 (416) 660-4233. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
     },
     {
       category: 'Partnerships',
@@ -99,17 +99,17 @@ export default function FAQPage() {
     {
       category: 'Contact',
       question: 'How can I contact LDII?',
-      answer: 'You can reach us by phone at +1 (416) 660-4233 or email at info@ldiinitiatives.org. Our Toronto office is located at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6. Our Brampton office is at 101 West Dr C, Brampton, ON L6T 2J6. Office hours are Monday-Friday, 9:00 AM - 5:00 PM EST.'
+      answer: 'You can reach us by phone at +1 (416) 660-4233 or email at info@ldiinitiatives.org or admin@ldiinitiatives.org. Our Toronto office is located at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6. Our Brampton office is at 101 West Dr C, Brampton, ON L6T 2J6. Office hours are Monday-Friday, 9:00 AM - 5:00 PM EST.'
     },
     {
       category: 'Contact',
       question: 'Does LDII have regional offices?',
-      answer: 'Yes, in addition to our Canadian headquarters in Toronto and Brampton, we have regional offices in Nairobi, Kenya and Kampala, Uganda. All offices can be reached through our main email: info@ldiinitiatives.org.'
+      answer: 'Yes, in addition to our Canadian headquarters in Toronto and Brampton, we have regional offices in Nairobi, Kenya and Kampala, Uganda. All offices can be reached through our main emails: info@ldiinitiatives.org and admin@ldiinitiatives.org.'
     },
     {
       category: 'Media',
       question: 'How can media contact LDII?',
-      answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or call +1 (416) 660-4233. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
+      answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or call +1 (416) 660-4233. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
     }
   ];
 

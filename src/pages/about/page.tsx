@@ -60,10 +60,6 @@ export default function AboutPage() {
                 alt="LDII Mission"
                 className="rounded-2xl shadow-2xl w-full h-auto object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 bg-corporate-blue-600 text-white rounded-2xl p-8 shadow-xl">
-                <div className="text-5xl font-bold mb-2">10+</div>
-                <div className="text-lg font-semibold">Years<br />of Work Experience</div>
-              </div>
             </div>
           </div>
         </div>
@@ -158,7 +154,7 @@ export default function AboutPage() {
             
             <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
               <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-handshake-line w-8 h-8 flex items-center justify-center text-white"></i>
+                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-white"></i>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Partnership & Collaboration</h3>
               <p className="text-gray-700 leading-relaxed">
@@ -243,40 +239,6 @@ export default function AboutPage() {
               <p className="text-gray-600 mb-4">Regional Office - East Africa</p>
               <p className="text-gray-700 mb-4">Economic development, trade facilitation, and capacity building</p>
               <p className="text-sm text-gray-500">Established: 2021</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats Section */}
-      <section className="py-20 bg-gradient-to-br from-corporate-blue-600 to-corporate-blue-700">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-white mb-6">Our Impact</h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Since our establishment, we have made significant contributions to global resilience building.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="text-5xl font-bold text-tech-teal-300 mb-3">50+</div>
-              <div className="text-white text-lg font-semibold">Countries Reached</div>
-            </div>
-            
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="text-5xl font-bold text-tech-teal-300 mb-3">200+</div>
-              <div className="text-white text-lg font-semibold">Research Publications</div>
-            </div>
-            
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="text-5xl font-bold text-tech-teal-300 mb-3">1M+</div>
-              <div className="text-white text-lg font-semibold">Lives Impacted</div>
-            </div>
-            
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
-              <div className="text-5xl font-bold text-tech-teal-300 mb-3">150+</div>
-              <div className="text-white text-lg font-semibold">Partner Organizations</div>
             </div>
           </div>
         </div>

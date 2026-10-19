@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function ContactPage() {
   const [activeSection, setActiveSection] = useState('');
+  const [status, setStatus] = useState<{ form: string; ok: boolean; message: string } | null>(null);
+  const [busyForm, setBusyForm] = useState('');
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -19,6 +22,7 @@ export default function ContactPage() {
       address: '3701 Chesswood Dr, #315, North York, ON M3J 2P6',
       phone: '+1 416 660-4233',
       email: 'info@ldiinitiatives.org',
+      emailAlt: 'admin@ldiinitiatives.org',
       hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
       image: 'https://readdy.ai/api/search-image?query=Modern%20office%20building%20in%20Toronto%20with%20glass%20facade%20and%20contemporary%20architecture%2C%20Canadian%20flag%20visible%2C%20professional%20corporate%20headquarters%2C%20urban%20business%20district%2C%20high-quality%20architectural%20photography&width=400&height=300&seq=toronto-office&orientation=landscape'
     },
@@ -28,6 +32,7 @@ export default function ContactPage() {
       address: '101 West Dr C, Brampton, ON L6T 2J6',
       phone: '+1 905 123-4567',
       email: 'brampton@ldiinitiatives.org',
+      emailAlt: 'admin@ldiinitiatives.org',
       hours: 'Monday - Friday: 9:00 AM - 5:00 PM EST',
       image: 'https://readdy.ai/api/search-image?query=Modern%20office%20building%20in%20Brampton%20Ontario%20with%20contemporary%20architecture%2C%20professional%20business%20center%2C%20Canadian%20urban%20development%2C%20high-quality%20architectural%20photography&width=400&height=300&seq=brampton-office&orientation=landscape'
     }
@@ -38,6 +43,7 @@ export default function ContactPage() {
       title: 'General Inquiries',
       description: 'Questions about our work, programs, or general information.',
       email: 'info@ldiinitiatives.org',
+      emailAlt: 'admin@ldiinitiatives.org',
       phone: '+1 416 660-4233',
       icon: 'ri-question-line'
     },
@@ -53,7 +59,7 @@ export default function ContactPage() {
       description: 'Collaboration proposals and partnership discussions.',
       email: 'partnerships@ldiinitiatives.org',
       phone: '+1 416 660-4235',
-      icon: 'ri-handshake-line'
+      icon: 'ri-team-line'
     },
     {
       title: 'Research Collaboration',
@@ -64,73 +70,34 @@ export default function ContactPage() {
     }
   ];
 
+  const submitContactForm = async (form: HTMLFormElement, formKey: string, subject: string) => {
+    if (busyForm) return;
+    setBusyForm(formKey);
+    setStatus(null);
+
+    const result = await submitFormToInbox(form, {
+      subject,
+      extra: { form_name: formKey },
+    });
+
+    if (result.ok) form.reset();
+    setStatus({ form: formKey, ok: result.ok, message: result.message });
+    setBusyForm('');
+  };
+
   const handleContactSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4h52vajg2jl50j1s2vg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData as any).toString()
-      });
-      
-      if (response.ok) {
-        alert('Thank you for your message! We will get back to you within 24 hours.');
-        form.reset();
-      }
-    } catch (error) {
-      alert('There was an error submitting your message. Please try again or contact us directly via email.');
-    }
+    await submitContactForm(e.currentTarget, 'General Contact Form', 'New general enquiry — LDII website');
   };
 
   const handleMediaSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4h52vajg2jl50j1s300', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData as any).toString()
-      });
-      
-      if (response.ok) {
-        alert('Thank you for your media inquiry! Our communications team will respond shortly.');
-        form.reset();
-      }
-    } catch (error) {
-      alert('There was an error submitting your inquiry. Please contact us directly at info@ldiinitiatives.org');
-    }
+    await submitContactForm(e.currentTarget, 'Media Inquiry Form', 'New media inquiry — LDII website');
   };
 
   const handlePartnershipSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const formData = new FormData(form);
-    
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4h52vajg2jl50j1s2v0', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData as any).toString()
-      });
-      
-      if (response.ok) {
-        alert('Thank you for your partnership inquiry! We will review your proposal and respond soon.');
-        form.reset();
-      }
-    } catch (error) {
-      alert('There was an error submitting your proposal. Please contact us directly at partnerships@ldiinitiatives.org');
-    }
+    await submitContactForm(e.currentTarget, 'Partnership Form', 'New partnership proposal — LDII website');
   };
 
   return (
@@ -215,10 +182,18 @@ export default function ContactPage() {
                 <div className="space-y-2">
                   <div className="flex items-center space-x-2">
                     <i className="ri-mail-line w-4 h-4 flex items-center justify-center text-green-600"></i>
-                    <a href={`mailto:${type.email}`} className="text-green-600 hover:text-green-700 cursor-pointer text-sm">
+                    <a href={`mailto:${type.email}`} className="text-green-600 hover:text-green-700 cursor-pointer text-sm break-all">
                       {type.email}
                     </a>
                   </div>
+                  {type.emailAlt && (
+                    <div className="flex items-center space-x-2">
+                      <i className="ri-mail-send-line w-4 h-4 flex items-center justify-center text-green-600"></i>
+                      <a href={`mailto:${type.emailAlt}`} className="text-green-600 hover:text-green-700 cursor-pointer text-sm break-all">
+                        {type.emailAlt}
+                      </a>
+                    </div>
+                  )}
                   <div className="flex items-center space-x-2">
                     <i className="ri-phone-line w-4 h-4 flex items-center justify-center text-green-600"></i>
                     <a href={`tel:${type.phone}`} className="text-green-600 hover:text-green-700 cursor-pointer text-sm">
@@ -243,7 +218,8 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <form data-readdy-form id="contact-form" onSubmit={handleContactSubmit} className="space-y-6">
+            <form data-readdy-form id="contact-form" onSubmit={handleContactSubmit} className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -347,11 +323,15 @@ export default function ContactPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+                  disabled={busyForm === 'General Contact Form'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  Send Message
+                  {busyForm === 'General Contact Form' ? 'Sending...' : 'Send Message'}
                 </button>
               </div>
+              {status && status.form === 'General Contact Form' && (
+                <p className={`text-sm text-center ${status.ok ? 'text-green-700' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
         </div>
@@ -399,8 +379,14 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center space-x-3">
                       <i className="ri-mail-line w-5 h-5 flex items-center justify-center text-gray-600"></i>
-                      <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-green-600 text-sm cursor-pointer">
+                      <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-green-600 text-sm cursor-pointer break-all">
                         {office.email}
+                      </a>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <i className="ri-mail-send-line w-5 h-5 flex items-center justify-center text-gray-600"></i>
+                      <a href={`mailto:${office.emailAlt}`} className="text-gray-700 hover:text-green-600 text-sm cursor-pointer break-all">
+                        {office.emailAlt}
                       </a>
                     </div>
                     <div className="flex items-start space-x-3">
@@ -440,7 +426,8 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <form data-readdy-form id="media-form" onSubmit={handleMediaSubmit} className="space-y-6">
+            <form data-readdy-form id="media-form" onSubmit={handleMediaSubmit} className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="mediaFirstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -545,11 +532,15 @@ export default function ContactPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+                  disabled={busyForm === 'Media Inquiry Form'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  Submit Inquiry
+                  {busyForm === 'Media Inquiry Form' ? 'Sending...' : 'Submit Inquiry'}
                 </button>
               </div>
+              {status && status.form === 'Media Inquiry Form' && (
+                <p className={`text-sm text-center ${status.ok ? 'text-green-700' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
         </div>
@@ -566,7 +557,8 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <form data-readdy-form id="partnership-form" onSubmit={handlePartnershipSubmit} className="space-y-6">
+            <form data-readdy-form id="partnership-form" onSubmit={handlePartnershipSubmit} className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="partnerFirstName" className="block text-sm font-medium text-gray-700 mb-2">
@@ -672,11 +664,15 @@ export default function ContactPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+                  disabled={busyForm === 'Partnership Form'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  Submit Proposal
+                  {busyForm === 'Partnership Form' ? 'Sending...' : 'Submit Proposal'}
                 </button>
               </div>
+              {status && status.form === 'Partnership Form' && (
+                <p className={`text-sm text-center ${status.ok ? 'text-green-700' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
         </div>

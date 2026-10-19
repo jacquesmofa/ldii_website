@@ -268,8 +268,14 @@ export default function AccessibilityPage() {
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:accessibility@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
+                  <a href="mailto:accessibility@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
                     accessibility@ldiinitiatives.org
+                  </a>
+                  <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    info@ldiinitiatives.org
+                  </a>
+                  <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    admin@ldiinitiatives.org
                   </a>
                 </div>
                 

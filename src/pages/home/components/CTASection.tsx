@@ -1,39 +1,31 @@
 import { useState } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function CTASection() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!email) return;
+    if (isSubmitting) return;
+    const form = e.currentTarget;
     setIsSubmitting(true);
 
-    try {
-      const formData = new URLSearchParams();
-      formData.append('email', email);
+    const result = await submitFormToInbox(form, {
+      subject: 'New newsletter subscriber — LDII website',
+      extra: { form_name: 'Homepage Partner & Subscribe Banner' },
+    });
 
-      const response = await fetch('https://readdy.ai/api/public/form/submit/ldii-newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-      });
-
-      if (response.ok) {
-        setSubmitMessage('Thank you for subscribing!');
-        setEmail('');
-      } else {
-        setSubmitMessage('Something went wrong. Please try again.');
-      }
-    } catch {
-      setSubmitMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitMessage(''), 5000);
+    if (result.ok) {
+      form.reset();
+      setEmail('');
     }
+    setSubmitError(!result.ok);
+    setSubmitMessage(result.message);
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitMessage(''), 9000);
   };
 
   return (
@@ -91,7 +83,16 @@ export default function CTASection() {
               Get the latest updates on our global resilience initiatives, upcoming events, and research findings.
             </p>
 
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto lg:mx-0">
+            <form onSubmit={handleSubmit} className="max-w-md mx-auto lg:mx-0 relative" data-readdy-form id="home-cta-subscribe-form">
+              <input
+                type="text"
+                name="website_alt"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                readOnly
+                className="form-guard"
+              />
               <div className="flex flex-col sm:flex-row gap-3">
                 <input
                   type="email"
@@ -100,7 +101,7 @@ export default function CTASection() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email address"
                   required
-                  className="flex-1 px-5 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00D9FF] text-sm"
+                  className="w-full min-w-0 flex-1 px-5 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#00D9FF] text-sm box-border"
                 />
                 <button
                   type="submit"
@@ -111,7 +112,7 @@ export default function CTASection() {
                 </button>
               </div>
               {submitMessage && (
-                <p className={`text-sm mt-2 ${submitMessage.includes('Thank you') ? 'text-[#00D9FF]' : 'text-red-300'}`}>
+                <p className={`text-sm mt-2 ${submitError ? 'text-red-300' : 'text-[#00D9FF]'}`}>
                   {submitMessage}
                 </p>
               )}

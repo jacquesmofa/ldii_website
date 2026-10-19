@@ -29,6 +29,7 @@ Media Contact:
 David Thompson
 Director of Communications
 info@ldiinitiatives.org
+admin@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -59,6 +60,7 @@ Media Contact:
 David Thompson
 Director of Communications
 info@ldiinitiatives.org
+admin@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -92,6 +94,7 @@ Media Contact:
 David Thompson
 Director of Communications
 info@ldiinitiatives.org
+admin@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -121,6 +124,7 @@ Media Contact:
 David Thompson
 Director of Communications
 info@ldiinitiatives.org
+admin@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     },
@@ -151,6 +155,7 @@ Media Contact:
 David Thompson
 Director of Communications
 info@ldiinitiatives.org
+admin@ldiinitiatives.org
 +1 416 660-4234`,
       contact: 'David Thompson, Director of Communications'
     }
@@ -232,8 +237,11 @@ info@ldiinitiatives.org
                   <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-white"></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:info@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer">
+                <a href="mailto:info@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer block break-all">
                   info@ldiinitiatives.org
+                </a>
+                <a href="mailto:admin@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer block break-all">
+                  admin@ldiinitiatives.org
                 </a>
               </div>
               <div className="text-center">

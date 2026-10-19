@@ -11,19 +11,8 @@ export default function AboutSection() {
               Livelihood Development International Initiatives (LDII) is a Canadian-registered non-profit organization committed to creating a brighter, more stable future through social cohesion, equitable development, and community empowerment.
             </p>
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              With over 10 years of experience in grassroots and high-level international action, we operate with a global mindset, maintaining offices across Africa and North America.
+              With over a decade of experience in grassroots and high-level international action, we operate with a global mindset, maintaining offices across Africa and North America.
             </p>
-            
-            <div className="grid grid-cols-2 gap-6 mb-8">
-              <div className="text-center p-4 bg-corporate-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-corporate-blue-600 mb-2">10+</div>
-                <div className="text-gray-700">Years Experience</div>
-              </div>
-              <div className="text-center p-4 bg-corporate-blue-50 rounded-lg">
-                <div className="text-3xl font-bold text-corporate-blue-600 mb-2">5</div>
-                <div className="text-gray-700">Global Offices</div>
-              </div>
-            </div>
             
             <a
               href="/about"

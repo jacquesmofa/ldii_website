@@ -244,6 +244,73 @@ export default function LocalProgramsPage() {
         </div>
       </div>
 
+      {/* Signature Programs */}
+      <section className="py-16 md:py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-600 mb-3">
+              Signature Programs
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Where our work is deepest
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Three programmes carry most of what we do: an international mining and technology
+              exchange, youth work in Ontario, and community leadership training.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: 'Africa–Canada Mining & Technology Exchange',
+                tag: 'International',
+                body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
+                href: '/programs/mining-technology-exchange',
+                icon: 'ri-earth-line'
+              },
+              {
+                title: 'Youth Programs in Ontario',
+                tag: 'Ontario',
+                body: 'Four connected programs for newcomer youth in Toronto, with one case worker walking with each young person from arrival to their first job.',
+                href: '/programs/youth-programs-ontario',
+                icon: 'ri-user-star-line'
+              },
+              {
+                title: 'Local Capacity Training',
+                tag: 'Community',
+                body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
+                href: '/programs/local-capacity-training',
+                icon: 'ri-team-line'
+              }
+            ].map((program) => (
+              <a
+                key={program.href}
+                href={program.href}
+                className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-green-300 transition-colors cursor-pointer flex flex-col"
+              >
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
+                    <i className={`${program.icon} w-6 h-6 flex items-center justify-center text-green-600`}></i>
+                  </div>
+                  <span className="text-xs font-semibold uppercase tracking-widest text-green-700 bg-green-100 px-3 py-1 rounded-full">
+                    {program.tag}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-green-700 transition-colors">
+                  {program.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">{program.body}</p>
+                <span className="inline-flex items-center gap-2 text-green-700 font-semibold text-sm">
+                  <span>Explore programme</span>
+                  <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Youth Empowerment Initiative */}
       <section id="youth-empowerment" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

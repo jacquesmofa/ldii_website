@@ -1,40 +1,33 @@
 import { useState } from 'react';
-import { useMedia } from '../../context/MediaContext';
+import { useMedia } from '@/context/MediaContext';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [submitError, setSubmitError] = useState(false);
   const { assets, loading } = useMedia();
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    const form = e.currentTarget;
     setIsSubmitting(true);
-    
-    try {
-      const formData = new URLSearchParams();
-      formData.append('email', email);
-      
-      const response = await fetch('https://readdy.ai/api/public/form/submit/ldii-newsletter', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formData.toString(),
-      });
-      
-      if (response.ok) {
-        setSubmitMessage('Thank you for subscribing!');
-        setEmail('');
-      } else {
-        setSubmitMessage('Something went wrong. Please try again.');
-      }
-    } catch (error) {
-      setSubmitMessage('Something went wrong. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => setSubmitMessage(''), 5000);
+
+    const result = await submitFormToInbox(form, {
+      subject: 'New newsletter subscriber — LDII website',
+      extra: { form_name: 'Footer Newsletter Subscription' },
+    });
+
+    if (result.ok) {
+      form.reset();
+      setEmail('');
     }
+    setSubmitError(!result.ok);
+    setSubmitMessage(result.message);
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitMessage(''), 9000);
   };
 
   return (
@@ -114,7 +107,16 @@ export default function Footer() {
             {/* Newsletter Sign-Up */}
             <div className="mb-6">
               <h4 className="font-semibold mb-3 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Join Our Newsletter</h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2" data-readdy-form>
+              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2 relative" data-readdy-form id="footer-newsletter-form">
+                <input
+                  type="text"
+                  name="website_alt"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  readOnly
+                  className="form-guard"
+                />
                 <input
                   type="email"
                   name="email"
@@ -133,7 +135,7 @@ export default function Footer() {
                 </button>
               </form>
               {submitMessage && (
-                <p className={`text-sm mt-2 ${submitMessage.includes('Thank you') ? 'text-[#00D9FF]' : 'text-red-400'}`} style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                <p className={`text-sm mt-2 ${submitError ? 'text-red-400' : 'text-[#00D9FF]'}`} style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                   {submitMessage}
                 </p>
               )}
@@ -152,6 +154,11 @@ export default function Footer() {
               <li>
                 <a href="/programs#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                   Programs
+                </a>
+              </li>
+              <li>
+                <a href="/programs/mining-technology-exchange" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  Mining &amp; Technology Exchange
                 </a>
               </li>
               <li>
@@ -255,6 +262,9 @@ export default function Footer() {
                 <p className="font-semibold text-white mb-1" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Email:</p>
                 <a href="mailto:info@ldiinitiatives.org" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                   info@ldiinitiatives.org
+                </a>
+                <a href="mailto:admin@ldiinitiatives.org" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  admin@ldiinitiatives.org
                 </a>
               </div>
               <div>

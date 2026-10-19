@@ -56,7 +56,7 @@ export default function OurWorkPage() {
     {
       title: 'Partnership & Collaboration',
       description: 'Actively partner with governmental organizations, diplomatic missions, and the private sector to improve lives and well-being worldwide.',
-      icon: 'ri-handshake-line',
+      icon: 'ri-team-line',
       image: 'https://readdy.ai/api/search-image?query=Professional%20business%20partnership%20handshake%20between%20international%20leaders%2C%20diverse%20group%20of%20executives%20and%20diplomats%20collaborating%20on%20global%20initiatives%2C%20modern%20corporate%20meeting%20room%2C%20formal%20partnership%20signing%20ceremony%2C%20professional%20photography%20with%20excellent%20lighting%2C%20representing%20multi-stakeholder%20collaboration%20and%20strategic%20partnerships&width=600&height=400&seq=partnership-collab&orientation=landscape',
       details: [
         'Strategic partnership development',

@@ -19,6 +19,9 @@ const SustainableFoodPage = lazy(() => import('../pages/what-we-do/sustainable-f
 const GlobalHealthPage = lazy(() => import('../pages/what-we-do/global-health/page'));
 const DigitalInclusionPage = lazy(() => import('../pages/what-we-do/digital-inclusion/page'));
 const LocalProgramsPage = lazy(() => import('../pages/local-programs/page'));
+const YouthProgramsOntarioPage = lazy(() => import('../pages/programs/youth-programs-ontario/page'));
+const LocalCapacityTrainingPage = lazy(() => import('../pages/programs/local-capacity-training/page'));
+const MiningTechnologyExchangePage = lazy(() => import('../pages/programs/mining-technology-exchange/page'));
 const ImpactPage = lazy(() => import('../pages/impact/page'));
 const AchievementsPage = lazy(() => import('../pages/impact/achievements/page'));
 const SuccessStoriesPage = lazy(() => import('../pages/impact/success-stories/page'));
@@ -107,6 +110,18 @@ const routes: RouteObject[] = [
   {
     path: '/programs',
     element: <LocalProgramsPage />
+  },
+  {
+    path: '/programs/youth-programs-ontario',
+    element: <YouthProgramsOntarioPage />
+  },
+  {
+    path: '/programs/local-capacity-training',
+    element: <LocalCapacityTrainingPage />
+  },
+  {
+    path: '/programs/mining-technology-exchange',
+    element: <MiningTechnologyExchangePage />
   },
   {
     path: '/impact',

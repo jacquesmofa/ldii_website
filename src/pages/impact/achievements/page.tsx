@@ -16,120 +16,89 @@ export default function AchievementsPage() {
     return () => clearInterval(timer);
   }, []);
 
-  useEffect(() => {
-    // Add Remix Icons CDN
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css';
-    document.head.appendChild(link);
-    
-    return () => {
-      document.head.removeChild(link);
-    };
-  }, []);
-
   const majorAchievements = [
     {
       year: '2024',
       title: '2nd International Post-COVID Conference',
-      description: 'Successfully convened over 500 delegates from 40+ countries in Brampton, Ontario, addressing critical post-pandemic recovery challenges. The conference produced the Brampton Declaration on Global Resilience, established the International Post-COVID Recovery Network, and secured $50 million in funding commitments from participating nations.',
+      description: 'Successfully convened delegates from across the globe in Brampton, Ontario, addressing critical post-pandemic recovery challenges. The conference produced the Brampton Declaration on Global Resilience, established the International Post-COVID Recovery Network, and secured significant funding commitments from participating nations.',
       image: 'https://readdy.ai/api/search-image?query=Large%20international%20conference%20with%20hundreds%20of%20diverse%20delegates%20from%20multiple%20countries%2C%20professional%20conference%20hall%20with%20stage%20and%20screens%2C%20global%20summit%20atmosphere%2C%20multicultural%20audience%2C%20high-resolution%20event%20photography%20with%20excellent%20lighting&width=800&height=500&seq=achievement-conference-2024&orientation=landscape',
       outcomes: [
-        'Brampton Declaration adopted by 35 nations',
+        'Brampton Declaration adopted by participating nations',
         'International Post-COVID Recovery Network established',
-        '$50M in funding commitments secured',
-        '20 policy recommendations developed',
-        '35 new international partnerships formed'
+        'Significant funding commitments secured',
+        'Policy recommendations developed across sectors',
+        'New international partnerships formed'
       ]
     },
     {
       year: '2024',
       title: 'One Million Trees Milestone',
-      description: 'Achieved the historic milestone of planting over one million trees across 15 countries in Africa and North America. This massive reforestation initiative has created 5,000 green jobs, established 50 community-managed forest reserves, and is sequestering 250,000 tons of CO2 annually while restoring critical biodiversity corridors.',
+      description: 'Achieved the historic milestone of planting over one million trees across countries in Africa and North America. This massive reforestation initiative has created green jobs, established community-managed forest reserves, and is sequestering significant carbon annually while restoring critical biodiversity corridors.',
       image: 'https://readdy.ai/api/search-image?query=Massive%20tree%20planting%20celebration%20with%20thousands%20of%20volunteers%20and%20community%20members%2C%20newly%20planted%20forest%20areas%20across%20multiple%20landscapes%2C%20environmental%20achievement%2C%20people%20celebrating%20conservation%20success%2C%20professional%20documentary%20photography&width=800&height=500&seq=achievement-trees&orientation=landscape',
       outcomes: [
-        '1,000,000+ trees planted across 15 countries',
-        '5,000 green jobs created',
-        '50 community-managed forest reserves',
-        '250,000 tons CO2 sequestered annually',
-        'Biodiversity corridors restored across 3 continents'
+        'Over one million trees planted across countries',
+        'Green jobs created in rural communities',
+        'Community-managed forest reserves established',
+        'Significant annual carbon sequestration',
+        'Biodiversity corridors restored across continents'
       ]
     },
     {
       year: '2023-2024',
       title: 'African Health Systems Transformation',
-      description: 'Completed comprehensive two-year program strengthening health infrastructure across Kenya, Uganda, Ghana, and Nigeria. Established 25 new health clinics, trained 1,200 healthcare workers, implemented digital health record systems, and reached over 500,000 people with essential health services.',
+      description: 'Completed comprehensive two-year program strengthening health infrastructure across Kenya, Uganda, Ghana, and Nigeria. Established new health clinics, trained healthcare workers, implemented digital health record systems, and reached communities with essential health services.',
       image: 'https://readdy.ai/api/search-image?query=Modern%20healthcare%20facilities%20in%20Africa%20with%20medical%20professionals%20providing%20care%2C%20new%20health%20clinics%20with%20equipment%2C%20healthcare%20workers%20training%2C%20patients%20receiving%20treatment%2C%20professional%20healthcare%20photography%20with%20warm%20lighting&width=800&height=500&seq=achievement-health&orientation=landscape',
       outcomes: [
-        '25 new health clinics established',
-        '1,200 healthcare workers trained',
-        '500,000+ people served',
-        '35% reduction in maternal mortality',
-        'Digital health records in 100+ facilities'
+        'New health clinics established across four nations',
+        'Healthcare workers trained and deployed',
+        'Communities reached with essential health services',
+        'Significant reduction in maternal mortality',
+        'Digital health records implemented in facilities'
       ]
     },
     {
       year: '2023',
       title: 'Climate-Smart Agriculture Revolution',
-      description: 'Transformed agricultural practices for 75,000 smallholder farmers across East and West Africa through innovative climate-resilient farming techniques. Introduced drought-resistant crops, efficient irrigation systems, and sustainable farming practices, resulting in 45% yield increase and 30% water reduction.',
+      description: 'Transformed agricultural practices for thousands of smallholder farmers across East and West Africa through innovative climate-resilient farming techniques. Introduced drought-resistant crops, efficient irrigation systems, and sustainable farming practices.',
       image: 'https://readdy.ai/api/search-image?query=African%20farmers%20celebrating%20successful%20harvest%20with%20modern%20sustainable%20agriculture%2C%20drought-resistant%20crops%20growing%20in%20organized%20fields%2C%20efficient%20irrigation%20systems%2C%20agricultural%20transformation%2C%20professional%20photography%20with%20golden%20hour%20lighting&width=800&height=500&seq=achievement-agriculture&orientation=landscape',
       outcomes: [
-        '75,000 farmers reached',
-        '45% average yield increase',
-        '30% reduction in water usage',
-        '60% farmer income increase',
-        '100,000 hectares improved'
+        'Thousands of farmers reached across the region',
+        'Significant average yield increase achieved',
+        'Reduction in water usage through efficient irrigation',
+        'Farmer incomes substantially increased',
+        'Vast agricultural lands improved'
       ]
     },
     {
       year: '2023',
       title: 'Digital Innovation Hub Network',
-      description: 'Established 12 digital innovation centers across Canada, Ghana, and Kenya, providing technology training and entrepreneurship support to underserved communities. Over 3,000 young entrepreneurs trained, 500 tech startups launched, and $15 million in startup funding secured.',
+      description: 'Established digital innovation centers across Canada, Ghana, and Kenya, providing technology training and entrepreneurship support to underserved communities. Young entrepreneurs trained, tech startups launched, and significant startup funding secured.',
       image: 'https://readdy.ai/api/search-image?query=Modern%20technology%20innovation%20hub%20with%20young%20entrepreneurs%20working%20on%20computers%2C%20startup%20incubator%20environment%2C%20digital%20skills%20training%2C%20successful%20tech%20startups%2C%20professional%20technology%20photography%20with%20bright%20modern%20lighting&width=800&height=500&seq=achievement-digital&orientation=landscape',
       outcomes: [
-        '12 innovation centers established',
-        '3,000 entrepreneurs trained',
-        '500 tech startups launched',
-        '$15M in startup funding secured',
-        '25,000 people reached with digital literacy'
+        'Digital innovation centers established across three countries',
+        'Entrepreneurs trained in digital skills',
+        'Tech startups successfully launched',
+        'Startup funding secured for entrepreneurs',
+        'Communities reached with digital literacy programs'
       ]
     },
     {
       year: '2022-2024',
-      title: 'Women\'s Economic Empowerment Initiative',
-      description: 'Empowered 15,000 women entrepreneurs across Africa through comprehensive business training, microfinance access, and mentorship programs. Achieved 95% loan repayment rate, created over 30,000 jobs, and increased women\'s income by an average of 150%.',
+      title: "Women's Economic Empowerment Initiative",
+      description: 'Empowered women entrepreneurs across Africa through comprehensive business training, microfinance access, and mentorship programs. Achieved exceptional loan repayment rates, created thousands of jobs, and significantly increased incomes.',
       image: 'https://readdy.ai/api/search-image?query=African%20women%20entrepreneurs%20celebrating%20business%20success%2C%20women-led%20businesses%20and%20markets%2C%20microfinance%20activities%2C%20economic%20empowerment%20in%20action%2C%20professional%20photography%20showing%20successful%20women%20in%20various%20business%20activities&width=800&height=500&seq=achievement-women&orientation=landscape',
       outcomes: [
-        '15,000 women entrepreneurs supported',
-        '30,000 jobs created',
-        '$25M in microfinance distributed',
-        '95% loan repayment rate',
-        '150% average income increase'
+        'Women entrepreneurs supported across the continent',
+        'Thousands of jobs created through enterprise',
+        'Microfinance distributed to support businesses',
+        'Exceptional loan repayment rate maintained',
+        'Significant average income increase achieved'
       ]
     }
   ];
 
-  const impactMetrics = [
-    { number: '1M+', label: 'Trees Planted', icon: 'ri-plant-line', color: 'green' },
-    { number: '500+', label: 'Global Leaders Engaged', icon: 'ri-team-line', color: 'blue' },
-    { number: '50+', label: 'Countries Reached', icon: 'ri-global-line', color: 'purple' },
-    { number: '4.5M+', label: 'Lives Impacted', icon: 'ri-heart-line', color: 'red' },
-    { number: '270+', label: 'Active Projects', icon: 'ri-briefcase-line', color: 'orange' },
-    { number: '$100M+', label: 'Funding Mobilized', icon: 'ri-funds-line', color: 'teal' }
-  ];
-
-  const colorClasses = {
-    green: { bg: 'bg-green-600', light: 'from-green-50 to-emerald-50', text: 'text-green-600' },
-    blue: { bg: 'bg-blue-600', light: 'from-blue-50 to-indigo-50', text: 'text-blue-600' },
-    purple: { bg: 'bg-purple-600', light: 'from-purple-50 to-pink-50', text: 'text-purple-600' },
-    red: { bg: 'bg-red-600', light: 'from-red-50 to-rose-50', text: 'text-red-600' },
-    orange: { bg: 'bg-orange-600', light: 'from-orange-50 to-amber-50', text: 'text-orange-600' },
-    teal: { bg: 'bg-teal-600', light: 'from-teal-50 to-cyan-50', text: 'text-teal-600' }
-  };
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section with Slideshow */}
       <section className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700 overflow-hidden">
         {heroImages.map((image, index) => (
           <div
@@ -149,8 +118,6 @@ export default function AchievementsPage() {
             Celebrating landmark accomplishments that demonstrate our commitment to building global resilience and creating lasting positive change.
           </p>
         </div>
-        
-        {/* Slide Indicators */}
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
           {heroImages.map((_, index) => (
             <button
@@ -164,31 +131,6 @@ export default function AchievementsPage() {
         </div>
       </section>
 
-      {/* Impact Metrics */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Impact at a Glance</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Quantifiable results demonstrating the scale and scope of our global impact.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {impactMetrics.map((metric, index) => (
-              <div key={index} className={`bg-gradient-to-br ${colorClasses[metric.color].light} rounded-2xl p-8 hover:shadow-lg transition-shadow text-center`}>
-                <div className={`w-16 h-16 ${colorClasses[metric.color].bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                  <i className={`${metric.icon} w-8 h-8 flex items-center justify-center text-white`}></i>
-                </div>
-                <div className={`text-4xl font-bold ${colorClasses[metric.color].text} mb-2`}>{metric.number}</div>
-                <div className="text-gray-700 font-medium">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Major Achievements */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -208,8 +150,9 @@ export default function AchievementsPage() {
                       alt={achievement.title}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = `https://picsum.photos/seed/achievement-${index}/800/500.jpg`;
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = `https://picsum.photos/seed/achievement-${index}/800/500.jpg`;
                       }}
                     />
                   </div>
@@ -240,7 +183,6 @@ export default function AchievementsPage() {
         </div>
       </section>
 
-      {/* CTA Section with Background */}
       <section className="relative py-20 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"

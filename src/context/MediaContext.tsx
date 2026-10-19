@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import type { MediaAssets, MediaContextType } from '../types/media';
 
@@ -7,10 +6,10 @@ const MediaContext = createContext<MediaContextType | undefined>(undefined);
 // Default fallback assets (current hard‑coded values)
 const defaultAssets: MediaAssets = {
   branding: {
-    logo_main: 'https://i.imgur.com/7LGjh8Y.png',
+    logo_main: 'https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1781702619/Circular_LDII_bewv0j.png',
     logo_white: 'https://i.imgur.com/7LGjh8Y.png',
-    favicon: 'https://i.imgur.com/7LGjh8Y.png',
-    apple_touch_icon: 'https://i.imgur.com/7LGjh8Y.png'
+    favicon: 'https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1781702619/Circular_LDII_bewv0j.png',
+    apple_touch_icon: 'https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1781702619/Circular_LDII_bewv0j.png'
   },
   documents: {},
   // Fixed syntax error – provide a valid empty object as the default value

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function DonatePage() {
   const [donationType, setDonationType] = useState<'one-time' | 'monthly'>('one-time');
@@ -18,60 +19,50 @@ export default function DonatePage() {
     message: ''
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [statusError, setStatusError] = useState(false);
+
   const predefinedAmounts = ['25', '50', '100', '250', '500', '1000'];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+    if (isSubmitting) return;
+    const form = e.currentTarget;
+    setIsSubmitting(true);
+
     const finalAmount = amount === 'custom' ? customAmount : amount;
-    
-    const formDataToSubmit = new URLSearchParams();
-    formDataToSubmit.append('donationType', donationType);
-    formDataToSubmit.append('amount', finalAmount);
-    formDataToSubmit.append('paymentMethod', paymentMethod);
-    formDataToSubmit.append('firstName', formData.firstName);
-    formDataToSubmit.append('lastName', formData.lastName);
-    formDataToSubmit.append('email', formData.email);
-    formDataToSubmit.append('phone', formData.phone);
-    formDataToSubmit.append('address', formData.address);
-    formDataToSubmit.append('city', formData.city);
-    formDataToSubmit.append('province', formData.province);
-    formDataToSubmit.append('postalCode', formData.postalCode);
-    formDataToSubmit.append('country', formData.country);
-    formDataToSubmit.append('message', formData.message);
 
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4hc8qajg2jl50j1s3t0', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSubmit.toString()
+    const result = await submitFormToInbox(form, {
+      subject: 'New donation pledge — LDII website',
+      extra: {
+        form_name: 'Donation Pledge Form',
+        donation_type: donationType,
+        donation_amount_cad: finalAmount,
+        payment_method: paymentMethod,
+      },
+    });
+
+    if (result.ok) {
+      form.reset();
+      setAmount('');
+      setCustomAmount('');
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        address: '',
+        city: '',
+        province: '',
+        postalCode: '',
+        country: 'Canada',
+        message: ''
       });
-
-      if (response.ok) {
-        alert('Thank you for your generous donation! We will contact you shortly with payment instructions.');
-        setAmount('');
-        setCustomAmount('');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          address: '',
-          city: '',
-          province: '',
-          postalCode: '',
-          country: 'Canada',
-          message: ''
-        });
-      } else {
-        alert('There was an error processing your donation. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting donation:', error);
-      alert('There was an error processing your donation. Please try again.');
     }
+    setStatusError(!result.ok);
+    setStatusMessage(result.message);
+    setIsSubmitting(false);
   };
 
   return (
@@ -122,7 +113,8 @@ export default function DonatePage() {
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Complete Your Donation</h2>
 
-            <form onSubmit={handleSubmit} data-readdy-form className="space-y-8">
+            <form onSubmit={handleSubmit} data-readdy-form id="donation-pledge-form" className="space-y-8 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               {/* Donation Type */}
               <div>
                 <label className="block text-lg font-semibold text-gray-900 mb-4">Donation Type</label>
@@ -420,6 +412,7 @@ export default function DonatePage() {
                   <div className="text-sm text-gray-700 space-y-2">
                     <p>After submitting this form, please send your e-Transfer to:</p>
                     <p className="font-semibold text-green-700">admin@ldiinitiatives.org</p>
+                    <p className="text-gray-600">(or info@ldiinitiatives.org)</p>
                     <p>Security Question: What organization are you supporting?</p>
                     <p className="font-semibold text-green-700">Answer: LDII</p>
                     <p className="mt-3">You will receive a confirmation email with these details.</p>
@@ -456,10 +449,14 @@ export default function DonatePage() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap"
+                disabled={isSubmitting}
+                className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap disabled:opacity-60"
               >
-                Complete Donation
+                {isSubmitting ? 'Sending...' : 'Complete Donation'}
               </button>
+              {statusMessage && (
+                <p className={`text-sm text-center ${statusError ? 'text-red-600' : 'text-green-700'}`}>{statusMessage}</p>
+              )}
             </form>
           </div>
         </div>

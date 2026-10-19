@@ -24,7 +24,7 @@ export default function FocusAreasPage() {
         'Health equity promotion and policy development',
         'Community health resilience building'
       ],
-      achievement: 'Supported health system strengthening in 25+ countries',
+      achievement: 'Supported health system strengthening across multiple countries',
       image: 'https://readdy.ai/api/search-image?query=Modern%20healthcare%20facility%20with%20diverse%20medical%20professionals%20providing%20care%2C%20advanced%20medical%20equipment%2C%20multicultural%20healthcare%20team%2C%20professional%20medical%20photography%20with%20clean%20bright%20lighting%20and%20caring%20atmosphere&width=600&height=400&seq=health-systems&orientation=landscape'
     },
     {
@@ -37,7 +37,7 @@ export default function FocusAreasPage() {
         'Nutrition security and community-based food solutions',
         'Sustainable farming practices and crop diversification'
       ],
-      achievement: 'Improved food security for 200,000+ farmers across Africa',
+      achievement: 'Improved food security for farmers across Africa',
       image: 'https://readdy.ai/api/search-image?query=Sustainable%20agriculture%20with%20diverse%20crops%20growing%20in%20fertile%20fields%2C%20modern%20farming%20techniques%2C%20farmers%20working%20with%20advanced%20agricultural%20technology%2C%20abundant%20harvest%2C%20professional%20photography%20with%20warm%20natural%20lighting&width=600&height=400&seq=food-systems&orientation=landscape'
     },
     {
@@ -50,7 +50,7 @@ export default function FocusAreasPage() {
         'Medical supply chain resilience',
         'Digital health innovation and telemedicine'
       ],
-      achievement: 'Trained 5,000+ healthcare workers in crisis response',
+      achievement: 'Trained healthcare workers in crisis response across regions',
       image: 'https://readdy.ai/api/search-image?query=Emergency%20medical%20response%20team%20in%20action%2C%20healthcare%20workers%20in%20protective%20equipment%2C%20modern%20medical%20emergency%20facility%2C%20professional%20medical%20response%2C%20high-quality%20photography%20with%20dramatic%20lighting%20showing%20healthcare%20resilience&width=600&height=400&seq=health-resilience&orientation=landscape'
     },
     {
@@ -63,7 +63,7 @@ export default function FocusAreasPage() {
         'Cross-border collaboration initiatives',
         'Small business development and entrepreneurship support'
       ],
-      achievement: 'Facilitated $50M+ in fair trade agreements',
+      achievement: 'Facilitated fair trade agreements supporting communities',
       image: 'https://readdy.ai/api/search-image?query=International%20trade%20and%20economic%20development%20with%20diverse%20business%20professionals%20in%20modern%20trading%20floor%2C%20global%20commerce%2C%20multicultural%20business%20meeting%2C%20professional%20photography%20with%20dynamic%20lighting%20showing%20economic%20prosperity&width=600&height=400&seq=trade-development&orientation=landscape'
     },
     {
@@ -76,7 +76,7 @@ export default function FocusAreasPage() {
         'Capacity building for community economic development',
         'Impact measurement and evaluation frameworks'
       ],
-      achievement: 'Mobilized $100M+ in sustainable investments',
+      achievement: 'Mobilized sustainable investments for community development',
       image: 'https://readdy.ai/api/search-image?query=Social%20enterprise%20and%20sustainable%20investment%20with%20diverse%20entrepreneurs%20and%20investors%20collaborating%2C%20modern%20business%20incubator%2C%20innovative%20social%20impact%20projects%2C%20professional%20photography%20with%20inspiring%20lighting%20showing%20economic%20empowerment&width=600&height=400&seq=social-investment&orientation=landscape'
     }
   ];
@@ -150,37 +150,6 @@ export default function FocusAreasPage() {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Statistics */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Cross-Cutting Impact</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our integrated approach across all focus areas creates synergistic effects that amplify our impact.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">25+</div>
-              <div className="text-gray-600 font-medium">Countries Engaged</div>
-            </div>
-            <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">1M+</div>
-              <div className="text-gray-600 font-medium">Lives Impacted</div>
-            </div>
-            <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">150+</div>
-              <div className="text-gray-600 font-medium">Programs Implemented</div>
-            </div>
-            <div className="text-center bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-4xl font-bold text-green-600 mb-2">$200M+</div>
-              <div className="text-gray-600 font-medium">Resources Mobilized</div>
-            </div>
           </div>
         </div>
       </section>

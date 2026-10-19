@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function PartnersPage() {
   const [activeSection, setActiveSection] = useState('');
+  const [status, setStatus] = useState<{ form: string; ok: boolean; message: string } | null>(null);
+  const [busyForm, setBusyForm] = useState('');
 
   useEffect(() => {
     const hash = window.location.hash.replace('#', '');
@@ -59,6 +62,14 @@ export default function PartnersPage() {
   ];
 
   const privateSectorPartners = [
+    {
+      name: 'Thrive Tours Inc.',
+      description:
+        'A nationally award-winning, 100% Indigenous-owned education and eco-tourism company based at Batchewana First Nation in Northern Ontario. Thrive Tours designs and hosts experiential programmes for universities and visiting delegations, and is the operator of the Africa–Canada Mining & Technology Exchange delivered jointly with LDII.',
+      logo: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_360/v1792410688/logo-2026_thrive_tours_kbecbo.webp',
+      website: 'https://www.thrivetours.ca/',
+      focus: 'Indigenous Tourism, Education & Trade Missions'
+    },
     {
       name: 'Toronto Region Board of Trade',
       description: 'Leading business organization supporting economic growth, innovation, and business networking across the Greater Toronto Area.',
@@ -189,6 +200,31 @@ export default function PartnersPage() {
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const target = e.target as HTMLImageElement;
     target.style.display = 'none';
+  };
+
+  const submitPartnerForm = async (form: HTMLFormElement, formKey: string, subject: string) => {
+    if (busyForm) return;
+    setBusyForm(formKey);
+    setStatus(null);
+
+    const result = await submitFormToInbox(form, {
+      subject,
+      extra: { form_name: formKey },
+    });
+
+    if (result.ok) form.reset();
+    setStatus({ form: formKey, ok: result.ok, message: result.message });
+    setBusyForm('');
+  };
+
+  const handleDonationSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await submitPartnerForm(e.currentTarget, 'Partners Page Donation Form', 'New donation pledge — LDII website');
+  };
+
+  const handleVolunteerSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await submitPartnerForm(e.currentTarget, 'Volunteer Application Form', 'New volunteer application — LDII website');
   };
 
   return (
@@ -502,7 +538,8 @@ export default function PartnersPage() {
 
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Make Your Donation</h3>
-            <form data-readdy-form id="donation-form" className="space-y-6">
+            <form data-readdy-form id="donation-form" onSubmit={handleDonationSubmit} className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Donation Type *</label>
                 <div className="grid grid-cols-2 gap-4">
@@ -594,11 +631,15 @@ export default function PartnersPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+                  disabled={busyForm === 'Partners Page Donation Form'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  Complete Donation
+                  {busyForm === 'Partners Page Donation Form' ? 'Sending...' : 'Complete Donation'}
                 </button>
               </div>
+              {status && status.form === 'Partners Page Donation Form' && (
+                <p className={`text-sm text-center ${status.ok ? 'text-green-700' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
         </div>
@@ -648,7 +689,8 @@ export default function PartnersPage() {
 
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Volunteer Application</h3>
-            <form data-readdy-form id="volunteer-form" className="space-y-6">
+            <form data-readdy-form id="volunteer-form" onSubmit={handleVolunteerSubmit} className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="volunteerFirstName" className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -746,11 +788,15 @@ export default function PartnersPage() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap"
+                  disabled={busyForm === 'Volunteer Application Form'}
+                  className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  Submit Application
+                  {busyForm === 'Volunteer Application Form' ? 'Sending...' : 'Submit Application'}
                 </button>
               </div>
+              {status && status.form === 'Volunteer Application Form' && (
+                <p className={`text-sm text-center ${status.ok ? 'text-green-700' : 'text-red-600'}`}>{status.message}</p>
+              )}
             </form>
           </div>
         </div>

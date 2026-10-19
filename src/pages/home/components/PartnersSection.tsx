@@ -67,6 +67,12 @@ export default function PartnersSection() {
   // ============================================================
   const keyPartners = [
     {
+      name: 'Thrive Tours Inc.',
+      logo: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_420/v1792410688/logo-2026_thrive_tours_kbecbo.webp',
+      website: 'https://www.thrivetours.ca/',
+      category: 'Indigenous-Led Partner'
+    },
+    {
       name: 'United Nations Development Programme',
       // LOGO: Replace with Cloudinary link
       logo: 'https://readdy.ai/api/search-image?query=United%20Nations%20Development%20Programme%20UNDP%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20organization%20branding%20high%20contrast%20clear%20visibility&width=300&height=300&seq=undp-logo-v2&orientation=squarish',

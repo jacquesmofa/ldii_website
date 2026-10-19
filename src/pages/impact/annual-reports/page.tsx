@@ -25,11 +25,11 @@ export default function AnnualReportsPage() {
       description: 'Our most comprehensive annual report showcasing unprecedented growth and impact across all five focus areas. This year marked significant milestones including the 2nd International Post-COVID Conference, achieving our one million trees goal, and expanding programs to 10 new countries.',
       image: 'https://readdy.ai/api/search-image?query=Professional%20annual%20report%20cover%20design%202024%20with%20global%20development%20themes%2C%20modern%20corporate%20publication%2C%20international%20organization%20branding%2C%20clean%20professional%20layout%20with%20charts%20and%20world%20map&width=400&height=550&seq=report-2024&orientation=portrait',
       highlights: [
-        '500+ delegates at 2nd International Post-COVID Conference',
-        '1,000,000+ trees planted milestone achieved',
-        '4.5M+ people impacted across 50+ countries',
-        '$100M+ in funding mobilized',
-        '270+ active projects implemented'
+        'Delegates convened at 2nd International Post-COVID Conference',
+        'One million trees planted milestone achieved',
+        'Communities impacted across multiple countries',
+        'Funding mobilized for programs',
+        'Active projects implemented across regions'
       ],
       sections: [
         'Executive Summary',
@@ -49,11 +49,11 @@ export default function AnnualReportsPage() {
       description: 'A year of remarkable expansion and deepening impact. We launched major initiatives in digital innovation, women\'s economic empowerment, and climate-smart agriculture while strengthening health systems across Africa.',
       image: 'https://readdy.ai/api/search-image?query=Professional%20annual%20report%20cover%20design%202023%20with%20sustainable%20development%20themes%2C%20corporate%20publication%20design%2C%20international%20NGO%20branding%2C%20modern%20layout%20with%20infographics&width=400&height=550&seq=report-2023&orientation=portrait',
       highlights: [
-        '12 digital innovation centers established',
-        '15,000 women entrepreneurs supported',
-        '75,000 farmers trained in climate-smart agriculture',
-        '25 new health clinics opened',
-        'Expanded to 15 new countries'
+        'Digital innovation centers established',
+        'Women entrepreneurs supported',
+        'Farmers trained in climate-smart agriculture',
+        'New health clinics opened',
+        'Expanded to new countries'
       ],
       sections: [
         'Executive Summary',
@@ -74,9 +74,9 @@ export default function AnnualReportsPage() {
       image: 'https://readdy.ai/api/search-image?query=Professional%20annual%20report%20cover%20design%202022%20with%20innovation%20and%20resilience%20themes%2C%20modern%20corporate%20publication%2C%20global%20health%20focus%2C%20clean%20professional%20layout&width=400&height=550&seq=report-2022&orientation=portrait',
       highlights: [
         'Post-pandemic recovery programs launched',
-        'Health systems strengthened in 4 African countries',
+        'Health systems strengthened in African countries',
         'Digital transformation initiatives begun',
-        '500,000+ people reached with health services',
+        'Communities reached with health services',
         'Research network established'
       ],
       sections: [

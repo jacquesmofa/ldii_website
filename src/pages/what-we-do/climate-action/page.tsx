@@ -180,6 +180,199 @@ export default function ClimateActionPage() {
         </div>
       </section>
 
+      {/* Climate Justice in East Africa */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl mb-14">
+            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-600 mb-3">
+              Climate Justice
+            </span>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              Reclaiming Climate Justice &amp; Ecological Livelihoods in East Africa
+            </h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Climate justice is not a charitable donation; it is a debt of historical
+              accountability. As East Africa suffers the brunt of global warming born far beyond
+              its borders, we must move from passive vulnerability to active, community-led
+              ecological recovery.
+            </p>
+            <p className="text-sm font-semibold text-gray-900 mt-4">
+              Ronald Lwabaayi, President, LDII
+            </p>
+          </div>
+
+          <div className="bg-[#0A1E3D] rounded-2xl p-8 md:p-10 mb-14">
+            <h3 className="text-xl font-bold text-white mb-5">
+              The historical climate imbalance
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <span className="block text-xs uppercase tracking-widest text-white/40 mb-2">
+                  Industrialised nations
+                </span>
+                <p className="text-white/85 leading-relaxed">
+                  The overwhelming share of historical greenhouse gas emissions, and the
+                  foundation of the global environmental governance framework laid between the
+                  1967–68 Swedish initiative and the 1972 UN Conference on the Human Environment
+                  in Stockholm.
+                </p>
+              </div>
+              <div>
+                <span className="block text-xs uppercase tracking-widest text-[#00D9FF] mb-2">
+                  East Africa
+                </span>
+                <p className="text-white/85 leading-relaxed">
+                  The entire African continent historically accounts for under 3.8 per cent of
+                  global carbon emissions, yet East Africa faces accelerated warming, ecosystem
+                  collapse and severe livelihood displacement, with droughts occurring at two to
+                  three times the previous rate.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            What East Africa is living through
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            {[
+              {
+                title: 'Flora',
+                icon: 'ri-plant-line',
+                points: [
+                  'Retreat of alpine plants on Mt. Kilimanjaro and Mt. Elgon',
+                  'Proliferation of invasive species such as Prosopis juliflora',
+                  'Loss of native medicinal herbs and perennial pastures',
+                  'Decreasing suitable acreage for coffee and tea',
+                ],
+              },
+              {
+                title: 'Fauna',
+                icon: 'ri-footprint-line',
+                points: [
+                  'Disruption of the Great Wildebeest Migration cycles',
+                  'Mass die-offs of elephants, Grevy\u2019s zebras and reticulated giraffes',
+                  'Heavy livestock losses in recent Horn of Africa droughts',
+                  'Decimation of pastoral family capital and food security',
+                ],
+              },
+              {
+                title: 'Human communities',
+                icon: 'ri-team-line',
+                points: [
+                  'Recurrent flash floods and severe rangeland desiccation',
+                  'Coral bleaching along the Swahili Coast',
+                  'Mass climate displacement',
+                  'Escalating resource conflict along water and grazing corridors',
+                ],
+              },
+            ].map((group) => (
+              <div key={group.title} className="bg-gray-50 rounded-2xl p-7">
+                <div className="w-11 h-11 bg-white rounded-lg flex items-center justify-center mb-5">
+                  <i className={`${group.icon} w-5 h-5 flex items-center justify-center text-green-600`}></i>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-3">{group.title}</h4>
+                <ul className="space-y-2">
+                  {group.points.map((point) => (
+                    <li key={point} className="flex items-start gap-2">
+                      <i className="ri-subtract-line w-4 h-4 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
+                      <span className="text-gray-600 text-sm leading-relaxed">{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <div className="border-t-2 border-green-600 pt-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                The Uganda framework
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Highland agro-ecosystems, wetland restoration and smallholder climate
+                resilience across the coffee–banana belt, the Busoga rangelands and Karamoja.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  'Regenerative agroforestry and shade-grown cash crops',
+                  'Indigenous wetland protection and water harvesting',
+                  'Community-led livelihood diversification',
+                  'Micro-drip irrigation and weather-indexed crop insurance',
+                  'Turning invasive species into biochar and organic fertiliser',
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2">
+                    <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span className="text-gray-700 text-sm leading-relaxed">{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-t-2 border-green-600 pt-6">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">
+                The Kenya framework
+              </h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Arid rangeland stewardship, marine ecosystems and pastoralist climate
+                adaptation across the northern rangelands, the Swahili Coast and the Rift Valley.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  'Mobile pastoral mobility and grass-bank regeneration',
+                  'Mangrove and coral reef restoration along the coast',
+                  'Drought early-warning systems and index livestock insurance',
+                  'Community blue carbon programmes funding local services',
+                  'Traditional ecological knowledge paired with satellite data',
+                ].map((line) => (
+                  <li key={line} className="flex items-start gap-2">
+                    <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
+                    <span className="text-gray-700 text-sm leading-relaxed">{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            Our global call to action
+          </h3>
+          <p className="text-gray-600 leading-relaxed mb-8 max-w-3xl">
+            True climate justice rests on three pillars, which we advocate for at regional and
+            international level.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                title: 'Direct loss and damage financing',
+                body: 'Industrialised high-emitting nations must fully fund the UN Loss and Damage mechanism using non-debt grants, so East African nations are not forced to borrow money to repair damage they did not cause.',
+                icon: 'ri-money-dollar-circle-line',
+              },
+              {
+                title: 'Technology and knowledge transfer',
+                body: 'Direct transfer of drought-resilient agricultural technologies, green energy micro-grids and climate data analytics from the Global North to regional East African institutions.',
+                icon: 'ri-exchange-line',
+              },
+              {
+                title: 'Legal protection for stewardship',
+                body: 'Secure land tenure rights for pastoralists, smallholders and coastal communities, ensuring those who guard the land lead its ecological recovery.',
+                icon: 'ri-scales-line',
+              },
+            ].map((pillar, index) => (
+              <div key={pillar.title} className="bg-gray-50 rounded-2xl p-7">
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-11 h-11 bg-white rounded-lg flex items-center justify-center">
+                    <i className={`${pillar.icon} w-5 h-5 flex items-center justify-center text-green-600`}></i>
+                  </div>
+                  <span className="text-2xl font-bold text-gray-200">0{index + 1}</span>
+                </div>
+                <h4 className="font-bold text-gray-900 mb-2">{pillar.title}</h4>
+                <p className="text-gray-600 text-sm leading-relaxed">{pillar.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Our Strategies */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">

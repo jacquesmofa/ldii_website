@@ -1,86 +1,6 @@
 import { useState, useEffect } from 'react';
 
 export default function ImpactSection() {
-  const [animatedStats, setAnimatedStats] = useState({
-    trees: 0,
-    partners: 0,
-    years: 0,
-    offices: 0
-  });
-
-  const impactStats = [
-    {
-      number: '1M+',
-      label: 'Trees Planted Globally',
-      description: 'Contributing to reforestation and climate resilience',
-      key: 'trees',
-      target: 1000
-    },
-    {
-      number: '50+',
-      label: 'International Partners',
-      description: 'Collaborating across governments, NGOs, and private sector',
-      key: 'partners',
-      target: 50
-    },
-    {
-      number: '10+',
-      label: 'Years of Impact',
-      description: 'Decade of grassroots and high-level international action',
-      key: 'years',
-      target: 10
-    },
-    {
-      number: '5',
-      label: 'Global Offices',
-      description: 'Presence across Africa and North America',
-      key: 'offices',
-      target: 5
-    }
-  ];
-
-  // Animated counter effect with swing animation
-  useEffect(() => {
-    const animateCounter = (target: number, key: keyof typeof animatedStats, duration: number = 2000) => {
-      const start = 0;
-      const increment = target / (duration / 16);
-      let current = start;
-      
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
-        }
-        
-        setAnimatedStats(prev => ({
-          ...prev,
-          [key]: Math.floor(current)
-        }));
-      }, 16);
-    };
-
-    // Start animations with slight delays for staggered effect
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => animateCounter(1000, 'trees', 2500), 200);
-          setTimeout(() => animateCounter(50, 'partners', 2000), 400);
-          setTimeout(() => animateCounter(10, 'years', 1800), 600);
-          setTimeout(() => animateCounter(5, 'offices', 1500), 800);
-          observer.disconnect();
-        }
-      });
-    });
-
-    const section = document.getElementById('impact-stats');
-    if (section) {
-      observer.observe(section);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
   const achievements = [
     {
       title: '1st International Post-COVID Conference',
@@ -94,7 +14,7 @@ export default function ImpactSection() {
     },
     {
       title: 'Multi-Country Operations',
-      description: 'Established operational presence in 5 countries across Africa and North America.',
+      description: 'Established operational presence across Africa and North America.',
       icon: 'ri-global-line'
     }
   ];
@@ -136,30 +56,8 @@ export default function ImpactSection() {
             Our Global Impact
           </h2>
           <p className="text-xl text-white/95 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            Measuring our progress in building resilient communities worldwide
+            Building resilient communities through meaningful action and lasting partnerships across the globe.
           </p>
-        </div>
-        
-        {/* Impact Statistics with enhanced styling */}
-        <div id="impact-stats" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {impactStats.map((stat, index) => (
-            <div key={index} className="text-center transform transition-all duration-500 hover:scale-110 animate-swing-in group" style={{ animationDelay: `${index * 200}ms` }}>
-              <div className="bg-white/15 backdrop-blur-sm rounded-2xl p-6 border border-white/20 shadow-xl hover:bg-white/20 transition-all duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2 animate-number-swing drop-shadow-lg group-hover:text-tech-teal-200 transition-colors" style={{ animationDelay: `${index * 200}ms` }}>
-                  {stat.key === 'trees' ? `${animatedStats.trees}K+` :
-                   stat.key === 'partners' ? `${animatedStats.partners}+` :
-                   stat.key === 'years' ? `${animatedStats.years}+` :
-                   animatedStats.offices}
-                </div>
-                <div className="text-xl font-semibold text-white mb-2 drop-shadow-md">
-                  {stat.label}
-                </div>
-                <div className="text-white/90 text-sm leading-relaxed">
-                  {stat.description}
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
         
         {/* Key Achievements with enhanced styling */}

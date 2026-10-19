@@ -107,9 +107,14 @@ export default function OurLocationsPage() {
                       
                       <div className="flex items-center">
                         <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3"></i>
-                        <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-[#00D9FF] transition-colors">
-                          {office.email}
-                        </a>
+                        <div className="flex flex-col">
+                          <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-[#00D9FF] transition-colors break-all">
+                            {office.email}
+                          </a>
+                          <a href="mailto:admin@ldiinitiatives.org" className="text-gray-700 hover:text-[#00D9FF] transition-colors break-all">
+                            admin@ldiinitiatives.org
+                          </a>
+                        </div>
                       </div>
                       
                       <div className="flex items-start">

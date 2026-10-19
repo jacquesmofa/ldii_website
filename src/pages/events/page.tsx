@@ -1,6 +1,32 @@
+import { useState } from 'react';
 import { getUpcomingEvents, getPastEvents } from '@/mocks/eventsData';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function EventsPage() {
+  const [subscribeEmail, setSubscribeEmail] = useState('');
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeMessage, setSubscribeMessage] = useState('');
+  const [subscribeError, setSubscribeError] = useState(false);
+
+  const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (isSubscribing) return;
+    const form = e.currentTarget;
+    setIsSubscribing(true);
+
+    const result = await submitFormToInbox(form, {
+      subject: 'New newsletter subscriber — LDII events page',
+      extra: { form_name: 'Events Page Newsletter Form' },
+    });
+
+    if (result.ok) {
+      form.reset();
+      setSubscribeEmail('');
+    }
+    setSubscribeError(!result.ok);
+    setSubscribeMessage(result.message);
+    setIsSubscribing(false);
+  };
   const upcomingEvents = getUpcomingEvents();
   const pastEvents = getPastEvents();
 
@@ -230,16 +256,30 @@ export default function EventsPage() {
             Subscribe to our newsletter to receive updates on upcoming events, latest research, and breaking news.
           </p>
           <div className="max-w-md mx-auto">
-            <div className="flex gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap">
-                Subscribe
-              </button>
-            </div>
+            <form onSubmit={handleSubscribe} data-readdy-form id="events-newsletter-form" className="relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
+              <div className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  name="email"
+                  value={subscribeEmail}
+                  onChange={(e) => setSubscribeEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  className="w-full min-w-0 flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white text-sm box-border"
+                />
+                <button
+                  type="submit"
+                  disabled={isSubscribing}
+                  className="bg-[#00D9FF] text-[#0A1E3D] px-6 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-60 text-sm"
+                >
+                  {isSubscribing ? 'Subscribing...' : 'Subscribe'}
+                </button>
+              </div>
+              {subscribeMessage && (
+                <p className={`text-sm mt-3 ${subscribeError ? 'text-red-300' : 'text-[#00D9FF]'}`}>{subscribeMessage}</p>
+              )}
+            </form>
           </div>
         </div>
       </section>

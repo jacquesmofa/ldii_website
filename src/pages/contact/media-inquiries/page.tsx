@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function MediaInquiriesPage() {
   const [formData, setFormData] = useState({
@@ -11,48 +12,37 @@ export default function MediaInquiriesPage() {
     subject: '',
     inquiry: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [statusError, setStatusError] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const formDataToSubmit = new URLSearchParams();
-    formDataToSubmit.append('name', formData.name);
-    formDataToSubmit.append('organization', formData.organization);
-    formDataToSubmit.append('email', formData.email);
-    formDataToSubmit.append('phone', formData.phone);
-    formDataToSubmit.append('mediaType', formData.mediaType);
-    formDataToSubmit.append('deadline', formData.deadline);
-    formDataToSubmit.append('subject', formData.subject);
-    formDataToSubmit.append('inquiry', formData.inquiry);
+    if (isSubmitting) return;
+    const form = e.currentTarget;
+    setIsSubmitting(true);
 
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4hc8qajg2jl50j1s3sg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSubmit.toString()
+    const result = await submitFormToInbox(form, {
+      subject: 'New media inquiry — LDII website',
+      extra: { form_name: 'Media Inquiries Page Form' },
+    });
+
+    if (result.ok) {
+      form.reset();
+      setFormData({
+        name: '',
+        organization: '',
+        email: '',
+        phone: '',
+        mediaType: '',
+        deadline: '',
+        subject: '',
+        inquiry: ''
       });
-
-      if (response.ok) {
-        alert('Thank you for your media inquiry! Our communications team will respond within 24 hours.');
-        setFormData({
-          name: '',
-          organization: '',
-          email: '',
-          phone: '',
-          mediaType: '',
-          deadline: '',
-          subject: '',
-          inquiry: ''
-        });
-      } else {
-        alert('There was an error submitting your inquiry. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error submitting your inquiry. Please try again.');
     }
+    setStatusError(!result.ok);
+    setStatusMessage(result.message);
+    setIsSubmitting(false);
   };
 
   const mediaResources = [
@@ -137,8 +127,11 @@ export default function MediaInquiriesPage() {
                 <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:info@ldiinitiatives.org" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer">
+              <a href="mailto:info@ldiinitiatives.org" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer block break-all">
                 info@ldiinitiatives.org
+              </a>
+              <a href="mailto:admin@ldiinitiatives.org" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer block break-all mt-1">
+                admin@ldiinitiatives.org
               </a>
             </div>
 
@@ -192,8 +185,11 @@ export default function MediaInquiriesPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:info@ldiinitiatives.org" className="text-[#00D9FF] hover:text-[#00C4E6]">
+                    <a href="mailto:info@ldiinitiatives.org" className="text-[#00D9FF] hover:text-[#00C4E6] block break-all">
                       info@ldiinitiatives.org
+                    </a>
+                    <a href="mailto:admin@ldiinitiatives.org" className="text-[#00D9FF] hover:text-[#00C4E6] block break-all">
+                      admin@ldiinitiatives.org
                     </a>
                   </div>
                 </div>
@@ -226,7 +222,8 @@ export default function MediaInquiriesPage() {
 
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Submit a Media Inquiry</h3>
-              <form onSubmit={handleSubmit} data-readdy-form className="space-y-4">
+              <form onSubmit={handleSubmit} data-readdy-form id="media-inquiry-form" className="space-y-4 relative">
+                <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
                   <input
@@ -339,10 +336,14 @@ export default function MediaInquiriesPage() {
 
                 <button
                   type="submit"
+                  disabled={isSubmitting}
                   className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-50"
                 >
-                  Submit Inquiry
+                  {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                 </button>
+                {statusMessage && (
+                  <p className={`text-sm ${statusError ? 'text-red-600' : 'text-green-700'}`}>{statusMessage}</p>
+                )}
               </form>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { submitFormToInbox } from '@/lib/web3forms';
 
 export default function GetInTouchPage() {
   const [formData, setFormData] = useState({
@@ -9,44 +10,35 @@ export default function GetInTouchPage() {
     subject: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [statusError, setStatusError] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    const formDataToSubmit = new URLSearchParams();
-    formDataToSubmit.append('firstName', formData.firstName);
-    formDataToSubmit.append('lastName', formData.lastName);
-    formDataToSubmit.append('email', formData.email);
-    formDataToSubmit.append('phone', formData.phone);
-    formDataToSubmit.append('subject', formData.subject);
-    formDataToSubmit.append('message', formData.message);
+    if (isSubmitting) return;
+    const form = e.currentTarget;
+    setIsSubmitting(true);
 
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d4hc8qajg2jl50j1s3sg', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: formDataToSubmit.toString()
+    const result = await submitFormToInbox(form, {
+      subject: 'New message from the Get in Touch page — LDII website',
+      extra: { form_name: 'Get in Touch Form' },
+    });
+
+    if (result.ok) {
+      form.reset();
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
       });
-
-      if (response.ok) {
-        alert('Thank you for contacting us! We will get back to you within 24-48 hours.');
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        alert('There was an error sending your message. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('There was an error sending your message. Please try again.');
     }
+    setStatusError(!result.ok);
+    setStatusMessage(result.message);
+    setIsSubmitting(false);
   };
 
   const contactMethods = [
@@ -55,6 +47,7 @@ export default function GetInTouchPage() {
       title: 'Email Us',
       description: 'Send us an email anytime',
       contact: 'info@ldiinitiatives.org',
+      contactAlt: 'admin@ldiinitiatives.org',
       link: 'mailto:info@ldiinitiatives.org'
     },
     {
@@ -62,6 +55,7 @@ export default function GetInTouchPage() {
       title: 'Call Us',
       description: 'Mon-Fri from 9am to 5pm EST',
       contact: '+1 (416) 555-0123',
+      contactAlt: '',
       link: 'tel:+14165550123'
     },
     {
@@ -69,6 +63,7 @@ export default function GetInTouchPage() {
       title: 'Visit Us',
       description: 'Toronto Office',
       contact: '3701 Chesswood Drive, Unit 315',
+      contactAlt: '',
       link: '/contact#our-locations'
     },
     {
@@ -76,6 +71,7 @@ export default function GetInTouchPage() {
       title: 'Live Chat',
       description: 'Available during business hours',
       contact: 'Start a conversation',
+      contactAlt: '',
       link: '#'
     }
   ];
@@ -108,7 +104,10 @@ export default function GetInTouchPage() {
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{method.title}</h3>
                 <p className="text-sm text-gray-600 mb-3">{method.description}</p>
-                <p className="text-green-600 font-semibold group-hover:text-green-700">{method.contact}</p>
+                <p className="text-green-600 font-semibold group-hover:text-green-700 break-all">{method.contact}</p>
+                {method.contactAlt && (
+                  <p className="text-green-600 font-semibold group-hover:text-green-700 break-all mt-1">{method.contactAlt}</p>
+                )}
               </a>
             ))}
           </div>
@@ -124,7 +123,8 @@ export default function GetInTouchPage() {
               <p className="text-gray-600">Fill out the form below and we'll get back to you as soon as possible</p>
             </div>
 
-            <form onSubmit={handleSubmit} data-readdy-form className="space-y-6">
+            <form onSubmit={handleSubmit} data-readdy-form id="get-in-touch-form" className="space-y-6 relative">
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
@@ -211,10 +211,14 @@ export default function GetInTouchPage() {
 
               <button
                 type="submit"
+                disabled={isSubmitting}
                 className="w-full bg-[#00D9FF] text-[#0A1E3D] py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-50"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
+              {statusMessage && (
+                <p className={`text-sm text-center ${statusError ? 'text-red-600' : 'text-green-700'}`}>{statusMessage}</p>
+              )}
             </form>
           </div>
         </div>
@@ -237,7 +241,7 @@ export default function GetInTouchPage() {
               href="/partners"
               className="bg-gray-50 rounded-xl p-8 hover:bg-green-50 hover:shadow-lg transition-all cursor-pointer group"
             >
-              <i className="ri-handshake-line w-12 h-12 flex items-center justify-center text-green-600 mb-4"></i>
+              <i className="ri-team-line w-12 h-12 flex items-center justify-center text-green-600 mb-4"></i>
               <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">Partnership Opportunities</h3>
               <p className="text-gray-600">Explore ways to collaborate with LDII</p>
             </a>
