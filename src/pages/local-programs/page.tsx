@@ -204,14 +204,14 @@ export default function LocalProgramsPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#00D9FF] font-semibold mb-5">
-            Programs
+            Livelihood Development International Initiatives
           </span>
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Local Programs
+            Programs
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Youth, newcomer, enterprise and professional programs delivered on the ground in
-            Ontario — built with the communities and partners we serve.
+            Youth, newcomer and enterprise programmes on the ground in Ontario, community
+            leadership training, and executive delegations between Africa and Northern Ontario.
           </p>
         </div>
       </section>
@@ -248,38 +248,59 @@ export default function LocalProgramsPage() {
         </div>
       </div>
 
-      {/* Signature Programs */}
-      <section className="py-16 md:py-20 bg-white">
+      {/* About Us + Programs overview */}
+      <section id="programs-overview" className="py-16 md:py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-3xl mb-12">
+          <div className="max-w-3xl">
             <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-600 mb-3">
-              Signature Programs
+              About Us
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Where our work is deepest
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
+              A Canadian non-profit, working where capability matters
             </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Two programmes carry most of our local work in Ontario — youth programs and
-              community leadership training — alongside our international mining and technology
-              exchange.
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              Livelihood Development International Initiatives (LDII) builds resilient communities
+              through technology transfer, international partnership and community programmes. From
+              our offices in Toronto and Brampton we convene African missions, ministries and
+              chambers of mines with Northern Ontario's mining ecosystem, and we run youth,
+              newcomer and enterprise programmes here in Ontario.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+              Everything we do starts with the same question: what capability does this community
+              or institution already have, and what does it need next? That is why our work pairs
+              practical training with long-term partners rather than one-off projects.
+            </p>
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors cursor-pointer"
+            >
+              <span>Read our full story</span>
+              <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+            </a>
+          </div>
+
+          <div className="mt-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
+            <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
+              Four programme areas, each with its own delivery model, partners and dedicated page.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
             {[
               {
-                title: 'Youth Programs in Ontario',
+                title: 'Local Programs',
                 tag: 'Ontario',
+                body: 'Youth, newcomer, enterprise and professional programmes delivered on the ground in Ontario, built with the communities and partners we serve.',
+                href: '#youth-empowerment',
+                icon: 'ri-community-line'
+              },
+              {
+                title: 'Youth Programs in Ontario',
+                tag: 'Youth',
                 body: 'Four connected programs for newcomer youth in Toronto, with one case worker walking with each young person from arrival to their first job.',
                 href: '/programs/youth-programs-ontario',
                 icon: 'ri-user-star-line'
-              },
-              {
-                title: 'Local Capacity Training',
-                tag: 'Community',
-                body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
-                href: '/programs/local-capacity-training',
-                icon: 'ri-team-line'
               },
               {
                 title: 'Africa–Canada Mining & Technology Exchange',
@@ -287,6 +308,13 @@ export default function LocalProgramsPage() {
                 body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
                 href: '/programs/mining-technology-exchange',
                 icon: 'ri-earth-line'
+              },
+              {
+                title: 'Local Capacity Training',
+                tag: 'Community',
+                body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
+                href: '/programs/local-capacity-training',
+                icon: 'ri-team-line'
               }
             ].map((program) => (
               <a
@@ -320,7 +348,7 @@ export default function LocalProgramsPage() {
       <section id="youth-empowerment" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl px-8 py-4 mb-6">
+            <div className="inline-block bg-gradient-to-r from-[#0A1E3D] to-green-700 rounded-2xl px-8 py-4 mb-6">
               <h2 className="text-4xl font-bold text-white">Youth Empowerment Initiative</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -430,7 +458,7 @@ export default function LocalProgramsPage() {
       <section id="business-networking" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl px-8 py-4 mb-6">
+            <div className="inline-block bg-gradient-to-r from-green-700 to-emerald-700 rounded-2xl px-8 py-4 mb-6">
               <h2 className="text-4xl font-bold text-white">Business Networking</h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">

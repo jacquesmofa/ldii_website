@@ -111,18 +111,24 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center flex-shrink-0">
-            <a href="/" className="flex items-center cursor-pointer group">
+            <a
+              href="/"
+              className="flex items-center cursor-pointer group"
+              aria-label="LDII — Livelihood Development International Initiatives home"
+              title="LDII home"
+            >
               <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
                 {loading ? (
                   <div className="h-full w-16 bg-gray-200 animate-pulse rounded"></div>
                 ) : (
                   <img
                     src={assets.branding.logo_main}
-                    alt="LDII Logo"
+                    alt="Livelihood Development International Initiatives"
                     className="h-full w-auto object-contain"
                   />
                 )}
               </div>
+              <span className="sr-only">Livelihood Development International Initiatives</span>
             </a>
           </div>
 

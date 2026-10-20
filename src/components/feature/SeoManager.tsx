@@ -6,6 +6,7 @@ import {
   SHARE_IMAGE,
   buildBreadcrumbs,
   getPageSeo,
+  isKnownPath,
 } from '@/lib/pageSeo';
 
 const setMeta = (key: string, value: string, attr: 'name' | 'property' = 'name') => {
@@ -38,14 +39,40 @@ const setPageSchema = (data: unknown) => {
   document.head.appendChild(script);
 };
 
+const INDEXABLE = 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+
 const SeoManager = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
     const seo = getPageSeo(pathname);
+    const known = isKnownPath(pathname);
     const url = `${SITE_URL}${pathname === '/' ? '/' : pathname}`;
 
+    // Unknown URLs must never be indexed. Without this, Google crawls a missing
+    // path, renders the 404 view and turns it into a sitelink.
+    if (!known) {
+      document.title = 'Page Not Found | LDII';
+      setMeta('robots', 'noindex, nofollow');
+      setMeta('description', 'The page you requested could not be found on the LDII website.');
+      setMeta('og:title', 'Page Not Found | LDII', 'property');
+      setMeta(
+        'og:description',
+        'The page you requested could not be found on the LDII website.',
+        'property',
+      );
+      setMeta('og:url', url, 'property');
+      setMeta('twitter:title', 'Page Not Found | LDII');
+      setMeta(
+        'twitter:description',
+        'The page you requested could not be found on the LDII website.',
+      );
+      document.getElementById('ldii-page-schema')?.remove();
+      return;
+    }
+
     document.title = seo.title;
+    setMeta('robots', INDEXABLE);
     setMeta('description', seo.description);
     setMeta('og:title', seo.title, 'property');
     setMeta('og:description', seo.description, 'property');

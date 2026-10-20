@@ -91,7 +91,7 @@ export default function Footer() {
                 ) : (
                   <img
                     src={assets.branding.logo_white || assets.branding.logo_main}
-                    alt="LDII Logo"
+                    alt="Livelihood Development International Initiatives"
                     className="h-16 w-auto mb-3"
                   />
                 )}

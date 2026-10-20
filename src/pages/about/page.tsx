@@ -13,10 +13,10 @@ export default function AboutPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center py-20">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-            About LDII
+            About Us
           </h1>
           <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-            Building global resilience through transformative leadership development, innovative research, and strategic partnerships that empower communities worldwide.
+            Building resilient communities through technology transfer, international partnership and practical community programmes across Ontario and Africa.
           </p>
         </div>
       </section>

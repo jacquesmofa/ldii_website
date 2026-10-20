@@ -24,7 +24,7 @@ export const PAGE_SEO: Record<string, SeoEntry> = {
   '/': DEFAULT_SEO,
 
   '/about': {
-    title: 'About LDII | Canadian Non-Profit for Global Development',
+    title: 'About Us | LDII Canadian Non-Profit',
     description:
       'LDII is a Canadian non-profit building resilient communities through technology transfer, international partnership and community programmes in Ontario and Africa.',
     label: 'About Us',
@@ -110,9 +110,9 @@ export const PAGE_SEO: Record<string, SeoEntry> = {
   },
 
   '/programs': {
-    title: 'Programs | Youth, Capacity Training and Mining Exchange',
+    title: 'Programs | LDII Youth, Capacity and Mining Exchange',
     description:
-      'LDII programmes: youth programmes in Ontario, local capacity training, and the Africa–Canada Mining and Technology Exchange with Northern Ontario partners.',
+      'LDII programs: local programs in Ontario, youth programs for newcomer youth in Toronto, local capacity training, and the Africa–Canada Mining & Technology Exchange.',
     label: 'Programs',
   },
   '/programs/youth-programs-ontario': {
@@ -293,6 +293,19 @@ export const getPageSeo = (pathname: string): SeoEntry => {
     description: DEFAULT_SEO.description,
     label,
   };
+};
+
+/** Routes whose final segment is a dynamic slug, e.g. /events/gallery/my-event. */
+const DYNAMIC_ROUTE_PATTERNS: RegExp[] = [/^\/events\/gallery\/[^/]+$/];
+
+/**
+ * True when the path resolves to a real page. Anything else is a soft 404 and
+ * must be marked noindex so search engines do not adopt it as a sitelink.
+ */
+export const isKnownPath = (pathname: string): boolean => {
+  const clean = pathname.replace(/\/+$/, '') || '/';
+  if (PAGE_SEO[clean]) return true;
+  return DYNAMIC_ROUTE_PATTERNS.some((pattern) => pattern.test(clean));
 };
 
 export type Crumb = { name: string; url: string };
