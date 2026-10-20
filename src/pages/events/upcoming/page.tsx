@@ -95,16 +95,16 @@ export default function UpcomingEventsPage() {
 
                     <div className="flex flex-col sm:flex-row gap-4">
                       <a
-                        href={`/events/register/${event.id}`}
+                        href={event.linkUrl || '/contact'}
                         className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap text-center"
                       >
-                        Register Interest
+                        {event.linkLabel || 'Register Interest'}
                       </a>
                       <a
-                        href={`/events/details/${event.id}`}
+                        href="/contact"
                         className="bg-white hover:bg-gray-100 text-green-600 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap text-center"
                       >
-                        Learn More
+                        Enquire about this event
                       </a>
                     </div>
                   </div>

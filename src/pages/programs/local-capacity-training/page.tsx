@@ -8,7 +8,7 @@ const steps = [
   {
     number: '02',
     title: 'Learn together',
-    body: 'Three times a year a new group joins a hands-on workshop covering leadership, financial literacy and mentoring. Every participant is paired with a mentor.',
+    body: 'Three times a year a new group of 25 to 30 people joins a hands-on workshop covering leadership, financial literacy and mentoring. Every participant is paired with a mentor.',
     icon: 'ri-team-line',
   },
   {
@@ -47,6 +47,14 @@ const curriculum = [
     body: 'Every participant is matched with a mentor who stays with them through the year.',
     icon: 'ri-user-heart-line',
   },
+];
+
+const atAGlance = [
+  'Three workshops a year',
+  '25 to 30 participants per workshop',
+  '75 to 90 community members reached each year',
+  'Every participant paired with a mentor',
+  'At least three community projects launched each year',
 ];
 
 export default function LocalCapacityTrainingPage() {
@@ -157,6 +165,31 @@ export default function LocalCapacityTrainingPage() {
                 className="w-full h-full object-cover object-top"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* At a glance */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                At a glance
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                The programme runs on a yearly rhythm, small enough that everyone is known by
+                name and repeated often enough that each cohort hands the next one its mentors.
+              </p>
+            </div>
+            <ul className="bg-white rounded-2xl border border-gray-100 divide-y divide-gray-100 overflow-hidden">
+              {atAGlance.map((item) => (
+                <li key={item} className="flex items-start gap-3 px-6 py-4">
+                  <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-700 leading-relaxed">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

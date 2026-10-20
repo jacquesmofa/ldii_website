@@ -153,7 +153,17 @@ export default function Footer() {
               </li>
               <li>
                 <a href="/programs#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Programs
+                  Local Programs
+                </a>
+              </li>
+              <li>
+                <a href="/programs/youth-programs-ontario" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  Youth Programs in Ontario
+                </a>
+              </li>
+              <li>
+                <a href="/programs/local-capacity-training" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  Local Capacity Training
                 </a>
               </li>
               <li>

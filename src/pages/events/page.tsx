@@ -116,10 +116,10 @@ export default function EventsPage() {
                       </div>
                     )}
                     <a
-                      href={`/events/register/${event.id}`}
+                      href={event.linkUrl || '/contact'}
                       className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap inline-block"
                     >
-                      Register Now
+                      {event.linkLabel || 'Register Now'}
                     </a>
                   </div>
                 </div>

@@ -194,7 +194,7 @@ export default function LocalProgramsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700">
+      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
@@ -203,11 +203,15 @@ export default function LocalProgramsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#00D9FF] font-semibold mb-5">
             Programs
+          </span>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Local Programs
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Empowering communities across Canada and beyond through comprehensive programs for youth, entrepreneurs, and professionals seeking global opportunities.
+            Youth, newcomer, enterprise and professional programs delivered on the ground in
+            Ontario — built with the communities and partners we serve.
           </p>
         </div>
       </section>
@@ -255,20 +259,14 @@ export default function LocalProgramsPage() {
               Where our work is deepest
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Three programmes carry most of what we do: an international mining and technology
-              exchange, youth work in Ontario, and community leadership training.
+              Two programmes carry most of our local work in Ontario — youth programs and
+              community leadership training — alongside our international mining and technology
+              exchange.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
-              {
-                title: 'Africa–Canada Mining & Technology Exchange',
-                tag: 'International',
-                body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
-                href: '/programs/mining-technology-exchange',
-                icon: 'ri-earth-line'
-              },
               {
                 title: 'Youth Programs in Ontario',
                 tag: 'Ontario',
@@ -282,6 +280,13 @@ export default function LocalProgramsPage() {
                 body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
                 href: '/programs/local-capacity-training',
                 icon: 'ri-team-line'
+              },
+              {
+                title: 'Africa–Canada Mining & Technology Exchange',
+                tag: 'International',
+                body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
+                href: '/programs/mining-technology-exchange',
+                icon: 'ri-earth-line'
               }
             ].map((program) => (
               <a

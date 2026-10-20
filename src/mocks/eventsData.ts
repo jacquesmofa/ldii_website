@@ -36,6 +36,9 @@ export interface EventItem {
   speakers?: { name: string; role: string }[];
   resources?: { title: string; type: string; size: string }[];
   isFeatured?: boolean;
+  /** Optional deep link to a dedicated programme page (overrides the default event links) */
+  linkUrl?: string;
+  linkLabel?: string;
 }
 
 // ============================================================
@@ -46,6 +49,38 @@ export const allEvents: EventItem[] = [
   // NOTE: These are auto-detected as upcoming if their date is >= today
   // Adjust the `date` field when exact dates are confirmed
 
+  {
+    id: 'africa-canada-mining-technology-exchange-2027',
+    title: 'Africa–Canada Mining & Technology Exchange',
+    date: '2027-02-15', // Placeholder until the hosting window is confirmed
+    displayDate: 'Early 2027 · Dates to be confirmed',
+    location: 'Toronto, Sudbury, Kirkland Lake & Timmins, Ontario',
+    venue: 'Northern Ontario mining corridor + Canadian Mining Expo',
+    description:
+      'An eight-day executive delegation bringing mining ministries, regulators, operators, suppliers and financiers from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario. Built around technical capability rather than equipment, the programme combines operator site visits, the Canadian Mining Expo, NORCAT and MIRARCO/CEMI briefings, and structured business-to-business meetings with matched Canadian counterparts.',
+    shortDescription:
+      'Executive delegations from five African nations to Northern Ontario — an eight-day programme on mining capability, technology transfer and matched business partnerships.',
+    image:
+      'https://readdy.ai/api/search-image?query=Professional%20mining%20delegation%20of%20African%20executives%20and%20engineers%20touring%20a%20modern%20Northern%20Ontario%20mine%20site%20in%20safety%20gear%2C%20industrial%20headframe%20and%20processing%20plant%20behind%20them%2C%20bright%20clear%20daylight%2C%20wide%20documentary%20industrial%20photography%20with%20cool%20blue%20sky%20contrast&width=800&height=500&seq=africa-canada-mining-exchange-2027&orientation=landscape',
+    type: 'International Delegation',
+    highlights: [
+      'Mining ministries, regulators and state-owned resource companies',
+      'Operators, suppliers and technology providers',
+      'Chambers of commerce and industry associations',
+      'Development finance institutions and investors',
+      'Northern Ontario municipal and academic leadership',
+    ],
+    themes: [
+      'Mine safety, regulation and permitting',
+      'Processing, equipment and supply-chain capability',
+      'Skills training and workforce development',
+      'Community participation and negotiated benefit agreements',
+      'Water stewardship and mine closure',
+    ],
+    linkUrl: '/programs/mining-technology-exchange',
+    linkLabel: 'Explore the programme',
+    isFeatured: true,
+  },
   {
     id: 'global-south-conference-2026',
     title: 'Global Shocks Global South Conference 2026',

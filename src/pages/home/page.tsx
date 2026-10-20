@@ -1,5 +1,6 @@
 import HeroSection from './components/HeroSection';
 import AboutSection from './components/AboutSection';
+import LocalProgramsSection from './components/LocalProgramsSection';
 import ImpactSection from './components/ImpactSection';
 import FocusAreasSection from './components/FocusAreasSection';
 import LatestFromLDIISection from './components/LatestFromLDIISection';
@@ -14,6 +15,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <HeroSection />
       <AboutSection />
+      <LocalProgramsSection />
       <ImpactSection />
       <FocusAreasSection />
       <LatestFromLDIISection />

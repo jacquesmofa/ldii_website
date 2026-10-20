@@ -111,7 +111,7 @@ function EventCarouselRow({
             <a
               key={event.id}
               data-card
-              href={`${linkPrefix}#${event.id}`}
+              href={event.linkUrl || `${linkPrefix}#${event.id}`}
               className="group flex-shrink-0 w-[calc(100%-0px)] sm:w-[calc(50%-8px)] lg:w-[calc(33.333%-11px)] snap-start bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#00D9FF]/40 hover:shadow-xl transition-all duration-500 cursor-pointer flex flex-col"
             >
               {/* Image */}
@@ -156,7 +156,7 @@ function EventCarouselRow({
                   <span className="truncate">{event.location}</span>
                 </div>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#00D9FF] group-hover:gap-3 transition-all duration-300 mt-auto">
-                  Learn More
+                  {event.linkLabel || 'Learn More'}
                   <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
                 </span>
               </div>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface FAQItem {
   question: string;
@@ -112,6 +112,30 @@ export default function FAQPage() {
       answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or call +1 (416) 660-4233. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
     }
   ];
+
+  useEffect(() => {
+    const id = 'ldii-faq-schema';
+    document.getElementById(id)?.remove();
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = id;
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById(id)?.remove();
+    };
+  }, [faqs]);
 
   const categories = ['all', 'General', 'Programs', 'Partnerships', 'Donations', 'Volunteer', 'Events', 'Research', 'Contact', 'Media'];
 

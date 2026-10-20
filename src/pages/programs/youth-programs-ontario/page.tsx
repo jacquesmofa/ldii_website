@@ -15,7 +15,7 @@ const programs = [
     id: 'skills-leadership',
     title: 'Youth Skills and Leadership Training',
     summary:
-      'Our training cohorts give young people the skills and confidence to succeed in school, work and community.',
+      'Our training cohorts give young people the skills and confidence to succeed in school, work and community life.',
     points: [
       'Work-readiness: resumes, interviews and workplace culture',
       'Leadership, communication and teamwork',
@@ -48,6 +48,13 @@ const programs = [
     ],
     icon: 'ri-shield-user-line',
   },
+];
+
+const impactStats = [
+  { value: '95', label: 'Youth trained' },
+  { value: '35', label: 'Placed in jobs' },
+  { value: '81', label: 'Newcomers supported' },
+  { value: '49', label: 'Youth reached through mentorship' },
 ];
 
 export default function YouthProgramsOntarioPage() {
@@ -165,6 +172,36 @@ export default function YouthProgramsOntarioPage() {
                 communities and families, and can also walk in and ask for help directly.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our impact so far */}
+      <section className="py-16 md:py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-3xl mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our impact so far
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Each number below is a young person who stayed with the programme rather than
+              drifting away from it.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            {impactStats.map((stat) => (
+              <div
+                key={stat.label}
+                className="bg-white rounded-xl px-6 py-7 border border-gray-100"
+              >
+                <span className="block text-3xl md:text-4xl font-bold text-[#0A1E3D] mb-2">
+                  {stat.value}
+                </span>
+                <span className="block text-sm text-gray-600 leading-relaxed">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
