@@ -10,7 +10,7 @@ export const SHARE_IMAGE =
   'https://res.cloudinary.com/dzppzxpad/image/upload/c_pad,w_1200,h_630,b_white,f_jpg,q_auto/v1781702619/Circular_LDII_bewv0j.png';
 
 export const DEFAULT_SEO: SeoEntry = {
-  title: 'LDII | Livelihood Development International Initiatives',
+  title: 'LDII | Technology Transfer, Mining and Community Programs',
   description:
     'LDII connects African missions, ministries and chambers of mines with Northern Ontario mining expertise, and runs youth and community programmes in Toronto.',
   label: 'Home',

@@ -605,6 +605,53 @@
   }
 }
 
+/* Home hero photo slideshow */
+@keyframes hero-ken-burns {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.11) translate3d(0, -1.2%, 0);
+  }
+}
+
+.hero-slide-img {
+  animation: hero-ken-burns 9s ease-out both;
+  will-change: transform;
+}
+
+/* Hero veil: darker behind the centred copy, lighter at the edges so the photographs stay bright */
+.hero-veil {
+  background: radial-gradient(
+    ellipse 64% 58% at 50% 50%,
+    rgba(4, 12, 25, 0.54) 0%,
+    rgba(4, 12, 25, 0.3) 60%,
+    rgba(4, 12, 25, 0.06) 100%
+  );
+}
+
+@keyframes hero-progress-fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.hero-progress {
+  width: 0;
+  animation-name: hero-progress-fill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-img {
+    animation: none;
+  }
+}
+
 /* Quiet anti-spam guard field used by the enquiry and subscription forms */
 .form-guard {
   position: absolute;
