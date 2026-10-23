@@ -184,7 +184,7 @@ export default function PresidentProfilePage() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-3">Climate & Environment Leadership</h3>
               <p className="text-gray-600 leading-relaxed">
-                Spearheaded global reforestation efforts with <strong className="text-gray-800">500,000+ trees planted</strong>. Organized the East Africa Climate Summit in Nairobi (2023), facilitating MOUs between Canadian green-tech firms and African ministries.
+                Spearheaded global reforestation efforts with <strong className="text-gray-800">100,000+ fruit trees planted</strong>. Organized the East Africa Climate Summit in Nairobi (2023), facilitating MOUs between Canadian green-tech firms and African ministries.
               </p>
             </div>
 

@@ -170,6 +170,66 @@ export const eventBehindTheScenes: GalleryEvent = {
       title: 'Backup Systems Check',
       width: 1200,
       height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_gkpwsh'),
+      title: 'Resource mobilisation planning · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_6_siaxea'),
+      title: 'Resource mobilisation planning 2 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_8_dvpd2d'),
+      title: 'Resource mobilisation planning 3 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_7_sppw2z'),
+      title: 'Resource mobilisation planning 4 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_4_ounzql'),
+      title: 'Resource mobilisation planning 5 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_2_d4dmba'),
+      title: 'Resource mobilisation planning 6 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_1_cqjtc1'),
+      title: 'Resource mobilisation planning 7 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_5_udalnn'),
+      title: 'Resource mobilisation planning 8 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.03_tshx9t'),
+      title: 'Resource mobilisation planning 9 · August 2025',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.23.03_2_wepm3q'),
+      title: 'Resource mobilisation planning 10 · August 2025',
+      width: 1200,
+      height: 900
     }
   ],
   videos: []

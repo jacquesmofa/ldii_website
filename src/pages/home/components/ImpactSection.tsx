@@ -9,7 +9,7 @@ export default function ImpactSection() {
     },
     {
       title: 'Global Tree Planting Initiative',
-      description: 'Coordinated the planting of over one million trees worldwide, contributing to climate resilience.',
+      description: 'Coordinated the planting of over 100,000 fruit trees worldwide, contributing to climate resilience.',
       icon: 'ri-plant-line'
     },
     {

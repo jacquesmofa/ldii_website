@@ -392,7 +392,7 @@ export const allEvents: EventItem[] = [
     outcomes: [
       'Nairobi Climate Action Plan developed',
       'Community-based adaptation toolkit launched',
-      '500,000 tree planting commitment secured',
+      '100,000 fruit tree planting commitment secured',
       'Climate finance mobilization strategy adopted',
       'Youth Climate Ambassador Program initiated'
     ],

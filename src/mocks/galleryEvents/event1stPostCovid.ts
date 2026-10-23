@@ -201,6 +201,162 @@ export const event1stPostCovid: GalleryEvent = {
       title: 'Farewell - International Delegates',
       width: 900,
       height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_19.20.48oikl_kjizq4'),
+      title: 'Delegates and guests - family photograph · Toronto, July 2024',
+      width: 1400,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.42.29oilk_dd4872'),
+      title: 'Ronald Lwabaayi opening address · Toronto, July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.58polk_cal0il'),
+      title: 'Keynote address · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.58_tglbms'),
+      title: 'Certificate of recognition from the City of Brampton',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_kafa9r'),
+      title: 'Conference speaker · Toronto, July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_11_t5syke'),
+      title: 'Press coverage - conference and IGAD · July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_10_i8ei6j'),
+      title: 'Delegates and guests - family photograph 2 · July 2024',
+      width: 1400,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_9_qa73aa'),
+      title: 'Conference speaker 2 · Toronto, July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_7_dc6ogu'),
+      title: 'Speakers on the main stage · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_6_y08aaz'),
+      title: 'Conference magazine and programme · July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_8_dgxw0v'),
+      title: 'Conference speaker 3 · Toronto, July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_5_qspxrk'),
+      title: 'Speakers group photograph · Toronto, July 2024',
+      width: 1400,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_4_v5rfin'),
+      title: 'Conference speaker 4 · Toronto, July 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_3_xixmzc'),
+      title: 'Delegate table session · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_2_vmfcbg'),
+      title: 'Delegate table session 2 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.57_1_gnyptj'),
+      title: 'Delegate table session 3 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.56oplm_suwsaa'),
+      title: 'Delegate table session 4 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.56ooppl_mymdui'),
+      title: 'Delegate table session 5 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.56oopl_ipirdm'),
+      title: 'Delegates group photograph · Toronto, July 2024',
+      width: 1400,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.56nnmjjj_boxfoy'),
+      title: 'Delegate table session 6 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.56_cf28tg'),
+      title: 'Delegates group photograph 2 · Toronto, July 2024',
+      width: 1400,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.55nmmbmn_vbhtbw'),
+      title: 'Official conference flyer · 2024',
+      width: 900,
+      height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.55mkio_ajh0p4'),
+      title: 'Panel of speakers · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.55_uqiiso'),
+      title: 'Delegate table session 7 · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.55_2_vobm0a'),
+      title: 'Panelists outside the venue · Toronto, July 2024',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_18.38.55_1_fpxxd0'),
+      title: 'Speakers and panelists group photograph · Toronto, July 2024',
+      width: 1400,
+      height: 900
     }
   ],
   videos: []

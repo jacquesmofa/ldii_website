@@ -16,7 +16,7 @@ const localPrograms = [
   {
     title: 'Newcomers & Local Enterprise',
     body: 'Employment training for newcomers, plus networking, mentorship and startup support for entrepreneurs building businesses close to home.',
-    href: '/programs#empowering-newcomers',
+    href: '/programs#newcomer-settlement',
     icon: 'ri-briefcase-4-line',
     tag: 'Livelihoods',
   },

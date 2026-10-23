@@ -1,560 +1,336 @@
 import { useState } from 'react';
+import { localProgrammes, programmePartners } from '@/mocks/localProgramsData';
+import ProgrammeIndex from './components/ProgrammeIndex';
+import ProgrammeBlock from './components/ProgrammeBlock';
+import ApproachSection from './components/ApproachSection';
+
+const navItems = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'programmes', label: 'Programmes' },
+  { id: 'our-approach', label: 'Our Approach' },
+  { id: 'office-locations', label: 'Locations' }
+];
+
+const programmeAreas = [
+  {
+    title: 'Local Programs',
+    tag: 'Ontario',
+    body: 'Six community programmes on the ground in Ontario, spanning newcomer settlement, youth employment, community safety, wellbeing, partnerships and seniors support.',
+    href: '#programmes',
+    icon: 'ri-community-line'
+  },
+  {
+    title: 'Youth Programs in Ontario',
+    tag: 'Youth',
+    body: 'Four connected programs for newcomer youth in Toronto, with one case worker walking with each young person from arrival to their first job.',
+    href: '/programs/youth-programs-ontario',
+    icon: 'ri-user-star-line'
+  },
+  {
+    title: 'Africa-Canada Mining & Technology Exchange',
+    tag: 'International',
+    body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
+    href: '/programs/mining-technology-exchange',
+    icon: 'ri-earth-line'
+  },
+  {
+    title: 'Local Capacity Training',
+    tag: 'Community',
+    body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
+    href: '/programs/local-capacity-training',
+    icon: 'ri-team-line'
+  }
+];
+
+const offices = [
+  {
+    name: 'Toronto Office',
+    address: '3701 Chesswood Drive, Unit 315',
+    city: 'Toronto, Ontario M3J 2P6',
+    phone: '+1 (416) 660-4233',
+    email: 'info@ldiinitiatives.org',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    icon: 'ri-building-line',
+    mapUrl:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.4678!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjgnMDQuMSJX!5e0!3m2!1sen!2sca!4v1234567890'
+  },
+  {
+    name: 'Brampton Office',
+    address: '101 West Dr C',
+    city: 'Brampton, ON L6T 2J6',
+    phone: '+1 (416) 660-4233',
+    email: 'info@ldiinitiatives.org',
+    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
+    icon: 'ri-building-2-line',
+    mapUrl:
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.7623!3d43.7321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQzJzU1LjYiTiA3OcKwNDUnNDQuMyJX!5e0!3m2!1sen!2sca!4v1234567891'
+  }
+];
 
 export default function LocalProgramsPage() {
-  const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
-
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [sectionId]: !prev[sectionId]
-    }));
-  };
+  const [activeSection, setActiveSection] = useState('overview');
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setActiveSection(sectionId);
     }
   };
 
-  const youthPrograms = [
-    {
-      id: 'employment-readiness',
-      title: 'Employment Readiness & Career Development',
-      description: 'Equipping youth with the skills, knowledge, and connections needed to succeed in the modern workforce. Our comprehensive career development program includes resume building, interview preparation, job placement assistance, and ongoing career counseling to ensure long-term success in the Canadian job market.',
-      image: 'https://readdy.ai/api/search-image?query=Young%20professionals%20in%20job%20interview%20preparation%20workshop%2C%20career%20counseling%20session%2C%20diverse%20Canadian%20youth%20learning%20employment%20skills%2C%20modern%20training%20facility%2C%20professional%20photography%20with%20bright%20lighting&width=600&height=400&seq=employment-youth&orientation=landscape',
-      services: [
-        'Resume writing and interview preparation',
-        'Job search assistance and placement',
-        'Career counseling and pathway planning',
-        'Professional networking opportunities',
-        'Workplace readiness training'
-      ]
-    },
-    {
-      id: 'skills-building',
-      title: 'Skills Building Workshops',
-      description: 'Comprehensive training programs to develop essential life and professional skills for success in the 21st century. From digital literacy to financial management, our workshops provide practical knowledge that empowers youth to navigate modern challenges and seize opportunities for personal and professional growth.',
-      image: 'https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1779929786/WhatsApp_Image_2026-05-26_at_10.41.48_PM_3_gbdx7o.jpg',
-      services: [
-        'Digital literacy and technology training',
-        'Financial literacy and money management',
-        'Leadership development programs',
-        'Communication and public speaking',
-        'Entrepreneurship and business basics'
-      ]
-    },
-    {
-      id: 'arts-culture',
-      title: 'Arts, Music & Cultural Expression',
-      description: 'Fostering creativity, cultural identity, and artistic excellence through comprehensive arts and music programs. Our initiatives provide youth with platforms for self-expression across visual arts, music, dance, and theater while building confidence and developing talents. From instrumental lessons and vocal training to creative workshops and cultural celebrations, we create pathways to creative careers and celebrate diverse cultural backgrounds.',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20youth%20participating%20in%20arts%20and%20culture%20program%2C%20creative%20workshop%20with%20painting%20and%20music%2C%20multicultural%20expression%2C%20community%20arts%20center%2C%20professional%20photography%20with%20vibrant%20colors&width=600&height=400&seq=arts-culture-youth&orientation=landscape',
-      services: [
-        'Music and performing arts programs (instrumental lessons, vocal training, ensembles)',
-        'Visual arts and creative workshops',
-        'Cultural celebration events and community exhibitions',
-        'Arts mentorship and career guidance',
-        'Recording studio access and production basics',
-        'Performance opportunities and recitals'
-      ]
-    },
-    {
-      id: 'media-filmmaking',
-      title: 'Media, Videography & Filmmaking',
-      description: 'Comprehensive training in modern media production, videography, and filmmaking for aspiring content creators and filmmakers. Youth learn professional video production techniques, cinematography, editing, storytelling, and digital media creation. Our program covers everything from pre-production planning and scriptwriting to shooting techniques, post-production editing, and distribution. Students gain hands-on experience with industry-standard equipment and software, preparing them for careers in film, television, digital media, and entertainment industries.',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20learning%20filmmaking%20and%20videography%2C%20young%20people%20operating%20professional%20cameras%20and%20video%20equipment%2C%20film%20production%20class%2C%20video%20editing%20on%20computers%2C%20media%20students%20creating%20content%2C%20modern%20media%20lab%2C%20professional%20photography%20with%20creative%20atmosphere&width=600&height=400&seq=media-filmmaking&orientation=landscape',
-      services: [
-        'Video production and cinematography training',
-        'Film editing and post-production techniques',
-        'Scriptwriting and storyboarding',
-        'Camera operation and lighting techniques',
-        'Sound recording and audio production',
-        'Digital media content creation',
-        'Documentary and narrative filmmaking',
-        'YouTube and social media content creation',
-        'Industry networking and career pathways'
-      ]
-    }
-  ];
-
-  const newcomerPrograms = [
-    {
-      id: 'employment-training',
-      title: 'Employment Training',
-      description: 'Preparing newcomers for the Canadian job market and career success through comprehensive employment services. We help newcomers leverage their international experience and credentials while developing the skills and knowledge needed to thrive in Ontario\'s diverse economy.',
-      image: 'https://readdy.ai/api/search-image?query=Newcomers%20in%20job%20training%20workshop%20in%20Canada%2C%20diverse%20immigrants%20learning%20Canadian%20workplace%20culture%2C%20professional%20development%20session%2C%20modern%20training%20facility%2C%20professional%20photography&width=600&height=400&seq=employment-training&orientation=landscape',
-      services: [
-        'Credential recognition assistance',
-        'Canadian workplace culture training',
-        'Skills assessment and upgrading',
-        'Job search strategies and networking',
-        'Mentorship and career coaching'
-      ]
-    }
-  ];
-
-  const businessPrograms = [
-    {
-      id: 'entrepreneur-connections',
-      title: 'Entrepreneur Connections',
-      description: 'Building meaningful relationships between business owners and aspiring entrepreneurs through structured networking events and platforms. Our connection programs create opportunities for collaboration, knowledge sharing, and business development in a supportive community of like-minded professionals.',
-      image: 'https://readdy.ai/api/search-image?query=Business%20networking%20event%20in%20Toronto%2C%20diverse%20entrepreneurs%20connecting%2C%20professional%20business%20meeting%2C%20modern%20conference%20venue%2C%20professional%20photography%20with%20dynamic%20atmosphere&width=600&height=400&seq=entrepreneur-connections&orientation=landscape',
-      services: [
-        'Monthly networking events and mixers',
-        'Industry-specific meetups',
-        'Speed networking sessions',
-        'Online networking platform access',
-        'Business partnership facilitation'
-      ]
-    },
-    {
-      id: 'mentorship-programs',
-      title: 'Mentorship Programs',
-      description: 'Pairing experienced business leaders with emerging entrepreneurs for guidance and support in building successful enterprises. Our mentorship programs provide invaluable insights, accountability, and encouragement from those who have navigated the challenges of entrepreneurship.',
-      image: 'https://readdy.ai/api/search-image?query=Business%20mentor%20meeting%20with%20entrepreneur%2C%20professional%20mentorship%20session%2C%20diverse%20business%20leaders%2C%20modern%20office%20setting%2C%20professional%20photography%20with%20collaborative%20atmosphere&width=600&height=400&seq=business-mentorship&orientation=landscape',
-      services: [
-        'One-on-one mentorship matching',
-        'Group mentoring circles',
-        'Expert advisory sessions',
-        'Peer learning groups',
-        'Success story sharing events'
-      ]
-    },
-    {
-      id: 'small-business-startup',
-      title: 'Small Business Support & Startup Accelerator',
-      description: 'Comprehensive support for entrepreneurs at every stage — from established small businesses seeking growth to early-stage startups transforming innovative ideas into successful enterprises. Our integrated program provides business planning, financial management, marketing support, and access to workspace facilities. Whether you are refining a business model, preparing for investors, or expanding into new markets, we provide the resources, mentorship, and connections needed to thrive.',
-      image: 'https://readdy.ai/api/search-image?query=Startup%20entrepreneurs%20in%20business%20incubator%20workspace%2C%20diverse%20founders%20working%20on%20innovative%20projects%2C%20modern%20coworking%20space%2C%20pitch%20presentations%2C%20professional%20photography%20with%20entrepreneurial%20energy&width=600&height=400&seq=startup-incubator&orientation=landscape',
-      services: [
-        'Business plan development and model validation',
-        'Financial management and funding strategy training',
-        'Marketing, branding, and go-to-market strategy support',
-        'Coworking space and office facilities',
-        'Pitch preparation and investor connections',
-        'Technology and product development support',
-        'Market research and competitive analysis',
-        'Grant applications and access to funding opportunities',
-        'Legal, regulatory, and intellectual property guidance'
-      ]
-    },
-    {
-      id: 'professional-development',
-      title: 'Professional Development',
-      description: 'Continuous learning opportunities to enhance business skills and knowledge in an ever-evolving marketplace. Our professional development programs keep entrepreneurs and business professionals at the forefront of industry trends, technologies, and best practices.',
-      image: 'https://readdy.ai/api/search-image?query=Business%20professionals%20in%20professional%20development%20workshop%2C%20diverse%20entrepreneurs%20learning%20new%20skills%2C%20modern%20training%20facility%2C%20professional%20photography%20with%20engaged%20participants&width=600&height=400&seq=professional-development&orientation=landscape',
-      services: [
-        'Leadership and management training',
-        'Digital marketing workshops',
-        'Sales and customer service excellence',
-        'Innovation and technology adoption',
-        'Industry trends and insights sessions'
-      ]
-    },
-    {
-      id: 'export-trade-development',
-      title: 'Export & Trade Development',
-      description: 'Supporting Ontario businesses in expanding into international markets through export readiness training, trade mission participation, and global market intelligence. We help businesses navigate international trade regulations, identify export opportunities, develop market entry strategies, and connect with international buyers and distributors to grow their global presence.',
-      image: 'https://readdy.ai/api/search-image?query=Business%20professionals%20at%20international%20trade%20conference%2C%20diverse%20entrepreneurs%20exploring%20export%20opportunities%2C%20global%20business%20meeting%2C%20trade%20show%20exhibition%2C%20professional%20photography%20with%20international%20business%20atmosphere&width=600&height=400&seq=export-trade-development&orientation=landscape',
-      services: [
-        'Export readiness assessment and training',
-        'International market research and analysis',
-        'Trade mission and delegation participation',
-        'Customs and regulatory compliance guidance',
-        'International buyer and distributor connections',
-        'Export financing and insurance information',
-        'Cross-cultural business communication training',
-        'Global supply chain development'
-      ]
-    }
-  ];
-
-  const offices = [
-    {
-      name: 'Toronto Office',
-      address: '3701 Chesswood Drive, Unit 315',
-      city: 'Toronto, Ontario M3J 2P6',
-      phone: '+1 (416) 660-4233',
-      email: 'info@ldiinitiatives.org',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-      icon: 'ri-building-line',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.4678!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjgnMDQuMSJX!5e0!3m2!1sen!2sca!4v1234567890'
-    },
-    {
-      name: 'Brampton Office',
-      address: '101 West Dr C',
-      city: 'Brampton, ON L6T 2J6',
-      phone: '+1 (416) 660-4233',
-      email: 'info@ldiinitiatives.org',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-      icon: 'ri-building-2-line',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.7623!3d43.7321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQzJzU1LjYiTiA3OcKwNDUnNDQuMyJX!5e0!3m2!1sen!2sca!4v1234567891'
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section id="hero" className="relative py-24 bg-gradient-to-br from-green-600 to-emerald-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20and%20newcomers%20participating%20in%20community%20programs%2C%20Toronto%20cityscape%20background%2C%20multicultural%20community%20engagement%2C%20professional%20photography%20with%20vibrant%20atmosphere%20and%20hopeful%20expressions&width=1920&height=800&seq=local-programs-hero&orientation=landscape)`
-          }}
+      <title>Local Community Development | LDII Ontario Programs</title>
+      <meta
+        name="description"
+        content="LDII's local community development and empowerment programmes in Ontario: newcomer settlement and housing, youth employment, community safety, mental health, partnerships and seniors support."
+      />
+
+      {/* Hero */}
+      <section className="relative h-[420px] md:h-[520px] overflow-hidden">
+        <img
+          src="https://readdy.ai/api/search-image?query=diverse%20community%20gathering%20in%20a%20bright%20Toronto%20community%20hall%2C%20newcomer%20families%2C%20young%20people%20and%20seniors%20talking%20together%2C%20warm%20natural%20light%2C%20hopeful%20welcoming%20atmosphere%2C%20soft%20neutral%20tones%2C%20editorial%20documentary%20photography&width=1920&height=900&seq=local-programs-hero-2026&orientation=landscape"
+          alt="LDII local community programmes in Ontario"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#00D9FF] font-semibold mb-5">
-            Livelihood Development International Initiatives
-          </span>
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Programs
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Youth, newcomer and enterprise programmes on the ground in Ontario, community
-            leadership training, and executive delegations between Africa and Northern Ontario.
-          </p>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/90"></div>
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <span className="inline-block text-[11px] md:text-xs tracking-[0.3em] uppercase text-[#00D9FF] font-semibold mb-5">
+              LDII Local Programs
+            </span>
+            <h1 className="text-3xl md:text-5xl lg:text-[52px] font-bold text-white leading-tight mb-5">
+              Local Community Development<br className="hidden md:block" /> &amp; Empowerment
+            </h1>
+            <p className="text-base md:text-xl text-white/85 max-w-3xl mx-auto leading-relaxed">
+              Empowering individuals. Supporting youth. Strengthening communities across Ontario.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Sticky Navigation Menu */}
-      <div className="sticky top-16 lg:top-20 z-40 bg-white shadow-md">
+      {/* Sticky section navigation */}
+      <div className="sticky top-16 lg:top-20 z-40 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-2 overflow-x-auto py-4">
-            <button
-              onClick={() => scrollToSection('youth-empowerment')}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap text-sm font-medium"
-            >
-              Youth Empowerment
-            </button>
-            <button
-              onClick={() => scrollToSection('empowering-newcomers')}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap text-sm font-medium"
-            >
-              Empowering Newcomers
-            </button>
-            <button
-              onClick={() => scrollToSection('business-networking')}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap text-sm font-medium"
-            >
-              Business Networking
-            </button>
-            <button
-              onClick={() => scrollToSection('office-locations')}
-              className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors cursor-pointer whitespace-nowrap text-sm font-medium"
-            >
-              Our Locations
-            </button>
+          <div className="flex items-center justify-center gap-2 overflow-x-auto py-4">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => scrollToSection(item.id)}
+                className={`px-5 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition-colors duration-300 cursor-pointer border ${
+                  activeSection === item.id
+                    ? 'bg-[#0A1E3D] text-white border-[#0A1E3D]'
+                    : 'bg-white text-gray-600 border-gray-200 hover:border-green-300 hover:text-green-800'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
           </div>
         </div>
       </div>
 
-      {/* About Us + Programs overview */}
-      <section id="programs-overview" className="py-16 md:py-20 bg-white scroll-mt-32">
+      {/* Intro / About */}
+      <section id="overview" className="py-16 md:py-24 bg-white scroll-mt-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+            <div className="lg:col-span-7">
+              <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-700 mb-3">
+                About Us
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3D] leading-tight mb-6">
+                Empowering individuals. Supporting youth. Strengthening communities.
+              </h2>
+              <p className="text-lg text-gray-700 leading-relaxed mb-4">
+                Livelihood Development International Initiatives (LDII) improves livelihoods and
+                strengthens communities through inclusive, community-based programmes. Our local
+                work is focused on Ontario, with a vision to expand across Canada.
+              </p>
+              <p className="text-lg text-gray-700 leading-relaxed">
+                We work with community organizations, schools, colleges and universities,
+                government agencies, police services and businesses through six programmes, with a
+                strong emphasis on youth, families and seniors.
+              </p>
+
+              <a
+                href="/about"
+                className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-green-700 hover:text-green-800 transition-colors cursor-pointer"
+              >
+                <span>Read our full story</span>
+                <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+              </a>
+            </div>
+
+            <div className="lg:col-span-5">
+              <div className="bg-[#F5F8F3] rounded-xl p-7 border border-green-100/70">
+                <h3 className="text-xs font-semibold uppercase tracking-[0.22em] text-green-800 mb-4">
+                  Who we work with
+                </h3>
+                <ul className="space-y-2.5">
+                  {programmePartners.map((partner) => (
+                    <li key={partner} className="flex items-center gap-2.5">
+                      <i className="ri-check-line w-4 h-4 flex items-center justify-center text-green-600"></i>
+                      <span className="text-sm text-gray-700">{partner}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6 pt-6 border-t border-green-200/60">
+                  <p className="text-xs text-gray-500 leading-relaxed">
+                    Six programmes. One case worker per youth. Partners who stay beyond a single
+                    project.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programme areas */}
+      <section className="py-16 md:py-20 bg-[#F5F8F3] border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl">
-            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-600 mb-3">
-              About Us
+            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-700 mb-3">
+              Our Programs
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5 leading-tight">
-              A Canadian non-profit, working where capability matters
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3D] leading-tight mb-4">
+              Four programme areas, delivered with partners
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              Livelihood Development International Initiatives (LDII) builds resilient communities
-              through technology transfer, international partnership and community programmes. From
-              our offices in Toronto and Brampton we convene African missions, ministries and
-              chambers of mines with Northern Ontario's mining ecosystem, and we run youth,
-              newcomer and enterprise programmes here in Ontario.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Everything we do starts with the same question: what capability does this community
-              or institution already have, and what does it need next? That is why our work pairs
-              practical training with long-term partners rather than one-off projects.
-            </p>
-            <a
-              href="/about"
-              className="inline-flex items-center gap-2 text-green-700 font-semibold hover:text-green-800 transition-colors cursor-pointer"
-            >
-              <span>Read our full story</span>
-              <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
-            </a>
-          </div>
-
-          <div className="mt-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
-            <p className="text-lg text-gray-600 max-w-3xl leading-relaxed">
-              Four programme areas, each with its own delivery model, partners and dedicated page.
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              Each area has its own delivery model and dedicated team. Together they cover local
+              community development in Ontario, specialist youth work, capacity training and
+              international exchange.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'Local Programs',
-                tag: 'Ontario',
-                body: 'Youth, newcomer, enterprise and professional programmes delivered on the ground in Ontario, built with the communities and partners we serve.',
-                href: '#youth-empowerment',
-                icon: 'ri-community-line'
-              },
-              {
-                title: 'Youth Programs in Ontario',
-                tag: 'Youth',
-                body: 'Four connected programs for newcomer youth in Toronto, with one case worker walking with each young person from arrival to their first job.',
-                href: '/programs/youth-programs-ontario',
-                icon: 'ri-user-star-line'
-              },
-              {
-                title: 'Africa–Canada Mining & Technology Exchange',
-                tag: 'International',
-                body: 'Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario, built around technical know-how rather than equipment.',
-                href: '/programs/mining-technology-exchange',
-                icon: 'ri-earth-line'
-              },
-              {
-                title: 'Local Capacity Training',
-                tag: 'Community',
-                body: 'Leadership, mentoring and financial literacy workshops for women and men, connected to the partners and resources that turn learning into action.',
-                href: '/programs/local-capacity-training',
-                icon: 'ri-team-line'
-              }
-            ].map((program) => (
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {programmeAreas.map((area) => (
               <a
-                key={program.href}
-                href={program.href}
-                className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-green-300 transition-colors cursor-pointer flex flex-col"
+                key={area.title}
+                href={area.href}
+                className="group flex items-start gap-4 bg-white rounded-xl p-5 border border-gray-100 hover:border-green-300 transition-colors duration-300 cursor-pointer"
               >
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                    <i className={`${program.icon} w-6 h-6 flex items-center justify-center text-green-600`}></i>
-                  </div>
-                  <span className="text-xs font-semibold uppercase tracking-widest text-green-700 bg-green-100 px-3 py-1 rounded-full">
-                    {program.tag}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 leading-snug group-hover:text-green-700 transition-colors">
-                  {program.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-1">{program.body}</p>
-                <span className="inline-flex items-center gap-2 text-green-700 font-semibold text-sm">
-                  <span>Explore programme</span>
-                  <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                <span className="w-10 h-10 rounded-lg bg-[#F3F7F1] flex items-center justify-center shrink-0">
+                  <i className={`${area.icon} w-5 h-5 flex items-center justify-center text-green-700`}></i>
                 </span>
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                    <h3 className="text-sm font-bold text-[#0A1E3D] group-hover:text-green-800 transition-colors">
+                      {area.title}
+                    </h3>
+                    <span className="text-[10px] font-semibold uppercase tracking-widest text-green-700 bg-green-100 px-2 py-0.5 rounded-full">
+                      {area.tag}
+                    </span>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed">{area.body}</p>
+                </div>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Youth Empowerment Initiative */}
-      <section id="youth-empowerment" className="py-20 bg-white scroll-mt-32">
+      {/* Programme index */}
+      <section id="programmes" className="py-16 md:py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-[#0A1E3D] to-green-700 rounded-2xl px-8 py-4 mb-6">
-              <h2 className="text-4xl font-bold text-white">Youth Empowerment Initiative</h2>
-            </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive programs empowering youth across Canada and beyond through critical life challenges and global opportunities
+          <div className="max-w-3xl">
+            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-700 mb-3">
+              Our Programmes
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3D] leading-tight mb-4">
+              Six community programmes, delivered in Ontario
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+              Each programme responds to a specific pressure families and young people face, and
+              each is delivered with local partners rather than in isolation.
             </p>
           </div>
 
-          <div className="space-y-16">
-            {youthPrograms.map((program, index) => (
-              <div key={program.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
-                <div className="lg:w-1/2">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-lg"
-                  />
-                </div>
-                <div className="lg:w-1/2">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
-                  <div className="mb-4">
-                    <p className={`text-gray-700 leading-relaxed ${!expandedSections[program.id] && program.description.length > 200 ? 'line-clamp-3' : ''}`}>
-                      {program.description}
-                    </p>
-                    {program.description.length > 200 && (
-                      <button
-                        onClick={() => toggleSection(program.id)}
-                        className="text-green-600 hover:text-green-700 font-medium mt-2 cursor-pointer"
-                      >
-                        {expandedSections[program.id] ? 'Read Less' : 'Read More'}
-                      </button>
-                    )}
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-3">Services Offered:</h4>
-                    <ul className="space-y-2">
-                      {program.services.map((service, serviceIndex) => (
-                        <li key={serviceIndex} className="flex items-start space-x-2">
-                          <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                          <span className="text-gray-700">{service}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="mt-10">
+            <ProgrammeIndex />
           </div>
         </div>
       </section>
 
-      {/* Empowering Newcomers */}
-      <section id="empowering-newcomers" className="py-20 bg-gray-50 scroll-mt-32">
+      {/* Programme detail sections */}
+      {localProgrammes.map((programme, index) => (
+        <ProgrammeBlock
+          key={programme.id}
+          programme={programme}
+          background={index % 2 === 0 ? 'tint' : 'white'}
+        />
+      ))}
+
+      {/* Approach + commitment */}
+      <ApproachSection />
+
+      {/* Office locations */}
+      <section id="office-locations" className="py-16 md:py-24 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-green-500 to-green-600 rounded-2xl px-8 py-4 mb-6">
-              <h2 className="text-4xl font-bold text-white">Empowering Newcomers</h2>
-            </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Supporting newcomers to successfully integrate into Canadian society
+          <div className="text-center mb-12">
+            <span className="block text-xs font-semibold tracking-[0.25em] uppercase text-green-700 mb-3">
+              Our Locations
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3D] mb-4">
+              Visit us in Toronto and Brampton
+            </h2>
+            <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
+              Our doors are open to participants, families and partners across the Greater Toronto
+              Area.
             </p>
           </div>
 
-          <div className="space-y-16">
-            {newcomerPrograms.map((program, index) => (
-              <div key={program.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
-                <div className="lg:w-1/2">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-lg"
-                  />
-                </div>
-                <div className="lg:w-1/2">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
-                  <div className="mb-4">
-                    <p className={`text-gray-700 leading-relaxed ${!expandedSections[program.id] && program.description.length > 200 ? 'line-clamp-3' : ''}`}>
-                      {program.description}
-                    </p>
-                    {program.description.length > 200 && (
-                      <button
-                        onClick={() => toggleSection(program.id)}
-                        className="text-green-600 hover:text-green-700 font-medium mt-2 cursor-pointer"
-                      >
-                        {expandedSections[program.id] ? 'Read Less' : 'Read More'}
-                      </button>
-                    )}
-                  </div>
-                  <div className="bg-white rounded-lg p-4 shadow-sm">
-                    <h4 className="font-semibold text-gray-900 mb-3">Services Offered:</h4>
-                    <ul className="space-y-2">
-                      {program.services.map((service, serviceIndex) => (
-                        <li key={serviceIndex} className="flex items-start space-x-2">
-                          <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                          <span className="text-gray-700">{service}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Networking */}
-      <section id="business-networking" className="py-20 bg-white scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-block bg-gradient-to-r from-green-700 to-emerald-700 rounded-2xl px-8 py-4 mb-6">
-              <h2 className="text-4xl font-bold text-white">Business Networking</h2>
-            </div>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Connecting entrepreneurs and fostering business growth in local communities
-            </p>
-          </div>
-
-          <div className="space-y-16">
-            {businessPrograms.map((program, index) => (
-              <div key={program.id} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}>
-                <div className="lg:w-1/2">
-                  <img
-                    src={program.image}
-                    alt={program.title}
-                    className="w-full h-80 object-cover rounded-2xl shadow-lg"
-                  />
-                </div>
-                <div className="lg:w-1/2">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{program.title}</h3>
-                  <div className="mb-4">
-                    <p className={`text-gray-700 leading-relaxed ${!expandedSections[program.id] && program.description.length > 200 ? 'line-clamp-3' : ''}`}>
-                      {program.description}
-                    </p>
-                    {program.description.length > 200 && (
-                      <button
-                        onClick={() => toggleSection(program.id)}
-                        className="text-green-600 hover:text-green-700 font-medium mt-2 cursor-pointer"
-                      >
-                        {expandedSections[program.id] ? 'Read Less' : 'Read More'}
-                      </button>
-                    )}
-                  </div>
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 mb-3">Services Offered:</h4>
-                    <ul className="space-y-2">
-                      {program.services.map((service, serviceIndex) => (
-                        <li key={serviceIndex} className="flex items-start space-x-2">
-                          <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5"></i>
-                          <span className="text-gray-700">{service}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Office Locations */}
-      <section id="office-locations" className="py-20 bg-gray-50 scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Locations</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visit us at our offices in Toronto and Brampton to learn more about our programs and services.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {offices.map((office, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg">
-                <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                      <i className={`${office.icon} w-6 h-6 flex items-center justify-center text-white`}></i>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+            {offices.map((office) => (
+              <div
+                key={office.name}
+                className="bg-white rounded-xl overflow-hidden border border-gray-100"
+              >
+                <div className="bg-[#0A1E3D] p-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-11 h-11 bg-white/10 rounded-full flex items-center justify-center">
+                      <i className={`${office.icon} w-5 h-5 flex items-center justify-center text-white`}></i>
                     </div>
-                    <h3 className="text-2xl font-bold text-white">{office.name}</h3>
+                    <h3 className="text-xl font-bold text-white">{office.name}</h3>
                   </div>
                 </div>
-                
+
                 <div className="p-6">
                   <div className="space-y-4 mb-6">
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-green-600 mt-1"></i>
+                    <div className="flex items-start gap-3">
+                      <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-green-600 mt-0.5"></i>
                       <div>
-                        <p className="text-gray-900 font-medium">{office.address}</p>
-                        <p className="text-gray-700">{office.city}</p>
+                        <p className="text-gray-900 font-medium text-sm">{office.address}</p>
+                        <p className="text-gray-600 text-sm">{office.city}</p>
                       </div>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center gap-3">
                       <i className="ri-phone-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                      <p className="text-gray-700">{office.phone}</p>
+                      <a
+                        href="tel:+14166604233"
+                        className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer"
+                      >
+                        {office.phone}
+                      </a>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center gap-3">
                       <i className="ri-mail-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                      <p className="text-gray-700">{office.email}</p>
+                      <a
+                        href="mailto:info@ldiinitiatives.org"
+                        className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer"
+                      >
+                        {office.email}
+                      </a>
                     </div>
-                    <div className="flex items-center space-x-3">
+                    <div className="flex items-center gap-3">
                       <i className="ri-time-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                      <p className="text-gray-700">{office.hours}</p>
+                      <p className="text-gray-700 text-sm">{office.hours}</p>
                     </div>
                   </div>
 
-                  <div className="rounded-lg overflow-hidden h-64">
+                  <div className="rounded-lg overflow-hidden h-56">
                     <iframe
                       src={office.mapUrl}
                       width="100%"
@@ -573,27 +349,28 @@ export default function LocalProgramsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#0A1E3D]">
+      {/* CTA */}
+      <section className="py-16 md:py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Get Involved Today
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-5">
+            Get involved today
           </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Whether you are a youth seeking support, a newcomer looking to integrate, or an entrepreneur wanting to connect, we are here to help.
+          <p className="text-base md:text-lg text-white/85 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Whether you are a young person seeking support, a newcomer family finding your feet, or
+            a partner who wants to build something lasting, we are here.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-[#00D9FF] text-[#0A1E3D] px-7 py-3.5 rounded-md font-semibold text-base hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
               Contact Us
             </a>
             <a
-              href="/partners#volunteer"
-              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap inline-block"
+              href="/partners"
+              className="bg-white/10 text-white border border-white/25 px-7 py-3.5 rounded-md font-semibold text-base hover:bg-white/20 transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
-              Volunteer With Us
+              Partner With Us
             </a>
           </div>
         </div>

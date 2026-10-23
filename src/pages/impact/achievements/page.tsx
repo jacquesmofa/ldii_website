@@ -32,11 +32,11 @@ export default function AchievementsPage() {
     },
     {
       year: '2024',
-      title: 'One Million Trees Milestone',
-      description: 'Achieved the historic milestone of planting over one million trees across countries in Africa and North America. This massive reforestation initiative has created green jobs, established community-managed forest reserves, and is sequestering significant carbon annually while restoring critical biodiversity corridors.',
+      title: '100,000 Fruit Trees Milestone',
+      description: 'Achieved the historic milestone of planting over 100,000 fruit trees across countries in Africa and North America. This massive reforestation initiative has created green jobs, established community-managed forest reserves, and is sequestering significant carbon annually while restoring critical biodiversity corridors.',
       image: 'https://readdy.ai/api/search-image?query=Massive%20tree%20planting%20celebration%20with%20thousands%20of%20volunteers%20and%20community%20members%2C%20newly%20planted%20forest%20areas%20across%20multiple%20landscapes%2C%20environmental%20achievement%2C%20people%20celebrating%20conservation%20success%2C%20professional%20documentary%20photography&width=800&height=500&seq=achievement-trees&orientation=landscape',
       outcomes: [
-        'Over one million trees planted across countries',
+        'Over 100,000 fruit trees planted across countries',
         'Green jobs created in rural communities',
         'Community-managed forest reserves established',
         'Significant annual carbon sequestration',

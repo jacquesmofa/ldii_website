@@ -160,6 +160,132 @@ export const eventDiplomatic: GalleryEvent = {
       title: 'Bracey with International Press Delegation',
       width: 1200,
       height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_12.25.40bnmv_iwh2fn'),
+      title: 'LDII and the Brampton Board of Trade · Brampton, Ontario',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.35_2_hfkaqv'),
+      title: 'Kenya-Canada dialogue · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_jp6zsm'),
+      title: 'Kenya-Canada dialogue 2 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.35_ue5qne'),
+      title: 'Kenya-Canada dialogue 3 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_6_h0apkr'),
+      title: 'Kenya-Canada dialogue 4 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_5_lsdqfd'),
+      title: 'Kenya-Canada dialogue 5 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_4_qqin8e'),
+      title: 'Kenya-Canada dialogue 6 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_3_capvso'),
+      title: 'Kenya-Canada dialogue 7 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_2_ugpwhp'),
+      title: 'Kenya-Canada dialogue 8 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq'),
+      title: 'LDII offices - meeting room · Toronto, Ontario',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_7_dfleyh'),
+      title: 'Kenya-Canada dialogue 9 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_6_w42eol'),
+      title: 'Kenya-Canada dialogue 10 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.34_1_ihefg8'),
+      title: 'Kenya-Canada dialogue with LDII · Toronto, March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_4_lflfjr'),
+      title: 'Kenya-Canada dialogue 11 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_2_ykaz0x'),
+      title: 'Kenya-Canada dialogue 12 · LDII offices, Toronto · March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_1_khmwog'),
+      title: 'Kenya-Canada dialogue with LDII 2 · Toronto, March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.53.33_3_pl12xf'),
+      title: 'Kenya-Canada dialogue with LDII 3 · Toronto, March 2026',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.52.07mnmb_pd2gbi'),
+      title: 'Kenya High Commission dialogue with LDII · Toronto',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.48.54mnjb_w0hjti'),
+      title: 'South African High Commission dialogue with LDII · Toronto',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.48.54mkn_wxxa4y'),
+      title: 'Kenya High Commission dialogue with LDII 2 · Toronto',
+      width: 1200,
+      height: 900
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_10.48.54mkjn_knn9oc'),
+      title: 'South African High Commission dialogue with LDII 2 · Toronto',
+      width: 1200,
+      height: 900
     }
   ],
   videos: []

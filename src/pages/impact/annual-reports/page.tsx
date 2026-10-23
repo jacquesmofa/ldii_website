@@ -22,11 +22,11 @@ export default function AnnualReportsPage() {
       year: '2024',
       title: '2024 Annual Report',
       subtitle: 'Building Resilience in a Changing World',
-      description: 'Our most comprehensive annual report showcasing unprecedented growth and impact across all five focus areas. This year marked significant milestones including the 2nd International Post-COVID Conference, achieving our one million trees goal, and expanding programs to 10 new countries.',
+      description: 'Our most comprehensive annual report showcasing unprecedented growth and impact across all five focus areas. This year marked significant milestones including the 2nd International Post-COVID Conference, achieving our 100,000 fruit trees goal, and expanding programs to 10 new countries.',
       image: 'https://readdy.ai/api/search-image?query=Professional%20annual%20report%20cover%20design%202024%20with%20global%20development%20themes%2C%20modern%20corporate%20publication%2C%20international%20organization%20branding%2C%20clean%20professional%20layout%20with%20charts%20and%20world%20map&width=400&height=550&seq=report-2024&orientation=portrait',
       highlights: [
         'Delegates convened at 2nd International Post-COVID Conference',
-        'One million trees planted milestone achieved',
+        '100,000 fruit trees planted milestone achieved',
         'Communities impacted across multiple countries',
         'Funding mobilized for programs',
         'Active projects implemented across regions'

@@ -19,12 +19,12 @@ export default function LatestNewsPage() {
       author: 'Dr. Amara Okafor, Executive Director'
     },
     {
-      title: 'LDII Achieves Historic One Million Trees Milestone',
+      title: 'LDII Reaches 100,000 Fruit Trees Milestone',
       date: 'August 20, 2024',
       category: 'Environmental',
       image: 'https://readdy.ai/api/search-image?query=Massive%20tree%20planting%20celebration%20with%20community%20members%20and%20volunteers%2C%20one%20million%20trees%20milestone%20achievement%2C%20environmental%20conservation%20success%2C%20professional%20documentary%20photography&width=800&height=500&seq=news-trees&orientation=landscape',
-      excerpt: 'Our Global Tree Planting Initiative reaches the historic milestone of one million trees planted across 15 countries in Africa and North America.',
-      content: 'LDII is thrilled to announce the achievement of a historic milestone: over one million trees have been planted through our Global Tree Planting Initiative. This massive reforestation effort spans 15 countries across Africa and North America, creating 5,000 green jobs, establishing 50 community-managed forest reserves, and sequestering an estimated 250,000 tons of CO2 annually. The initiative goes beyond simple tree planting, integrating community development, climate education, and sustainable livelihood creation. Local communities are trained in forest management, agroforestry techniques, and carbon credit systems.',
+      excerpt: 'Our Global Tree Planting Initiative reaches the milestone of 100,000 fruit trees planted across 15 countries in Africa and North America.',
+      content: 'LDII is thrilled to announce the achievement of a historic milestone: over 100,000 fruit trees have been planted through our Global Tree Planting Initiative. This massive reforestation effort spans 15 countries across Africa and North America, creating 5,000 green jobs, establishing 50 community-managed forest reserves, and sequestering an estimated 250,000 tons of CO2 annually. The initiative goes beyond simple tree planting, integrating community development, climate education, and sustainable livelihood creation. Local communities are trained in forest management, agroforestry techniques, and carbon credit systems.',
       author: 'James Rodriguez, Climate Action Director'
     },
     {

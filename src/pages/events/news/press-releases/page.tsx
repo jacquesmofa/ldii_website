@@ -34,17 +34,17 @@ admin@ldiinitiatives.org
       contact: 'David Thompson, Director of Communications'
     },
     {
-      title: 'LDII Achieves One Million Trees Milestone in Global Reforestation Initiative',
+      title: 'LDII Reaches 100,000 Fruit Trees Milestone in Global Reforestation Initiative',
       date: 'August 20, 2024',
       type: 'Press Release',
-      summary: 'Historic environmental achievement as LDII\'s Global Tree Planting Initiative surpasses one million trees planted across 15 countries.',
+      summary: 'Historic environmental achievement as LDII\'s Global Tree Planting Initiative surpasses 100,000 fruit trees planted across 15 countries.',
       content: `FOR IMMEDIATE RELEASE
 
-Toronto, ON – August 20, 2024 – Livelihood Development International Initiatives (LDII) today announced the achievement of a historic milestone: over one million trees have been planted through its Global Tree Planting Initiative.
+Toronto, ON – August 20, 2024 – Livelihood Development International Initiatives (LDII) today announced the achievement of a historic milestone: over 100,000 fruit trees have been planted through its Global Tree Planting Initiative.
 
 Key achievements of the initiative include:
 
-• 1,000,000+ trees planted across 15 countries in Africa and North America
+• 100,000+ fruit trees planted across 15 countries in Africa and North America
 • 5,000 green jobs created in rural communities
 • 50 community-managed forest reserves established
 • 250,000 tons of CO2 sequestered annually

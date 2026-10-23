@@ -238,6 +238,12 @@ export const event2ndPostCovidA: GalleryEvent = {
       title: 'Delegate - Mami Kaya',
       width: 900,
       height: 1200
+    },
+    {
+      url: cld('WhatsApp_Image_2026-10-19_at_16.26.00mnbvcx_vjgns5'),
+      title: '2nd International Post-COVID Conference - list of speakers',
+      width: 900,
+      height: 1200
     }
   ],
   videos: []

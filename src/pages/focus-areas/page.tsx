@@ -11,7 +11,7 @@ export default function FocusAreasPage() {
         'Sustainable resource management systems',
         'Disaster risk reduction and preparedness programs'
       ],
-      achievement: 'Successfully organized the planting of over half a million trees globally',
+      achievement: 'Successfully organized the planting of over 100,000 fruit trees globally',
       image: 'https://readdy.ai/api/search-image?query=Climate%20action%20and%20environmental%20protection%20with%20renewable%20energy%20infrastructure%2C%20solar%20panels%20and%20wind%20turbines%20in%20green%20landscape%2C%20sustainable%20development%20in%20action%2C%20professional%20photography%20with%20bright%20natural%20lighting%20and%20hopeful%20atmosphere&width=600&height=400&seq=climate-action&orientation=landscape'
     },
     {

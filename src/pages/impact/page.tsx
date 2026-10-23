@@ -30,7 +30,7 @@ export default function ImpactPage() {
       title: 'Global Tree Planting Initiative',
       date: 'Ongoing since 2020',
       location: 'Multiple Countries',
-      description: 'Our most ambitious environmental project has successfully coordinated the planting of over one million trees across countries in Africa and North America. This initiative goes beyond simple reforestation — it integrates community development, climate education, and sustainable livelihood creation. Local communities are trained in forest management, agroforestry techniques, and carbon credit systems, creating lasting environmental and economic benefits.',
+      description: 'Our most ambitious environmental project has successfully coordinated the planting of over 100,000 fruit trees across countries in Africa and North America. This initiative goes beyond simple reforestation — it integrates community development, climate education, and sustainable livelihood creation. Local communities are trained in forest management, agroforestry techniques, and carbon credit systems, creating lasting environmental and economic benefits.',
       outcomes: [
         'Community-managed forest reserves established across regions',
         'Green jobs created in rural communities',
