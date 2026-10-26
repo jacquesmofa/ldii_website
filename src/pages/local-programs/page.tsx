@@ -46,24 +46,14 @@ const offices = [
   {
     name: 'Toronto Office',
     address: '3701 Chesswood Drive, Unit 315',
-    city: 'Toronto, Ontario M3J 2P6',
-    phone: '+1 (416) 660-4233',
+    city: 'Toronto, ON M3J 2P6',
+    phone: '+1 647 656 3026',
     email: 'info@ldiinitiatives.org',
+    emailAlt: 'admin@ldiinitiatives.org',
     hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
     icon: 'ri-building-line',
     mapUrl:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.4678!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjgnMDQuMSJX!5e0!3m2!1sen!2sca!4v1234567890'
-  },
-  {
-    name: 'Brampton Office',
-    address: '101 West Dr C',
-    city: 'Brampton, ON L6T 2J6',
-    phone: '+1 (416) 660-4233',
-    email: 'info@ldiinitiatives.org',
-    hours: 'Monday - Friday: 9:00 AM - 5:00 PM',
-    icon: 'ri-building-2-line',
-    mapUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5!2d-79.7623!3d43.7321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQzJzU1LjYiTiA3OcKwNDUnNDQuMyJX!5e0!3m2!1sen!2sca!4v1234567891'
   }
 ];
 
@@ -274,7 +264,7 @@ export default function LocalProgramsPage() {
               Our Locations
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-[#0A1E3D] mb-4">
-              Visit us in Toronto and Brampton
+              Visit the LDII Toronto office
             </h2>
             <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto">
               Our doors are open to participants, families and partners across the Greater Toronto
@@ -282,7 +272,7 @@ export default function LocalProgramsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 gap-6 md:gap-8 max-w-3xl mx-auto">
             {offices.map((office) => (
               <div
                 key={office.name}
@@ -309,7 +299,7 @@ export default function LocalProgramsPage() {
                     <div className="flex items-center gap-3">
                       <i className="ri-phone-line w-5 h-5 flex items-center justify-center text-green-600"></i>
                       <a
-                        href="tel:+14166604233"
+                        href="tel:+16476563026"
                         className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer"
                       >
                         {office.phone}
@@ -317,12 +307,20 @@ export default function LocalProgramsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <i className="ri-mail-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                      <a
-                        href="mailto:info@ldiinitiatives.org"
-                        className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer"
-                      >
-                        {office.email}
-                      </a>
+                      <div className="flex flex-col gap-1">
+                        <a
+                          href="mailto:info@ldiinitiatives.org"
+                          className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer break-all"
+                        >
+                          {office.email}
+                        </a>
+                        <a
+                          href="mailto:admin@ldiinitiatives.org"
+                          className="text-gray-700 text-sm hover:text-green-700 transition-colors cursor-pointer break-all"
+                        >
+                          {office.emailAlt}
+                        </a>
+                      </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <i className="ri-time-line w-5 h-5 flex items-center justify-center text-green-600"></i>

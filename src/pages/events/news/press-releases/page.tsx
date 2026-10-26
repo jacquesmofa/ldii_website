@@ -30,7 +30,7 @@ David Thompson
 Director of Communications
 info@ldiinitiatives.org
 admin@ldiinitiatives.org
-+1 416 660-4234`,
++1 647 656 3026`,
       contact: 'David Thompson, Director of Communications'
     },
     {
@@ -61,17 +61,17 @@ David Thompson
 Director of Communications
 info@ldiinitiatives.org
 admin@ldiinitiatives.org
-+1 416 660-4234`,
++1 647 656 3026`,
       contact: 'David Thompson, Director of Communications'
     },
     {
-      title: '2nd International Post-COVID Conference Concludes with Historic Outcomes',
-      date: 'September 12, 2024',
+      title: '2nd International Post-COVID-19 Conference Concludes with Historic Outcomes',
+      date: 'September 12, 2025',
       type: 'Press Release',
       summary: 'Conference in Brampton produces Brampton Declaration on Global Resilience, adopted by 35 nations, with $50 million in funding commitments.',
       content: `FOR IMMEDIATE RELEASE
 
-Brampton, ON – September 12, 2024 – The 2nd International Post-COVID Conference concluded today with historic outcomes that will shape global resilience efforts for years to come.
+Brampton, ON – September 12, 2025 – The 2nd International Post-COVID-19 Conference, held at the Pearson Convention Centre from September 8 to 10, 2025, concluded with outcomes that will shape global resilience efforts for years to come. Convened under the theme Economic Damages from Global Shocks: Building Resilience for the Future, the conference brought together partners, policymakers, researchers and community leaders.
 
 Conference Highlights:
 
@@ -84,9 +84,11 @@ Conference Highlights:
 
 "This conference has exceeded our expectations in every way," said Dr. Amara Okafor, Executive Director of LDII. "The Brampton Declaration represents a new framework for international cooperation in addressing global shocks."
 
-The conference addressed four critical questions: When will the next shock hit the world? As AI takes over, how safe is humanity? What is the future of local, regional, and international trade? Who shall feed the world?
+Discussions over the three days focused on how communities, businesses and institutions can better prepare for and respond to future shocks. The goal was to protect livelihoods and strengthen partnerships across borders.
 
-The full conference report and Brampton Declaration are available at www.ldiinitiatives.org/events/postcovid-2024.
+Local Impact. Global Partnerships.
+
+The full conference report and Brampton Declaration are available at www.ldiinitiatives.org/events.
 
 ###
 
@@ -95,7 +97,7 @@ David Thompson
 Director of Communications
 info@ldiinitiatives.org
 admin@ldiinitiatives.org
-+1 416 660-4234`,
++1 647 656 3026`,
       contact: 'David Thompson, Director of Communications'
     },
     {
@@ -125,7 +127,7 @@ David Thompson
 Director of Communications
 info@ldiinitiatives.org
 admin@ldiinitiatives.org
-+1 416 660-4234`,
++1 647 656 3026`,
       contact: 'David Thompson, Director of Communications'
     },
     {
@@ -156,7 +158,7 @@ David Thompson
 Director of Communications
 info@ldiinitiatives.org
 admin@ldiinitiatives.org
-+1 416 660-4234`,
++1 647 656 3026`,
       contact: 'David Thompson, Director of Communications'
     }
   ];
@@ -249,8 +251,8 @@ admin@ldiinitiatives.org
                   <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-white"></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Phone</h3>
-                <a href="tel:+14166604234" className="text-gray-600 hover:text-gray-800 cursor-pointer">
-                  +1 416 660-4234
+                <a href="tel:+16476563026" className="text-gray-600 hover:text-gray-800 cursor-pointer">
+                  +1 647 656 3026
                 </a>
               </div>
             </div>

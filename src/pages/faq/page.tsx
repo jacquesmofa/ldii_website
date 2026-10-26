@@ -19,7 +19,7 @@ export default function FAQPage() {
     {
       category: 'General',
       question: 'Where does LDII operate?',
-      answer: 'LDII operates in over 25 countries across Africa, Asia-Pacific, Latin America, and North America. Our headquarters are in Toronto and Brampton, Ontario, Canada, with regional offices in Nairobi, Kenya and Kampala, Uganda.'
+      answer: 'LDII operates in over 25 countries across Africa, Asia-Pacific, Latin America, and North America, working through local partners and field teams. Our office is in Toronto, Ontario, Canada.'
     },
     {
       category: 'General',
@@ -39,7 +39,7 @@ export default function FAQPage() {
     {
       category: 'Programs',
       question: 'How can I participate in LDII programs?',
-      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or calling +1 (416) 660-4233. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
+      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or calling +1 647 656 3026. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
     },
     {
       category: 'Partnerships',
@@ -74,7 +74,7 @@ export default function FAQPage() {
     {
       category: 'Volunteer',
       question: 'What volunteer opportunities are available?',
-      answer: 'Volunteer opportunities include: program facilitation, event planning and coordination, research and data analysis, community outreach, administrative support, and professional mentorship. Opportunities are available both in-person (Toronto/Brampton) and remotely.'
+      answer: 'Volunteer opportunities include: program facilitation, event planning and coordination, research and data analysis, community outreach, administrative support, and professional mentorship. Opportunities are available both in-person in Toronto and remotely.'
     },
     {
       category: 'Events',
@@ -99,17 +99,17 @@ export default function FAQPage() {
     {
       category: 'Contact',
       question: 'How can I contact LDII?',
-      answer: 'You can reach us by phone at +1 (416) 660-4233 or email at info@ldiinitiatives.org or admin@ldiinitiatives.org. Our Toronto office is located at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6. Our Brampton office is at 101 West Dr C, Brampton, ON L6T 2J6. Office hours are Monday-Friday, 9:00 AM - 5:00 PM EST.'
+      answer: 'You can reach us by phone at +1 647 656 3026 or email at info@ldiinitiatives.org or admin@ldiinitiatives.org. Our Toronto office is located at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6. Office hours are Monday-Friday, 9:00 AM - 5:00 PM EST.'
     },
     {
       category: 'Contact',
       question: 'Does LDII have regional offices?',
-      answer: 'Yes, in addition to our Canadian headquarters in Toronto and Brampton, we have regional offices in Nairobi, Kenya and Kampala, Uganda. All offices can be reached through our main emails: info@ldiinitiatives.org and admin@ldiinitiatives.org.'
+      answer: 'Our office is in Toronto, Ontario, Canada. Across Canada and Africa we work through local partners, community organizations and field teams. All enquiries can be directed to info@ldiinitiatives.org or admin@ldiinitiatives.org, or by phone at +1 647 656 3026.'
     },
     {
       category: 'Media',
       question: 'How can media contact LDII?',
-      answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or call +1 (416) 660-4233. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
+      answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or call +1 647 656 3026. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
     }
   ];
 

@@ -22,6 +22,7 @@ const LocalProgramsPage = lazy(() => import('../pages/local-programs/page'));
 const YouthProgramsOntarioPage = lazy(() => import('../pages/programs/youth-programs-ontario/page'));
 const LocalCapacityTrainingPage = lazy(() => import('../pages/programs/local-capacity-training/page'));
 const MiningTechnologyExchangePage = lazy(() => import('../pages/programs/mining-technology-exchange/page'));
+const ConsultingPage = lazy(() => import('../pages/social-enterprise/consulting/page'));
 const ImpactPage = lazy(() => import('../pages/impact/page'));
 const AchievementsPage = lazy(() => import('../pages/impact/achievements/page'));
 const SuccessStoriesPage = lazy(() => import('../pages/impact/success-stories/page'));
@@ -122,6 +123,10 @@ const routes: RouteObject[] = [
   {
     path: '/programs/mining-technology-exchange',
     element: <MiningTechnologyExchangePage />
+  },
+  {
+    path: '/social-enterprise/consulting',
+    element: <ConsultingPage />
   },
   {
     path: '/impact',

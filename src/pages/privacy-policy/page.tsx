@@ -304,21 +304,24 @@ export default function PrivacyPolicyPage() {
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Address:</div>
                   <div className="text-gray-700">3701 Chesswood Drive, Unit 315</div>
-                  <div className="text-gray-700">Toronto, Ontario M3J 2P6</div>
+                  <div className="text-gray-700">Toronto, ON M3J 2P6</div>
                   <div className="text-gray-700">Canada</div>
                 </div>
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:privacy@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
-                    privacy@ldiinitiatives.org
+                  <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    info@ldiinitiatives.org
+                  </a>
+                  <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    admin@ldiinitiatives.org
                   </a>
                 </div>
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Phone:</div>
-                  <a href="tel:+14165550123" className="text-green-600 hover:text-green-700">
-                    +1 (416) 555-0123
+                  <a href="tel:+16476563026" className="text-green-600 hover:text-green-700">
+                    +1 647 656 3026
                   </a>
                 </div>
               </div>

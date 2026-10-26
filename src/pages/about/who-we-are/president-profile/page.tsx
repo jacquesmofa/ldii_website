@@ -277,9 +277,9 @@ export default function PresidentProfilePage() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                  <p className="text-gray-600">3701 Chesswood Dr #315</p>
-                  <p className="text-gray-600">North York, ON M3J 2P6</p>
-                  <p className="text-gray-600">Toronto, Canada</p>
+                  <p className="text-gray-600">3701 Chesswood Drive, Unit 315</p>
+                  <p className="text-gray-600">Toronto, ON M3J 2P6</p>
+                  <p className="text-gray-600">Canada</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">

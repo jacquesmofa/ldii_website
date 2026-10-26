@@ -39,10 +39,10 @@ export default function EventsPage() {
       image: 'https://readdy.ai/api/search-image?query=Professional%20news%20announcement%20with%20LDII%20logo%20and%202026%20conference%20series%20imagery%2C%20modern%20press%20release%20design%2C%20international%20conference%20promotion%20materials%2C%20high-quality%20graphic%20design&width=400&height=300&seq=news-1&orientation=landscape'
     },
     {
-      title: '2nd International Post-COVID Conference: Major Success with 500+ Delegates',
-      date: 'September 15, 2024',
+      title: '2nd International Post-COVID-19 Conference Explores Economic Damages from Global Shocks',
+      date: 'September 15, 2025',
       category: 'Event Report',
-      excerpt: 'The recent conference in Brampton achieved significant outcomes with 20 policy recommendations and 35 new international partnerships.',
+      excerpt: 'Partners, policymakers and researchers met in Brampton to examine the economic damage caused by global shocks and how to build resilience for the future.',
       image: 'https://readdy.ai/api/search-image?query=Successful%20international%20conference%20with%20diverse%20delegates%2C%20conference%20highlights%20and%20achievements%2C%20professional%20event%20documentation%2C%20celebration%20of%20conference%20success&width=400&height=300&seq=news-2&orientation=landscape'
     },
     {

@@ -42,6 +42,7 @@ export default function SitemapPage() {
         { name: 'Africa–Canada Mining & Technology Exchange', url: '/programs/mining-technology-exchange' },
         { name: 'Youth Programs in Ontario', url: '/programs/youth-programs-ontario' },
         { name: 'Local Capacity Training', url: '/programs/local-capacity-training' },
+        { name: 'Consulting & Market Intelligence', url: '/social-enterprise/consulting' },
       ]
     },
     {

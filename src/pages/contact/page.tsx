@@ -19,23 +19,13 @@ export default function ContactPage() {
     {
       location: 'Toronto, Canada',
       type: 'Head Office',
-      address: '3701 Chesswood Dr, #315, North York, ON M3J 2P6',
-      phone: '+1 416 660-4233',
+      address: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6',
+      phone: '+1 647 656 3026',
       email: 'info@ldiinitiatives.org',
       emailAlt: 'admin@ldiinitiatives.org',
       hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
       image: 'https://readdy.ai/api/search-image?query=Modern%20office%20building%20in%20Toronto%20with%20glass%20facade%20and%20contemporary%20architecture%2C%20Canadian%20flag%20visible%2C%20professional%20corporate%20headquarters%2C%20urban%20business%20district%2C%20high-quality%20architectural%20photography&width=400&height=300&seq=toronto-office&orientation=landscape'
     },
-    {
-      location: 'Brampton, Canada',
-      type: 'Regional Office',
-      address: '101 West Dr C, Brampton, ON L6T 2J6',
-      phone: '+1 905 123-4567',
-      email: 'brampton@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
-      hours: 'Monday - Friday: 9:00 AM - 5:00 PM EST',
-      image: 'https://readdy.ai/api/search-image?query=Modern%20office%20building%20in%20Brampton%20Ontario%20with%20contemporary%20architecture%2C%20professional%20business%20center%2C%20Canadian%20urban%20development%2C%20high-quality%20architectural%20photography&width=400&height=300&seq=brampton-office&orientation=landscape'
-    }
   ];
 
   const contactTypes = [
@@ -44,28 +34,31 @@ export default function ContactPage() {
       description: 'Questions about our work, programs, or general information.',
       email: 'info@ldiinitiatives.org',
       emailAlt: 'admin@ldiinitiatives.org',
-      phone: '+1 416 660-4233',
+      phone: '+1 647 656 3026',
       icon: 'ri-question-line'
     },
     {
       title: 'Media Inquiries',
       description: 'Press releases, interviews, and media-related requests.',
       email: 'info@ldiinitiatives.org',
-      phone: '+1 416 660-4234',
+      emailAlt: 'admin@ldiinitiatives.org',
+      phone: '+1 647 656 3026',
       icon: 'ri-newspaper-line'
     },
     {
       title: 'Partnership Opportunities',
       description: 'Collaboration proposals and partnership discussions.',
-      email: 'partnerships@ldiinitiatives.org',
-      phone: '+1 416 660-4235',
+      email: 'info@ldiinitiatives.org',
+      emailAlt: 'admin@ldiinitiatives.org',
+      phone: '+1 647 656 3026',
       icon: 'ri-team-line'
     },
     {
       title: 'Research Collaboration',
       description: 'Academic partnerships and research collaboration requests.',
-      email: 'research@ldiinitiatives.org',
-      phone: '+1 416 660-4236',
+      email: 'info@ldiinitiatives.org',
+      emailAlt: 'admin@ldiinitiatives.org',
+      phone: '+1 647 656 3026',
       icon: 'ri-microscope-line'
     }
   ];
@@ -343,11 +336,11 @@ export default function ContactPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Locations</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visit us at our offices in Ontario, Canada.
+              Visit our Toronto office, or reach us by phone or email — we serve communities across Ontario and beyond.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 gap-8 mb-12 max-w-2xl mx-auto">
             {offices.map((office, index) => (
               <div key={index} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow">
                 <img
@@ -689,7 +682,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:partnerships@ldiinitiatives.org"
+              href="mailto:admin@ldiinitiatives.org"
               className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
             >
               Start a Partnership

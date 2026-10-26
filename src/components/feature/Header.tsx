@@ -48,6 +48,7 @@ export default function Header() {
       href: '/programs',
       dropdown: [
         { title: 'Local Programs', href: '/programs' },
+        { title: 'Consulting & Market Intelligence', href: '/social-enterprise/consulting' },
         { title: 'Africa–Canada Mining & Technology Exchange', href: '/programs/mining-technology-exchange' },
         { title: 'Youth Programs in Ontario', href: '/programs/youth-programs-ontario' },
         { title: 'Local Capacity Training', href: '/programs/local-capacity-training' }

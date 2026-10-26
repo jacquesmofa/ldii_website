@@ -206,7 +206,7 @@ export default function AboutPage() {
                   <p className="text-tech-cyan-500 font-semibold">Headquarters</p>
                 </div>
               </div>
-              <p className="text-gray-600 mb-4">3701 Chesswood Dr, #315, North York, ON M3J 2P6</p>
+              <p className="text-gray-600 mb-4">3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6</p>
               <p className="text-gray-700 mb-4">Global strategy, policy development, and international partnerships</p>
               <p className="text-sm text-gray-500">Established: 2018</p>
             </div>

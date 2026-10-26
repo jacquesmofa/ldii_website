@@ -35,6 +35,8 @@ export interface EventItem {
   outcomes?: string[];
   speakers?: { name: string; role: string }[];
   resources?: { title: string; type: string; size: string }[];
+  /** Optional group photograph shown under the description, before speakers. */
+  speakersPhoto?: { url: string; caption: string };
   isFeatured?: boolean;
   /** Optional deep link to a dedicated programme page (overrides the default event links) */
   linkUrl?: string;
@@ -278,13 +280,17 @@ export const allEvents: EventItem[] = [
 
   {
     id: 'postcovid-2nd-2024',
-    title: '2nd International Post-COVID Conference',
-    date: '2024-09-08',
-    displayDate: 'September 8-10, 2024',
-    location: 'Brampton, ON, Canada',
+    title: '2nd International Post-COVID-19 Conference',
+    date: '2025-09-08',
+    displayDate: 'September 8–10, 2025',
+    location: 'Brampton, Ontario, Canada',
     venue: 'Pearson Convention Centre',
-    description: 'Theme: Building Planetary Health in Response to Global Shocks. This landmark conference convened over 500 delegates from 40+ countries to address critical post-pandemic recovery challenges. The conference focused on four key questions: When will the next shock hit the world? As AI takes over, how safe is humanity? What is the future of local, regional, and international trade? Who shall feed the world?',
-    shortDescription: '500+ delegates from 40+ countries. Building Planetary Health in Response to Global Shocks.',
+    description: 'Economic Damages from Global Shocks: Building Resilience for the Future.\n\nGlobal shocks such as pandemics, natural disasters and financial crises can have far-reaching and devastating effects on economies around the world. Their impact cuts across trade, finance and industry, leading to widespread job losses, slower economic growth and rising poverty.\n\nMeasuring the full extent of this damage is difficult because these shocks are complex and interconnected. At the Pearson Convention Centre in Brampton, the 2nd International Post-COVID-19 Conference brought together partners, policymakers, researchers and community leaders. They examined these effects, shared lessons from the pandemic and explored practical paths toward recovery and long-term resilience.\n\nOver three days, discussions focused on how communities, businesses and institutions can better prepare for and respond to future shocks. The goal was to protect livelihoods and strengthen partnerships across borders.\n\nLocal Impact. Global Partnerships.',
+    shortDescription: 'Economic damages from global shocks and building resilience for the future — partners, policymakers, researchers and community leaders in Brampton, Ontario.',
+    speakersPhoto: {
+      url: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_1400/v1792547513/WhatsApp_Image_2026-10-19_at_16.26.00mnbvcx_vjgns5.jpg',
+      caption: 'Speakers and panellists, 2nd International Post-COVID-19 Conference · Pearson Convention Centre, Brampton, Ontario · September 8–10, 2025',
+    },
     image: 'https://readdy.ai/api/search-image?query=Large%20international%20conference%20with%20500%20diverse%20delegates%20from%20multiple%20countries%20in%20modern%20convention%20center%2C%20professional%20conference%20hall%20with%20stage%20and%20screens%2C%20global%20summit%20atmosphere%2C%20high-resolution%20event%20photography&width=800&height=500&seq=postcovid-2024&orientation=landscape',
     type: 'Conference',
     attendees: '500+ delegates',

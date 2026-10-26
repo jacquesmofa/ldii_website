@@ -17,12 +17,12 @@ import type { GalleryEvent } from '../galleryTypes';
 
 export const event2ndPostCovidA: GalleryEvent = {
   slug: '2nd-international-post-covid-conference-brampton-2025',
-  title: '2nd International Post-COVID Conference',
+  title: '2nd International Post-COVID-19 Conference',
   year: '2025',
   date: 'September 8–10, 2025',
   location: 'Brampton, ON, Canada',
   description:
-    'LDII\'s flagship conference bringing together global health experts, policymakers, diplomats, and community leaders to address post-pandemic recovery, health system resilience, and international cooperation. Held in partnership with the City of Brampton and featuring distinguished ambassadors, ministry officials, and international delegates.',
+    'Economic Damages from Global Shocks: Building Resilience for the Future. Partners, policymakers, researchers and community leaders gathered at the Pearson Convention Centre in Brampton to examine how global shocks affect trade, finance and industry, and to explore practical paths toward recovery and long-term resilience.',
   images: [
     // --- OFFICIAL CONFERENCE BRANDING ---
     {

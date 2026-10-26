@@ -10,12 +10,12 @@ export default function LatestNewsPage() {
       author: 'LDII Communications Team'
     },
     {
-      title: '2nd International Post-COVID Conference Achieves Major Success with 500+ Delegates',
-      date: 'September 15, 2024',
+      title: '2nd International Post-COVID-19 Conference Explores Economic Damages from Global Shocks',
+      date: 'September 15, 2025',
       category: 'Event Report',
       image: 'https://readdy.ai/api/search-image?query=Successful%20international%20conference%20with%20diverse%20delegates%20celebrating%20achievements%2C%20conference%20highlights%20and%20success%2C%20professional%20event%20documentation%2C%20celebration%20atmosphere&width=800&height=500&seq=news-postcovid&orientation=landscape',
       excerpt: 'The recent conference in Brampton achieved significant outcomes with 20 policy recommendations, 35 new international partnerships, and $50 million in funding commitments.',
-      content: 'The 2nd International Post-COVID Conference held in Brampton, Ontario from September 8-10, 2024, exceeded all expectations with over 500 delegates from 40+ countries participating. The conference produced the landmark Brampton Declaration on Global Resilience, which has been adopted by 35 nations. Key outcomes include the establishment of the International Post-COVID Recovery Network, 20 comprehensive policy recommendations, and $50 million in funding commitments from participating nations. The conference addressed critical questions about future global shocks, AI safety, international trade, and food security.',
+      content: 'The 2nd International Post-COVID-19 Conference was held at the Pearson Convention Centre in Brampton, Ontario from September 8 to 10, 2025, under the theme Economic Damages from Global Shocks: Building Resilience for the Future. Partners, policymakers, researchers and community leaders examined how pandemics, natural disasters and financial crises cut across trade, finance and industry, and explored practical paths toward recovery and long-term resilience. Key outcomes include the establishment of the International Post-COVID Recovery Network, 20 comprehensive policy recommendations, and funding commitments from participating partners. Over three days, discussions focused on how communities, businesses and institutions can better prepare for and respond to future shocks, protecting livelihoods and strengthening partnerships across borders.',
       author: 'Dr. Amara Okafor, Executive Director'
     },
     {

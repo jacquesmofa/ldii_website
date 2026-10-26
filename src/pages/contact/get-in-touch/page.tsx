@@ -54,15 +54,15 @@ export default function GetInTouchPage() {
       icon: 'ri-phone-line',
       title: 'Call Us',
       description: 'Mon-Fri from 9am to 5pm EST',
-      contact: '+1 (416) 555-0123',
+      contact: '+1 647 656 3026',
       contactAlt: '',
-      link: 'tel:+14165550123'
+      link: 'tel:+16476563026'
     },
     {
       icon: 'ri-map-pin-line',
       title: 'Visit Us',
       description: 'Toronto Office',
-      contact: '3701 Chesswood Drive, Unit 315',
+      contact: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6',
       contactAlt: '',
       link: '/contact#our-locations'
     },

@@ -140,8 +140,8 @@ export default function MediaInquiriesPage() {
                 <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-[#00D9FF]"></i>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Press Line</h3>
-              <a href="tel:+14166604233" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer">
-                +1 (416) 660-4233
+              <a href="tel:+16476563026" className="text-sm text-[#00D9FF] hover:text-[#00C4E6] cursor-pointer">
+                +1 647 656 3026
               </a>
               <p className="text-xs text-gray-500 mt-2">Available 24/7 for urgent inquiries</p>
             </div>
@@ -200,8 +200,8 @@ export default function MediaInquiriesPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Press Line</div>
-                    <a href="tel:+14166604233" className="text-[#00D9FF] hover:text-[#00C4E6]">
-                      +1 (416) 660-4233
+                    <a href="tel:+16476563026" className="text-[#00D9FF] hover:text-[#00C4E6]">
+                      +1 647 656 3026
                     </a>
                     <div className="text-sm text-gray-600 mt-1">Available 24/7 for urgent inquiries</div>
                   </div>

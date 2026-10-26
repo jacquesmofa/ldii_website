@@ -237,7 +237,7 @@ export default function TermsOfServicePage() {
               
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Informal Resolution</h3>
               <p className="text-gray-700 leading-relaxed mb-6">
-                If you have any dispute with us, you agree to first contact us and attempt to resolve the dispute informally. Please send a detailed description of your dispute to legal@ldiinitiatives.org. We will attempt to resolve the dispute within 60 days.
+                If you have any dispute with us, you agree to first contact us and attempt to resolve the dispute informally. Please send a detailed description of your dispute to admin@ldiinitiatives.org. We will attempt to resolve the dispute within 60 days.
               </p>
 
               <h3 className="text-2xl font-semibold text-gray-900 mb-4">Governing Law</h3>
@@ -297,21 +297,24 @@ export default function TermsOfServicePage() {
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Address:</div>
                   <div className="text-gray-700">3701 Chesswood Drive, Unit 315</div>
-                  <div className="text-gray-700">Toronto, Ontario M3J 2P6</div>
+                  <div className="text-gray-700">Toronto, ON M3J 2P6</div>
                   <div className="text-gray-700">Canada</div>
                 </div>
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:legal@ldiinitiatives.org" className="text-green-600 hover:text-green-700">
-                    legal@ldiinitiatives.org
+                  <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    info@ldiinitiatives.org
+                  </a>
+                  <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    admin@ldiinitiatives.org
                   </a>
                 </div>
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Phone:</div>
-                  <a href="tel:+14165550123" className="text-green-600 hover:text-green-700">
-                    +1 (416) 555-0123
+                  <a href="tel:+16476563026" className="text-green-600 hover:text-green-700">
+                    +1 647 656 3026
                   </a>
                 </div>
               </div>

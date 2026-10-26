@@ -93,9 +93,8 @@ collections:
         fields:
           - { name: primary_email, label: Primary email, widget: string, default: info@ldiinitiatives.org }
           - { name: secondary_email, label: Second official email, widget: string, default: admin@ldiinitiatives.org }
-          - { name: phone, label: Phone, widget: string, default: '+1 (416) 660-4233' }
-          - { name: toronto_address, label: Toronto office address, widget: string }
-          - { name: brampton_address, label: Brampton office address, widget: string }
+          - { name: phone, label: Phone, widget: string, default: '+1 647 656 3026' }
+          - { name: toronto_address, label: Toronto office address, widget: string, default: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6' }
       - name: newsletter
         label: Newsletter Text
         file: public/content/settings/newsletter.json

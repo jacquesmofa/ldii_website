@@ -4,7 +4,7 @@ const quickLinks = [
   { title: 'About Us', description: 'Who LDII is and how we work', href: '/about' },
   { title: 'Programs', description: 'Youth, capacity training and the mining exchange', href: '/programs' },
   { title: 'Partners', description: 'The institutions and industry we work with', href: '/partners' },
-  { title: 'Contact', description: 'Toronto and Brampton offices', href: '/contact' },
+  { title: 'Contact', description: 'Toronto office and official contacts', href: '/contact' },
 ];
 
 export default function NotFound() {

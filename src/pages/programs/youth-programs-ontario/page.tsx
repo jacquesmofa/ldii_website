@@ -245,9 +245,9 @@ export default function YouthProgramsOntarioPage() {
                 Visit
               </span>
               <span className="text-white text-sm leading-relaxed">
-                3701 Chesswood Dr, Unit 315
+                3701 Chesswood Drive, Unit 315
                 <br />
-                North York, ON
+                Toronto, ON M3J 2P6
               </span>
             </div>
           </div>

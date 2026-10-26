@@ -268,9 +268,6 @@ export default function AccessibilityPage() {
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:accessibility@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
-                    accessibility@ldiinitiatives.org
-                  </a>
                   <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
                     info@ldiinitiatives.org
                   </a>
@@ -281,15 +278,15 @@ export default function AccessibilityPage() {
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Phone:</div>
-                  <a href="tel:+14165550123" className="text-green-600 hover:text-green-700">
-                    +1 (416) 555-0123
+                  <a href="tel:+16476563026" className="text-green-600 hover:text-green-700">
+                    +1 647 656 3026
                   </a>
                 </div>
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Mail:</div>
                   <div className="text-gray-700">3701 Chesswood Drive, Unit 315</div>
-                  <div className="text-gray-700">Toronto, Ontario M3J 2P6</div>
+                  <div className="text-gray-700">Toronto, ON M3J 2P6</div>
                   <div className="text-gray-700">Canada</div>
                 </div>
               </div>

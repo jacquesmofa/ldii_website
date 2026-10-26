@@ -65,7 +65,46 @@ export default function PastEventsPage() {
                         <span className="text-gray-600">{event.venue}</span>
                       </div>
                     )}
-                    <p className="text-lg text-gray-700 mb-6 leading-relaxed">{event.description}</p>
+                    <div className="mb-6 space-y-4">
+                      {event.description.split('\n\n').map((paragraph, pIndex, allParagraphs) => {
+                        const isFirst = pIndex === 0 && allParagraphs.length > 1;
+                        const isLast = pIndex === allParagraphs.length - 1 && allParagraphs.length > 1;
+                        if (isFirst && paragraph.length < 120) {
+                          return (
+                            <p key={pIndex} className="text-xl font-semibold text-[#0A1E3D] leading-snug">
+                              {paragraph}
+                            </p>
+                          );
+                        }
+                        if (isLast && paragraph.length < 80) {
+                          return (
+                            <p key={pIndex} className="pt-4 border-t border-gray-200 text-sm font-semibold uppercase tracking-[0.18em] text-green-700">
+                              {paragraph}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={pIndex} className="text-lg text-gray-700 leading-relaxed">
+                            {paragraph}
+                          </p>
+                        );
+                      })}
+                    </div>
+
+                    {event.speakersPhoto && (
+                      <figure className="mb-6">
+                        <div className="w-full rounded-xl overflow-hidden bg-gray-100">
+                          <img
+                            src={event.speakersPhoto.url}
+                            alt={event.speakersPhoto.caption}
+                            className="w-full h-auto object-cover object-top"
+                          />
+                        </div>
+                        <figcaption className="text-xs text-gray-500 mt-2 leading-relaxed">
+                          {event.speakersPhoto.caption}
+                        </figcaption>
+                      </figure>
+                    )}
                     
                     {event.countries && (
                       <div className="flex items-center mb-6">

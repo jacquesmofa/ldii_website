@@ -167,6 +167,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/social-enterprise/consulting" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  Consulting &amp; Market Intelligence
+                </a>
+              </li>
+              <li>
                 <a href="/programs/mining-technology-exchange" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
                   Mining &amp; Technology Exchange
                 </a>
@@ -264,8 +269,8 @@ export default function Footer() {
             <div className="space-y-3 text-white text-sm">
               <div>
                 <p className="font-semibold text-white mb-1" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Phone:</p>
-                <a href="tel:+14166604233" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  +1 (416) 660-4233
+                <a href="tel:+16476563026" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
+                  +1 647 656 3026
                 </a>
               </div>
               <div>
@@ -281,10 +286,7 @@ export default function Footer() {
                 <p className="font-semibold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Toronto Office:</p>
                 <p className="text-xs text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6</p>
               </div>
-              <div>
-                <p className="font-semibold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Brampton Office:</p>
-                <p className="text-xs text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>101 West Dr C, Brampton, ON L6T 2J6</p>
-              </div>
+
             </div>
             
             {/* Social Media Icons */}

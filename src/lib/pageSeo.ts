@@ -212,7 +212,7 @@ export const PAGE_SEO: Record<string, SeoEntry> = {
   '/contact': {
     title: 'Contact LDII | Partnerships, Media and Programmes',
     description:
-      'Reach LDII in Toronto: general inquiries, media requests, partnership discussions and programme referrals. Two offices, two official email addresses.',
+      'Reach LDII in Toronto: general inquiries, media requests, partnership discussions and programme referrals. One office, one phone number and two official email addresses.',
     label: 'Contact',
   },
   '/contact/get-in-touch': {
@@ -222,9 +222,9 @@ export const PAGE_SEO: Record<string, SeoEntry> = {
     label: 'Get in Touch',
   },
   '/contact/our-locations': {
-    title: 'Our Locations | LDII Toronto and Brampton Offices',
+    title: 'Our Locations | LDII Toronto Office',
     description:
-      'Visit or reach the LDII offices in North York, Toronto and in Brampton, Ontario, with addresses, phone numbers and directions.',
+      'Visit or reach the LDII office at 3701 Chesswood Drive, Unit 315, Toronto, Ontario, with address, phone number and directions.',
     label: 'Our Locations',
   },
   '/contact/media-inquiries': {
