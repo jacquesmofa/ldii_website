@@ -180,19 +180,22 @@ export default function GalleryEventPage() {
                   key={idx}
                   className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300"
                 >
-                  <div className="relative w-full h-64">
-                    <img
-                      src={video.thumbnail}
-                      alt={video.title}
-                      className="w-full h-full object-cover object-top"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center group-hover:bg-green-700 group-hover:scale-110 transition-all duration-300 cursor-pointer shadow-xl">
-                        <i className="ri-play-fill w-8 h-8 flex items-center justify-center text-white text-2xl ml-0.5"></i>
-                      </div>
+                  {video.src ? (
+                    <video
+                      controls
+                      playsInline
+                      preload="none"
+                      poster={video.thumbnail}
+                      className="w-full max-h-[70vh] bg-black object-contain"
+                      aria-label={video.title}
+                    >
+                      <source src={video.src} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <div className="relative w-full h-64">
+                      <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover object-top" loading="lazy" />
                     </div>
-                  </div>
+                  )}
                   <div className="p-5 bg-white">
                     <h4 className="text-lg font-semibold text-gray-900">{video.title}</h4>
                   </div>
@@ -278,7 +281,7 @@ export default function GalleryEventPage() {
               Contact Media Team
             </a>
             <a
-              href="/events/news/press-releases#hero"
+              href="/events/press-releases#hero"
               className="bg-white text-green-600 border-2 border-green-600 px-7 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
             >
               Press Releases

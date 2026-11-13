@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { RouteObject } from 'react-router-dom';
+import { Navigate, RouteObject } from 'react-router-dom';
 
 // Direct imports for pages that were showing blank on static hosting
 // Lazy-loaded chunks can fail on Apache/cPanel when asset paths aren't handled correctly
@@ -25,9 +25,6 @@ const MiningTechnologyExchangePage = lazy(() => import('../pages/programs/mining
 const ConsultingPage = lazy(() => import('../pages/social-enterprise/consulting/page'));
 const ImpactPage = lazy(() => import('../pages/impact/page'));
 const AchievementsPage = lazy(() => import('../pages/impact/achievements/page'));
-const SuccessStoriesPage = lazy(() => import('../pages/impact/success-stories/page'));
-const AnnualReportsPage = lazy(() => import('../pages/impact/annual-reports/page'));
-const MetricsPage = lazy(() => import('../pages/impact/metrics/page'));
 const EventsPage = lazy(() => import('../pages/events/page'));
 const UpcomingEventsPage = lazy(() => import('../pages/events/upcoming/page'));
 const PastEventsPage = lazy(() => import('../pages/events/past/page'));
@@ -138,15 +135,15 @@ const routes: RouteObject[] = [
   },
   {
     path: '/impact/success-stories',
-    element: <SuccessStoriesPage />
+    element: <Navigate to="/impact" replace />
   },
   {
     path: '/impact/annual-reports',
-    element: <AnnualReportsPage />
+    element: <Navigate to="/impact" replace />
   },
   {
     path: '/impact/metrics',
-    element: <MetricsPage />
+    element: <Navigate to="/impact" replace />
   },
   {
     path: '/events',

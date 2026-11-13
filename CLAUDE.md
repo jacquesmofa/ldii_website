@@ -31,6 +31,12 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 
 ## Known issues (found 10 Nov 2026)
 - 292 Readdy AI placeholder image URLs (`readdy.ai/api/search-image`) are still in the code. Replace them with real photos and track the rest in `PLACEHOLDERS.md`.
-- `node_modules/` (≈22,000 files) and `out.zip` are committed to git: remove them from git (keep them in .gitignore) to make the repo fast again.
 - Largest site in the studio: 40+ routes, 292 Readdy placeholder image URLs.
 - Design overlap with other clients: Playfair Display + Inter pairing is shared by several Readdy sites (AL Cleaning, ISDIA, JRFAN, Trinity, Kwetu, CROP, Jacques' portfolio).
+
+## Clean-up (13 Nov 2026)
+- `node_modules/`, `out/` and `out.zip` are no longer in git; the deploy runs `npm ci`.
+- Unconfirmed people, partners, numbers and projects removed; full list and open questions in `PLACEHOLDERS.md`.
+- Real record lives in `src/mocks/eventsData.ts` (events; `unconfirmed: true` hides past-dated events nobody confirmed), `src/mocks/newsData.ts` (news), `src/mocks/partnersData.ts` (partners, real logos only). Impact, Achievements, Past/Upcoming Projects, Partners and the home page read from these.
+- Gallery albums: `src/mocks/galleryEvents/*.ts` (newest: Greater Sudbury, Canada–South Africa, Angola, Nov 2026). Videos play from Cloudinary (`src` on a video).
+- `public/sitemap.xml` lists every page on https://ldiinitiatives.org (regenerate when routes or albums change).

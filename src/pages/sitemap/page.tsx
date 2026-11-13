@@ -50,9 +50,6 @@ export default function SitemapPage() {
       links: [
         { name: 'Overview', url: '/impact#hero' },
         { name: 'Achievements', url: '/impact/achievements#hero' },
-        { name: 'Success Stories', url: '/impact/success-stories#hero' },
-        { name: 'Annual Reports', url: '/impact/annual-reports#hero' },
-        { name: 'Metrics', url: '/impact/metrics#hero' },
       ]
     },
     {
@@ -62,28 +59,15 @@ export default function SitemapPage() {
         { name: 'Upcoming Events', url: '/events/upcoming#hero' },
         { name: 'Past Events & Resources', url: '/events/past#hero' },
         { name: 'Latest News', url: '/events/news#hero' },
-        { name: 'Press Releases', url: '/events/news/press-releases#hero' },
+        { name: 'Press Releases', url: '/events/press-releases#hero' },
         { name: 'Gallery', url: '/events/gallery#hero' },
-      ]
-    },
-    {
-      title: 'Research',
-      links: [
-        { name: 'Overview', url: '/research#hero' },
-        { name: 'Policy Briefs', url: '/research/policy-briefs#hero' },
-        { name: 'Publications', url: '/research/publications#hero' },
-        { name: 'Data & Statistics', url: '/research/data-statistics#hero' },
-        { name: 'White Papers', url: '/research/white-papers#hero' },
       ]
     },
     {
       title: 'Partners & Support',
       links: [
         { name: 'Overview', url: '/partners#hero' },
-        { name: 'Government Partners', url: '/partners#government-partners' },
-        { name: 'Private Sector', url: '/partners#private-sector' },
-        { name: 'NGO Partners', url: '/partners#ngo-partners' },
-        { name: 'Academic Institutions', url: '/partners#academic-institutions' },
+        { name: 'Our Partners', url: '/partners#our-partners' },
         { name: 'Donate', url: '/partners#donate' },
         { name: 'Volunteer', url: '/partners#volunteer' },
         { name: 'Corporate Partnership', url: '/partners#corporate-partnership' },

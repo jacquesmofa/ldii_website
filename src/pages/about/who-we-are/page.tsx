@@ -143,23 +143,13 @@ export default function WhoWeArePage() {
                 LDII brings together a diverse team of experts, researchers, policy analysts, and practitioners from around the world. Our multidisciplinary approach combines academic rigor with practical experience to address complex global challenges.
               </p>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                Founded in 2014, we have grown from a small think tank to a globally recognized organization with offices across multiple continents. Our team includes former government officials, UN executives, academic researchers, and civil society leaders.
+                From our Toronto headquarters we connect African missions, ministries and chambers of mines with Canadian expertise, and run youth and community programmes in Ontario.
               </p>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-500 mb-2">45+</div>
-                  <div className="text-gray-600">Team Members</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-500 mb-2">25+</div>
-                  <div className="text-gray-600">Nationalities</div>
-                </div>
-              </div>
             </div>
             <div className="relative">
               <img
-                src="https://readdy.ai/api/search-image?query=Modern%20international%20organization%20team%20photo%20with%20diverse%20professionals%20from%20different%20countries%20and%20backgrounds%20standing%20together%20in%20contemporary%20office%20lobby%2C%20multicultural%20workplace%2C%20professional%20group%20photography%2C%20high%20resolution%2C%20excellent%20lighting%20and%20composition&width=600&height=400&seq=team-photo&orientation=landscape"
-                alt="LDII Team"
+                src="https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_900,h_600,q_auto,f_auto/untitled-6585_1_cnqwkm.jpg"
+                alt="LDII and participants at the Canada–South Africa economic outlook seminar"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
             </div>
@@ -245,10 +235,10 @@ export default function WhoWeArePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20">
             <a
-              href="/careers#hero"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
+              href="mailto:info@ldiinitiatives.org?subject=Joining%20LDII"
+              className="bg-white text-green-700 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
             >
-              View Open Positions
+              Send Us Your CV
             </a>
             <a
               href="/partners#volunteer"

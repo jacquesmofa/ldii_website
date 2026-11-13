@@ -48,6 +48,9 @@ import { event2ndPostCovidBImages } from './galleryEvents/event2ndPostCovidB';
 import { event1stPostCovid } from './galleryEvents/event1stPostCovid';
 import { eventDiplomatic } from './galleryEvents/eventDiplomatic';
 import { eventBehindTheScenes } from './galleryEvents/eventBehindTheScenes';
+import { eventCanadaSouthAfrica } from './galleryEvents/eventCanadaSouthAfrica';
+import { eventSudburyMining } from './galleryEvents/eventSudburyMining';
+import { eventAngola } from './galleryEvents/eventAngola';
 
 
 // ============================================================
@@ -84,6 +87,24 @@ const event2ndPostCovid: GalleryEvent = {
 //   and title with your new Cloudinary public_id.
 // ============================================================
 export const featuredImages: GalleryImage[] = [
+  {
+    url: cld('untitled-6585_1_cnqwkm'),
+    title: 'Canada and South Africa: Economic Outlook, Trade Opportunity and the Road to Market Access (November 2026)',
+    width: 1024,
+    height: 466,
+  },
+  {
+    url: cld('WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu'),
+    title: 'Greater Sudbury mining ecosystem trip (November 2026)',
+    width: 1600,
+    height: 900,
+  },
+  {
+    url: cld('Angola_Diplomatic_Engagement_2_jmvzbi'),
+    title: 'Angola Diplomatic Engagement (November 2026)',
+    width: 2000,
+    height: 1126,
+  },
   {
     url: cld('2nd_Post_covid_cvdox1'),
     title: '2nd International Post-COVID Conference - Official Banner',
@@ -162,8 +183,11 @@ export const featuredImages: GalleryImage[] = [
 //   5. It will automatically appear on the website
 // ============================================================
 export const galleryEvents: GalleryEvent[] = [
+  eventSudburyMining,       // Greater Sudbury mining ecosystem trip (November 2026)
+  eventCanadaSouthAfrica,   // Canada and South Africa seminar (November 2026)
+  eventAngola,              // Angola Diplomatic Engagement (November 2026)
   event2ndPostCovid,        // Event 1: 2nd Post-COVID Conference (Brampton, Sep 2025)
-  event1stPostCovid,        // Event 2: 1st Post-COVID Conference (Toronto, July 2024)
+  event1stPostCovid,        // 1st Post-COVID Conference (Toronto, July 2024)
   eventDiplomatic,          // Event 3: Diplomatic Engagements & Partnerships
   eventBehindTheScenes      // Event 4: Conference Planning & Behind the Scenes
 ];

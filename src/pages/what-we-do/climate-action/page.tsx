@@ -90,29 +90,6 @@ export default function ClimateActionPage() {
     }
   ];
 
-  const projects = [
-    {
-      title: 'Coastal Community Resilience Program',
-      location: 'East Africa',
-      description: 'Building adaptive capacity in vulnerable coastal communities through infrastructure improvements and livelihood diversification.',
-      beneficiaries: '50,000+ people',
-      image: 'https://readdy.ai/api/search-image?query=African%20coastal%20community%20with%20climate%20resilient%20infrastructure%2C%20mangrove%20restoration%2C%20sustainable%20fishing%20practices%2C%20community%20members%20working%20together%20on%20adaptation%20projects%2C%20professional%20documentary%20photography&width=600&height=400&seq=climate-project-1&orientation=landscape'
-    },
-    {
-      title: 'Urban Green Infrastructure Initiative',
-      location: 'Canada',
-      description: 'Implementing green roofs, urban forests, and sustainable drainage systems to mitigate urban heat islands and flooding.',
-      beneficiaries: '200,000+ residents',
-      image: 'https://readdy.ai/api/search-image?query=Modern%20Canadian%20city%20with%20green%20roofs%2C%20urban%20gardens%2C%20tree-lined%20streets%2C%20sustainable%20architecture%2C%20people%20enjoying%20green%20spaces%2C%20professional%20urban%20photography&width=600&height=400&seq=climate-project-2&orientation=landscape'
-    },
-    {
-      title: 'Renewable Energy Access Project',
-      location: 'Rural Communities',
-      description: 'Providing off-grid solar solutions to remote communities, reducing reliance on fossil fuels and improving energy access.',
-      beneficiaries: '30,000+ households',
-      image: 'https://readdy.ai/api/search-image?query=Rural%20community%20with%20solar%20panels%20installation%2C%20clean%20energy%20access%2C%20families%20benefiting%20from%20renewable%20electricity%2C%20sustainable%20development%2C%20professional%20documentary%20photography&width=600&height=400&seq=climate-project-3&orientation=landscape'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -412,40 +389,6 @@ export default function ClimateActionPage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Projects in Action</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our climate action initiatives are making real impact in communities around the world.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                    <span className="text-green-600 font-semibold">{project.location}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
-                  <div className="bg-green-50 rounded-lg p-3">
-                    <p className="text-green-800 font-semibold text-sm">Impact: {project.beneficiaries}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section with Background */}
       <section className="relative py-20 overflow-hidden">

@@ -5,7 +5,7 @@
  * ============================================================================
  *
  * LDII's inaugural international conference held at the Metro Toronto
- * Convention Center, July 11–13, 2024.
+ * Convention Centre, July 2024.
  * Theme: "Building Synergies and Resilience for Future Global Shocks"
  *
  * HOW TO ADD NEW PHOTOS:
@@ -23,10 +23,10 @@ export const event1stPostCovid: GalleryEvent = {
   slug: '1st-international-post-covid-conference-toronto-2024',
   title: '1st International Post-COVID Conference',
   year: '2024',
-  date: 'July 11–13, 2024',
-  location: 'Metro Toronto Convention Center, Toronto, Canada',
+  date: 'July 2024',
+  location: 'Metro Toronto Convention Centre, Toronto, Canada',
   description:
-    'LDII\'s inaugural international conference with the theme "Building Synergies and Resilience for Future Global Shocks." Held at the Metro Toronto Convention Center, this landmark event brought together global health experts, policymakers, researchers, and community leaders focused on recovery strategies and pandemic preparedness.',
+    'LDII\'s inaugural international conference with the theme "Building Synergies and Resilience for Future Global Shocks." Held at the Metro Toronto Convention Centre, this landmark event brought together global health experts, policymakers, researchers, and community leaders focused on recovery strategies and pandemic preparedness.',
   images: [
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_blxfxa'),
@@ -66,7 +66,7 @@ export const event1stPostCovid: GalleryEvent = {
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_2_yq0s0v'),
-      title: 'Networking Reception - Metro Toronto Convention Center',
+      title: 'Networking Reception - Metro Toronto Convention Centre',
       width: 900,
       height: 1200
     },
@@ -180,7 +180,7 @@ export const event1stPostCovid: GalleryEvent = {
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_1_lbmamp'),
-      title: 'Closing Remarks - Metro Toronto Convention Center',
+      title: 'Closing Remarks - Metro Toronto Convention Centre',
       width: 900,
       height: 1200
     },
@@ -359,5 +359,11 @@ export const event1stPostCovid: GalleryEvent = {
       height: 900
     }
   ],
-  videos: []
+  videos: [
+    {
+      title: 'The First International Post-COVID Pandemic Conference',
+      thumbnail: 'https://res.cloudinary.com/dzppzxpad/video/upload/so_1,c_fill,w_720,h_1280,q_auto,f_jpg/v1794500695/first_international_post_covid_parade_and_candle_light_vigil_in_the_world_October_1st_2023_gjvofd.jpg',
+      src: 'https://res.cloudinary.com/dzppzxpad/video/upload/q_auto,vc_auto/v1794500695/first_international_post_covid_parade_and_candle_light_vigil_in_the_world_October_1st_2023_gjvofd.mp4',
+    },
+  ],
 };

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { submitFormToInbox } from '@/lib/web3forms';
+import PartnerCards from '../../components/feature/PartnerCards';
 
 export default function PartnersPage() {
   const [activeSection, setActiveSection] = useState('');
@@ -28,178 +29,6 @@ export default function PartnersPage() {
       // Update URL without causing page reload
       window.history.pushState(null, '', `#${sectionId}`);
     }
-  };
-
-  const governmentPartners = [
-    {
-      name: 'Government of Canada',
-      description: 'Federal partnership supporting international development initiatives and capacity building programs across multiple sectors.',
-      logo: 'https://readdy.ai/api/search-image?query=Government%20of%20Canada%20official%20logo%20Canadian%20flag%20maple%20leaf%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=120&seq=canada-gov&orientation=landscape',
-      website: 'https://www.canada.ca',
-      focus: 'International Development, Policy Support'
-    },
-    {
-      name: 'Province of Ontario',
-      description: 'Provincial government collaboration on local programs, community development, and economic growth initiatives.',
-      logo: 'https://readdy.ai/api/search-image?query=Province%20of%20Ontario%20official%20government%20logo%20Canadian%20provincial%20emblem%20clean%20white%20background%20professional%20branding&width=200&height=120&seq=ontario-gov&orientation=landscape',
-      website: 'https://www.ontario.ca',
-      focus: 'Community Programs, Economic Development'
-    },
-    {
-      name: 'City of Brampton',
-      description: 'Municipal partnership supporting local community programs, newcomer services, and business development in Brampton.',
-      logo: 'https://readdy.ai/api/search-image?query=City%20of%20Brampton%20Ontario%20official%20municipal%20logo%20Canadian%20city%20emblem%20clean%20white%20background%20professional%20government%20branding&width=200&height=120&seq=brampton-city&orientation=landscape',
-      website: 'https://www.brampton.ca',
-      focus: 'Programs, Community Services'
-    },
-    {
-      name: 'United Nations Development Programme',
-      description: 'Global partnership advancing sustainable development goals and building resilience in vulnerable communities worldwide.',
-      logo: 'https://readdy.ai/api/search-image?query=United%20Nations%20Development%20Programme%20UNDP%20official%20logo%20blue%20and%20white%20clean%20background%20professional%20organization%20branding&width=200&height=120&seq=undp-partner&orientation=landscape',
-      website: 'https://www.undp.org',
-      focus: 'Sustainable Development, Global Resilience'
-    }
-  ];
-
-  const privateSectorPartners = [
-    {
-      name: 'Thrive Tours Inc.',
-      description:
-        'A nationally award-winning, 100% Indigenous-owned education and eco-tourism company based at Batchewana First Nation in Northern Ontario. Thrive Tours designs and hosts experiential programmes for universities and visiting delegations, and is the operator of the Africa–Canada Mining & Technology Exchange delivered jointly with LDII.',
-      logo: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_360/v1792410688/logo-2026_thrive_tours_kbecbo.webp',
-      website: 'https://www.thrivetours.ca/',
-      focus: 'Indigenous Tourism, Education & Trade Missions'
-    },
-    {
-      name: 'Toronto Region Board of Trade',
-      description: 'Leading business organization supporting economic growth, innovation, and business networking across the Greater Toronto Area.',
-      logo: 'https://readdy.ai/api/search-image?query=Toronto%20Region%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=120&seq=toronto-bot&orientation=landscape',
-      website: 'https://www.bot.com',
-      focus: 'Business Development, Economic Growth'
-    },
-    {
-      name: 'Brampton Board of Trade',
-      description: 'Local business chamber fostering entrepreneurship, business connections, and economic development in Brampton.',
-      logo: 'https://readdy.ai/api/search-image?query=Brampton%20Board%20of%20Trade%20official%20logo%20business%20chamber%20commerce%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=120&seq=brampton-bot&orientation=landscape',
-      website: 'https://www.bramptonbot.com',
-      focus: 'Entrepreneurship, Business Networking'
-    },
-    {
-      name: 'Canadian Hispanic Chamber of Commerce',
-      description: 'Supporting Hispanic business community through networking, advocacy, and business development opportunities.',
-      logo: 'https://readdy.ai/api/search-image?query=Canadian%20Hispanic%20Chamber%20of%20Commerce%20official%20logo%20business%20organization%20emblem%20clean%20background%20professional%20business%20branding&width=200&height=120&seq=hispanic-chamber&orientation=landscape',
-      website: 'https://www.canadianhispanicchamber.com',
-      focus: 'Hispanic Business Community, Advocacy'
-    },
-    {
-      name: 'RBC Royal Bank',
-      description: 'Canada\'s largest bank partnering on financial inclusion, economic development, and community investment initiatives.',
-      logo: 'https://readdy.ai/api/search-image?query=RBC%20Royal%20Bank%20of%20Canada%20official%20logo%20blue%20and%20yellow%20lion%20shield%20emblem%20clean%20white%20background%20professional%20banking%20branding&width=200&height=120&seq=rbc-partner&orientation=landscape',
-      website: 'https://www.rbc.com',
-      focus: 'Financial Inclusion, Community Investment'
-    },
-    {
-      name: 'Ethiopian Airlines',
-      description: 'Africa\'s largest airline supporting international connectivity, trade facilitation, and humanitarian logistics.',
-      logo: 'https://readdy.ai/api/search-image?query=Ethiopian%20Airlines%20official%20logo%20green%20yellow%20red%20colors%20airline%20emblem%20clean%20white%20background%20professional%20aviation%20branding&width=200&height=120&seq=ethiopian-airlines-partner&orientation=landscape',
-      website: 'https://www.ethiopianairlines.com',
-      focus: 'International Connectivity, Trade Facilitation'
-    },
-    {
-      name: 'Pearson Convention Centre',
-      description: 'Premier event venue partner providing space for conferences, community gatherings, and international forums.',
-      logo: 'https://readdy.ai/api/search-image?query=Pearson%20Convention%20Centre%20Toronto%20official%20logo%20modern%20venue%20emblem%20clean%20white%20background%20professional%20event%20space%20branding&width=200&height=120&seq=pearson-convention-partner&orientation=landscape',
-      website: 'https://www.torontopearson.com',
-      focus: 'Event Hosting, Conference Facilities'
-    },
-    {
-      name: 'Hilton Garden Inn Brampton',
-      description: 'Hospitality partner providing venue support for events, conferences, and community gatherings.',
-      logo: 'https://readdy.ai/api/search-image?query=Hilton%20Garden%20Inn%20official%20hotel%20logo%20hospitality%20brand%20emblem%20clean%20white%20background%20professional%20hotel%20branding&width=200&height=120&seq=hilton-partner&orientation=landscape',
-      website: 'https://www.hilton.com',
-      focus: 'Event Hosting, Hospitality Services'
-    }
-  ];
-
-  const ngoPartners = [
-    {
-      name: 'World Health Organization',
-      description: 'Collaboration on global health initiatives, pandemic preparedness, and health systems strengthening.',
-      logo: 'https://readdy.ai/api/search-image?query=World%20Health%20Organization%20WHO%20official%20logo%20blue%20and%20white%20medical%20symbol%20clean%20background%20professional%20healthcare%20branding&width=200&height=120&seq=who-partner&orientation=landscape',
-      website: 'https://www.who.int',
-      focus: 'Global Health, Pandemic Response'
-    },
-    {
-      name: 'CPLP - Community of Portuguese Language Countries',
-      description: 'Partnership promoting development cooperation and cultural exchange among Portuguese-speaking nations.',
-      logo: 'https://readdy.ai/api/search-image?query=CPLP%20Community%20Portuguese%20Language%20Countries%20official%20logo%20blue%20and%20white%20lusophone%20organization%20emblem%20clean%20background%20professional%20diplomatic%20branding&width=200&height=120&seq=cplp-partner&orientation=landscape',
-      website: 'https://www.cplp.org',
-      focus: 'Cultural Exchange, Development Cooperation'
-    },
-    {
-      name: 'IGAD',
-      description: 'Regional partnership with the Intergovernmental Authority on Development supporting peace, security, and sustainable development in East Africa.',
-      logo: 'https://readdy.ai/api/search-image?query=IGAD%20Intergovernmental%20Authority%20on%20Development%20official%20logo%20East%20Africa%20regional%20organization%20emblem%20clean%20white%20background%20professional%20diplomatic%20branding&width=200&height=120&seq=igad-partner&orientation=landscape',
-      website: 'https://igad.int',
-      focus: 'Regional Development, Peace & Security'
-    },
-    {
-      name: 'KWETU Connect Australia',
-      description: 'Community organization partnership supporting diaspora engagement, cultural exchange, and international development connections.',
-      logo: 'https://readdy.ai/api/search-image?query=KWETU%20Connect%20Australia%20official%20logo%20community%20organization%20emblem%20clean%20white%20background%20professional%20networking%20branding&width=200&height=120&seq=kwetu-partner&orientation=landscape',
-      website: 'https://www.kwetuconnect.com.au',
-      focus: 'Diaspora Engagement, Community Development'
-    },
-    {
-      name: 'Mamy Kaya',
-      description: 'Community organization partnership supporting grassroots development and local empowerment initiatives.',
-      logo: 'https://readdy.ai/api/search-image?query=Mamy%20Kaya%20organization%20official%20logo%20clean%20background%20professional%20branding%20emblem&width=200&height=120&seq=mamy-kaya-partner&orientation=landscape',
-      website: 'https://www.mamykaya.com',
-      focus: 'Community Development, Local Empowerment'
-    },
-    {
-      name: 'Green Climate Fund',
-      description: 'Climate finance partnership supporting climate resilience and mitigation projects in vulnerable regions.',
-      logo: 'https://readdy.ai/api/search-image?query=Green%20Climate%20Fund%20GCF%20official%20logo%20green%20environmental%20finance%20emblem%20clean%20white%20background%20professional%20climate%20funding%20branding&width=200&height=120&seq=gcf-partner&orientation=landscape',
-      website: 'https://www.greenclimate.fund',
-      focus: 'Climate Finance, Environmental Projects'
-    }
-  ];
-
-  const academicPartners = [
-    {
-      name: 'University of Toronto',
-      description: 'Research collaboration on global health, climate science, and sustainable development solutions.',
-      logo: 'https://readdy.ai/api/search-image?query=University%20of%20Toronto%20official%20logo%20academic%20institution%20emblem%20clean%20white%20background%20professional%20university%20branding&width=200&height=120&seq=uoft-partner&orientation=landscape',
-      website: 'https://www.utoronto.ca',
-      focus: 'Research Collaboration, Academic Excellence'
-    },
-    {
-      name: 'York University',
-      description: 'Partnership on social research, community development studies, and policy analysis.',
-      logo: 'https://readdy.ai/api/search-image?query=York%20University%20official%20logo%20academic%20institution%20emblem%20clean%20white%20background%20professional%20university%20branding&width=200&height=120&seq=york-partner&orientation=landscape',
-      website: 'https://www.yorku.ca',
-      focus: 'Social Research, Policy Analysis'
-    },
-    {
-      name: 'International Development Research Centre',
-      description: 'Research partnership advancing knowledge on development challenges and innovative solutions.',
-      logo: 'https://readdy.ai/api/search-image?query=International%20Development%20Research%20Centre%20IDRC%20official%20logo%20blue%20and%20white%20research%20institution%20emblem%20clean%20background%20professional%20academic%20branding&width=200&height=120&seq=idrc-partner&orientation=landscape',
-      website: 'https://www.idrc.ca',
-      focus: 'Development Research, Innovation'
-    },
-    {
-      name: 'Ryerson University',
-      description: 'Collaborative research on urban development, innovation, and community engagement.',
-      logo: 'https://readdy.ai/api/search-image?query=Ryerson%20University%20Toronto%20Metropolitan%20University%20official%20logo%20academic%20institution%20emblem%20clean%20white%20background%20professional%20university%20branding&width=200&height=120&seq=ryerson-partner&orientation=landscape',
-      website: 'https://www.torontomu.ca',
-      focus: 'Urban Development, Innovation Research'
-    }
-  ];
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    const target = e.target as HTMLImageElement;
-    target.style.display = 'none';
   };
 
   const submitPartnerForm = async (form: HTMLFormElement, formKey: string, subject: string) => {
@@ -234,7 +63,7 @@ export default function PartnersPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Global%20partnership%20network%20with%20diverse%20international%20professionals%20shaking%20hands%2C%20world%20map%20with%20glowing%20connection%20lines%2C%20modern%20business%20collaboration%2C%20professional%20photography%20with%20bright%20lighting&width=1920&height=800&seq=partners-hero&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/untitled-6585_1_cnqwkm.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -253,36 +82,12 @@ export default function PartnersPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-2 py-4">
             <button
-              onClick={() => scrollToSection('government-partners')}
+              onClick={() => scrollToSection('our-partners')}
               className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
-                activeSection === 'government-partners' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                activeSection === 'our-partners' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
-              Government Partners
-            </button>
-            <button
-              onClick={() => scrollToSection('private-sector')}
-              className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
-                activeSection === 'private-sector' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              Private Sector
-            </button>
-            <button
-              onClick={() => scrollToSection('ngo-partners')}
-              className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
-                activeSection === 'ngo-partners' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              NGO Partners
-            </button>
-            <button
-              onClick={() => scrollToSection('academic-institutions')}
-              className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
-                activeSection === 'academic-institutions' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
-            >
-              Academic Institutions
+              Our Partners
             </button>
             <button
               onClick={() => scrollToSection('donate')}
@@ -304,175 +109,16 @@ export default function PartnersPage() {
         </div>
       </div>
 
-      {/* Government Partners */}
-      <section id="government-partners" className="py-20 bg-white scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Government Partners</h2>
+      {/* Our Partners */}
+      <section id="our-partners" className="py-20 bg-white scroll-mt-32">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-14">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partners</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Collaborating with government agencies at federal, provincial, and municipal levels to drive policy change and community impact.
+              The organisations and venues behind our conferences, delegations and exchanges. Interested in partnering with LDII? Write to us at info@ldiinitiatives.org.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {governmentPartners.map((partner, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-32 h-24 bg-white rounded-lg p-3 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain"
-                      onError={handleImageError}
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h3>
-                    <p className="text-green-600 font-medium text-sm mb-3">{partner.focus}</p>
-                    <p className="text-gray-700 leading-relaxed mb-4">{partner.description}</p>
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-600 hover:text-green-700 font-medium cursor-pointer inline-flex items-center space-x-2"
-                    >
-                      <span>Visit Website</span>
-                      <i className="ri-external-link-line w-4 h-4 flex items-center justify-center"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Private Sector */}
-      <section id="private-sector" className="py-20 bg-gray-50 scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Private Sector Partners</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Partnering with businesses and chambers of commerce to foster economic growth and entrepreneurship.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {privateSectorPartners.map((partner, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-32 h-24 bg-gray-50 rounded-lg p-3 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain"
-                      onError={handleImageError}
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h3>
-                    <p className="text-green-600 font-medium text-sm mb-3">{partner.focus}</p>
-                    <p className="text-gray-700 leading-relaxed mb-4">{partner.description}</p>
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-600 hover:text-green-700 font-medium cursor-pointer inline-flex items-center space-x-2"
-                    >
-                      <span>Visit Website</span>
-                      <i className="ri-external-link-line w-4 h-4 flex items-center justify-center"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* NGO Partners */}
-      <section id="ngo-partners" className="py-20 bg-white scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">NGO Partners</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Working with leading non-governmental organizations to amplify our impact and reach vulnerable communities.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {ngoPartners.map((partner, index) => (
-              <div key={index} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-32 h-24 bg-white rounded-lg p-3 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain"
-                      onError={handleImageError}
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h3>
-                    <p className="text-green-600 font-medium text-sm mb-3">{partner.focus}</p>
-                    <p className="text-gray-700 leading-relaxed mb-4">{partner.description}</p>
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-600 hover:text-green-700 font-medium cursor-pointer inline-flex items-center space-x-2"
-                    >
-                      <span>Visit Website</span>
-                      <i className="ri-external-link-line w-4 h-4 flex items-center justify-center"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Academic Institutions */}
-      <section id="academic-institutions" className="py-20 bg-gray-50 scroll-mt-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Academic Institutions</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Research collaborations with leading universities to advance knowledge and develop evidence-based solutions.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {academicPartners.map((partner, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-6">
-                  <div className="flex-shrink-0 w-32 h-24 bg-gray-50 rounded-lg p-3 flex items-center justify-center">
-                    <img
-                      src={partner.logo}
-                      alt={`${partner.name} logo`}
-                      className="max-w-full max-h-full object-contain"
-                      onError={handleImageError}
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{partner.name}</h3>
-                    <p className="text-green-600 font-medium text-sm mb-3">{partner.focus}</p>
-                    <p className="text-gray-700 leading-relaxed mb-4">{partner.description}</p>
-                    <a
-                      href={partner.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-green-600 hover:text-green-700 font-medium cursor-pointer inline-flex items-center space-x-2"
-                    >
-                      <span>Visit Website</span>
-                      <i className="ri-external-link-line w-4 h-4 flex items-center justify-center"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <PartnerCards />
         </div>
       </section>
 

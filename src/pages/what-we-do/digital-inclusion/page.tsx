@@ -94,36 +94,7 @@ export default function DigitalInclusionPage() {
     }
   ];
 
-  const projects = [
-    {
-      title: 'Community Digital Hub Network',
-      location: 'Rural Communities',
-      description: 'Establishing 50 digital hubs providing internet access, computer training, and digital services to underserved rural populations.',
-      beneficiaries: '25,000+ people',
-      image: 'https://readdy.ai/api/search-image?query=Rural%20community%20digital%20learning%20center%2C%20diverse%20people%20using%20computers%2C%20internet%20access%2C%20digital%20literacy%20training%2C%20modern%20technology%20hub%2C%20professional%20photography&width=600&height=400&seq=digital-project-1&orientation=landscape'
-    },
-    {
-      title: 'Digital Skills for Newcomers',
-      location: 'Canada',
-      description: 'Training newcomers in essential digital skills for employment, education, and social integration in Canadian society.',
-      beneficiaries: '3,000+ newcomers',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20newcomers%20in%20Canadian%20digital%20skills%20training%20class%2C%20computer%20learning%2C%20instructor%20support%2C%20multicultural%20classroom%2C%20professional%20photography&width=600&height=400&seq=digital-project-2&orientation=landscape'
-    },
-    {
-      title: 'Open Knowledge Platform',
-      location: 'Global',
-      description: 'Creating multilingual online platform providing free educational resources, reaching learners in 50+ countries.',
-      beneficiaries: '100,000+ learners',
-      image: 'https://readdy.ai/api/search-image?query=People%20from%20different%20countries%20accessing%20online%20learning%20platform%2C%20diverse%20students%20using%20tablets%20and%20laptops%2C%20global%20education%2C%20digital%20knowledge%20sharing%2C%20professional%20photography&width=600&height=400&seq=digital-project-3&orientation=landscape'
-    }
-  ];
 
-  const impactMetrics = [
-    { number: '150,000+', label: 'People Connected' },
-    { number: '75+', label: 'Digital Hubs Established' },
-    { number: '10,000+', label: 'People Trained' },
-    { number: '50+', label: 'Countries Reached' }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -230,61 +201,7 @@ export default function DigitalInclusionPage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Digital Inclusion in Action</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our programs are connecting communities and empowering people through digital access and literacy.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-purple-600"></i>
-                    <span className="text-purple-600 font-semibold">{project.location}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
-                  <div className="bg-purple-50 rounded-lg p-3">
-                    <p className="text-purple-800 font-semibold text-sm">Impact: {project.beneficiaries}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Metrics */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-700 text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our Digital Impact</h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Measurable progress in bridging the digital divide.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {impactMetrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-[#00D9FF] mb-2">{metric.number}</div>
-                <div className="text-white/90 font-medium">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section with Background */}
       <section className="relative py-20 overflow-hidden">

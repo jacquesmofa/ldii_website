@@ -208,7 +208,6 @@ export default function AboutPage() {
               </div>
               <p className="text-gray-600 mb-4">3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6</p>
               <p className="text-gray-700 mb-4">Global strategy, policy development, and international partnerships</p>
-              <p className="text-sm text-gray-500">Established: 2018</p>
             </div>
             
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -221,9 +220,8 @@ export default function AboutPage() {
                   <p className="text-tech-cyan-500 font-semibold">Liaison Office</p>
                 </div>
               </div>
-              <p className="text-gray-600 mb-4">Regional Office - East Africa</p>
+              <p className="text-gray-600 mb-4">Nordic liaison</p>
               <p className="text-gray-700 mb-4">Climate resilience, food security, and health systems strengthening</p>
-              <p className="text-sm text-gray-500">Established: 2020</p>
             </div>
             
             <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
@@ -238,7 +236,6 @@ export default function AboutPage() {
               </div>
               <p className="text-gray-600 mb-4">Regional Office - East Africa</p>
               <p className="text-gray-700 mb-4">Economic development, trade facilitation, and capacity building</p>
-              <p className="text-sm text-gray-500">Established: 2021</p>
             </div>
           </div>
         </div>

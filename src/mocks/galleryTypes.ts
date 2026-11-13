@@ -45,11 +45,13 @@ export interface GalleryImage {
 export interface GalleryVideo {
   title: string;      // Video caption
   thumbnail: string; // Video thumbnail URL (also from Cloudinary)
+  src?: string;      // The video file (Cloudinary .mp4). Without it only the thumbnail shows.
 }
 
 export interface GalleryEvent {
   slug: string;        // URL-friendly name (e.g. "my-event-2025")
   title: string;       // Full event name displayed on the page
+  shortTitle?: string; // Optional short name for the gallery filter tabs
   year: string;        // Year (e.g. "2025")
   date: string;        // Full date (e.g. "September 8–10, 2025")
   location: string;    // City, Country

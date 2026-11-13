@@ -343,7 +343,7 @@ export default function Footer() {
         {/* Bottom Copyright Bar */}
         <div className="border-t border-gray-800 pt-8 text-center">
           <p className="text-white text-sm" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-            © 2025 Livelihood Development International Initiatives (LDII). All Rights Reserved.
+            © {new Date().getFullYear()} Livelihood Development International Initiatives (LDII). All Rights Reserved.
           </p>
         </div>
       </div>

@@ -1,165 +1,58 @@
 export default function PressReleasesPage() {
+  // Real releases only (13 Nov 2026). Invented releases (trees, UNDP partnership, women's
+  // entrepreneurs), quotes from a non-existent executive director and unconfirmed figures were removed.
   const pressReleases = [
     {
-      title: 'LDII Announces 2026 Global Conference Series',
-      date: 'January 15, 2025',
-      type: 'Press Release',
-      summary: 'Livelihood Development International Initiatives announces ambitious lineup of international conferences for 2026, including Global Shocks Global South Conference and Cultural Resilience One Planet Conference.',
-      content: `FOR IMMEDIATE RELEASE
-
-Toronto, ON – January 15, 2025 – Livelihood Development International Initiatives (LDII) today announced an ambitious series of international conferences scheduled for 2026, reinforcing its commitment to building global resilience and fostering international cooperation.
-
-The 2026 conference series includes:
-
-• Global Shocks Global South Conference – A premier international event bringing together over 1,000 delegates from across Africa, Asia, and Latin America to address systemic global challenges.
-
-• Cultural Resilience One Planet Conference (CROP) – November 2026 in Sydney, Australia, exploring the vital role of cultural heritage in building community resilience.
-
-• Nordic East Africa Business Economic Cooperation (NEABEC) – April 2026 in Helsinki, Finland, focusing on fintech, technology transfer, and trade partnerships.
-
-• Global Shocks Global Resilience Conference – September 2026 in Canada, addressing the full spectrum of global shocks and resilience strategies.
-
-"These conferences represent our commitment to bringing together diverse stakeholders to address the most pressing challenges facing our world," said Dr. Amara Okafor, Executive Director of LDII. "We believe that collaborative, inclusive dialogue is essential for building lasting resilience."
-
-For more information about the 2026 conference series, visit www.ldiinitiatives.org/events.
-
-###
-
-Media Contact:
-David Thompson
-Director of Communications
-info@ldiinitiatives.org
-admin@ldiinitiatives.org
-+1 647 656 3026`,
-      contact: 'David Thompson, Director of Communications'
-    },
-    {
-      title: 'LDII Reaches 100,000 Fruit Trees Milestone in Global Reforestation Initiative',
-      date: 'August 20, 2024',
-      type: 'Press Release',
-      summary: 'Historic environmental achievement as LDII\'s Global Tree Planting Initiative surpasses 100,000 fruit trees planted across 15 countries.',
-      content: `FOR IMMEDIATE RELEASE
-
-Toronto, ON – August 20, 2024 – Livelihood Development International Initiatives (LDII) today announced the achievement of a historic milestone: over 100,000 fruit trees have been planted through its Global Tree Planting Initiative.
-
-Key achievements of the initiative include:
-
-• 100,000+ fruit trees planted across 15 countries in Africa and North America
-• 5,000 green jobs created in rural communities
-• 50 community-managed forest reserves established
-• 250,000 tons of CO2 sequestered annually
-• Biodiversity corridors restored across 3 continents
-
-"This milestone represents years of dedicated work by our team, partners, and the communities we serve," said James Rodriguez, Climate Action Director at LDII. "But this is just the beginning. We are committed to scaling our reforestation efforts to address the climate crisis."
-
-The initiative goes beyond simple tree planting, integrating community development, climate education, and sustainable livelihood creation. Local communities are trained in forest management, agroforestry techniques, and carbon credit systems.
-
-###
-
-Media Contact:
-David Thompson
-Director of Communications
-info@ldiinitiatives.org
-admin@ldiinitiatives.org
-+1 647 656 3026`,
-      contact: 'David Thompson, Director of Communications'
-    },
-    {
-      title: '2nd International Post-COVID-19 Conference Concludes with Historic Outcomes',
+      title: '2nd International Post-COVID-19 Conference Held in Brampton',
       date: 'September 12, 2025',
       type: 'Press Release',
-      summary: 'Conference in Brampton produces Brampton Declaration on Global Resilience, adopted by 35 nations, with $50 million in funding commitments.',
+      summary: 'The 2nd International Post-COVID-19 Conference was held at the Pearson Convention Centre in Brampton, Ontario, from September 8 to 10, 2025.',
       content: `FOR IMMEDIATE RELEASE
 
-Brampton, ON – September 12, 2025 – The 2nd International Post-COVID-19 Conference, held at the Pearson Convention Centre from September 8 to 10, 2025, concluded with outcomes that will shape global resilience efforts for years to come. Convened under the theme Economic Damages from Global Shocks: Building Resilience for the Future, the conference brought together partners, policymakers, researchers and community leaders.
+Brampton, ON – September 12, 2025 – The 2nd International Post-COVID-19 Conference, held at the Pearson Convention Centre from September 8 to 10, 2025, brought together partners, policymakers, researchers and community leaders under the theme Economic Damages from Global Shocks: Building Resilience for the Future.
 
-Conference Highlights:
-
-• 500+ delegates from 40+ countries participated
-• Brampton Declaration on Global Resilience adopted by 35 nations
-• International Post-COVID Recovery Network established
-• $50 million in funding commitments secured
-• 20 comprehensive policy recommendations developed
-• 35 new international partnerships formed
-
-"This conference has exceeded our expectations in every way," said Dr. Amara Okafor, Executive Director of LDII. "The Brampton Declaration represents a new framework for international cooperation in addressing global shocks."
-
-Discussions over the three days focused on how communities, businesses and institutions can better prepare for and respond to future shocks. The goal was to protect livelihoods and strengthen partnerships across borders.
+Over three days, discussions focused on how pandemics, natural disasters and financial crises cut across trade, finance and industry, and on how communities, businesses and institutions can better prepare for and respond to future shocks, protecting livelihoods and strengthening partnerships across borders.
 
 Local Impact. Global Partnerships.
 
-The full conference report and Brampton Declaration are available at www.ldiinitiatives.org/events.
+Photos from the conference are available at www.ldiinitiatives.org/events/gallery.
 
 ###
 
-Media Contact:
-David Thompson
-Director of Communications
+Media contact:
+LDII Media Relations
 info@ldiinitiatives.org
-admin@ldiinitiatives.org
 +1 647 656 3026`,
-      contact: 'David Thompson, Director of Communications'
+      contact: 'LDII Media Relations'
     },
     {
-      title: 'LDII Partners with UN Development Programme on Global Resilience Initiative',
-      date: 'November 30, 2024',
+      title: 'LDII Announces 2026 Global Conference Series',
+      date: '2025',
       type: 'Press Release',
-      summary: 'Strategic partnership will enhance global capacity for crisis preparedness and response coordination across 15 priority countries.',
+      summary: 'Livelihood Development International Initiatives announces its lineup of international conferences for 2026, including the Global Shocks Global South Conference and the Cultural Resilience One Planet Conference.',
       content: `FOR IMMEDIATE RELEASE
 
-Toronto, ON – November 30, 2024 – Livelihood Development International Initiatives (LDII) and the United Nations Development Programme (UNDP) today announced a strategic partnership to enhance global capacity for crisis preparedness and response coordination.
+Toronto, ON – Livelihood Development International Initiatives (LDII) announced a series of international conferences scheduled for 2026, reinforcing its commitment to building global resilience and fostering international cooperation.
 
-Partnership Focus Areas:
+The 2026 conference series includes:
 
-• Pandemic preparedness and health systems strengthening
-• Climate adaptation and resilience building
-• Economic recovery and inclusive growth
-• Digital inclusion and technology transfer
+• Global Shocks Global South Conference – addressing systemic global challenges with participants from across Africa, Asia and Latin America.
 
-The partnership will initially focus on 15 priority countries across Africa and Asia, leveraging UNDP's extensive network and LDII's community-based expertise.
+• Cultural Resilience One Planet Conference (CROP) – November 2026 in Sydney, Australia, exploring the role of cultural heritage in building community resilience.
 
-"This partnership represents a significant step forward in our mission to build global resilience," said Dr. Amara Okafor, Executive Director of LDII. "By combining UNDP's global reach with our community-centered approach, we can achieve greater impact."
+• Nordic East Africa Business Economic Cooperation (NEABEC) – April 2026 in Helsinki, Finland, focusing on fintech, technology transfer and trade partnerships.
+
+• Global Shocks Global Resilience Conference – September 2026 in Canada, addressing the full spectrum of global shocks and resilience strategies.
+
+For more information, visit www.ldiinitiatives.org/events.
 
 ###
 
-Media Contact:
-David Thompson
-Director of Communications
+Media contact:
+LDII Media Relations
 info@ldiinitiatives.org
-admin@ldiinitiatives.org
 +1 647 656 3026`,
-      contact: 'David Thompson, Director of Communications'
-    },
-    {
-      title: 'Women\'s Economic Empowerment Initiative Reaches 15,000 Entrepreneurs',
-      date: 'September 5, 2024',
-      type: 'Press Release',
-      summary: 'LDII\'s flagship women\'s program achieves milestone with 15,000 entrepreneurs supported, 30,000 jobs created, and 95% loan repayment rate.',
-      content: `FOR IMMEDIATE RELEASE
-
-Toronto, ON – September 5, 2024 – Livelihood Development International Initiatives (LDII) today announced that its Women's Economic Empowerment Initiative has reached a significant milestone, having supported 15,000 women entrepreneurs across Africa.
-
-Program Achievements:
-
-• 15,000 women entrepreneurs supported
-• $25 million+ in microfinance distributed
-• 95% loan repayment rate achieved
-• 30,000+ jobs created
-• 150% average income increase for participants
-
-"Women are powerful agents of change in their communities," said Grace Nakato, Women's Programs Director at LDII. "When we invest in women entrepreneurs, we invest in families, communities, and entire economies."
-
-The initiative provides comprehensive business training, microfinance access, and ongoing mentorship to help women start and grow sustainable businesses.
-
-###
-
-Media Contact:
-David Thompson
-Director of Communications
-info@ldiinitiatives.org
-admin@ldiinitiatives.org
-+1 647 656 3026`,
-      contact: 'David Thompson, Director of Communications'
+      contact: 'LDII Media Relations'
     }
   ];
 

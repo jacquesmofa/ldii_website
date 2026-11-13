@@ -94,36 +94,7 @@ export default function PovertyEradicationPage() {
     }
   ];
 
-  const successStories = [
-    {
-      title: 'Women\'s Cooperative Initiative',
-      location: 'Rural Uganda',
-      description: 'Empowered 500 women through agricultural cooperatives, increasing household income by 300% and achieving food security.',
-      impact: '500 women, 2,000+ family members',
-      image: 'https://readdy.ai/api/search-image?query=African%20women%20farmers%20working%20together%20in%20agricultural%20cooperative%2C%20successful%20harvest%2C%20community%20empowerment%2C%20rural%20development%2C%20smiling%20faces%20showing%20prosperity%20and%20hope%2C%20professional%20documentary%20photography&width=600&height=400&seq=poverty-story-1&orientation=landscape'
-    },
-    {
-      title: 'Youth Skills Training Program',
-      location: 'Toronto, Canada',
-      description: 'Provided vocational training to 300 at-risk youth, achieving 85% employment rate within six months of program completion.',
-      impact: '300 youth employed',
-      image: 'https://readdy.ai/api/search-image?query=Diverse%20Canadian%20youth%20in%20vocational%20training%20workshop%2C%20learning%20technical%20skills%2C%20modern%20training%20facility%2C%20instructor%20guidance%2C%20hopeful%20expressions%2C%20professional%20photography&width=600&height=400&seq=poverty-story-2&orientation=landscape'
-    },
-    {
-      title: 'Microfinance for Entrepreneurs',
-      location: 'East Africa',
-      description: 'Provided microloans to 1,000 small business owners, creating 3,500 jobs and strengthening local economies.',
-      impact: '1,000 businesses, 3,500 jobs',
-      image: 'https://readdy.ai/api/search-image?query=African%20small%20business%20owners%20and%20entrepreneurs%20in%20marketplace%2C%20successful%20shops%20and%20vendors%2C%20economic%20activity%2C%20community%20prosperity%2C%20professional%20documentary%20photography&width=600&height=400&seq=poverty-story-3&orientation=landscape'
-    }
-  ];
 
-  const impactMetrics = [
-    { number: '50,000+', label: 'People Lifted from Poverty' },
-    { number: '2,500+', label: 'Businesses Supported' },
-    { number: '15,000+', label: 'Jobs Created' },
-    { number: '30+', label: 'Communities Transformed' }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -230,61 +201,7 @@ export default function PovertyEradicationPage() {
         </div>
       </section>
 
-      {/* Success Stories */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Stories of Transformation</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real people, real change. See how our programs are transforming lives and communities.
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {successStories.map((story, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <img
-                  src={story.image}
-                  alt={story.title}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-blue-600"></i>
-                    <span className="text-blue-600 font-semibold">{story.location}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{story.title}</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">{story.description}</p>
-                  <div className="bg-blue-50 rounded-lg p-3">
-                    <p className="text-blue-800 font-semibold text-sm">Impact: {story.impact}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Metrics */}
-      <section className="py-20 bg-gradient-to-br from-[#0A1E3D] to-[#0D2847] text-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6">Our Impact</h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Measurable results in the fight against poverty and inequality.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {impactMetrics.map((metric, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl font-bold text-[#00D9FF] mb-2">{metric.number}</div>
-                <div className="font-medium">{metric.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section with Background */}
       <section className="relative py-20 overflow-hidden">

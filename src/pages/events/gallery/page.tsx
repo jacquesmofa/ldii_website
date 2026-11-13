@@ -29,7 +29,7 @@ import MasonryGrid from './components/MasonryGrid';
 // Build category tabs from your existing galleryEvents array
 const galleryCategories = galleryEvents.map((event) => ({
   id: event.slug,
-  name: event.title,
+  name: event.shortTitle || event.title,
 }));
 
 // Flatten all event images into one array with category tags
@@ -159,7 +159,7 @@ const GalleryPage = () => {
     return (
       <button
         onClick={() => enterCategory(cat.id)}
-        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap cursor-pointer ${
+        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 max-w-full sm:whitespace-nowrap cursor-pointer ${
           isActive
             ? 'bg-[#0A1E3D] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-green-300'

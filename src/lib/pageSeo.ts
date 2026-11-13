@@ -137,32 +137,14 @@ export const PAGE_SEO: Record<string, SeoEntry> = {
   '/impact': {
     title: 'Impact | LDII Results and Reach',
     description:
-      'The measurable results of LDII work: people trained, jobs secured, delegations hosted and community projects launched with our partners.',
+      'The conferences, delegations and diplomatic engagements LDII has delivered between Africa and Canada, each documented with real photographs.',
     label: 'Impact',
   },
   '/impact/achievements': {
     title: 'Achievements | LDII Milestones',
     description:
-      'Key LDII milestones and achievements delivered with African missions, Canadian institutions and community partners.',
+      'LDII milestones: the International Post-COVID conferences in Toronto and Brampton, and delegations to Greater Sudbury, South Africa and Angola.',
     label: 'Achievements',
-  },
-  '/impact/success-stories': {
-    title: 'Success Stories | LDII Participant Outcomes',
-    description:
-      'Stories from the young people, trainees and partners whose work with LDII changed the direction of their careers and communities.',
-    label: 'Success Stories',
-  },
-  '/impact/annual-reports': {
-    title: 'Annual Reports | LDII Accountability',
-    description:
-      'Download LDII annual reports covering programme delivery, partnerships, governance and how funds were used.',
-    label: 'Annual Reports',
-  },
-  '/impact/metrics': {
-    title: 'Metrics | LDII Programme Data',
-    description:
-      'The indicators LDII tracks across its youth, capacity training and international exchange programmes, and what the numbers show.',
-    label: 'Metrics',
   },
 
   '/events': {

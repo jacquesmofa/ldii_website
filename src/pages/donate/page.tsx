@@ -491,7 +491,7 @@ export default function DonatePage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Global Reach</h3>
               <p className="text-gray-600">
-                Join thousands of donors worldwide who are making a difference in over 25 countries across the globe.
+                Your gift supports our conferences, exchanges and youth and community programmes.
               </p>
             </div>
           </div>

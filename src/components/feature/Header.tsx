@@ -60,9 +60,7 @@ export default function Header() {
       dropdown: [
         { title: 'Our Impact', href: '/impact' },
         { title: 'Achievements', href: '/impact/achievements' },
-        { title: 'Success Stories', href: '/impact/success-stories' },
-        { title: 'Annual Reports', href: '/impact/annual-reports' },
-        { title: 'Metrics', href: '/impact/metrics' }
+
       ]
     },
     {

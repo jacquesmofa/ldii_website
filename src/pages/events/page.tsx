@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { getUpcomingEvents, getPastEvents } from '@/mocks/eventsData';
 import { submitFormToInbox } from '@/lib/web3forms';
+import { newsArticles as allNews } from '../../mocks/newsData';
 
 export default function EventsPage() {
   const [subscribeEmail, setSubscribeEmail] = useState('');
@@ -30,36 +31,7 @@ export default function EventsPage() {
   const upcomingEvents = getUpcomingEvents();
   const pastEvents = getPastEvents();
 
-  const newsArticles = [
-    {
-      title: 'LDII Announces 2026 Conference Series: Global Shocks and Cultural Resilience',
-      date: 'January 15, 2025',
-      category: 'Conference News',
-      excerpt: 'Exciting lineup of international conferences planned for 2026, including the Global Shocks Global South Conference and Cultural Resilience Conference.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20news%20announcement%20with%20LDII%20logo%20and%202026%20conference%20series%20imagery%2C%20modern%20press%20release%20design%2C%20international%20conference%20promotion%20materials%2C%20high-quality%20graphic%20design&width=400&height=300&seq=news-1&orientation=landscape'
-    },
-    {
-      title: '2nd International Post-COVID-19 Conference Explores Economic Damages from Global Shocks',
-      date: 'September 15, 2025',
-      category: 'Event Report',
-      excerpt: 'Partners, policymakers and researchers met in Brampton to examine the economic damage caused by global shocks and how to build resilience for the future.',
-      image: 'https://readdy.ai/api/search-image?query=Successful%20international%20conference%20with%20diverse%20delegates%2C%20conference%20highlights%20and%20achievements%2C%20professional%20event%20documentation%2C%20celebration%20of%20conference%20success&width=400&height=300&seq=news-2&orientation=landscape'
-    },
-    {
-      title: 'New Research on Climate Resilience Published',
-      date: 'December 20, 2024',
-      category: 'Research',
-      excerpt: 'Comprehensive study reveals key strategies for building community resilience against climate-related shocks.',
-      image: 'https://readdy.ai/api/search-image?query=Climate%20research%20publication%20with%20scientific%20charts%20and%20graphs%2C%20environmental%20data%20visualization%2C%20professional%20academic%20publication%20design%2C%20research%20findings%20presentation&width=400&height=300&seq=news-3&orientation=landscape'
-    },
-    {
-      title: 'Partnership Agreement with UN Development Programme',
-      date: 'November 30, 2024',
-      category: 'Partnerships',
-      excerpt: 'Strategic partnership will enhance global capacity for crisis preparedness and response coordination.',
-      image: 'https://readdy.ai/api/search-image?query=Professional%20partnership%20signing%20ceremony%20between%20international%20organizations%2C%20diplomatic%20handshake%2C%20UN%20and%20LDII%20representatives%2C%20formal%20agreement%20signing%2C%20high-quality%20event%20photography&width=400&height=300&seq=news-4&orientation=landscape'
-    }
-  ];
+  const newsArticles = allNews.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-white">
@@ -68,7 +40,7 @@ export default function EventsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Dynamic%20international%20conference%20with%20diverse%20global%20participants%2C%20modern%20event%20venue%20with%20multiple%20screens%20and%20presentations%2C%20professional%20conference%20photography%2C%20multicultural%20audience%20engagement%2C%20high-resolution%20image%20with%20excellent%20lighting&width=1920&height=800&seq=events-hero&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/Participants2_omtkbj.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -234,10 +206,10 @@ export default function EventsPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{article.title}</h3>
                   <p className="text-gray-700 leading-relaxed mb-4">{article.excerpt}</p>
                   <a
-                    href={`/news/${article.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="text-green-600 hover:text-green-700 font-semibold cursor-pointer"
+                    href={article.link}
+                    className="text-green-700 hover:text-green-800 font-semibold cursor-pointer"
                   >
-                    Read More →
+                    {article.linkLabel} →
                   </a>
                 </div>
               </div>

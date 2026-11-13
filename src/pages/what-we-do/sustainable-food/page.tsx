@@ -94,29 +94,6 @@ export default function SustainableFoodPage() {
     }
   ];
 
-  const projects = [
-    {
-      title: 'Climate-Smart Agriculture Program',
-      location: 'East Africa',
-      description: 'Training 5,000 smallholder farmers in drought-resistant crops and water conservation, increasing yields by 40% despite climate challenges.',
-      beneficiaries: '5,000 farmers, 25,000 people',
-      image: 'https://readdy.ai/api/search-image?query=African%20smallholder%20farmers%20using%20climate-smart%20agriculture%20techniques%2C%20drought-resistant%20crops%2C%20water%20conservation%2C%20successful%20harvest%2C%20community%20training%2C%20professional%20documentary%20photography&width=600&height=400&seq=food-project-1&orientation=landscape'
-    },
-    {
-      title: 'Urban Agriculture Initiative',
-      location: 'Canadian Cities',
-      description: 'Establishing community gardens and rooftop farms in urban areas, providing fresh produce to 10,000 residents and creating green spaces.',
-      beneficiaries: '10,000 urban residents',
-      image: 'https://readdy.ai/api/search-image?query=Urban%20community%20garden%20in%20Canadian%20city%2C%20diverse%20people%20growing%20vegetables%2C%20rooftop%20farming%2C%20fresh%20produce%2C%20sustainable%20urban%20agriculture%2C%20professional%20photography&width=600&height=400&seq=food-project-2&orientation=landscape'
-    },
-    {
-      title: 'School Feeding Program',
-      location: 'Rural Communities',
-      description: 'Providing nutritious meals to 15,000 school children daily, improving attendance, health outcomes, and academic performance.',
-      beneficiaries: '15,000 children',
-      image: 'https://readdy.ai/api/search-image?query=School%20children%20receiving%20nutritious%20meals%20in%20rural%20school%20cafeteria%2C%20healthy%20food%2C%20happy%20children%20eating%20together%2C%20community%20support%2C%20professional%20documentary%20photography&width=600&height=400&seq=food-project-3&orientation=landscape'
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -223,40 +200,6 @@ export default function SustainableFoodPage() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Projects in Action</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our food security initiatives are creating lasting impact in communities worldwide.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover object-top"
-                />
-                <div className="p-6">
-                  <div className="flex items-center space-x-2 mb-3">
-                    <i className="ri-map-pin-line w-5 h-5 flex items-center justify-center text-emerald-600"></i>
-                    <span className="text-emerald-600 font-semibold">{project.location}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{project.title}</h3>
-                  <p className="text-gray-700 leading-relaxed mb-4">{project.description}</p>
-                  <div className="bg-emerald-50 rounded-lg p-3">
-                    <p className="text-emerald-800 font-semibold text-sm">Impact: {project.beneficiaries}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section with Background */}
       <section className="relative py-20 overflow-hidden">

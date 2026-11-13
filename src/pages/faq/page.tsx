@@ -24,7 +24,7 @@ export default function FAQPage() {
     {
       category: 'General',
       question: 'How long has LDII been operating?',
-      answer: 'LDII has over 10 years of experience in international development and community empowerment. During this time, we have served 250+ communities, implemented 45+ active projects, and partnered with 120+ global organizations.'
+      answer: 'LDII has convened the International Post-COVID conferences in Toronto (July 2024) and Brampton (September 2025), and leads delegations and exchanges between Africa and Canada. See Our Impact for the full record.'
     },
     {
       category: 'Programs',

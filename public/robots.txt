@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /admin/config.yml
 
-Sitemap: https://wfljnj.readdy.co/sitemap.xml
+Sitemap: https://ldiinitiatives.org/sitemap.xml

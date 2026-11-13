@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { submitFormToInbox } from '@/lib/web3forms';
+import { getPastEvents } from '../../../mocks/eventsData';
 
 export default function MediaInquiriesPage() {
   const [formData, setFormData] = useState({
@@ -50,19 +51,19 @@ export default function MediaInquiriesPage() {
       title: 'Press Releases',
       description: 'Latest announcements and official statements',
       icon: 'ri-newspaper-line',
-      link: '/events/news/press-releases'
+      link: '/events/press-releases'
     },
     {
       title: 'Media Kit',
-      description: 'Logos, photos, and brand guidelines',
+      description: 'Logos and photos, sent on request',
       icon: 'ri-folder-image-line',
-      link: '#'
+      link: 'mailto:info@ldiinitiatives.org?subject=Media%20kit%20request'
     },
     {
-      title: 'Annual Reports',
-      description: 'Comprehensive impact and financial reports',
+      title: 'Our Impact',
+      description: 'The conferences and engagements LDII has delivered',
       icon: 'ri-file-chart-line',
-      link: '/impact/annual-reports'
+      link: '/impact'
     },
     {
       title: 'Photo Gallery',
@@ -72,23 +73,12 @@ export default function MediaInquiriesPage() {
     }
   ];
 
-  const recentNews = [
-    {
-      title: 'LDII Announces Global Shocks Conference 2025',
-      date: 'March 15, 2024',
-      image: 'https://readdy.ai/api/search-image?query=international%20conference%20announcement%20with%20diverse%20delegates%2C%20professional%20event%20setting%2C%20global%20cooperation%20theme&width=600&height=400&seq=news1&orientation=landscape'
-    },
-    {
-      title: 'New Partnership with World Bank for Climate Adaptation',
-      date: 'March 10, 2024',
-      image: 'https://readdy.ai/api/search-image?query=partnership%20signing%20ceremony%20between%20international%20organizations%2C%20professional%20handshake%2C%20climate%20action%20theme&width=600&height=400&seq=news2&orientation=landscape'
-    },
-    {
-      title: 'Youth Empowerment Program Reaches 75,000 Participants',
-      date: 'March 5, 2024',
-      image: 'https://readdy.ai/api/search-image?query=diverse%20youth%20group%20celebrating%20achievement%20in%20empowerment%20program%2C%20happy%20participants%2C%20success%20milestone&width=600&height=400&seq=news3&orientation=landscape'
-    }
-  ];
+  const recentNews = getPastEvents().slice(0, 3).map((event) => ({
+    title: event.title,
+    date: event.displayDate,
+    image: event.image,
+    link: event.linkUrl || '/events/news',
+  }));
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -387,8 +377,8 @@ export default function MediaInquiriesPage() {
                 <div className="p-6">
                   <div className="text-sm text-[#00D9FF] font-semibold mb-2">{news.date}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{news.title}</h3>
-                  <a href="/events/news" className="text-[#00D9FF] hover:text-[#00C4E6] font-semibold inline-flex items-center">
-                    Read More
+                  <a href={news.link} className="text-[#0A1E3D] hover:text-teal-700 font-semibold inline-flex items-center">
+                    See the photos
                     <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center ml-1"></i>
                   </a>
                 </div>

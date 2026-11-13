@@ -228,10 +228,10 @@ export default function FocusAreasPage() {
               Explore Partnerships
             </a>
             <a
-              href="/research"
+              href="/impact"
               className="bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-green-800 transition-colors cursor-pointer whitespace-nowrap"
             >
-              View Our Research
+              See Our Impact
             </a>
           </div>
         </div>

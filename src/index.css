@@ -663,3 +663,6 @@
   opacity: 0;
   pointer-events: none;
 }
+
+/* Never let a decorative element widen the page on phones */
+html, body { overflow-x: clip; }
