@@ -103,7 +103,7 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Connect with our global team to explore collaboration opportunities and learn more about our work.
+            Contact our team to explore collaboration opportunities and learn more about our work.
           </p>
         </div>
       </section>
@@ -205,7 +205,7 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <form data-readdy-form id="contact-form" onSubmit={handleContactSubmit} className="space-y-6 relative">
+            <form id="contact-form" onSubmit={handleContactSubmit} className="space-y-6 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -403,7 +403,7 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
-            <form data-readdy-form id="media-form" onSubmit={handleMediaSubmit} className="space-y-6 relative">
+            <form id="media-form" onSubmit={handleMediaSubmit} className="space-y-6 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -534,7 +534,7 @@ export default function ContactPage() {
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
-            <form data-readdy-form id="partnership-form" onSubmit={handlePartnershipSubmit} className="space-y-6 relative">
+            <form id="partnership-form" onSubmit={handlePartnershipSubmit} className="space-y-6 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

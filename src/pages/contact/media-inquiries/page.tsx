@@ -152,7 +152,7 @@ export default function MediaInquiriesPage() {
 
             <div className="bg-gray-50 rounded-2xl p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Submit a Media Inquiry</h3>
-              <form onSubmit={handleSubmit} data-readdy-form id="media-inquiry-form" className="space-y-4 relative">
+              <form onSubmit={handleSubmit} id="media-inquiry-form" className="space-y-4 relative">
                 <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>

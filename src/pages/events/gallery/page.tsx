@@ -212,7 +212,7 @@ const GalleryPage = () => {
               className="mt-5 inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white/80 text-sm"
             >
               <i className="ri-image-line w-4 h-4 flex items-center justify-center"></i>
-              <span>{galleryImages.length}+ photographs across {galleryCategories.length} collections</span>
+              <span>{galleryImages.length} photographs across {galleryCategories.length} collections</span>
             </motion.div>
           </div>
         </div>

@@ -107,43 +107,43 @@ export const featuredImages: GalleryImage[] = [
   },
   {
     url: cld('2nd_Post_covid_cvdox1'),
-    title: '2nd International Post-COVID Conference - Official Banner',
+    title: 'Conference banner · 2nd International Post-COVID-19 Conference',
     width: 1400,
     height: 900
   },
   {
     url: cld('conferencepstcovid25_qqjep8'),
-    title: 'Conference Proceedings - Brampton 2025',
+    title: 'Conference session · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1200,
     height: 800
   },
   {
     url: cld('Panel_discussion1_ujy3df'),
-    title: 'Expert Panel Discussion on Global Health Resilience',
+    title: 'Panel session · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('HE_Ambassador_OF_KENYA_slpwkj'),
-    title: 'Diplomatic Engagement - His Excellency Ambassador of Kenya',
+    title: 'Kenya\'s High Commissioner to Canada at the 2nd International Post-COVID-19 Conference',
     width: 900,
     height: 1200
   },
   {
     url: cld('president_LDII_xjy7xj'),
-    title: 'LDII President - Opening Address',
+    title: 'Ronald Lwabaayi, President of LDII, addressing the conference',
     width: 900,
     height: 1200
   },
   {
     url: cld('Brampton_counci_kryhsj'),
-    title: 'Brampton City Council Partnership Ceremony',
+    title: 'LDII at Brampton City Hall',
     width: 1200,
     height: 900
   },
   {
     url: cld('Dr_victor_bkpass'),
-    title: 'Keynote Speaker - Dr. Victor',
+    title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -161,7 +161,7 @@ export const featuredImages: GalleryImage[] = [
   },
   {
     url: cld('Lwabaayi_Profile_ovqlxd'),
-    title: 'Leadership Profile - Ronald Robert Lwabaayi',
+    title: 'Ronald Lwabaayi, President of LDII',
     width: 900,
     height: 1200
   }

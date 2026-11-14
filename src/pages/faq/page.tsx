@@ -54,7 +54,7 @@ export default function FAQPage() {
     {
       category: 'Support',
       question: 'How can I support LDII?',
-      answer: 'You can make a pledge on our Donate page, volunteer, or partner with us. If you would like to give, email admin@ldiinitiatives.org and we will confirm the payment options and receipt details with you.'
+      answer: 'You can make a pledge on our Donate page, volunteer, or partner with us. If you would like to give, email admin@ldiinitiatives.org and we will confirm the payment options with you. LDII is a Canadian nonprofit, not a registered charity, so gifts are not eligible for a charitable tax receipt.'
     },
     {
       category: 'Events',

@@ -491,7 +491,7 @@ export const POSTS: Post[] = [
     excerpt:
       'AU6RG invited its members to the First International Post COVID-19 Conference, July 11–13, 2024, at the Metro Toronto Convention Centre, to shape a coordinated response to future global shocks.',
     body: [
-      'The African Union Sixth Region Global (AU6RG), which represents the African diaspora worldwide, invited its members to the First International Post COVID-19 Conference, held July 11–13, 2024, at the Metro Toronto Convention Centre.',
+      'The African Union Sixth Region Global (AU6RG), an organization of the African diaspora, invited its members to the First International Post COVID-19 Conference, held July 11–13, 2024, at the Metro Toronto Convention Centre.',
       'AU6RG described the conference as a platform for global experts to develop strategies for a coordinated response to future global shocks, and for diaspora voices to shape global policy after a pandemic that hit communities in the Global South hardest.',
       'Its announcement highlighted knowledge exchange between Global North and Global South experts, addressing inequities, inclusive policy for women, youth and the elderly, stronger health infrastructure, pandemic financing and equitable access to technology.',
     ],

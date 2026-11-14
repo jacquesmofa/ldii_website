@@ -118,7 +118,7 @@ export default function TermsOfServicePage() {
                 <li>All donations are voluntary and non-refundable unless required by law</li>
                 <li>Donations will be used to support LDII's mission and programs</li>
                 <li>We reserve the right to use donations where they are most needed</li>
-                <li>Tax receipts will be issued for eligible donations as required by law</li>
+                <li>LDII is not a registered charity; donations are acknowledged by email and are not eligible for charitable tax receipts</li>
                 <li>Recurring donations can be cancelled by contacting us</li>
               </ul>
 

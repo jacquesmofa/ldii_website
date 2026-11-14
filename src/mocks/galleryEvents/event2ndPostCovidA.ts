@@ -27,37 +27,37 @@ export const event2ndPostCovidA: GalleryEvent = {
     // --- OFFICIAL CONFERENCE BRANDING ---
     {
       url: cld('2nd_Post_covid_cvdox1'),
-      title: 'Official Conference Banner - 2nd International Post-COVID Conference',
+      title: 'Conference banner · 2nd International Post-COVID-19 Conference',
       width: 1400,
       height: 900
     },
     {
       url: cld('conferencepstcovid25_qqjep8'),
-      title: 'Conference Identity - Brampton 2025',
+      title: 'Conference branding · Brampton, September 2025',
       width: 1200,
       height: 800
     },
     {
       url: cld('crop2026_speaker_mpjaow'),
-      title: 'Featured Speaker Spotlight 2025',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('ldii_brampton_pckv6s'),
-      title: 'LDII Brampton Venue',
+      title: 'The venue · Pearson Convention Centre, Brampton',
       width: 1200,
       height: 900
     },
     {
       url: cld('ldii_brampton..._nyk3hf'),
-      title: 'Conference Venue Setup',
+      title: 'The venue set up for the conference · Brampton, September 2025',
       width: 1200,
       height: 800
     },
     {
       url: cld('ldiibrampton.._bxafjn'),
-      title: 'Brampton Conference Hall',
+      title: 'The conference hall · Pearson Convention Centre, Brampton',
       width: 1400,
       height: 900
     },
@@ -103,139 +103,139 @@ export const event2ndPostCovidA: GalleryEvent = {
     // --- SPEAKERS & DELEGATES ---
     {
       url: cld('Monica_Linares_p7vo5j'),
-      title: 'Speaker - Monica Linares',
+      title: 'Monica Linares at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Micheal_hhsp61'),
-      title: 'Delegate - Michael',
+      title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Micheal.2jpg_fd1wlk'),
-      title: 'Speaker Michael - Addressing the Assembly',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Mudaba_1_gtkq47'),
-      title: 'Delegate - Mudaba',
+      title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Jai_Paul_anvmov'),
-      title: 'Distinguished Guest - Jai Paul',
+      title: 'Jai Paul at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Jai_Paul_3_kxjcpf'),
-      title: 'Jai Paul - Panel Contribution',
+      title: 'Jai Paul on a panel · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_victor_bkpass'),
-      title: 'Keynote Speaker - Dr. Victor',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Kirenga_oeug7l'),
-      title: 'Expert Speaker - Dr. Kirenga',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Lawrence_2_efn0yp'),
-      title: 'Dr. Lawrence - Research Presentation',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Lawrence_gkp6i7'),
-      title: 'Dr. Lawrence - Session Chair',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Jamila_zmh6d6'),
-      title: 'Dr. Jamila - Health Systems Expert',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('DR_Girum_n_Dr_Jamila_zhw977'),
-      title: 'Dr. Girum and Dr. Jamila - Joint Presentation',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('DR_Girum4_riln3k'),
-      title: 'Dr. Girum - Key Insights',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('DR_Girum_ihz81w'),
-      title: 'Dr. Girum - Conference Delegate',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('DR_Maryline_ypkufx'),
-      title: 'Dr. Maryline - International Health Expert',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('DR_Angium_yo3fki'),
-      title: 'Dr. Angium - Policy Discussion',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Angium_1_gfwz6z'),
-      title: 'Dr. Angium - Research Findings',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Angium_2_nc47vt'),
-      title: 'Dr. Angium - Q&A Session',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('DR_Angium_3_dzhtrr'),
-      title: 'Dr. Angium - Closing Remarks',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Fathia_hxtqia'),
-      title: 'Dr. Fathia - Community Health Expert',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Dr_Fathia_2_jr3ctx'),
-      title: 'Dr. Fathia - Workshop Facilitator',
+      title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Don_zoo4oa'),
-      title: 'Delegate - Don',
+      title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('mami_kaya_wzm5aj'),
-      title: 'Delegate - Mami Kaya',
+      title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
       width: 900,
       height: 1200
     },

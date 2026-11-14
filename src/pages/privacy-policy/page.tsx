@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
 
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Fundraising and Donor Relations</h3>
               <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6 ml-4">
-                <li>Processing donations and issuing tax receipts</li>
+                <li>Processing donation pledges and acknowledging gifts</li>
                 <li>Managing donor relationships and stewardship</li>
                 <li>Analyzing donation patterns and preferences</li>
                 <li>Recognizing donors (with permission)</li>

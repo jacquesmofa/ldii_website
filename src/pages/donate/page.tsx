@@ -84,9 +84,9 @@ export default function DonatePage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
             <h2 className="font-display text-3xl font-semibold text-ldii-navy mb-3 text-center">Pledge a Donation</h2>
-            <p className="text-gray-700 text-center mb-8 max-w-2xl mx-auto">Tell us what you would like to give. We reply from admin@ldiinitiatives.org to confirm the payment details and receipt.</p>
+            <p className="text-gray-700 text-center mb-8 max-w-2xl mx-auto">Tell us what you would like to give. We reply from admin@ldiinitiatives.org to confirm the payment details.</p>
 
-            <form onSubmit={handleSubmit} data-readdy-form id="donation-pledge-form" className="space-y-8 relative">
+            <form onSubmit={handleSubmit} id="donation-pledge-form" className="space-y-8 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               {/* Donation Type */}
               <div>
@@ -371,7 +371,7 @@ export default function DonatePage() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="text-sm text-gray-700">
                   <i className="ri-file-text-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2 inline"></i>
-                  We will tell you by email what kind of receipt applies to your gift.
+                  LDII is a Canadian nonprofit organization, not a registered charity, so gifts are not eligible for a charitable tax receipt. We acknowledge every gift by email.
                 </p>
               </div>
 

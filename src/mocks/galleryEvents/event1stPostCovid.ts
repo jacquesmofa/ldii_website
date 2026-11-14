@@ -26,179 +26,179 @@ export const event1stPostCovid: GalleryEvent = {
   date: 'July 11–13, 2024',
   location: 'Metro Toronto Convention Centre, Toronto, Canada',
   description:
-    'LDII\'s inaugural international conference with the theme "Building Synergies and Resilience for Future Global Shocks." Held at the Metro Toronto Convention Centre, this landmark event brought together global health experts, policymakers, researchers, and community leaders focused on recovery strategies and pandemic preparedness.',
+    'LDII\'s first international conference, co-convened with the Intergovernmental Authority on Development (IGAD) at the Metro Toronto Convention Centre, July 11–13, 2024. Theme: Evaluating the Impact of COVID-19 on Humanity: Building Synergies and Resilience for Future Global Shocks.',
   images: [
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_blxfxa'),
-      title: 'Conference Opening - Toronto 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_7_aojyj2'),
-      title: 'Keynote Session - Day 1',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_6_xlootm'),
-      title: 'Panel Discussion - Global Recovery',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_5_mmxaob'),
-      title: 'Expert Presentation - Health Systems',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_4_u2rjhm'),
-      title: 'Workshop Session - Resilience Strategies',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_3_nzl81v'),
-      title: 'Delegate Engagement - Toronto',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_2_yq0s0v'),
-      title: 'Networking Reception - Metro Toronto Convention Centre',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_1_dunz02'),
-      title: 'Conference Hall Overview - Toronto 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.46_PM_xqjvab'),
-      title: 'Morning Plenary - July 11, 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.46_PM_3_v0vd7f'),
-      title: 'Breakout Session - Economic Recovery',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.46_PM_2_cduqgn'),
-      title: 'Collaborative Discussion - July 11',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.46_PM_1_onfuyb'),
-      title: 'Speaker Session - International Perspectives',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.45_PM_fg3u3m'),
-      title: 'Afternoon Session - July 11',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.45_PM_1_weatol'),
-      title: 'Q&A with Experts - Toronto 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.44_PM_x6g2nn'),
-      title: 'Day 2 Opening - July 12, 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.44_PM_3_nv27fh'),
-      title: 'Panel on Future Global Shocks',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.44_PM_2_qsj4lq'),
-      title: 'Synergies Workshop - July 12',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_4.02.44_PM_1_n6jony'),
-      title: 'Building Resilience - Group Exercise',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_g45oyq'),
-      title: 'International Delegates - Toronto',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_7_mmplhw'),
-      title: 'Conference Dinner - July 12 Evening',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_6_ukykbp'),
-      title: 'Networking Dinner - International Guests',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_5_dcf0nl'),
-      title: 'Cultural Exchange - Evening Event',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_4_guxe4k'),
-      title: 'Final Day - July 13, 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_3_tt6ugd'),
-      title: 'Closing Ceremony - Toronto 2024',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_2_mivwcp'),
-      title: 'Award Presentation - Closing Day',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.40_PM_1_lbmamp'),
-      title: 'Closing Remarks - Metro Toronto Convention Centre',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g'),
-      title: 'Group Photo - 1st International Post-COVID Conference',
+      title: 'Group photo · 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.39_PM_2_vttrvw'),
-      title: 'Final Handshakes - Conference Conclusion',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },
     {
       url: cld('WhatsApp_Image_2026-05-25_at_3.59.39_PM_1_ghv5eo'),
-      title: 'Farewell - International Delegates',
+      title: 'At the 1st International Post-COVID Conference · Toronto, July 2024',
       width: 900,
       height: 1200
     },

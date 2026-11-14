@@ -183,8 +183,8 @@ export default function PartnersPage() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Make Your Donation</h3>
-            <form data-readdy-form id="donation-form" onSubmit={handleDonationSubmit} className="space-y-6 relative">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Pledge a Donation</h3>
+            <form id="donation-form" onSubmit={handleDonationSubmit} className="space-y-6 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">Donation Type *</label>
@@ -280,7 +280,7 @@ export default function PartnersPage() {
                   disabled={busyForm === 'Partners Page Donation Form'}
                   className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors cursor-pointer whitespace-nowrap disabled:opacity-60"
                 >
-                  {busyForm === 'Partners Page Donation Form' ? 'Sending...' : 'Complete Donation'}
+                  {busyForm === 'Partners Page Donation Form' ? 'Sending...' : 'Send my pledge'}
                 </button>
               </div>
               {status && status.form === 'Partners Page Donation Form' && (
@@ -335,7 +335,7 @@ export default function PartnersPage() {
 
           <div className="bg-white rounded-2xl shadow-lg p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Volunteer Application</h3>
-            <form data-readdy-form id="volunteer-form" onSubmit={handleVolunteerSubmit} className="space-y-6 relative">
+            <form id="volunteer-form" onSubmit={handleVolunteerSubmit} className="space-y-6 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>

@@ -243,7 +243,7 @@ function News() {
           <div className="max-w-2xl">
             <Eyebrow>In the news</Eyebrow>
             <h2 id="in-the-news" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">
-              What our partners say about our work
+              LDII in the news
             </h2>
           </div>
           <Link to="/events/news" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">

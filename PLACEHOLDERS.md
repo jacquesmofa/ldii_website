@@ -48,12 +48,27 @@ Also removed: partner counts "15+ government, 25+ NGOs, 30+ private sector, 10+ 
    - Global Shocks Global South Conference 2026, NEABEC 2026 (Helsinki), Global Shocks Global Resilience Conference 2026
    - CROP 2027, Ontario (only known from the old template text)
 2. The three November 2026 albums: exact days and cities for Canada–South Africa and Angola?
-3. Green "LDII" wordmark logo (named in the International Focus brief): please send the file (SVG or PNG). The site still uses the round logo.
-4. President profile: "Founder & President", "Researcher for the World Bank", "chairman of Climate Change Action of East Africa", University of British Columbia, Toronto and Brampton Boards of Trade. Please confirm each line with Ronald.
-5. Charity status: is LDII a registered charity that issues tax receipts? The site says nothing about receipts until confirmed.
+3. Logo: the round logo stays in the header on purpose (the wide wordmark takes too much space). Confirmed 14 Nov.
+4. President profile: Founder, World Bank researcher, chairman of Climate Change Action of East Africa, University of British Columbia: confirmed by Jacques 14 Nov. Still to confirm before funders read it: "East Africa Climate Summit in Nairobi (2023) with MOUs", "trade delegations and technology pilot agreements valued at over $10M CAD", "100,000+ fruit trees planted", "250 global delegates", "1st International Interfaith Multicultural Memorial (2024)".
+5. Charity status: LDII is NOT a registered charity (confirmed 14 Nov). Donate page, FAQ and Terms now say gifts are not eligible for a charitable tax receipt.
 6. Donations: should we add a real payment option (e.g. a donation platform), or keep the email pledge plus e-Transfer?
 7. Programme photos: the local programmes use the best real photos available (conference, Brampton council, offices). Real photos of newcomer, youth and seniors activities would be better.
 8. Photos in the Cloudinary "assets" folder could not be browsed (console login needed). If there are newer pictures, send the folder or a CSV export.
 
 ## Forms
 All forms post to Web3Forms (key in `src/lib/web3forms.ts`). Send a test message from each form after deploy and confirm it reaches admin@ldiinitiatives.org.
+
+## Audit for funder and partner risk (14 Nov 2026)
+Changed:
+- Photo captions no longer claim partnerships, signings, alliances or awards nobody confirmed (Brampton City Council "Official Partnership / Signing Ceremony / Award Presentation", "Iftika - Strategic Partnership Signing", "DEI Bio-Pharma - Strategic Alliance", "Press Partnership", "Angola Partnership"…). First-name-only or uncertain names ("Dr. Angium", "Iftika", "Mudaba", "Don", "Mami Kaya", "Barcey/Bracey") replaced by neutral captions. Kenya's head of mission is a High Commissioner, not an Ambassador. 1st-conference captions that invented sessions, dinners and awards are neutral now.
+- Album "Diplomatic Engagements & Strategic Partnerships" renamed "Diplomatic Engagements".
+- President page: "actively lobbies … to influence public policy" removed (lobbying has legal registration rules in Canada); "Proposed Citation" block removed (award-nomination text); "ecomuseums / non-oil GDP" bullet removed (from another context); "Toronto Region Board of Trade" spelled correctly; "Canada's largest business networks" softened.
+- Mining page: no longer quotes the Uganda High Commission by name; "federally incorporated" replaced by "Canadian nonprofit organization" until the incorporation type is confirmed.
+- AU6RG described as "an organization of the African diaspora" (it is not an African Union body).
+- Upcoming events wording no longer promises "summits" and "exclusive opportunities".
+Open:
+- "Over 10 years of experience": a funder will compare this with LDII's incorporation date. Please confirm the year LDII was incorporated (an old version of the site said 2020).
+- Local programmes are written in the present tense ("We help…"). Funders will ask for participant numbers or reports: keep a simple record of activities and results.
+- Parade story: "plan to extend the annual event to Uganda, the UK, the USA, Italy and Spain" and "representatives of RBC" are public statements. Keep only if still true.
+- Names in captions can be added back once spelled and titled correctly (e.g. Fathia A. Alwan, IGAD).
+- Forms are sent by Web3Forms to the inbox registered with the key in `src/lib/web3forms.ts` (Jacques: info@ldiinitiatives.org). The site shows admin@ldiinitiatives.org as the public address.

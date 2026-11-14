@@ -28,130 +28,131 @@ import type { GalleryEvent } from '../galleryTypes';
 
 export const eventDiplomatic: GalleryEvent = {
   slug: 'diplomatic-engagements-partnerships',
-  title: 'Diplomatic Engagements & Strategic Partnerships',
+  title: 'Diplomatic Engagements',
+  shortTitle: 'Diplomatic Engagements',
   year: '2024–2025',
   date: '2024–2025',
   location: 'Canada & International',
   description:
-    'A curated collection of LDII\'s diplomatic engagements and strategic partnerships with international delegations, government representatives, and organizational partners. These meetings strengthen our global network and advance our mission of international cooperation and community resilience.',
+    'Meetings between LDII and diplomatic missions, delegations and organizations in Canada, including the High Commissions of Kenya and South Africa.',
   images: [
     {
       url: cld('HE_Ambassador_OF_KENYA_slpwkj'),
-      title: 'His Excellency - Ambassador of Kenya Official Visit',
+      title: 'Kenya\'s High Commissioner to Canada with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('HE_Ambassador_OF_KENYA5_pfgzlv'),
-      title: 'Kenyan Ambassador - Diplomatic Exchange Ceremony',
+      title: 'Kenya\'s High Commissioner to Canada with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('HE_Ambassador_OF_KENYA.4JPG_ub2ull'),
-      title: 'Kenyan High Commission - Partnership Dialogue',
+      title: 'Kenya High Commission dialogue with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_gc4ksu'),
-      title: 'Diplomatic Delegate Iftika - Arrival Ceremony',
+      title: 'Diplomatic guest with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_2_ka6io7'),
-      title: 'Iftika - Bilateral Cooperation Discussion',
+      title: 'Diplomatic guest in discussion with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_3_oix5fe'),
-      title: 'Iftika - Strategic Partnership Signing',
+      title: 'Diplomatic guest with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_4_izigrc'),
-      title: 'Iftika - Closing Diplomatic Session',
+      title: 'Diplomatic guest with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('H_E_of_Kenya_n_Jai_Paul_rvtdln'),
-      title: 'His Excellency of Kenya with Jai Paul - Official Meeting',
+      title: 'Kenya\'s High Commissioner to Canada with Jai Paul · Brampton, September 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('H_E_Kenyan_A3_pkpitk'),
-      title: 'Kenyan Diplomatic Delegation - Group Photo',
+      title: 'Kenya High Commission delegation, group photo',
       width: 1200,
       height: 900
     },
     {
       url: cld('H_E_Kenyan_A_s49voa'),
-      title: 'Kenyan High Commission - Engagement Session',
+      title: 'Kenya High Commission dialogue with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Brampton_Board_of_Trade_noll70'),
-      title: 'Brampton Board of Trade - Business Partnership',
+      title: 'LDII and the Brampton Board of Trade · Brampton, Ontario',
       width: 1200,
       height: 900
     },
     {
       url: cld('Albertine_Angola_dlaepr'),
-      title: 'Angola Partnership - Representative Albertine',
+      title: 'Representative of the Angola delegation · Brampton, September 2025',
       width: 900,
       height: 1200
     },
     {
       url: cld('Albertine_Angola.2jpg_qvcq24'),
-      title: 'Albertine - Angola Delegation Official',
+      title: 'Representative of the Angola delegation',
       width: 900,
       height: 1200
     },
     {
       url: cld('angola_mcipj6'),
-      title: 'Angola Delegation - Partnership Meeting',
+      title: 'Meeting with the Angola delegation',
       width: 1200,
       height: 900
     },
     {
       url: cld('Dei_Bio_phama_prssgi'),
-      title: 'DEI Bio-Pharma - Strategic Alliance',
+      title: 'Meeting with guests',
       width: 1200,
       height: 900
     },
     {
       url: cld('ABDU_K_2_nogu02'),
-      title: 'Delegate Abdu K - International Partnership',
+      title: 'Delegate with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('ABDU_K_2_fnfwsc'),
-      title: 'Abdu K - Diplomatic Engagement',
+      title: 'Delegate with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('christopher_Barcey_l9mg1u'),
-      title: 'Journalist Christopher Barcey - Press Partnership',
+      title: 'Media guest with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Bracey_Chris_t32jrw'),
-      title: 'Chris Bracey - Media & Communications Partnership',
+      title: 'Media guest with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Braceley_n_Journalist_g9575z'),
-      title: 'Bracey with International Press Delegation',
+      title: 'Guests with LDII',
       width: 1200,
       height: 900
     },

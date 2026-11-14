@@ -34,7 +34,7 @@ export default function PresidentProfilePage() {
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full">
                     <i className="ri-building-line text-emerald-300"></i>
                   </div>
-                  <span>Member, Toronto Board of Trade</span>
+                  <span>Member, Toronto Region Board of Trade</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full">
@@ -95,10 +95,6 @@ export default function PresidentProfilePage() {
                   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                   <span><strong className="text-gray-800">World Bank Research Legacy:</strong> Leverages a rigorous background in global economic research to analyze market trends, evaluate risk, and design evidence-based solutions for emerging economies.</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Macro-Economic Strategy:</strong> Applies economic principles to the development of ecomuseums and cultural institutions, ensuring they serve as catalysts for non-oil GDP growth and international trade.</span>
-                </li>
               </ul>
             </div>
 
@@ -129,7 +125,7 @@ export default function PresidentProfilePage() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Business Network Integration:</strong> Leverages senior memberships in the Toronto and Brampton Boards of Trade (Canada's largest business networks) to provide African governments and private sectors with direct access to Canadian SMEs.</span>
+                  <span><strong className="text-gray-800">Business Network Integration:</strong> Leverages senior memberships in the Toronto and Brampton Boards of Trade (two of Ontario’s leading business networks) to provide African governments and private sectors with direct access to Canadian SMEs.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -147,11 +143,11 @@ export default function PresidentProfilePage() {
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Compliance & Integrity:</strong> Operates LDII as a Canadian-registered non-profit in full compliance with Federal and Provincial laws, maintaining a reputation for transparency and ethical engagement rooted in international institutional standards.</span>
+                  <span><strong className="text-gray-800">Compliance & Integrity:</strong> Leads LDII as a Canadian nonprofit organization in compliance with Federal and Provincial laws, maintaining a reputation for transparency and ethical engagement rooted in international institutional standards.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Advocacy:</strong> Actively lobbies and consults with Canadian governmental and non-governmental organizations to influence public policy regarding international climate adaptation and global health resilience.</span>
+                  <span><strong className="text-gray-800">Advocacy:</strong> Engages with Canadian governmental and non-governmental organizations on international climate adaptation and global health resilience.</span>
                 </li>
               </ul>
             </div>
@@ -232,7 +228,7 @@ export default function PresidentProfilePage() {
             {[
               'University of Guelph',
               'University of Toronto',
-              'Toronto Board of Trade',
+              'Toronto Region Board of Trade',
               'Brampton Board of Trade',
               'University of British Columbia',
               'World Bank Alumni Network'
@@ -245,20 +241,6 @@ export default function PresidentProfilePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Citation & Closing */}
-      <section className="py-20 bg-emerald-800">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <i className="ri-double-quotes-l text-5xl text-emerald-400"></i>
-          </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 leading-relaxed">
-            For visionary leadership as an Economist and Global Facilitator in bridging Canadian innovation with the Global South, for advancing technology transfer through rigorous research and diplomatic cooperation, and for creating sustainable platforms for shared prosperity.
-          </h2>
-          <div className="w-20 h-1 bg-emerald-400 mx-auto mb-8"></div>
-          <p className="text-emerald-300 font-semibold text-lg">Proposed Citation</p>
         </div>
       </section>
 

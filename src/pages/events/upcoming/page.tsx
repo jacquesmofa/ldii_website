@@ -19,7 +19,7 @@ export default function UpcomingEventsPage() {
             Upcoming Events
           </h1>
           <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Join us at our upcoming conferences, summits, and forums designed to advance global resilience and create lasting positive change.
+            Missions, conferences and delegations LDII is preparing.
           </p>
         </div>
       </section>
@@ -30,7 +30,7 @@ export default function UpcomingEventsPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Coming up</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Mark your calendar for these transformative events bringing together global leaders, experts, and changemakers.
+              Dates are confirmed with partners before they are published here.
             </p>
           </div>
 
@@ -134,7 +134,7 @@ export default function UpcomingEventsPage() {
             Stay Updated on Our Events
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Subscribe to receive early notifications about upcoming events, registration openings, and exclusive opportunities.
+            Subscribe to hear about new events and registration dates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

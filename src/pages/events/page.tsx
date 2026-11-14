@@ -60,7 +60,7 @@ export default function EventsPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Upcoming Events</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Join us at our upcoming conferences, summits, and workshops designed to advance global resilience.
+              Missions, conferences and delegations LDII is preparing.
             </p>
           </div>
           
@@ -228,7 +228,7 @@ export default function EventsPage() {
             Subscribe to our newsletter to receive updates on upcoming events, latest research, and breaking news.
           </p>
           <div className="max-w-md mx-auto">
-            <form onSubmit={handleSubscribe} data-readdy-form id="events-newsletter-form" className="relative">
+            <form onSubmit={handleSubscribe} id="events-newsletter-form" className="relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="flex flex-col sm:flex-row gap-3">
                 <input

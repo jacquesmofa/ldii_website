@@ -212,7 +212,7 @@ export default function MiningTechnologyExchangePage() {
                 Co-host
               </span>
               <p className="text-gray-700 leading-relaxed text-sm">
-                A federally incorporated Canadian organisation that facilitates technology
+                A Canadian nonprofit organization that facilitates technology
                 transfer from the Global North to the Global South. LDII works directly with
                 African diplomatic missions, ministries responsible for mining, and chambers of
                 mines to build practical, lasting partnerships.
@@ -235,8 +235,8 @@ export default function MiningTechnologyExchangePage() {
           </p>
           <div className="border-l-4 border-green-600 pl-6 py-2 mb-5">
             <p className="text-gray-800 italic leading-relaxed">
-              That observation did not come from us. It came from the Uganda High Commission in
-              Ottawa, and it has been repeated in substance by every mission we have spoken with.
+              That observation comes from our conversations with African diplomatic missions in
+              Canada.
             </p>
           </div>
           <p className="text-lg text-gray-700 leading-relaxed">

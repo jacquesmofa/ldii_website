@@ -27,19 +27,19 @@ export const event2ndPostCovidBImages = [
   // --- DIPLOMATIC ENGAGEMENTS (at the conference) ---
   {
     url: cld('HE_Ambassador_OF_KENYA_slpwkj'),
-    title: 'His Excellency - Ambassador of Kenya at Conference',
+    title: 'Kenya\'s High Commissioner to Canada at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('HE_Ambassador_OF_KENYA5_pfgzlv'),
-    title: 'Kenyan Ambassador - Official Visit to Conference',
+    title: 'Kenya\'s High Commissioner to Canada at the conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('HE_Ambassador_OF_KENYA.4JPG_ub2ull'),
-    title: 'Kenyan High Commission - Conference Partnership',
+    title: 'Kenya High Commission delegation at the conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -51,43 +51,43 @@ export const event2ndPostCovidBImages = [
   },
   {
     url: cld('Iftika_gc4ksu'),
-    title: 'Diplomatic Delegate Iftika - Conference Arrival',
+    title: 'Diplomatic guest at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_2_ka6io7'),
-    title: 'Iftika - Bilateral Discussion at Conference',
+    title: 'Diplomatic guest in discussion at the conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_3_oix5fe'),
-    title: 'Iftika - Strategic Partnership at Conference',
+    title: 'Diplomatic guest at the conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_4_izigrc'),
-    title: 'Iftika - Conference Closing Diplomatic Session',
+    title: 'Diplomatic guest at the closing session · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('H_E_of_Kenya_n_Jai_Paul_rvtdln'),
-    title: 'His Excellency of Kenya with Jai Paul - Official Meeting',
+    title: 'Kenya\'s High Commissioner to Canada with Jai Paul · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('H_E_Kenyan_A3_pkpitk'),
-    title: 'Kenyan Diplomatic Delegation - Conference Group Photo',
+    title: 'Kenya High Commission delegation, group photo · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('H_E_Kenyan_A_s49voa'),
-    title: 'Kenyan High Commission - Conference Engagement',
+    title: 'Kenya High Commission delegation at the conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -95,37 +95,37 @@ export const event2ndPostCovidBImages = [
   // --- BRAMPTON CITY PARTNERSHIP ---
   {
     url: cld('Brampton_counci_kryhsj'),
-    title: 'Brampton City Council - Official Partnership',
+    title: 'LDII at Brampton City Hall',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_2_wnwcx5'),
-    title: 'Brampton Council - Signing Ceremony',
+    title: 'LDII at Brampton City Hall',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_3_zhgvl1'),
-    title: 'Brampton Council - Award Presentation',
+    title: 'LDII at Brampton City Hall',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_4_pz8w6d'),
-    title: 'Brampton Council - Community Leaders',
+    title: 'Community leaders at Brampton City Hall',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_Board_of_Trade_noll70'),
-    title: 'Brampton Board of Trade - Business Partnership',
+    title: 'LDII and the Brampton Board of Trade · Brampton, Ontario',
     width: 1200,
     height: 900
   },
   {
     url: cld('myr_brmpton_pop80q'),
-    title: 'Brampton Mayor - Conference Welcome',
+    title: 'Welcome address at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -133,25 +133,25 @@ export const event2ndPostCovidBImages = [
   // --- LEADERSHIP & TEAM ---
   {
     url: cld('president_LDII_xjy7xj'),
-    title: 'LDII President - Ronald Robert Lwabaayi',
+    title: 'Ronald Lwabaayi, President of LDII',
     width: 900,
     height: 1200
   },
   {
     url: cld('Lwabaayi_Profile_ovqlxd'),
-    title: 'President Lwabaayi - Official Portrait',
+    title: 'Ronald Lwabaayi, President of LDII',
     width: 900,
     height: 1200
   },
   {
     url: cld('MONICA_gm6uwr'),
-    title: 'Conference Coordinator - Monica',
+    title: 'Monica Linares at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('jay_paul_maly0f'),
-    title: 'Jay Paul - Conference Organizer',
+    title: 'Jai Paul at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -165,37 +165,37 @@ export const event2ndPostCovidBImages = [
   },
   {
     url: cld('participants_umanzq'),
-    title: 'Conference Participants - Group Session',
+    title: 'Participants at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   },
   {
     url: cld('REV_REV_MEETING_ky6y28'),
-    title: 'Reverend - Interfaith Memorial Component',
+    title: 'Faith leaders at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('LDII_WEBSITE_PICS_jt1vxz'),
-    title: 'LDII Team - Conference Documentation',
+    title: 'LDII team at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('General_aiu2gv'),
-    title: 'Conference Overview - General Session',
+    title: 'A full hall at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   },
   {
     url: cld('General.2_JPG_sa5o13'),
-    title: 'General Assembly - Wide Angle',
+    title: 'The plenary hall · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   },
   {
     url: cld('General.4JPG_ukeish'),
-    title: 'Conference Hall - Audience Perspective',
+    title: 'The audience · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   },
@@ -203,19 +203,19 @@ export const event2ndPostCovidBImages = [
   // --- MEDIA & JOURNALISTS ---
   {
     url: cld('christopher_Barcey_l9mg1u'),
-    title: 'Journalist - Christopher Barcey',
+    title: 'Media coverage of the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Bracey_Chris_t32jrw'),
-    title: 'Chris Bracey - Media Coverage',
+    title: 'Media coverage of the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Braceley_n_Journalist_g9575z'),
-    title: 'Bracey with Press Delegation',
+    title: 'Guests at the conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
@@ -223,31 +223,31 @@ export const event2ndPostCovidBImages = [
   // --- PARTNERSHIPS & ORGANIZATIONS ---
   {
     url: cld('Albertine_Angola_dlaepr'),
-    title: 'Angola Partnership - Representative Albertine',
+    title: 'Representative of the Angola delegation · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('Albertine_Angola.2jpg_qvcq24'),
-    title: 'Albertine - Angola Delegation',
+    title: 'Representative of the Angola delegation · Brampton, September 2025',
     width: 900,
     height: 1200
   },
   {
     url: cld('angola_mcipj6'),
-    title: 'Angola Delegation - Official Photo',
+    title: 'Angola delegation at the conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('Dei_Bio_phama_prssgi'),
-    title: 'DEI Bio-Pharma Partnership',
+    title: 'Guests at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1200,
     height: 900
   },
   {
     url: cld('ABDU_K_2_nogu02'),
-    title: 'Abdu K - Delegate Portrait',
+    title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 900,
     height: 1200
   },
@@ -255,13 +255,13 @@ export const event2ndPostCovidBImages = [
   // --- PROFESSIONAL PHOTOGRAPHY ---
   {
     url: cld('157A9883_gdes3t'),
-    title: 'Conference Session - Professional Coverage',
+    title: 'Conference session · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   },
   {
     url: cld('157A8260_ncw0cy'),
-    title: 'Speaker at Podium - Professional Shot',
+    title: 'Speaker at the podium · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
     width: 1400,
     height: 900
   }
