@@ -14,104 +14,65 @@ export default function FAQPage() {
     {
       category: 'General',
       question: 'What is Livelihood Development International Initiatives (LDII)?',
-      answer: 'LDII is a non-profit organization committed to creating a brighter future through the promotion of social cohesion and empowerment. We work globally to address critical challenges including climate resilience, health systems strengthening, food security, poverty eradication, and digital inclusion.'
+      answer: 'LDII is a Canadian nonprofit based in Toronto. We strengthen communities in Ontario through local programmes and build practical partnerships between the Global North and the Global South. Our tagline sums it up: Local Impact, Global Partnerships.'
     },
     {
       category: 'General',
-      question: 'Where does LDII operate?',
-      answer: 'LDII operates in over 25 countries across Africa, Asia-Pacific, Latin America, and North America, working through local partners and field teams. Our office is in Toronto, Ontario, Canada.'
+      question: 'Where does LDII work?',
+      answer: 'Our office is at 3701 Chesswood Drive, Unit 315, Toronto. Local programmes run in Ontario. Internationally we work with partners in Africa and the wider Global South, including the Intergovernmental Authority on Development (IGAD), diplomatic missions and chambers of commerce.'
     },
     {
       category: 'General',
-      question: 'How long has LDII been operating?',
-      answer: 'LDII has convened the International Post-COVID conferences in Toronto (July 2024) and Brampton (September 2025), and leads delegations and exchanges between Africa and Canada. See Our Impact for the full record.'
+      question: 'What has LDII done so far?',
+      answer: 'LDII organized the first COVID-19 Remembrance Parade and Candlelight Vigil in Toronto (October 1, 2023), convened the 1st International Post-COVID Conference with IGAD in Toronto (July 11–13, 2024) and the 2nd in Brampton (September 8–10, 2025), and hosts African delegations in Ontario. Our Impact page has the full record.'
     },
     {
-      category: 'Programs',
-      question: 'What are LDII\'s main focus areas?',
-      answer: 'LDII focuses on five key areas: 1) Climate Action & Mitigation, 2) Poverty Eradication & Inclusive Growth, 3) Sustainable Food Systems, 4) Global Health & Resilience, and 5) Digital Inclusion. Each focus area addresses critical global challenges through research, policy advocacy, and community-driven solutions.'
+      category: 'Programmes',
+      question: 'What are LDII’s international focus areas?',
+      answer: 'Six areas: climate resilience and environmental sustainability; mining, technology and innovation; trade, entrepreneurship and economic development; health and social resilience; food security and agriculture; and investment and economic partnerships. The International Focus page explains each one.'
     },
     {
-      category: 'Programs',
-      question: 'What programs does LDII offer in Canada and beyond?',
-      answer: 'LDII offers three main program streams: Youth Empowerment Initiative (including employment readiness, skills building, arts and music programs, and media training), Empowering Newcomers (employment training and professional support), and Business Networking (startup incubation, export development, professional networking, and entrepreneurship support).'
+      category: 'Programmes',
+      question: 'What local programmes does LDII run?',
+      answer: 'Six local programmes in Ontario: newcomer integration and settlement support; youth employment and skills; youth safety and crime prevention; youth wellbeing; community partnerships; and support for seniors. The Local Programmes page explains who can benefit and how.'
     },
     {
-      category: 'Programs',
-      question: 'How can I participate in LDII programs?',
-      answer: 'You can participate in LDII programs by contacting us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or calling +1 647 656 3026. We offer various programs for youth, newcomers, and business professionals. Visit our Programs page for detailed information about eligibility and registration.'
+      category: 'Programmes',
+      question: 'How can I take part in a programme?',
+      answer: 'Email admin@ldiinitiatives.org or call +1 647 656 3026 and tell us a little about yourself or the person you are referring. We will point you to the right programme or partner.'
     },
     {
       category: 'Partnerships',
       question: 'How can my organization partner with LDII?',
-      answer: 'We welcome partnerships with government agencies, private sector companies, NGOs, and academic institutions. Partnership opportunities include collaborative research, program implementation, funding support, and knowledge sharing. Contact us at info@ldiinitiatives.org to discuss partnership possibilities.'
+      answer: 'We work with governments, diplomatic missions, businesses, universities, colleges and community organizations. Write to admin@ldiinitiatives.org with a short note on what you have in mind, or see the Partners page.'
     },
     {
       category: 'Partnerships',
-      question: 'Who are LDII\'s current partners?',
-      answer: 'LDII partners with over 120 organizations globally, including the Government of Canada, World Bank, City of Brampton, Toronto Region Board of Trade, Canadian Hispanic Chamber of Commerce, and various international NGOs and academic institutions. Visit our Partners page for a complete list.'
+      question: 'What is the Africa–Canada Mining & Technology Transfer Mission?',
+      answer: 'A mission planned for June 2027, co-hosted with Thrive Tours Inc., that brings government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations to Greater Sudbury and the Canadian Mining Expo in Timmins.'
     },
     {
-      category: 'Donations',
-      question: 'How can I donate to LDII?',
-      answer: 'You can donate through our secure online donation page at www.ldiinitiatives.org/donate. We accept e-transfers (preferred method), credit/debit cards, direct bank transfers, and PayPal. All donations are tax-deductible, and you will receive a receipt for tax purposes.'
-    },
-    {
-      category: 'Donations',
-      question: 'Is my donation tax-deductible?',
-      answer: 'Yes, LDII is a registered non-profit organization, and all donations are tax-deductible. You will receive an official tax receipt via email after your donation is processed.'
-    },
-    {
-      category: 'Donations',
-      question: 'How are donations used?',
-      answer: 'Donations support our five focus areas: climate action, poverty eradication, sustainable food systems, global health, and digital inclusion. Funds are allocated to program implementation, research initiatives, community support, and operational costs. We maintain full transparency and publish annual reports detailing our financial activities.'
-    },
-    {
-      category: 'Volunteer',
-      question: 'How can I volunteer with LDII?',
-      answer: 'We offer various volunteer opportunities including program support, event coordination, research assistance, and community outreach. Visit our Partners & Support page and fill out the volunteer application form, or contact us at info@ldiinitiatives.org.'
-    },
-    {
-      category: 'Volunteer',
-      question: 'What volunteer opportunities are available?',
-      answer: 'Volunteer opportunities include: program facilitation, event planning and coordination, research and data analysis, community outreach, administrative support, and professional mentorship. Opportunities are available both in-person in Toronto and remotely.'
+      category: 'Support',
+      question: 'How can I support LDII?',
+      answer: 'You can make a pledge on our Donate page, volunteer, or partner with us. If you would like to give, email admin@ldiinitiatives.org and we will confirm the payment options and receipt details with you.'
     },
     {
       category: 'Events',
-      question: 'What events does LDII organize?',
-      answer: 'LDII organizes international conferences, workshops, community events, and networking sessions. Major events include the Global Shocks Global South Conference, Cultural Resilience Conference (CROP), and NEABEC Summit. Visit our Events page for upcoming events and registration information.'
-    },
-    {
-      category: 'Events',
-      question: 'How can I attend LDII events?',
-      answer: 'Event registration information is available on our Events page. Most conferences offer both in-person and virtual attendance options. Early bird registration discounts are often available. Contact info@ldiinitiatives.org for group registration or sponsorship opportunities.'
-    },
-    {
-      category: 'Research',
-      question: 'Does LDII publish research?',
-      answer: 'Yes, LDII has published over 200 research papers, policy briefs, white papers, and reports. Our research covers topics including climate resilience, health systems, food security, economic development, and digital inclusion. All publications are available on our Research page.'
-    },
-    {
-      category: 'Research',
-      question: 'How can I access LDII research publications?',
-      answer: 'All LDII research publications are freely available on our website under the Research section. You can browse by category (Policy Briefs, Publications, White Papers, Data & Statistics) or search by topic. Publications can be downloaded in PDF format.'
+      question: 'How do I hear about upcoming events?',
+      answer: 'Upcoming conferences and delegations are listed on the Upcoming Events page. You can also subscribe to the newsletter at the bottom of every page, or follow LDII on social media.'
     },
     {
       category: 'Contact',
       question: 'How can I contact LDII?',
-      answer: 'You can reach us by phone at +1 647 656 3026 or email at info@ldiinitiatives.org or admin@ldiinitiatives.org. Our Toronto office is located at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6. Office hours are Monday-Friday, 9:00 AM - 5:00 PM EST.'
+      answer: 'Call +1 647 656 3026 or email admin@ldiinitiatives.org. Our office is at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6.'
     },
     {
       category: 'Contact',
-      question: 'Does LDII have regional offices?',
-      answer: 'Our office is in Toronto, Ontario, Canada. Across Canada and Africa we work through local partners, community organizations and field teams. All enquiries can be directed to info@ldiinitiatives.org or admin@ldiinitiatives.org, or by phone at +1 647 656 3026.'
-    },
-    {
-      category: 'Media',
       question: 'How can media contact LDII?',
-      answer: 'For media inquiries, press releases, and interview requests, please contact us at info@ldiinitiatives.org or admin@ldiinitiatives.org, or call +1 647 656 3026. You can also submit a media inquiry form on our Contact page under Media Inquiries.'
+      answer: 'Email admin@ldiinitiatives.org or call +1 647 656 3026, or use the Media Inquiries form.'
     }
   ];
+
 
   useEffect(() => {
     const id = 'ldii-faq-schema';
@@ -137,7 +98,7 @@ export default function FAQPage() {
     };
   }, [faqs]);
 
-  const categories = ['all', 'General', 'Programs', 'Partnerships', 'Donations', 'Volunteer', 'Events', 'Research', 'Contact', 'Media'];
+  const categories = ['all', 'General', 'Programmes', 'Partnerships', 'Support', 'Events', 'Contact'];
 
   const filteredFAQs = activeCategory === 'all' 
     ? faqs 
@@ -192,7 +153,7 @@ export default function FAQPage() {
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-300 border-b-2 border-transparent hover:border-[#00D9FF]"
+                  className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors duration-300 border-b-2 border-transparent hover:border-[#3CCB7F]"
                 >
                   <div className="flex-1">
                     <span className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full mb-2">
@@ -206,7 +167,7 @@ export default function FAQPage() {
                     openIndex === index ? 'rotate-180' : ''
                   }`}>
                     <i className="ri-arrow-down-s-line text-2xl transition-colors duration-300 ${
-                      openIndex === index ? 'text-[#00D9FF]' : 'text-gray-400'
+                      openIndex === index ? 'text-[#3CCB7F]' : 'text-gray-400'
                     }"></i>
                   </div>
                 </button>
@@ -240,7 +201,7 @@ export default function FAQPage() {
                 Contact Us
               </a>
               <a
-                href="mailto:info@ldiinitiatives.org"
+                href="mailto:admin@ldiinitiatives.org"
                 className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
               >
                 Email Us

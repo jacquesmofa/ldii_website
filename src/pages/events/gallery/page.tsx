@@ -221,7 +221,7 @@ const GalleryPage = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           NAVIGATION TABS  +  BACK BUTTON
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-8 bg-gray-50 border-b border-gray-100 sticky top-[64px] lg:top-[80px] z-40">
+      <section className="py-8 bg-gray-50 border-b border-gray-100 sticky top-[72px] z-40">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-center gap-3">
             {/* Overview tab — only visible when in category mode */}

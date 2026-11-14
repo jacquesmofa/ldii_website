@@ -54,12 +54,6 @@ export const eventDiplomatic: GalleryEvent = {
       height: 1200
     },
     {
-      url: cld('Mofa_1_dc7saf'),
-      title: 'Ministry of Foreign Affairs - Official Representative',
-      width: 900,
-      height: 1200
-    },
-    {
       url: cld('Iftika_gc4ksu'),
       title: 'Diplomatic Delegate Iftika - Arrival Ceremony',
       width: 900,

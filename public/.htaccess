@@ -1,83 +1,91 @@
-# LDII Website - Apache Configuration for React SPA
-# =====================================================
-# This file ensures the React/Vite single-page application
-# works correctly on Apache static hosting.
-# Place this file in the ROOT of your deployment folder
-# (same folder as index.html).
-# =====================================================
+# LDII (ldiinitiatives.org) — HostPapa (Apache) settings for the React site.
 
-# --- 1. FORCE HTTPS (optional - remove if you don't have SSL) ---
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteCond %{HTTPS} off
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
-
-# --- 2. BASIC SECURITY ---
-# Prevent directory listing (shows blank index instead of file list)
-Options -Indexes
-
-# --- 3. DEFAULT FILE ---
-# When someone visits a folder, serve index.html first
 DirectoryIndex index.html
+# Slashes are handled below, so a page and a folder can share a name (/events and /events/gallery)
+DirectorySlash Off
+Options -Indexes -MultiViews
+AddType application/manifest+json .webmanifest
 
-# --- 4. REACT SPA ROUTING (CRITICAL) ---
-# This is the MOST IMPORTANT section. It tells Apache:
-# "If a file or folder doesn't exist, serve index.html instead"
-# This allows React Router to handle all client-side routes like
-# /about, /about/who-we-are, /events/gallery, etc.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  
-  # If the request is for an actual file (JS, CSS, images, etc.), serve it
-  RewriteCond %{REQUEST_FILENAME} !-f
-  
-  # If the request is for an actual directory, serve it
-  RewriteCond %{REQUEST_FILENAME} !-d
-  
-  # Otherwise, rewrite everything to index.html so React Router can handle it
-  RewriteRule ^ index.html [L]
+  RewriteBase /
+
+  # Always use https
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Old addresses from the previous site layout move permanently to their new pages
+  # (keep in step with REDIRECTS in src/router/config.tsx)
+  RewriteRule ^about/who\-we\-are/?$ /about [R=301,L,NE]
+  RewriteRule ^about/our\-work/?$ /international-focus [R=301,L,NE]
+  RewriteRule ^about/past\-projects/?$ /impact [R=301,L,NE]
+  RewriteRule ^about/upcoming\-projects/?$ /events/upcoming [R=301,L,NE]
+  RewriteRule ^what\-we\-do/?$ /international-focus [R=301,L,NE]
+  RewriteRule ^what\-we\-do/technology\-ai\-research/?$ /international-focus#mining [R=301,L,NE]
+  RewriteRule ^what\-we\-do/climate\-action/?$ /international-focus#climate [R=301,L,NE]
+  RewriteRule ^what\-we\-do/poverty\-eradication/?$ /international-focus#investment [R=301,L,NE]
+  RewriteRule ^what\-we\-do/sustainable\-food/?$ /international-focus#food [R=301,L,NE]
+  RewriteRule ^what\-we\-do/global\-health/?$ /international-focus#health [R=301,L,NE]
+  RewriteRule ^what\-we\-do/digital\-inclusion/?$ /local-programmes#youth-employment [R=301,L,NE]
+  RewriteRule ^focus\-areas/?$ /international-focus [R=301,L,NE]
+  RewriteRule ^programs/?$ /local-programmes [R=301,L,NE]
+  RewriteRule ^local\-programs/?$ /local-programmes [R=301,L,NE]
+  RewriteRule ^programs/youth\-programs\-ontario/?$ /local-programmes#youth-employment [R=301,L,NE]
+  RewriteRule ^programs/local\-capacity\-training/?$ /local-programmes#partnerships [R=301,L,NE]
+  RewriteRule ^social\-enterprise/consulting/?$ /international-focus#investment [R=301,L,NE]
+  RewriteRule ^impact/achievements/?$ /impact [R=301,L,NE]
+  RewriteRule ^impact/success\-stories/?$ /impact [R=301,L,NE]
+  RewriteRule ^impact/annual\-reports/?$ /impact [R=301,L,NE]
+  RewriteRule ^impact/metrics/?$ /impact [R=301,L,NE]
+  RewriteRule ^contact/get\-in\-touch/?$ /contact [R=301,L,NE]
+  RewriteRule ^contact/our\-locations/?$ /contact [R=301,L,NE]
+  RewriteRule ^events/news/press\-releases/?$ /events/press-releases [R=301,L,NE]
+
+  # /about.html -> /about (one clean address per page)
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?]
+  RewriteCond %1 !(^|/)index$
+  RewriteRule ^ /%1 [R=301,L]
+
+  # /about/ -> /about (unless it is a real folder with its own index.html, e.g. /admin/)
+  RewriteCond %{REQUEST_FILENAME}/index.html !-f
+  RewriteRule ^(.+)/$ $1 [R=301,L]
+
+  # Pages with their own share preview (about.html, contact.html...: see scripts/social-pages.mjs)
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*[^/])$ $1.html [L]
+
+  # Real folders with their own index.html get their slash: /admin -> /admin/
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^(.*[^/])$ $1/ [R=301,L]
+
+  # Real files, and folders that have their own index.html (e.g. /admin/), are served as they are
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^ - [L]
+
+  # Every other address is a page of the React app
+  RewriteRule ^ /index.html [L]
 </IfModule>
 
-# --- 5. CACHE CONTROL FOR STATIC ASSETS ---
-# Tell browsers to cache JS/CSS/images for better performance
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
-</IfModule>
-
-# --- 6. MIME TYPES (fixes JS files sometimes being served as text) ---
-<IfModule mime_module>
-  AddType application/javascript .js
-  AddType text/css .css
-  AddType image/svg+xml .svg
-</IfModule>
-
-# --- 7. COMPRESSION (makes files smaller and faster) ---
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml
 </IfModule>
 
-# =====================================================
-# IMPORTANT NOTES FOR YOUR PIPELINE:
-# =====================================================
-# 1. Build output folder: This project builds to 'out/' (NOT 'dist/')
-#    Make sure your deployment pipeline deploys the 'out/' folder.
-#
-# 2. If deploying to a SUBDIRECTORY (e.g., example.com/ldii/):
-#    Set BASE_PATH environment variable before building:
-#    BASE_PATH=/ldii/ npm run build
-#    And update the RewriteRule above to:
-#    RewriteRule ^ /ldii/index.html [L]
-#
-# 3. If you get 404s on assets (JS/CSS files):
-#    Check that the 'assets/' folder is being deployed alongside index.html.
-#    The assets folder should be in the SAME directory as index.html.
-#
-# 4. After updating this file, clear browser cache (Ctrl+Shift+R)
-#    or wait a few minutes for CDN cache to clear.
-# =====================================================
+<IfModule mod_headers.c>
+  # Built files have a fingerprint in their name, so they can be cached for a year
+  <FilesMatch "-[A-Za-z0-9_-]{8}\.(js|css|woff2?)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Pages are always re-checked, so a new deploy shows up immediately
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # The upload tool's bookkeeping file stays private
+  <Files ".ftp-deploy-sync-state.json">
+    Require all denied
+  </Files>
+  # Source maps are for debugging only
+  <FilesMatch "\.map$">
+    Require all denied
+  </FilesMatch>
+</IfModule>

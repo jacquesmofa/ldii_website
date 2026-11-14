@@ -1,189 +1,58 @@
+import { Link } from 'react-router-dom';
+import Eyebrow from '../../components/base/Eyebrow';
+import { NAV } from '../../components/feature/Header';
+import { galleryEvents } from '../../mocks/galleryData';
+
+const MORE = {
+  title: 'Information',
+  links: [
+    { name: 'Press Releases', url: '/events/press-releases' },
+    { name: 'Media Inquiries', url: '/contact/media-inquiries' },
+    { name: 'Frequently Asked Questions', url: '/faq' },
+    { name: 'Privacy Policy', url: '/privacy-policy' },
+    { name: 'Terms of Use', url: '/terms-of-service' },
+    { name: 'Accessibility', url: '/accessibility' },
+  ],
+};
+
 export default function SitemapPage() {
-  const sitemapSections = [
+  const sections = [
+    { title: 'Home', links: [{ name: 'Home', url: '/' }] },
+    ...NAV.map((g) => ({
+      title: g.title,
+      links: g.items ? g.items.map((i) => ({ name: i.title, url: i.href })) : [{ name: g.title, url: g.href }],
+    })),
     {
-      title: 'Main Pages',
-      links: [
-        { name: 'Home', url: '/#hero' },
-        { name: 'About Us', url: '/about#hero' },
-        { name: 'Contact', url: '/contact#hero' },
-        { name: 'Donate', url: '/donate#hero' },
-      ]
+      title: 'Photo albums',
+      links: galleryEvents.filter((e) => e.slug).map((e) => ({ name: e.shortTitle || e.title, url: `/events/gallery/${e.slug}` })),
     },
-    {
-      title: 'About',
-      links: [
-        { name: 'Who We Are', url: '/about/who-we-are#hero' },
-        { name: 'Our Work', url: '/about/our-work#hero' },
-        { name: 'Past Projects', url: '/about/past-projects#hero' },
-        { name: 'Upcoming Projects', url: '/about/upcoming-projects#hero' },
-      ]
-    },
-    {
-      title: 'What We Do',
-      links: [
-        { name: 'Overview', url: '/what-we-do#hero' },
-        { name: 'Climate Action & Mitigation', url: '/what-we-do/climate-action#hero' },
-        { name: 'Poverty Eradication & Inclusive Growth', url: '/what-we-do/poverty-eradication#hero' },
-        { name: 'Sustainable Food Systems', url: '/what-we-do/sustainable-food#hero' },
-        { name: 'Global Health & Resilience', url: '/what-we-do/global-health#hero' },
-        { name: 'Digital Inclusion', url: '/what-we-do/digital-inclusion#hero' },
-      ]
-    },
-    {
-      title: 'Focus Areas',
-      links: [
-        { name: 'All Focus Areas', url: '/focus-areas#hero' },
-      ]
-    },
-    {
-      title: 'Programs',
-      links: [
-        { name: 'Programs', url: '/programs#hero' },
-        { name: 'Africa–Canada Mining & Technology Exchange', url: '/programs/mining-technology-exchange' },
-        { name: 'Youth Programs in Ontario', url: '/programs/youth-programs-ontario' },
-        { name: 'Local Capacity Training', url: '/programs/local-capacity-training' },
-        { name: 'Consulting & Market Intelligence', url: '/social-enterprise/consulting' },
-      ]
-    },
-    {
-      title: 'Impact',
-      links: [
-        { name: 'Overview', url: '/impact#hero' },
-        { name: 'Achievements', url: '/impact/achievements#hero' },
-      ]
-    },
-    {
-      title: 'Events & News',
-      links: [
-        { name: 'Overview', url: '/events#hero' },
-        { name: 'Upcoming Events', url: '/events/upcoming#hero' },
-        { name: 'Past Events & Resources', url: '/events/past#hero' },
-        { name: 'Latest News', url: '/events/news#hero' },
-        { name: 'Press Releases', url: '/events/press-releases#hero' },
-        { name: 'Gallery', url: '/events/gallery#hero' },
-      ]
-    },
-    {
-      title: 'Partners & Support',
-      links: [
-        { name: 'Overview', url: '/partners#hero' },
-        { name: 'Our Partners', url: '/partners#our-partners' },
-        { name: 'Donate', url: '/partners#donate' },
-        { name: 'Volunteer', url: '/partners#volunteer' },
-        { name: 'Corporate Partnership', url: '/partners#corporate-partnership' },
-      ]
-    },
-    {
-      title: 'Contact',
-      links: [
-        { name: 'Get in Touch', url: '/contact/get-in-touch#hero' },
-        { name: 'Our Locations', url: '/contact/our-locations#hero' },
-        { name: 'Media Inquiries', url: '/contact/media-inquiries#hero' },
-      ]
-    },
-    {
-      title: 'Legal & Resources',
-      links: [
-        { name: 'Privacy Policy', url: '/privacy-policy#hero' },
-        { name: 'Terms of Service', url: '/terms-of-service#hero' },
-        { name: 'Accessibility Statement', url: '/accessibility#hero' },
-        { name: 'FAQs', url: '/faq#hero' },
-        { name: 'Sitemap', url: '/sitemap#hero' },
-      ]
-    }
+    MORE,
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section id="hero" className="bg-gradient-to-br from-green-600 to-emerald-700 py-20">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Sitemap
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Navigate through all pages and sections of the LDII website. Find exactly what you're looking for.
-          </p>
-        </div>
-      </section>
-
-      {/* Sitemap Content */}
-      <section className="py-16">
+    <>
+      <section className="bg-ldii-mist py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sitemapSections.map((section, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4 pb-3 border-b-2 border-green-600">
-                  {section.title}
-                </h2>
-                <ul className="space-y-2">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <a
-                        href={link.url}
-                        className="text-gray-700 hover:text-green-600 transition-colors flex items-center group cursor-pointer"
-                      >
-                        <i className="ri-arrow-right-s-line text-green-600 mr-2 group-hover:translate-x-1 transition-transform"></i>
-                        {link.name}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Quick Access Section */}
-          <div className="mt-16 bg-gradient-to-br from-green-600 to-emerald-700 rounded-2xl shadow-xl p-12 text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">
-              Quick Access
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Looking for something specific? Use these quick links to access our most popular pages.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <a
-                href="/donate#hero"
-                className="bg-white text-green-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Donate Now
-              </a>
-              <a
-                href="/programs#hero"
-                className="bg-white text-green-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Programs
-              </a>
-              <a
-                href="/events/upcoming#hero"
-                className="bg-white text-green-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Upcoming Events
-              </a>
-              <a
-                href="/contact#hero"
-                className="bg-white text-green-600 px-6 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-
-          {/* Search Help */}
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">
-              Can't find what you're looking for?
-            </p>
-            <a
-              href="/contact#hero"
-              className="text-green-600 font-semibold hover:text-green-700 transition-colors cursor-pointer"
-            >
-              Contact us for assistance →
-            </a>
-          </div>
+          <Eyebrow>Site map</Eyebrow>
+          <h1 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy">Every page on this site</h1>
         </div>
       </section>
-    </div>
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {sections.map((s) => (
+            <nav key={s.title} aria-label={s.title}>
+              <h2 className="font-display text-xl font-semibold text-ldii-navy border-b border-gray-200 pb-2">{s.title}</h2>
+              <ul className="mt-4 space-y-2">
+                {s.links.map((l) => (
+                  <li key={l.url}>
+                    <Link to={l.url} className="text-gray-700 hover:text-tech-teal-800 hover:underline">{l.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

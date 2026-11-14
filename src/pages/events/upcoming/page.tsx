@@ -10,7 +10,7 @@ export default function UpcomingEventsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Exciting%20upcoming%20international%20conference%20with%20modern%20venue%20setup%2C%20anticipation%20and%20preparation%20for%20major%20event%2C%20professional%20event%20planning%2C%20inspiring%20conference%20atmosphere%2C%20high-resolution%20photography&width=1920&height=800&seq=upcoming-hero&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.20_3_a7269u.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -28,7 +28,7 @@ export default function UpcomingEventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">2025-2026 Event Calendar</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Coming up</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Mark your calendar for these transformative events bringing together global leaders, experts, and changemakers.
             </p>
@@ -47,7 +47,7 @@ export default function UpcomingEventsPage() {
                   </div>
                   <div className="p-10">
                     <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#3CCB7F] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {event.type}
                       </span>
                       <span className="text-green-600 font-bold text-lg">{event.displayDate}</span>
@@ -139,7 +139,7 @@ export default function UpcomingEventsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
             >
               Subscribe to Updates
             </a>

@@ -100,7 +100,7 @@ export default function GalleryEventPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/85"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-block bg-[#00D9FF]/20 text-[#00D9FF] border border-[#00D9FF]/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
+          <div className="inline-block bg-[#3CCB7F]/20 text-[#3CCB7F] border border-[#3CCB7F]/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
             {event.year}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
@@ -126,8 +126,9 @@ export default function GalleryEventPage() {
         </div>
       </section>
 
-      {/* Tab Switcher */}
-      <section className="py-6 bg-white border-b border-gray-200 sticky top-[64px] lg:top-[80px] z-30">
+      {/* Tab Switcher (only when the album has videos) */}
+      {event.videos.length > 0 && (
+      <section className="py-6 bg-white border-b border-gray-200 sticky top-[72px] z-30">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-center">
             <div className="inline-flex bg-gray-100 rounded-full p-1">
@@ -157,6 +158,7 @@ export default function GalleryEventPage() {
           </div>
         </div>
       </section>
+      )}
 
       {/* Photos - Masonry */}
       {activeTab === 'photos' && (
@@ -224,7 +226,7 @@ export default function GalleryEventPage() {
                     >
                       <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center group-hover:-translate-x-1 transition-transform"></i>
                       <div className="text-left">
-                        <div className="text-xs text-gray-400">Previous Event</div>
+                        <div className="text-xs text-gray-500">Previous Event</div>
                         <div className="font-semibold text-sm">
                           {prev.title.length > 40 ? `${prev.title.slice(0, 40)}...` : prev.title}
                         </div>
@@ -246,7 +248,7 @@ export default function GalleryEventPage() {
                       className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors cursor-pointer group"
                     >
                       <div className="text-right">
-                        <div className="text-xs text-gray-400">Next Event</div>
+                        <div className="text-xs text-gray-500">Next Event</div>
                         <div className="font-semibold text-sm">
                           {next.title.length > 40 ? `${next.title.slice(0, 40)}...` : next.title}
                         </div>

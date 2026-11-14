@@ -45,7 +45,7 @@ export const event2ndPostCovidBImages = [
   },
   {
     url: cld('Mofa_1_dc7saf'),
-    title: 'Ministry of Foreign Affairs - Official Representative',
+    title: 'Music and sound set-up at the conference',
     width: 900,
     height: 1200
   },
@@ -159,7 +159,7 @@ export const event2ndPostCovidBImages = [
   // --- COMMUNITY & NETWORKING ---
   {
     url: cld('Participants2_omtkbj'),
-    title: 'International Delegates Assembly',
+    title: 'Delegates at the conference',
     width: 1400,
     height: 900
   },

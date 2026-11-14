@@ -65,37 +65,37 @@ export const event2ndPostCovidA: GalleryEvent = {
     // --- PANEL DISCUSSIONS ---
     {
       url: cld('Panel_discussion1_ujy3df'),
-      title: 'Panel Discussion - Global Health Policy Frameworks',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1200,
       height: 900
     },
     {
       url: cld('Panel_discussion2_mayull'),
-      title: 'Panel Discussion - Pandemic Preparedness Strategies',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1200,
       height: 900
     },
     {
       url: cld('Panel_discussion3_ffuxqz'),
-      title: 'Panel Discussion - Economic Recovery Post-Pandemic',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1200,
       height: 900
     },
     {
       url: cld('Panel_discussion4_cmyd4j'),
-      title: 'Panel Discussion - Community Resilience Models',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1200,
       height: 900
     },
     {
       url: cld('Panel_discussion5_qjab7t'),
-      title: 'Panel Discussion - International Cooperation',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1200,
       height: 900
     },
     {
       url: cld('Panel_1_nin4iu'),
-      title: 'Expert Panel Session - Opening Day',
+      title: 'Panel session · Global Shocks, Global Resilience',
       width: 1400,
       height: 900
     },

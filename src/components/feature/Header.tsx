@@ -1,250 +1,237 @@
-import { useState, useEffect } from 'react';
-import LanguageSwitcher from '../base/LanguageSwitcher';
-import { useMedia } from '../../context/MediaContext';
+import { useEffect, useRef, useState } from 'react';
+import { Link, NavLink, useLocation } from 'react-router-dom';
+import { ORG } from '../../content/ldii';
+
+// Logo: LDII's own file on Cloudinary. Replace with the green "LDII" wordmark once it is supplied (see PLACEHOLDERS.md).
+const LOGO = 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_center,w_160,h_160,q_auto,f_auto/v1781702619/Circular_LDII_bewv0j.png';
+
+type Item = { title: string; href: string; note?: string };
+type Group = { title: string; href: string; items?: Item[] };
+
+/** One menu, one name per thing (as recommended in the Oct 2026 site review). */
+export const NAV: Group[] = [
+  {
+    title: 'About',
+    href: '/about',
+    items: [
+      { title: 'About LDII', href: '/about', note: 'Who we are and how we work' },
+      { title: 'Our President', href: '/about/who-we-are/president-profile', note: 'Ronald Lwabaayi' },
+      { title: 'Our Impact', href: '/impact', note: 'The engagements we have delivered' },
+    ],
+  },
+  {
+    title: 'Our Work',
+    href: '/international-focus',
+    items: [
+      { title: 'International Focus', href: '/international-focus', note: 'Six areas of Global North–South partnership' },
+      { title: 'Local Programmes', href: '/local-programmes', note: 'Community development across Ontario' },
+      { title: 'Newcomer Settlement', href: '/local-programmes#newcomers-programme', note: 'Supporting new beginnings' },
+      { title: 'Mining & Technology Mission', href: '/programs/mining-technology-exchange', note: 'Africa–Canada, June 2027' },
+    ],
+  },
+  {
+    title: 'Events',
+    href: '/events',
+    items: [
+      { title: 'Upcoming Events', href: '/events/upcoming' },
+      { title: 'Past Events', href: '/events/past' },
+      { title: 'News & Media', href: '/events/news' },
+      { title: 'Gallery', href: '/events/gallery' },
+    ],
+  },
+  {
+    title: 'Get Involved',
+    href: '/partners',
+    items: [
+      { title: 'Partner With Us', href: '/partners' },
+      { title: 'Donate', href: '/donate' },
+    ],
+  },
+  { title: 'Contact', href: '/contact' },
+];
 
 export default function Header() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const { assets, loading } = useMedia();
+  const location = useLocation();
+  const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // ... existing navigationItems ...
+  // Close menus on page change and on Escape.
+  useEffect(() => {
+    setOpen(false);
+    setOpenGroup(null);
+  }, [location.pathname, location.hash]);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setOpen(false);
+        setOpenGroup(null);
+      }
+    };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [open]);
 
-  const navigationItems = [
-    {
-      title: 'About Us',
-      href: '/about',
-      dropdown: [
-        { title: 'About LDII', href: '/about' },
-        { title: 'Who We Are', href: '/about/who-we-are' },
-        { title: 'Our Work', href: '/about/our-work' },
-        { title: 'Past Projects', href: '/about/past-projects' },
-        { title: 'Upcoming Projects', href: '/about/upcoming-projects' }
-      ]
-    },
-    {
-      title: 'What We Do',
-      href: '/what-we-do',
-      dropdown: [
-        { title: 'What We Do', href: '/what-we-do' },
-        { title: 'Technology Transfer, AI Governance & Research', href: '/what-we-do/technology-ai-research' },
-        { title: 'Climate Action & Mitigation', href: '/what-we-do/climate-action' },
-        { title: 'Health & Resilience', href: '/what-we-do/global-health' },
-        { title: 'Communication & Digital Inclusion', href: '/what-we-do/digital-inclusion' },
-        { title: 'Sustainable Food Systems', href: '/what-we-do/sustainable-food' },
-        { title: 'Poverty Eradication & Inclusive Growth', href: '/what-we-do/poverty-eradication' }
-      ]
-    },
-    {
-      title: 'Programs',
-      href: '/programs',
-      dropdown: [
-        { title: 'Local Programs', href: '/programs' },
-        { title: 'Consulting & Market Intelligence', href: '/social-enterprise/consulting' },
-        { title: 'Africa–Canada Mining & Technology Exchange', href: '/programs/mining-technology-exchange' },
-        { title: 'Youth Programs in Ontario', href: '/programs/youth-programs-ontario' },
-        { title: 'Local Capacity Training', href: '/programs/local-capacity-training' }
-      ]
-    },
-    {
-      title: 'Impact',
-      href: '/impact',
-      dropdown: [
-        { title: 'Our Impact', href: '/impact' },
-        { title: 'Achievements', href: '/impact/achievements' },
-
-      ]
-    },
-    {
-      title: 'Events & News',
-      href: '/events',
-      dropdown: [
-        { title: 'Events & News', href: '/events' },
-        { title: 'Upcoming Events', href: '/events/upcoming' },
-        { title: 'Past Events & Resources', href: '/events/past' },
-        { title: 'Latest News', href: '/events/news' },
-        { title: 'Press Releases', href: '/events/press-releases' },
-        { title: 'Gallery', href: '/events/gallery' }
-      ]
-    },
-    {
-      title: 'Partners & Support',
-      href: '/partners',
-      dropdown: [
-        { title: 'Government Partners', href: '/partners#government-partners' },
-        { title: 'Private Sector', href: '/partners#private-sector' },
-        { title: 'NGO Partners', href: '/partners#ngo-partners' },
-        { title: 'Academic Institutions', href: '/partners#academic-institutions' },
-        { title: 'Donate', href: '/donate' },
-        { title: 'Volunteer', href: '/partners#volunteer' },
-        { title: 'Corporate Partnership', href: '/partners#corporate-partnership' }
-      ]
-    },
-    {
-      title: 'Contact',
-      href: '/contact',
-      dropdown: [
-        { title: 'Contact Us', href: '/contact' },
-        { title: 'Get in Touch', href: '/contact/get-in-touch' },
-        { title: 'Our Locations', href: '/contact/our-locations' },
-        { title: 'Media Inquiries', href: '/contact/media-inquiries' }
-      ]
-    }
-  ];
+  const isActive = (g: Group) =>
+    location.pathname === g.href || (g.items || []).some((i) => location.pathname === i.href.split('#')[0]);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      scrolled 
-        ? 'bg-white shadow-sm' 
-        : 'bg-transparent'
-    }`}>
-      <div className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
-          <div className="flex items-center flex-shrink-0">
-            <a
-              href="/"
-              className="flex items-center cursor-pointer group"
-              aria-label="LDII — Livelihood Development International Initiatives home"
-              title="LDII home"
-            >
-              <div className="h-12 sm:h-14 md:h-16 flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-105">
-                {loading ? (
-                  <div className="h-full w-16 bg-gray-200 animate-pulse rounded"></div>
-                ) : (
-                  <img
-                    src={assets.branding.logo_main}
-                    alt="Livelihood Development International Initiatives"
-                    className="h-full w-auto object-contain"
-                  />
-                )}
-              </div>
-              <span className="sr-only">Livelihood Development International Initiatives</span>
-            </a>
-          </div>
+    <>
+      <header
+        className={`sticky top-0 z-50 bg-white/95 border-b transition-shadow ${scrolled || open ? 'shadow-sm border-gray-200' : 'border-transparent'}`}
+      >
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 bg-white px-3 py-2 rounded text-ldii-navy">
+          Skip to content
+        </a>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-[72px]">
+            <Link to="/" className="flex items-center gap-3 min-w-0" aria-label={`${ORG.short} home`}>
+              <img src={LOGO} alt="" width={48} height={48} className="w-12 h-12 rounded-full flex-shrink-0" />
+              <span className="min-w-0">
+                <span className="block font-display text-2xl font-bold leading-none text-ldii-navy tracking-tight">
+                  LDII
+                </span>
+                <span className="hidden sm:block text-[11px] leading-tight text-gray-600 mt-1 max-w-[230px]">{ORG.name}</span>
+              </span>
+            </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center">
-            <div className="flex items-center space-x-1">
-              {navigationItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative group"
-                  onMouseEnter={() => setActiveDropdown(item.title)}
-                  onMouseLeave={() => setActiveDropdown(null)}
-                >
-                  <a
-                    href={item.href}
-                    className={`flex items-center gap-1 px-4 py-2 rounded-lg transition-all duration-300 font-medium whitespace-nowrap ${
-                      scrolled
-                        ? 'text-gray-700 hover:text-white hover:bg-[#0A1E3D]'
-                        : 'text-white hover:text-white hover:bg-white/20'
-                    }`}
+            <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+              {NAV.map((g) =>
+                g.items ? (
+                  <div
+                    key={g.title}
+                    className="relative"
+                    onMouseEnter={() => setOpenGroup(g.title)}
+                    onMouseLeave={() => setOpenGroup(null)}
                   >
-                    <span className="whitespace-nowrap">{item.title}</span>
-                    {item.dropdown && (
-                      <i className="ri-arrow-down-s-line w-4 h-4 flex items-center justify-center transition-transform duration-300 group-hover:rotate-180"></i>
-                    )}
-                  </a>
-                  
-                  {/* Dropdown Menu */}
-                  {item.dropdown && (
-                    <div className={`absolute top-full left-0 mt-2 w-72 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50 transition-all duration-300 transform ${
-                      activeDropdown === item.title 
-                        ? 'opacity-100 translate-y-0 visible' 
-                        : 'opacity-0 translate-y-2 invisible'
-                    }`}>
-                      {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                        <a
-                          key={dropdownIndex}
-                          href={dropdownItem.href}
-                          className="block px-5 py-3 text-gray-700 hover:bg-[#0A1E3D] hover:text-[#00D9FF] transition-all duration-300 whitespace-normal text-sm leading-relaxed"
-                        >
-                          {dropdownItem.title}
-                        </a>
-                      ))}
+                    <button
+                      type="button"
+                      className={`flex items-center gap-1 px-3 py-2 rounded-md text-[15px] font-medium transition-colors ${
+                        isActive(g) ? 'text-tech-teal-800' : 'text-gray-800 hover:text-tech-teal-800'
+                      }`}
+                      aria-expanded={openGroup === g.title}
+                      onClick={() => setOpenGroup(openGroup === g.title ? null : g.title)}
+                    >
+                      {g.title}
+                      <i className="ri-arrow-down-s-line" aria-hidden="true" />
+                    </button>
+                    <div
+                      className={`absolute left-0 top-full pt-2 w-80 transition ${
+                        openGroup === g.title ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
+                      }`}
+                    >
+                      <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-2">
+                        {g.items.map((i) => (
+                          <Link
+                            key={i.href}
+                            to={i.href}
+                            className="block rounded-lg px-4 py-3 hover:bg-ldii-mist"
+                          >
+                            <span className="block text-[15px] font-semibold text-ldii-navy">{i.title}</span>
+                            {i.note && <span className="block text-sm text-gray-600 mt-0.5">{i.note}</span>}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </nav>
+                  </div>
+                ) : (
+                  <NavLink
+                    key={g.title}
+                    to={g.href}
+                    className={({ isActive: a }) =>
+                      `px-3 py-2 rounded-md text-[15px] font-medium transition-colors ${a ? 'text-tech-teal-800' : 'text-gray-800 hover:text-tech-teal-800'}`
+                    }
+                  >
+                    {g.title}
+                  </NavLink>
+                ),
+              )}
+              <Link
+                to="/donate"
+                className="ml-3 inline-flex items-center gap-2 bg-ldii-navy text-white px-5 py-2.5 rounded-full text-[15px] font-semibold hover:bg-tech-teal-800 transition-colors"
+              >
+                <i className="ri-heart-3-line" aria-hidden="true" /> Donate
+              </Link>
+            </nav>
 
-          {/* Right Side - Language Switcher & Mobile Menu Button */}
-          <div className="flex items-center space-x-2 sm:space-x-4">
-            <div className={scrolled ? '' : 'text-white'}>
-              <LanguageSwitcher />
-            </div>
-            
-            {/* Mobile Menu Button */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`xl:hidden p-2 rounded-lg transition-colors cursor-pointer min-w-[48px] min-h-[48px] flex items-center justify-center ${
-                scrolled ? 'hover:bg-gray-100' : 'hover:bg-white/20'
-              }`}
-              aria-label="Toggle menu"
+              type="button"
+              className="lg:hidden w-12 h-12 flex items-center justify-center rounded-lg text-ldii-navy hover:bg-gray-100"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? 'Close menu' : 'Open menu'}
+              onClick={() => setOpen(!open)}
             >
-              <i className={`${mobileMenuOpen ? 'ri-close-line' : 'ri-menu-line'} w-6 h-6 flex items-center justify-center ${scrolled ? 'text-gray-700' : 'text-white'}`}></i>
+              <i className={`${open ? 'ri-close-line' : 'ri-menu-line'} text-2xl`} aria-hidden="true" />
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Mobile Menu */}
-        <div className={`xl:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-          mobileMenuOpen ? 'max-h-[80vh] opacity-100' : 'max-h-0 opacity-0'
-        }`}>
-          <div className="py-4 space-y-2 border-t border-gray-200 overflow-y-auto max-h-[70vh] bg-white rounded-b-lg shadow-lg">
-            {navigationItems.map((item, index) => (
-              <div key={index} className="space-y-1">
-                <a
-                  href={item.href}
-                  className="flex items-center justify-between px-4 py-3 text-gray-700 hover:text-white hover:bg-[#0A1E3D] rounded-lg transition-all duration-300 font-medium whitespace-nowrap min-h-[48px]"
-                  onClick={(e) => {
-                    if (item.dropdown) {
-                      e.preventDefault();
-                      setActiveDropdown(activeDropdown === item.title ? null : item.title);
-                    }
-                  }}
-                >
-                  <span>{item.title}</span>
-                  {item.dropdown && (
-                    <i className={`ri-arrow-down-s-line w-5 h-5 flex items-center justify-center transition-transform duration-300 ${
-                      activeDropdown === item.title ? 'rotate-180' : ''
-                    }`}></i>
-                  )}
-                </a>
-                
-                {/* Mobile Dropdown */}
-                {item.dropdown && (
-                  <div className={`transition-all duration-300 overflow-hidden ${
-                    activeDropdown === item.title ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                  }`}>
-                    <div className="pl-4 space-y-1">
-                      {item.dropdown.map((dropdownItem, dropdownIndex) => (
-                        <a
-                          key={dropdownIndex}
-                          href={dropdownItem.href}
-                          className="block pl-4 py-2 text-gray-600 hover:text-[#00D9FF] hover:bg-[#0A1E3D]/10 rounded transition-all duration-300 text-sm whitespace-normal leading-relaxed min-h-[44px] flex items-center"
-                        >
-                          {dropdownItem.title}
-                        </a>
+      {/* Phone menu: a sibling of the header (never inside it), solid background, below the bar. */}
+      <div
+        id="mobile-menu"
+        ref={panelRef}
+        hidden={!open}
+        className="lg:hidden fixed inset-x-0 top-[72px] bottom-0 z-40 bg-white overflow-y-auto border-t border-gray-200"
+      >
+        <nav className="px-4 py-4" aria-label="Main">
+          {NAV.map((g) => (
+            <div key={g.title} className="border-b border-gray-100 py-1">
+              {g.items ? (
+                <>
+                  <button
+                    type="button"
+                    className="w-full flex items-center justify-between py-3 text-lg font-semibold text-ldii-navy"
+                    aria-expanded={openGroup === g.title}
+                    onClick={() => setOpenGroup(openGroup === g.title ? null : g.title)}
+                  >
+                    {g.title}
+                    <i className={`ri-arrow-down-s-line text-xl transition-transform ${openGroup === g.title ? 'rotate-180' : ''}`} aria-hidden="true" />
+                  </button>
+                  {openGroup === g.title && (
+                    <div className="pb-2">
+                      {g.items.map((i) => (
+                        <Link key={i.href} to={i.href} className="block py-3 pl-4 text-base text-gray-700 rounded-lg hover:bg-ldii-mist">
+                          {i.title}
+                        </Link>
                       ))}
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  )}
+                </>
+              ) : (
+                <Link to={g.href} className="block py-3 text-lg font-semibold text-ldii-navy">
+                  {g.title}
+                </Link>
+              )}
+            </div>
+          ))}
+          <Link
+            to="/donate"
+            className="mt-6 flex items-center justify-center gap-2 bg-ldii-navy text-white px-5 py-4 rounded-full text-lg font-semibold"
+          >
+            <i className="ri-heart-3-line" aria-hidden="true" /> Donate
+          </Link>
+          <div className="mt-6 text-sm text-gray-600 space-y-2">
+            <a href={`mailto:${ORG.email}`} className="block">{ORG.email}</a>
+            <a href={ORG.phoneHref} className="block">{ORG.phone}</a>
           </div>
-        </div>
+        </nav>
       </div>
-    </header>
+    </>
   );
 }

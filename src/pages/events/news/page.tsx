@@ -1,104 +1,57 @@
+import { useLocation } from 'react-router-dom';
+import Eyebrow from '../../../components/base/Eyebrow';
+import PostCard from '../../../components/feature/PostCard';
+import { POSTS, PHOTOS, photo } from '../../../content/ldii';
 import { newsArticles } from '../../../mocks/newsData';
-export default function LatestNewsPage() {
-  // Real LDII news only (13 Nov 2026): every item matches an event documented in the gallery.
-  // The Readdy template's invented items (UN partnership, tree, hub, microfinance and graduation
-  // figures, invented directors) were removed at the owner's request.
 
+export default function NewsPage() {
+  const { hash } = useLocation();
+  const target = hash.replace('#', '');
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-orange-600 to-red-700">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=News%20and%20media%20with%20newspapers%20magazines%20and%20digital%20screens%20showing%20headlines%2C%20journalism%20and%20communication%2C%20professional%20news%20environment%2C%20high-quality%20photography&width=1920&height=800&seq=news-hero&orientation=landscape)`
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Latest News
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Stay updated with the latest developments, achievements, and announcements from LDII.
-          </p>
+    <>
+      <section className="relative isolate overflow-hidden bg-ldii-ink text-white">
+        <img src={photo(PHOTOS.igad.id, 1920, 800)} alt="" className="absolute inset-0 -z-20 w-full h-full object-cover" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/85 to-ldii-ink/40" aria-hidden="true" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-28">
+          <Eyebrow light>News &amp; media</Eyebrow>
+          <h1 className="mt-5 font-display text-5xl md:text-6xl font-semibold">News &amp; Media</h1>
+          <p className="mt-5 text-lg text-white/85 max-w-2xl">What partner institutions have published about LDII, and the latest from our own engagements.</p>
         </div>
       </section>
 
-      {/* News Grid */}
-      <section className="py-20 bg-white">
+      <section className="bg-ldii-sand py-20" aria-labelledby="in-the-news">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Recent Updates</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore our latest news, program updates, and organizational announcements.
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {newsArticles.map((article, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
-                  <div className="lg:col-span-1">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover min-h-[300px]"
-                    />
-                  </div>
-                  <div className="lg:col-span-2 p-8">
-                    <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
-                        {article.category}
-                      </span>
-                      <span className="text-gray-500">{article.date}</span>
-                    </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{article.title}</h3>
-                    <p className="text-lg text-gray-700 mb-4 leading-relaxed">{article.excerpt}</p>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{article.content}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-500 text-sm">{article.author}</span>
-                      <a
-                        href={article.link}
-                        className="text-orange-600 hover:text-orange-700 font-semibold cursor-pointer inline-flex items-center space-x-2"
-                      >
-                        <span>{article.linkLabel}</span>
-                        <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <Eyebrow>In the news</Eyebrow>
+          <h2 id="in-the-news" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy">Articles and posts about LDII</h2>
+          <div className="mt-10 grid md:grid-cols-2 gap-6 items-start">
+            {POSTS.map((p) => (
+              <PostCard key={p.slug} post={p} defaultOpen={target === p.slug} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-[#0A1E3D]">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Stay Informed
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Subscribe to our newsletter to receive the latest news and updates directly in your inbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="/contact"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Subscribe to Newsletter
-            </a>
-            <a
-              href="/events/press-releases"
-              className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              View Press Releases
-            </a>
+      <section className="bg-white py-20" aria-labelledby="updates">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Eyebrow>LDII updates</Eyebrow>
+          <h2 id="updates" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy">From our engagements</h2>
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {newsArticles.map((a) => (
+              <article key={a.title} className="rounded-2xl border border-gray-200 overflow-hidden flex flex-col">
+                <img src={a.image} alt="" loading="lazy" className="w-full aspect-[16/10] object-cover" />
+                <div className="p-6 flex flex-col flex-1">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-tech-teal-800">{a.date} · {a.category}</p>
+                  <h3 className="mt-2 font-display text-xl font-semibold text-ldii-navy leading-snug">{a.title}</h3>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a.excerpt}</p>
+                  <a href={a.link} className="mt-auto pt-5 inline-flex items-center gap-1 font-semibold text-tech-teal-800 hover:text-ldii-navy">
+                    {a.linkLabel} <i className="ri-arrow-right-line" aria-hidden="true" />
+                  </a>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

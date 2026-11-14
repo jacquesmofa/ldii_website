@@ -12,7 +12,7 @@ export default function PresidentProfilePage() {
               <div className="relative">
                 <div className="w-72 h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                   <img
-                    src="https://storage.readdy-site.link/project_files/836b8318-f1ec-485e-88c4-18bd6440b55d/701ca0d0-fd60-45d3-8075-b92942a7a09f_WhatsApp-Image-2026-05-15-at-17.09.45.jpeg?v=1dbaf5f87cc5c04b8030605dd2f15a5f"
+                    src="https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_600,h_600,q_auto,f_auto/Lwabaayi_Profile_ovqlxd.jpg"
                     alt="Mr. Ronald Lwabaayi"
                     className="w-full h-full object-cover object-top"
                   />

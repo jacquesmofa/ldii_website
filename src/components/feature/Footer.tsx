@@ -1,515 +1,129 @@
 import { useState } from 'react';
-import { useMedia } from '@/context/MediaContext';
+import { Link } from 'react-router-dom';
 import { submitFormToInbox } from '@/lib/web3forms';
+import { ORG } from '@/content/ldii';
+import { NAV } from './Header';
+
+const LOGO = 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_center,w_160,h_160,q_auto,f_auto/v1781702619/Circular_LDII_bewv0j.png';
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
-  const [submitError, setSubmitError] = useState(false);
-  const { assets, loading } = useMedia();
+  const [sending, setSending] = useState(false);
+  const [msg, setMsg] = useState<{ ok: boolean; text: string } | null>(null);
 
-  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const subscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (isSubmitting) return;
+    if (sending) return;
     const form = e.currentTarget;
-    setIsSubmitting(true);
-
+    setSending(true);
     const result = await submitFormToInbox(form, {
       subject: 'New newsletter subscriber — LDII website',
-      extra: { form_name: 'Footer Newsletter Subscription' },
+      extra: { form_name: 'Footer newsletter' },
     });
-
-    if (result.ok) {
-      form.reset();
-      setEmail('');
-    }
-    setSubmitError(!result.ok);
-    setSubmitMessage(result.message);
-    setIsSubmitting(false);
-    setTimeout(() => setSubmitMessage(''), 9000);
+    if (result.ok) form.reset();
+    setMsg({ ok: result.ok, text: result.message });
+    setSending(false);
   };
 
+  const columns = NAV.filter((g) => g.items);
+
   return (
-    <footer className="bg-gray-900 text-white relative overflow-hidden mt-20">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url(https://readdy.ai/api/search-image?query=Modern%20corporate%20technology%20business%20trade%20innovation%20digital%20transformation%20professional%20office%20environment%20with%20advanced%20technology%20screens%20data%20visualization%20global%20business%20network%20connectivity%20futuristic%20workspace%20high-tech%20conference%20room%20with%20multiple%20displays%20showing%20business%20analytics%20and%20technological%20advancement&width=1920&height=1200&seq=footer-bg-corporate-tech&orientation=landscape)'
-        }}
-      />
-      <div className="absolute inset-0 bg-[#0A1E3D]/95" />
-      
-      {/* Luminous Tech Effects - Glowing, Blinking, Shining Lights */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Animated Circuit Lines */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent animate-pulse-glow"></div>
-        <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent animate-pulse-glow-delay"></div>
-        
-        {/* Floating Luminous Particles */}
-        <div className="absolute top-10 left-[10%] w-2 h-2 bg-[#00D9FF] rounded-full animate-float-glow shadow-glow-cyan"></div>
-        <div className="absolute top-20 right-[15%] w-3 h-3 bg-[#00D9FF] rounded-full animate-float-glow-delay shadow-glow-cyan"></div>
-        <div className="absolute bottom-32 left-[20%] w-2 h-2 bg-[#00D9FF] rounded-full animate-float-glow-delay-2 shadow-glow-cyan"></div>
-        <div className="absolute bottom-20 right-[25%] w-3 h-3 bg-[#00D9FF] rounded-full animate-float-glow shadow-glow-cyan"></div>
-        <div className="absolute top-1/3 left-[30%] w-2 h-2 bg-[#00D9FF] rounded-full animate-float-glow-delay shadow-glow-cyan"></div>
-        <div className="absolute top-1/2 right-[35%] w-2 h-2 bg-[#00D9FF] rounded-full animate-float-glow-delay-2 shadow-glow-cyan"></div>
-        
-        {/* Blinking Tech Nodes */}
-        <div className="absolute top-16 left-[40%] w-4 h-4 bg-[#00D9FF] rounded-full animate-blink-fast shadow-glow-cyan-strong"></div>
-        <div className="absolute bottom-40 right-[45%] w-4 h-4 bg-[#00D9FF] rounded-full animate-blink-slow shadow-glow-cyan-strong"></div>
-        <div className="absolute top-1/4 right-[10%] w-3 h-3 bg-[#00D9FF] rounded-full animate-blink-medium shadow-glow-cyan-strong"></div>
-        <div className="absolute bottom-1/4 left-[50%] w-3 h-3 bg-[#00D9FF] rounded-full animate-blink-fast shadow-glow-cyan-strong"></div>
-        
-        {/* Scanning Light Beams */}
-        <div className="absolute top-0 left-[20%] w-px h-full bg-gradient-to-b from-transparent via-[#00D9FF]/30 to-transparent animate-scan-vertical"></div>
-        <div className="absolute top-0 right-[30%] w-px h-full bg-gradient-to-b from-transparent via-[#00D9FF]/30 to-transparent animate-scan-vertical-delay"></div>
-        
-        {/* Horizontal Scanning Beams */}
-        <div className="absolute top-[30%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00D9FF]/30 to-transparent animate-scan-horizontal"></div>
-        <div className="absolute bottom-[40%] left-0 w-full h-px bg-gradient-to-r from-transparent via-[#00D9FF]/30 to-transparent animate-scan-horizontal-delay"></div>
-        
-        {/* Glowing Rings */}
-        <div className="absolute top-12 right-[20%] w-16 h-16 border-2 border-[#00D9FF]/40 rounded-full animate-pulse-ring"></div>
-        <div className="absolute bottom-24 left-[15%] w-20 h-20 border-2 border-[#00D9FF]/40 rounded-full animate-pulse-ring-delay"></div>
-        <div className="absolute top-1/2 left-[60%] w-12 h-12 border-2 border-[#00D9FF]/40 rounded-full animate-pulse-ring"></div>
-        
-        {/* Data Stream Lines */}
-        <div className="absolute top-1/4 left-[5%] w-32 h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent animate-data-stream"></div>
-        <div className="absolute bottom-1/3 right-[10%] w-40 h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent animate-data-stream-delay"></div>
-        <div className="absolute top-2/3 left-[70%] w-24 h-px bg-gradient-to-r from-transparent via-[#00D9FF] to-transparent animate-data-stream"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
-          {/* Column 1: Logo & Newsletter */}
-          <div className="md:col-span-1">
-            <a href="/#hero" className="inline-block mb-4 cursor-pointer group">
-              <div className="transition-transform duration-300 group-hover:scale-105">
-                {loading ? (
-                  <div className="h-16 w-32 bg-gray-700 animate-pulse rounded mb-3"></div>
-                ) : (
-                  <img
-                    src={assets.branding.logo_white || assets.branding.logo_main}
-                    alt="Livelihood Development International Initiatives"
-                    className="h-16 w-auto mb-3"
-                  />
-                )}
-                <p className="text-white text-sm font-semibold" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-                  Livelihood Development International Initiatives
-                </p>
-              </div>
-            </a>
-            <p className="text-white text-sm mb-6 mt-4" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-              Committed to creating a brighter future through the promotion of social cohesion and empowerment.
+    <footer className="bg-ldii-ink text-white">
+      {/* Signature band: the North–South line */}
+      <div className="h-1.5 bg-gradient-to-r from-tech-teal-500 via-tech-teal-300 to-tech-teal-500" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <Link to="/" className="flex items-center gap-3">
+              <img src={LOGO} alt="" width={56} height={56} className="w-14 h-14 rounded-full bg-white" />
+              <span>
+                <span className="block font-display text-3xl font-bold leading-none">LDII</span>
+                <span className="block text-xs text-white/70 mt-1 max-w-[220px]">{ORG.name}</span>
+              </span>
+            </Link>
+            <p className="mt-6 font-display text-xl text-tech-teal-300">{ORG.tagline}</p>
+            <p className="mt-3 text-white/75 leading-relaxed">
+              A Canadian nonprofit with a social enterprise approach, headquartered in {ORG.hq}.
             </p>
-            
-            {/* Newsletter Sign-Up */}
-            <div className="mb-6">
-              <h4 className="font-semibold mb-3 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Join Our Newsletter</h4>
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2 relative" data-readdy-form id="footer-newsletter-form">
+
+            <form onSubmit={subscribe} className="mt-8" id="footer-newsletter-form">
+              <label htmlFor="footer-email" className="block font-semibold mb-2">Newsletter</label>
+              <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
+              <div className="flex gap-2">
                 <input
-                  type="text"
-                  name="website_alt"
-                  tabIndex={-1}
-                  autoComplete="off"
-                  aria-hidden="true"
-                  readOnly
-                  className="form-guard"
-                />
-                <input
+                  id="footer-email"
                   type="email"
                   name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email"
                   required
-                  className="px-4 py-2 rounded-lg bg-[#1a2f4d] text-white border border-[#00D9FF]/30 focus:outline-none focus:border-[#00D9FF] text-sm"
+                  placeholder="Your email"
+                  className="flex-1 min-w-0 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-tech-teal-500"
                 />
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-[#00D9FF] text-[#0A1E3D] px-4 py-2 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 cursor-pointer whitespace-nowrap text-sm disabled:opacity-50 transform hover:scale-105"
-                >
-                  {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+                <button type="submit" disabled={sending} className="px-5 py-3 rounded-full bg-tech-teal-500 text-ldii-navy font-semibold hover:bg-tech-teal-400 disabled:opacity-60">
+                  {sending ? 'Sending…' : 'Subscribe'}
                 </button>
-              </form>
-              {submitMessage && (
-                <p className={`text-sm mt-2 ${submitError ? 'text-red-400' : 'text-[#00D9FF]'}`} style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  {submitMessage}
-                </p>
-              )}
-            </div>
+              </div>
+              {msg && <p className={`mt-2 text-sm ${msg.ok ? 'text-tech-teal-300' : 'text-red-300'}`} role="status">{msg.text}</p>}
+            </form>
           </div>
 
-          {/* Column 2: Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Quick Links</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li>
-                <a href="/#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Home
-                </a>
+          <div className="lg:col-span-5 grid grid-cols-2 sm:grid-cols-4 gap-8">
+            {columns.map((g) => (
+              <div key={g.title}>
+                <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-tech-teal-300 mb-4">{g.title}</h2>
+                <ul className="space-y-3">
+                  {g.items!.map((i) => (
+                    <li key={i.href}>
+                      <Link to={i.href} className="text-white/80 hover:text-white text-[15px]">{i.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="lg:col-span-3">
+            <h2 className="font-sans text-sm font-semibold uppercase tracking-widest text-tech-teal-300 mb-4">Contact</h2>
+            <ul className="space-y-4 text-white/85">
+              <li className="flex gap-3">
+                <i className="ri-map-pin-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
+                <a href={ORG.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">{ORG.address}</a>
               </li>
-              <li>
-                <a href="/programs#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Local Programs
-                </a>
+              <li className="flex gap-3">
+                <i className="ri-phone-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
+                <a href={ORG.phoneHref} className="hover:text-white">{ORG.phone}</a>
               </li>
-              <li>
-                <a href="/programs/youth-programs-ontario" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Youth Programs in Ontario
-                </a>
-              </li>
-              <li>
-                <a href="/programs/local-capacity-training" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Local Capacity Training
-                </a>
-              </li>
-              <li>
-                <a href="/social-enterprise/consulting" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Consulting &amp; Market Intelligence
-                </a>
-              </li>
-              <li>
-                <a href="/programs/mining-technology-exchange" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Mining &amp; Technology Exchange
-                </a>
-              </li>
-              <li>
-                <a href="/about#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/contact#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="/donate#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Donate Now
-                </a>
-              </li>
-              <li>
-                <a href="/events#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Our Events
-                </a>
+              <li className="flex gap-3">
+                <i className="ri-mail-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
+                <a href={`mailto:${ORG.email}`} className="hover:text-white break-all">{ORG.email}</a>
               </li>
             </ul>
-          </div>
-
-          {/* Column 3: Our Impact */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Our Impact</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li>
-                <a href="/what-we-do/climate-action#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Climate Action & Mitigation
+            <div className="flex gap-2 mt-6">
+              {ORG.socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`LDII on ${s.label}`}
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-tech-teal-500 hover:text-ldii-navy flex items-center justify-center transition-colors"
+                >
+                  <i className={s.icon} aria-hidden="true" />
                 </a>
-              </li>
-              <li>
-                <a href="/what-we-do/poverty-eradication#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Poverty Eradication & Inclusive Growth
-                </a>
-              </li>
-              <li>
-                <a href="/what-we-do/sustainable-food#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Sustainable Food Systems
-                </a>
-              </li>
-              <li>
-                <a href="/what-we-do/global-health#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Global Health & Resilience
-                </a>
-              </li>
-              <li>
-                <a href="/what-we-do/digital-inclusion#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Digital Inclusion
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Legal & Resources */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Legal & Resources</h4>
-            <ul className="space-y-2 text-white text-sm">
-              <li>
-                <a href="/privacy-policy#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms-of-service#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Terms of Use
-                </a>
-              </li>
-              <li>
-                <a href="/accessibility#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Accessibility Statement
-                </a>
-              </li>
-              <li>
-                <a href="/faq#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  FAQs
-                </a>
-              </li>
-              <li>
-                <a href="/sitemap#hero" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  Sitemap
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 5: Contact Information */}
-          <div>
-            <h4 className="font-semibold mb-4 text-white" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Contact Information</h4>
-            <div className="space-y-3 text-white text-sm">
-              <div>
-                <p className="font-semibold text-white mb-1" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Phone:</p>
-                <a href="tel:+16476563026" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  +1 647 656 3026
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold text-white mb-1" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Email:</p>
-                <a href="mailto:info@ldiinitiatives.org" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  info@ldiinitiatives.org
-                </a>
-                <a href="mailto:admin@ldiinitiatives.org" className="text-gray-300 hover:text-[#00D9FF] transition-colors duration-300 block py-1 whitespace-nowrap" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-                  admin@ldiinitiatives.org
-                </a>
-              </div>
-              <div>
-                <p className="font-semibold text-white mb-2" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>Toronto Office:</p>
-                <p className="text-xs text-white" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6</p>
-              </div>
-
-            </div>
-            
-            {/* Social Media Icons */}
-            <div className="flex gap-3 mt-6">
-              <a
-                href="https://facebook.com/ldiinitiatives"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1a2f4d] flex items-center justify-center text-[#00D9FF] hover:bg-[#00D9FF] hover:text-[#0A1E3D] transition-all duration-300 transform hover:scale-110"
-                aria-label="Facebook"
-              >
-                <i className="ri-facebook-fill text-xl"></i>
-              </a>
-              <a
-                href="https://youtube.com/@ldiinitiatives"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1a2f4d] flex items-center justify-center text-[#00D9FF] hover:bg-[#00D9FF] hover:text-[#0A1E3D] transition-all duration-300 transform hover:scale-110"
-                aria-label="YouTube"
-              >
-                <i className="ri-youtube-fill text-xl"></i>
-              </a>
-              <a
-                href="https://x.com/ldiinitiatives"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1a2f4d] flex items-center justify-center text-[#00D9FF] hover:bg-[#00D9FF] hover:text-[#0A1E3D] transition-all duration-300 transform hover:scale-110"
-                aria-label="X (Twitter)"
-              >
-                <i className="ri-twitter-x-fill text-xl"></i>
-              </a>
-              <a
-                href="https://instagram.com/ldiinitiatives"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1a2f4d] flex items-center justify-center text-[#00D9FF] hover:bg-[#00D9FF] hover:text-[#0A1E3D] transition-all duration-300 transform hover:scale-110"
-                aria-label="Instagram"
-              >
-                <i className="ri-instagram-fill text-xl"></i>
-              </a>
-              <a
-                href="https://linkedin.com/company/ldiinitiatives"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full bg-[#1a2f4d] flex items-center justify-center text-[#00D9FF] hover:bg-[#00D9FF] hover:text-[#0A1E3D] transition-all duration-300 transform hover:scale-110"
-                aria-label="LinkedIn"
-              >
-                <i className="ri-linkedin-fill text-xl"></i>
-              </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom Copyright Bar */}
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-white text-sm" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
-            © {new Date().getFullYear()} Livelihood Development International Initiatives (LDII). All Rights Reserved.
-          </p>
+        <div className="mt-14 pt-6 border-t border-white/10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-sm text-white/65">
+          <p>© {new Date().getFullYear()} {ORG.name}. All rights reserved.</p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+            <li><Link to="/privacy-policy" className="hover:text-white">Privacy</Link></li>
+            <li><Link to="/terms-of-service" className="hover:text-white">Terms</Link></li>
+            <li><Link to="/accessibility" className="hover:text-white">Accessibility</Link></li>
+            <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+            <li><Link to="/sitemap" className="hover:text-white">Site map</Link></li>
+          </ul>
         </div>
       </div>
-      
-      {/* Luminous Effects CSS */}
-      <style>{`
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.3; box-shadow: 0 0 10px #00D9FF; }
-          50% { opacity: 1; box-shadow: 0 0 20px #00D9FF, 0 0 30px #00D9FF; }
-        }
-        
-        @keyframes pulse-glow-delay {
-          0%, 100% { opacity: 0.3; box-shadow: 0 0 10px #00D9FF; }
-          50% { opacity: 1; box-shadow: 0 0 20px #00D9FF, 0 0 30px #00D9FF; }
-        }
-        
-        @keyframes float-glow {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-          50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
-        }
-        
-        @keyframes float-glow-delay {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-          50% { transform: translateY(-15px) scale(1.1); opacity: 1; }
-        }
-        
-        @keyframes float-glow-delay-2 {
-          0%, 100% { transform: translateY(0) scale(1); opacity: 0.6; }
-          50% { transform: translateY(-25px) scale(1.3); opacity: 1; }
-        }
-        
-        @keyframes blink-fast {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 1; }
-        }
-        
-        @keyframes blink-medium {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 1; }
-        }
-        
-        @keyframes blink-slow {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 1; }
-        }
-        
-        @keyframes scan-vertical {
-          0% { transform: translateY(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateY(100%); opacity: 0; }
-        }
-        
-        @keyframes scan-vertical-delay {
-          0% { transform: translateY(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateY(100%); opacity: 0; }
-        }
-        
-        @keyframes scan-horizontal {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
-        }
-        
-        @keyframes scan-horizontal-delay {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(100%); opacity: 0; }
-        }
-        
-        @keyframes pulse-ring {
-          0% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.5); opacity: 0.3; }
-          100% { transform: scale(1); opacity: 0.8; }
-        }
-        
-        @keyframes pulse-ring-delay {
-          0% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.3); opacity: 0.4; }
-          100% { transform: scale(1); opacity: 0.8; }
-        }
-        
-        @keyframes data-stream {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(200%); opacity: 0; }
-        }
-        
-        @keyframes data-stream-delay {
-          0% { transform: translateX(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateX(200%); opacity: 0; }
-        }
-        
-        .animate-pulse-glow {
-          animation: pulse-glow 3s ease-in-out infinite;
-        }
-        
-        .animate-pulse-glow-delay {
-          animation: pulse-glow-delay 3s ease-in-out infinite 1.5s;
-        }
-        
-        .animate-float-glow {
-          animation: float-glow 4s ease-in-out infinite;
-        }
-        
-        .animate-float-glow-delay {
-          animation: float-glow-delay 5s ease-in-out infinite 1s;
-        }
-        
-        .animate-float-glow-delay-2 {
-          animation: float-glow-delay-2 6s ease-in-out infinite 2s;
-        }
-        
-        .animate-blink-fast {
-          animation: blink-fast 1s ease-in-out infinite;
-        }
-        
-        .animate-blink-medium {
-          animation: blink-medium 2s ease-in-out infinite;
-        }
-        
-        .animate-blink-slow {
-          animation: blink-slow 3s ease-in-out infinite;
-        }
-        
-        .animate-scan-vertical {
-          animation: scan-vertical 8s linear infinite;
-        }
-        
-        .animate-scan-vertical-delay {
-          animation: scan-vertical-delay 8s linear infinite 4s;
-        }
-        
-        .animate-scan-horizontal {
-          animation: scan-horizontal 10s linear infinite;
-        }
-        
-        .animate-scan-horizontal-delay {
-          animation: scan-horizontal-delay 10s linear infinite 5s;
-        }
-        
-        .animate-pulse-ring {
-          animation: pulse-ring 4s ease-in-out infinite;
-        }
-        
-        .animate-pulse-ring-delay {
-          animation: pulse-ring-delay 4s ease-in-out infinite 2s;
-        }
-        
-        .animate-data-stream {
-          animation: data-stream 6s linear infinite;
-        }
-        
-        .animate-data-stream-delay {
-          animation: data-stream-delay 6s linear infinite 3s;
-        }
-        
-        .shadow-glow-cyan {
-          box-shadow: 0 0 10px #00D9FF, 0 0 20px #00D9FF;
-        }
-        
-        .shadow-glow-cyan-strong {
-          box-shadow: 0 0 15px #00D9FF, 0 0 30px #00D9FF, 0 0 45px #00D9FF;
-        }
-      `}</style>
     </footer>
   );
 }

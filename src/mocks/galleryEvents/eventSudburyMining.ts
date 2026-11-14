@@ -112,12 +112,6 @@ export const eventSudburyMining: GalleryEvent = {
       height: 1152,
     },
     {
-      url: cld('WhatsApp_Image_2026-11-12_at_19.43.18_iogwnk'),
-      title: "Delegates during the trip",
-      width: 1152,
-      height: 2048,
-    },
-    {
       url: cld('WhatsApp_Image_2026-11-12_at_19.43.18_8_nnzhed'),
       title: "Presentation of a gift",
       width: 2048,

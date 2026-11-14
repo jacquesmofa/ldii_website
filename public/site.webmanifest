@@ -1,7 +1,7 @@
 {
   "name": "LDII - Livelihood Development International Initiatives",
   "short_name": "LDII",
-  "description": "Technology transfer, mining partnerships and community programmes across Canada and Africa.",
+  "description": "Local Impact, Global Partnerships. A Toronto nonprofit connecting communities in Ontario with partners across the Global South.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -9,7 +9,11 @@
   "theme_color": "#0A1E3D",
   "lang": "en-CA",
   "dir": "ltr",
-  "categories": ["education", "nonprofit", "business"],
+  "categories": [
+    "education",
+    "nonprofit",
+    "business"
+  ],
   "icons": [
     {
       "src": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_center,w_192,h_192,f_png,q_auto/v1781702619/Circular_LDII_bewv0j.png",

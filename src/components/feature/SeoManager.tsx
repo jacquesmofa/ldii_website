@@ -8,6 +8,26 @@ import {
   getPageSeo,
   isKnownPath,
 } from '@/lib/pageSeo';
+import { getPastEvents, getUpcomingEvents, type EventItem } from '@/mocks/eventsData';
+import { ORG } from '@/content/ldii';
+
+const EVENT_PAGES: Record<string, () => EventItem[]> = {
+  '/events': () => [...getUpcomingEvents(), ...getPastEvents()],
+  '/events/upcoming': getUpcomingEvents,
+  '/events/past': getPastEvents,
+};
+
+const eventSchema = (e: EventItem) => ({
+  '@type': 'Event',
+  name: e.title,
+  startDate: e.date,
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  description: e.shortDescription || e.description,
+  ...(e.image ? { image: e.image } : {}),
+  location: { '@type': 'Place', name: e.venue || e.location, address: e.location },
+  organizer: { '@type': 'Organization', name: ORG.name, url: `${SITE_URL}/` },
+});
 
 const setMeta = (key: string, value: string, attr: 'name' | 'property' = 'name') => {
   let tag = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
@@ -77,11 +97,12 @@ const SeoManager = () => {
     setMeta('og:title', seo.title, 'property');
     setMeta('og:description', seo.description, 'property');
     setMeta('og:url', url, 'property');
-    setMeta('og:image', SHARE_IMAGE, 'property');
+    setMeta('og:image', seo.image || SHARE_IMAGE, 'property');
+    setMeta('og:image:alt', seo.imageAlt || seo.title, 'property');
     setMeta('og:site_name', SITE_NAME, 'property');
     setMeta('twitter:title', seo.title);
     setMeta('twitter:description', seo.description);
-    setMeta('twitter:image', SHARE_IMAGE);
+    setMeta('twitter:image', seo.image || SHARE_IMAGE);
     setCanonical(url);
 
     const breadcrumbs = buildBreadcrumbs(pathname);
@@ -100,6 +121,7 @@ const SeoManager = () => {
             url: `${SITE_URL}/`,
           },
         },
+        ...(EVENT_PAGES[pathname.replace(/\/+$/, '')]?.() ?? []).map(eventSchema),
         {
           '@type': 'BreadcrumbList',
           itemListElement: breadcrumbs.map((crumb, index) => ({

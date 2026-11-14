@@ -20,214 +20,215 @@ import type { GalleryEvent } from '../galleryTypes';
 
 export const eventBehindTheScenes: GalleryEvent = {
   slug: 'conference-planning-behind-the-scenes',
-  title: 'Conference Planning & Behind the Scenes',
+  title: 'Diplomatic Missions & Partner Meetings',
+  shortTitle: 'Missions & Meetings',
   year: '2025',
   date: 'July 2025',
-  location: 'Brampton & Toronto, Canada',
+  location: 'Ontario, Canada',
   description:
-    'Candid photographs from conference planning sessions, preparation meetings, and behind-the-scenes moments that showcase the dedication and teamwork behind LDII\'s major international events. These images capture the preparation, coordination, and community effort that make our conferences possible.',
+    'LDII meetings with diplomatic missions and partners in 2025: a working session with the Senegalese mission, where LDII presented the 2nd International Post-COVID-19 Conference, and a partner meeting on resource mobilisation.',
   images: [
     {
       url: cld('PSX_20250726_005744_m8jl0j'),
-      title: 'Early Morning Setup - July 26, 2025',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_034602_tk8ljk'),
-      title: 'Venue Preparation - Team at Work',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_034738_fdedeu'),
-      title: 'Stage Setup - Technical Team',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_034927_qjf4hu'),
-      title: 'Audio-Visual Preparation',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_035110_ggtre1'),
-      title: 'Registration Area Setup',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_035355_lkupcq'),
-      title: 'Banner and Branding Installation',
+      title: 'Working session with the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_035940_umksxu'),
-      title: 'Final Walkthrough - July 26 Morning',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_040135_jbfyuq'),
-      title: 'Catering and Hospitality Prep',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_040303_vqjfbf'),
-      title: 'Volunteer Briefing Session',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_040431_fjq4ij'),
-      title: 'Security and Protocol Check',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_040904_yeip7j'),
-      title: 'Exhibition Booth Setup',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_041138_qirydd'),
-      title: 'Team Huddle - Final Instructions',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_041456_uovyur'),
-      title: 'Signage and Wayfinding Setup',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_041456_1_zconpt'),
-      title: 'Technical Rehearsal',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_041639_syxmy3'),
-      title: 'Delegate Packet Preparation',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_042018_doox1t'),
-      title: 'Welcome Desk Final Touches',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_042149_lqvmhm'),
-      title: 'Name Badge and Material Organization',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_042335_bpxbk9'),
-      title: 'Floral and Decor Arrangement',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_042541_brtsst'),
-      title: 'Photography Station Setup',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_043005_pmuehm'),
-      title: 'Livestream Equipment Check',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_043430_cf2qwm'),
-      title: 'Sound Check - Main Hall',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_043944_xejquc'),
-      title: 'Lighting Adjustment',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_044621_kf9t5e'),
-      title: 'Projection and Screen Test',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('PSX_20250726_044621_1_cj2ur5'),
-      title: 'Backup Systems Check',
+      title: 'Presenting the Post-COVID conference programme to the Senegalese mission · July 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_gkpwsh'),
-      title: 'Resource mobilisation planning · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_6_siaxea'),
-      title: 'Resource mobilisation planning 2 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_8_dvpd2d'),
-      title: 'Resource mobilisation planning 3 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_7_sppw2z'),
-      title: 'Resource mobilisation planning 4 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_4_ounzql'),
-      title: 'Resource mobilisation planning 5 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_2_d4dmba'),
-      title: 'Resource mobilisation planning 6 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_1_cqjtc1'),
-      title: 'Resource mobilisation planning 7 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.04_5_udalnn'),
-      title: 'Resource mobilisation planning 8 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.03_tshx9t'),
-      title: 'Resource mobilisation planning 9 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     },
     {
       url: cld('WhatsApp_Image_2026-10-19_at_10.23.03_2_wepm3q'),
-      title: 'Resource mobilisation planning 10 · August 2025',
+      title: 'Partner meeting on resource mobilisation · 2025',
       width: 1200,
       height: 900
     }

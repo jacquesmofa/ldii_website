@@ -148,8 +148,8 @@ export const featuredImages: GalleryImage[] = [
     height: 1200
   },
   {
-    url: cld('Participants2_omtkbj'),
-    title: 'International Delegates - 2nd Post-COVID Conference',
+    url: cld('General_aiu2gv'),
+    title: 'A full hall at the 2nd International Post-COVID-19 Conference',
     width: 1400,
     height: 900
   },
@@ -189,7 +189,7 @@ export const galleryEvents: GalleryEvent[] = [
   event2ndPostCovid,        // Event 1: 2nd Post-COVID Conference (Brampton, Sep 2025)
   event1stPostCovid,        // 1st Post-COVID Conference (Toronto, July 2024)
   eventDiplomatic,          // Event 3: Diplomatic Engagements & Partnerships
-  eventBehindTheScenes      // Event 4: Conference Planning & Behind the Scenes
+  eventBehindTheScenes      // Event 4: Diplomatic missions & partner meetings (2025)
 ];
 
 

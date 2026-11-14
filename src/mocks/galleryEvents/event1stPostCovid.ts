@@ -23,7 +23,7 @@ export const event1stPostCovid: GalleryEvent = {
   slug: '1st-international-post-covid-conference-toronto-2024',
   title: '1st International Post-COVID Conference',
   year: '2024',
-  date: 'July 2024',
+  date: 'July 11–13, 2024',
   location: 'Metro Toronto Convention Centre, Toronto, Canada',
   description:
     'LDII\'s inaugural international conference with the theme "Building Synergies and Resilience for Future Global Shocks." Held at the Metro Toronto Convention Centre, this landmark event brought together global health experts, policymakers, researchers, and community leaders focused on recovery strategies and pandemic preparedness.',
@@ -359,11 +359,5 @@ export const event1stPostCovid: GalleryEvent = {
       height: 900
     }
   ],
-  videos: [
-    {
-      title: 'The First International Post-COVID Pandemic Conference',
-      thumbnail: 'https://res.cloudinary.com/dzppzxpad/video/upload/so_1,c_fill,w_720,h_1280,q_auto,f_jpg/v1794500695/first_international_post_covid_parade_and_candle_light_vigil_in_the_world_October_1st_2023_gjvofd.jpg',
-      src: 'https://res.cloudinary.com/dzppzxpad/video/upload/q_auto,vc_auto/v1794500695/first_international_post_covid_parade_and_candle_light_vigil_in_the_world_October_1st_2023_gjvofd.mp4',
-    },
-  ],
+  videos: [],
 };

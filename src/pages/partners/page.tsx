@@ -78,7 +78,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Sticky Navigation */}
-      <div className="sticky top-16 lg:top-20 z-40 bg-white shadow-md">
+      <div className="sticky top-[72px] z-40 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-2 py-4">
             <button
@@ -115,7 +115,7 @@ export default function PartnersPage() {
           <div className="text-center mb-14">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Partners</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The organisations and venues behind our conferences, delegations and exchanges. Interested in partnering with LDII? Write to us at info@ldiinitiatives.org.
+              The organisations and venues behind our conferences, delegations and exchanges. Interested in partnering with LDII? Write to us at admin@ldiinitiatives.org.
             </p>
           </div>
           <PartnerCards />
@@ -148,11 +148,11 @@ export default function PartnersPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                  <span className="text-gray-700">Fund critical research and programs</span>
+                  <span className="text-gray-700">Support our local programmes</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <i className="ri-check-line w-5 h-5 flex items-center justify-center text-green-600"></i>
-                  <span className="text-gray-700">Tax receipt provided</span>
+                  <span className="text-gray-700">We confirm every gift by email</span>
                 </div>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function PartnersPage() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <i className="ri-check-line w-5 h-5 flex items-center justify-center text-blue-600"></i>
-                  <span className="text-gray-700">Annual tax receipts</span>
+                  <span className="text-gray-700">A yearly summary of your giving</span>
                 </div>
               </div>
             </div>
@@ -460,7 +460,7 @@ export default function PartnersPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap inline-block"
+              className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap inline-block"
             >
               Contact Us
             </a>

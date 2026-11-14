@@ -18,10 +18,19 @@ export interface Partner {
 
 export const confirmedPartners: Partner[] = [
   {
+    name: 'Intergovernmental Authority on Development (IGAD)',
+    role: 'Co-convener, 1st International Post-COVID Conference',
+    description:
+      'The eight-country regional body of East Africa and the Horn of Africa. IGAD co-convened and co-organized the 1st International Post-COVID Conference with LDII in Toronto, July 11–13, 2024.',
+    website: 'https://igad.int/igad-and-ldii-holds-the-first-international-post-covid-conference-in-canada/',
+    logo: 'https://igad.int/wp-content/uploads/2021/07/Green-Logo.svg',
+    icon: 'ri-government-line',
+  },
+  {
     name: 'Thrive Tours Inc.',
     role: 'Indigenous-led partner',
     description:
-      'A nationally award-winning, 100% Indigenous-owned education and eco-tourism company based at Batchewana First Nation in Northern Ontario, and the operator of the Africa–Canada Mining & Technology Exchange delivered jointly with LDII.',
+      'An Indigenous-led experiential tourism and education company based at Batchewana First Nation in Northern Ontario, and co-host with LDII of the Africa–Canada Mining & Technology Transfer Mission (June 2027).',
     website: 'https://www.thrivetours.ca/',
     logo: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_420/v1792410688/logo-2026_thrive_tours_kbecbo.webp',
     icon: 'ri-compass-3-line',
@@ -44,7 +53,7 @@ export const confirmedPartners: Partner[] = [
   {
     name: 'Metro Toronto Convention Centre',
     role: 'Venue, 1st International Post-COVID Conference',
-    description: 'Toronto venue of the 1st International Post-COVID Conference, July 2024.',
+    description: 'Toronto venue of the 1st International Post-COVID Conference, July 11–13, 2024.',
     website: 'https://www.mtccc.com/',
     icon: 'ri-building-2-line',
   },

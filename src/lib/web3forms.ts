@@ -15,7 +15,7 @@ export type SubmitResult = {
   message: string;
 };
 
-const GENERIC_ERROR = 'Something went wrong while sending your message. Please try again, or email us at info@ldiinitiatives.org.';
+const GENERIC_ERROR = 'Something went wrong while sending your message. Please try again, or email us at admin@ldiinitiatives.org.';
 
 const HONEYPOT_FIELD = 'website_alt';
 

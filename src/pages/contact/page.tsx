@@ -21,10 +21,8 @@ export default function ContactPage() {
       type: 'Head Office',
       address: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6',
       phone: '+1 647 656 3026',
-      email: 'info@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
-      hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
-      image: 'https://readdy.ai/api/search-image?query=Modern%20office%20building%20in%20Toronto%20with%20glass%20facade%20and%20contemporary%20architecture%2C%20Canadian%20flag%20visible%2C%20professional%20corporate%20headquarters%2C%20urban%20business%20district%2C%20high-quality%20architectural%20photography&width=400&height=300&seq=toronto-office&orientation=landscape'
+      email: 'admin@ldiinitiatives.org',
+      image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_900,h_600,q_auto,f_auto/WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq.jpg'
     },
   ];
 
@@ -32,32 +30,28 @@ export default function ContactPage() {
     {
       title: 'General Inquiries',
       description: 'Questions about our work, programs, or general information.',
-      email: 'info@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
+      email: 'admin@ldiinitiatives.org',
       phone: '+1 647 656 3026',
       icon: 'ri-question-line'
     },
     {
       title: 'Media Inquiries',
       description: 'Press releases, interviews, and media-related requests.',
-      email: 'info@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
+      email: 'admin@ldiinitiatives.org',
       phone: '+1 647 656 3026',
       icon: 'ri-newspaper-line'
     },
     {
       title: 'Partnership Opportunities',
       description: 'Collaboration proposals and partnership discussions.',
-      email: 'info@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
+      email: 'admin@ldiinitiatives.org',
       phone: '+1 647 656 3026',
       icon: 'ri-team-line'
     },
     {
       title: 'Research Collaboration',
       description: 'Academic partnerships and research collaboration requests.',
-      email: 'info@ldiinitiatives.org',
-      emailAlt: 'admin@ldiinitiatives.org',
+      email: 'admin@ldiinitiatives.org',
       phone: '+1 647 656 3026',
       icon: 'ri-microscope-line'
     }
@@ -100,7 +94,7 @@ export default function ContactPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Professional%20international%20communication%20and%20contact%20with%20diverse%20people%20from%20different%20countries%20connecting%20globally%2C%20modern%20communication%20technology%2C%20multicultural%20business%20interaction%2C%20professional%20photography%20with%20warm%20lighting&width=1920&height=800&seq=contact-hero&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -115,7 +109,7 @@ export default function ContactPage() {
       </section>
 
       {/* Sticky Navigation */}
-      <div className="sticky top-16 lg:top-20 z-40 bg-white shadow-md">
+      <div className="sticky top-[72px] z-40 bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-center flex-wrap gap-2 py-4">
             <button
@@ -168,7 +162,7 @@ export default function ContactPage() {
             {contactTypes.map((type, index) => (
               <div key={index} className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 hover:shadow-lg transition-shadow">
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto transform hover:scale-110 transition-all duration-300">
-                  <i className={`${type.icon} text-3xl text-[#00D9FF]`}></i>
+                  <i className={`${type.icon} text-3xl text-[#3CCB7F]`}></i>
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{type.title}</h3>
                 <p className="text-gray-700 mb-4 leading-relaxed">{type.description}</p>
@@ -206,7 +200,7 @@ export default function ContactPage() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
             <p className="text-xl text-gray-600">
-              Fill out the form below and we'll get back to you within 24 hours.
+              Fill out the form below and we will get back to you as soon as we can.
             </p>
           </div>
           
@@ -375,16 +369,6 @@ export default function ContactPage() {
                       <a href={`mailto:${office.email}`} className="text-gray-700 hover:text-green-600 text-sm cursor-pointer break-all">
                         {office.email}
                       </a>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <i className="ri-mail-send-line w-5 h-5 flex items-center justify-center text-gray-600"></i>
-                      <a href={`mailto:${office.emailAlt}`} className="text-gray-700 hover:text-green-600 text-sm cursor-pointer break-all">
-                        {office.emailAlt}
-                      </a>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-time-line w-5 h-5 flex items-center justify-center text-gray-600 mt-0.5"></i>
-                      <span className="text-gray-700 text-sm">{office.hours}</span>
                     </div>
                   </div>
                 </div>
@@ -683,7 +667,7 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:admin@ldiinitiatives.org"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
+              className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
             >
               Start a Partnership
             </a>

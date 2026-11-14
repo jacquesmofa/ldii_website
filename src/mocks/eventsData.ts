@@ -55,34 +55,31 @@ export const allEvents: EventItem[] = [
 
   {
     id: 'africa-canada-mining-technology-exchange-2027',
-    title: 'Africa–Canada Mining & Technology Exchange',
-    date: '2027-02-15', // Placeholder until the hosting window is confirmed
-    displayDate: 'Early 2027 · Dates to be confirmed',
-    location: 'Toronto, Sudbury, Kirkland Lake & Timmins, Ontario',
-    venue: 'Northern Ontario mining corridor + Canadian Mining Expo',
+    title: 'Africa–Canada Mining & Technology Transfer Mission',
+    date: '2027-06-01',
+    displayDate: 'June 2027',
+    location: 'Greater Sudbury & Timmins, Ontario',
+    venue: 'Concludes at the Canadian Mining Expo, Timmins',
     description:
-      'An eight-day executive delegation bringing mining ministries, regulators, operators, suppliers and financiers from Uganda, Kenya, South Africa, Botswana and Senegal to Northern Ontario. Built around technical capability rather than equipment, the programme combines operator site visits, the Canadian Mining Expo, NORCAT and MIRARCO/CEMI briefings, and structured business-to-business meetings with matched Canadian counterparts.',
+      'Co-hosted by LDII and Thrive Tours Inc., an Indigenous-led experiential tourism and education company based at Batchewana First Nation, the mission brings government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations to Northern Ontario. Delegates are based in Greater Sudbury and travel north to the Canadian Mining Expo in Timmins.\n\nThe Sudbury programme covers the story of the city’s regreening, mining innovation including automation, battery-electric equipment and research at Laurentian, Cambrian and NORCAT, and business-to-business meetings with local mining suppliers and service companies. The delegations are looking for partners who deliver training and technical know-how, not just equipment.',
     shortDescription:
-      'Executive delegations from five African nations to Northern Ontario — an eight-day programme on mining capability, technology transfer and matched business partnerships.',
+      'Government and industry delegations from Kenya, Uganda, South Africa, Botswana and more visit Greater Sudbury and the Canadian Mining Expo in Timmins.',
     image:
-      'https://readdy.ai/api/search-image?query=Professional%20mining%20delegation%20of%20African%20executives%20and%20engineers%20touring%20a%20modern%20Northern%20Ontario%20mine%20site%20in%20safety%20gear%2C%20industrial%20headframe%20and%20processing%20plant%20behind%20them%2C%20bright%20clear%20daylight%2C%20wide%20documentary%20industrial%20photography%20with%20cool%20blue%20sky%20contrast&width=800&height=500&seq=africa-canada-mining-exchange-2027&orientation=landscape',
+      'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg',
     type: 'International Delegation',
     highlights: [
-      'Mining ministries, regulators and state-owned resource companies',
-      'Operators, suppliers and technology providers',
-      'Chambers of commerce and industry associations',
-      'Development finance institutions and investors',
-      'Northern Ontario municipal and academic leadership',
+      'Government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations',
+      'Northern Ontario mining suppliers and service companies',
+      'Laurentian University, Cambrian College and NORCAT',
     ],
     themes: [
-      'Mine safety, regulation and permitting',
-      'Processing, equipment and supply-chain capability',
-      'Skills training and workforce development',
-      'Community participation and negotiated benefit agreements',
-      'Water stewardship and mine closure',
+      'Sudbury’s regreening, from environmental damage to recovery',
+      'Mining innovation: automation and battery-electric equipment',
+      'Training and technical know-how',
+      'Business-to-business partnerships',
     ],
     linkUrl: '/programs/mining-technology-exchange',
-    linkLabel: 'Explore the programme',
+    linkLabel: 'About the mission',
     isFeatured: true,
   },
   {
@@ -94,7 +91,7 @@ export const allEvents: EventItem[] = [
     location: 'To Be Announced',
     description: 'Our premier international conference addressing systemic global challenges and building resilience strategies specifically for Global South nations. This landmark event will bring together heads of state, policy makers, researchers, and community leaders from across Africa, Asia, and Latin America to develop comprehensive frameworks for addressing interconnected global shocks including climate change, economic instability, health crises, and food insecurity.',
     shortDescription: 'Premier international conference addressing systemic global challenges and building resilience strategies specifically for Global South nations.',
-    image: 'https://readdy.ai/api/search-image?query=Large%20international%20conference%20venue%20with%20Global%20South%20delegates%20and%20speakers%20from%20Africa%20Asia%20Latin%20America%2C%20professional%20event%20setup%20with%20multiple%20screens%20and%20stage%2C%20diverse%20multicultural%20audience%2C%20high-resolution%20photography%20with%20excellent%20lighting&width=800&height=500&seq=global-south-conf&orientation=landscape',
+    image: '',
     type: 'Major Conference',
     highlights: [
       'Heads of state and government ministers',
@@ -118,9 +115,9 @@ export const allEvents: EventItem[] = [
     date: '2026-11-06',
     displayDate: '6–8 November 2026',
     location: 'Sydney, Australia',
-    description: 'Exploring the vital role of cultural heritage and traditional knowledge in building community resilience and sustainable development. This unique conference brings together cultural practitioners, indigenous leaders, researchers, and policy makers to examine how cultural assets can strengthen community resilience against global shocks while preserving invaluable heritage for future generations.',
+    description: 'Exploring the vital role of cultural heritage and traditional knowledge in building community resilience and sustainable development. This unique conference brings together cultural practitioners, Indigenous leaders, researchers, and policy makers to examine how cultural assets can strengthen community resilience against global shocks while preserving invaluable heritage for future generations.',
     shortDescription: 'Exploring the role of cultural heritage and traditional knowledge in building community resilience and sustainable development.',
-    image: 'https://readdy.ai/api/search-image?query=Cultural%20conference%20with%20traditional%20elements%20from%20diverse%20cultures%2C%20indigenous%20leaders%20and%20cultural%20practitioners%2C%20modern%20conference%20facility%20with%20cultural%20decorations%2C%20professional%20event%20photography%20with%20vibrant%20colors&width=800&height=500&seq=cultural-conf&orientation=landscape',
+    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_800,h_500,q_auto,f_auto/crop2026_speaker_mpjaow.jpg',
     type: 'Cultural Conference',
     highlights: [
       'Indigenous knowledge keepers',
@@ -140,13 +137,14 @@ export const allEvents: EventItem[] = [
   },
   {
     id: 'cultural-resilience-conference-2027',
+    unconfirmed: true, // see PLACEHOLDERS.md
     title: 'Cultural Resilience One Planet Conference (CROP) 2027',
     date: '2027-11-15', // Set to mid-November when exact date is confirmed
     displayDate: 'November 2027',
     location: 'Ontario, Canada',
-    description: 'Building on the success of CROP 2026 in Australia, this conference brings together cultural heritage practitioners, indigenous leaders, and resilience experts to explore how cultural identity and traditional knowledge strengthen community resilience across the Americas. This landmark event in Ontario will examine cultural preservation strategies, indigenous-led climate adaptation, and the role of arts in healing communities affected by global shocks.',
+    description: 'Building on the success of CROP 2026 in Australia, this conference brings together cultural heritage practitioners, Indigenous leaders, and resilience experts to explore how cultural identity and traditional knowledge strengthen community resilience across the Americas. This landmark event in Ontario will examine cultural preservation strategies, indigenous-led climate adaptation, and the role of arts in healing communities affected by global shocks.',
     shortDescription: 'Building on CROP 2026 Australia, exploring cultural identity and traditional knowledge in strengthening community resilience across the Americas.',
-    image: 'https://readdy.ai/api/search-image?query=Cultural%20resilience%20conference%20in%20Ontario%20Canada%20with%20indigenous%20leaders%20and%20cultural%20practitioners%2C%20modern%20Canadian%20conference%20venue%20with%20multicultural%20elements%2C%20traditional%20and%20contemporary%20cultural%20fusion%2C%20professional%20event%20photography%20with%20warm%20autumn%20atmosphere&width=800&height=500&seq=cultural-canada-2027&orientation=landscape',
+    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_800,h_500,q_auto,f_auto/crop2026_speaker_mpjaow.jpg',
     type: 'Cultural Conference',
     highlights: [
       'Indigenous knowledge keepers from North and South America',
@@ -175,7 +173,7 @@ export const allEvents: EventItem[] = [
     location: 'Helsinki, Finland',
     description: 'A groundbreaking regional summit focusing on Fintech and Technology Transfer, Education, Business Trade & Investments between the Global North and Global South, with a specific focus on East Africa and the Nordic countries. This summit will facilitate partnerships, investment opportunities, and knowledge exchange between two dynamic regions.',
     shortDescription: 'Regional summit focusing on Fintech and Technology Transfer, Education, Business Trade & investments between the Global North and Global South.',
-    image: 'https://readdy.ai/api/search-image?query=Modern%20business%20conference%20in%20Helsinki%20Finland%20with%20Nordic%20and%20African%20business%20leaders%2C%20fintech%20and%20technology%20summit%2C%20professional%20business%20networking%20event%2C%20contemporary%20Scandinavian%20venue%2C%20high-quality%20business%20photography&width=800&height=500&seq=neabec-conf&orientation=landscape',
+    image: '',
     type: 'Business Summit',
     highlights: [
       'Nordic business leaders and investors',
@@ -202,7 +200,7 @@ export const allEvents: EventItem[] = [
     location: 'Canada (City TBA)',
     description: 'Building on the success of our Post-COVID conference series, this international conference will address the full spectrum of global shocks and develop comprehensive resilience strategies. The conference will feature intensive workshops, panel discussions, and strategic planning sessions focused on pandemic preparedness, climate adaptation, economic stability, and social cohesion.',
     shortDescription: 'Building on the Post-COVID conference series, addressing global shocks and developing comprehensive resilience strategies.',
-    image: 'https://readdy.ai/api/search-image?query=International%20conference%20in%20modern%20Canadian%20convention%20center%20with%20diverse%20global%20delegates%2C%20resilience%20and%20preparedness%20themes%2C%20professional%20conference%20setup%2C%20multicultural%20audience%2C%20high-resolution%20event%20photography&width=800&height=500&seq=resilience-conf&orientation=landscape',
+    image: '',
     type: 'International Conference',
     highlights: [
       'Global health experts',
@@ -233,7 +231,7 @@ export const allEvents: EventItem[] = [
     image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg',
     type: 'Mission',
     linkUrl: '/events/gallery/greater-sudbury-mining-ecosystem-2026',
-    linkLabel: 'See the photos and video',
+    linkLabel: 'See the photos',
     isFeatured: true
   },
   {
@@ -281,23 +279,38 @@ export const allEvents: EventItem[] = [
       url: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_1400/v1792547513/WhatsApp_Image_2026-10-19_at_16.26.00mnbvcx_vjgns5.jpg',
       caption: 'Speakers and panellists, 2nd International Post-COVID-19 Conference · Pearson Convention Centre, Brampton, Ontario · September 8–10, 2025',
     },
-    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/Participants2_omtkbj.jpg',
+    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/General_aiu2gv.jpg',
     type: 'Conference',
     isFeatured: true
   },
   {
+    id: 'covid-remembrance-parade-2023',
+    title: 'COVID-19 Remembrance Parade & Candlelight Vigil',
+    date: '2023-10-01',
+    displayDate: 'October 1, 2023',
+    location: 'Toronto, ON, Canada',
+    venue: 'Christie Pits Park',
+    description: 'The world’s first COVID-19 Remembrance Parade and Candlelight Vigil, organized by LDII under the theme “Walking for Humanity, Healing, and Compassion, with Unity, Hope, and Renewal Beyond COVID-19.” Participants representing nations from around the world walked from Christie Pits Park, led by St. Andrews Pipes & Drums, before a candlelight vigil.',
+    shortDescription: 'The world’s first COVID-19 remembrance parade and candlelight vigil, Toronto.',
+    image: 'https://image.mux.com/QKbLbZRHUvy005DYmhnQUBaYH2FJGlXdOXr00pHFtdAXw/thumbnail.jpg?width=800&height=500&fit_mode=smartcrop&time=30',
+    type: 'Remembrance',
+    linkUrl: '/events/news#covid-remembrance-parade-2023',
+    linkLabel: 'Watch the film and read the story',
+    isFeatured: true,
+  },
+  {
     id: 'postcovid-1st-2024',
     title: '1st International Post-COVID Conference',
-    date: '2024-07-15',
-    displayDate: 'July 2024',
+    date: '2024-07-11',
+    displayDate: 'July 11–13, 2024',
     location: 'Toronto, ON, Canada',
     venue: 'Metro Toronto Convention Centre',
-    description: "LDII's inaugural international conference, held at the Metro Toronto Convention Centre in July 2024 under the theme Building Synergies and Resilience for Future Global Shocks. It brought together health experts, policymakers, researchers and community leaders focused on recovery strategies and pandemic preparedness.",
+    description: "LDII's inaugural international conference, held at the Metro Toronto Convention Centre from July 11 to 13, 2024, under the theme Evaluating the Impact of COVID-19 on Humanity: Building Synergies and Resilience for Future Global Shocks. The Intergovernmental Authority on Development (IGAD) took part as co-convener and co-organizer, and delegates came from African Union member states, regional blocs and Canadian universities.",
     shortDescription: "LDII's inaugural international conference: Building Synergies and Resilience for Future Global Shocks.",
     image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg',
     type: 'Conference',
     linkUrl: '/events/gallery/1st-international-post-covid-conference-toronto-2024',
-    linkLabel: 'See the photos and video',
+    linkLabel: 'See the photos',
     isFeatured: true
   },
 ];

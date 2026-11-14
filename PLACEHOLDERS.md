@@ -29,15 +29,31 @@ Also removed: partner counts "15+ government, 25+ NGOs, 30+ private sector, 10+ 
 
 **Kept** because they come from the president's own profile: "100,000+ fruit trees planted" and "250 global delegates".
 
-## Questions for Jacques / the CEO
-1. These events have dates that have passed but we don't know if they happened. They are hidden from the site (`unconfirmed: true` in `src/mocks/eventsData.ts`) until confirmed:
-   - Global Shocks Global South Conference 2026 ("TBA 2026")
-   - NEABEC 2026, Helsinki (April 2026)
-   - Global Shocks Global Resilience Conference 2026 (September 2026)
-2. 1st Post-COVID conference: the site said both 11–13 and 15–17 July 2024 (the video file name says October 2023). The site now says "July 2024". Exact days?
-3. Offices in Helsinki and Kampala: still open? (Helsinki was labelled "Regional Office - East Africa"; now "Nordic liaison".)
-4. Two emails are used: info@ and admin@ldiinitiatives.org. Which one should the public see?
-5. The three November 2026 albums are dated "November 2026": exact days and cities for Canada–South Africa and Angola?
+## Answered (14 Nov 2026, from LDII's documents)
+- 1st Post-COVID conference: July 11–13, 2024 (IGAD and AU6RG articles). The video once filed under it is the October 1, 2023 parade; it now plays on the home page (Mux).
+- Public email: admin@ldiinitiatives.org everywhere.
+- Helsinki and Kampala offices: no longer shown; only the Toronto office is listed.
+- Mining mission: June 2027, Greater Sudbury and Timmins, co-hosted with Thrive Tours (their letter).
 
-## Stand-in pictures
-- Many pages still use Readdy AI pictures (`readdy.ai/api/search-image`), e.g. What We Do, upcoming conference cards, About. Replace with real photos when available.
+## Removed on 14 Nov 2026 (rebuild)
+- Donate page figures "10+ years / 250+ communities / 45+ projects / 120+ partners / 25+ countries", "registered charity / tax receipt" wording, card and PayPal options (no payment system is connected: the form is a pledge sent by email).
+- FAQ: "25 countries", "120 organisations incl. World Bank", "200 research papers", "Research page", tax-deductible claims. Rewritten from the documents.
+- Press release "LDII Announces 2026 Global Conference Series" (its events are unconfirmed) and the fake "Download PDF" buttons.
+- Media page: "Available 24/7", "within 24 hours / same-day" promises; contact office hours.
+- Readdy chat widget, Font Awesome and Google Fonts links, Imgur logo, old schema with dead addresses.
+- Remaining Readdy AI pictures: all replaced with LDII's own photos (0 left).
+
+## Questions for Jacques / the CEO
+1. Hidden until confirmed (`unconfirmed: true` in `src/mocks/eventsData.ts`):
+   - Global Shocks Global South Conference 2026, NEABEC 2026 (Helsinki), Global Shocks Global Resilience Conference 2026
+   - CROP 2027, Ontario (only known from the old template text)
+2. The three November 2026 albums: exact days and cities for Canada–South Africa and Angola?
+3. Green "LDII" wordmark logo (named in the International Focus brief): please send the file (SVG or PNG). The site still uses the round logo.
+4. President profile: "Founder & President", "Researcher for the World Bank", "chairman of Climate Change Action of East Africa", University of British Columbia, Toronto and Brampton Boards of Trade. Please confirm each line with Ronald.
+5. Charity status: is LDII a registered charity that issues tax receipts? The site says nothing about receipts until confirmed.
+6. Donations: should we add a real payment option (e.g. a donation platform), or keep the email pledge plus e-Transfer?
+7. Programme photos: the local programmes use the best real photos available (conference, Brampton council, offices). Real photos of newcomer, youth and seniors activities would be better.
+8. Photos in the Cloudinary "assets" folder could not be browsed (console login needed). If there are newer pictures, send the folder or a CSV export.
+
+## Forms
+All forms post to Web3Forms (key in `src/lib/web3forms.ts`). Send a test message from each form after deploy and confirm it reaches admin@ldiinitiatives.org.

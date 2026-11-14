@@ -9,7 +9,7 @@ export default function AccessibilityPage() {
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
             LDII is committed to ensuring digital accessibility for people with disabilities
           </p>
-          <p className="text-green-100 mt-4">Last Updated: March 2024</p>
+          <p className="text-green-100 mt-4">Last updated: November 2026</p>
         </div>
       </section>
 
@@ -75,40 +75,40 @@ export default function AccessibilityPage() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-text w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-text w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-keyboard-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-keyboard-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-contrast-2-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-contrast-2-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-font-size w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-font-size w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-layout-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-layout-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-focus-3-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-focus-3-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-links-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-links-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-file-list-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-file-list-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-smartphone-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-smartphone-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-video-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-video-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-error-warning-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-error-warning-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                  <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#00D9FF] mr-3 mt-1"></i>
+                  <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#3CCB7F] mr-3 mt-1"></i>
                 </div>
               </div>
             </div>
@@ -268,9 +268,6 @@ export default function AccessibilityPage() {
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
-                    info@ldiinitiatives.org
-                  </a>
                   <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
                     admin@ldiinitiatives.org
                   </a>

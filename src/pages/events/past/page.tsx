@@ -10,7 +10,7 @@ export default function PastEventsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Past%20conferences%20and%20events%2C%20professional%20conference%20setting%2C%20international%20gatherings%2C%20professional%20event%20photography&width=1920&height=1080&seq=past-events-hero&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -47,7 +47,7 @@ export default function PastEventsPage() {
                   </div>
                   <div className="p-10">
                     <div className="flex items-center flex-wrap gap-3 mb-4">
-                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
+                      <span className="bg-[#3CCB7F] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold">
                         {event.displayDate}
                       </span>
                       {event.attendees && (
@@ -195,7 +195,7 @@ export default function PastEventsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://readdy.ai/api/search-image?query=Conference%20and%20event%20participation%2C%20professional%20networking%2C%20international%20collaboration%2C%20professional%20photography&width=1920&height=800&seq=past-events-cta&orientation=landscape)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-[#0A1E3D]/80"></div>
@@ -209,7 +209,7 @@ export default function PastEventsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/events/upcoming"
-              className="relative z-20 bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap"
+              className="relative z-20 bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
             >
               View Upcoming Events
             </a>

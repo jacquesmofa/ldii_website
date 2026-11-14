@@ -40,3 +40,11 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 - Real record lives in `src/mocks/eventsData.ts` (events; `unconfirmed: true` hides past-dated events nobody confirmed), `src/mocks/newsData.ts` (news), `src/mocks/partnersData.ts` (partners, real logos only). Impact, Achievements, Past/Upcoming Projects, Partners and the home page read from these.
 - Gallery albums: `src/mocks/galleryEvents/*.ts` (newest: Greater Sudbury, Canada–South Africa, Angola, Nov 2026). Videos play from Cloudinary (`src` on a video).
 - `public/sitemap.xml` lists every page on https://ldiinitiatives.org (regenerate when routes or albums change).
+
+## Rebuild (14 Nov 2026)
+- Structure from LDII's documents: menu About / Our Work / Events / Get Involved / Contact + Donate (`NAV` in `src/components/feature/Header.tsx`). New pages `/international-focus` (brief's 5 blocks) and `/local-programmes` (6 programmes + newcomer areas). Old addresses redirect: `REDIRECTS` in `src/router/config.tsx` and the same list as 301s in `public/.htaccess` (keep both in step).
+- Single source of facts: `src/content/ldii.ts` (organisation, contact, About text, focus areas, programmes, posts, mining mission, photo choices). Events `src/mocks/eventsData.ts`, news `src/mocks/newsData.ts`, partners `src/mocks/partnersData.ts`.
+- Home video: Mux Playback ID in `PARADE_VIDEO` (`src/components/feature/HlsVideo.tsx`, hls.js loaded on demand).
+- SEO: `src/content/seo.json` (title, description, share picture per page) is read by `src/lib/pageSeo.ts` in the browser and by `scripts/social-pages.mjs` at build time (one HTML file per page + `sitemap.xml`). `scripts/prerender.mjs` then writes each page's content into its HTML with headless Chrome (skips gracefully without Chrome). Event pages carry Event schema.
+- Build: `vite build && node scripts/social-pages.mjs && node scripts/prerender.mjs`. Add a page: route + `seo.json` entry.
+- Design tokens and fonts: see brand-dna.md. Open questions: PLACEHOLDERS.md.

@@ -74,36 +74,8 @@ export default function DonatePage() {
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Make a Difference Today</h1>
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
-            Your generous donation helps us create lasting change in communities around the world
+            Your gift supports newcomers, youth and seniors in Ontario and the partnerships we build abroad.
           </p>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-12 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">10+</div>
-              <div className="text-gray-600 text-sm md:text-base">Years of Experience</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">250+</div>
-              <div className="text-gray-600 text-sm md:text-base">Communities Served</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">45+</div>
-              <div className="text-gray-600 text-sm md:text-base">Active Projects</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">120+</div>
-              <div className="text-gray-600 text-sm md:text-base">Global Partners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-green-600 mb-2">25+</div>
-              <div className="text-gray-600 text-sm md:text-base">Countries Reached</div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -111,7 +83,8 @@ export default function DonatePage() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Complete Your Donation</h2>
+            <h2 className="font-display text-3xl font-semibold text-ldii-navy mb-3 text-center">Pledge a Donation</h2>
+            <p className="text-gray-700 text-center mb-8 max-w-2xl mx-auto">Tell us what you would like to give. We reply from admin@ldiinitiatives.org to confirm the payment details and receipt.</p>
 
             <form onSubmit={handleSubmit} data-readdy-form id="donation-pledge-form" className="space-y-8 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
@@ -218,28 +191,6 @@ export default function DonatePage() {
                   </div>
 
                   <div
-                    onClick={() => setPaymentMethod('credit-card')}
-                    className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                      paymentMethod === 'credit-card'
-                        ? 'border-green-600 bg-green-50'
-                        : 'border-gray-200 hover:border-green-300'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <i className="ri-bank-card-line w-6 h-6 flex items-center justify-center text-green-600"></i>
-                        <div>
-                          <div className="font-semibold text-gray-900">Credit/Debit Card</div>
-                          <div className="text-sm text-gray-600">Visa, Mastercard, Amex</div>
-                        </div>
-                      </div>
-                      {paymentMethod === 'credit-card' && (
-                        <i className="ri-checkbox-circle-fill w-6 h-6 flex items-center justify-center text-green-600"></i>
-                      )}
-                    </div>
-                  </div>
-
-                  <div
                     onClick={() => setPaymentMethod('bank-transfer')}
                     className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
                       paymentMethod === 'bank-transfer'
@@ -261,27 +212,6 @@ export default function DonatePage() {
                     </div>
                   </div>
 
-                  <div
-                    onClick={() => setPaymentMethod('paypal')}
-                    className={`p-4 border-2 rounded-lg cursor-pointer transition-all ${
-                      paymentMethod === 'paypal'
-                        ? 'border-green-600 bg-green-50'
-                        : 'border-gray-200 hover:border-green-300'
-                    }`}
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <i className="ri-paypal-line w-6 h-6 flex items-center justify-center text-green-600"></i>
-                        <div>
-                          <div className="font-semibold text-gray-900">PayPal</div>
-                          <div className="text-sm text-gray-600">Secure online payment</div>
-                        </div>
-                      </div>
-                      {paymentMethod === 'paypal' && (
-                        <i className="ri-checkbox-circle-fill w-6 h-6 flex items-center justify-center text-green-600"></i>
-                      )}
-                    </div>
-                  </div>
                 </div>
               </div>
 
@@ -412,10 +342,9 @@ export default function DonatePage() {
                   <div className="text-sm text-gray-700 space-y-2">
                     <p>After submitting this form, please send your e-Transfer to:</p>
                     <p className="font-semibold text-green-700">admin@ldiinitiatives.org</p>
-                    <p className="text-gray-600">(or info@ldiinitiatives.org)</p>
                     <p>Security Question: What organization are you supporting?</p>
                     <p className="font-semibold text-green-700">Answer: LDII</p>
-                    <p className="mt-3">You will receive a confirmation email with these details.</p>
+                    <p className="mt-3">We will confirm by email once it arrives.</p>
                   </div>
                 </div>
               )}
@@ -442,7 +371,7 @@ export default function DonatePage() {
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="text-sm text-gray-700">
                   <i className="ri-file-text-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2 inline"></i>
-                  LDII is a registered charity. You will receive a tax receipt for your donation via email.
+                  We will tell you by email what kind of receipt applies to your gift.
                 </p>
               </div>
 
@@ -452,7 +381,7 @@ export default function DonatePage() {
                 disabled={isSubmitting}
                 className="w-full bg-green-600 hover:bg-green-700 text-white py-4 px-8 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl cursor-pointer whitespace-nowrap disabled:opacity-60"
               >
-                {isSubmitting ? 'Sending...' : 'Complete Donation'}
+                {isSubmitting ? 'Sending...' : 'Send my pledge'}
               </button>
               {statusMessage && (
                 <p className={`text-sm text-center ${statusError ? 'text-red-600' : 'text-green-700'}`}>{statusMessage}</p>
@@ -469,25 +398,25 @@ export default function DonatePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <i className="ri-heart-line text-3xl text-[#00D9FF]"></i>
+                <i className="ri-heart-line text-3xl text-[#3CCB7F]"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Direct Impact</h3>
               <p className="text-gray-600">
-                Your donation directly supports communities in need, providing essential resources and opportunities for growth.
+                Your gift goes to LDII’s local programmes in Ontario: newcomers, youth and seniors.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <i className="ri-shield-check-line text-3xl text-[#00D9FF]"></i>
+                <i className="ri-shield-check-line text-3xl text-[#3CCB7F]"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Transparency</h3>
               <p className="text-gray-600">
-                We maintain full transparency with detailed annual reports showing exactly how your contributions are used.
+                Ask us at any time how your gift was used. Annual reports will be published on our Impact page.
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
-                <i className="ri-global-line text-3xl text-[#00D9FF]"></i>
+                <i className="ri-global-line text-3xl text-[#3CCB7F]"></i>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">Global Reach</h3>
               <p className="text-gray-600">
@@ -503,10 +432,10 @@ export default function DonatePage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-2 text-gray-600 mb-4">
             <i className="ri-lock-line w-6 h-6 flex items-center justify-center"></i>
-            <span className="font-semibold">Secure Donation Processing</span>
+            <span className="font-semibold">Your information</span>
           </div>
           <p className="text-sm text-gray-600">
-            Your personal and payment information is protected with industry-standard encryption. We never share your data with third parties.
+            This form sends your pledge to our team by email. It does not take card details, and we never share your information with third parties.
           </p>
         </div>
       </section>

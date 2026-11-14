@@ -1,270 +1,118 @@
+import { Link } from 'react-router-dom';
+import Eyebrow from '../../components/base/Eyebrow';
+import { ABOUT, CORE_AREAS, FRAMEWORK, MISSION, ORG, PHOTOS, photo } from '../../content/ldii';
+
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section id="hero" className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-corporate-blue-700 via-corporate-blue-600 to-corporate-blue-800 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://readdy.ai/api/search-image?query=Professional%20international%20development%20organization%20team%20working%20together%20on%20global%20initiatives%2C%20diverse%20professionals%20collaborating%20in%20modern%20office%20environment%2C%20corporate%20business%20meeting%20with%20world%20map%20background%2C%20professional%20photography%20with%20natural%20lighting%20and%20modern%20aesthetic&width=1920&height=1080&seq=about-hero-bg&orientation=landscape)'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-corporate-blue-900/85 via-corporate-blue-800/80 to-corporate-blue-900/85"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center py-20">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-            About Us
-          </h1>
-          <p className="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow-lg">
-            Building resilient communities through technology transfer, international partnership and practical community programmes across Ontario and Africa.
-          </p>
+    <>
+      <section className="relative isolate overflow-hidden bg-ldii-ink text-white">
+        <img src={photo(PHOTOS.group1st.id, 1920, 900)} alt="" className="absolute inset-0 -z-20 w-full h-full object-cover" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/85 to-ldii-ink/40" aria-hidden="true" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-32">
+          <Eyebrow light>About us</Eyebrow>
+          <h1 className="mt-5 font-display text-4xl md:text-6xl font-semibold leading-tight max-w-4xl">{ORG.name} (LDII)</h1>
+          <p className="mt-4 font-display italic text-xl md:text-2xl text-tech-teal-300">{ORG.promise}</p>
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20 bg-white">
+      <section className="bg-white py-20 md:py-28">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-7 space-y-5 text-lg text-gray-700 leading-relaxed">
+            {ABOUT.map((p, i) => (
+              <p key={p.slice(0, 20)} className={i === 0 ? 'text-xl text-ldii-navy font-medium' : ''}>{p}</p>
+            ))}
+          </div>
+          <aside className="lg:col-span-5 space-y-6">
+            <figure>
+              <img src={photo(PHOTOS.opening.id, 900, 640)} alt={PHOTOS.opening.alt} loading="lazy" className="w-full rounded-3xl aspect-[45/32] object-cover" />
+              <figcaption className="mt-2 text-sm text-gray-600">{PHOTOS.opening.alt}.</figcaption>
+            </figure>
+            <div className="rounded-3xl bg-ldii-mist p-8">
+              <h2 className="font-display text-2xl font-semibold text-ldii-navy">Our mission</h2>
+              <p className="mt-3 text-gray-700 leading-relaxed">{MISSION}</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section className="bg-ldii-navy text-white py-20" aria-labelledby="core">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Mission</h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                Livelihood Development International Initiatives (LDII) is a non-profit organization committed to creating a brighter future through the promotion of social cohesion and empowerment. We empower communities worldwide to thrive amidst systemic crises through transformative leadership development, innovative research, and strategic partnerships that build resilience against global shocks.
-              </p>
-              
-              <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Core Focus Areas</h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <i className="ri-check-line w-6 h-6 flex items-center justify-center text-tech-cyan-500 mr-3 mt-1"></i>
-                    <span className="text-gray-700">Climate resilience and environmental sustainability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="ri-check-line w-6 h-6 flex items-center justify-center text-tech-cyan-500 mr-3 mt-1"></i>
-                    <span className="text-gray-700">Health systems strengthening and pandemic preparedness</span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="ri-check-line w-6 h-6 flex items-center justify-center text-tech-cyan-500 mr-3 mt-1"></i>
-                    <span className="text-gray-700">Sustainable food systems and food security</span>
-                  </li>
-                  <li className="flex items-start">
-                    <i className="ri-check-line w-6 h-6 flex items-center justify-center text-tech-cyan-500 mr-3 mt-1"></i>
-                    <span className="text-gray-700">Economic stability and trade development</span>
-                  </li>
+          <Eyebrow light>Core areas</Eyebrow>
+          <h2 id="core" className="mt-4 font-display text-3xl md:text-4xl font-semibold">Where we focus</h2>
+          <ul className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {CORE_AREAS.map((c) => (
+              <li key={c.title} className="flex items-center gap-4 rounded-2xl border border-white/15 p-5">
+                <span className="w-12 h-12 rounded-full bg-tech-teal-500 text-ldii-navy flex items-center justify-center text-xl flex-shrink-0" aria-hidden="true"><i className={c.icon} /></span>
+                <span className="font-display text-lg font-semibold">{c.title}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link to="/local-programmes" className="inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-full font-semibold hover:bg-tech-teal-400">Local programmes <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
+            <Link to="/international-focus" className="inline-flex items-center gap-2 border border-white/40 px-6 py-3 rounded-full font-semibold hover:bg-white/10">International focus <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 md:py-28" aria-labelledby="framework">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Eyebrow>How we drive resilience</Eyebrow>
+          <h2 id="framework" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy max-w-3xl">
+            Our operational framework for community resilience and sustainable development
+          </h2>
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
+            {FRAMEWORK.map((f, i) => (
+              <article key={f.title} className="rounded-3xl border border-gray-200 p-8">
+                <div className="flex items-center gap-4">
+                  <span className="w-12 h-12 rounded-full bg-ldii-mist text-tech-teal-800 flex items-center justify-center text-xl" aria-hidden="true"><i className={f.icon} /></span>
+                  <span className="text-sm font-semibold text-gray-500">0{i + 1}</span>
+                </div>
+                <h3 className="mt-5 font-display text-2xl font-semibold text-ldii-navy">{f.title}</h3>
+                <ul className="mt-4 space-y-3">
+                  {f.points.map((p) => (
+                    <li key={p} className="flex gap-3 text-gray-700 leading-relaxed">
+                      <i className="ri-arrow-right-s-fill text-tech-teal-800 mt-1" aria-hidden="true" />
+                      <span>{p}</span>
+                    </li>
+                  ))}
                 </ul>
-              </div>
-            </div>
-            
-            <div className="relative">
-              <img
-                src="https://readdy.ai/api/search-image?query=International%20development%20professionals%20working%20on%20global%20initiatives%2C%20diverse%20team%20collaboration%20in%20modern%20office%2C%20professional%20business%20environment%20with%20technology%20and%20data%20visualization%2C%20corporate%20photography%20with%20natural%20lighting&width=600&height=800&seq=mission-img&orientation=portrait"
-                alt="LDII Mission"
-                className="rounded-2xl shadow-2xl w-full h-auto object-cover"
-              />
-            </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Vision Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Vision</h2>
-            <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-              A world where communities are resilient, adaptive, and thriving in the face of global challenges, supported by evidence-based policies, innovative solutions, and collaborative partnerships.
+      <section className="bg-ldii-mist py-20" aria-labelledby="leadership">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-12 gap-10 items-center">
+          <img src={photo(PHOTOS.president.id, 700, 800)} alt={PHOTOS.president.alt} loading="lazy" className="md:col-span-4 w-full rounded-3xl aspect-[7/8] object-cover" />
+          <div className="md:col-span-8">
+            <Eyebrow>Leadership</Eyebrow>
+            <h2 id="leadership" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy">{ORG.president}</h2>
+            <p className="mt-2 text-tech-teal-800 font-semibold">Founder &amp; President</p>
+            <p className="mt-4 text-gray-700 leading-relaxed max-w-2xl">
+              Economist, technology transfer and international trade facilitator, member of the Toronto and Brampton Boards of Trade.
             </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-government-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Strategic Objectives</h3>
-              <p className="text-gray-600">Influence global policy frameworks</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-community-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Capacity Building</h3>
-              <p className="text-gray-600">Build capacity in vulnerable communities</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-lightbulb-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
-              <p className="text-gray-600">Foster innovation and knowledge sharing</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Partnerships</h3>
-              <p className="text-gray-600">Strengthen global partnerships</p>
-            </div>
+            <Link to="/about/who-we-are/president-profile" className="mt-6 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">
+              Read the full profile <i className="ri-arrow-right-line" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* What We Do Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">What We Do</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our comprehensive approach addresses global challenges through six core activity areas.
-            </p>
+      <section className="bg-white py-20" aria-labelledby="office">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-10 items-center">
+          <div>
+            <Eyebrow>Headquarters</Eyebrow>
+            <h2 id="office" className="mt-4 font-display text-3xl font-semibold text-ldii-navy">Toronto, Ontario</h2>
+            <ul className="mt-6 space-y-4 text-gray-700">
+              <li className="flex gap-3"><i className="ri-map-pin-line text-tech-teal-800 mt-0.5" aria-hidden="true" /><a href={ORG.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-ldii-navy">{ORG.address}</a></li>
+              <li className="flex gap-3"><i className="ri-phone-line text-tech-teal-800 mt-0.5" aria-hidden="true" /><a href={ORG.phoneHref} className="hover:text-ldii-navy">{ORG.phone}</a></li>
+              <li className="flex gap-3"><i className="ri-mail-line text-tech-teal-800 mt-0.5" aria-hidden="true" /><a href={`mailto:${ORG.email}`} className="hover:text-ldii-navy">{ORG.email}</a></li>
+            </ul>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-megaphone-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Advocacy & Policy Development</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Lobby governmental and non-governmental organizations in Canada and globally, advocating for positive change in public policy and legislation to address Global Shocks.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-book-open-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Education & Knowledge Sharing</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Organize high-impact international conferences, workshops, and publications to disseminate cutting-edge research and innovative solutions.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-bar-chart-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Research & Data Collection</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Collect statistical information, conduct proprietary research, and serve as a clearing house for critical data related to global shocks.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-team-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Partnership & Collaboration</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Actively partner with governmental organizations, diplomatic missions, and the private sector to improve lives and well-being worldwide.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-file-list-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Program Development & Implementation</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Develop and administer programs that promote our objectives, either independently or in collaboration with local and international partners.
-              </p>
-            </div>
-            
-            <div className="bg-gradient-to-br from-corporate-blue-50 to-corporate-blue-100 rounded-2xl p-8 border border-corporate-blue-200 hover:shadow-xl transition-all duration-300">
-              <div className="w-16 h-16 bg-corporate-blue-600 rounded-full flex items-center justify-center mb-6">
-                <i className="ri-group-line w-8 h-8 flex items-center justify-center text-white"></i>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Community Engagement</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Raise awareness through workshops, seminars, and conferences on the holistic determinants of health including mental health.
-              </p>
-            </div>
-          </div>
+          <img src={photo('WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq', 900, 600)} alt="Meeting room at the LDII headquarters in Toronto" loading="lazy" className="w-full rounded-3xl aspect-[3/2] object-cover" />
         </div>
       </section>
-
-      {/* Global Presence Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Global Presence</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our multi-country presence enables us to understand local contexts while maintaining global perspectives on interconnected challenges.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-map-pin-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Toronto, Canada</h3>
-                  <p className="text-tech-cyan-500 font-semibold">Headquarters</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4">3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6</p>
-              <p className="text-gray-700 mb-4">Global strategy, policy development, and international partnerships</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-map-pin-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Helsinki, Finland</h3>
-                  <p className="text-tech-cyan-500 font-semibold">Liaison Office</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4">Nordic liaison</p>
-              <p className="text-gray-700 mb-4">Climate resilience, food security, and health systems strengthening</p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-corporate-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <i className="ri-map-pin-line w-8 h-8 flex items-center justify-center text-tech-cyan-500"></i>
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Kampala, Uganda</h3>
-                  <p className="text-tech-cyan-500 font-semibold">Liaison Office</p>
-                </div>
-              </div>
-              <p className="text-gray-600 mb-4">Regional Office - East Africa</p>
-              <p className="text-gray-700 mb-4">Economic development, trade facilitation, and capacity building</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Join Our Mission</h2>
-          <p className="text-xl text-gray-600 mb-12">
-            Partner with us to build a more resilient world. Together, we can create lasting positive change.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <a
-              href="/partners#hero"
-              className="bg-tech-teal-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-tech-teal-600 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
-            >
-              Become a Partner
-            </a>
-            <a
-              href="/donate#hero"
-              className="bg-corporate-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-corporate-blue-700 transition-all duration-300 transform hover:scale-105 cursor-pointer whitespace-nowrap shadow-lg"
-            >
-              Support Our Work
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }

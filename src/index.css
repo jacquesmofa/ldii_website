@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  h1, h2, h3, .font-display {
+    font-family: 'Source Serif 4', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
   html {
     scroll-behavior: smooth;
   }
@@ -37,8 +41,8 @@
   
   .btn-micro:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(0, 217, 255, 0.3), 
-                0 8px 10px -6px rgba(0, 217, 255, 0.2);
+    box-shadow: 0 10px 25px -5px rgba(60, 203, 127, 0.3), 
+                0 8px 10px -6px rgba(60, 203, 127, 0.2);
   }
   
   .btn-micro:active {
@@ -67,8 +71,8 @@
   }
   
   .glow-hover:hover {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.4),
-                0 0 40px rgba(0, 217, 255, 0.2);
+    box-shadow: 0 0 20px rgba(60, 203, 127, 0.4),
+                0 0 40px rgba(60, 203, 127, 0.2);
   }
   
   /* Image lazy loading optimization */

@@ -91,7 +91,7 @@ collections:
         label: Contact Details
         file: public/content/settings/contact.json
         fields:
-          - { name: primary_email, label: Primary email, widget: string, default: info@ldiinitiatives.org }
+          - { name: primary_email, label: Primary email, widget: string, default: admin@ldiinitiatives.org }
           - { name: secondary_email, label: Second official email, widget: string, default: admin@ldiinitiatives.org }
           - { name: phone, label: Phone, widget: string, default: '+1 647 656 3026' }
           - { name: toronto_address, label: Toronto office address, widget: string, default: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6' }

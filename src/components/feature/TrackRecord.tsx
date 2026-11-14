@@ -17,14 +17,14 @@ export function TrackRecord({ mode = 'past' }: { mode?: 'past' | 'upcoming' }) {
   }
 
   return (
-    <ol className="relative border-l-2 border-[#00D9FF]/40 ml-3 md:ml-6 space-y-14">
+    <ol className="relative border-l-2 border-[#3CCB7F]/40 ml-3 md:ml-6 space-y-14">
       {items.map((event) => {
         const href = event.linkUrl || (mode === 'past' ? '/events/past' : '/events/upcoming');
         const label = event.linkLabel || (event.linkUrl?.includes('gallery') ? 'See the photos' : 'Learn more');
         const summary = event.shortDescription || event.description.split('\n')[0];
         return (
           <li key={event.id} className="pl-8 md:pl-12 relative">
-            <span className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#0A1E3D] border-4 border-[#00D9FF]" aria-hidden="true"></span>
+            <span className="absolute -left-[11px] top-2 w-5 h-5 rounded-full bg-[#0A1E3D] border-4 border-[#3CCB7F]" aria-hidden="true"></span>
             <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 lg:gap-10 items-start">
               <a href={href} className="lg:col-span-2 block overflow-hidden rounded-2xl shadow-lg group">
                 <img

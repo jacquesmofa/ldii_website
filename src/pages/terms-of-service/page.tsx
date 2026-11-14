@@ -9,7 +9,7 @@ export default function TermsOfServicePage() {
           <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
             Please read these terms carefully before using our services
           </p>
-          <p className="text-green-100 mt-4">Last Updated: March 2024</p>
+          <p className="text-green-100 mt-4">Last updated: November 2026</p>
         </div>
       </section>
 
@@ -303,8 +303,8 @@ export default function TermsOfServicePage() {
                 
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:info@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
-                    info@ldiinitiatives.org
+                  <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
+                    admin@ldiinitiatives.org
                   </a>
                   <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
                     admin@ldiinitiatives.org

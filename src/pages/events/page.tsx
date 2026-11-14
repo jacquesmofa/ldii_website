@@ -40,7 +40,7 @@ export default function EventsPage() {
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
-            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/Participants2_omtkbj.jpg)`
+            backgroundImage: `url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/General_aiu2gv.jpg)`
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -70,7 +70,7 @@ export default function EventsPage() {
                 <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
                   <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-8">
                     <div className="flex items-center mb-4">
-                      <span className="bg-[#00D9FF] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold mr-3">
+                      <span className="bg-[#3CCB7F] text-[#0A1E3D] px-3 py-1 rounded-full text-sm font-semibold mr-3">
                         {event.type}
                       </span>
                       <span className="text-green-600 font-semibold">{event.displayDate}</span>
@@ -243,13 +243,13 @@ export default function EventsPage() {
                 <button
                   type="submit"
                   disabled={isSubscribing}
-                  className="bg-[#00D9FF] text-[#0A1E3D] px-6 py-3 rounded-lg font-semibold hover:bg-[#00C4E6] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-60 text-sm"
+                  className="bg-[#3CCB7F] text-[#0A1E3D] px-6 py-3 rounded-lg font-semibold hover:bg-[#2EB06C] transition-all duration-300 transform hover:scale-105 whitespace-nowrap disabled:opacity-60 text-sm"
                 >
                   {isSubscribing ? 'Subscribing...' : 'Subscribe'}
                 </button>
               </div>
               {subscribeMessage && (
-                <p className={`text-sm mt-3 ${subscribeError ? 'text-red-300' : 'text-[#00D9FF]'}`}>{subscribeMessage}</p>
+                <p className={`text-sm mt-3 ${subscribeError ? 'text-red-300' : 'text-[#3CCB7F]'}`}>{subscribeMessage}</p>
               )}
             </form>
           </div>

@@ -1,27 +1,386 @@
-import HeroSection from './components/HeroSection';
-import AboutSection from './components/AboutSection';
-import LocalProgramsSection from './components/LocalProgramsSection';
-import ImpactSection from './components/ImpactSection';
-import FocusAreasSection from './components/FocusAreasSection';
-import LatestFromLDIISection from './components/LatestFromLDIISection';
-import EventsSection from './components/EventsSection';
-import PartnersSection from './components/PartnersSection';
-import GlobalPresenceSection from './components/GlobalPresenceSection';
-import CTASection from './components/CTASection';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Eyebrow from '../../components/base/Eyebrow';
+import HlsVideo from '../../components/feature/HlsVideo';
+import PostCard from '../../components/feature/PostCard';
+import PartnerCards from '../../components/feature/PartnerCards';
+import { ABOUT, INTERNATIONAL, LOCAL, MINING_MISSION, ORG, PARADE_VIDEO, PHOTOS, POSTS, photo } from '../../content/ldii';
+import { getPastEvents } from '../../mocks/eventsData';
+
+function Hero() {
+  const [watching, setWatching] = useState(false);
+  return (
+    <section className="relative isolate overflow-hidden bg-ldii-ink text-white">
+      <HlsVideo
+        background
+        src={PARADE_VIDEO.src}
+        poster={PARADE_VIDEO.poster(1600)}
+        title={PARADE_VIDEO.title}
+        className="absolute inset-0 -z-20 w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/80 to-ldii-ink/30" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 md:pt-32 md:pb-28 min-h-[78vh] flex flex-col justify-center">
+        <Eyebrow light>{ORG.name}</Eyebrow>
+        <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl">
+          Local Impact,
+          <br />
+          <span className="text-tech-teal-500">Global Partnerships.</span>
+        </h1>
+        <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
+          We empower communities in Ontario and around the world to thrive amidst systemic crises, through leadership,
+          research, strategic partnership and human capital development that build resilience against global shocks.
+        </p>
+        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+          <Link to="/international-focus" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-full font-semibold hover:bg-tech-teal-400">
+            Explore our work <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+          <button
+            type="button"
+            onClick={() => setWatching(true)}
+            className="inline-flex justify-center items-center gap-2 border border-white/40 px-7 py-4 rounded-full font-semibold hover:bg-white/10"
+          >
+            <i className="ri-play-circle-line text-xl" aria-hidden="true" /> Watch the parade film
+          </button>
+        </div>
+        <p className="mt-14 text-sm text-white/70 max-w-xl">
+          In the background: the world’s first international Post-COVID parade and candlelight vigil, organized by LDII in Toronto on October 1, 2023.
+        </p>
+      </div>
+
+      {watching && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={PARADE_VIDEO.title}
+          onClick={() => setWatching(false)}
+        >
+          <div className="w-full max-w-5xl" onClick={(e) => e.stopPropagation()}>
+            <HlsVideo src={PARADE_VIDEO.src} poster={PARADE_VIDEO.poster(1600)} title={PARADE_VIDEO.title} className="w-full aspect-video bg-black rounded-lg" />
+            <p className="mt-3 text-white/80 text-sm">{PARADE_VIDEO.title}</p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setWatching(false)}
+            className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white text-2xl flex items-center justify-center"
+            aria-label="Close video"
+          >
+            <i className="ri-close-line" aria-hidden="true" />
+          </button>
+        </div>
+      )}
+    </section>
+  );
+}
+
+/** Signature: the two programme areas side by side, Local | Global. */
+function TwoProgrammes() {
+  const panels = [
+    {
+      label: 'Local',
+      title: LOCAL.title,
+      text: 'Six community programmes across Ontario: newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships, and seniors’ wellbeing.',
+      href: '/local-programmes',
+      cta: 'See our local programmes',
+      img: photo('Brampton_counci_kryhsj', 1100, 760),
+      alt: PHOTOS.brampton.alt,
+    },
+    {
+      label: 'Global',
+      title: 'International Partnerships & Knowledge Exchange',
+      text: 'Six areas of Global North–Global South partnership: climate, mining innovation, trade, global health, food security, and sustainable investment.',
+      href: '/international-focus',
+      cta: 'See our international focus',
+      img: photo(PHOTOS.cheer.id, 1100, 760),
+      alt: PHOTOS.cheer.alt,
+    },
+  ];
+  return (
+    <section className="bg-white py-20 md:py-28" aria-labelledby="two-areas">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-3xl">
+          <Eyebrow>Two complementary programme areas</Eyebrow>
+          <h2 id="two-areas" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">
+            Connecting people, institutions and opportunities across Canada and internationally.
+          </h2>
+        </div>
+        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+          {panels.map((p) => (
+            <Link key={p.label} to={p.href} className="group relative rounded-3xl overflow-hidden min-h-[460px] flex items-end text-white">
+              <img src={p.img} alt={p.alt} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ldii-ink via-ldii-ink/70 to-transparent" aria-hidden="true" />
+              <div className="relative p-8 md:p-10">
+                <span className="inline-block rounded-full bg-tech-teal-500 text-ldii-navy text-xs font-bold uppercase tracking-widest px-3 py-1">{p.label}</span>
+                <h3 className="mt-4 font-display text-3xl font-semibold leading-tight">{p.title}</h3>
+                <p className="mt-3 text-white/85 leading-relaxed max-w-xl">{p.text}</p>
+                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-tech-teal-300 group-hover:text-white">
+                  {p.cta} <i className="ri-arrow-right-line" aria-hidden="true" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function WhoWeAre() {
+  const facts = [
+    { value: '10+', label: 'years of experience' },
+    { value: 'Toronto', label: 'headquarters, Ontario' },
+    { value: '2', label: 'programme areas, local and international' },
+    { value: '12', label: 'focus areas and community programmes' },
+  ];
+  return (
+    <section className="bg-ldii-mist py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
+        <div className="lg:col-span-6">
+          <Eyebrow>Who we are</Eyebrow>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{ORG.promise}</h2>
+          <p className="mt-6 text-lg text-gray-700 leading-relaxed">{ABOUT[0]}</p>
+          <p className="mt-4 text-gray-700 leading-relaxed">{ABOUT[1]}</p>
+          <dl className="mt-10 grid grid-cols-2 gap-6">
+            {facts.map((f) => (
+              <div key={f.label} className="border-l-2 border-tech-teal-600 pl-4">
+                <dt className="sr-only">{f.label}</dt>
+                <dd>
+                  <span className="block font-display text-3xl font-semibold text-ldii-navy">{f.value}</span>
+                  <span className="block text-sm text-gray-600 mt-1">{f.label}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <Link to="/about" className="mt-10 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">
+            More about LDII <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="lg:col-span-6 grid grid-cols-5 gap-4">
+          <img src={photo(PHOTOS.group1st.id, 900, 1100)} alt={PHOTOS.group1st.alt} loading="lazy" className="col-span-3 rounded-2xl w-full h-full object-cover aspect-[4/5]" />
+          <div className="col-span-2 flex flex-col gap-4">
+            <img src={photo(PHOTOS.president.id, 500, 600)} alt={PHOTOS.president.alt} loading="lazy" className="rounded-2xl w-full object-cover aspect-[5/6]" />
+            <Link to="/about/who-we-are/president-profile" className="rounded-2xl bg-ldii-navy text-white p-5 flex-1 flex flex-col justify-end hover:bg-tech-teal-800 transition-colors">
+              <span className="text-xs uppercase tracking-widest text-tech-teal-300">Founder &amp; President</span>
+              <span className="font-display text-xl font-semibold mt-1">{ORG.president}</span>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FocusStrip() {
+  return (
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <Eyebrow>International focus</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{INTERNATIONAL.tagline}</h2>
+          </div>
+          <Link to="/international-focus" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
+            All six focus areas <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+        <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {INTERNATIONAL.areas.map((a, i) => (
+            <li key={a.slug}>
+              <Link to={`/international-focus#${a.slug}`} className="group block rounded-2xl overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow h-full">
+                <div className="relative">
+                  <img src={photo(a.image, 700, 440)} alt={a.imageAlt} loading="lazy" className="w-full aspect-[16/10] object-cover" />
+                  <span className="absolute top-4 left-4 w-11 h-11 rounded-full bg-white/95 flex items-center justify-center text-tech-teal-800 text-xl" aria-hidden="true">
+                    <i className={a.icon} />
+                  </span>
+                </div>
+                <div className="p-6">
+                  <p className="text-xs font-semibold text-gray-500 tracking-widest">0{i + 1}</p>
+                  <h3 className="mt-1 font-display text-xl font-semibold text-ldii-navy group-hover:text-tech-teal-800">{a.title}</h3>
+                  <p className="mt-2 text-sm italic text-gray-600">{a.tagline}</p>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function MissionFeature() {
+  return (
+    <section className="bg-ldii-navy text-white">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2">
+        <img src={photo(MINING_MISSION.image, 1200, 900)} alt={MINING_MISSION.imageAlt} loading="lazy" className="w-full h-full object-cover min-h-[320px]" />
+        <div className="px-6 py-16 md:px-14 md:py-20">
+          <Eyebrow light>Coming next · {MINING_MISSION.when}</Eyebrow>
+          <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold leading-tight">{MINING_MISSION.title}</h2>
+          <p className="mt-5 text-white/85 leading-relaxed">{MINING_MISSION.summary}</p>
+          <ul className="mt-6 space-y-3">
+            {MINING_MISSION.programme.map((p) => (
+              <li key={p} className="flex gap-3 text-white/85">
+                <i className="ri-checkbox-circle-fill text-tech-teal-500 mt-0.5" aria-hidden="true" />
+                <span>{p}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm text-white/70">{MINING_MISSION.partner}.</p>
+          <Link to="/programs/mining-technology-exchange" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-full font-semibold hover:bg-tech-teal-400">
+            About the mission <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function News() {
+  const [lead, ...rest] = POSTS;
+  return (
+    <section className="bg-ldii-sand py-20 md:py-28" aria-labelledby="in-the-news">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <Eyebrow>In the news</Eyebrow>
+            <h2 id="in-the-news" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">
+              What our partners say about our work
+            </h2>
+          </div>
+          <Link to="/events/news" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
+            All news <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="mt-12 grid gap-6">
+          <PostCard post={lead} wide />
+          <div className="grid md:grid-cols-3 gap-6">
+            {rest.map((p) => (
+              <PostCard key={p.slug} post={p} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TrackRecord() {
+  const events = getPastEvents().slice(0, 4);
+  return (
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <Eyebrow>Track record</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">Recent engagements</h2>
+          </div>
+          <Link to="/impact" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
+            Our full record <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+        <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {events.map((e) => (
+            <li key={e.id}>
+              <Link to={e.linkUrl || '/events/past'} className="group block h-full">
+                <div className="rounded-2xl overflow-hidden bg-ldii-mist aspect-[4/3]">
+                  {e.image ? (
+                    <img src={e.image} alt={e.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-tech-teal-800 text-4xl" aria-hidden="true"><i className="ri-calendar-event-line" /></div>
+                  )}
+                </div>
+                <p className="mt-4 text-xs font-semibold uppercase tracking-widest text-tech-teal-800">{e.displayDate}</p>
+                <h3 className="mt-1 font-display text-lg font-semibold text-ldii-navy leading-snug group-hover:text-tech-teal-800">{e.title}</h3>
+                <p className="mt-1 text-sm text-gray-600">{e.location}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+function Mosaic() {
+  const tiles = [
+    PHOTOS.cheer,
+    PHOTOS.sudbury,
+    PHOTOS.angola,
+    PHOTOS.igad,
+    PHOTOS.hall2nd,
+    PHOTOS.kenya,
+  ];
+  return (
+    <section className="bg-ldii-ink text-white py-20 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div>
+            <Eyebrow light>Gallery</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl font-semibold">Our work in pictures</h2>
+          </div>
+          <Link to="/events/gallery" className="inline-flex items-center gap-2 font-semibold text-tech-teal-300 hover:text-white whitespace-nowrap">
+            Open the gallery <i className="ri-arrow-right-line" aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[200px] gap-3">
+          {tiles.map((t, i) => (
+            <Link
+              key={t.id}
+              to="/events/gallery"
+              className={`overflow-hidden rounded-xl ${i === 0 ? 'col-span-2 row-span-2' : i === 3 ? 'md:col-span-2' : ''}`}
+            >
+              <img src={photo(t.id, i === 0 ? 1100 : 700, i === 0 ? 820 : 420)} alt={t.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PartnerBand() {
+  return (
+    <section className="bg-white py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="max-w-2xl">
+          <Eyebrow>Partners</Eyebrow>
+          <h2 className="mt-4 font-display text-4xl font-semibold text-ldii-navy">The organisations behind our engagements</h2>
+        </div>
+        <div className="mt-10">
+          <PartnerCards />
+        </div>
+        <div className="mt-16 rounded-3xl bg-ldii-mist p-8 md:p-12 grid md:grid-cols-3 gap-8 items-center">
+          <div className="md:col-span-2">
+            <h3 className="font-display text-3xl font-semibold text-ldii-navy">{INTERNATIONAL.cta.title}</h3>
+            <p className="mt-3 text-gray-700 leading-relaxed">{INTERNATIONAL.cta.text}</p>
+            <p className="mt-4 text-gray-800">
+              <a href={`mailto:${ORG.email}`} className="font-semibold underline decoration-tech-teal-600 underline-offset-4">{ORG.email}</a>
+              <span className="mx-2 text-gray-500" aria-hidden="true">·</span>
+              <a href={ORG.phoneHref} className="font-semibold">{ORG.phone}</a>
+            </p>
+          </div>
+          <div className="flex md:justify-end">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-ldii-navy text-white px-7 py-4 rounded-full font-semibold hover:bg-tech-teal-800">
+              Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
-      <HeroSection />
-      <AboutSection />
-      <LocalProgramsSection />
-      <ImpactSection />
-      <FocusAreasSection />
-      <LatestFromLDIISection />
-      <EventsSection />
-      <PartnersSection />
-      <GlobalPresenceSection />
-      <CTASection />
-    </div>
+    <>
+      <Hero />
+      <TwoProgrammes />
+      <WhoWeAre />
+      <FocusStrip />
+      <MissionFeature />
+      <News />
+      <TrackRecord />
+      <Mosaic />
+      <PartnerBand />
+    </>
   );
 }

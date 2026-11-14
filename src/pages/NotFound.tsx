@@ -13,7 +13,7 @@ export default function NotFound() {
       <div className="flex-1 flex items-center justify-center px-4 md:px-6 py-24">
         <div className="max-w-3xl w-full">
           <div className="text-center">
-            <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-[#00D9FF] bg-[#0A1E3D] px-4 py-2 rounded-full mb-8">
+            <span className="inline-block text-xs font-semibold tracking-[0.25em] uppercase text-[#3CCB7F] bg-[#0A1E3D] px-4 py-2 rounded-full mb-8">
               Page not found
             </span>
             <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-5 leading-tight">

@@ -153,21 +153,21 @@ export default function MiningTechnologyExchangePage() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url(https://readdy.ai/api/search-image?query=Underground%20hard%20rock%20mine%20tunnel%20with%20modern%20equipment%20and%20warm%20industrial%20lighting%2C%20engineer%20in%20safety%20gear%20and%20helmet%20examining%20rock%20face%2C%20dramatic%20depth%20and%20scale%2C%20teal%20and%20amber%20tones%2C%20cinematic%20documentary%20photography&width=1920&height=800&seq=mining-exchange-hero-2026&orientation=landscape)',
+              'url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg)',
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#00D9FF] font-semibold mb-5">
-            Flagship Programme · June 2027
+          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#3CCB7F] font-semibold mb-5">
+            Mission · June 2027
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Africa–Canada Mining &amp; Technology Exchange
+            Africa–Canada Mining &amp; Technology Transfer Mission
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Executive delegations from Uganda, Kenya, South Africa, Botswana and Senegal to
-            Northern Ontario. Human capital development in modern mining: safer operations and
-            increased yield.
+            Government and industry delegations from Kenya, Uganda, South Africa, Botswana and
+            other African nations, based in Greater Sudbury and travelling north to the Canadian
+            Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc.
           </p>
         </div>
       </section>
@@ -190,11 +190,11 @@ export default function MiningTechnologyExchangePage() {
                 />
               </div>
               <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">
-                Canadian host and delivery lead
+                Co-host
               </span>
               <p className="text-gray-700 leading-relaxed text-sm">
-                A nationally award-winning, 100% Indigenous-owned education and eco-tourism
-                company based at Batchewana First Nation. Thrive Tours designs and hosts
+                An Indigenous-led experiential tourism and education company based at
+                Batchewana First Nation. Thrive Tours designs and hosts
                 experiential programmes for universities, international groups and visiting
                 delegations, and brings the First Nations relationships and treaty knowledge at
                 the heart of responsible mining in Northern Ontario.
@@ -209,7 +209,7 @@ export default function MiningTechnologyExchangePage() {
                 />
               </div>
               <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">
-                African partnerships lead
+                Co-host
               </span>
               <p className="text-gray-700 leading-relaxed text-sm">
                 A federally incorporated Canadian organisation that facilitates technology
@@ -252,11 +252,11 @@ export default function MiningTechnologyExchangePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Eight days in Northern Ontario
+              Proposed programme: eight days in Northern Ontario
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Built around the Canadian Mining Expo in Timmins, with travel time capped at two
-              days each way and arrivals phased by country.
+              Built around the Canadian Mining Expo in Timmins. Days and visits are being
+              confirmed with hosts and may change.
             </p>
           </div>
 
@@ -328,7 +328,7 @@ export default function MiningTechnologyExchangePage() {
                 key={area.title}
                 className="bg-white/5 border border-white/10 rounded-2xl p-7"
               >
-                <span className="block text-xs font-bold tracking-widest text-[#00D9FF] mb-3">
+                <span className="block text-xs font-bold tracking-widest text-[#3CCB7F] mb-3">
                   0{index + 1}
                 </span>
                 <h3 className="text-lg font-bold text-white mb-3">{area.title}</h3>
@@ -572,7 +572,7 @@ export default function MiningTechnologyExchangePage() {
               </p>
               <a
                 href="mailto:brad@thrivetours.ca"
-                className="block text-[#00D9FF] text-sm hover:underline break-words"
+                className="block text-[#3CCB7F] text-sm hover:underline break-words"
               >
                 brad@thrivetours.ca
               </a>
@@ -596,7 +596,7 @@ export default function MiningTechnologyExchangePage() {
               <p className="text-white/60 text-sm mb-4">Ronald Lwabaayi, President</p>
               <a
                 href="mailto:admin@ldiinitiatives.org"
-                className="block text-[#00D9FF] text-sm hover:underline break-words"
+                className="block text-[#3CCB7F] text-sm hover:underline break-words"
               >
                 admin@ldiinitiatives.org
               </a>
@@ -608,7 +608,7 @@ export default function MiningTechnologyExchangePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a
               href="/contact"
-              className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold hover:bg-[#00C4E6] transition-colors cursor-pointer whitespace-nowrap text-center"
+              className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap text-center"
             >
               Request the Programme Document
             </a>

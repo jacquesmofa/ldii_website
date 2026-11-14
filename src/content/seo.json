@@ -1,0 +1,209 @@
+{
+  "site": {
+    "name": "Livelihood Development International Initiatives (LDII)",
+    "url": "https://ldiinitiatives.org",
+    "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg",
+    "imageAlt": "Group photo, 1st International Post-COVID Conference, Toronto, July 2024",
+    "locale": "en_CA"
+  },
+  "pages": [
+    {
+      "path": "/",
+      "title": "LDII | Local Impact, Global Partnerships",
+      "description": "LDII is a Toronto nonprofit empowering communities in Ontario and building partnerships between Canada and the Global South. Local impact, global partnerships.",
+      "label": "Home",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg"
+    },
+    {
+      "path": "/about",
+      "title": "About LDII | Canadian Nonprofit, Toronto",
+      "description": "Who LDII is: a Canadian nonprofit founded in Toronto that strengthens communities at home and builds practical partnerships across the Global North and South.",
+      "label": "About",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-10-19_at_18.42.29oilk_dd4872.jpg"
+    },
+    {
+      "path": "/about/who-we-are/president-profile",
+      "title": "Ronald Lwabaayi, President | LDII",
+      "description": "Ronald Lwabaayi, President of LDII: his background, his leadership and the partnership approach that shapes LDII’s local and international work.",
+      "label": "Our President",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/president_LDII_xjy7xj.jpg"
+    },
+    {
+      "path": "/international-focus",
+      "title": "International Focus | LDII Global North–South",
+      "description": "How LDII builds partnerships between Canada and the Global South: climate, mining, trade, health, food security and investment, grounded in shared benefit.",
+      "label": "International Focus",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/untitled-6588_1_pr49ja.jpg"
+    },
+    {
+      "path": "/local-programmes",
+      "title": "Local Programmes in Ontario | LDII",
+      "description": "Newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships and seniors’ wellbeing across Ontario.",
+      "label": "Local Programmes",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/Brampton_counci_kryhsj.jpg"
+    },
+    {
+      "path": "/programs/mining-technology-exchange",
+      "title": "Africa–Canada Mining & Technology Mission | LDII",
+      "description": "June 2027: African government and industry delegations visit Greater Sudbury and the Canadian Mining Expo in Timmins, co-hosted by LDII and Thrive Tours.",
+      "label": "Mining & Technology Mission",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg"
+    },
+    {
+      "path": "/impact",
+      "title": "Our Impact | Conferences and Engagements | LDII",
+      "description": "The conferences, delegations and diplomatic engagements LDII has delivered between Africa and Canada, each documented with real photographs.",
+      "label": "Our Impact",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/General_aiu2gv.jpg"
+    },
+    {
+      "path": "/events",
+      "title": "Events | LDII Conferences and Delegations",
+      "description": "Upcoming and past LDII events: the International Post-COVID conferences, diplomatic engagements and the Africa–Canada Mining and Technology Mission.",
+      "label": "Events",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/General_aiu2gv.jpg"
+    },
+    {
+      "path": "/events/upcoming",
+      "title": "Upcoming Events | LDII",
+      "description": "What LDII is preparing next, including the Africa–Canada Mining & Technology Transfer Mission to Greater Sudbury and Timmins in June 2027.",
+      "label": "Upcoming Events",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg"
+    },
+    {
+      "path": "/events/past",
+      "title": "Past Events | LDII",
+      "description": "Past LDII events, from the 2023 COVID-19 remembrance parade to the Post-COVID conferences in Toronto and Brampton and 2026 diplomatic engagements.",
+      "label": "Past Events",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg"
+    },
+    {
+      "path": "/events/news",
+      "title": "News & Media | LDII",
+      "description": "News about LDII from IGAD, the African Union Sixth Region Global and the High Commission of Kenya, plus the story of Toronto’s COVID-19 remembrance parade.",
+      "label": "News & Media",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-10-19_at_18.38.57_9_qa73aa.jpg"
+    },
+    {
+      "path": "/events/press-releases",
+      "title": "Press Releases | LDII",
+      "description": "Official LDII press releases on the International Post-COVID conferences and the organisation’s programme of engagements, with media contact details.",
+      "label": "Press Releases",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/General_aiu2gv.jpg"
+    },
+    {
+      "path": "/events/gallery",
+      "title": "Gallery | LDII in Pictures",
+      "description": "Photo and video albums from LDII conferences, delegations and diplomatic engagements in Toronto, Brampton, Greater Sudbury and beyond.",
+      "label": "Gallery",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/untitled-6588_1_pr49ja.jpg"
+    },
+    {
+      "path": "/partners",
+      "title": "Partner With LDII",
+      "description": "Universities, governments, businesses and community organisations: explore how to partner with LDII, and meet the organisations behind our engagements.",
+      "label": "Partner With Us",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/Brampton_Board_of_Trade_noll70.jpg"
+    },
+    {
+      "path": "/donate",
+      "title": "Donate to LDII",
+      "description": "Support LDII’s conferences, exchanges and community programmes for youth, newcomers, families and seniors in Ontario and internationally.",
+      "label": "Donate",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.17_k9kxst.jpg"
+    },
+    {
+      "path": "/contact",
+      "title": "Contact LDII | Toronto Headquarters",
+      "description": "Contact LDII at 3701 Chesswood Drive, Unit 315, Toronto, by email at admin@ldiinitiatives.org or by phone at +1 647 656 3026.",
+      "label": "Contact",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq.jpg"
+    },
+    {
+      "path": "/contact/media-inquiries",
+      "title": "Media Inquiries | LDII",
+      "description": "Press and media contact for LDII: interviews, photographs and information about our conferences, delegations and community programmes.",
+      "label": "Media Inquiries",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-10-19_at_18.38.57_11_t5syke.jpg"
+    },
+    {
+      "path": "/privacy-policy",
+      "title": "Privacy Policy | LDII",
+      "description": "How Livelihood Development International Initiatives collects, uses and protects personal information shared through this website and its forms.",
+      "label": "Privacy Policy"
+    },
+    {
+      "path": "/terms-of-service",
+      "title": "Terms of Use | LDII",
+      "description": "The terms that apply when you use the Livelihood Development International Initiatives website, its content and its forms.",
+      "label": "Terms of Use"
+    },
+    {
+      "path": "/accessibility",
+      "title": "Accessibility | LDII",
+      "description": "LDII’s commitment to an accessible website for everyone, and how to tell us about any barrier you meet on this site.",
+      "label": "Accessibility"
+    },
+    {
+      "path": "/faq",
+      "title": "Frequently Asked Questions | LDII",
+      "description": "Answers to common questions about LDII, our programmes in Ontario, our international work, events, partnerships and donations.",
+      "label": "FAQ"
+    },
+    {
+      "path": "/sitemap",
+      "title": "Site Map | LDII",
+      "description": "Every page of the LDII website in one place: about us, our work, events, news, gallery, getting involved and contact.",
+      "label": "Site Map"
+    },
+    {
+      "path": "/events/gallery/1st-international-post-covid-conference-toronto-2024",
+      "title": "1st International Post-COVID Conference | LDII",
+      "description": "Photographs from 1st International Post-COVID Conference, an LDII engagement. Open the album to browse every photo full size.",
+      "label": "1st International Post-COVID Conference",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-05-25_at_4.02.47_PM_blxfxa.jpg"
+    },
+    {
+      "path": "/events/gallery/2nd-international-post-covid-conference-brampton-2025",
+      "title": "2nd International Post-COVID-19 Conference | LDII",
+      "description": "Photographs from 2nd International Post-COVID-19 Conference, an LDII engagement. Open the album to browse every photo full size.",
+      "label": "2nd International Post-COVID-19 Conference",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/2nd_Post_covid_cvdox1.jpg"
+    },
+    {
+      "path": "/events/gallery/angola-diplomatic-engagement-2026",
+      "title": "Angola Diplomatic Engagement | LDII",
+      "description": "Photographs from Angola Diplomatic Engagement, an LDII engagement. Open the album to browse every photo full size.",
+      "label": "Angola Diplomatic Engagement",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/Angola_Diplomatic_Engagement_ypufxv.jpg"
+    },
+    {
+      "path": "/events/gallery/conference-planning-behind-the-scenes",
+      "title": "Diplomatic Missions & Partner Meetings | LDII Gallery",
+      "description": "Working sessions with diplomatic missions and partner organisations in Ontario, including the Senegalese mission, July 2025.",
+      "label": "Conference Planning & Behind the Scenes",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/PSX_20250726_005744_m8jl0j.jpg"
+    },
+    {
+      "path": "/events/gallery/canada-south-africa-economic-outlook-2026",
+      "title": "Canada–South Africa Economic Outlook, Nov 2026 | LDII Gallery",
+      "description": "Photos from the Canada and South Africa economic outlook session, November 2026: trade opportunity and the road to market access.",
+      "label": "Canada and South Africa: Economic Outlook, Trade Opportunity and the Road to Market Access",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/untitled-6585_1_cnqwkm.jpg"
+    },
+    {
+      "path": "/events/gallery/diplomatic-engagements-partnerships",
+      "title": "Diplomatic Engagements & Strategic Partnerships | LDII",
+      "description": "Photographs from Diplomatic Engagements & Strategic Partnerships, an LDII engagement. Open the album to browse every photo full size.",
+      "label": "Diplomatic Engagements & Strategic Partnerships",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/HE_Ambassador_OF_KENYA_slpwkj.jpg"
+    },
+    {
+      "path": "/events/gallery/greater-sudbury-mining-ecosystem-2026",
+      "title": "Greater Sudbury Mining Ecosystem, Nov 2026 | LDII Gallery",
+      "description": "Photographs from Trip to the Mining Capital of Canada: the Greater Sudbury Mining Ecosystem, an LDII engagement. Open the album to browse every photo full size.",
+      "label": "Trip to the Mining Capital of Canada: the Greater Sudbury Mining Ecosystem",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg"
+    }
+  ]
+}

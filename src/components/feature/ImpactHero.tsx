@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 
 const HERO_PHOTO =
-  'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/Participants2_omtkbj.jpg';
+  'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/General_aiu2gv.jpg';
 
 /** Navy hero with a real LDII photograph, shared by the Impact pages. */
 export function ImpactHero({ title, children, photo = HERO_PHOTO }: { title: string; children?: ReactNode; photo?: string }) {
@@ -27,7 +27,7 @@ export function ImpactCta() {
           Partner with LDII, attend a coming engagement or support our work.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/donate" className="bg-[#00D9FF] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#00C4E6] transition-colors whitespace-nowrap">Support Our Work</a>
+          <a href="/donate" className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors whitespace-nowrap">Support Our Work</a>
           <a href="/partners" className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors whitespace-nowrap">Partner With Us</a>
         </div>
       </div>
