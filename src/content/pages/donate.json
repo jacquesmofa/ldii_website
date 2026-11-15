@@ -1,0 +1,76 @@
+{
+  "heroSection": {
+    "title": "Make a Difference Today",
+    "text": "Your gift supports newcomers, youth and seniors in Ontario and the partnerships we build abroad."
+  },
+  "donationForm": {
+    "heading": "Pledge a Donation",
+    "text": "Tell us what you would like to give. We reply from admin@ldiinitiatives.org to confirm the payment details."
+  },
+  "donationType": {
+    "fieldLabel": "Donation Type",
+    "button": "One-Time Donation",
+    "button2": "Monthly Donation"
+  },
+  "amountSelection": {
+    "fieldLabel": "Select Amount (CAD)",
+    "button": "Custom Amount",
+    "placeholder": "Enter custom amount"
+  },
+  "paymentMethod": {
+    "fieldLabel": "Payment Method",
+    "text": "Interac e-Transfer (Recommended)",
+    "text2": "Fast, secure, and easy",
+    "text3": "Direct Bank Transfer",
+    "text4": "Wire transfer or EFT"
+  },
+  "personalInformation": {
+    "subheading": "Your Information",
+    "fieldLabel": "First Name *",
+    "fieldLabel2": "Last Name *",
+    "fieldLabel3": "Email *",
+    "fieldLabel4": "Phone",
+    "fieldLabel5": "Address",
+    "fieldLabel6": "City",
+    "fieldLabel7": "Province/State",
+    "fieldLabel8": "Postal Code",
+    "fieldLabel9": "Country",
+    "option": "Canada",
+    "option2": "United States",
+    "option3": "United Kingdom",
+    "option4": "Other",
+    "fieldLabel10": "Message (Optional)",
+    "placeholder": "Share why you're supporting LDII (max 500 characters)",
+    "text": "/500"
+  },
+  "paymentInstructions": {
+    "subheading": "Interac e-Transfer Instructions",
+    "text": "After submitting this form, please send your e-Transfer to:",
+    "text2": "admin@ldiinitiatives.org",
+    "text3": "Security Question: What organization are you supporting?",
+    "text4": "Answer: LDII",
+    "text5": "We will confirm by email once it arrives.",
+    "subheading2": "Bank Transfer Instructions",
+    "text6": "After submitting this form, you will receive an email with our banking details including:",
+    "item": "Bank name and branch",
+    "item2": "Account number",
+    "item3": "Transit number",
+    "item4": "SWIFT/BIC code (for international transfers)"
+  },
+  "taxReceiptNotice": {
+    "text": "LDII is a Canadian nonprofit organization, not a registered charity, so gifts are not eligible for a charitable tax receipt. We acknowledge every gift by email."
+  },
+  "whyDonateSection": {
+    "heading": "Why Your Donation Matters",
+    "subheading": "Direct Impact",
+    "text": "Your gift goes to LDII’s local programmes in Ontario: newcomers, youth and seniors.",
+    "subheading2": "Transparency",
+    "text2": "Ask us at any time how your gift was used. Annual reports will be published on our Impact page.",
+    "subheading3": "Global Reach",
+    "text3": "Your gift supports our conferences, exchanges and youth and community programmes."
+  },
+  "securityNotice": {
+    "label": "Your information",
+    "text": "This form sends your pledge to our team by email. It does not take card details, and we never share your information with third parties."
+  }
+}

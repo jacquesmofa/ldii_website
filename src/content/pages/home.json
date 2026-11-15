@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "title": "Local Impact,",
+    "label": "Global Partnerships.",
+    "text": "We empower communities in Ontario and around the world to thrive amidst systemic crises, through leadership, research, strategic partnership and human capital development that build resilience against global shocks.",
+    "text2": "Explore our work ",
+    "button": " Watch the parade film",
+    "text3": "In the background: the world’s first international Post-COVID parade and candlelight vigil, organized by LDII in Toronto on October 1, 2023.",
+    "ariaLabel": "Close video"
+  },
+  "doors": [
+    {
+      "kicker": "In Ontario",
+      "title": "Local programmes",
+      "text": "Newcomers, youth and seniors.",
+      "href": "/local-programmes",
+      "img": "offices"
+    },
+    {
+      "kicker": "Global North–South",
+      "title": "International focus",
+      "text": "Six areas of partnership.",
+      "href": "/international-focus",
+      "img": "southAfrica"
+    },
+    {
+      "kicker": "Every June",
+      "title": "Mining mission to Greater Sudbury",
+      "text": "Global South delegations in Northern Ontario.",
+      "href": "/programs/mining-technology-exchange",
+      "img": "sudbury"
+    }
+  ],
+  "quickLinks": {
+    "ariaLabel": "Start here"
+  },
+  "localStrip": {
+    "text": "Local programmes · Ontario",
+    "label": "All local programmes",
+    "label2": "0"
+  },
+  "logoRow": {
+    "text": "Working with"
+  },
+  "twoProgrammes": {
+    "text": "Two complementary programme areas",
+    "heading": "Connecting people, institutions and opportunities across Canada and internationally."
+  },
+  "facts": [
+    {
+      "value": "10+",
+      "label": "years of experience"
+    },
+    {
+      "value": "Toronto",
+      "label": "headquarters, Ontario"
+    },
+    {
+      "value": "2",
+      "label": "programme areas, local and international"
+    },
+    {
+      "value": "12",
+      "label": "focus areas and community programmes"
+    }
+  ],
+  "whoWeAre": {
+    "text": "Who we are",
+    "text2": "More about LDII ",
+    "label": "Founder & President"
+  },
+  "focusStrip": {
+    "text": "International focus",
+    "label": "All six focus areas",
+    "text2": "0"
+  },
+  "missionFeature": {
+    "text": "Coming next · ",
+    "text2": "About the mission "
+  },
+  "news": {
+    "text": "In the news",
+    "heading": "LDII in the news",
+    "label": "All news"
+  },
+  "trackRecord": {
+    "text": "Track record",
+    "heading": "Recent engagements",
+    "label": "Our full record"
+  },
+  "mosaic": {
+    "text": "Gallery",
+    "heading": "Our work in pictures",
+    "text2": "Open the gallery "
+  },
+  "partnerBand": {
+    "text": "Partners",
+    "heading": "The organisations behind our engagements",
+    "text2": "Contact us "
+  }
+}

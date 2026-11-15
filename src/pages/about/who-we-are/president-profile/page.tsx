@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import copy from '../../../../content/pages/president.json';
+// Text, images and links: src/content/pages/president.json (editable in the website editors).
 
 export default function PresidentProfilePage() {
   return (
@@ -12,41 +14,35 @@ export default function PresidentProfilePage() {
               <div className="relative">
                 <div className="w-72 h-72 mx-auto rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
                   <img
-                    src="https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_600,h_600,q_auto,f_auto/Lwabaayi_Profile_ovqlxd.jpg"
-                    alt="Mr. Ronald Lwabaayi"
+                    src={copy.heroSection.image}
+                    alt={copy.heroSection.imageAlt}
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
               </div>
             </div>
             <div className="w-full lg:w-2/3 text-center lg:text-left">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                Mr. Ronald Lwabaayi
-              </h1>
-              <p className="text-xl text-emerald-300 font-semibold mb-4">
-                Founder & President, LDII
-              </p>
-              <p className="text-lg text-white/80 leading-relaxed mb-6 max-w-2xl">
-                Economist, Technology Transfer & International Trade Facilitator
-              </p>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{copy.heroSection.title}</h1>
+              <p className="text-xl text-emerald-300 font-semibold mb-4">{copy.heroSection.text}</p>
+              <p className="text-lg text-white/80 leading-relaxed mb-6 max-w-2xl">{copy.heroSection.text2}</p>
               <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
                 <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full">
                     <i className="ri-building-line text-emerald-300"></i>
                   </div>
-                  <span>Member, Toronto Region Board of Trade</span>
+                  <span>{copy.heroSection.label}</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full">
                     <i className="ri-building-line text-emerald-300"></i>
                   </div>
-                  <span>Member, Brampton Board of Trade</span>
+                  <span>{copy.heroSection.label2}</span>
                 </div>
                 <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-8 h-8 flex items-center justify-center bg-white/10 rounded-full">
                     <i className="ri-graduation-cap-line text-emerald-300"></i>
                   </div>
-                  <span>University of British Columbia</span>
+                  <span>{copy.heroSection.label3}</span>
                 </div>
               </div>
             </div>
@@ -58,19 +54,13 @@ export default function PresidentProfilePage() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="mb-12">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Overview</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Executive Summary</h2>
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">{copy.executiveSummary.label}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{copy.executiveSummary.heading}</h2>
           </div>
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border-l-4 border-emerald-500">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              Mr. Ronald Lwabaayi is a distinguished Economist and Canadian leader in international trade with a career spanning over a decade in high-level global development. Prior to founding Livelihood Development International Initiatives (LDII), Mr. Lwabaayi served as a <strong className="text-gray-900">Researcher for the World Bank</strong>, where he gained deep analytical insights into global economic structures and systemic development.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              As an enthusiastic leader of trade and a seasoned researcher on world events, he has dedicated his career to bridging the gap between Canadian innovation and the developmental needs of the Global South. He was the chairman of the Climate Change Action of East Africa.
-            </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
-              His unique background as an economist allows him to design frameworks that address "Global Shocks" crises in health, climate, and trade while ensuring the economic viability and long-term sustainability of community-led initiatives.
-            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">{copy.executiveSummary.text}<strong className="text-gray-900">{copy.executiveSummary.bold}</strong>{copy.executiveSummary.text2}</p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-6">{copy.executiveSummary.text3}</p>
+            <p className="text-lg text-gray-700 leading-relaxed">{copy.executiveSummary.text4}</p>
           </div>
         </div>
       </section>
@@ -79,8 +69,8 @@ export default function PresidentProfilePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Expertise</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Core Competencies & Leadership</h2>
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">{copy.coreCompetencies.label}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{copy.coreCompetencies.heading}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -89,11 +79,11 @@ export default function PresidentProfilePage() {
               <div className="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-line-chart-line text-2xl text-emerald-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Economic Research & Analytical Expertise</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{copy.competency1.subheading}</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">World Bank Research Legacy:</strong> Leverages a rigorous background in global economic research to analyze market trends, evaluate risk, and design evidence-based solutions for emerging economies.</span>
+                  <span><strong className="text-gray-800">{copy.competency1.bold}</strong>{copy.competency1.label}</span>
                 </li>
               </ul>
             </div>
@@ -103,15 +93,15 @@ export default function PresidentProfilePage() {
               <div className="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-global-line text-2xl text-teal-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Global North-South Technology Transfer</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{copy.competency2.subheading}</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Innovation Brokerage:</strong> At the forefront of transferring advanced Canadian technologies to emerging markets, specifically in CleanTech, Smart City infrastructure, and Digital Health systems.</span>
+                  <span><strong className="text-gray-800">{copy.competency2.bold}</strong>{copy.competency2.label}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-teal-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Institutional Alignment:</strong> Directly engages with government bodies at all levels - Federal, Provincial (Ontario), and Municipal (Toronto/Brampton) - to align international development projects with Canadian regulatory standards and foreign policy.</span>
+                  <span><strong className="text-gray-800">{copy.competency2.bold2}</strong>{copy.competency2.label2}</span>
                 </li>
               </ul>
             </div>
@@ -121,15 +111,15 @@ export default function PresidentProfilePage() {
               <div className="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-service-line text-2xl text-amber-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Trade & Diplomacy Excellence</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{copy.competency3.subheading}</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Business Network Integration:</strong> Leverages senior memberships in the Toronto and Brampton Boards of Trade (two of Ontario’s leading business networks) to provide African governments and private sectors with direct access to Canadian SMEs.</span>
+                  <span><strong className="text-gray-800">{copy.competency3.bold}</strong>{copy.competency3.label}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-amber-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Diplomatic Bridge:</strong> Acts as a trusted intermediary between diplomatic missions in Canada and the Canadian private sector, facilitating high-value investment frameworks and bilateral trade agreements.</span>
+                  <span><strong className="text-gray-800">{copy.competency3.bold2}</strong>{copy.competency3.label2}</span>
                 </li>
               </ul>
             </div>
@@ -139,15 +129,15 @@ export default function PresidentProfilePage() {
               <div className="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
                 <i className="ri-government-line text-2xl text-cyan-600"></i>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Strategic Relationship with the Government of Canada</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{copy.competency4.subheading}</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Compliance & Integrity:</strong> Leads LDII as a Canadian nonprofit organization in compliance with Federal and Provincial laws, maintaining a reputation for transparency and ethical engagement rooted in international institutional standards.</span>
+                  <span><strong className="text-gray-800">{copy.competency4.bold}</strong>{copy.competency4.label}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full mt-2 flex-shrink-0"></div>
-                  <span><strong className="text-gray-800">Advocacy:</strong> Engages with Canadian governmental and non-governmental organizations on international climate adaptation and global health resilience.</span>
+                  <span><strong className="text-gray-800">{copy.competency4.bold2}</strong>{copy.competency4.label2}</span>
                 </li>
               </ul>
             </div>
@@ -159,8 +149,8 @@ export default function PresidentProfilePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Impact</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Key Achievements (2023-2026)</h2>
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">{copy.keyAchievements.label}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{copy.keyAchievements.heading}</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -168,50 +158,40 @@ export default function PresidentProfilePage() {
               <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mb-6">
                 <i className="ri-group-line text-white text-xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">International Post-COVID Conferences</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Successfully convened over <strong className="text-gray-800">250 global delegates</strong>, including Canadian decision-makers, in Toronto and Brampton to strategize on "Building Synergies for Future Global Shocks" (2024, 2025).
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{copy.keyAchievements.subheading}</h3>
+              <p className="text-gray-600 leading-relaxed">{copy.keyAchievements.text}<strong className="text-gray-800">{copy.keyAchievements.bold}</strong>{copy.keyAchievements.text2}</p>
             </div>
 
             <div className="bg-gradient-to-br from-teal-50 to-cyan-50 rounded-2xl p-8 border border-teal-100">
               <div className="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center mb-6">
                 <i className="ri-plant-line text-white text-xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Climate & Environment Leadership</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Spearheaded global reforestation efforts with <strong className="text-gray-800">100,000+ fruit trees planted</strong>. Organized the East Africa Climate Summit in Nairobi (2023), facilitating MOUs between Canadian green-tech firms and African ministries.
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{copy.keyAchievements.subheading2}</h3>
+              <p className="text-gray-600 leading-relaxed">{copy.keyAchievements.text3}<strong className="text-gray-800">{copy.keyAchievements.bold2}</strong>{copy.keyAchievements.text4}</p>
             </div>
 
             <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-2xl p-8 border border-cyan-100">
               <div className="w-12 h-12 bg-cyan-500 rounded-full flex items-center justify-center mb-6">
                 <i className="ri-money-dollar-circle-line text-white text-xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Economic Impact</h3>
-              <p className="text-gray-600 leading-relaxed">
-                His initiatives have facilitated trade delegations and technology pilot agreements valued at over <strong className="text-gray-800">$10M CAD</strong>, directly benefiting the economic diversification of partner nations.
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{copy.keyAchievements.subheading3}</h3>
+              <p className="text-gray-600 leading-relaxed">{copy.keyAchievements.text5}<strong className="text-gray-800">{copy.keyAchievements.bold3}</strong>{copy.keyAchievements.text6}</p>
             </div>
 
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-8 border border-amber-100 md:col-span-2 lg:col-span-2">
               <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-6">
                 <i className="ri-heart-line text-white text-xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">Interfaith & Multicultural Solidarity</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Organized the <strong className="text-gray-800">1st International Interfaith Multicultural Memorial (2024)</strong> in Ontario, bringing together multi-sectoral leaders to foster social cohesion and mental health awareness in diverse communities.
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{copy.keyAchievements.subheading4}</h3>
+              <p className="text-gray-600 leading-relaxed">{copy.keyAchievements.text7}<strong className="text-gray-800">{copy.keyAchievements.bold4}</strong>{copy.keyAchievements.text8}</p>
             </div>
 
             <div className="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-8 border border-rose-100">
               <div className="w-12 h-12 bg-rose-500 rounded-full flex items-center justify-center mb-6">
                 <i className="ri-award-line text-white text-xl"></i>
               </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-3">World Bank Research</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Served as a researcher for the World Bank, developing deep analytical insights into global economic structures and systemic development frameworks.
-              </p>
+              <h3 className="text-lg font-bold text-gray-900 mb-3">{copy.keyAchievements.subheading5}</h3>
+              <p className="text-gray-600 leading-relaxed">{copy.keyAchievements.text9}</p>
             </div>
           </div>
         </div>
@@ -221,8 +201,8 @@ export default function PresidentProfilePage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Network</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Stakeholder Engagements</h2>
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">{copy.stakeholderEngagements.label}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{copy.stakeholderEngagements.heading}</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
@@ -248,8 +228,8 @@ export default function PresidentProfilePage() {
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">Get in Touch</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">Contact Information</h2>
+            <span className="text-emerald-600 font-semibold text-sm uppercase tracking-wider">{copy.contactInfo.label}</span>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">{copy.contactInfo.heading}</h2>
           </div>
           <div className="bg-gray-50 rounded-2xl p-8 md:p-12">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -258,10 +238,10 @@ export default function PresidentProfilePage() {
                   <i className="ri-map-pin-line text-xl text-emerald-600"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                  <p className="text-gray-600">3701 Chesswood Drive, Unit 315</p>
-                  <p className="text-gray-600">Toronto, ON M3J 2P6</p>
-                  <p className="text-gray-600">Canada</p>
+                  <h4 className="font-semibold text-gray-900 mb-1">{copy.contactInfo.subheading}</h4>
+                  <p className="text-gray-600">{copy.contactInfo.text}</p>
+                  <p className="text-gray-600">{copy.contactInfo.text2}</p>
+                  <p className="text-gray-600">{copy.contactInfo.text3}</p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
@@ -269,8 +249,8 @@ export default function PresidentProfilePage() {
                   <i className="ri-global-line text-xl text-emerald-600"></i>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Web</h4>
-                  <p className="text-gray-600">LDII Official Website</p>
+                  <h4 className="font-semibold text-gray-900 mb-1">{copy.contactInfo.subheading2}</h4>
+                  <p className="text-gray-600">{copy.contactInfo.text4}</p>
                 </div>
               </div>
             </div>
@@ -287,9 +267,7 @@ export default function PresidentProfilePage() {
           >
             <div className="w-8 h-8 flex items-center justify-center">
               <i className="ri-arrow-left-line"></i>
-            </div>
-            Back to Who We Are
-          </Link>
+            </div>{copy.backNavigation.text}</Link>
         </div>
       </section>
     </div>

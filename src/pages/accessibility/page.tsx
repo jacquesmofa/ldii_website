@@ -1,3 +1,5 @@
+import copy from '../../content/pages/accessibility.json';
+// Text, images and links: src/content/pages/accessibility.json (editable in the website editors).
 export default function AccessibilityPage() {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -5,11 +7,9 @@ export default function AccessibilityPage() {
       <section className="relative bg-gradient-to-br from-green-600 to-green-800 text-white py-20">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Accessibility Statement</h1>
-          <p className="text-xl md:text-2xl text-green-100 max-w-3xl">
-            LDII is committed to ensuring digital accessibility for people with disabilities
-          </p>
-          <p className="text-green-100 mt-4">Last updated: November 2026</p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-green-100 max-w-3xl">{copy.heroSection.text}</p>
+          <p className="text-green-100 mt-4">{copy.heroSection.text2}</p>
         </div>
       </section>
 
@@ -20,58 +20,40 @@ export default function AccessibilityPage() {
             
             {/* Our Commitment */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Commitment to Accessibility</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Livelihood Development International Initiatives (LDII) is committed to ensuring that our website, digital platforms, programs, and services are accessible to all people, including those with disabilities. We believe that everyone should have equal access to information, services, and opportunities, regardless of their abilities.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We are continuously working to improve the accessibility and usability of our digital presence and to ensure that we meet or exceed the requirements of applicable accessibility standards and guidelines. This commitment extends to all aspects of our organization, from our physical offices to our online platforms and program delivery.
-              </p>
-              <p className="text-gray-700 leading-relaxed">
-                Accessibility is not just a legal requirement for us—it is a core value that aligns with our mission of promoting inclusive development and empowering all individuals to reach their full potential.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.ourCommitment.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.ourCommitment.text}</p>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.ourCommitment.text2}</p>
+              <p className="text-gray-700 leading-relaxed">{copy.ourCommitment.text3}</p>
             </div>
 
             {/* Standards and Guidelines */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Accessibility Standards and Guidelines</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Our website and digital platforms are designed to conform to the following accessibility standards:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.standardsAndGuidelines.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.standardsAndGuidelines.text}</p>
               
               <div className="space-y-6">
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Web Content Accessibility Guidelines (WCAG) 2.1</h3>
-                  <p className="text-gray-700 leading-relaxed mb-3">
-                    We strive to meet Level AA conformance with the Web Content Accessibility Guidelines (WCAG) 2.1, which are internationally recognized standards for web accessibility developed by the World Wide Web Consortium (W3C).
-                  </p>
-                  <p className="text-gray-700 leading-relaxed">
-                    These guidelines are organized around four principles: Perceivable, Operable, Understandable, and Robust (POUR).
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.standardsAndGuidelines.subheading}</h3>
+                  <p className="text-gray-700 leading-relaxed mb-3">{copy.standardsAndGuidelines.text2}</p>
+                  <p className="text-gray-700 leading-relaxed">{copy.standardsAndGuidelines.text3}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Accessibility for Ontarians with Disabilities Act (AODA)</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    As an organization operating in Ontario, Canada, we are committed to complying with the Accessibility for Ontarians with Disabilities Act (AODA) and its associated standards, including the Integrated Accessibility Standards Regulation (IASR).
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.standardsAndGuidelines.subheading2}</h3>
+                  <p className="text-gray-700 leading-relaxed">{copy.standardsAndGuidelines.text4}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">Section 508 Standards</h3>
-                  <p className="text-gray-700 leading-relaxed">
-                    We also reference Section 508 of the U.S. Rehabilitation Act, which establishes requirements for electronic and information technology accessibility for federal agencies and organizations receiving federal funding.
-                  </p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.standardsAndGuidelines.subheading3}</h3>
+                  <p className="text-gray-700 leading-relaxed">{copy.standardsAndGuidelines.text5}</p>
                 </div>
               </div>
             </div>
 
             {/* Accessibility Features */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Accessibility Features of Our Website</h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We have implemented numerous features to make our website accessible to all users:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.accessibilityFeatures.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-6">{copy.accessibilityFeatures.text}</p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-[#0A1E3D] w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
@@ -115,68 +97,62 @@ export default function AccessibilityPage() {
 
             {/* Assistive Technologies */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Compatible Assistive Technologies</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Our website is designed to be compatible with the following assistive technologies:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.assistiveTechnologies.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.assistiveTechnologies.text}</p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4 ml-4">
-                <li>Screen readers (JAWS, NVDA, VoiceOver, TalkBack)</li>
-                <li>Screen magnification software</li>
-                <li>Speech recognition software</li>
-                <li>Alternative input devices (switch controls, eye-tracking)</li>
-                <li>Browser accessibility features and extensions</li>
-                <li>Text-to-speech software</li>
+                <li>{copy.assistiveTechnologies.item}</li>
+                <li>{copy.assistiveTechnologies.item2}</li>
+                <li>{copy.assistiveTechnologies.item3}</li>
+                <li>{copy.assistiveTechnologies.item4}</li>
+                <li>{copy.assistiveTechnologies.item5}</li>
+                <li>{copy.assistiveTechnologies.item6}</li>
               </ul>
-              <p className="text-gray-700 leading-relaxed">
-                We test our website regularly with various assistive technologies to ensure compatibility and usability. If you experience any difficulties using assistive technology with our website, please contact us so we can address the issue.
-              </p>
+              <p className="text-gray-700 leading-relaxed">{copy.assistiveTechnologies.text2}</p>
             </div>
 
             {/* Physical Accessibility */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Physical Accessibility of Our Facilities</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We are committed to ensuring that our physical offices and program locations are accessible to all visitors:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.physicalAccessibility.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.physicalAccessibility.text}</p>
               
               <div className="space-y-4">
                 <div className="flex items-start">
                   <i className="ri-wheelchair-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Wheelchair Accessibility</h3>
-                    <p className="text-gray-700">Our offices feature wheelchair-accessible entrances, elevators, and washrooms</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{copy.physicalAccessibility.subheading}</h3>
+                    <p className="text-gray-700">{copy.physicalAccessibility.text2}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <i className="ri-parking-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Accessible Parking</h3>
-                    <p className="text-gray-700">Designated accessible parking spaces are available near building entrances</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{copy.physicalAccessibility.subheading2}</h3>
+                    <p className="text-gray-700">{copy.physicalAccessibility.text3}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <i className="ri-service-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Service Animals</h3>
-                    <p className="text-gray-700">Service animals are welcome in all our facilities</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{copy.physicalAccessibility.subheading3}</h3>
+                    <p className="text-gray-700">{copy.physicalAccessibility.text4}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <i className="ri-user-heart-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Support Persons</h3>
-                    <p className="text-gray-700">Support persons are welcome to accompany visitors with disabilities</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{copy.physicalAccessibility.subheading4}</h3>
+                    <p className="text-gray-700">{copy.physicalAccessibility.text5}</p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <i className="ri-volume-up-line w-6 h-6 flex items-center justify-center text-green-600 mr-3 mt-1"></i>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Assistive Listening Devices</h3>
-                    <p className="text-gray-700">Available for meetings and events upon request</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{copy.physicalAccessibility.subheading5}</h3>
+                    <p className="text-gray-700">{copy.physicalAccessibility.text6}</p>
                   </div>
                 </div>
               </div>
@@ -184,138 +160,115 @@ export default function AccessibilityPage() {
 
             {/* Document Accessibility */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Accessible Documents and Communications</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                We strive to make all our documents and communications accessible:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.documentAccessibility.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.documentAccessibility.text}</p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4 ml-4">
-                <li>PDF documents are created with accessibility features (tags, bookmarks, alt text)</li>
-                <li>Documents are available in alternative formats upon request (large print, braille, audio)</li>
-                <li>Plain language is used to enhance understanding</li>
-                <li>Complex information is supplemented with visual aids when appropriate</li>
-                <li>Email communications are formatted for screen reader compatibility</li>
-                <li>Social media posts include image descriptions</li>
+                <li>{copy.documentAccessibility.item}</li>
+                <li>{copy.documentAccessibility.item2}</li>
+                <li>{copy.documentAccessibility.item3}</li>
+                <li>{copy.documentAccessibility.item4}</li>
+                <li>{copy.documentAccessibility.item5}</li>
+                <li>{copy.documentAccessibility.item6}</li>
               </ul>
-              <p className="text-gray-700 leading-relaxed">
-                If you require a document in an alternative format, please contact us at least 5 business days in advance, and we will work to accommodate your request.
-              </p>
+              <p className="text-gray-700 leading-relaxed">{copy.documentAccessibility.text2}</p>
             </div>
 
             {/* Ongoing Efforts */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Ongoing Accessibility Efforts</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Accessibility is an ongoing commitment. We continuously work to improve accessibility through:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.ongoingEfforts.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.ongoingEfforts.text}</p>
               
               <div className="space-y-4">
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Regular Audits and Testing</h3>
-                  <p className="text-gray-700">We conduct regular accessibility audits using automated tools and manual testing with assistive technologies. We also engage users with disabilities to provide feedback on our accessibility.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{copy.ongoingEfforts.subheading}</h3>
+                  <p className="text-gray-700">{copy.ongoingEfforts.text2}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Staff Training</h3>
-                  <p className="text-gray-700">All staff members receive training on accessibility best practices, including how to create accessible documents, communicate with people with disabilities, and use accessibility features in our systems.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{copy.ongoingEfforts.subheading2}</h3>
+                  <p className="text-gray-700">{copy.ongoingEfforts.text3}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Accessibility in Procurement</h3>
-                  <p className="text-gray-700">We consider accessibility when procuring or developing new technologies, services, and facilities. Vendors and partners are expected to meet accessibility standards.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{copy.ongoingEfforts.subheading3}</h3>
+                  <p className="text-gray-700">{copy.ongoingEfforts.text4}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Feedback Integration</h3>
-                  <p className="text-gray-700">We actively seek and incorporate feedback from users with disabilities to identify barriers and implement improvements.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{copy.ongoingEfforts.subheading4}</h3>
+                  <p className="text-gray-700">{copy.ongoingEfforts.text5}</p>
                 </div>
 
                 <div className="bg-gray-50 rounded-xl p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Accessibility Plan</h3>
-                  <p className="text-gray-700">We maintain a multi-year accessibility plan that outlines our goals, strategies, and timelines for achieving and maintaining accessibility across all aspects of our organization.</p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{copy.ongoingEfforts.subheading5}</h3>
+                  <p className="text-gray-700">{copy.ongoingEfforts.text6}</p>
                 </div>
               </div>
             </div>
 
             {/* Known Limitations */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Known Limitations and Remediation</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Despite our best efforts, some areas of our website may not yet be fully accessible. We are aware of the following limitations and are actively working to address them:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.knownLimitations.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.knownLimitations.text}</p>
               <ul className="list-disc list-inside space-y-2 text-gray-700 mb-4 ml-4">
-                <li>Some older PDF documents may not be fully tagged for accessibility (we are systematically updating these)</li>
-                <li>Some third-party embedded content may not meet accessibility standards (we are working with vendors to improve this)</li>
-                <li>Some complex data visualizations may require alternative text descriptions (we are adding these progressively)</li>
-                <li>Some archived video content may lack captions (we are adding captions to priority videos)</li>
+                <li>{copy.knownLimitations.item}</li>
+                <li>{copy.knownLimitations.item2}</li>
+                <li>{copy.knownLimitations.item3}</li>
+                <li>{copy.knownLimitations.item4}</li>
               </ul>
-              <p className="text-gray-700 leading-relaxed">
-                If you encounter an accessibility barrier on our website, please let us know so we can prioritize addressing it.
-              </p>
+              <p className="text-gray-700 leading-relaxed">{copy.knownLimitations.text2}</p>
             </div>
 
             {/* Feedback and Contact */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Accessibility Feedback</h2>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                We welcome your feedback on the accessibility of our website, facilities, and services. If you encounter any accessibility barriers or have suggestions for improvement, please contact us:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.feedbackAndContact.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-6">{copy.feedbackAndContact.text}</p>
               
               <div className="bg-gray-50 rounded-xl p-6 space-y-4">
                 <div>
-                  <div className="font-semibold text-gray-900 mb-1">Accessibility Coordinator</div>
-                  <div className="text-gray-700">Livelihood Development International Initiatives (LDII)</div>
+                  <div className="font-semibold text-gray-900 mb-1">{copy.feedbackAndContact.text2}</div>
+                  <div className="text-gray-700">{copy.feedbackAndContact.text3}</div>
                 </div>
                 
                 <div>
-                  <div className="font-semibold text-gray-900 mb-1">Email:</div>
-                  <a href="mailto:admin@ldiinitiatives.org" className="text-green-600 hover:text-green-700 block break-all">
-                    admin@ldiinitiatives.org
-                  </a>
+                  <div className="font-semibold text-gray-900 mb-1">{copy.feedbackAndContact.text4}</div>
+                  <a href={copy.feedbackAndContact.emailLink} className="text-green-600 hover:text-green-700 block break-all">{copy.feedbackAndContact.link}</a>
                 </div>
                 
                 <div>
-                  <div className="font-semibold text-gray-900 mb-1">Phone:</div>
-                  <a href="tel:+16476563026" className="text-green-600 hover:text-green-700">
-                    +1 647 656 3026
-                  </a>
+                  <div className="font-semibold text-gray-900 mb-1">{copy.feedbackAndContact.text5}</div>
+                  <a href={copy.feedbackAndContact.phoneLink} className="text-green-600 hover:text-green-700">{copy.feedbackAndContact.link2}</a>
                 </div>
                 
                 <div>
-                  <div className="font-semibold text-gray-900 mb-1">Mail:</div>
-                  <div className="text-gray-700">3701 Chesswood Drive, Unit 315</div>
-                  <div className="text-gray-700">Toronto, ON M3J 2P6</div>
-                  <div className="text-gray-700">Canada</div>
+                  <div className="font-semibold text-gray-900 mb-1">{copy.feedbackAndContact.text6}</div>
+                  <div className="text-gray-700">{copy.feedbackAndContact.text7}</div>
+                  <div className="text-gray-700">{copy.feedbackAndContact.text8}</div>
+                  <div className="text-gray-700">{copy.feedbackAndContact.text9}</div>
                 </div>
               </div>
 
-              <p className="text-gray-700 leading-relaxed mt-6">
-                We aim to respond to accessibility feedback within 5 business days. For urgent accessibility issues, please call us directly.
-              </p>
+              <p className="text-gray-700 leading-relaxed mt-6">{copy.feedbackAndContact.text10}</p>
             </div>
 
             {/* Formal Complaints */}
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Formal Accessibility Complaints</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                If you are not satisfied with our response to your accessibility concern, you may file a formal complaint:
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.formalComplaints.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">{copy.formalComplaints.text}</p>
               <ol className="list-decimal list-inside space-y-2 text-gray-700 mb-4 ml-4">
-                <li>Submit your complaint in writing to our Accessibility Coordinator</li>
-                <li>Include details of the accessibility barrier and your contact information</li>
-                <li>We will acknowledge receipt within 5 business days</li>
-                <li>We will investigate and provide a written response within 30 days</li>
-                <li>If you are not satisfied with our response, you may escalate to our Executive Director</li>
+                <li>{copy.formalComplaints.item}</li>
+                <li>{copy.formalComplaints.item2}</li>
+                <li>{copy.formalComplaints.item3}</li>
+                <li>{copy.formalComplaints.item4}</li>
+                <li>{copy.formalComplaints.item5}</li>
               </ol>
-              <p className="text-gray-700 leading-relaxed">
-                You also have the right to file a complaint with the Accessibility Directorate of Ontario or other relevant regulatory bodies.
-              </p>
+              <p className="text-gray-700 leading-relaxed">{copy.formalComplaints.text2}</p>
             </div>
 
             {/* Acknowledgment */}
             <div className="bg-green-50 border border-green-200 rounded-xl p-6">
               <p className="text-gray-700 leading-relaxed">
-                <strong>LDII is committed to treating all people in a way that allows them to maintain their dignity and independence.</strong> We believe in integration and equal opportunity, and we are committed to meeting the needs of people with disabilities in a timely manner through the removal and prevention of barriers to accessibility.
-              </p>
+                <strong>{copy.acknowledgment.bold}</strong>{copy.acknowledgment.text}</p>
             </div>
           </div>
         </div>
@@ -330,24 +283,24 @@ export default function AccessibilityPage() {
               className="bg-gray-50 rounded-xl p-8 hover:bg-green-50 hover:shadow-lg transition-all cursor-pointer text-center group"
             >
               <i className="ri-shield-check-line w-12 h-12 flex items-center justify-center text-green-600 mx-auto mb-4"></i>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">Privacy Policy</h3>
-              <p className="text-gray-600">Learn how we protect your data</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">{copy.quickLinks.subheading}</h3>
+              <p className="text-gray-600">{copy.quickLinks.text}</p>
             </a>
             <a
               href="/terms-of-service"
               className="bg-gray-50 rounded-xl p-8 hover:bg-green-50 hover:shadow-lg transition-all cursor-pointer text-center group"
             >
               <i className="ri-file-text-line w-12 h-12 flex items-center justify-center text-green-600 mx-auto mb-4"></i>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">Terms of Service</h3>
-              <p className="text-gray-600">Read our terms and conditions</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">{copy.quickLinks.subheading2}</h3>
+              <p className="text-gray-600">{copy.quickLinks.text2}</p>
             </a>
             <a
               href="/contact"
               className="bg-gray-50 rounded-xl p-8 hover:bg-green-50 hover:shadow-lg transition-all cursor-pointer text-center group"
             >
               <i className="ri-customer-service-line w-12 h-12 flex items-center justify-center text-green-600 mx-auto mb-4"></i>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">Contact Us</h3>
-              <p className="text-gray-600">Questions? Get in touch</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-green-600">{copy.quickLinks.subheading3}</h3>
+              <p className="text-gray-600">{copy.quickLinks.text3}</p>
             </a>
           </div>
         </div>

@@ -3,6 +3,8 @@ import { sized } from '../../../mocks/galleryTypes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { galleryEvents } from '../../../mocks/galleryData';
 import MasonryGrid from './components/MasonryGrid';
+import copy from '../../../content/pages/gallery.json';
+// Text, images and links: src/content/pages/gallery.json (editable in the website editors).
 
 /* ──────────────────────────────────────────────────────────────────────────
    GALLERY PAGE  —  TWO VIEW MODES
@@ -179,8 +181,8 @@ const GalleryPage = () => {
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="relative h-[45vh] md:h-[50vh] min-h-[300px] overflow-hidden">
         <img
-          src="https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1779929426/2nd_Post_covid_cvdox1.jpg"
-          alt="LDII Gallery"
+          src={copy.categoryTabComponent.image}
+          alt={copy.categoryTabComponent.imageAlt}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
@@ -191,17 +193,13 @@ const GalleryPage = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4"
-            >
-              Gallery
-            </motion.h1>
+            >{copy.categoryTabComponent.text}</motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto"
-            >
-              Moments of Impact, Stories of Transformation
-            </motion.p>
+            >{copy.categoryTabComponent.text2}</motion.p>
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -209,7 +207,7 @@ const GalleryPage = () => {
               className="mt-5 inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-[3px] border border-white/20 text-white/80 text-sm"
             >
               <i className="ri-image-line w-4 h-4 flex items-center justify-center"></i>
-              <span>{galleryImages.length} photographs across {galleryCategories.length} collections</span>
+              <span>{galleryImages.length}{copy.categoryTabComponent.label}{galleryCategories.length}{copy.categoryTabComponent.label2}</span>
             </motion.div>
           </div>
         </div>
@@ -218,7 +216,7 @@ const GalleryPage = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           NAVIGATION TABS  +  BACK BUTTON
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-4 bg-white border-b border-gray-200" aria-label="Photo albums">
+      <section className="py-4 bg-white border-b border-gray-200" aria-label={copy.categoryTabComponent.ariaLabel}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center gap-2 overflow-x-auto md:flex-wrap md:justify-center pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {/* Overview tab — only visible when in category mode */}
@@ -232,9 +230,7 @@ const GalleryPage = () => {
                   onClick={backToOverview}
                   className="px-5 py-2.5 rounded-[3px] text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-md flex items-center gap-2"
                 >
-                  <i className="ri-arrow-left-line w-4 h-4 flex items-center justify-center"></i>
-                  Back to Overview
-                </motion.button>
+                  <i className="ri-arrow-left-line w-4 h-4 flex items-center justify-center"></i>{copy.overviewTabOnlyVisibleWhen.text}</motion.button>
               )}
             </AnimatePresence>
 
@@ -279,15 +275,12 @@ const GalleryPage = () => {
                           {cat.name}
                         </h2>
                         <p className="text-gray-500 text-sm">
-                          {count} {count === 1 ? 'photo' : 'photos'} — click any to preview
-                        </p>
+                          {count} {count === 1 ? 'photo' : 'photos'}{copy.sectionHeader.text}</p>
                       </div>
                       <button
                         onClick={() => enterCategory(cat.id)}
                         className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
-                      >
-                        View All {count} Photos
-                        <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
+                      >{copy.sectionHeader.button}{count}{copy.sectionHeader.button2}<i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
                       </button>
                     </div>
 
@@ -331,9 +324,7 @@ const GalleryPage = () => {
                       <button
                         onClick={() => enterCategory(cat.id)}
                         className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer"
-                      >
-                        View All {count} Photos
-                      </button>
+                      >{copy.viewAllBottomButtonMobile.button}{count}{copy.viewAllBottomButtonMobile.button2}</button>
                     </div>
                   </div>
                 </section>
@@ -380,13 +371,11 @@ const GalleryPage = () => {
                   <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <i className="ri-image-line text-2xl text-gray-400 w-8 h-8 flex items-center justify-center"></i>
                   </div>
-                  <p className="text-gray-500 text-lg">No photos found in this category.</p>
+                  <p className="text-gray-500 text-lg">{copy.properMasonryGridWithVisible.text}</p>
                   <button
                     onClick={backToOverview}
                     className="mt-4 px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-colors cursor-pointer"
-                  >
-                    Back to Gallery Overview
-                  </button>
+                  >{copy.properMasonryGridWithVisible.button}</button>
                 </div>
               )}
             </div>
@@ -415,7 +404,7 @@ const GalleryPage = () => {
               <button
                 onClick={(e) => { e.stopPropagation(); setShowLightboxCaption(p => !p); }}
                 className="w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 transition-colors cursor-pointer"
-                title="Toggle caption"
+                title={copy.topBar.title}
               >
                 <i className={`${showLightboxCaption ? 'ri-chat-off-line' : 'ri-chat-1-line'} text-lg w-5 h-5 flex items-center justify-center`}></i>
               </button>
@@ -437,14 +426,14 @@ const GalleryPage = () => {
             <div
               className="absolute left-0 top-0 bottom-0 w-1/4 z-10 cursor-w-resize hidden md:block"
               onClick={(e) => { e.stopPropagation(); goPrev(); }}
-              title="Previous image"
+              title={copy.leftClickZone.title}
             />
 
             {/* Right click zone */}
             <div
               className="absolute right-0 top-0 bottom-0 w-1/4 z-10 cursor-e-resize hidden md:block"
               onClick={(e) => { e.stopPropagation(); goNext(); }}
-              title="Next image"
+              title={copy.rightClickZone.title}
             />
 
             {/* Prev arrow button */}

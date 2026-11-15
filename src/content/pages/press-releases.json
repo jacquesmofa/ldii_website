@@ -1,0 +1,38 @@
+{
+  "pressReleases": [
+    {
+      "title": "2nd International Post-COVID-19 Conference Held in Brampton",
+      "date": "September 12, 2025",
+      "type": "Press Release",
+      "summary": "The 2nd International Post-COVID-19 Conference was held at the Pearson Convention Centre in Brampton, Ontario, from September 8 to 10, 2025.",
+      "content": "FOR IMMEDIATE RELEASE\n\nBrampton, ON – September 12, 2025 – The 2nd International Post-COVID-19 Conference, held at the Pearson Convention Centre from September 8 to 10, 2025, brought together partners, policymakers, researchers and community leaders under the theme Economic Damages from Global Shocks: Building Resilience for the Future.\n\nOver three days, discussions focused on how pandemics, natural disasters and financial crises cut across trade, finance and industry, and on how communities, businesses and institutions can better prepare for and respond to future shocks, protecting livelihoods and strengthening partnerships across borders.\n\nLocal Impact. Global Partnerships.\n\nPhotos from the conference are available at www.ldiinitiatives.org/events/gallery.\n\n###\n\nMedia contact:\nLDII Media Relations\nadmin@ldiinitiatives.org\n+1 647 656 3026",
+      "contact": "LDII Media Relations"
+    }
+  ],
+  "heroSection": {
+    "title": "Press Releases",
+    "text": "Official announcements and media releases from Livelihood Development International Initiatives."
+  },
+  "pressReleasesSection": {
+    "heading": "Official Releases",
+    "text": "Access our official press releases and media announcements.",
+    "label": "Contact: ",
+    "link": "See the conference photos "
+  },
+  "mediaContact": {
+    "heading": "Media Inquiries",
+    "text": "For press inquiries, interview requests, or additional information, please contact our communications team.",
+    "subheading": "Email",
+    "emailLink": "mailto:admin@ldiinitiatives.org",
+    "link": "admin@ldiinitiatives.org",
+    "subheading2": "Phone",
+    "phoneLink": "tel:+16476563026",
+    "link2": "+1 647 656 3026"
+  },
+  "ctaSection": {
+    "heading": "Media Resources",
+    "text": "Need logos, photos or an interview? Ask the team and we will send what you need.",
+    "link": "Contact Media Team",
+    "link2": "View Latest News"
+  }
+}

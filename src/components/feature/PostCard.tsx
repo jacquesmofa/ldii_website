@@ -9,11 +9,11 @@ function SourceBadge({ post }: { post: Post }) {
     <div className="flex items-center gap-3">
       <div className="w-11 h-11 rounded-full bg-white border border-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0">
         {post.logo && !failed ? (
-          <img src={post.logo} alt={`${post.sourceShort} logo`} className="max-w-[80%] max-h-[80%] object-contain" onError={() => setFailed(true)} loading="lazy" />
+          <img src={post.logo} alt={`${post.sourceShort || post.source || ''} logo`} className="max-w-[80%] max-h-[80%] object-contain" onError={() => setFailed(true)} loading="lazy" />
         ) : post.sourceIcon ? (
           <i className={`${post.sourceIcon} text-xl text-ldii-navy`} aria-hidden="true" />
         ) : (
-          <span className="font-display font-bold text-sm text-tech-teal-800">{post.sourceShort.slice(0, 4)}</span>
+          <span className="font-display font-bold text-sm text-tech-teal-800">{(post.sourceShort || post.source || 'LDII').slice(0, 4)}</span>
         )}
       </div>
       <div className="min-w-0">
@@ -51,7 +51,7 @@ export default function PostCard({ post, wide = false, defaultOpen = false }: { 
         <h3 className="mt-5 font-display text-xl md:text-2xl font-semibold text-ldii-navy leading-snug">{post.title}</h3>
         <p className="mt-3 text-gray-700 leading-relaxed">{post.excerpt}</p>
         <div id={bodyId} hidden={!open} className="mt-4 space-y-3 text-gray-700 leading-relaxed">
-          {post.body.map((p) => (
+          {(post.body || []).map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
         </div>

@@ -67,27 +67,43 @@ for (const page of seo.pages) {
   if (!page?.path || page.noindex) continue;
   const target = path.join(outDir, fileFor(page.path));
   if (!fs.existsSync(target)) continue;
-  const tab = await context.newPage();
-  try {
-    await tab.goto(base + page.path, { waitUntil: 'load', timeout: 30000 });
-    await tab.waitForFunction(() => document.querySelector('#main h1'), null, { timeout: 15000 });
-    await tab.waitForTimeout(300);
-    const body = await tab.evaluate(() => {
-      const rootEl = document.getElementById('root');
-      // Drop things that only make sense live (video players, open dialogs).
-      rootEl.querySelectorAll('video, [role="dialog"], script').forEach((n) => n.remove());
-      return rootEl.innerHTML;
-    });
-    const html = fs.readFileSync(target, 'utf8');
-    if (!html.includes('<div id="root"></div>')) throw new Error('no empty #root in ' + fileFor(page.path));
-    fs.writeFileSync(target, html.replace('<div id="root"></div>', `<div id="root">${body}</div>`));
-    done++;
-  } catch (e) {
-    failed.push(`${page.path} (${e.message.split('\n')[0]})`);
-  } finally {
-    await tab.close();
+  // Two tries: a page that still fails is a real problem, not a slow moment.
+  let lastError = '';
+  for (let attempt = 1; attempt <= 2; attempt++) {
+    const tab = await context.newPage();
+    const pageErrors = [];
+    tab.on('pageerror', (e) => pageErrors.push(e.message.split('\n')[0]));
+    try {
+      await tab.goto(base + page.path, { waitUntil: 'load', timeout: 30000 });
+      await tab.waitForFunction(() => document.querySelector('#main h1'), null, { timeout: attempt === 1 ? 8000 : 15000 });
+      await tab.waitForTimeout(300);
+      const body = await tab.evaluate(() => {
+        const rootEl = document.getElementById('root');
+        // Drop things that only make sense live (video players, open dialogs).
+        rootEl.querySelectorAll('video, [role="dialog"], script').forEach((n) => n.remove());
+        return rootEl.innerHTML;
+      });
+      const html = fs.readFileSync(target, 'utf8');
+      if (!html.includes('<div id="root"></div>')) throw new Error('no empty #root in ' + fileFor(page.path));
+      fs.writeFileSync(target, html.replace('<div id="root"></div>', `<div id="root">${body}</div>`));
+      done++;
+      lastError = '';
+      break;
+    } catch (e) {
+      lastError = pageErrors[0] || e.message.split('\n')[0];
+    } finally {
+      await tab.close();
+    }
   }
+  if (lastError) failed.push(`${page.path} (${lastError})`);
+  if (failed.length >= 3) break; // enough to know something is wrong
 }
 await browser.close();
 server.close();
-console.log(`prerender: ${done} pages written with their content${failed.length ? `; not prerendered: ${failed.join(', ')}` : ''}`);
+console.log(`prerender: ${done} pages written with their content`);
+if (failed.length) {
+  // A page that cannot be drawn would be a blank page for visitors (usually an edit that left out
+  // something the page needs). Stop here: nothing is uploaded and the live site stays as it was.
+  console.error(`\n✗ These pages do not open: ${failed.join(', ')}\n  The website was NOT updated. Undo or fix the last content change and save again.`);
+  process.exit(1);
+}

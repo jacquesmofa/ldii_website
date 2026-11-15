@@ -1,4 +1,6 @@
 import { getPastEvents, getUpcomingEvents, type EventItem } from '../../mocks/eventsData';
+import copy from '../../content/layout/track-record.json';
+// Text, images and links: src/content/layout/track-record.json (editable in the website editors).
 
 /**
  * LDII's real, documented record: the events in src/mocks/eventsData.ts.
@@ -10,9 +12,7 @@ export function TrackRecord({ mode = 'past' }: { mode?: 'past' | 'upcoming' }) {
 
   if (items.length === 0) {
     return (
-      <p className="text-center text-lg text-gray-600">
-        New engagements will be announced here. <a href="/contact" className="text-teal-700 font-semibold underline">Contact us</a> to hear first.
-      </p>
+      <p className="text-center text-lg text-gray-600">{copy.main.text}<a href="/contact" className="text-teal-700 font-semibold underline">{copy.main.link}</a>{copy.main.text2}</p>
     );
   }
 

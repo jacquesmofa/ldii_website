@@ -1,4 +1,6 @@
 import { getUpcomingEvents } from '@/mocks/eventsData';
+import copy from '../../../content/pages/events-upcoming.json';
+// Text, images and links: src/content/pages/events-upcoming.json (editable in the website editors).
 
 export default function UpcomingEventsPage() {
   const upcomingEvents = getUpcomingEvents();
@@ -15,12 +17,8 @@ export default function UpcomingEventsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Upcoming Events
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Missions, conferences and delegations LDII is preparing.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -28,10 +26,8 @@ export default function UpcomingEventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Coming up</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Dates are confirmed with partners before they are published here.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.eventsList.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.eventsList.text}</p>
           </div>
 
           <div className="space-y-16">
@@ -69,7 +65,7 @@ export default function UpcomingEventsPage() {
                     {event.highlights && event.themes && (
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                         <div className="bg-white rounded-xl p-4">
-                          <h4 className="font-bold text-gray-900 mb-3">Key Participants</h4>
+                          <h4 className="font-bold text-gray-900 mb-3">{copy.eventsList.subheading}</h4>
                           <ul className="space-y-2">
                             {event.highlights.slice(0, 3).map((highlight, hIndex) => (
                               <li key={hIndex} className="flex items-start text-sm">
@@ -80,7 +76,7 @@ export default function UpcomingEventsPage() {
                           </ul>
                         </div>
                         <div className="bg-white rounded-xl p-4">
-                          <h4 className="font-bold text-gray-900 mb-3">Key Themes</h4>
+                          <h4 className="font-bold text-gray-900 mb-3">{copy.eventsList.subheading2}</h4>
                           <ul className="space-y-2">
                             {event.themes.slice(0, 3).map((theme, tIndex) => (
                               <li key={tIndex} className="flex items-start text-sm">
@@ -103,9 +99,7 @@ export default function UpcomingEventsPage() {
                       <a
                         href="/contact"
                         className="bg-white hover:bg-gray-100 text-green-600 border-2 border-green-600 px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap text-center"
-                      >
-                        Enquire about this event
-                      </a>
+                      >{copy.eventsList.link}</a>
                     </div>
                   </div>
                 </div>
@@ -118,10 +112,8 @@ export default function UpcomingEventsPage() {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Upcoming Events</h3>
-              <p className="text-gray-600 max-w-md mx-auto">
-                Check back soon for our next events. Subscribe to our newsletter to stay updated.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{copy.eventsList.subheading3}</h3>
+              <p className="text-gray-600 max-w-md mx-auto">{copy.eventsList.text2}</p>
             </div>
           )}
         </div>
@@ -130,25 +122,17 @@ export default function UpcomingEventsPage() {
       {/* CTA Section */}
       <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Stay Updated on Our Events
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Subscribe to hear about new events and registration dates.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-6">{copy.ctaSection.heading}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.ctaSection.text}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact"
               className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Subscribe to Updates
-            </a>
+            >{copy.ctaSection.link}</a>
             <a
               href="/events"
               className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              View All Events
-            </a>
+            >{copy.ctaSection.link2}</a>
           </div>
         </div>
       </section>

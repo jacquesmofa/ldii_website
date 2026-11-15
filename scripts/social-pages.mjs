@@ -24,6 +24,26 @@ const outDir = path.resolve(root, process.argv[2] || (fs.existsSync(path.join(ro
 const seoFile = path.join(root, 'src/content/seo.json');
 const seo = JSON.parse(fs.readFileSync(seoFile, 'utf8'));
 const site = seo.site;
+
+// Albums added in the editor get a share preview and a sitemap line without anyone touching seo.json.
+try {
+  const gallery = JSON.parse(fs.readFileSync(path.join(root, 'src/content/gallery.json'), 'utf8'));
+  for (const album of gallery.albums || []) {
+    if (!album?.slug || !album?.title) continue;
+    const p = `/events/gallery/${album.slug}`;
+    if (seo.pages.some((x) => x.path === p)) continue;
+    const first = album.images?.find((i) => i?.url)?.url;
+    const short = (text, max) => (text.length <= max ? text : text.slice(0, max - 1).replace(/\s+\S*$/, '') + '…');
+    seo.pages.push({
+      path: p,
+      title: short(`${album.shortTitle || album.title} | LDII Gallery`, 65),
+      description: short(album.description || `Photos: ${album.title}.`, 158),
+      ...(first ? { image: first.replace('/image/upload/', '/image/upload/c_fill,g_auto,w_1200,h_630,q_auto,f_jpg/'), imageAlt: album.title } : {}),
+    });
+  }
+} catch {
+  /* no gallery file: nothing to add */
+}
 if (!site?.url || !site?.name) throw new Error('seo.json: site.url and site.name are required');
 const siteUrl = site.url.replace(/\/+$/, '');
 

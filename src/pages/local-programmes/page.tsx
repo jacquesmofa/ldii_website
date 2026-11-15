@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Eyebrow from '../../components/base/Eyebrow';
 import { LOCAL, NEWCOMER, ORG, PHOTOS, YOUTH_DIMENSIONS, photo } from '../../content/ldii';
+import copy from '../../content/pages/local-programmes.json';
+// Text, images and links: src/content/pages/local-programmes.json (editable in the website editors).
 
 /** Local Community Development & Empowerment: six programmes across Ontario, plus the Newcomer Settlement programme in detail. */
 export default function LocalProgrammesPage() {
@@ -22,7 +24,7 @@ export default function LocalProgrammesPage() {
         <img src={photo(PHOTOS.brampton.id, 1920, 900)} alt="" className="absolute inset-0 -z-20 w-full h-full object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/85 to-ldii-ink/40" aria-hidden="true" />
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-32">
-          <Eyebrow light>Local programmes · Ontario</Eyebrow>
+          <Eyebrow light>{copy.main.text}</Eyebrow>
           <h1 className="mt-5 font-display text-4xl md:text-6xl font-semibold leading-tight max-w-4xl">{LOCAL.title}</h1>
           <p className="mt-4 font-display italic text-xl md:text-2xl text-tech-teal-300">{LOCAL.tagline}</p>
           {LOCAL.intro.map((p) => (
@@ -34,10 +36,8 @@ export default function LocalProgrammesPage() {
       {/* Six programmes: alternating picture rows, details open on demand */}
       <section className="bg-white py-20 md:py-28" aria-labelledby="programmes">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Eyebrow>Our community development &amp; impact programmes</Eyebrow>
-          <h2 id="programmes" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy max-w-3xl">
-            Six programme areas, with a strong emphasis on youth, families, community partnerships and seniors
-          </h2>
+          <Eyebrow>{copy.main.text2}</Eyebrow>
+          <h2 id="programmes" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy max-w-3xl">{copy.main.heading}</h2>
           <div className="mt-14 space-y-16 md:space-y-24">
             {LOCAL.programmes.map((p, i) => {
               const isOpen = openProg === p.slug;
@@ -48,8 +48,7 @@ export default function LocalProgrammesPage() {
                   </div>
                   <div>
                     <p className="flex items-center gap-3 text-sm font-semibold text-tech-teal-800">
-                      <span className="w-10 h-10 rounded-full bg-ldii-mist flex items-center justify-center text-lg" aria-hidden="true"><i className={p.icon} /></span>
-                      Programme {i + 1}
+                      <span className="w-10 h-10 rounded-full bg-ldii-mist flex items-center justify-center text-lg" aria-hidden="true"><i className={p.icon} /></span>{copy.main.text3}{i + 1}
                     </p>
                     <h3 className="mt-4 font-display text-2xl md:text-3xl font-semibold text-ldii-navy leading-snug">{p.title}</h3>
                     <p className="mt-2 italic text-tech-teal-800">{p.tagline}</p>
@@ -74,8 +73,7 @@ export default function LocalProgrammesPage() {
                         <i className={`ri-arrow-down-s-line transition-transform ${isOpen ? 'rotate-180' : ''}`} aria-hidden="true" />
                       </button>
                       {p.detail && (
-                        <a href="#newcomers-programme" className="inline-flex items-center gap-1 font-semibold text-ldii-navy hover:text-tech-teal-800">
-                          The Newcomer Settlement Programme <i className="ri-arrow-down-line" aria-hidden="true" />
+                        <a href="#newcomers-programme" className="inline-flex items-center gap-1 font-semibold text-ldii-navy hover:text-tech-teal-800">{copy.main.link}<i className="ri-arrow-down-line" aria-hidden="true" />
                         </a>
                       )}
                     </div>
@@ -90,10 +88,8 @@ export default function LocalProgrammesPage() {
       {/* Youth empowerment dimensions (from the CEO's brief) */}
       <section className="bg-ldii-navy text-white py-20" aria-labelledby="youth">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Eyebrow light>Youth empowerment</Eyebrow>
-          <h2 id="youth" className="mt-4 font-display text-3xl md:text-4xl font-semibold max-w-3xl">
-            Helping young people take charge of their lives, build confidence and shape their communities
-          </h2>
+          <Eyebrow light>{copy.youthEmpowermentDimensionsFromThe.text}</Eyebrow>
+          <h2 id="youth" className="mt-4 font-display text-3xl md:text-4xl font-semibold max-w-3xl">{copy.youthEmpowermentDimensionsFromThe.heading}</h2>
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {YOUTH_DIMENSIONS.map((d) => (
               <div key={d.title} className="rounded-2xl border border-white/15 p-6">
@@ -110,7 +106,7 @@ export default function LocalProgrammesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10">
             <div className="lg:col-span-5">
-              <Eyebrow>Supporting new beginnings</Eyebrow>
+              <Eyebrow>{copy.youthEmpowermentDimensionsFromThe.text2}</Eyebrow>
               <h2 id="newcomer-title" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy">{NEWCOMER.title}</h2>
               {NEWCOMER.approach.map((p) => (
                 <p key={p.slice(0, 20)} className="mt-4 text-gray-700 leading-relaxed">{p}</p>
@@ -118,7 +114,7 @@ export default function LocalProgrammesPage() {
               <img src={photo(PHOTOS.offices.id, 900, 640)} alt={PHOTOS.offices.alt} loading="lazy" className="mt-8 w-full rounded-3xl aspect-[45/32] object-cover" />
             </div>
             <div className="lg:col-span-7">
-              <h3 className="font-display text-2xl font-semibold text-ldii-navy">Our community development and impact areas</h3>
+              <h3 className="font-display text-2xl font-semibold text-ldii-navy">{copy.youthEmpowermentDimensionsFromThe.subheading}</h3>
               <ul className="mt-6 divide-y divide-gray-300 border-y border-gray-300">
                 {NEWCOMER.areas.map((a, i) => {
                   const isOpen = openArea === i;
@@ -149,7 +145,7 @@ export default function LocalProgrammesPage() {
               </ul>
 
               <div className="mt-10 rounded-2xl bg-white p-6 md:p-8">
-                <h3 className="font-display text-2xl font-semibold text-ldii-navy">Who can benefit?</h3>
+                <h3 className="font-display text-2xl font-semibold text-ldii-navy">{copy.youthEmpowermentDimensionsFromThe.subheading2}</h3>
                 <ul className="mt-4 grid sm:grid-cols-2 gap-x-6 gap-y-2">
                   {NEWCOMER.beneficiaries.map((b) => (
                     <li key={b} className="flex gap-2 text-gray-700">
@@ -170,10 +166,8 @@ export default function LocalProgrammesPage() {
       {/* Approach */}
       <section className="bg-white py-20" aria-labelledby="approach">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Eyebrow>Our local community development approach</Eyebrow>
-          <h2 id="approach" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy max-w-3xl">
-            Empowering communities through education, partnerships and practical action
-          </h2>
+          <Eyebrow>{copy.approach.text}</Eyebrow>
+          <h2 id="approach" className="mt-4 font-display text-3xl md:text-4xl font-semibold text-ldii-navy max-w-3xl">{copy.approach.heading}</h2>
           <ol className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {LOCAL.approach.map((a, i) => (
               <li key={a.title} className="rounded-2xl bg-ldii-mist p-6">
@@ -185,13 +179,11 @@ export default function LocalProgrammesPage() {
           </ol>
           <div className="mt-14 rounded-3xl bg-ldii-navy text-white p-8 md:p-12 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <h3 className="font-display text-2xl md:text-3xl font-semibold">Need support, or want to partner on a programme?</h3>
-              <p className="mt-2 text-white/80">
-                Write to <a href={`mailto:${ORG.email}`} className="underline">{ORG.email}</a> or call <a href={ORG.phoneHref} className="underline">{ORG.phone}</a>.
+              <h3 className="font-display text-2xl md:text-3xl font-semibold">{copy.approach.subheading}</h3>
+              <p className="mt-2 text-white/80">{copy.approach.text2}<a href={`mailto:${ORG.email}`} className="underline">{ORG.email}</a>{copy.approach.text3}<a href={ORG.phoneHref} className="underline">{ORG.phone}</a>.
               </p>
             </div>
-            <Link to="/contact" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400 whitespace-nowrap">
-              Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
+            <Link to="/contact" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400 whitespace-nowrap">{copy.approach.text4}<i className="ri-arrow-right-line" aria-hidden="true" />
             </Link>
           </div>
         </div>

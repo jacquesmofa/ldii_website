@@ -4,6 +4,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { galleryEvents } from '../../../../mocks/galleryData';
 import MasonryGrid from '../components/MasonryGrid';
 import Lightbox from '../components/Lightbox';
+import copy from '../../../../content/pages/gallery-album.json';
+// Text, images and links: src/content/pages/gallery-album.json (editable in the website editors).
 
 export default function GalleryEventPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -16,16 +18,12 @@ export default function GalleryEventPage() {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Invalid URL</h2>
-          <p className="text-gray-600 mb-8">
-            The URL does not contain a valid event identifier.
-          </p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">{copy.main.heading}</h2>
+          <p className="text-gray-600 mb-8">{copy.main.text}</p>
           <button
             onClick={() => navigate('/events/gallery')}
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Back to Gallery
-          </button>
+          >{copy.main.button}</button>
         </div>
       </div>
     );
@@ -40,16 +38,12 @@ export default function GalleryEventPage() {
           <div className="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
             <i className="ri-image-line w-10 h-10 flex items-center justify-center text-gray-400 text-3xl"></i>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-3">Event Not Found</h2>
-          <p className="text-gray-600 mb-8">
-            The gallery you’re looking for doesn’t exist.
-          </p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-3">{copy.main.heading2}</h2>
+          <p className="text-gray-600 mb-8">{copy.main.text2}</p>
           <button
             onClick={() => navigate('/events/gallery')}
             className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Back to Gallery
-          </button>
+          >{copy.main.button2}</button>
         </div>
       </div>
     );
@@ -62,28 +56,22 @@ export default function GalleryEventPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <nav
             className="flex items-center flex-wrap gap-y-1 text-sm"
-            aria-label="Breadcrumb"
+            aria-label={copy.breadcrumb.ariaLabel}
           >
             <a
               href="/"
               className="text-gray-500 hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Home
-            </a>
+            >{copy.breadcrumb.link}</a>
             <i className="ri-arrow-right-s-line w-4 h-4 flex items-center justify-center text-gray-400 mx-1.5"></i>
             <a
               href="/events"
               className="text-gray-500 hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Events
-            </a>
+            >{copy.breadcrumb.link2}</a>
             <i className="ri-arrow-right-s-line w-4 h-4 flex items-center justify-center text-gray-400 mx-1.5"></i>
             <a
               href="/events/gallery"
               className="text-gray-500 hover:text-green-600 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Gallery
-            </a>
+            >{copy.breadcrumb.link3}</a>
             <i className="ri-arrow-right-s-line w-4 h-4 flex items-center justify-center text-gray-400 mx-1.5"></i>
             <span className="text-green-600 font-semibold truncate max-w-xs">
               {event.title}
@@ -120,8 +108,7 @@ export default function GalleryEventPage() {
             </span>
             <span className="flex items-center gap-1.5">
               <i className="ri-image-line w-4 h-4 flex items-center justify-center"></i>
-              {event.images.length} Photos
-            </span>
+              {event.images.length}{copy.hero.label}</span>
           </div>
         </div>
       </section>
@@ -140,8 +127,7 @@ export default function GalleryEventPage() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                <i className="ri-image-line mr-1.5"></i>
-                Photos ({event.images.length})
+                <i className="ri-image-line mr-1.5"></i>{copy.tabSwitcherOnlyWhenThe.button}{event.images.length})
               </button>
               <button
                 onClick={() => setActiveTab('videos')}
@@ -151,8 +137,7 @@ export default function GalleryEventPage() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                <i className="ri-video-line mr-1.5"></i>
-                Videos ({event.videos.length})
+                <i className="ri-video-line mr-1.5"></i>{copy.tabSwitcherOnlyWhenThe.button2}{event.videos.length})
               </button>
             </div>
           </div>
@@ -226,7 +211,7 @@ export default function GalleryEventPage() {
                     >
                       <i className="ri-arrow-left-line w-5 h-5 flex items-center justify-center group-hover:-translate-x-1 transition-transform"></i>
                       <div className="text-left">
-                        <div className="text-xs text-gray-500">Previous Event</div>
+                        <div className="text-xs text-gray-500">{copy.navigationBetweenEvents.text}</div>
                         <div className="font-semibold text-sm">
                           {prev.title.length > 40 ? `${prev.title.slice(0, 40)}...` : prev.title}
                         </div>
@@ -239,16 +224,14 @@ export default function GalleryEventPage() {
                     onClick={() => navigate('/events/gallery')}
                     className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg font-semibold text-sm transition-colors cursor-pointer whitespace-nowrap"
                   >
-                    <i className="ri-grid-line w-4 h-4 flex items-center justify-center"></i>
-                    All Events
-                  </button>
+                    <i className="ri-grid-line w-4 h-4 flex items-center justify-center"></i>{copy.navigationBetweenEvents.button}</button>
                   {next ? (
                     <a
                       href={`/events/gallery/${next.slug}`}
                       className="flex items-center gap-2 text-gray-600 hover:text-green-600 transition-colors cursor-pointer group"
                     >
                       <div className="text-right">
-                        <div className="text-xs text-gray-500">Next Event</div>
+                        <div className="text-xs text-gray-500">{copy.navigationBetweenEvents.text2}</div>
                         <div className="font-semibold text-sm">
                           {next.title.length > 40 ? `${next.title.slice(0, 40)}...` : next.title}
                         </div>
@@ -268,26 +251,17 @@ export default function GalleryEventPage() {
       {/* Media Request */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Need High-Resolution Media?
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Contact our media team for access to full-resolution photos and videos from this
-            event.
-          </p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">{copy.mediaRequest.heading}</h2>
+          <p className="text-gray-600 mb-8">{copy.mediaRequest.text}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact/media-inquiries#hero"
               className="bg-green-600 hover:bg-green-700 text-white px-7 py-3 rounded-lg font-semibold transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Contact Media Team
-            </a>
+            >{copy.mediaRequest.link}</a>
             <a
               href="/events/press-releases#hero"
               className="bg-white text-green-600 border-2 border-green-600 px-7 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Press Releases
-            </a>
+            >{copy.mediaRequest.link2}</a>
           </div>
         </div>
       </section>

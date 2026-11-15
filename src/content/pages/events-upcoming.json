@@ -1,0 +1,21 @@
+{
+  "heroSection": {
+    "title": "Upcoming Events",
+    "text": "Missions, conferences and delegations LDII is preparing."
+  },
+  "eventsList": {
+    "heading": "Coming up",
+    "text": "Dates are confirmed with partners before they are published here.",
+    "subheading": "Key Participants",
+    "subheading2": "Key Themes",
+    "link": "Enquire about this event",
+    "subheading3": "No Upcoming Events",
+    "text2": "Check back soon for our next events. Subscribe to our newsletter to stay updated."
+  },
+  "ctaSection": {
+    "heading": "Stay Updated on Our Events",
+    "text": "Subscribe to hear about new events and registration dates.",
+    "link": "Subscribe to Updates",
+    "link2": "View All Events"
+  }
+}

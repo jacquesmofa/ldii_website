@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { submitFormToInbox } from '@/lib/web3forms';
+import copy from '../../content/pages/contact.json';
+// Text, images and links: src/content/pages/contact.json (editable in the website editors).
 
 export default function ContactPage() {
   const [activeSection, setActiveSection] = useState('');
@@ -15,47 +17,9 @@ export default function ContactPage() {
     }
   };
 
-  const offices = [
-    {
-      location: 'Toronto, Canada',
-      type: 'Head Office',
-      address: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6',
-      phone: '+1 647 656 3026',
-      email: 'admin@ldiinitiatives.org',
-      image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_900,h_600,q_auto,f_auto/WhatsApp_Image_2026-10-19_at_10.53.33_iqycrq.jpg'
-    },
-  ];
+  const offices = copy.offices;
 
-  const contactTypes = [
-    {
-      title: 'General Inquiries',
-      description: 'Questions about our work, programs, or general information.',
-      email: 'admin@ldiinitiatives.org',
-      phone: '+1 647 656 3026',
-      icon: 'ri-question-line'
-    },
-    {
-      title: 'Media Inquiries',
-      description: 'Press releases, interviews, and media-related requests.',
-      email: 'admin@ldiinitiatives.org',
-      phone: '+1 647 656 3026',
-      icon: 'ri-newspaper-line'
-    },
-    {
-      title: 'Partnership Opportunities',
-      description: 'Collaboration proposals and partnership discussions.',
-      email: 'admin@ldiinitiatives.org',
-      phone: '+1 647 656 3026',
-      icon: 'ri-team-line'
-    },
-    {
-      title: 'Research Collaboration',
-      description: 'Academic partnerships and research collaboration requests.',
-      email: 'admin@ldiinitiatives.org',
-      phone: '+1 647 656 3026',
-      icon: 'ri-microscope-line'
-    }
-  ];
+  const contactTypes = copy.contactTypes;
 
   const submitContactForm = async (form: HTMLFormElement, formKey: string, subject: string) => {
     if (busyForm) return;
@@ -99,12 +63,8 @@ export default function ContactPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Contact Us
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Contact our team to explore collaboration opportunities and learn more about our work.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -117,33 +77,25 @@ export default function ContactPage() {
               className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
                 activeSection === 'get-in-touch' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
-            >
-              Get in Touch
-            </button>
+            >{copy.stickyNavigation.button}</button>
             <button
               onClick={() => scrollToSection('our-locations')}
               className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
                 activeSection === 'our-locations' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
-            >
-              Our Locations
-            </button>
+            >{copy.stickyNavigation.button2}</button>
             <button
               onClick={() => scrollToSection('media-inquiries')}
               className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
                 activeSection === 'media-inquiries' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
-            >
-              Media Inquiries
-            </button>
+            >{copy.stickyNavigation.button3}</button>
             <button
               onClick={() => scrollToSection('partnerships')}
               className={`px-4 py-2 rounded-lg transition-colors cursor-pointer whitespace-nowrap text-sm font-medium ${
                 activeSection === 'partnerships' ? 'bg-green-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
-            >
-              Partnerships
-            </button>
+            >{copy.stickyNavigation.button4}</button>
           </div>
         </div>
       </div>
@@ -152,10 +104,8 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">How Can We Help?</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Choose the most appropriate contact method for your inquiry to ensure you reach the right team member.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.contactTypesSection.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.contactTypesSection.text}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -198,10 +148,8 @@ export default function ContactPage() {
       <section id="get-in-touch" className="py-20 bg-gray-50 scroll-mt-32">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-            <p className="text-xl text-gray-600">
-              Fill out the form below and we will get back to you as soon as we can.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.getInTouchForm.heading}</h2>
+            <p className="text-xl text-gray-600">{copy.getInTouchForm.text}</p>
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -209,9 +157,7 @@ export default function ContactPage() {
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </label>
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel}</label>
                   <input
                     type="text"
                     id="firstName"
@@ -221,9 +167,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </label>
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel2}</label>
                   <input
                     type="text"
                     id="lastName"
@@ -236,9 +180,7 @@ export default function ContactPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel3}</label>
                   <input
                     type="email"
                     id="email"
@@ -248,9 +190,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel4}</label>
                   <input
                     type="tel"
                     id="phone"
@@ -261,9 +201,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">
-                  Organization
-                </label>
+                <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel5}</label>
                 <input
                   type="text"
                   id="organization"
@@ -273,29 +211,25 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
-                </label>
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel6}</label>
                 <select
                   id="subject"
                   name="subject"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent pr-8 text-sm"
                 >
-                  <option value="">Select a subject</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="partnership">Partnership Opportunity</option>
-                  <option value="media">Media Inquiry</option>
-                  <option value="research">Research Collaboration</option>
-                  <option value="support">Support/Donation</option>
-                  <option value="other">Other</option>
+                  <option value="">{copy.getInTouchForm.option}</option>
+                  <option value="general">{copy.getInTouchForm.option2}</option>
+                  <option value="partnership">{copy.getInTouchForm.option3}</option>
+                  <option value="media">{copy.getInTouchForm.option4}</option>
+                  <option value="research">{copy.getInTouchForm.option5}</option>
+                  <option value="support">{copy.getInTouchForm.option6}</option>
+                  <option value="other">{copy.getInTouchForm.option7}</option>
                 </select>
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">{copy.getInTouchForm.fieldLabel7}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -303,7 +237,7 @@ export default function ContactPage() {
                   required
                   maxLength={500}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent resize-none text-sm"
-                  placeholder="Please describe your inquiry in detail (max 500 characters)"
+                  placeholder={copy.getInTouchForm.placeholder}
                 ></textarea>
               </div>
               
@@ -328,10 +262,8 @@ export default function ContactPage() {
       <section id="our-locations" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Locations</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Visit our Toronto office, or reach us by phone or email — we serve communities across Ontario and beyond.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.officeLocations.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.officeLocations.text}</p>
           </div>
           
           <div className="grid grid-cols-1 gap-8 mb-12 max-w-2xl mx-auto">
@@ -346,9 +278,7 @@ export default function ContactPage() {
                   <div className="flex items-center mb-3">
                     <h3 className="text-xl font-bold text-gray-900">{office.location}</h3>
                     {index === 0 && (
-                      <span className="ml-3 bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">
-                        HQ
-                      </span>
+                      <span className="ml-3 bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs font-semibold">{copy.officeLocations.label}</span>
                     )}
                   </div>
                   <p className="text-green-600 font-medium mb-4">{office.type}</p>
@@ -379,14 +309,14 @@ export default function ContactPage() {
           {/* Map */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.1234567890123!2d-79.4568!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjcnMjQuNSJX!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca"
+              src={copy.map.embedUrl}
               width="100%"
               height="400"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="LDII Headquarters Location"
+              title={copy.map.title}
             ></iframe>
           </div>
         </div>
@@ -396,10 +326,8 @@ export default function ContactPage() {
       <section id="media-inquiries" className="py-20 bg-gray-50 scroll-mt-32">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Media Inquiries</h2>
-            <p className="text-xl text-gray-600">
-              For press inquiries, interview requests, or media-related questions.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.mediaInquiriesForm.heading}</h2>
+            <p className="text-xl text-gray-600">{copy.mediaInquiriesForm.text}</p>
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -407,9 +335,7 @@ export default function ContactPage() {
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="mediaFirstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </label>
+                  <label htmlFor="mediaFirstName" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel}</label>
                   <input
                     type="text"
                     id="mediaFirstName"
@@ -419,9 +345,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="mediaLastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </label>
+                  <label htmlFor="mediaLastName" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel2}</label>
                   <input
                     type="text"
                     id="mediaLastName"
@@ -434,9 +358,7 @@ export default function ContactPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="mediaEmail" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
+                  <label htmlFor="mediaEmail" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel3}</label>
                   <input
                     type="email"
                     id="mediaEmail"
@@ -446,9 +368,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="mediaPhone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
+                  <label htmlFor="mediaPhone" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel4}</label>
                   <input
                     type="tel"
                     id="mediaPhone"
@@ -460,9 +380,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="mediaOutlet" className="block text-sm font-medium text-gray-700 mb-2">
-                  Media Outlet *
-                </label>
+                <label htmlFor="mediaOutlet" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel5}</label>
                 <input
                   type="text"
                   id="mediaOutlet"
@@ -473,28 +391,24 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
-                  Inquiry Type *
-                </label>
+                <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel6}</label>
                 <select
                   id="inquiryType"
                   name="inquiryType"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 pr-8 text-sm"
                 >
-                  <option value="">Select inquiry type</option>
-                  <option value="interview">Interview Request</option>
-                  <option value="press-release">Press Release Request</option>
-                  <option value="background">Background Information</option>
-                  <option value="event-coverage">Event Coverage</option>
-                  <option value="other">Other</option>
+                  <option value="">{copy.mediaInquiriesForm.option}</option>
+                  <option value="interview">{copy.mediaInquiriesForm.option2}</option>
+                  <option value="press-release">{copy.mediaInquiriesForm.option3}</option>
+                  <option value="background">{copy.mediaInquiriesForm.option4}</option>
+                  <option value="event-coverage">{copy.mediaInquiriesForm.option5}</option>
+                  <option value="other">{copy.mediaInquiriesForm.option6}</option>
                 </select>
               </div>
               
               <div>
-                <label htmlFor="mediaMessage" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
+                <label htmlFor="mediaMessage" className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaInquiriesForm.fieldLabel7}</label>
                 <textarea
                   id="mediaMessage"
                   name="message"
@@ -502,7 +416,7 @@ export default function ContactPage() {
                   required
                   maxLength={500}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none text-sm"
-                  placeholder="Please provide details about your media inquiry (max 500 characters)"
+                  placeholder={copy.mediaInquiriesForm.placeholder}
                 ></textarea>
               </div>
               
@@ -527,10 +441,8 @@ export default function ContactPage() {
       <section id="partnerships" className="py-20 bg-white scroll-mt-32">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Partnership Opportunities</h2>
-            <p className="text-xl text-gray-600">
-              Interested in partnering with LDII? Share your proposal with us.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.partnershipsForm.heading}</h2>
+            <p className="text-xl text-gray-600">{copy.partnershipsForm.text}</p>
           </div>
           
           <div className="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
@@ -538,9 +450,7 @@ export default function ContactPage() {
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="partnerFirstName" className="block text-sm font-medium text-gray-700 mb-2">
-                    First Name *
-                  </label>
+                  <label htmlFor="partnerFirstName" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel}</label>
                   <input
                     type="text"
                     id="partnerFirstName"
@@ -550,9 +460,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="partnerLastName" className="block text-sm font-medium text-gray-700 mb-2">
-                    Last Name *
-                  </label>
+                  <label htmlFor="partnerLastName" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel2}</label>
                   <input
                     type="text"
                     id="partnerLastName"
@@ -565,9 +473,7 @@ export default function ContactPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="partnerEmail" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
+                  <label htmlFor="partnerEmail" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel3}</label>
                   <input
                     type="email"
                     id="partnerEmail"
@@ -577,9 +483,7 @@ export default function ContactPage() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="partnerPhone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
+                  <label htmlFor="partnerPhone" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel4}</label>
                   <input
                     type="tel"
                     id="partnerPhone"
@@ -591,9 +495,7 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="partnerOrganization" className="block text-sm font-medium text-gray-700 mb-2">
-                  Organization *
-                </label>
+                <label htmlFor="partnerOrganization" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel5}</label>
                 <input
                   type="text"
                   id="partnerOrganization"
@@ -604,29 +506,25 @@ export default function ContactPage() {
               </div>
               
               <div>
-                <label htmlFor="partnershipType" className="block text-sm font-medium text-gray-700 mb-2">
-                  Partnership Type *
-                </label>
+                <label htmlFor="partnershipType" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel6}</label>
                 <select
                   id="partnershipType"
                   name="partnershipType"
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 pr-8 text-sm"
                 >
-                  <option value="">Select partnership type</option>
-                  <option value="government">Government Partnership</option>
-                  <option value="private-sector">Private Sector</option>
-                  <option value="ngo">NGO Partnership</option>
-                  <option value="academic">Academic Institution</option>
-                  <option value="funding">Funding/Donor</option>
-                  <option value="other">Other</option>
+                  <option value="">{copy.partnershipsForm.option}</option>
+                  <option value="government">{copy.partnershipsForm.option2}</option>
+                  <option value="private-sector">{copy.partnershipsForm.option3}</option>
+                  <option value="ngo">{copy.partnershipsForm.option4}</option>
+                  <option value="academic">{copy.partnershipsForm.option5}</option>
+                  <option value="funding">{copy.partnershipsForm.option6}</option>
+                  <option value="other">{copy.partnershipsForm.option7}</option>
                 </select>
               </div>
               
               <div>
-                <label htmlFor="partnerProposal" className="block text-sm font-medium text-gray-700 mb-2">
-                  Partnership Proposal *
-                </label>
+                <label htmlFor="partnerProposal" className="block text-sm font-medium text-gray-700 mb-2">{copy.partnershipsForm.fieldLabel7}</label>
                 <textarea
                   id="partnerProposal"
                   name="proposal"
@@ -634,7 +532,7 @@ export default function ContactPage() {
                   required
                   maxLength={500}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none text-sm"
-                  placeholder="Please describe your partnership proposal and areas of collaboration (max 500 characters)"
+                  placeholder={copy.partnershipsForm.placeholder}
                 ></textarea>
               </div>
               
@@ -658,25 +556,17 @@ export default function ContactPage() {
       {/* CTA Section */}
       <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Ready to collaborate on building global resilience? We'd love to hear from you.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-6">{copy.ctaSection.heading}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.ctaSection.text}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:admin@ldiinitiatives.org"
+              href={copy.ctaSection.emailLink}
               className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Start a Partnership
-            </a>
+            >{copy.ctaSection.link}</a>
             <a
               href="/partners"
               className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Support Our Mission
-            </a>
+            >{copy.ctaSection.link2}</a>
           </div>
         </div>
       </section>

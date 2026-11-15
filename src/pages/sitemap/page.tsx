@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import Eyebrow from '../../components/base/Eyebrow';
 import { NAV } from '../../components/feature/Header';
 import { galleryEvents } from '../../mocks/galleryData';
+import copy from '../../content/pages/sitemap.json';
+// Text, images and links: src/content/pages/sitemap.json (editable in the website editors).
 
 const MORE = {
   title: 'Information',
@@ -33,8 +35,8 @@ export default function SitemapPage() {
     <>
       <section className="bg-ldii-mist py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Eyebrow>Site map</Eyebrow>
-          <h1 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy">Every page on this site</h1>
+          <Eyebrow>{copy.main.text}</Eyebrow>
+          <h1 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy">{copy.main.title}</h1>
         </div>
       </section>
       <section className="bg-white py-16">

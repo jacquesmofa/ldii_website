@@ -1,0 +1,90 @@
+{
+  "heroSection": {
+    "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_600,h_600,q_auto,f_auto/Lwabaayi_Profile_ovqlxd.jpg",
+    "imageAlt": "Mr. Ronald Lwabaayi",
+    "title": "Mr. Ronald Lwabaayi",
+    "text": "Founder & President, LDII",
+    "text2": "Economist, Technology Transfer & International Trade Facilitator",
+    "label": "Member, Toronto Region Board of Trade",
+    "label2": "Member, Brampton Board of Trade",
+    "label3": "University of British Columbia"
+  },
+  "executiveSummary": {
+    "label": "Overview",
+    "heading": "Executive Summary",
+    "text": "Mr. Ronald Lwabaayi is a distinguished Economist and Canadian leader in international trade with a career spanning over a decade in high-level global development. Prior to founding Livelihood Development International Initiatives (LDII), Mr. Lwabaayi served as a ",
+    "bold": "Researcher for the World Bank",
+    "text2": ", where he gained deep analytical insights into global economic structures and systemic development.",
+    "text3": "As an enthusiastic leader of trade and a seasoned researcher on world events, he has dedicated his career to bridging the gap between Canadian innovation and the developmental needs of the Global South. He was the chairman of the Climate Change Action of East Africa.",
+    "text4": "His unique background as an economist allows him to design frameworks that address \"Global Shocks\" crises in health, climate, and trade while ensuring the economic viability and long-term sustainability of community-led initiatives."
+  },
+  "coreCompetencies": {
+    "label": "Expertise",
+    "heading": "Core Competencies & Leadership"
+  },
+  "competency1": {
+    "subheading": "Economic Research & Analytical Expertise",
+    "bold": "World Bank Research Legacy:",
+    "label": " Leverages a rigorous background in global economic research to analyze market trends, evaluate risk, and design evidence-based solutions for emerging economies."
+  },
+  "competency2": {
+    "subheading": "Global North-South Technology Transfer",
+    "bold": "Innovation Brokerage:",
+    "label": " At the forefront of transferring advanced Canadian technologies to emerging markets, specifically in CleanTech, Smart City infrastructure, and Digital Health systems.",
+    "bold2": "Institutional Alignment:",
+    "label2": " Directly engages with government bodies at all levels - Federal, Provincial (Ontario), and Municipal (Toronto/Brampton) - to align international development projects with Canadian regulatory standards and foreign policy."
+  },
+  "competency3": {
+    "subheading": "Trade & Diplomacy Excellence",
+    "bold": "Business Network Integration:",
+    "label": " Leverages senior memberships in the Toronto and Brampton Boards of Trade (two of Ontario’s leading business networks) to provide African governments and private sectors with direct access to Canadian SMEs.",
+    "bold2": "Diplomatic Bridge:",
+    "label2": " Acts as a trusted intermediary between diplomatic missions in Canada and the Canadian private sector, facilitating high-value investment frameworks and bilateral trade agreements."
+  },
+  "competency4": {
+    "subheading": "Strategic Relationship with the Government of Canada",
+    "bold": "Compliance & Integrity:",
+    "label": " Leads LDII as a Canadian nonprofit organization in compliance with Federal and Provincial laws, maintaining a reputation for transparency and ethical engagement rooted in international institutional standards.",
+    "bold2": "Advocacy:",
+    "label2": " Engages with Canadian governmental and non-governmental organizations on international climate adaptation and global health resilience."
+  },
+  "keyAchievements": {
+    "label": "Impact",
+    "heading": "Key Achievements (2023-2026)",
+    "subheading": "International Post-COVID Conferences",
+    "text": "Successfully convened over ",
+    "bold": "250 global delegates",
+    "text2": ", including Canadian decision-makers, in Toronto and Brampton to strategize on \"Building Synergies for Future Global Shocks\" (2024, 2025).",
+    "subheading2": "Climate & Environment Leadership",
+    "text3": "Spearheaded global reforestation efforts with ",
+    "bold2": "100,000+ fruit trees planted",
+    "text4": ". Organized the East Africa Climate Summit in Nairobi (2023), facilitating MOUs between Canadian green-tech firms and African ministries.",
+    "subheading3": "Economic Impact",
+    "text5": "His initiatives have facilitated trade delegations and technology pilot agreements valued at over ",
+    "bold3": "$10M CAD",
+    "text6": ", directly benefiting the economic diversification of partner nations.",
+    "subheading4": "Interfaith & Multicultural Solidarity",
+    "text7": "Organized the ",
+    "bold4": "1st International Interfaith Multicultural Memorial (2024)",
+    "text8": " in Ontario, bringing together multi-sectoral leaders to foster social cohesion and mental health awareness in diverse communities.",
+    "subheading5": "World Bank Research",
+    "text9": "Served as a researcher for the World Bank, developing deep analytical insights into global economic structures and systemic development frameworks."
+  },
+  "stakeholderEngagements": {
+    "label": "Network",
+    "heading": "Stakeholder Engagements"
+  },
+  "contactInfo": {
+    "label": "Get in Touch",
+    "heading": "Contact Information",
+    "subheading": "Address",
+    "text": "3701 Chesswood Drive, Unit 315",
+    "text2": "Toronto, ON M3J 2P6",
+    "text3": "Canada",
+    "subheading2": "Web",
+    "text4": "LDII Official Website"
+  },
+  "backNavigation": {
+    "text": "Back to Who We Are"
+  }
+}

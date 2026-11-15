@@ -1,4 +1,6 @@
 import { getPastEvents } from '@/mocks/eventsData';
+import copy from '../../../content/pages/events-past.json';
+// Text, images and links: src/content/pages/events-past.json (editable in the website editors).
 
 export default function PastEventsPage() {
   const pastEvents = getPastEvents();
@@ -15,12 +17,8 @@ export default function PastEventsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Past Events & Resources
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Explore the outcomes, resources, and lasting impact of our previous conferences and events.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -28,10 +26,8 @@ export default function PastEventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Event Archive</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Access comprehensive documentation, reports, and resources from our past events.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.pastEvents.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.pastEvents.text}</p>
           </div>
 
           <div className="space-y-16">
@@ -120,7 +116,7 @@ export default function PastEventsPage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {event.outcomes && (
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-4">Key Outcomes</h4>
+                          <h4 className="text-xl font-bold text-gray-900 mb-4">{copy.pastEvents.subheading}</h4>
                           <ul className="space-y-3">
                             {event.outcomes.map((outcome, oIndex) => (
                               <li key={oIndex} className="flex items-start">
@@ -134,7 +130,7 @@ export default function PastEventsPage() {
                       
                       {event.speakers && (
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-4">Featured Speakers</h4>
+                          <h4 className="text-xl font-bold text-gray-900 mb-4">{copy.pastEvents.subheading2}</h4>
                           <ul className="space-y-3">
                             {event.speakers.map((speaker, sIndex) => (
                               <li key={sIndex} className="flex items-start">
@@ -151,7 +147,7 @@ export default function PastEventsPage() {
                       
                       {event.resources && (
                         <div>
-                          <h4 className="text-xl font-bold text-gray-900 mb-4">Resources</h4>
+                          <h4 className="text-xl font-bold text-gray-900 mb-4">{copy.pastEvents.subheading3}</h4>
                           <ul className="space-y-3">
                             {event.resources.map((resource, rIndex) => (
                               <li key={rIndex}>
@@ -179,10 +175,8 @@ export default function PastEventsPage() {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Past Events</h3>
-              <p className="text-gray-600 max-w-md mx-auto">
-                Check out our upcoming events to see what is coming next.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{copy.pastEvents.subheading4}</h3>
+              <p className="text-gray-600 max-w-md mx-auto">{copy.pastEvents.text2}</p>
             </div>
           )}
         </div>
@@ -200,25 +194,17 @@ export default function PastEventsPage() {
         />
         <div className="absolute inset-0 bg-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Join Our Next Event
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Be part of our upcoming conferences and contribute to building global resilience.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-6">{copy.ctaSection.heading}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.ctaSection.text}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/events/upcoming"
               className="relative z-20 bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
-            >
-              View Upcoming Events
-            </a>
+            >{copy.ctaSection.link}</a>
             <a
               href="/events/gallery"
               className="relative z-20 bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Browse Photo Gallery
-            </a>
+            >{copy.ctaSection.link2}</a>
           </div>
         </div>
       </section>

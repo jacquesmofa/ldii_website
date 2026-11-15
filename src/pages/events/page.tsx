@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { getUpcomingEvents, getPastEvents } from '@/mocks/eventsData';
 import { submitFormToInbox } from '@/lib/web3forms';
 import { newsArticles as allNews } from '../../mocks/newsData';
+import copy from '../../content/pages/events.json';
+// Text, images and links: src/content/pages/events.json (editable in the website editors).
 
 export default function EventsPage() {
   const [subscribeEmail, setSubscribeEmail] = useState('');
@@ -45,12 +47,8 @@ export default function EventsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Events & News
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Stay connected with our latest conferences, workshops, and breaking news in global resilience building.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -58,10 +56,8 @@ export default function EventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Upcoming Events</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Missions, conferences and delegations LDII is preparing.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.upcomingEvents.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.upcomingEvents.text}</p>
           </div>
           
           <div className="space-y-12">
@@ -111,10 +107,8 @@ export default function EventsPage() {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Upcoming Events</h3>
-              <p className="text-gray-600 max-w-md mx-auto">
-                Check back soon for our next events. Subscribe to our newsletter to stay updated.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{copy.upcomingEvents.subheading}</h3>
+              <p className="text-gray-600 max-w-md mx-auto">{copy.upcomingEvents.text2}</p>
             </div>
           )}
         </div>
@@ -124,10 +118,8 @@ export default function EventsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Past Events</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the outcomes and impact of our previous conferences and events.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.pastEvents.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.pastEvents.text}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -149,7 +141,7 @@ export default function EventsPage() {
                 )}
                 {event.outcomes && event.outcomes.length > 0 && (
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Key Outcomes:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-2">{copy.pastEvents.subheading}</h4>
                     <ul className="space-y-1">
                       {event.outcomes.slice(0, 4).map((outcome, outcomeIndex) => (
                         <li key={outcomeIndex} className="text-gray-600 text-sm flex items-center">
@@ -169,10 +161,8 @@ export default function EventsPage() {
               <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <i className="ri-calendar-event-line text-gray-400 text-3xl w-8 h-8 flex items-center justify-center"></i>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">No Past Events</h3>
-              <p className="text-gray-600 max-w-md mx-auto">
-                Check out our upcoming events to see what is coming next.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">{copy.pastEvents.subheading2}</h3>
+              <p className="text-gray-600 max-w-md mx-auto">{copy.pastEvents.text2}</p>
             </div>
           )}
         </div>
@@ -182,10 +172,8 @@ export default function EventsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Latest News</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Stay updated with the latest developments in our work and global resilience initiatives.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.latestNews.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.latestNews.text}</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -221,12 +209,8 @@ export default function EventsPage() {
       {/* Newsletter Signup */}
       <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Stay Informed
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Subscribe to our newsletter to receive updates on upcoming events, latest research, and breaking news.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-6">{copy.newsletterSignup.heading}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.newsletterSignup.text}</p>
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubscribe} id="events-newsletter-form" className="relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
@@ -236,7 +220,7 @@ export default function EventsPage() {
                   name="email"
                   value={subscribeEmail}
                   onChange={(e) => setSubscribeEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder={copy.newsletterSignup.placeholder}
                   required
                   className="w-full min-w-0 flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white text-sm box-border"
                 />

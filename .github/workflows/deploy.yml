@@ -25,6 +25,25 @@ jobs:
       - name: 🏗 Build Project
         run: npm run build 
         
+      - name: 🔑 Add editor sign-in settings (secrets never go in the repo)
+        env:
+          CMS_GITHUB_CLIENT_ID: ${{ secrets.CMS_GITHUB_CLIENT_ID }}
+          CMS_GITHUB_CLIENT_SECRET: ${{ secrets.CMS_GITHUB_CLIENT_SECRET }}
+        run: |
+          if [ -z "$CMS_GITHUB_CLIENT_ID" ] || [ -z "$CMS_GITHUB_CLIENT_SECRET" ]; then
+            echo "Editor GitHub sign-in secrets not set; skipping (token sign-in still works)."
+            exit 0
+          fi
+          node -e '
+            const b64 = Buffer.from(JSON.stringify({
+              client_id: process.env.CMS_GITHUB_CLIENT_ID,
+              client_secret: process.env.CMS_GITHUB_CLIENT_SECRET,
+            })).toString("base64");
+            require("fs").writeFileSync("out/api/oauth-config.php",
+              "<?php\nreturn json_decode(base64_decode(\x27" + b64 + "\x27), true);\n");
+          '
+          echo "Editor sign-in settings written."
+
       - name: 📂 Deploy 'out' folder contents to HostPapa
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:

@@ -1,0 +1,126 @@
+{
+  "heroSection": {
+    "title": "Accessibility Statement",
+    "text": "LDII is committed to ensuring digital accessibility for people with disabilities",
+    "text2": "Last updated: November 2026"
+  },
+  "ourCommitment": {
+    "heading": "Our Commitment to Accessibility",
+    "text": "Livelihood Development International Initiatives (LDII) is committed to ensuring that our website, digital platforms, programs, and services are accessible to all people, including those with disabilities. We believe that everyone should have equal access to information, services, and opportunities, regardless of their abilities.",
+    "text2": "We are continuously working to improve the accessibility and usability of our digital presence and to ensure that we meet or exceed the requirements of applicable accessibility standards and guidelines. This commitment extends to all aspects of our organization, from our physical offices to our online platforms and program delivery.",
+    "text3": "Accessibility is not just a legal requirement for us—it is a core value that aligns with our mission of promoting inclusive development and empowering all individuals to reach their full potential."
+  },
+  "standardsAndGuidelines": {
+    "heading": "Accessibility Standards and Guidelines",
+    "text": "Our website and digital platforms are designed to conform to the following accessibility standards:",
+    "subheading": "Web Content Accessibility Guidelines (WCAG) 2.1",
+    "text2": "We strive to meet Level AA conformance with the Web Content Accessibility Guidelines (WCAG) 2.1, which are internationally recognized standards for web accessibility developed by the World Wide Web Consortium (W3C).",
+    "text3": "These guidelines are organized around four principles: Perceivable, Operable, Understandable, and Robust (POUR).",
+    "subheading2": "Accessibility for Ontarians with Disabilities Act (AODA)",
+    "text4": "As an organization operating in Ontario, Canada, we are committed to complying with the Accessibility for Ontarians with Disabilities Act (AODA) and its associated standards, including the Integrated Accessibility Standards Regulation (IASR).",
+    "subheading3": "Section 508 Standards",
+    "text5": "We also reference Section 508 of the U.S. Rehabilitation Act, which establishes requirements for electronic and information technology accessibility for federal agencies and organizations receiving federal funding."
+  },
+  "accessibilityFeatures": {
+    "heading": "Accessibility Features of Our Website",
+    "text": "We have implemented numerous features to make our website accessible to all users:"
+  },
+  "assistiveTechnologies": {
+    "heading": "Compatible Assistive Technologies",
+    "text": "Our website is designed to be compatible with the following assistive technologies:",
+    "item": "Screen readers (JAWS, NVDA, VoiceOver, TalkBack)",
+    "item2": "Screen magnification software",
+    "item3": "Speech recognition software",
+    "item4": "Alternative input devices (switch controls, eye-tracking)",
+    "item5": "Browser accessibility features and extensions",
+    "item6": "Text-to-speech software",
+    "text2": "We test our website regularly with various assistive technologies to ensure compatibility and usability. If you experience any difficulties using assistive technology with our website, please contact us so we can address the issue."
+  },
+  "physicalAccessibility": {
+    "heading": "Physical Accessibility of Our Facilities",
+    "text": "We are committed to ensuring that our physical offices and program locations are accessible to all visitors:",
+    "subheading": "Wheelchair Accessibility",
+    "text2": "Our offices feature wheelchair-accessible entrances, elevators, and washrooms",
+    "subheading2": "Accessible Parking",
+    "text3": "Designated accessible parking spaces are available near building entrances",
+    "subheading3": "Service Animals",
+    "text4": "Service animals are welcome in all our facilities",
+    "subheading4": "Support Persons",
+    "text5": "Support persons are welcome to accompany visitors with disabilities",
+    "subheading5": "Assistive Listening Devices",
+    "text6": "Available for meetings and events upon request"
+  },
+  "documentAccessibility": {
+    "heading": "Accessible Documents and Communications",
+    "text": "We strive to make all our documents and communications accessible:",
+    "item": "PDF documents are created with accessibility features (tags, bookmarks, alt text)",
+    "item2": "Documents are available in alternative formats upon request (large print, braille, audio)",
+    "item3": "Plain language is used to enhance understanding",
+    "item4": "Complex information is supplemented with visual aids when appropriate",
+    "item5": "Email communications are formatted for screen reader compatibility",
+    "item6": "Social media posts include image descriptions",
+    "text2": "If you require a document in an alternative format, please contact us at least 5 business days in advance, and we will work to accommodate your request."
+  },
+  "ongoingEfforts": {
+    "heading": "Ongoing Accessibility Efforts",
+    "text": "Accessibility is an ongoing commitment. We continuously work to improve accessibility through:",
+    "subheading": "Regular Audits and Testing",
+    "text2": "We conduct regular accessibility audits using automated tools and manual testing with assistive technologies. We also engage users with disabilities to provide feedback on our accessibility.",
+    "subheading2": "Staff Training",
+    "text3": "All staff members receive training on accessibility best practices, including how to create accessible documents, communicate with people with disabilities, and use accessibility features in our systems.",
+    "subheading3": "Accessibility in Procurement",
+    "text4": "We consider accessibility when procuring or developing new technologies, services, and facilities. Vendors and partners are expected to meet accessibility standards.",
+    "subheading4": "Feedback Integration",
+    "text5": "We actively seek and incorporate feedback from users with disabilities to identify barriers and implement improvements.",
+    "subheading5": "Accessibility Plan",
+    "text6": "We maintain a multi-year accessibility plan that outlines our goals, strategies, and timelines for achieving and maintaining accessibility across all aspects of our organization."
+  },
+  "knownLimitations": {
+    "heading": "Known Limitations and Remediation",
+    "text": "Despite our best efforts, some areas of our website may not yet be fully accessible. We are aware of the following limitations and are actively working to address them:",
+    "item": "Some older PDF documents may not be fully tagged for accessibility (we are systematically updating these)",
+    "item2": "Some third-party embedded content may not meet accessibility standards (we are working with vendors to improve this)",
+    "item3": "Some complex data visualizations may require alternative text descriptions (we are adding these progressively)",
+    "item4": "Some archived video content may lack captions (we are adding captions to priority videos)",
+    "text2": "If you encounter an accessibility barrier on our website, please let us know so we can prioritize addressing it."
+  },
+  "feedbackAndContact": {
+    "heading": "Accessibility Feedback",
+    "text": "We welcome your feedback on the accessibility of our website, facilities, and services. If you encounter any accessibility barriers or have suggestions for improvement, please contact us:",
+    "text2": "Accessibility Coordinator",
+    "text3": "Livelihood Development International Initiatives (LDII)",
+    "text4": "Email:",
+    "emailLink": "mailto:admin@ldiinitiatives.org",
+    "link": "admin@ldiinitiatives.org",
+    "text5": "Phone:",
+    "phoneLink": "tel:+16476563026",
+    "link2": "+1 647 656 3026",
+    "text6": "Mail:",
+    "text7": "3701 Chesswood Drive, Unit 315",
+    "text8": "Toronto, ON M3J 2P6",
+    "text9": "Canada",
+    "text10": "We aim to respond to accessibility feedback within 5 business days. For urgent accessibility issues, please call us directly."
+  },
+  "formalComplaints": {
+    "heading": "Formal Accessibility Complaints",
+    "text": "If you are not satisfied with our response to your accessibility concern, you may file a formal complaint:",
+    "item": "Submit your complaint in writing to our Accessibility Coordinator",
+    "item2": "Include details of the accessibility barrier and your contact information",
+    "item3": "We will acknowledge receipt within 5 business days",
+    "item4": "We will investigate and provide a written response within 30 days",
+    "item5": "If you are not satisfied with our response, you may escalate to our Executive Director",
+    "text2": "You also have the right to file a complaint with the Accessibility Directorate of Ontario or other relevant regulatory bodies."
+  },
+  "acknowledgment": {
+    "bold": "LDII is committed to treating all people in a way that allows them to maintain their dignity and independence.",
+    "text": " We believe in integration and equal opportunity, and we are committed to meeting the needs of people with disabilities in a timely manner through the removal and prevention of barriers to accessibility."
+  },
+  "quickLinks": {
+    "subheading": "Privacy Policy",
+    "text": "Learn how we protect your data",
+    "subheading2": "Terms of Service",
+    "text2": "Read our terms and conditions",
+    "subheading3": "Contact Us",
+    "text3": "Questions? Get in touch"
+  }
+}

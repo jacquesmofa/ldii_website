@@ -3,7 +3,10 @@
  * editors): "featured" is the selection at the top of /events/gallery, "albums" are the event
  * albums at /events/gallery/<slug>. A photo without a size is treated as landscape.
  */
-import gallery from '../content/gallery.json';
+import galleryRaw from '../content/gallery.json';
+import { normalize } from '../content/normalize';
+
+const gallery = normalize(galleryRaw);
 import type { GalleryImage, GalleryEvent } from './galleryTypes';
 
 const withSize = (p: Partial<GalleryImage>): GalleryImage => ({

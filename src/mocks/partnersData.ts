@@ -1,5 +1,8 @@
 /** Confirmed partners only. The list is in src/content/partners.json (editable in the website editors). */
-import partners from '../content/partners.json';
+import partnersRaw from '../content/partners.json';
+import { normalize } from '../content/normalize';
+
+const partners = normalize(partnersRaw);
 
 export interface Partner {
   name: string;

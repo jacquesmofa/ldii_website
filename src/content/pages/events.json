@@ -1,0 +1,28 @@
+{
+  "heroSection": {
+    "title": "Events & News",
+    "text": "Stay connected with our latest conferences, workshops, and breaking news in global resilience building."
+  },
+  "upcomingEvents": {
+    "heading": "Upcoming Events",
+    "text": "Missions, conferences and delegations LDII is preparing.",
+    "subheading": "No Upcoming Events",
+    "text2": "Check back soon for our next events. Subscribe to our newsletter to stay updated."
+  },
+  "pastEvents": {
+    "heading": "Past Events",
+    "text": "Explore the outcomes and impact of our previous conferences and events.",
+    "subheading": "Key Outcomes:",
+    "subheading2": "No Past Events",
+    "text2": "Check out our upcoming events to see what is coming next."
+  },
+  "latestNews": {
+    "heading": "Latest News",
+    "text": "Stay updated with the latest developments in our work and global resilience initiatives."
+  },
+  "newsletterSignup": {
+    "heading": "Stay Informed",
+    "text": "Subscribe to our newsletter to receive updates on upcoming events, latest research, and breaking news.",
+    "placeholder": "Enter your email"
+  }
+}

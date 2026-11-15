@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { ORG } from '../../content/ldii';
+import copy from '../../content/layout/header.json';
+// Text, images and links: src/content/layout/header.json (editable in the website editors).
 
 // Logo: LDII's own file on Cloudinary. Replace with the green "LDII" wordmark once it is supplied (see PLACEHOLDERS.md).
 const LOGO = 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_center,w_160,h_160,q_auto,f_auto/v1781702619/Circular_LDII_bewv0j.png';
@@ -9,46 +11,7 @@ type Item = { title: string; href: string; note?: string };
 type Group = { title: string; href: string; items?: Item[] };
 
 /** One menu, one name per thing (as recommended in the Oct 2026 site review). */
-export const NAV: Group[] = [
-  {
-    title: 'About',
-    href: '/about',
-    items: [
-      { title: 'About LDII', href: '/about', note: 'Who we are and how we work' },
-      { title: 'Our President', href: '/about/who-we-are/president-profile', note: 'Ronald Lwabaayi' },
-      { title: 'Our Impact', href: '/impact', note: 'The engagements we have delivered' },
-    ],
-  },
-  {
-    title: 'Our Work',
-    href: '/international-focus',
-    items: [
-      { title: 'International Focus', href: '/international-focus', note: 'Six areas of Global North–South partnership' },
-      { title: 'Local Programmes', href: '/local-programmes', note: 'Community development across Ontario' },
-      { title: 'Newcomer Settlement', href: '/local-programmes#newcomers-programme', note: 'Supporting new beginnings' },
-      { title: 'Mining & Technology Mission', href: '/programs/mining-technology-exchange', note: 'Global South–Canada, every June' },
-    ],
-  },
-  {
-    title: 'Events',
-    href: '/events',
-    items: [
-      { title: 'Upcoming Events', href: '/events/upcoming' },
-      { title: 'Past Events', href: '/events/past' },
-      { title: 'News & Media', href: '/events/news' },
-      { title: 'Gallery', href: '/events/gallery' },
-    ],
-  },
-  {
-    title: 'Get Involved',
-    href: '/partners',
-    items: [
-      { title: 'Partner With Us', href: '/partners' },
-      { title: 'Donate', href: '/donate' },
-    ],
-  },
-  { title: 'Contact', href: '/contact' },
-];
+export const NAV: Group[] = copy.NAV;
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -108,22 +71,18 @@ export default function Header() {
       <header
         className={`sticky top-0 z-50 bg-white/95 border-b transition-shadow ${scrolled || open ? 'shadow-sm border-gray-200' : 'border-transparent'}`}
       >
-        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 bg-white px-3 py-2 rounded text-ldii-navy">
-          Skip to content
-        </a>
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-2 bg-white px-3 py-2 rounded text-ldii-navy">{copy.main.link}</a>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-[72px]">
             <Link to="/" className="flex items-center gap-3 min-w-0" aria-label={`${ORG.short} home`}>
               <img src={LOGO} alt="" width={48} height={48} className="w-12 h-12 rounded-full flex-shrink-0" />
               <span className="min-w-0">
-                <span className="block font-display text-2xl font-bold leading-none text-ldii-navy tracking-tight">
-                  LDII
-                </span>
+                <span className="block font-display text-2xl font-bold leading-none text-ldii-navy tracking-tight">{copy.main.label}</span>
                 <span className="hidden sm:block text-[11px] leading-tight text-gray-600 mt-1 max-w-[230px]">{ORG.name}</span>
               </span>
             </Link>
 
-            <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
+            <nav className="hidden lg:flex items-center gap-1" aria-label={copy.main.ariaLabel}>
               {NAV.map((g) =>
                 g.items ? (
                   <div
@@ -178,8 +137,7 @@ export default function Header() {
                 to="/donate"
                 className="ml-3 inline-flex items-center gap-2 bg-ldii-navy text-white px-5 py-2.5 rounded-[3px] text-[15px] font-semibold hover:bg-tech-teal-800 transition-colors"
               >
-                <i className="ri-heart-3-line" aria-hidden="true" /> Donate
-              </Link>
+                <i className="ri-heart-3-line" aria-hidden="true" />{copy.main.text}</Link>
             </nav>
 
             <button
@@ -203,7 +161,7 @@ export default function Header() {
         hidden={!open}
         className="lg:hidden fixed inset-x-0 top-[72px] bottom-0 z-40 bg-white overflow-y-auto border-t border-gray-200"
       >
-        <nav className="px-4 py-4" aria-label="Main">
+        <nav className="px-4 py-4" aria-label={copy.main.ariaLabel2}>
           {NAV.map((g) => (
             <div key={g.title} className="border-b border-gray-100 py-1">
               {g.items ? (
@@ -238,8 +196,7 @@ export default function Header() {
             to="/donate"
             className="mt-6 flex items-center justify-center gap-2 bg-ldii-navy text-white px-5 py-4 rounded-[3px] text-lg font-semibold"
           >
-            <i className="ri-heart-3-line" aria-hidden="true" /> Donate
-          </Link>
+            <i className="ri-heart-3-line" aria-hidden="true" />{copy.main.text2}</Link>
           <div className="mt-6 text-sm text-gray-600 space-y-2">
             <a href={`mailto:${ORG.email}`} className="block">{ORG.email}</a>
             <a href={ORG.phoneHref} className="block">{ORG.phone}</a>

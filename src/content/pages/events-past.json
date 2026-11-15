@@ -1,0 +1,21 @@
+{
+  "heroSection": {
+    "title": "Past Events & Resources",
+    "text": "Explore the outcomes, resources, and lasting impact of our previous conferences and events."
+  },
+  "pastEvents": {
+    "heading": "Event Archive",
+    "text": "Access comprehensive documentation, reports, and resources from our past events.",
+    "subheading": "Key Outcomes",
+    "subheading2": "Featured Speakers",
+    "subheading3": "Resources",
+    "subheading4": "No Past Events",
+    "text2": "Check out our upcoming events to see what is coming next."
+  },
+  "ctaSection": {
+    "heading": "Join Our Next Event",
+    "text": "Be part of our upcoming conferences and contribute to building global resilience.",
+    "link": "View Upcoming Events",
+    "link2": "Browse Photo Gallery"
+  }
+}

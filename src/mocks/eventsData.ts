@@ -2,7 +2,10 @@
  * Events. The list itself is in src/content/events.json (editable in the website editors).
  * Past and upcoming are worked out from each event's date; "unconfirmed" hides an event.
  */
-import events from '../content/events.json';
+import eventsRaw from '../content/events.json';
+import { normalize } from '../content/normalize';
+
+const events = normalize(eventsRaw);
 
 export interface EventItem {
   id: string;

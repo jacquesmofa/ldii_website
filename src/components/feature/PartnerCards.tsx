@@ -1,4 +1,6 @@
 import { confirmedPartners } from '../../mocks/partnersData';
+import copy from '../../content/layout/partner-cards.json';
+// Text, images and links: src/content/layout/partner-cards.json (editable in the website editors).
 
 /** Grid of LDII's confirmed partners: real logo when we have one, otherwise an icon. */
 export default function PartnerCards() {
@@ -20,7 +22,7 @@ export default function PartnerCards() {
             )}
           </div>
           <div>
-            <h3 className="text-lg font-semibold text-ldii-navy group-hover:text-tech-teal-800">{partner.name} <i className="ri-external-link-line text-sm text-gray-400 align-middle" aria-hidden="true" /><span className="sr-only"> (opens in a new tab)</span></h3>
+            <h3 className="text-lg font-semibold text-ldii-navy group-hover:text-tech-teal-800">{partner.name} <i className="ri-external-link-line text-sm text-gray-400 align-middle" aria-hidden="true" /><span className="sr-only">{copy.main.label}</span></h3>
             <p className="text-sm font-medium text-tech-teal-800 mb-2">{partner.role}</p>
             <p className="text-gray-700 text-sm leading-relaxed">{partner.description}</p>
           </div>

@@ -26,8 +26,7 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 
 ## Where things live
 - Pages: `src/pages/<page>/` (one folder per page, sections in `components/`). Routes: `src/router/`.
-- Text, images and links are mostly hard-coded inside the page components (`src/pages/<page>/components/*.tsx`) and in `src/mocks/`.
-- Next studio step for this site: move client-facing content into `src/content/*.json` and wire up both editors (Pages CMS + Sveltia at `/admin`), exactly like `jacquesmofa/CAWAP` (see its CLAUDE.md and `scripts/studio-tools/` for `extract.mjs`, `snapshot.mjs`, `compare.mjs`). Verify with before/after snapshots that visitors see no change.
+- All client-facing content is in `src/content/` and editable in both editors (see "Editors" below). No new hard-coded text, images or links in components.
 
 ## Known issues (found 10 Nov 2026)
 - 292 Readdy AI placeholder image URLs (`readdy.ai/api/search-image`) are still in the code. Replace them with real photos and track the rest in `PLACEHOLDERS.md`.
@@ -54,3 +53,12 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 - Effects live in `src/index.css` (`data-reveal`, `.link-line`, `.photo-zoom`, `.arrow-slide`); `RevealOnScroll` in `src/App.tsx` tags every section automatically. `Breadcrumbs` and `BackToTop` are in `src/components/feature/`.
 - The local workspace cannot load Cloudinary photos: always check pictures on the live site in the browser after a deploy.
 - Mining mission name: "Global South–Canada Mining & Technology Transfer Mission" (President's wording). Do not write "Africa–Canada".
+
+## Editors (15 Nov 2026)
+- Content files: `src/content/*.json` (site, about, international, local-programmes, mining-mission, news-posts, news, events, partners, gallery, seo), `src/content/layout/*.json` (menu, footer, small blocks), `src/content/pages/<page>.json` (page wording; components import it as `copy`, or `pageText` on Impact and Privacy). `src/content/ldii.ts` and `src/mocks/*Data.ts` only load the JSON (through `normalize.ts`, which gives list items the empty lists their neighbours have).
+- Pictures in JSON are full addresses. `photo()` sizes LDII Cloudinary photos and passes any other address (editor uploads in `public/media/uploads/` → `/media/uploads/...`) through unchanged.
+- Pages CMS (`.pages.yml`, app.pagescms.org) and Sveltia (`public/admin/`, https://ldiinitiatives.org/admin/). BOTH CONFIGS ARE GENERATED: `npm run cms:config` builds them from the JSON files + `scripts/cms-registry.mjs` (files, groups, labels, help). `npm run cms:check` fails if they are stale. Never edit the two configs by hand. An empty list needs a `sample` in `FIELD_HINTS` (see `videos`).
+- Adding content: JSON file (top level an object) → entry in `cms-registry.mjs` → `npm run cms:config` → commit all.
+- Sveltia "Sign In with GitHub" runs on HostPapa: `public/api/auth.php` + `callback.php` (`oauth-common.php`: canonical origin https://ldiinitiatives.org). The OAuth App secret is never in the repo: the deploy workflow writes `out/api/oauth-config.php` from Actions secrets `CMS_GITHUB_CLIENT_ID` / `CMS_GITHUB_CLIENT_SECRET`. Without them, "Sign In Using Access Token" still works.
+- Safety: `scripts/prerender.mjs` opens every page at build time; if a page does not render (an edit left out something it needs), the build fails and nothing is uploaded. New gallery albums get a share page and sitemap line automatically (`scripts/social-pages.mjs`).
+- Refactors that must not change what visitors see: `scripts/studio-tools/` (snapshot before/after, compare). Editor guide for the team: `docs/editor-guide.md`.

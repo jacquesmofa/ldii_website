@@ -4,12 +4,21 @@
  * website editors (Pages CMS and Sveltia at /admin). This file only loads it for the pages.
  * Do not add figures that are not confirmed by LDII: list them in PLACEHOLDERS.md instead.
  */
-import site from './site.json';
-import about from './about.json';
-import international from './international.json';
-import localProgrammes from './local-programmes.json';
-import newsPosts from './news-posts.json';
-import miningMission from './mining-mission.json';
+import siteRaw from './site.json';
+import aboutRaw from './about.json';
+import internationalRaw from './international.json';
+import localProgrammesRaw from './local-programmes.json';
+import newsPostsRaw from './news-posts.json';
+import miningMissionRaw from './mining-mission.json';
+
+import { normalize } from './normalize';
+
+const site = normalize(siteRaw);
+const about = normalize(aboutRaw);
+const international = normalize(internationalRaw);
+const localProgrammes = normalize(localProgrammesRaw);
+const newsPosts = normalize(newsPostsRaw);
+const miningMission = normalize(miningMissionRaw);
 
 const CLOUD = 'https://res.cloudinary.com/dzppzxpad/image/upload/';
 

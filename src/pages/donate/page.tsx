@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { submitFormToInbox } from '@/lib/web3forms';
+import copy from '../../content/pages/donate.json';
+// Text, images and links: src/content/pages/donate.json (editable in the website editors).
 
 export default function DonatePage() {
   const [donationType, setDonationType] = useState<'one-time' | 'monthly'>('one-time');
@@ -72,10 +74,8 @@ export default function DonatePage() {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Make a Difference Today</h1>
-          <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">
-            Your gift supports newcomers, youth and seniors in Ontario and the partnerships we build abroad.
-          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-green-100 max-w-3xl mx-auto">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -83,14 +83,14 @@ export default function DonatePage() {
       <section className="py-16">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h2 className="font-display text-3xl font-semibold text-ldii-navy mb-3 text-center">Pledge a Donation</h2>
-            <p className="text-gray-700 text-center mb-8 max-w-2xl mx-auto">Tell us what you would like to give. We reply from admin@ldiinitiatives.org to confirm the payment details.</p>
+            <h2 className="font-display text-3xl font-semibold text-ldii-navy mb-3 text-center">{copy.donationForm.heading}</h2>
+            <p className="text-gray-700 text-center mb-8 max-w-2xl mx-auto">{copy.donationForm.text}</p>
 
             <form onSubmit={handleSubmit} id="donation-pledge-form" className="space-y-8 relative">
               <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
               {/* Donation Type */}
               <div>
-                <label className="block text-lg font-semibold text-gray-900 mb-4">Donation Type</label>
+                <label className="block text-lg font-semibold text-gray-900 mb-4">{copy.donationType.fieldLabel}</label>
                 <div className="grid grid-cols-2 gap-4">
                   <button
                     type="button"
@@ -100,9 +100,7 @@ export default function DonatePage() {
                         ? 'bg-green-600 text-white shadow-lg'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
-                  >
-                    One-Time Donation
-                  </button>
+                  >{copy.donationType.button}</button>
                   <button
                     type="button"
                     onClick={() => setDonationType('monthly')}
@@ -111,15 +109,13 @@ export default function DonatePage() {
                         ? 'bg-green-600 text-white shadow-lg'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
-                  >
-                    Monthly Donation
-                  </button>
+                  >{copy.donationType.button2}</button>
                 </div>
               </div>
 
               {/* Amount Selection */}
               <div>
-                <label className="block text-lg font-semibold text-gray-900 mb-4">Select Amount (CAD)</label>
+                <label className="block text-lg font-semibold text-gray-900 mb-4">{copy.amountSelection.fieldLabel}</label>
                 <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mb-4">
                   {predefinedAmounts.map((amt) => (
                     <button
@@ -147,16 +143,14 @@ export default function DonatePage() {
                       ? 'bg-green-600 text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
-                >
-                  Custom Amount
-                </button>
+                >{copy.amountSelection.button}</button>
                 {amount === 'custom' && (
                   <input
                     type="number"
                     name="customAmount"
                     value={customAmount}
                     onChange={(e) => setCustomAmount(e.target.value)}
-                    placeholder="Enter custom amount"
+                    placeholder={copy.amountSelection.placeholder}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
                     min="1"
                     required
@@ -166,7 +160,7 @@ export default function DonatePage() {
 
               {/* Payment Method */}
               <div>
-                <label className="block text-lg font-semibold text-gray-900 mb-4">Payment Method</label>
+                <label className="block text-lg font-semibold text-gray-900 mb-4">{copy.paymentMethod.fieldLabel}</label>
                 <div className="space-y-3">
                   <div
                     onClick={() => setPaymentMethod('e-transfer')}
@@ -180,8 +174,8 @@ export default function DonatePage() {
                       <div className="flex items-center space-x-3">
                         <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-green-600"></i>
                         <div>
-                          <div className="font-semibold text-gray-900">Interac e-Transfer (Recommended)</div>
-                          <div className="text-sm text-gray-600">Fast, secure, and easy</div>
+                          <div className="font-semibold text-gray-900">{copy.paymentMethod.text}</div>
+                          <div className="text-sm text-gray-600">{copy.paymentMethod.text2}</div>
                         </div>
                       </div>
                       {paymentMethod === 'e-transfer' && (
@@ -202,8 +196,8 @@ export default function DonatePage() {
                       <div className="flex items-center space-x-3">
                         <i className="ri-bank-line w-6 h-6 flex items-center justify-center text-green-600"></i>
                         <div>
-                          <div className="font-semibold text-gray-900">Direct Bank Transfer</div>
-                          <div className="text-sm text-gray-600">Wire transfer or EFT</div>
+                          <div className="font-semibold text-gray-900">{copy.paymentMethod.text3}</div>
+                          <div className="text-sm text-gray-600">{copy.paymentMethod.text4}</div>
                         </div>
                       </div>
                       {paymentMethod === 'bank-transfer' && (
@@ -217,10 +211,10 @@ export default function DonatePage() {
 
               {/* Personal Information */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Your Information</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">{copy.personalInformation.subheading}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel}</label>
                     <input
                       type="text"
                       name="firstName"
@@ -231,7 +225,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Last Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel2}</label>
                     <input
                       type="text"
                       name="lastName"
@@ -242,7 +236,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel3}</label>
                     <input
                       type="email"
                       name="email"
@@ -253,7 +247,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel4}</label>
                     <input
                       type="tel"
                       name="phone"
@@ -263,7 +257,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Address</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel5}</label>
                     <input
                       type="text"
                       name="address"
@@ -273,7 +267,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">City</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel6}</label>
                     <input
                       type="text"
                       name="city"
@@ -283,7 +277,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Province/State</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel7}</label>
                     <input
                       type="text"
                       name="province"
@@ -293,7 +287,7 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Postal Code</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel8}</label>
                     <input
                       type="text"
                       name="postalCode"
@@ -303,21 +297,21 @@ export default function DonatePage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel9}</label>
                     <select
                       name="country"
                       value={formData.country}
                       onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                       className="w-full px-4 py-3 pr-8 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm"
                     >
-                      <option value="Canada">Canada</option>
-                      <option value="United States">United States</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                      <option value="Other">Other</option>
+                      <option value="Canada">{copy.personalInformation.option}</option>
+                      <option value="United States">{copy.personalInformation.option2}</option>
+                      <option value="United Kingdom">{copy.personalInformation.option3}</option>
+                      <option value="Other">{copy.personalInformation.option4}</option>
                     </select>
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message (Optional)</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.personalInformation.fieldLabel10}</label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -325,9 +319,9 @@ export default function DonatePage() {
                       rows={4}
                       maxLength={500}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm resize-none"
-                      placeholder="Share why you're supporting LDII (max 500 characters)"
+                      placeholder={copy.personalInformation.placeholder}
                     ></textarea>
-                    <div className="text-sm text-gray-500 mt-1 text-right">{formData.message.length}/500</div>
+                    <div className="text-sm text-gray-500 mt-1 text-right">{formData.message.length}{copy.personalInformation.text}</div>
                   </div>
                 </div>
               </div>
@@ -336,15 +330,13 @@ export default function DonatePage() {
               {paymentMethod === 'e-transfer' && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <i className="ri-information-line w-5 h-5 flex items-center justify-center text-green-600 mr-2"></i>
-                    Interac e-Transfer Instructions
-                  </h4>
+                    <i className="ri-information-line w-5 h-5 flex items-center justify-center text-green-600 mr-2"></i>{copy.paymentInstructions.subheading}</h4>
                   <div className="text-sm text-gray-700 space-y-2">
-                    <p>After submitting this form, please send your e-Transfer to:</p>
-                    <p className="font-semibold text-green-700">admin@ldiinitiatives.org</p>
-                    <p>Security Question: What organization are you supporting?</p>
-                    <p className="font-semibold text-green-700">Answer: LDII</p>
-                    <p className="mt-3">We will confirm by email once it arrives.</p>
+                    <p>{copy.paymentInstructions.text}</p>
+                    <p className="font-semibold text-green-700">{copy.paymentInstructions.text2}</p>
+                    <p>{copy.paymentInstructions.text3}</p>
+                    <p className="font-semibold text-green-700">{copy.paymentInstructions.text4}</p>
+                    <p className="mt-3">{copy.paymentInstructions.text5}</p>
                   </div>
                 </div>
               )}
@@ -352,16 +344,14 @@ export default function DonatePage() {
               {paymentMethod === 'bank-transfer' && (
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                   <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                    <i className="ri-information-line w-5 h-5 flex items-center justify-center text-green-600 mr-2"></i>
-                    Bank Transfer Instructions
-                  </h4>
+                    <i className="ri-information-line w-5 h-5 flex items-center justify-center text-green-600 mr-2"></i>{copy.paymentInstructions.subheading2}</h4>
                   <div className="text-sm text-gray-700 space-y-2">
-                    <p>After submitting this form, you will receive an email with our banking details including:</p>
+                    <p>{copy.paymentInstructions.text6}</p>
                     <ul className="list-disc list-inside ml-4 space-y-1">
-                      <li>Bank name and branch</li>
-                      <li>Account number</li>
-                      <li>Transit number</li>
-                      <li>SWIFT/BIC code (for international transfers)</li>
+                      <li>{copy.paymentInstructions.item}</li>
+                      <li>{copy.paymentInstructions.item2}</li>
+                      <li>{copy.paymentInstructions.item3}</li>
+                      <li>{copy.paymentInstructions.item4}</li>
                     </ul>
                   </div>
                 </div>
@@ -370,9 +360,7 @@ export default function DonatePage() {
               {/* Tax Receipt Notice */}
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
                 <p className="text-sm text-gray-700">
-                  <i className="ri-file-text-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2 inline"></i>
-                  LDII is a Canadian nonprofit organization, not a registered charity, so gifts are not eligible for a charitable tax receipt. We acknowledge every gift by email.
-                </p>
+                  <i className="ri-file-text-line w-5 h-5 flex items-center justify-center text-blue-600 mr-2 inline"></i>{copy.taxReceiptNotice.text}</p>
               </div>
 
               {/* Submit Button */}
@@ -394,34 +382,28 @@ export default function DonatePage() {
       {/* Why Donate Section */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Why Your Donation Matters</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{copy.whyDonateSection.heading}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <i className="ri-heart-line text-3xl text-[#3CCB7F]"></i>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Direct Impact</h3>
-              <p className="text-gray-600">
-                Your gift goes to LDII’s local programmes in Ontario: newcomers, youth and seniors.
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.whyDonateSection.subheading}</h3>
+              <p className="text-gray-600">{copy.whyDonateSection.text}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <i className="ri-shield-check-line text-3xl text-[#3CCB7F]"></i>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Transparency</h3>
-              <p className="text-gray-600">
-                Ask us at any time how your gift was used. Annual reports will be published on our Impact page.
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.whyDonateSection.subheading2}</h3>
+              <p className="text-gray-600">{copy.whyDonateSection.text2}</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto">
                 <i className="ri-global-line text-3xl text-[#3CCB7F]"></i>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">Global Reach</h3>
-              <p className="text-gray-600">
-                Your gift supports our conferences, exchanges and youth and community programmes.
-              </p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">{copy.whyDonateSection.subheading3}</h3>
+              <p className="text-gray-600">{copy.whyDonateSection.text3}</p>
             </div>
           </div>
         </div>
@@ -432,11 +414,9 @@ export default function DonatePage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center space-x-2 text-gray-600 mb-4">
             <i className="ri-lock-line w-6 h-6 flex items-center justify-center"></i>
-            <span className="font-semibold">Your information</span>
+            <span className="font-semibold">{copy.securityNotice.label}</span>
           </div>
-          <p className="text-sm text-gray-600">
-            This form sends your pledge to our team by email. It does not take card details, and we never share your information with third parties.
-          </p>
+          <p className="text-sm text-gray-600">{copy.securityNotice.text}</p>
         </div>
       </section>
     </div>

@@ -1,0 +1,79 @@
+{
+  "heroSection": {
+    "title": "Partners & Support",
+    "text": "Building a better world through strategic partnerships and community support"
+  },
+  "stickyNavigation": {
+    "button": "Our Partners",
+    "button2": "Donate",
+    "button3": "Volunteer"
+  },
+  "ourPartners": {
+    "heading": "Our Partners",
+    "text": "The organisations and venues behind our conferences, delegations and exchanges. Interested in partnering with LDII? Write to us at admin@ldiinitiatives.org."
+  },
+  "donateSection": {
+    "heading": "Support Our Mission",
+    "text": "Your generous donations help us create lasting impact in communities worldwide. Every contribution makes a difference.",
+    "subheading": "One-Time Donation",
+    "text2": "Make a single contribution to support our programs and initiatives. Your donation directly funds projects that build resilience and empower communities.",
+    "label": "Support immediate community needs",
+    "label2": "Support our local programmes",
+    "label3": "We confirm every gift by email",
+    "subheading2": "Monthly Giving",
+    "text3": "Become a sustaining donor with monthly contributions. Your ongoing support provides stable funding for long-term programs and sustainable impact.",
+    "label4": "Predictable funding for programs",
+    "label5": "Exclusive donor updates",
+    "label6": "A yearly summary of your giving",
+    "subheading3": "Pledge a Donation",
+    "fieldLabel": "Donation Type *",
+    "label7": "One-Time",
+    "label8": "Monthly",
+    "fieldLabel2": "Donation Amount *",
+    "placeholder": "Or enter custom amount",
+    "fieldLabel3": "First Name *",
+    "fieldLabel4": "Last Name *",
+    "fieldLabel5": "Email Address *",
+    "fieldLabel6": "Phone Number",
+    "fieldLabel7": "Message (Optional)",
+    "placeholder2": "Share why you're supporting LDII (max 500 characters)"
+  },
+  "volunteerSection": {
+    "heading": "Volunteer With Us",
+    "text": "Join our team of dedicated volunteers making a difference in communities worldwide. Your time and skills can create lasting impact.",
+    "subheading": "Program Support",
+    "text2": "Assist with program delivery, event coordination, and community outreach activities.",
+    "subheading2": "Professional Skills",
+    "text3": "Share your expertise in areas like research, communications, design, or technology.",
+    "subheading3": "Remote Opportunities",
+    "text4": "Contribute from anywhere with virtual volunteering in research, writing, or advocacy.",
+    "subheading4": "Volunteer Application",
+    "fieldLabel": "First Name *",
+    "fieldLabel2": "Last Name *",
+    "fieldLabel3": "Email Address *",
+    "fieldLabel4": "Phone Number *",
+    "fieldLabel5": "Area of Interest *",
+    "option": "Select an area",
+    "option2": "Program Support",
+    "option3": "Research",
+    "option4": "Communications",
+    "option5": "Event Coordination",
+    "option6": "Technology",
+    "option7": "Fundraising",
+    "option8": "Other",
+    "fieldLabel6": "Availability *",
+    "option9": "Select availability",
+    "option10": "Weekdays",
+    "option11": "Weekends",
+    "option12": "Flexible",
+    "option13": "Remote Only",
+    "fieldLabel7": "Relevant Experience & Skills *",
+    "placeholder": "Tell us about your skills, experience, and why you want to volunteer with LDII (max 500 characters)"
+  },
+  "ctaSection": {
+    "heading": "Join Our Global Network",
+    "text": "Whether through partnership, donation, or volunteering, there are many ways to support our mission of building global resilience.",
+    "link": "Contact Us",
+    "link2": "Donate Now"
+  }
+}

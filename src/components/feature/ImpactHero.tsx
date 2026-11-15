@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import copy from '../../content/pages/impact.json';
+// Text, images and links: src/content/pages/impact.json (editable in the website editors).
 
 const HERO_PHOTO =
   'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/General_aiu2gv.jpg';
@@ -22,13 +24,11 @@ export function ImpactCta() {
   return (
     <section className="py-20 bg-[#0A1E3D]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Be part of the next chapter</h2>
-        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-          Partner with LDII, attend a coming engagement or support our work.
-        </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">{copy.impactCta.heading}</h2>
+        <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.impactCta.text}</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/donate" className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors whitespace-nowrap">Support Our Work</a>
-          <a href="/partners" className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors whitespace-nowrap">Partner With Us</a>
+          <a href="/donate" className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors whitespace-nowrap">{copy.impactCta.link}</a>
+          <a href="/partners" className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors whitespace-nowrap">{copy.impactCta.link2}</a>
         </div>
       </div>
     </section>

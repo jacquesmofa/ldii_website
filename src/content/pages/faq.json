@@ -1,0 +1,84 @@
+{
+  "faqs": [
+    {
+      "category": "General",
+      "question": "What is Livelihood Development International Initiatives (LDII)?",
+      "answer": "LDII is a Canadian nonprofit based in Toronto. We strengthen communities in Ontario through local programmes and build practical partnerships between the Global North and the Global South. Our tagline sums it up: Local Impact, Global Partnerships."
+    },
+    {
+      "category": "General",
+      "question": "Where does LDII work?",
+      "answer": "Our office is at 3701 Chesswood Drive, Unit 315, Toronto. Local programmes run in Ontario. Internationally we work with partners in Africa and the wider Global South, including the Intergovernmental Authority on Development (IGAD), diplomatic missions and chambers of commerce."
+    },
+    {
+      "category": "General",
+      "question": "What has LDII done so far?",
+      "answer": "LDII organized the first COVID-19 Remembrance Parade and Candlelight Vigil in Toronto (October 1, 2023), convened the 1st International Post-COVID Conference with IGAD in Toronto (July 11–13, 2024) and the 2nd in Brampton (September 8–10, 2025), and hosts African delegations in Ontario. Our Impact page has the full record."
+    },
+    {
+      "category": "Programmes",
+      "question": "What are LDII’s international focus areas?",
+      "answer": "Six areas: climate resilience and environmental sustainability; mining, technology and innovation; trade, entrepreneurship and economic development; health and social resilience; food security and agriculture; and investment and economic partnerships. The International Focus page explains each one."
+    },
+    {
+      "category": "Programmes",
+      "question": "What local programmes does LDII run?",
+      "answer": "Six local programmes in Ontario: newcomer integration and settlement support; youth employment and skills; youth safety and crime prevention; youth wellbeing; community partnerships; and support for seniors. The Local Programmes page explains who can benefit and how."
+    },
+    {
+      "category": "Programmes",
+      "question": "How can I take part in a programme?",
+      "answer": "Email admin@ldiinitiatives.org or call +1 647 656 3026 and tell us a little about yourself or the person you are referring. We will point you to the right programme or partner."
+    },
+    {
+      "category": "Partnerships",
+      "question": "How can my organization partner with LDII?",
+      "answer": "We work with governments, diplomatic missions, businesses, universities, colleges and community organizations. Write to admin@ldiinitiatives.org with a short note on what you have in mind, or see the Partners page."
+    },
+    {
+      "category": "Partnerships",
+      "question": "What is the Global South–Canada Mining & Technology Transfer Mission?",
+      "answer": "Every June, government and industry delegations from across the Global South visit Greater Sudbury to see its mining ecosystem at work: its mines, suppliers, technology and research. The mission then heads north and ends at the Canadian Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc. The next mission is in June 2027."
+    },
+    {
+      "category": "Support",
+      "question": "How can I support LDII?",
+      "answer": "You can make a pledge on our Donate page, volunteer, or partner with us. If you would like to give, email admin@ldiinitiatives.org and we will confirm the payment options with you. LDII is a Canadian nonprofit, not a registered charity, so gifts are not eligible for a charitable tax receipt."
+    },
+    {
+      "category": "Events",
+      "question": "How do I hear about upcoming events?",
+      "answer": "Upcoming conferences and delegations are listed on the Upcoming Events page. You can also subscribe to the newsletter at the bottom of every page, or follow LDII on social media."
+    },
+    {
+      "category": "Contact",
+      "question": "How can I contact LDII?",
+      "answer": "Call +1 647 656 3026 or email admin@ldiinitiatives.org. Our office is at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6."
+    },
+    {
+      "category": "Contact",
+      "question": "How can media contact LDII?",
+      "answer": "Email admin@ldiinitiatives.org or call +1 647 656 3026, or use the Media Inquiries form."
+    }
+  ],
+  "categories": [
+    "all",
+    "General",
+    "Programmes",
+    "Partnerships",
+    "Support",
+    "Events",
+    "Contact"
+  ],
+  "heroSection": {
+    "title": "Frequently Asked Questions",
+    "text": "Find answers to common questions about LDII, our programs, partnerships, and how you can get involved."
+  },
+  "contactCta": {
+    "heading": "Still Have Questions?",
+    "text": "Can't find the answer you're looking for? Our team is here to help. Reach out to us directly.",
+    "link": "Contact Us",
+    "emailLink": "mailto:admin@ldiinitiatives.org",
+    "link2": "Email Us"
+  }
+}

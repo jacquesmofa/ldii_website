@@ -1,31 +1,9 @@
+import copy from '../../../../content/pages/press-releases.json';
+// Text, images and links: src/content/pages/press-releases.json (editable in the website editors).
 export default function PressReleasesPage() {
   // Real releases only (13 Nov 2026). Invented releases (trees, UNDP partnership, women's
   // entrepreneurs), quotes from a non-existent executive director and unconfirmed figures were removed.
-  const pressReleases = [
-    {
-      title: '2nd International Post-COVID-19 Conference Held in Brampton',
-      date: 'September 12, 2025',
-      type: 'Press Release',
-      summary: 'The 2nd International Post-COVID-19 Conference was held at the Pearson Convention Centre in Brampton, Ontario, from September 8 to 10, 2025.',
-      content: `FOR IMMEDIATE RELEASE
-
-Brampton, ON – September 12, 2025 – The 2nd International Post-COVID-19 Conference, held at the Pearson Convention Centre from September 8 to 10, 2025, brought together partners, policymakers, researchers and community leaders under the theme Economic Damages from Global Shocks: Building Resilience for the Future.
-
-Over three days, discussions focused on how pandemics, natural disasters and financial crises cut across trade, finance and industry, and on how communities, businesses and institutions can better prepare for and respond to future shocks, protecting livelihoods and strengthening partnerships across borders.
-
-Local Impact. Global Partnerships.
-
-Photos from the conference are available at www.ldiinitiatives.org/events/gallery.
-
-###
-
-Media contact:
-LDII Media Relations
-admin@ldiinitiatives.org
-+1 647 656 3026`,
-      contact: 'LDII Media Relations'
-    },
-  ];
+  const pressReleases = copy.pressReleases;
 
   return (
     <div className="min-h-screen bg-white">
@@ -39,12 +17,8 @@ admin@ldiinitiatives.org
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Press Releases
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">
-            Official announcements and media releases from Livelihood Development International Initiatives.
-          </p>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -52,10 +26,8 @@ admin@ldiinitiatives.org
       <section className="py-20 bg-white">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Official Releases</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Access our official press releases and media announcements.
-            </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.pressReleasesSection.heading}</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">{copy.pressReleasesSection.text}</p>
           </div>
 
           <div className="space-y-8">
@@ -77,8 +49,8 @@ admin@ldiinitiatives.org
                 </div>
                 
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-500 text-sm">Contact: {release.contact}</span>
-                  <a href="/events/gallery/2nd-international-post-covid-conference-brampton-2025" className="inline-flex items-center gap-1 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">See the conference photos <i className="ri-arrow-right-line" aria-hidden="true" /></a>
+                  <span className="text-gray-500 text-sm">{copy.pressReleasesSection.label}{release.contact}</span>
+                  <a href="/events/gallery/2nd-international-post-covid-conference-brampton-2025" className="inline-flex items-center gap-1 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">{copy.pressReleasesSection.link}<i className="ri-arrow-right-line" aria-hidden="true" /></a>
                 </div>
               </div>
             ))}
@@ -89,29 +61,23 @@ admin@ldiinitiatives.org
       {/* Media Contact */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Media Inquiries</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            For press inquiries, interview requests, or additional information, please contact our communications team.
-          </p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">{copy.mediaContact.heading}</h2>
+          <p className="text-xl text-gray-600 mb-8">{copy.mediaContact.text}</p>
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-mail-line w-8 h-8 flex items-center justify-center text-white"></i>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Email</h3>
-                <a href="mailto:admin@ldiinitiatives.org" className="text-gray-600 hover:text-gray-800 cursor-pointer block break-all">
-                  admin@ldiinitiatives.org
-                </a>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{copy.mediaContact.subheading}</h3>
+                <a href={copy.mediaContact.emailLink} className="text-gray-600 hover:text-gray-800 cursor-pointer block break-all">{copy.mediaContact.link}</a>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
                   <i className="ri-phone-line w-8 h-8 flex items-center justify-center text-white"></i>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Phone</h3>
-                <a href="tel:+16476563026" className="text-gray-600 hover:text-gray-800 cursor-pointer">
-                  +1 647 656 3026
-                </a>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{copy.mediaContact.subheading2}</h3>
+                <a href={copy.mediaContact.phoneLink} className="text-gray-600 hover:text-gray-800 cursor-pointer">{copy.mediaContact.link2}</a>
               </div>
             </div>
           </div>
@@ -121,25 +87,17 @@ admin@ldiinitiatives.org
       {/* CTA Section */}
       <section className="py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Media Resources
-          </h2>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-            Need logos, photos or an interview? Ask the team and we will send what you need.
-          </p>
+          <h2 className="text-4xl font-bold text-white mb-6">{copy.ctaSection.heading}</h2>
+          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto">{copy.ctaSection.text}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/contact#media"
               className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Contact Media Team
-            </a>
+            >{copy.ctaSection.link}</a>
             <a
               href="/events/news"
               className="bg-white text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-100 transition-colors cursor-pointer whitespace-nowrap"
-            >
-              View Latest News
-            </a>
+            >{copy.ctaSection.link2}</a>
           </div>
         </div>
       </section>

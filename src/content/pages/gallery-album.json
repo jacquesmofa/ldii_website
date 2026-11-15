@@ -1,0 +1,34 @@
+{
+  "main": {
+    "heading": "Invalid URL",
+    "text": "The URL does not contain a valid event identifier.",
+    "button": "Back to Gallery",
+    "heading2": "Event Not Found",
+    "text2": "The gallery you’re looking for doesn’t exist.",
+    "button2": "Back to Gallery"
+  },
+  "breadcrumb": {
+    "ariaLabel": "Breadcrumb",
+    "link": "Home",
+    "link2": "Events",
+    "link3": "Gallery"
+  },
+  "hero": {
+    "label": " Photos"
+  },
+  "tabSwitcherOnlyWhenThe": {
+    "button": "Photos (",
+    "button2": "Videos ("
+  },
+  "navigationBetweenEvents": {
+    "text": "Previous Event",
+    "button": "All Events",
+    "text2": "Next Event"
+  },
+  "mediaRequest": {
+    "heading": "Need High-Resolution Media?",
+    "text": "Contact our media team for access to full-resolution photos and videos from this event.",
+    "link": "Contact Media Team",
+    "link2": "Press Releases"
+  }
+}

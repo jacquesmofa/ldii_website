@@ -1,148 +1,14 @@
-const itinerary = [
-  {
-    day: 'Day 1',
-    title: 'Arrive Toronto',
-    body: 'Airport reception, hotel, evening welcome and programme briefing.',
-  },
-  {
-    day: 'Day 2',
-    title: 'To Greater Sudbury',
-    body: 'Coach north. Welcome reception with the Greater Sudbury Chamber of Commerce and member mining companies.',
-  },
-  {
-    day: 'Day 3',
-    title: 'Heritage and learning',
-    body: 'Dynamic Earth underground tour. Laurentian University, the Goodman School of Mines and MIRARCO. Regreening sites.',
-  },
-  {
-    day: 'Day 4',
-    title: 'NORCAT training',
-    body: 'Safety systems, underground orientation and hands-on skills training in an operating mine at the NORCAT Underground Centre.',
-  },
-  {
-    day: 'Day 5',
-    title: 'Technology and suppliers',
-    body: 'Underground technology demonstrations, business meetings with MineConnect suppliers, college sessions with Cambrian College and Collège Boréal.',
-  },
-  {
-    day: 'Day 6',
-    title: 'Treaty orientation',
-    body: 'Road north with Indigenous facilitators and invited First Nations hosts, arriving in Timmins via Kirkland Lake.',
-  },
-  {
-    day: 'Day 7',
-    title: 'Canadian Mining Expo',
-    body: 'Expo floor, First Nations Forum and projects pipeline sessions. Timmins Chamber of Commerce meetings. Northern College, Haileybury School of Mines.',
-  },
-  {
-    day: 'Day 8',
-    title: 'Site visit and return',
-    body: 'Site visit in the Timmins camp, subject to operator approval. Closing session with agreed next steps. Flight to Toronto.',
-  },
-];
+import copy from '../../../content/pages/mining-mission.json';
+// Text, images and links: src/content/pages/mining-mission.json (editable in the website editors).
+const itinerary = copy.itinerary;
 
-const ecosystem = [
-  {
-    label: 'Operators',
-    body: 'Nickel and copper producers in Sudbury; gold and base metal operations in Timmins. Working mines at scale, a mature health and safety culture, and closure planning built into operations.',
-    icon: 'ri-landscape-line',
-  },
-  {
-    label: 'Supply and services',
-    body: 'MineConnect, the association for Northern Ontario mining supply firms. Equipment, automation, battery electric fleets, software and engineering, from suppliers who can follow up in delegates’ home countries.',
-    icon: 'ri-tools-line',
-  },
-  {
-    label: 'Training and testing',
-    body: 'NORCAT Underground Centre, Onaping. Hands-on skills training and live technology demonstrations underground, in an operating mine.',
-    icon: 'ri-award-line',
-  },
-  {
-    label: 'Applied research',
-    body: 'MIRARCO, CEMI and MERC. Research on safety, productivity, mineral exploration and the rehabilitation of mined land.',
-    icon: 'ri-flask-line',
-  },
-  {
-    label: 'University',
-    body: 'Laurentian University: Goodman School of Mines, Bharti School of Engineering and Harquail School of Earth Sciences. Programmes across the full mining cycle.',
-    icon: 'ri-building-4-line',
-  },
-  {
-    label: 'College diplomas',
-    body: 'Cambrian College and Collège Boréal in Sudbury; Northern College in Timmins. Technical diplomas and the skilled trades, with French-language delivery for Francophone partners.',
-    icon: 'ri-book-open-line',
-  },
-  {
-    label: 'Market and deal-making',
-    body: 'Canadian Mining Expo, Timmins. Exhibits each June, a First Nations Forum, and a projects pipeline series where suppliers and buyers meet.',
-    icon: 'ri-exchange-line',
-  },
-  {
-    label: 'Municipal leadership',
-    body: 'City of Greater Sudbury and City of Timmins. Two mining cities whose economic development offices work directly with industry and welcome international delegations.',
-    icon: 'ri-government-line',
-  },
-];
+const ecosystem = copy.ecosystem;
 
-const focusAreas = [
-  {
-    title: 'Mineral exploration',
-    body: 'Finding and defining deposits before money is spent on digging. Field-based geology, sampling and mapping methods suited to small claims, and French-language training for Francophone partners.',
-    partners: 'Laurentian University · Harquail School of Earth Sciences · MERC · Collège Boréal',
-  },
-  {
-    title: 'Gold recovery',
-    body: 'Getting more gold from the same ore, without mercury. Mineral processing and recovery methods, cleaner alternatives to mercury amalgamation, and the economics of higher yield.',
-    partners: 'MIRARCO · Bharti School of Engineering · Northern College',
-  },
-  {
-    title: 'Environmental protection',
-    body: 'Protecting water, land and the health of mining communities. Water monitoring, tailings management and land restoration, taught in the city that turned a damaged landscape back into forest.',
-    partners: 'Vale Living with Lakes Centre · MIRARCO · City of Greater Sudbury Regreening',
-  },
-  {
-    title: 'Mining safety',
-    body: 'Sending every miner home at the end of every shift. Hands-on underground safety training, ground control, ventilation and emergency response, plus programmes to train local trainers.',
-    partners: 'NORCAT Underground Centre · Cambrian College · Goodman School of Mines',
-  },
-  {
-    title: 'Appropriate technologies',
-    body: 'Equipment that fits the scale, budget and skills of a small operation. Matching small-scale operations with right-sized, maintainable equipment, sold with training and after-sales support.',
-    partners: 'MineConnect members · NORCAT · CEMI',
-  },
-];
+const focusAreas = copy.focusAreas;
 
-const transfers = [
-  { title: 'Technical skills', body: 'Trained operators and trainers, and safety systems that outlast the visit.' },
-  { title: 'Cleaner processing', body: 'Safer, mercury-free options for artisanal and small-scale gold workings.' },
-  { title: 'Credentials', body: 'Canadian programmes delivered in-country, so students qualify without relocating.' },
-  { title: 'Community participation', body: 'Practical models for consultation, benefit agreements and revenue sharing.' },
-  { title: 'Technology', body: 'Equipment sold with training and after-sales support, not boxes shipped without know-how.' },
-  { title: 'Closure and restoration', body: 'Closure plans written before a mine opens, and land returned to use when it ends.' },
-];
+const transfers = copy.transfers;
 
-const phases = [
-  {
-    period: '2026 – 2027',
-    title: 'Foundation',
-    body: 'Institutional engagement, delegation development and the first mission to Northern Ontario. Relationships established before commitments are made.',
-  },
-  {
-    period: '2027 – 2029',
-    title: 'Demonstration',
-    body: 'Technology partnerships formed during the mission tested in operating conditions. Training delivery piloted in partner states.',
-  },
-  {
-    period: '2029 – 2032',
-    title: 'Capability',
-    body: 'In-country curriculum delivery at scale. Supplier relationships matured into service agreements. Community agreement practice exchanged in both directions.',
-  },
-  {
-    period: 'Beyond 2032',
-    title: 'Continuity',
-    body: 'An annual programme and institutional partnerships operating independently of the founding organisations.',
-  },
-];
+const phases = copy.phases;
 
 export default function MiningTechnologyExchangePage() {
   return (
@@ -153,25 +19,14 @@ export default function MiningTechnologyExchangePage() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'url(https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg)',
+              `url(${copy.hero.backgroundImage})`,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#3CCB7F] font-semibold mb-5">
-            Annual Global South Mining Mission to Greater Sudbury
-          </span>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Global South–Canada Mining &amp; Technology Transfer Mission
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Every June, government and industry delegations from across the Global South come to
-            Greater Sudbury to see one of the world’s leading mining ecosystems at work: its mines,
-            suppliers, technologies and research institutions. They meet the people behind them and
-            look for partnerships that bring proven Canadian know-how to mining in their own
-            countries. The mission then travels north and ends at the Canadian Mining Expo in
-            Timmins. Co-hosted by LDII and Thrive Tours Inc. Next mission: June 2027.
-          </p>
+          <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#3CCB7F] font-semibold mb-5">{copy.hero.label}</span>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">{copy.hero.title}</h1>
+          <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">{copy.hero.text}</p>
         </div>
       </section>
 
@@ -180,46 +35,31 @@ export default function MiningTechnologyExchangePage() {
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <a
-              href="https://www.thrivetours.ca/"
+              href={copy.deliveryPartners.url}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white rounded-2xl p-7 border border-gray-100 hover:border-green-200 transition-colors cursor-pointer"
             >
               <div className="h-14 mb-5 flex items-center">
                 <img
-                  src="https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_360/v1792410688/logo-2026_thrive_tours_kbecbo.webp"
-                  alt="Thrive Tours logo"
+                  src={copy.deliveryPartners.image}
+                  alt={copy.deliveryPartners.imageAlt}
                   className="h-14 w-auto object-contain"
                 />
               </div>
-              <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">
-                Co-host
-              </span>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                An Indigenous-led experiential tourism and education company based at
-                Batchewana First Nation. Thrive Tours designs and hosts
-                experiential programmes for universities, international groups and visiting
-                delegations, and brings the First Nations relationships and treaty knowledge at
-                the heart of responsible mining in Northern Ontario.
-              </p>
+              <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">{copy.deliveryPartners.label}</span>
+              <p className="text-gray-700 leading-relaxed text-sm">{copy.deliveryPartners.text}</p>
             </a>
             <div className="bg-white rounded-2xl p-7 border border-gray-100">
               <div className="h-14 mb-5 flex items-center">
                 <img
-                  src="https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1781702619/Circular_LDII_bewv0j.png"
-                  alt="LDII logo"
+                  src={copy.deliveryPartners.image2}
+                  alt={copy.deliveryPartners.imageAlt2}
                   className="h-14 w-auto object-contain"
                 />
               </div>
-              <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">
-                Co-host
-              </span>
-              <p className="text-gray-700 leading-relaxed text-sm">
-                A Canadian nonprofit organization that facilitates technology
-                transfer from the Global North to the Global South. LDII works directly with
-                diplomatic missions of Global South countries, ministries responsible for mining, and chambers of
-                mines to build practical, lasting partnerships.
-              </p>
+              <span className="block text-xs uppercase tracking-widest text-green-600 font-semibold mb-2">{copy.deliveryPartners.label2}</span>
+              <p className="text-gray-700 leading-relaxed text-sm">{copy.deliveryPartners.text2}</p>
             </div>
           </div>
         </div>
@@ -228,25 +68,12 @@ export default function MiningTechnologyExchangePage() {
       {/* The premise */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            The premise: capability, not equipment
-          </h2>
-          <p className="text-lg text-gray-700 leading-relaxed mb-5">
-            The constraint in much of mining across the Global South is not the absence of equipment. It is the
-            capability to operate, maintain and sustain it. Suppliers sell machinery and leave.
-            Training is sold separately, if at all, and rarely delivered on site.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{copy.thePremise.heading}</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-5">{copy.thePremise.text}</p>
           <div className="border-l-4 border-green-600 pl-6 py-2 mb-5">
-            <p className="text-gray-800 italic leading-relaxed">
-              That observation comes from our conversations with Global South diplomatic missions in
-              Canada.
-            </p>
+            <p className="text-gray-800 italic leading-relaxed">{copy.thePremise.text2}</p>
           </div>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            It is the organising idea of the mission. Every layer of the Northern Ontario
-            ecosystem is a source of that know-how, and most of it sits within an hour&rsquo;s
-            drive of Greater Sudbury.
-          </p>
+          <p className="text-lg text-gray-700 leading-relaxed">{copy.thePremise.text3}</p>
         </div>
       </section>
 
@@ -254,13 +81,8 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Proposed programme: eight days in Northern Ontario
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Built around the Canadian Mining Expo in Timmins. Days and visits are being
-              confirmed with hosts and may change.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{copy.itinerarySection.heading}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">{copy.itinerarySection.text}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -286,14 +108,8 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Northern Ontario
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Two mining regions about four hours apart give delegates the full life cycle in
-              one programme: discovery, deep mining, processing, supply, research, closure and
-              land restoration. Both have mined for more than a century and are still working.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{copy.ecosystemSection.heading}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">{copy.ecosystemSection.text}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -316,13 +132,8 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-[#0A1E3D]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Five focus areas
-            </h2>
-            <p className="text-lg text-white/75 leading-relaxed">
-              Each focus area is matched to institutions that already do this work, so
-              small-scale miners learn from the people and places that practise it every day.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{copy.focusAreasSection.heading}</h2>
+            <p className="text-lg text-white/75 leading-relaxed">{copy.focusAreasSection.text}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -331,8 +142,7 @@ export default function MiningTechnologyExchangePage() {
                 key={area.title}
                 className="bg-white/5 border border-white/10 rounded-2xl p-7"
               >
-                <span className="block text-xs font-bold tracking-widest text-[#3CCB7F] mb-3">
-                  0{index + 1}
+                <span className="block text-xs font-bold tracking-widest text-[#3CCB7F] mb-3">{copy.focusAreasSection.label}{index + 1}
                 </span>
                 <h3 className="text-lg font-bold text-white mb-3">{area.title}</h3>
                 <p className="text-white/70 text-sm leading-relaxed mb-4">{area.body}</p>
@@ -349,14 +159,8 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What transfers
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Delegates should leave with relationships and capability, not brochures. An expo
-              visit on its own sends people home with documents and little else; this programme
-              is built so that every week in Canada opens work that continues at home.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{copy.whatTransfers.heading}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">{copy.whatTransfers.text}</p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -374,24 +178,14 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Community participation and negotiated benefit
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              The programme crosses two treaty territories. Greater Sudbury sits in Robinson
-              Huron Treaty territory, on the traditional lands of Atikameksheng Anishnawbek and
-              Wahnapitae First Nation. Timmins sits in Treaty 9 territory. These are specific
-              Nations with their own laws, leadership and priorities, and the programme treats
-              them that way.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{copy.communityParticipation.heading}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">{copy.communityParticipation.text}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
             <div className="bg-white rounded-2xl p-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <i className="ri-checkbox-circle-line w-5 h-5 flex items-center justify-center text-green-600" />
-                What works
-              </h3>
+                <i className="ri-checkbox-circle-line w-5 h-5 flex items-center justify-center text-green-600" />{copy.communityParticipation.subheading}</h3>
               <ul className="space-y-3">
                 {[
                   'Equity participation: an ownership stake rather than a payment aligns interests over the life of a mine.',
@@ -407,9 +201,7 @@ export default function MiningTechnologyExchangePage() {
             </div>
             <div className="bg-white rounded-2xl p-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
-                <i className="ri-error-warning-line w-5 h-5 flex items-center justify-center text-amber-600" />
-                What has not worked
-              </h3>
+                <i className="ri-error-warning-line w-5 h-5 flex items-center justify-center text-amber-600" />{copy.communityParticipation.subheading2}</h3>
               <ul className="space-y-3">
                 {[
                   'Agreements signed under financial pressure, which have not aged well.',
@@ -426,11 +218,7 @@ export default function MiningTechnologyExchangePage() {
           </div>
 
           <div className="max-w-4xl">
-            <p className="text-lg text-gray-700 leading-relaxed">
-              The transferable element is not the legal instrument. It is the recognition that a
-              mine operating without the consent of the people who live with its consequences is
-              carrying a risk that does not appear on a balance sheet until it does.
-            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">{copy.communityParticipation.text2}</p>
           </div>
         </div>
       </section>
@@ -472,11 +260,7 @@ export default function MiningTechnologyExchangePage() {
           ))}
         </div>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 mt-10">
-          <p className="text-sm text-gray-500 leading-relaxed">
-            Institutions named on this page are listed as the relevant Canadian capability for
-            this work. Naming them is not a claim that they have committed to, or endorsed, the
-            programme.
-          </p>
+          <p className="text-sm text-gray-500 leading-relaxed">{copy.waterAsmSocialInfrastructureAcademia.text}</p>
         </div>
       </section>
 
@@ -484,13 +268,8 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              A phased approach
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              The sequence is deliberately slow at the start, because the relationships this
-              depends on cannot be rushed.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{copy.phasedApproach.heading}</h2>
+            <p className="text-lg text-gray-600 leading-relaxed">{copy.phasedApproach.text}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -511,29 +290,13 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
-              Who takes part
-            </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-4">
-              People working in mining or mining education: policy makers, chambers of mines,
-              regional and traditional leaders, faculty and students.
-            </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
-              Delegates are vetted with each country&rsquo;s mission, chamber and ministry. This
-              is a working programme, not a travel or visa route. Each country is planned
-              separately with its own mission, ministry and chamber of mines, and delegations
-              are drawn from ministries, geological surveys and private-sector mining leadership.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Representatives of Global South missions in Canada are invited to visit Greater Sudbury
-              and Timmins ahead of the delegations, to see the programme before recommending it
-              home.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-5">{copy.whoTakesPartEngage.heading}</h2>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">{copy.whoTakesPartEngage.text}</p>
+            <p className="text-gray-600 leading-relaxed mb-4">{copy.whoTakesPartEngage.text2}</p>
+            <p className="text-gray-600 leading-relaxed">{copy.whoTakesPartEngage.text3}</p>
           </div>
           <div className="bg-gray-50 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-5">
-              How to engage with the programme
-            </h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-5">{copy.whoTakesPartEngage.subheading}</h3>
             <ul className="space-y-4">
               {[
                 'Diplomatic missions and ministries: delegation endorsement, delegate selection and protocol.',
@@ -556,71 +319,48 @@ export default function MiningTechnologyExchangePage() {
       <section className="py-16 md:py-20 bg-[#0A1E3D]">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Talk to the steering committee
-            </h2>
-            <p className="text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">
-              The full programme document, the day-by-day itinerary, the delegate package and
-              the partner list are available on request.
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{copy.contact.heading}</h2>
+            <p className="text-lg text-white/85 max-w-2xl mx-auto leading-relaxed">{copy.contact.text}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-white/5 border border-white/15 rounded-2xl p-7">
-              <span className="block text-xs uppercase tracking-widest text-white/50 mb-3">
-                Programme operator
-              </span>
-              <h3 className="text-white font-bold mb-1">Thrive Tours Inc.</h3>
-              <p className="text-white/60 text-sm mb-4">
-                Brad Robinson, Chief Executive Officer
-              </p>
+              <span className="block text-xs uppercase tracking-widest text-white/50 mb-3">{copy.contact.label}</span>
+              <h3 className="text-white font-bold mb-1">{copy.contact.subheading}</h3>
+              <p className="text-white/60 text-sm mb-4">{copy.contact.text2}</p>
               <a
-                href="mailto:brad@thrivetours.ca"
+                href={copy.contact.emailLink}
                 className="block text-[#3CCB7F] text-sm hover:underline break-words"
-              >
-                brad@thrivetours.ca
-              </a>
+              >{copy.contact.link}</a>
               <a
-                href="https://www.thrivetours.ca/"
+                href={copy.contact.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-white/70 text-sm mt-3 hover:text-white transition-colors"
               >
-                <span>www.thrivetours.ca</span>
+                <span>{copy.contact.label2}</span>
                 <i className="ri-external-link-line w-4 h-4 flex items-center justify-center" />
               </a>
             </div>
             <div className="bg-white/5 border border-white/15 rounded-2xl p-7">
-              <span className="block text-xs uppercase tracking-widest text-white/50 mb-3">
-                Co-host and Global South partnerships
-              </span>
-              <h3 className="text-white font-bold mb-1">
-                Livelihood Development International Initiatives
-              </h3>
-              <p className="text-white/60 text-sm mb-4">Ronald Lwabaayi, President</p>
+              <span className="block text-xs uppercase tracking-widest text-white/50 mb-3">{copy.contact.label3}</span>
+              <h3 className="text-white font-bold mb-1">{copy.contact.subheading2}</h3>
+              <p className="text-white/60 text-sm mb-4">{copy.contact.text3}</p>
               <a
-                href="mailto:admin@ldiinitiatives.org"
+                href={copy.contact.emailLink2}
                 className="block text-[#3CCB7F] text-sm hover:underline break-words"
-              >
-                admin@ldiinitiatives.org
-              </a>
-              <a href="tel:+16476563026" className="block text-white/70 text-sm mt-2">
-                +1 647 656 3026
-              </a>
+              >{copy.contact.link2}</a>
+              <a href={copy.contact.phoneLink} className="block text-white/70 text-sm mt-2">{copy.contact.link3}</a>
             </div>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a
               href="/contact"
               className="bg-[#3CCB7F] text-[#0A1E3D] px-8 py-4 rounded-lg font-semibold hover:bg-[#2EB06C] transition-colors cursor-pointer whitespace-nowrap text-center"
-            >
-              Request the Programme Document
-            </a>
+            >{copy.contact.link4}</a>
             <a
               href="/partners"
               className="bg-white/10 text-white border border-white/25 px-8 py-4 rounded-lg font-semibold hover:bg-white/15 transition-colors cursor-pointer whitespace-nowrap text-center"
-            >
-              Our Partners
-            </a>
+            >{copy.contact.link5}</a>
           </div>
         </div>
       </section>

@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import copy from '../../content/pages/faq.json';
+// Text, images and links: src/content/pages/faq.json (editable in the website editors).
 
 interface FAQItem {
   question: string;
@@ -10,68 +12,7 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const faqs: FAQItem[] = [
-    {
-      category: 'General',
-      question: 'What is Livelihood Development International Initiatives (LDII)?',
-      answer: 'LDII is a Canadian nonprofit based in Toronto. We strengthen communities in Ontario through local programmes and build practical partnerships between the Global North and the Global South. Our tagline sums it up: Local Impact, Global Partnerships.'
-    },
-    {
-      category: 'General',
-      question: 'Where does LDII work?',
-      answer: 'Our office is at 3701 Chesswood Drive, Unit 315, Toronto. Local programmes run in Ontario. Internationally we work with partners in Africa and the wider Global South, including the Intergovernmental Authority on Development (IGAD), diplomatic missions and chambers of commerce.'
-    },
-    {
-      category: 'General',
-      question: 'What has LDII done so far?',
-      answer: 'LDII organized the first COVID-19 Remembrance Parade and Candlelight Vigil in Toronto (October 1, 2023), convened the 1st International Post-COVID Conference with IGAD in Toronto (July 11–13, 2024) and the 2nd in Brampton (September 8–10, 2025), and hosts African delegations in Ontario. Our Impact page has the full record.'
-    },
-    {
-      category: 'Programmes',
-      question: 'What are LDII’s international focus areas?',
-      answer: 'Six areas: climate resilience and environmental sustainability; mining, technology and innovation; trade, entrepreneurship and economic development; health and social resilience; food security and agriculture; and investment and economic partnerships. The International Focus page explains each one.'
-    },
-    {
-      category: 'Programmes',
-      question: 'What local programmes does LDII run?',
-      answer: 'Six local programmes in Ontario: newcomer integration and settlement support; youth employment and skills; youth safety and crime prevention; youth wellbeing; community partnerships; and support for seniors. The Local Programmes page explains who can benefit and how.'
-    },
-    {
-      category: 'Programmes',
-      question: 'How can I take part in a programme?',
-      answer: 'Email admin@ldiinitiatives.org or call +1 647 656 3026 and tell us a little about yourself or the person you are referring. We will point you to the right programme or partner.'
-    },
-    {
-      category: 'Partnerships',
-      question: 'How can my organization partner with LDII?',
-      answer: 'We work with governments, diplomatic missions, businesses, universities, colleges and community organizations. Write to admin@ldiinitiatives.org with a short note on what you have in mind, or see the Partners page.'
-    },
-    {
-      category: 'Partnerships',
-      question: 'What is the Global South–Canada Mining & Technology Transfer Mission?',
-      answer: "Every June, government and industry delegations from across the Global South visit Greater Sudbury to see its mining ecosystem at work: its mines, suppliers, technology and research. The mission then heads north and ends at the Canadian Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc. The next mission is in June 2027."
-    },
-    {
-      category: 'Support',
-      question: 'How can I support LDII?',
-      answer: 'You can make a pledge on our Donate page, volunteer, or partner with us. If you would like to give, email admin@ldiinitiatives.org and we will confirm the payment options with you. LDII is a Canadian nonprofit, not a registered charity, so gifts are not eligible for a charitable tax receipt.'
-    },
-    {
-      category: 'Events',
-      question: 'How do I hear about upcoming events?',
-      answer: 'Upcoming conferences and delegations are listed on the Upcoming Events page. You can also subscribe to the newsletter at the bottom of every page, or follow LDII on social media.'
-    },
-    {
-      category: 'Contact',
-      question: 'How can I contact LDII?',
-      answer: 'Call +1 647 656 3026 or email admin@ldiinitiatives.org. Our office is at 3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6.'
-    },
-    {
-      category: 'Contact',
-      question: 'How can media contact LDII?',
-      answer: 'Email admin@ldiinitiatives.org or call +1 647 656 3026, or use the Media Inquiries form.'
-    }
-  ];
+  const faqs: FAQItem[] = copy.faqs;
 
 
   useEffect(() => {
@@ -98,7 +39,7 @@ export default function FAQPage() {
     };
   }, [faqs]);
 
-  const categories = ['all', 'General', 'Programmes', 'Partnerships', 'Support', 'Events', 'Contact'];
+  const categories = copy.categories;
 
   const filteredFAQs = activeCategory === 'all' 
     ? faqs 
@@ -113,12 +54,8 @@ export default function FAQPage() {
       {/* Hero Section */}
       <section id="hero" className="bg-gradient-to-br from-green-600 to-emerald-700 py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-xl text-white/90 max-w-3xl mx-auto">
-            Find answers to common questions about LDII, our programs, partnerships, and how you can get involved.
-          </p>
+          <h1 className="text-5xl font-bold text-white mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl text-white/90 max-w-3xl mx-auto">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -187,25 +124,17 @@ export default function FAQPage() {
 
           {/* Contact CTA */}
           <div className="mt-16 text-center bg-white rounded-2xl shadow-lg p-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Still Have Questions?
-            </h2>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Can't find the answer you're looking for? Our team is here to help. Reach out to us directly.
-            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">{copy.contactCta.heading}</h2>
+            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">{copy.contactCta.text}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="/contact#hero"
                 className="bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Contact Us
-              </a>
+              >{copy.contactCta.link}</a>
               <a
-                href="mailto:admin@ldiinitiatives.org"
+                href={copy.contactCta.emailLink}
                 className="bg-white text-green-600 border-2 border-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-green-50 transition-colors cursor-pointer whitespace-nowrap"
-              >
-                Email Us
-              </a>
+              >{copy.contactCta.link2}</a>
             </div>
           </div>
         </div>

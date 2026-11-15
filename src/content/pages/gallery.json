@@ -1,0 +1,36 @@
+{
+  "categoryTabComponent": {
+    "image": "https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1779929426/2nd_Post_covid_cvdox1.jpg",
+    "imageAlt": "LDII Gallery",
+    "text": "Gallery",
+    "text2": "Moments of Impact, Stories of Transformation",
+    "label": " photographs across ",
+    "label2": " collections",
+    "ariaLabel": "Photo albums"
+  },
+  "overviewTabOnlyVisibleWhen": {
+    "text": "Back to Overview"
+  },
+  "sectionHeader": {
+    "text": " — click any to preview",
+    "button": "View All ",
+    "button2": " Photos"
+  },
+  "viewAllBottomButtonMobile": {
+    "button": "View All ",
+    "button2": " Photos"
+  },
+  "properMasonryGridWithVisible": {
+    "text": "No photos found in this category.",
+    "button": "Back to Gallery Overview"
+  },
+  "topBar": {
+    "title": "Toggle caption"
+  },
+  "leftClickZone": {
+    "title": "Previous image"
+  },
+  "rightClickZone": {
+    "title": "Next image"
+  }
+}

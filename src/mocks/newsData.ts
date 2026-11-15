@@ -1,5 +1,8 @@
 /** LDII updates. The list is in src/content/news.json (editable in the website editors). */
-import news from '../content/news.json';
+import newsRaw from '../content/news.json';
+import { normalize } from '../content/normalize';
+
+const news = normalize(newsRaw);
 
 export interface NewsArticle {
   title: string;

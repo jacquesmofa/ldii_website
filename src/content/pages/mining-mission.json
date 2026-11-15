@@ -1,0 +1,242 @@
+{
+  "itinerary": [
+    {
+      "day": "Day 1",
+      "title": "Arrive Toronto",
+      "body": "Airport reception, hotel, evening welcome and programme briefing."
+    },
+    {
+      "day": "Day 2",
+      "title": "To Greater Sudbury",
+      "body": "Coach north. Welcome reception with the Greater Sudbury Chamber of Commerce and member mining companies."
+    },
+    {
+      "day": "Day 3",
+      "title": "Heritage and learning",
+      "body": "Dynamic Earth underground tour. Laurentian University, the Goodman School of Mines and MIRARCO. Regreening sites."
+    },
+    {
+      "day": "Day 4",
+      "title": "NORCAT training",
+      "body": "Safety systems, underground orientation and hands-on skills training in an operating mine at the NORCAT Underground Centre."
+    },
+    {
+      "day": "Day 5",
+      "title": "Technology and suppliers",
+      "body": "Underground technology demonstrations, business meetings with MineConnect suppliers, college sessions with Cambrian College and Collège Boréal."
+    },
+    {
+      "day": "Day 6",
+      "title": "Treaty orientation",
+      "body": "Road north with Indigenous facilitators and invited First Nations hosts, arriving in Timmins via Kirkland Lake."
+    },
+    {
+      "day": "Day 7",
+      "title": "Canadian Mining Expo",
+      "body": "Expo floor, First Nations Forum and projects pipeline sessions. Timmins Chamber of Commerce meetings. Northern College, Haileybury School of Mines."
+    },
+    {
+      "day": "Day 8",
+      "title": "Site visit and return",
+      "body": "Site visit in the Timmins camp, subject to operator approval. Closing session with agreed next steps. Flight to Toronto."
+    }
+  ],
+  "ecosystem": [
+    {
+      "label": "Operators",
+      "body": "Nickel and copper producers in Sudbury; gold and base metal operations in Timmins. Working mines at scale, a mature health and safety culture, and closure planning built into operations.",
+      "icon": "ri-landscape-line"
+    },
+    {
+      "label": "Supply and services",
+      "body": "MineConnect, the association for Northern Ontario mining supply firms. Equipment, automation, battery electric fleets, software and engineering, from suppliers who can follow up in delegates’ home countries.",
+      "icon": "ri-tools-line"
+    },
+    {
+      "label": "Training and testing",
+      "body": "NORCAT Underground Centre, Onaping. Hands-on skills training and live technology demonstrations underground, in an operating mine.",
+      "icon": "ri-award-line"
+    },
+    {
+      "label": "Applied research",
+      "body": "MIRARCO, CEMI and MERC. Research on safety, productivity, mineral exploration and the rehabilitation of mined land.",
+      "icon": "ri-flask-line"
+    },
+    {
+      "label": "University",
+      "body": "Laurentian University: Goodman School of Mines, Bharti School of Engineering and Harquail School of Earth Sciences. Programmes across the full mining cycle.",
+      "icon": "ri-building-4-line"
+    },
+    {
+      "label": "College diplomas",
+      "body": "Cambrian College and Collège Boréal in Sudbury; Northern College in Timmins. Technical diplomas and the skilled trades, with French-language delivery for Francophone partners.",
+      "icon": "ri-book-open-line"
+    },
+    {
+      "label": "Market and deal-making",
+      "body": "Canadian Mining Expo, Timmins. Exhibits each June, a First Nations Forum, and a projects pipeline series where suppliers and buyers meet.",
+      "icon": "ri-exchange-line"
+    },
+    {
+      "label": "Municipal leadership",
+      "body": "City of Greater Sudbury and City of Timmins. Two mining cities whose economic development offices work directly with industry and welcome international delegations.",
+      "icon": "ri-government-line"
+    }
+  ],
+  "focusAreas": [
+    {
+      "title": "Mineral exploration",
+      "body": "Finding and defining deposits before money is spent on digging. Field-based geology, sampling and mapping methods suited to small claims, and French-language training for Francophone partners.",
+      "partners": "Laurentian University · Harquail School of Earth Sciences · MERC · Collège Boréal"
+    },
+    {
+      "title": "Gold recovery",
+      "body": "Getting more gold from the same ore, without mercury. Mineral processing and recovery methods, cleaner alternatives to mercury amalgamation, and the economics of higher yield.",
+      "partners": "MIRARCO · Bharti School of Engineering · Northern College"
+    },
+    {
+      "title": "Environmental protection",
+      "body": "Protecting water, land and the health of mining communities. Water monitoring, tailings management and land restoration, taught in the city that turned a damaged landscape back into forest.",
+      "partners": "Vale Living with Lakes Centre · MIRARCO · City of Greater Sudbury Regreening"
+    },
+    {
+      "title": "Mining safety",
+      "body": "Sending every miner home at the end of every shift. Hands-on underground safety training, ground control, ventilation and emergency response, plus programmes to train local trainers.",
+      "partners": "NORCAT Underground Centre · Cambrian College · Goodman School of Mines"
+    },
+    {
+      "title": "Appropriate technologies",
+      "body": "Equipment that fits the scale, budget and skills of a small operation. Matching small-scale operations with right-sized, maintainable equipment, sold with training and after-sales support.",
+      "partners": "MineConnect members · NORCAT · CEMI"
+    }
+  ],
+  "transfers": [
+    {
+      "title": "Technical skills",
+      "body": "Trained operators and trainers, and safety systems that outlast the visit."
+    },
+    {
+      "title": "Cleaner processing",
+      "body": "Safer, mercury-free options for artisanal and small-scale gold workings."
+    },
+    {
+      "title": "Credentials",
+      "body": "Canadian programmes delivered in-country, so students qualify without relocating."
+    },
+    {
+      "title": "Community participation",
+      "body": "Practical models for consultation, benefit agreements and revenue sharing."
+    },
+    {
+      "title": "Technology",
+      "body": "Equipment sold with training and after-sales support, not boxes shipped without know-how."
+    },
+    {
+      "title": "Closure and restoration",
+      "body": "Closure plans written before a mine opens, and land returned to use when it ends."
+    }
+  ],
+  "phases": [
+    {
+      "period": "2026 – 2027",
+      "title": "Foundation",
+      "body": "Institutional engagement, delegation development and the first mission to Northern Ontario. Relationships established before commitments are made."
+    },
+    {
+      "period": "2027 – 2029",
+      "title": "Demonstration",
+      "body": "Technology partnerships formed during the mission tested in operating conditions. Training delivery piloted in partner states."
+    },
+    {
+      "period": "2029 – 2032",
+      "title": "Capability",
+      "body": "In-country curriculum delivery at scale. Supplier relationships matured into service agreements. Community agreement practice exchanged in both directions."
+    },
+    {
+      "period": "Beyond 2032",
+      "title": "Continuity",
+      "body": "An annual programme and institutional partnerships operating independently of the founding organisations."
+    }
+  ],
+  "hero": {
+    "backgroundImage": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1920,h_800,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg",
+    "label": "Annual Global South Mining Mission to Greater Sudbury",
+    "title": "Global South–Canada Mining & Technology Transfer Mission",
+    "text": "Every June, government and industry delegations from across the Global South come to Greater Sudbury to see one of the world’s leading mining ecosystems at work: its mines, suppliers, technologies and research institutions. They meet the people behind them and look for partnerships that bring proven Canadian know-how to mining in their own countries. The mission then travels north and ends at the Canadian Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc. Next mission: June 2027."
+  },
+  "deliveryPartners": {
+    "url": "https://www.thrivetours.ca/",
+    "image": "https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_360/v1792410688/logo-2026_thrive_tours_kbecbo.webp",
+    "imageAlt": "Thrive Tours logo",
+    "label": "Co-host",
+    "text": "An Indigenous-led experiential tourism and education company based at Batchewana First Nation. Thrive Tours designs and hosts experiential programmes for universities, international groups and visiting delegations, and brings the First Nations relationships and treaty knowledge at the heart of responsible mining in Northern Ontario.",
+    "image2": "https://res.cloudinary.com/dzppzxpad/image/upload/q_auto/f_auto/v1781702619/Circular_LDII_bewv0j.png",
+    "imageAlt2": "LDII logo",
+    "label2": "Co-host",
+    "text2": "A Canadian nonprofit organization that facilitates technology transfer from the Global North to the Global South. LDII works directly with diplomatic missions of Global South countries, ministries responsible for mining, and chambers of mines to build practical, lasting partnerships."
+  },
+  "thePremise": {
+    "heading": "The premise: capability, not equipment",
+    "text": "The constraint in much of mining across the Global South is not the absence of equipment. It is the capability to operate, maintain and sustain it. Suppliers sell machinery and leave. Training is sold separately, if at all, and rarely delivered on site.",
+    "text2": "That observation comes from our conversations with Global South diplomatic missions in Canada.",
+    "text3": "It is the organising idea of the mission. Every layer of the Northern Ontario ecosystem is a source of that know-how, and most of it sits within an hour’s drive of Greater Sudbury."
+  },
+  "itinerarySection": {
+    "heading": "Proposed programme: eight days in Northern Ontario",
+    "text": "Built around the Canadian Mining Expo in Timmins. Days and visits are being confirmed with hosts and may change."
+  },
+  "ecosystemSection": {
+    "heading": "Why Northern Ontario",
+    "text": "Two mining regions about four hours apart give delegates the full life cycle in one programme: discovery, deep mining, processing, supply, research, closure and land restoration. Both have mined for more than a century and are still working."
+  },
+  "focusAreasSection": {
+    "heading": "Five focus areas",
+    "text": "Each focus area is matched to institutions that already do this work, so small-scale miners learn from the people and places that practise it every day.",
+    "label": "0"
+  },
+  "whatTransfers": {
+    "heading": "What transfers",
+    "text": "Delegates should leave with relationships and capability, not brochures. An expo visit on its own sends people home with documents and little else; this programme is built so that every week in Canada opens work that continues at home."
+  },
+  "communityParticipation": {
+    "heading": "Community participation and negotiated benefit",
+    "text": "The programme crosses two treaty territories. Greater Sudbury sits in Robinson Huron Treaty territory, on the traditional lands of Atikameksheng Anishnawbek and Wahnapitae First Nation. Timmins sits in Treaty 9 territory. These are specific Nations with their own laws, leadership and priorities, and the programme treats them that way.",
+    "subheading": "What works",
+    "subheading2": "What has not worked",
+    "text2": "The transferable element is not the legal instrument. It is the recognition that a mine operating without the consent of the people who live with its consequences is carrying a risk that does not appear on a balance sheet until it does."
+  },
+  "waterAsmSocialInfrastructureAcademia": {
+    "text": "Institutions named on this page are listed as the relevant Canadian capability for this work. Naming them is not a claim that they have committed to, or endorsed, the programme."
+  },
+  "phasedApproach": {
+    "heading": "A phased approach",
+    "text": "The sequence is deliberately slow at the start, because the relationships this depends on cannot be rushed."
+  },
+  "whoTakesPartEngage": {
+    "heading": "Who takes part",
+    "text": "People working in mining or mining education: policy makers, chambers of mines, regional and traditional leaders, faculty and students.",
+    "text2": "Delegates are vetted with each country’s mission, chamber and ministry. This is a working programme, not a travel or visa route. Each country is planned separately with its own mission, ministry and chamber of mines, and delegations are drawn from ministries, geological surveys and private-sector mining leadership.",
+    "text3": "Representatives of Global South missions in Canada are invited to visit Greater Sudbury and Timmins ahead of the delegations, to see the programme before recommending it home.",
+    "subheading": "How to engage with the programme"
+  },
+  "contact": {
+    "heading": "Talk to the steering committee",
+    "text": "The full programme document, the day-by-day itinerary, the delegate package and the partner list are available on request.",
+    "label": "Programme operator",
+    "subheading": "Thrive Tours Inc.",
+    "text2": "Brad Robinson, Chief Executive Officer",
+    "emailLink": "mailto:brad@thrivetours.ca",
+    "link": "brad@thrivetours.ca",
+    "url": "https://www.thrivetours.ca/",
+    "label2": "www.thrivetours.ca",
+    "label3": "Co-host and Global South partnerships",
+    "subheading2": "Livelihood Development International Initiatives",
+    "text3": "Ronald Lwabaayi, President",
+    "emailLink2": "mailto:admin@ldiinitiatives.org",
+    "link2": "admin@ldiinitiatives.org",
+    "phoneLink": "tel:+16476563026",
+    "link3": "+1 647 656 3026",
+    "link4": "Request the Programme Document",
+    "link5": "Our Partners"
+  }
+}

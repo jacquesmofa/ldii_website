@@ -1,0 +1,81 @@
+{
+  "mediaResources": [
+    {
+      "title": "Press Releases",
+      "description": "Latest announcements and official statements",
+      "icon": "ri-newspaper-line",
+      "link": "/events/press-releases"
+    },
+    {
+      "title": "Media Kit",
+      "description": "Logos and photos, sent on request",
+      "icon": "ri-folder-image-line",
+      "link": "mailto:admin@ldiinitiatives.org?subject=Media%20kit%20request"
+    },
+    {
+      "title": "Our Impact",
+      "description": "The conferences and engagements LDII has delivered",
+      "icon": "ri-file-chart-line",
+      "link": "/impact"
+    },
+    {
+      "title": "Photo Gallery",
+      "description": "High-resolution images from our programs",
+      "icon": "ri-gallery-line",
+      "link": "/events/gallery"
+    }
+  ],
+  "heroSection": {
+    "title": "Media Inquiries",
+    "text": "Press contacts, media resources, and information for journalists covering our work"
+  },
+  "mediaContact": {
+    "heading": "Press Contact Information",
+    "text": "Journalists and media professionals can reach LDII directly for information about our programmes, conferences and partnerships, for interviews with our President, and for photos.",
+    "text2": "Media Relations Team",
+    "text3": "Communications Department",
+    "text4": "Email",
+    "emailLink": "mailto:admin@ldiinitiatives.org",
+    "link": "admin@ldiinitiatives.org",
+    "text5": "Press Line",
+    "phoneLink": "tel:+16476563026",
+    "link2": "+1 647 656 3026",
+    "text6": "Response Time",
+    "text7": "We reply as soon as we can. Please mention your deadline.",
+    "subheading": "Submit a Media Inquiry",
+    "fieldLabel": "Full Name *",
+    "fieldLabel2": "Media Organization *",
+    "fieldLabel3": "Email *",
+    "fieldLabel4": "Phone *",
+    "fieldLabel5": "Media Type *",
+    "option": "Select type",
+    "option2": "Newspaper",
+    "option3": "Magazine",
+    "option4": "Television",
+    "option5": "Radio",
+    "option6": "Online Publication",
+    "option7": "Podcast",
+    "option8": "Blog",
+    "option9": "Other",
+    "fieldLabel6": "Deadline",
+    "fieldLabel7": "Subject *",
+    "placeholder": "Brief description of your story",
+    "fieldLabel8": "Inquiry Details *",
+    "placeholder2": "Please provide details about your inquiry, interview requests, or information needed...",
+    "text8": "/500"
+  },
+  "mediaResourcesSection": {
+    "heading": "Media Resources"
+  },
+  "recentNews": {
+    "heading": "Recent News",
+    "link": "See the photos"
+  },
+  "interviewRequests": {
+    "heading": "Interview Requests",
+    "text": "Our leadership team and subject matter experts are available for interviews on topics related to international development, climate action, health systems, and more.",
+    "emailLink": "mailto:admin@ldiinitiatives.org",
+    "link": "Request an Interview",
+    "link2": "Meet Our Team"
+  }
+}

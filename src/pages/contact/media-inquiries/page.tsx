@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { submitFormToInbox } from '@/lib/web3forms';
 import { getPastEvents } from '../../../mocks/eventsData';
+import copy from '../../../content/pages/media-inquiries.json';
+// Text, images and links: src/content/pages/media-inquiries.json (editable in the website editors).
 
 export default function MediaInquiriesPage() {
   const [formData, setFormData] = useState({
@@ -46,32 +48,7 @@ export default function MediaInquiriesPage() {
     setIsSubmitting(false);
   };
 
-  const mediaResources = [
-    {
-      title: 'Press Releases',
-      description: 'Latest announcements and official statements',
-      icon: 'ri-newspaper-line',
-      link: '/events/press-releases'
-    },
-    {
-      title: 'Media Kit',
-      description: 'Logos and photos, sent on request',
-      icon: 'ri-folder-image-line',
-      link: 'mailto:admin@ldiinitiatives.org?subject=Media%20kit%20request'
-    },
-    {
-      title: 'Our Impact',
-      description: 'The conferences and engagements LDII has delivered',
-      icon: 'ri-file-chart-line',
-      link: '/impact'
-    },
-    {
-      title: 'Photo Gallery',
-      description: 'High-resolution images from our programs',
-      icon: 'ri-gallery-line',
-      link: '/events/gallery'
-    }
-  ];
+  const mediaResources = copy.mediaResources;
 
   const recentNews = getPastEvents().slice(0, 3).map((event) => ({
     title: event.title,
@@ -86,10 +63,8 @@ export default function MediaInquiriesPage() {
       <section className="relative bg-gradient-to-br from-[#0A1E3D] to-[#0A1E3D] text-white py-20">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/80 via-[#0A1E3D]/70 to-[#0A1E3D]/80"></div>
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Media Inquiries</h1>
-          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl">
-            Press contacts, media resources, and information for journalists covering our work
-          </p>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">{copy.heroSection.title}</h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl">{copy.heroSection.text}</p>
         </div>
       </section>
 
@@ -98,10 +73,8 @@ export default function MediaInquiriesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Press Contact Information</h2>
-              <p className="text-gray-700 leading-relaxed mb-8">
-                Journalists and media professionals can reach LDII directly for information about our programmes, conferences and partnerships, for interviews with our President, and for photos.
-              </p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6">{copy.mediaContact.heading}</h2>
+              <p className="text-gray-700 leading-relaxed mb-8">{copy.mediaContact.text}</p>
 
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -109,8 +82,8 @@ export default function MediaInquiriesPage() {
                     <i className="ri-user-line w-6 h-6 flex items-center justify-center text-[#3CCB7F]"></i>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Media Relations Team</div>
-                    <div className="text-gray-600">Communications Department</div>
+                    <div className="font-semibold text-gray-900 mb-1">{copy.mediaContact.text2}</div>
+                    <div className="text-gray-600">{copy.mediaContact.text3}</div>
                   </div>
                 </div>
 
@@ -119,10 +92,8 @@ export default function MediaInquiriesPage() {
                     <i className="ri-mail-line w-6 h-6 flex items-center justify-center text-[#3CCB7F]"></i>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Email</div>
-                    <a href="mailto:admin@ldiinitiatives.org" className="text-tech-teal-800 hover:text-ldii-navy block break-all">
-                      admin@ldiinitiatives.org
-                    </a>
+                    <div className="font-semibold text-gray-900 mb-1">{copy.mediaContact.text4}</div>
+                    <a href={copy.mediaContact.emailLink} className="text-tech-teal-800 hover:text-ldii-navy block break-all">{copy.mediaContact.link}</a>
                   </div>
                 </div>
 
@@ -131,10 +102,8 @@ export default function MediaInquiriesPage() {
                     <i className="ri-phone-line w-6 h-6 flex items-center justify-center text-[#3CCB7F]"></i>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Press Line</div>
-                    <a href="tel:+16476563026" className="text-tech-teal-800 hover:text-ldii-navy">
-                      +1 647 656 3026
-                    </a>
+                    <div className="font-semibold text-gray-900 mb-1">{copy.mediaContact.text5}</div>
+                    <a href={copy.mediaContact.phoneLink} className="text-tech-teal-800 hover:text-ldii-navy">{copy.mediaContact.link2}</a>
                   </div>
                 </div>
 
@@ -143,19 +112,19 @@ export default function MediaInquiriesPage() {
                     <i className="ri-time-line w-6 h-6 flex items-center justify-center text-[#3CCB7F]"></i>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Response Time</div>
-                    <div className="text-gray-600">We reply as soon as we can. Please mention your deadline.</div>
+                    <div className="font-semibold text-gray-900 mb-1">{copy.mediaContact.text6}</div>
+                    <div className="text-gray-600">{copy.mediaContact.text7}</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Submit a Media Inquiry</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">{copy.mediaContact.subheading}</h3>
               <form onSubmit={handleSubmit} id="media-inquiry-form" className="space-y-4 relative">
                 <input type="text" name="website_alt" tabIndex={-1} autoComplete="off" aria-hidden="true" readOnly className="form-guard" />
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel}</label>
                   <input
                     type="text"
                     name="name"
@@ -167,7 +136,7 @@ export default function MediaInquiriesPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Media Organization *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel2}</label>
                   <input
                     type="text"
                     name="organization"
@@ -180,7 +149,7 @@ export default function MediaInquiriesPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel3}</label>
                     <input
                       type="email"
                       name="email"
@@ -191,7 +160,7 @@ export default function MediaInquiriesPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Phone *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel4}</label>
                     <input
                       type="tel"
                       name="phone"
@@ -205,7 +174,7 @@ export default function MediaInquiriesPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Media Type *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel5}</label>
                     <select
                       name="mediaType"
                       value={formData.mediaType}
@@ -213,19 +182,19 @@ export default function MediaInquiriesPage() {
                       className="w-full px-4 py-3 pr-8 rounded-lg border border-gray-300 focus:outline-none focus:border-[#3CCB7F] text-base"
                       required
                     >
-                      <option value="">Select type</option>
-                      <option value="Newspaper">Newspaper</option>
-                      <option value="Magazine">Magazine</option>
-                      <option value="TV">Television</option>
-                      <option value="Radio">Radio</option>
-                      <option value="Online">Online Publication</option>
-                      <option value="Podcast">Podcast</option>
-                      <option value="Blog">Blog</option>
-                      <option value="Other">Other</option>
+                      <option value="">{copy.mediaContact.option}</option>
+                      <option value="Newspaper">{copy.mediaContact.option2}</option>
+                      <option value="Magazine">{copy.mediaContact.option3}</option>
+                      <option value="TV">{copy.mediaContact.option4}</option>
+                      <option value="Radio">{copy.mediaContact.option5}</option>
+                      <option value="Online">{copy.mediaContact.option6}</option>
+                      <option value="Podcast">{copy.mediaContact.option7}</option>
+                      <option value="Blog">{copy.mediaContact.option8}</option>
+                      <option value="Other">{copy.mediaContact.option9}</option>
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Deadline</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel6}</label>
                     <input
                       type="date"
                       name="deadline"
@@ -237,20 +206,20 @@ export default function MediaInquiriesPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Subject *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel7}</label>
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#3CCB7F] text-base"
-                    placeholder="Brief description of your story"
+                    placeholder={copy.mediaContact.placeholder}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Inquiry Details *</label>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">{copy.mediaContact.fieldLabel8}</label>
                   <textarea
                     name="inquiry"
                     value={formData.inquiry}
@@ -258,10 +227,10 @@ export default function MediaInquiriesPage() {
                     rows={5}
                     maxLength={500}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:border-[#3CCB7F] resize-none text-base"
-                    placeholder="Please provide details about your inquiry, interview requests, or information needed..."
+                    placeholder={copy.mediaContact.placeholder2}
                     required
                   ></textarea>
-                  <div className="text-sm text-gray-500 mt-1 text-right">{formData.inquiry.length}/500</div>
+                  <div className="text-sm text-gray-500 mt-1 text-right">{formData.inquiry.length}{copy.mediaContact.text8}</div>
                 </div>
 
                 <button
@@ -283,7 +252,7 @@ export default function MediaInquiriesPage() {
       {/* Media Resources */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Media Resources</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{copy.mediaResourcesSection.heading}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {mediaResources.map((resource, index) => (
               <a
@@ -305,7 +274,7 @@ export default function MediaInquiriesPage() {
       {/* Recent News */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Recent News</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">{copy.recentNews.heading}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {recentNews.map((news, index) => (
               <div key={index} className="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
@@ -317,9 +286,7 @@ export default function MediaInquiriesPage() {
                 <div className="p-6">
                   <div className="text-sm text-tech-teal-800 font-semibold mb-2">{news.date}</div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3">{news.title}</h3>
-                  <a href={news.link} className="text-[#0A1E3D] hover:text-teal-700 font-semibold inline-flex items-center">
-                    See the photos
-                    <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center ml-1"></i>
+                  <a href={news.link} className="text-[#0A1E3D] hover:text-teal-700 font-semibold inline-flex items-center">{copy.recentNews.link}<i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center ml-1"></i>
                   </a>
                 </div>
               </div>
@@ -331,23 +298,17 @@ export default function MediaInquiriesPage() {
       {/* Interview Requests */}
       <section className="py-16 bg-[#0A1E3D] text-white">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Interview Requests</h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Our leadership team and subject matter experts are available for interviews on topics related to international development, climate action, health systems, and more.
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">{copy.interviewRequests.heading}</h2>
+          <p className="text-xl text-gray-300 mb-8">{copy.interviewRequests.text}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:admin@ldiinitiatives.org"
+              href={copy.interviewRequests.emailLink}
               className="inline-block bg-[#3CCB7F] text-[#0A1E3D] hover:bg-[#2EB06C] px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Request an Interview
-            </a>
+            >{copy.interviewRequests.link}</a>
             <a
               href="/about/who-we-are"
               className="inline-block bg-white text-[#0A1E3D] hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors cursor-pointer whitespace-nowrap"
-            >
-              Meet Our Team
-            </a>
+            >{copy.interviewRequests.link2}</a>
           </div>
         </div>
       </section>

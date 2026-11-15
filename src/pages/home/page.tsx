@@ -7,6 +7,8 @@ import PartnerCards from '../../components/feature/PartnerCards';
 import { ABOUT, INTERNATIONAL, LOCAL, MINING_MISSION, ORG, PARADE_VIDEO, PHOTOS, POSTS, photo } from '../../content/ldii';
 import { getPastEvents } from '../../mocks/eventsData';
 import { confirmedPartners } from '../../mocks/partnersData';
+import copy from '../../content/pages/home.json';
+// Text, images and links: src/content/pages/home.json (editable in the website editors).
 
 function Hero() {
   const [watching, setWatching] = useState(false);
@@ -22,30 +24,21 @@ function Hero() {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/80 to-ldii-ink/30" aria-hidden="true" />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 md:pt-32 md:pb-28 min-h-[78vh] flex flex-col justify-center">
         <Eyebrow light>{ORG.name}</Eyebrow>
-        <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl">
-          Local Impact,
-          <br />
-          <span className="text-tech-teal-500">Global Partnerships.</span>
+        <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl">{copy.hero.title}<br />
+          <span className="text-tech-teal-500">{copy.hero.label}</span>
         </h1>
-        <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">
-          We empower communities in Ontario and around the world to thrive amidst systemic crises, through leadership,
-          research, strategic partnership and human capital development that build resilience against global shocks.
-        </p>
+        <p className="mt-6 text-lg md:text-xl text-white/85 max-w-2xl leading-relaxed">{copy.hero.text}</p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Link to="/international-focus" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400">
-            Explore our work <i className="ri-arrow-right-line" aria-hidden="true" />
+          <Link to="/international-focus" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400">{copy.hero.text2}<i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
           <button
             type="button"
             onClick={() => setWatching(true)}
             className="inline-flex justify-center items-center gap-2 border border-white/40 px-7 py-4 rounded-[3px] font-semibold hover:bg-white/10"
           >
-            <i className="ri-play-circle-line text-xl" aria-hidden="true" /> Watch the parade film
-          </button>
+            <i className="ri-play-circle-line text-xl" aria-hidden="true" />{copy.hero.button}</button>
         </div>
-        <p className="mt-14 text-sm text-white/70 max-w-xl">
-          In the background: the world’s first international Post-COVID parade and candlelight vigil, organized by LDII in Toronto on October 1, 2023.
-        </p>
+        <p className="mt-14 text-sm text-white/70 max-w-xl">{copy.hero.text3}</p>
       </div>
 
       {watching && (
@@ -64,7 +57,7 @@ function Hero() {
             type="button"
             onClick={() => setWatching(false)}
             className="absolute top-4 right-4 w-12 h-12 rounded-full bg-white/10 hover:bg-white/25 text-white text-2xl flex items-center justify-center"
-            aria-label="Close video"
+            aria-label={copy.hero.ariaLabel}
           >
             <i className="ri-close-line" aria-hidden="true" />
           </button>
@@ -76,20 +69,16 @@ function Hero() {
 
 /** Three doors into the site, sitting across the bottom edge of the opening film. */
 function QuickLinks() {
-  const doors = [
-    { kicker: 'In Ontario', title: 'Local programmes', text: 'Newcomers, youth and seniors.', href: '/local-programmes', img: PHOTOS.offices },
-    { kicker: 'Global North–South', title: 'International focus', text: 'Six areas of partnership.', href: '/international-focus', img: PHOTOS.southAfrica },
-    { kicker: 'Every June', title: 'Mining mission to Greater Sudbury', text: 'Global South delegations in Northern Ontario.', href: '/programs/mining-technology-exchange', img: PHOTOS.sudbury },
-  ];
+  const doors = copy.doors;
   return (
-    <section className="relative z-10 bg-white" aria-label="Start here">
+    <section className="relative z-10 bg-white" aria-label={copy.quickLinks.ariaLabel}>
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <ul className="grid md:grid-cols-3 md:-mt-14 shadow-[0_18px_50px_-20px_rgba(10,30,61,0.35)] bg-white divide-y md:divide-y-0 md:divide-x divide-gray-200 border-t-[3px] border-tech-teal-600">
           {doors.map((d) => (
             <li key={d.href}>
               <Link to={d.href} className="group flex items-center gap-5 p-5 lg:p-6 h-full hover:bg-ldii-mist transition-colors">
                 <span className="photo-zoom block w-24 h-24 flex-shrink-0">
-                  <img src={photo(d.img.id, 240, 240)} alt="" width={96} height={96} className="w-full h-full object-cover" />
+                  <img src={photo(PHOTOS[d.img as keyof typeof PHOTOS].id, 240, 240)} alt="" width={96} height={96} className="w-full h-full object-cover" />
                 </span>
                 <span className="min-w-0">
                   <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-tech-teal-800">{d.kicker}</span>
@@ -112,11 +101,11 @@ function LocalStrip() {
     <section className="bg-ldii-sand py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
         <div className="lg:col-span-4">
-          <Eyebrow>Local programmes · Ontario</Eyebrow>
+          <Eyebrow>{copy.localStrip.text}</Eyebrow>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{LOCAL.tagline}</h2>
           <p className="mt-6 text-gray-700 leading-relaxed">{LOCAL.intro[0]}</p>
           <Link to="/local-programmes" className="group mt-8 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">
-            <span className="link-line">All local programmes</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
+            <span className="link-line">{copy.localStrip.label}</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-x-8">
@@ -127,7 +116,7 @@ function LocalStrip() {
                   <img src={photo(p.image, 280, 200)} alt="" loading="lazy" width={112} height={80} className="w-full h-full object-cover" />
                 </span>
                 <span className="min-w-0">
-                  <span className="block text-xs font-semibold tracking-widest text-tech-teal-800">0{i + 1}</span>
+                  <span className="block text-xs font-semibold tracking-widest text-tech-teal-800">{copy.localStrip.label2}{i + 1}</span>
                   <span className="block mt-0.5 font-display text-lg font-semibold text-ldii-navy leading-snug group-hover:text-tech-teal-800 transition-colors">{p.title}</span>
                 </span>
               </Link>
@@ -144,7 +133,7 @@ function LogoRow() {
   const withLogos = confirmedPartners.filter((p) => p.logo);
   return (
     <div className="mt-10 flex flex-wrap items-center gap-x-12 gap-y-6 border-y border-gray-200 py-8">
-      <p className="w-full md:w-auto text-xs font-semibold uppercase tracking-[0.18em] text-gray-600">Working with</p>
+      <p className="w-full md:w-auto text-xs font-semibold uppercase tracking-[0.18em] text-gray-600">{copy.logoRow.text}</p>
       {withLogos.map((p) => (
         <a key={p.name} href={p.website} target="_blank" rel="noopener noreferrer" title={p.name} className="opacity-80 hover:opacity-100 transition-opacity">
           <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="h-12 w-auto max-w-[170px] object-contain" />
@@ -180,10 +169,8 @@ function TwoProgrammes() {
     <section className="bg-ldii-mist py-20 md:py-28" aria-labelledby="two-areas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
-          <Eyebrow>Two complementary programme areas</Eyebrow>
-          <h2 id="two-areas" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">
-            Connecting people, institutions and opportunities across Canada and internationally.
-          </h2>
+          <Eyebrow>{copy.twoProgrammes.text}</Eyebrow>
+          <h2 id="two-areas" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{copy.twoProgrammes.heading}</h2>
         </div>
         <div className="mt-14 grid lg:grid-cols-2 gap-6">
           {panels.map((p) => (
@@ -207,17 +194,12 @@ function TwoProgrammes() {
 }
 
 function WhoWeAre() {
-  const facts = [
-    { value: '10+', label: 'years of experience' },
-    { value: 'Toronto', label: 'headquarters, Ontario' },
-    { value: '2', label: 'programme areas, local and international' },
-    { value: '12', label: 'focus areas and community programmes' },
-  ];
+  const facts = copy.facts;
   return (
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6">
-          <Eyebrow>Who we are</Eyebrow>
+          <Eyebrow>{copy.whoWeAre.text}</Eyebrow>
           <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{ORG.promise}</h2>
           <p className="mt-6 text-lg text-gray-700 leading-relaxed">{ABOUT[0]}</p>
           <p className="mt-4 text-gray-700 leading-relaxed">{ABOUT[1]}</p>
@@ -232,8 +214,7 @@ function WhoWeAre() {
               </div>
             ))}
           </dl>
-          <Link to="/about" className="mt-10 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">
-            More about LDII <i className="ri-arrow-right-line" aria-hidden="true" />
+          <Link to="/about" className="mt-10 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">{copy.whoWeAre.text2}<i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
         </div>
         <div className="lg:col-span-6 grid grid-cols-5 gap-4">
@@ -241,7 +222,7 @@ function WhoWeAre() {
           <div className="col-span-2 flex flex-col gap-4">
             <img src={photo(PHOTOS.president.id, 500, 600)} alt={PHOTOS.president.alt} loading="lazy" className="rounded-2xl w-full object-cover aspect-[5/6]" />
             <Link to="/about/who-we-are/president-profile" className="rounded-2xl bg-ldii-navy text-white p-5 flex-1 flex flex-col justify-end hover:bg-tech-teal-800 transition-colors">
-              <span className="text-xs uppercase tracking-widest text-tech-teal-300">Founder &amp; President</span>
+              <span className="text-xs uppercase tracking-widest text-tech-teal-300">{copy.whoWeAre.label}</span>
               <span className="font-display text-xl font-semibold mt-1">{ORG.president}</span>
             </Link>
           </div>
@@ -257,11 +238,11 @@ function FocusStrip() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
-            <Eyebrow>International focus</Eyebrow>
+            <Eyebrow>{copy.focusStrip.text}</Eyebrow>
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{INTERNATIONAL.tagline}</h2>
           </div>
           <Link to="/international-focus" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            <span className="link-line">All six focus areas</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
+            <span className="link-line">{copy.focusStrip.label}</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -275,7 +256,7 @@ function FocusStrip() {
                   </span>
                 </div>
                 <div className="p-6">
-                  <p className="text-xs font-semibold text-gray-500 tracking-widest">0{i + 1}</p>
+                  <p className="text-xs font-semibold text-gray-500 tracking-widest">{copy.focusStrip.text2}{i + 1}</p>
                   <h3 className="mt-1 font-display text-xl font-semibold text-ldii-navy group-hover:text-tech-teal-800">{a.title}</h3>
                   <p className="mt-2 text-sm italic text-gray-600">{a.tagline}</p>
                 </div>
@@ -294,7 +275,7 @@ function MissionFeature() {
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2">
         <img src={photo(MINING_MISSION.image, 1200, 900)} alt={MINING_MISSION.imageAlt} loading="lazy" className="w-full h-full object-cover min-h-[320px]" />
         <div className="px-6 py-16 md:px-14 md:py-20">
-          <Eyebrow light>Coming next · {MINING_MISSION.when}</Eyebrow>
+          <Eyebrow light>{copy.missionFeature.text}{MINING_MISSION.when}</Eyebrow>
           <h2 className="mt-4 font-display text-3xl md:text-4xl font-semibold leading-tight">{MINING_MISSION.title}</h2>
           <p className="mt-5 text-white/85 leading-relaxed">{MINING_MISSION.summary}</p>
           <ul className="mt-6 space-y-3">
@@ -306,8 +287,7 @@ function MissionFeature() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-white/70">{MINING_MISSION.partner}.</p>
-          <Link to="/programs/mining-technology-exchange" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-[3px] font-semibold hover:bg-tech-teal-400">
-            About the mission <i className="ri-arrow-right-line" aria-hidden="true" />
+          <Link to="/programs/mining-technology-exchange" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-[3px] font-semibold hover:bg-tech-teal-400">{copy.missionFeature.text2}<i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
         </div>
       </div>
@@ -322,13 +302,11 @@ function News() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
-            <Eyebrow>In the news</Eyebrow>
-            <h2 id="in-the-news" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">
-              LDII in the news
-            </h2>
+            <Eyebrow>{copy.news.text}</Eyebrow>
+            <h2 id="in-the-news" className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{copy.news.heading}</h2>
           </div>
           <Link to="/events/news" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            <span className="link-line">All news</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
+            <span className="link-line">{copy.news.label}</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <div className="mt-12 grid gap-6">
@@ -351,11 +329,11 @@ function TrackRecord() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
-            <Eyebrow>Track record</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">Recent engagements</h2>
+            <Eyebrow>{copy.trackRecord.text}</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{copy.trackRecord.heading}</h2>
           </div>
           <Link to="/impact" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            <span className="link-line">Our full record</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
+            <span className="link-line">{copy.trackRecord.label}</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -395,11 +373,10 @@ function Mosaic() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
-            <Eyebrow light>Gallery</Eyebrow>
-            <h2 className="mt-4 font-display text-4xl font-semibold">Our work in pictures</h2>
+            <Eyebrow light>{copy.mosaic.text}</Eyebrow>
+            <h2 className="mt-4 font-display text-4xl font-semibold">{copy.mosaic.heading}</h2>
           </div>
-          <Link to="/events/gallery" className="inline-flex items-center gap-2 font-semibold text-tech-teal-300 hover:text-white whitespace-nowrap">
-            Open the gallery <i className="ri-arrow-right-line" aria-hidden="true" />
+          <Link to="/events/gallery" className="inline-flex items-center gap-2 font-semibold text-tech-teal-300 hover:text-white whitespace-nowrap">{copy.mosaic.text2}<i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
         </div>
         <div className="mt-10 grid grid-cols-2 md:grid-cols-4 auto-rows-[160px] md:auto-rows-[200px] gap-3">
@@ -423,8 +400,8 @@ function PartnerBand() {
     <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-2xl">
-          <Eyebrow>Partners</Eyebrow>
-          <h2 className="mt-4 font-display text-4xl font-semibold text-ldii-navy">The organisations behind our engagements</h2>
+          <Eyebrow>{copy.partnerBand.text}</Eyebrow>
+          <h2 className="mt-4 font-display text-4xl font-semibold text-ldii-navy">{copy.partnerBand.heading}</h2>
         </div>
         <LogoRow />
         <div className="mt-10">
@@ -441,8 +418,7 @@ function PartnerBand() {
             </p>
           </div>
           <div className="flex md:justify-end">
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-ldii-navy text-white px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-800">
-              Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-ldii-navy text-white px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-800">{copy.partnerBand.text2}<i className="ri-arrow-right-line" aria-hidden="true" />
             </Link>
           </div>
         </div>
