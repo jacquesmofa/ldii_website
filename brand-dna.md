@@ -24,6 +24,8 @@ Everything marked ❓ must come from the client or Jacques. Method: the studio's
 - **Signature element:** the "meridian" eyebrow (dot–line–dot, North–South) above every section heading, and the green band on top of the footer.
 - **Imagery:** LDII's own photos only (Cloudinary `dzppzxpad`), chosen by what the picture shows, not its file name. Home hero: the October 1, 2023 parade film (Mux Playback ID only).
 - **Layout rhythm:** left-aligned editorial headings, alternating photo/text rows, 3×2 focus-area grid, posts with "Read more".
+- **Shape and motion (15 Nov 2026):** crisp corners (radii capped at 8px in `tailwind.config.ts`), rectangular buttons, navy utility bar above the header, 3px green rules on menus, partner cards and the quick-links ribbon, breadcrumb trail on inner pages. Motion is quiet: content rises in once on scroll (`data-reveal`, automatic for every section), photos zoom slowly on hover (`.photo-zoom`), links draw a line (`.link-line`). Nothing bounces, spins or glows.
+- The round logo stays in the header by choice (the wide wordmark takes too much room).
 - ❓ Green to be confirmed against the green "LDII" wordmark logo once received.
 
  Display + Inter pairing is shared by several Readdy sites (AL Cleaning, ISDIA, JRFAN, Trinity, Kwetu, CROP, Jacques' portfolio).

@@ -135,7 +135,7 @@ export default function InternationalFocusPage() {
             <span className="mx-3 text-white/40" aria-hidden="true">·</span>
             <a href={ORG.phoneHref} className="font-semibold text-tech-teal-300 hover:text-white">{ORG.phone}</a>
           </p>
-          <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-8 py-4 rounded-full font-semibold hover:bg-tech-teal-400">
+          <Link to="/contact" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-8 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400">
             Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
         </div>

@@ -72,3 +72,19 @@ Open:
 - Parade story: "plan to extend the annual event to Uganda, the UK, the USA, Italy and Spain" and "representatives of RBC" are public statements. Keep only if still true.
 - Names in captions can be added back once spelled and titled correctly (e.g. Fathia A. Alwan, IGAD).
 - Forms are sent by Web3Forms to the inbox registered with the key in `src/lib/web3forms.ts` (Jacques: info@ldiinitiatives.org). The site shows admin@ldiinitiatives.org as the public address.
+
+## Confirmed by Jacques, 15 Nov 2026
+- Brampton City Council: official partnership, signing and award are true; the City endorsed the conference (and plans to sponsor the next Brampton conference: not published until it is signed). Captions restored; City of Brampton added as a partner.
+- DEI Bio-Pharma partnership is true (captions restored). "Press partnership", "Angola partnership" and "Iftika signing" stay neutral. LDII approached missions of Angola, DR Congo, Gabon, Uganda, Kenya, South Africa and the CPLP (said so on the Diplomatic Engagements album).
+- Angola engagement was in 2025 (album, event and news corrected; old address redirects).
+- Names are correct as first written (Dr. Angium, Iftika, Mami Kaya…); "Mudaba" is Edward. Still open: is it "Bracey" or "Barcey"? The site uses "Chris Bracey".
+- LDII has been active since about 2014 and was registered in 2020: "over 10 years of experience" stays.
+- President's page: Nairobi summit and MOUs (2023), $10M CAD agreements, 100,000+ fruit trees, 250 delegates, 2024 Interfaith Memorial: all confirmed, with documents and videos on file.
+- Parade: the plan to extend to other countries stays; the RBC mention was removed.
+- Mining mission (from the President): "Global South–Canada Mining & Technology Transfer Mission" / "Annual Global South Mining Mission to Greater Sudbury", every June, co-hosted with Thrive Tours. "Africa–Canada" is no longer used.
+- Footer shows admin@ and info@ldiinitiatives.org.
+
+## Still open
+- One line describing the DEI Bio-Pharma partnership (and its website) to add it to the Partners list.
+- City of Brampton logo, if LDII has permission to show it.
+- A real photo from CROP 2026 in Sydney (the CROP logo is used for now).

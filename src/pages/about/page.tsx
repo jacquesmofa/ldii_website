@@ -48,8 +48,8 @@ export default function AboutPage() {
             ))}
           </ul>
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link to="/local-programmes" className="inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-full font-semibold hover:bg-tech-teal-400">Local programmes <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
-            <Link to="/international-focus" className="inline-flex items-center gap-2 border border-white/40 px-6 py-3 rounded-full font-semibold hover:bg-white/10">International focus <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
+            <Link to="/local-programmes" className="inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-[3px] font-semibold hover:bg-tech-teal-400">Local programmes <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
+            <Link to="/international-focus" className="inline-flex items-center gap-2 border border-white/40 px-6 py-3 rounded-[3px] font-semibold hover:bg-white/10">International focus <i className="ri-arrow-right-line" aria-hidden="true" /></Link>
           </div>
         </div>
       </section>

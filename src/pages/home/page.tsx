@@ -6,6 +6,7 @@ import PostCard from '../../components/feature/PostCard';
 import PartnerCards from '../../components/feature/PartnerCards';
 import { ABOUT, INTERNATIONAL, LOCAL, MINING_MISSION, ORG, PARADE_VIDEO, PHOTOS, POSTS, photo } from '../../content/ldii';
 import { getPastEvents } from '../../mocks/eventsData';
+import { confirmedPartners } from '../../mocks/partnersData';
 
 function Hero() {
   const [watching, setWatching] = useState(false);
@@ -31,13 +32,13 @@ function Hero() {
           research, strategic partnership and human capital development that build resilience against global shocks.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4">
-          <Link to="/international-focus" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-full font-semibold hover:bg-tech-teal-400">
+          <Link to="/international-focus" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400">
             Explore our work <i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
           <button
             type="button"
             onClick={() => setWatching(true)}
-            className="inline-flex justify-center items-center gap-2 border border-white/40 px-7 py-4 rounded-full font-semibold hover:bg-white/10"
+            className="inline-flex justify-center items-center gap-2 border border-white/40 px-7 py-4 rounded-[3px] font-semibold hover:bg-white/10"
           >
             <i className="ri-play-circle-line text-xl" aria-hidden="true" /> Watch the parade film
           </button>
@@ -73,6 +74,86 @@ function Hero() {
   );
 }
 
+/** Three doors into the site, sitting across the bottom edge of the opening film. */
+function QuickLinks() {
+  const doors = [
+    { kicker: 'In Ontario', title: 'Local programmes', text: 'Newcomers, youth and seniors.', href: '/local-programmes', img: PHOTOS.offices },
+    { kicker: 'Global North–South', title: 'International focus', text: 'Six areas of partnership.', href: '/international-focus', img: PHOTOS.southAfrica },
+    { kicker: 'Every June', title: 'Mining mission to Greater Sudbury', text: 'Global South delegations in Northern Ontario.', href: '/programs/mining-technology-exchange', img: PHOTOS.sudbury },
+  ];
+  return (
+    <section className="relative z-10 bg-white" aria-label="Start here">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <ul className="grid md:grid-cols-3 md:-mt-14 shadow-[0_18px_50px_-20px_rgba(10,30,61,0.35)] bg-white divide-y md:divide-y-0 md:divide-x divide-gray-200 border-t-[3px] border-tech-teal-600">
+          {doors.map((d) => (
+            <li key={d.href}>
+              <Link to={d.href} className="group flex items-center gap-5 p-5 lg:p-6 h-full hover:bg-ldii-mist transition-colors">
+                <span className="photo-zoom block w-24 h-24 flex-shrink-0">
+                  <img src={photo(d.img.id, 240, 240)} alt="" width={96} height={96} className="w-full h-full object-cover" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-tech-teal-800">{d.kicker}</span>
+                  <span className="block mt-1 font-display text-xl font-semibold text-ldii-navy leading-snug">{d.title}</span>
+                  <span className="block mt-1 text-sm text-gray-600">{d.text}</span>
+                </span>
+                <i className="ri-arrow-right-line arrow-slide ml-auto text-xl text-tech-teal-800" aria-hidden="true" />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+/** The six Ontario programmes as a photo index, next to a short introduction. */
+function LocalStrip() {
+  return (
+    <section className="bg-ldii-sand py-20 md:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12">
+        <div className="lg:col-span-4">
+          <Eyebrow>Local programmes · Ontario</Eyebrow>
+          <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{LOCAL.tagline}</h2>
+          <p className="mt-6 text-gray-700 leading-relaxed">{LOCAL.intro[0]}</p>
+          <Link to="/local-programmes" className="group mt-8 inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy">
+            <span className="link-line">All local programmes</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
+          </Link>
+        </div>
+        <ol className="lg:col-span-8 grid sm:grid-cols-2 gap-x-8">
+          {LOCAL.programmes.map((p, i) => (
+            <li key={p.slug} className="border-t border-ldii-navy/15">
+              <Link to={`/local-programmes#${p.slug}`} className="group flex items-center gap-5 py-5">
+                <span className="photo-zoom block w-28 h-20 flex-shrink-0">
+                  <img src={photo(p.image, 280, 200)} alt="" loading="lazy" width={112} height={80} className="w-full h-full object-cover" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-xs font-semibold tracking-widest text-tech-teal-800">0{i + 1}</span>
+                  <span className="block mt-0.5 font-display text-lg font-semibold text-ldii-navy leading-snug group-hover:text-tech-teal-800 transition-colors">{p.title}</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+/** Row of real partner logos (only organisations with a logo on file). */
+function LogoRow() {
+  const withLogos = confirmedPartners.filter((p) => p.logo);
+  return (
+    <div className="mt-10 flex flex-wrap items-center gap-x-12 gap-y-6 border-y border-gray-200 py-8">
+      <p className="w-full md:w-auto text-xs font-semibold uppercase tracking-[0.18em] text-gray-600">Working with</p>
+      {withLogos.map((p) => (
+        <a key={p.name} href={p.website} target="_blank" rel="noopener noreferrer" title={p.name} className="opacity-80 hover:opacity-100 transition-opacity">
+          <img src={p.logo} alt={`${p.name} logo`} loading="lazy" className="h-12 w-auto max-w-[170px] object-contain" />
+        </a>
+      ))}
+    </div>
+  );
+}
+
 /** Signature: the two programme areas side by side, Local | Global. */
 function TwoProgrammes() {
   const panels = [
@@ -96,7 +177,7 @@ function TwoProgrammes() {
     },
   ];
   return (
-    <section className="bg-white py-20 md:py-28" aria-labelledby="two-areas">
+    <section className="bg-ldii-mist py-20 md:py-28" aria-labelledby="two-areas">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
           <Eyebrow>Two complementary programme areas</Eyebrow>
@@ -133,7 +214,7 @@ function WhoWeAre() {
     { value: '12', label: 'focus areas and community programmes' },
   ];
   return (
-    <section className="bg-ldii-mist py-20 md:py-28">
+    <section className="bg-white py-20 md:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-6">
           <Eyebrow>Who we are</Eyebrow>
@@ -180,7 +261,7 @@ function FocusStrip() {
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">{INTERNATIONAL.tagline}</h2>
           </div>
           <Link to="/international-focus" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            All six focus areas <i className="ri-arrow-right-line" aria-hidden="true" />
+            <span className="link-line">All six focus areas</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -225,7 +306,7 @@ function MissionFeature() {
             ))}
           </ul>
           <p className="mt-6 text-sm text-white/70">{MINING_MISSION.partner}.</p>
-          <Link to="/programs/mining-technology-exchange" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-full font-semibold hover:bg-tech-teal-400">
+          <Link to="/programs/mining-technology-exchange" className="mt-8 inline-flex items-center gap-2 bg-tech-teal-500 text-ldii-navy px-6 py-3 rounded-[3px] font-semibold hover:bg-tech-teal-400">
             About the mission <i className="ri-arrow-right-line" aria-hidden="true" />
           </Link>
         </div>
@@ -247,7 +328,7 @@ function News() {
             </h2>
           </div>
           <Link to="/events/news" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            All news <i className="ri-arrow-right-line" aria-hidden="true" />
+            <span className="link-line">All news</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <div className="mt-12 grid gap-6">
@@ -274,14 +355,14 @@ function TrackRecord() {
             <h2 className="mt-4 font-display text-4xl md:text-5xl font-semibold text-ldii-navy leading-tight">Recent engagements</h2>
           </div>
           <Link to="/impact" className="inline-flex items-center gap-2 font-semibold text-tech-teal-800 hover:text-ldii-navy whitespace-nowrap">
-            Our full record <i className="ri-arrow-right-line" aria-hidden="true" />
+            <span className="link-line">Our full record</span> <i className="ri-arrow-right-line arrow-slide" aria-hidden="true" />
           </Link>
         </div>
         <ul className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {events.map((e) => (
             <li key={e.id}>
               <Link to={e.linkUrl || '/events/past'} className="group block h-full">
-                <div className="rounded-2xl overflow-hidden bg-ldii-mist aspect-[4/3]">
+                <div className="photo-zoom bg-ldii-mist aspect-[4/3]">
                   {e.image ? (
                     <img src={e.image} alt={e.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   ) : (
@@ -345,6 +426,7 @@ function PartnerBand() {
           <Eyebrow>Partners</Eyebrow>
           <h2 className="mt-4 font-display text-4xl font-semibold text-ldii-navy">The organisations behind our engagements</h2>
         </div>
+        <LogoRow />
         <div className="mt-10">
           <PartnerCards />
         </div>
@@ -359,7 +441,7 @@ function PartnerBand() {
             </p>
           </div>
           <div className="flex md:justify-end">
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-ldii-navy text-white px-7 py-4 rounded-full font-semibold hover:bg-tech-teal-800">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-ldii-navy text-white px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-800">
               Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
             </Link>
           </div>
@@ -373,8 +455,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <TwoProgrammes />
+      <QuickLinks />
       <WhoWeAre />
+      <TwoProgrammes />
+      <LocalStrip />
       <FocusStrip />
       <MissionFeature />
       <News />

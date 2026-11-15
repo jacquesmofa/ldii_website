@@ -48,3 +48,9 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 - SEO: `src/content/seo.json` (title, description, share picture per page) is read by `src/lib/pageSeo.ts` in the browser and by `scripts/social-pages.mjs` at build time (one HTML file per page + `sitemap.xml`). `scripts/prerender.mjs` then writes each page's content into its HTML with headless Chrome (skips gracefully without Chrome). Event pages carry Event schema.
 - Build: `vite build && node scripts/social-pages.mjs && node scripts/prerender.mjs`. Add a page: route + `seo.json` entry.
 - Design tokens and fonts: see brand-dna.md. Open questions: PLACEHOLDERS.md.
+
+## 15 Nov 2026
+- `src/index.css` was rewritten: the old Readdy rule `img[loading="lazy"] { opacity: 0 }` had been hiding every lazy photo since the 14 Nov rebuild (its helper script was removed with the old index.html). Never reintroduce a rule that hides images until a script runs.
+- Effects live in `src/index.css` (`data-reveal`, `.link-line`, `.photo-zoom`, `.arrow-slide`); `RevealOnScroll` in `src/App.tsx` tags every section automatically. `Breadcrumbs` and `BackToTop` are in `src/components/feature/`.
+- The local workspace cannot load Cloudinary photos: always check pictures on the live site in the browser after a deploy.
+- Mining mission name: "Global South–Canada Mining & Technology Transfer Mission" (President's wording). Do not write "Africa–Canada".

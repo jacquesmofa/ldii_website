@@ -55,9 +55,9 @@ export default function Footer() {
                   name="email"
                   required
                   placeholder="Your email"
-                  className="flex-1 min-w-0 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-tech-teal-500"
+                  className="flex-1 min-w-0 px-4 py-3 rounded-[3px] bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-tech-teal-500"
                 />
-                <button type="submit" disabled={sending} className="px-5 py-3 rounded-full bg-tech-teal-500 text-ldii-navy font-semibold hover:bg-tech-teal-400 disabled:opacity-60">
+                <button type="submit" disabled={sending} className="px-5 py-3 rounded-[3px] bg-tech-teal-500 text-ldii-navy font-semibold hover:bg-tech-teal-400 disabled:opacity-60">
                   {sending ? 'Sending…' : 'Subscribe'}
                 </button>
               </div>

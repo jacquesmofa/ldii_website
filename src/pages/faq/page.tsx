@@ -132,7 +132,7 @@ export default function FAQPage() {
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
+                  className={`px-6 py-2 rounded-[3px] font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     activeCategory === category
                       ? 'bg-green-600 text-white shadow-lg'
                       : 'bg-white text-gray-700 hover:bg-green-50 border border-gray-200'

@@ -91,6 +91,20 @@ export default function Header() {
 
   return (
     <>
+      <div className="hidden lg:block bg-ldii-navy text-white/85 text-[13px]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 h-9 flex items-center justify-between gap-6">
+          <p className="tracking-wide">{ORG.tagline}</p>
+          <div className="flex items-center gap-5">
+            <a href={`mailto:${ORG.email}`} className="hover:text-white inline-flex items-center gap-1.5"><i className="ri-mail-line text-tech-teal-300" aria-hidden="true" />{ORG.email}</a>
+            <a href={ORG.phoneHref} className="hover:text-white inline-flex items-center gap-1.5"><i className="ri-phone-line text-tech-teal-300" aria-hidden="true" />{ORG.phone}</a>
+            <span className="flex items-center gap-3 pl-4 border-l border-white/20">
+              {ORG.socials.map((x) => (
+                <a key={x.label} href={x.href} target="_blank" rel="noopener noreferrer" aria-label={`LDII on ${x.label}`} className="hover:text-tech-teal-300"><i className={x.icon} aria-hidden="true" /></a>
+              ))}
+            </span>
+          </div>
+        </div>
+      </div>
       <header
         className={`sticky top-0 z-50 bg-white/95 border-b transition-shadow ${scrolled || open ? 'shadow-sm border-gray-200' : 'border-transparent'}`}
       >
@@ -120,8 +134,8 @@ export default function Header() {
                   >
                     <button
                       type="button"
-                      className={`flex items-center gap-1 px-3 py-2 rounded-md text-[15px] font-medium transition-colors ${
-                        isActive(g) ? 'text-tech-teal-800' : 'text-gray-800 hover:text-tech-teal-800'
+                      className={`relative flex items-center gap-1 px-3 h-[72px] text-[15px] font-medium transition-colors after:absolute after:left-3 after:right-3 after:bottom-0 after:h-[3px] after:bg-tech-teal-600 after:origin-left after:transition-transform after:duration-300 ${
+                        isActive(g) ? 'text-tech-teal-800 after:scale-x-100' : 'text-gray-800 hover:text-tech-teal-800 after:scale-x-0 hover:after:scale-x-100'
                       }`}
                       aria-expanded={openGroup === g.title}
                       onClick={() => setOpenGroup(openGroup === g.title ? null : g.title)}
@@ -130,11 +144,11 @@ export default function Header() {
                       <i className="ri-arrow-down-s-line" aria-hidden="true" />
                     </button>
                     <div
-                      className={`absolute left-0 top-full pt-2 w-80 transition ${
+                      className={`absolute left-0 top-full w-80 transition ${
                         openGroup === g.title ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-1'
                       }`}
                     >
-                      <div className="bg-white rounded-xl shadow-xl border border-gray-100 p-2">
+                      <div className="bg-white shadow-xl border border-gray-100 border-t-[3px] border-t-tech-teal-600 p-2">
                         {g.items.map((i) => (
                           <Link
                             key={i.href}
@@ -162,7 +176,7 @@ export default function Header() {
               )}
               <Link
                 to="/donate"
-                className="ml-3 inline-flex items-center gap-2 bg-ldii-navy text-white px-5 py-2.5 rounded-full text-[15px] font-semibold hover:bg-tech-teal-800 transition-colors"
+                className="ml-3 inline-flex items-center gap-2 bg-ldii-navy text-white px-5 py-2.5 rounded-[3px] text-[15px] font-semibold hover:bg-tech-teal-800 transition-colors"
               >
                 <i className="ri-heart-3-line" aria-hidden="true" /> Donate
               </Link>
@@ -222,7 +236,7 @@ export default function Header() {
           ))}
           <Link
             to="/donate"
-            className="mt-6 flex items-center justify-center gap-2 bg-ldii-navy text-white px-5 py-4 rounded-full text-lg font-semibold"
+            className="mt-6 flex items-center justify-center gap-2 bg-ldii-navy text-white px-5 py-4 rounded-[3px] text-lg font-semibold"
           >
             <i className="ri-heart-3-line" aria-hidden="true" /> Donate
           </Link>

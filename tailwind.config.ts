@@ -7,6 +7,8 @@ export default {
   ],
   theme: {
     extend: {
+      // Institutional shape language: crisp corners instead of soft app-style cards
+      borderRadius: { lg: '4px', xl: '5px', '2xl': '6px', '3xl': '8px' },
       fontFamily: {
         display: ['"Source Serif 4"', 'Georgia', 'serif'],
         sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],

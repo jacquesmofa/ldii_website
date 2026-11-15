@@ -4,6 +4,8 @@ import { AppRoutes } from './router'
 import Header from './components/feature/Header'
 import Footer from './components/feature/Footer'
 import SeoManager from './components/feature/SeoManager'
+import Breadcrumbs from './components/feature/Breadcrumbs'
+import BackToTop from './components/feature/BackToTop'
 
 /** New page: start at the top (unless the address points to a section). */
 function ScrollToTop() {
@@ -26,9 +28,15 @@ function RevealOnScroll() {
       (entries) => entries.forEach((e) => {
         if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target) }
       }),
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+      { rootMargin: '0px 0px -6% 0px', threshold: 0 },
     )
-    const scan = () => document.querySelectorAll('[data-reveal]:not(.is-in)').forEach((el) => io.observe(el))
+    const scan = () => {
+      // Every section after a page's opening one reveals its content block; pages can also mark their own elements.
+      document
+        .querySelectorAll('main section:not(:first-of-type) > div[class*="max-w-"]:not([data-reveal]), footer > div[class*="max-w-"]:not([data-reveal])')
+        .forEach((el) => el.setAttribute('data-reveal', ''))
+      document.querySelectorAll('[data-reveal]:not(.is-in)').forEach((el) => io.observe(el))
+    }
     scan()
     const mo = new MutationObserver(scan)
     mo.observe(document.body, { childList: true, subtree: true })
@@ -45,12 +53,14 @@ function App() {
       <SeoManager />
       <div className="min-h-screen flex flex-col">
         <Header />
+        <Breadcrumbs />
         <main id="main" className="flex-1">
           <Suspense fallback={<div className="min-h-[60vh]" aria-busy="true" />}>
             <AppRoutes />
           </Suspense>
         </main>
         <Footer />
+        <BackToTop />
       </div>
     </BrowserRouter>
   )

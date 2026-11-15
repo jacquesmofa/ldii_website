@@ -100,7 +100,7 @@ export default function GalleryEventPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/85"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-block bg-[#3CCB7F]/20 text-[#3CCB7F] border border-[#3CCB7F]/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-5">
+          <div className="inline-block bg-[#3CCB7F]/20 text-[#3CCB7F] border border-[#3CCB7F]/30 px-4 py-1.5 rounded-[3px] text-sm font-semibold mb-5">
             {event.year}
           </div>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
@@ -134,7 +134,7 @@ export default function GalleryEventPage() {
             <div className="inline-flex bg-gray-100 rounded-full p-1">
               <button
                 onClick={() => setActiveTab('photos')}
-                className={`px-6 py-2 rounded-full font-semibold text-sm transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-6 py-2 rounded-[3px] font-semibold text-sm transition-all cursor-pointer whitespace-nowrap ${
                   activeTab === 'photos'
                     ? 'bg-green-600 text-white shadow-md'
                     : 'text-gray-600 hover:text-gray-900'
@@ -145,7 +145,7 @@ export default function GalleryEventPage() {
               </button>
               <button
                 onClick={() => setActiveTab('videos')}
-                className={`px-6 py-2 rounded-full font-semibold text-sm transition-all cursor-pointer whitespace-nowrap ${
+                className={`px-6 py-2 rounded-[3px] font-semibold text-sm transition-all cursor-pointer whitespace-nowrap ${
                   activeTab === 'videos'
                     ? 'bg-green-600 text-white shadow-md'
                     : 'text-gray-600 hover:text-gray-900'

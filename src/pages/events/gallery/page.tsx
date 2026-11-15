@@ -159,7 +159,7 @@ const GalleryPage = () => {
     return (
       <button
         onClick={() => enterCategory(cat.id)}
-        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
+        className={`px-5 py-2.5 rounded-[3px] text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
           isActive
             ? 'bg-[#0A1E3D] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-green-300'
@@ -205,7 +205,7 @@ const GalleryPage = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="mt-5 inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 text-white/80 text-sm"
+              className="mt-5 inline-flex items-center gap-2 px-5 py-2 bg-white/10 backdrop-blur-sm rounded-[3px] border border-white/20 text-white/80 text-sm"
             >
               <i className="ri-image-line w-4 h-4 flex items-center justify-center"></i>
               <span>{galleryImages.length} photographs across {galleryCategories.length} collections</span>
@@ -229,7 +229,7 @@ const GalleryPage = () => {
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.2 }}
                   onClick={backToOverview}
-                  className="px-5 py-2.5 rounded-full text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-md flex items-center gap-2"
+                  className="px-5 py-2.5 rounded-[3px] text-sm font-semibold bg-green-600 text-white hover:bg-green-700 transition-all duration-300 whitespace-nowrap cursor-pointer shadow-md flex items-center gap-2"
                 >
                   <i className="ri-arrow-left-line w-4 h-4 flex items-center justify-center"></i>
                   Back to Overview
@@ -283,7 +283,7 @@ const GalleryPage = () => {
                       </div>
                       <button
                         onClick={() => enterCategory(cat.id)}
-                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
+                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer flex items-center gap-2 whitespace-nowrap shadow-sm hover:shadow-md"
                       >
                         View All {count} Photos
                         <i className="ri-arrow-right-line w-4 h-4 flex items-center justify-center"></i>
@@ -329,7 +329,7 @@ const GalleryPage = () => {
                     <div className="mt-6 text-center sm:hidden">
                       <button
                         onClick={() => enterCategory(cat.id)}
-                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer"
+                        className="px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-all duration-300 cursor-pointer"
                       >
                         View All {count} Photos
                       </button>
@@ -382,7 +382,7 @@ const GalleryPage = () => {
                   <p className="text-gray-500 text-lg">No photos found in this category.</p>
                   <button
                     onClick={backToOverview}
-                    className="mt-4 px-6 py-2.5 bg-[#0A1E3D] text-white rounded-full text-sm font-semibold hover:bg-[#152c52] transition-colors cursor-pointer"
+                    className="mt-4 px-6 py-2.5 bg-[#0A1E3D] text-white rounded-[3px] text-sm font-semibold hover:bg-[#152c52] transition-colors cursor-pointer"
                   >
                     Back to Gallery Overview
                   </button>

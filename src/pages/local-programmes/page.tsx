@@ -190,7 +190,7 @@ export default function LocalProgrammesPage() {
                 Write to <a href={`mailto:${ORG.email}`} className="underline">{ORG.email}</a> or call <a href={ORG.phoneHref} className="underline">{ORG.phone}</a>.
               </p>
             </div>
-            <Link to="/contact" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-full font-semibold hover:bg-tech-teal-400 whitespace-nowrap">
+            <Link to="/contact" className="inline-flex justify-center items-center gap-2 bg-tech-teal-500 text-ldii-navy px-7 py-4 rounded-[3px] font-semibold hover:bg-tech-teal-400 whitespace-nowrap">
               Contact us <i className="ri-arrow-right-line" aria-hidden="true" />
             </Link>
           </div>
