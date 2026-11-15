@@ -59,3 +59,8 @@ export interface GalleryEvent {
   images: GalleryImage[];  // Array of all photos for this event
   videos: GalleryVideo[];  // Array of videos (empty array [] if none)
 }
+/** Same photo at a sensible size and format for the screen (smaller, faster, same look). */
+export const sized = (url: string, width: number): string =>
+  /res\.cloudinary\.com\/[^/]+\/image\/upload\/(?![a-z]{1,2}_)/.test(url)
+    ? url.replace('/image/upload/', `/image/upload/f_auto,q_auto,c_limit,w_${width}/`)
+    : url;

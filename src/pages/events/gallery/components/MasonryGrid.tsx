@@ -1,5 +1,6 @@
 
 import { useState, useRef, useEffect } from 'react';
+import { sized } from '../../../../mocks/galleryTypes';
 import type { GalleryImage } from '../../../../mocks/galleryData';
 
 interface MasonryGridProps {
@@ -64,7 +65,7 @@ function LazyImage({
         {inView ? (
           <>
             <img
-              src={image.url}
+              src={sized(image.url, 900)}
               alt={image.title}
               onLoad={() => setLoaded(true)}
               className={`absolute inset-0 w-full h-full object-cover object-top transition-all duration-700 group-hover:scale-105 ${

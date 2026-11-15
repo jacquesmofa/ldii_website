@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { sized } from '../../../mocks/galleryTypes';
 import { motion, AnimatePresence } from 'framer-motion';
 import { galleryEvents } from '../../../mocks/galleryData';
 import MasonryGrid from './components/MasonryGrid';
@@ -312,7 +313,7 @@ const GalleryPage = () => {
                         >
                           <div className="relative overflow-hidden rounded-xl bg-gray-100 shadow-sm hover:shadow-lg transition-all duration-500">
                             <img
-                              src={item.url}
+                              src={sized(item.url, 900)}
                               alt={item.title}
                               className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                             />
@@ -460,7 +461,7 @@ const GalleryPage = () => {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
-              src={selectedItem.url}
+              src={sized(selectedItem.url, 1800)}
               alt={selectedItem.title}
               className="max-w-full max-h-[72vh] object-contain rounded-lg select-none"
               onClick={(e) => e.stopPropagation()}

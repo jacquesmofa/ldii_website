@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { sized } from '../../../../mocks/galleryTypes';
 import type { GalleryImage } from '../../../../mocks/galleryData';
 
 interface LightboxProps {
@@ -164,7 +165,7 @@ export default function Lightbox({
 
           {/* Image */}
           <img
-            src={image.url}
+            src={sized(image.url, 1800)}
             alt={image.title}
             onLoad={() => setLoaded(true)}
             className={`max-h-[80vh] max-w-full object-contain rounded-lg transition-opacity duration-300 ${
