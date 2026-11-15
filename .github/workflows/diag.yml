@@ -1,0 +1,11 @@
+name: Live check (temporary)
+on: { push: { branches: [diag-outage] } }
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in / /admin/ /admin/config.yml /api/auth.php "/api/auth.php?provider=github&site_id=ldiinitiatives.org&scope=repo" /api/callback.php /api/oauth-common.php /api/oauth-config.php /events/gallery /international-focus; do curl -sS -m 25 -o /tmp/p -w "%{http_code} $u -> %{redirect_url}\n" "https://ldiinitiatives.org$u"; head -c 160 /tmp/p | tr '\n' ' '; echo; done
+          curl -sS https://ldiinitiatives.org/admin/config.yml | sed -n 6,16p
+          curl -sS https://ldiinitiatives.org/ | grep -o "Local Impact[^<]*" | head -1
+          curl -sS -o /dev/null -w "sveltia script %{http_code}\n" -L https://unpkg.com/@sveltia/cms@0.248.0/dist/sveltia-cms.js
