@@ -1,202 +1,32 @@
 /**
- * ============================================================================
- * MAIN GALLERY DATA FILE - src/mocks/galleryData.ts
- * ============================================================================
- *
- * This file assembles ALL gallery events and exports them for use across
- * the website. It also defines the "Featured Gallery" images shown on the
- * main gallery page.
- *
- * HOW THIS FILE WORKS:
- * --------------------
- * 1. It imports event data from separate files in the galleryEvents/ folder.
- *    Each file contains one event's photos.
- * 2. It merges the two parts of the 2nd Post-COVID Conference into one event.
- * 3. It exports a "featuredImages" array for the main page highlight section.
- * 4. It exports "galleryEvents" which is the master list used everywhere.
- *
- * HOW TO ADD A NEW EVENT:
- * -----------------------
- * 1. Create a new file in src/mocks/galleryEvents/ (copy an existing one)
- * 2. Replace the images with your new event's Cloudinary public IDs
- * 3. Update the event title, date, location, description
- * 4. Import the new event file HERE and add it to the galleryEvents array
- * 5. (Optional) Add a featured photo from the new event to featuredImages
- *
- * HOW TO ADD PHOTOS TO AN EXISTING EVENT:
- * ----------------------------------------
- * 1. Open the event file in src/mocks/galleryEvents/
- * 2. Find the "images: [" array
- * 3. Add a new photo block:
- *    {
- *      url: cld('your_cloudinary_public_id'),
- *      title: 'Description of photo',
- *      width: 1200,    // 1200 for landscape, 900 for portrait
- *      height: 900     // 900 for landscape, 1200 for portrait
- *    }
- * 4. Save the file. The photo appears automatically on the website.
- * ============================================================================
+ * Photo gallery. Albums and photos are in src/content/gallery.json (editable in the website
+ * editors): "featured" is the selection at the top of /events/gallery, "albums" are the event
+ * albums at /events/gallery/<slug>. A photo without a size is treated as landscape.
  */
-
-// Import the Cloudinary URL helper and type definitions
-import { cld } from './galleryTypes';
+import gallery from '../content/gallery.json';
 import type { GalleryImage, GalleryEvent } from './galleryTypes';
 
-// Import individual event data files
-import { event2ndPostCovidA } from './galleryEvents/event2ndPostCovidA';
-import { event2ndPostCovidBImages } from './galleryEvents/event2ndPostCovidB';
-import { event1stPostCovid } from './galleryEvents/event1stPostCovid';
-import { eventDiplomatic } from './galleryEvents/eventDiplomatic';
-import { eventBehindTheScenes } from './galleryEvents/eventBehindTheScenes';
-import { eventCanadaSouthAfrica } from './galleryEvents/eventCanadaSouthAfrica';
-import { eventSudburyMining } from './galleryEvents/eventSudburyMining';
-import { eventAngola } from './galleryEvents/eventAngola';
+const withSize = (p: Partial<GalleryImage>): GalleryImage => ({
+  url: p.url || '',
+  title: p.title || '',
+  width: p.width || 1200,
+  height: p.height || 900,
+});
 
+export const featuredImages: GalleryImage[] = (gallery.featured as Partial<GalleryImage>[]).filter((p) => p.url).map(withSize);
 
-// ============================================================
-// MERGE: 2nd International Post-COVID Conference
-// ============================================================
-// The conference is split across TWO files (A and B) to keep file sizes
-// manageable. We merge them here into ONE event.
-//
-// NOTE: You do NOT need to modify this merge. Just add photos to
-// event2ndPostCovidA.ts or event2ndPostCovidB.ts and they automatically
-// appear in the merged event.
-// ============================================================
-const event2ndPostCovid: GalleryEvent = {
-  ...event2ndPostCovidA,
-  images: [
-    ...event2ndPostCovidA.images,
-    ...event2ndPostCovidBImages
-  ]
-};
+export const galleryEvents: GalleryEvent[] = (gallery.albums as unknown as Partial<GalleryEvent>[])
+  .filter((a) => a.slug && a.title)
+  .map((a) => ({
+    slug: a.slug!,
+    title: a.title!,
+    shortTitle: a.shortTitle,
+    year: a.year || '',
+    date: a.date || '',
+    location: a.location || '',
+    description: a.description || '',
+    images: (a.images || []).filter((p) => p.url).map(withSize),
+    videos: (a.videos || []).filter((v) => v.thumbnail || v.src),
+  }));
 
-
-// ============================================================
-// FEATURED GALLERY IMAGES (Main Gallery Page Highlight Section)
-// ============================================================
-// These ~10 images appear in the "Featured Gallery" masonry grid at the
-// TOP of the main gallery page (/events/gallery).
-//
-// They are hand-picked to showcase the breadth and impact of LDII's work.
-// Mix landscape (width: 1200, height: 900) and portrait (width: 900,
-// height: 1200) for a beautiful puzzle-like masonry effect.
-//
-// TO CHANGE which images appear here: add, remove, or reorder the blocks below.
-// TO ADD A NEW FEATURED PHOTO: copy a block, paste it, and update the URL
-//   and title with your new Cloudinary public_id.
-// ============================================================
-export const featuredImages: GalleryImage[] = [
-  {
-    url: cld('untitled-6585_1_cnqwkm'),
-    title: 'Canada and South Africa: Economic Outlook, Trade Opportunity and the Road to Market Access (November 2026)',
-    width: 1024,
-    height: 466,
-  },
-  {
-    url: cld('WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu'),
-    title: 'Greater Sudbury mining ecosystem trip (November 2026)',
-    width: 1600,
-    height: 900,
-  },
-  {
-    url: cld('Angola_Diplomatic_Engagement_2_jmvzbi'),
-    title: 'Angola Diplomatic Engagement (2025)',
-    width: 2000,
-    height: 1126,
-  },
-  {
-    url: cld('2nd_Post_covid_cvdox1'),
-    title: 'Conference banner · 2nd International Post-COVID-19 Conference',
-    width: 1400,
-    height: 900
-  },
-  {
-    url: cld('conferencepstcovid25_qqjep8'),
-    title: 'Conference session · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
-    width: 1200,
-    height: 800
-  },
-  {
-    url: cld('Panel_discussion1_ujy3df'),
-    title: 'Panel session · 2nd International Post-COVID-19 Conference · Brampton, September 2025',
-    width: 1200,
-    height: 900
-  },
-  {
-    url: cld('HE_Ambassador_OF_KENYA_slpwkj'),
-    title: 'Kenya\'s High Commissioner to Canada at the 2nd International Post-COVID-19 Conference',
-    width: 900,
-    height: 1200
-  },
-  {
-    url: cld('president_LDII_xjy7xj'),
-    title: 'Ronald Lwabaayi, President of LDII, addressing the conference',
-    width: 900,
-    height: 1200
-  },
-  {
-    url: cld('Brampton_counci_kryhsj'),
-    title: 'Brampton City Council · Partnership ceremony',
-    width: 1200,
-    height: 900
-  },
-  {
-    url: cld('Dr_victor_bkpass'),
-    title: 'Dr. Victor, keynote speaker',
-    width: 900,
-    height: 1200
-  },
-  {
-    url: cld('General_aiu2gv'),
-    title: 'A full hall at the 2nd International Post-COVID-19 Conference',
-    width: 1400,
-    height: 900
-  },
-  {
-    url: cld('WhatsApp_Image_2026-05-25_at_4.02.47_PM_blxfxa'),
-    title: '1st International Post-COVID Conference - Toronto 2024',
-    width: 900,
-    height: 1200
-  },
-  {
-    url: cld('Lwabaayi_Profile_ovqlxd'),
-    title: 'Ronald Lwabaayi, President of LDII',
-    width: 900,
-    height: 1200
-  }
-];
-
-
-// ============================================================
-// MASTER ARRAY: ALL GALLERY EVENTS
-// ============================================================
-// This array controls the ORDER of events on the website.
-// The first event appears first on the gallery page.
-//
-// TO REORDER EVENTS: Simply move the imported variable up or down.
-// TO ADD A NEW EVENT:
-//   1. Create a new file in galleryEvents/ (copy an existing one)
-//   2. Export the event object from that file
-//   3. Import it HERE
-//   4. Add it to this array
-//   5. It will automatically appear on the website
-// ============================================================
-export const galleryEvents: GalleryEvent[] = [
-  eventSudburyMining,       // Greater Sudbury mining ecosystem trip (November 2026)
-  eventCanadaSouthAfrica,   // Canada and South Africa seminar (November 2026)
-  eventAngola,              // Angola Diplomatic Engagement (2025)
-  event2ndPostCovid,        // Event 1: 2nd Post-COVID Conference (Brampton, Sep 2025)
-  event1stPostCovid,        // 1st Post-COVID Conference (Toronto, July 2024)
-  eventDiplomatic,          // Event 3: Diplomatic Engagements & Partnerships
-  eventBehindTheScenes      // Event 4: Diplomatic missions & partner meetings (2025)
-];
-
-
-// ============================================================
-// RE-EXPORT TYPES (for backward compatibility)
-// ============================================================
-// Other files in the project import these from galleryData.ts.
-// We re-export them so existing imports don't break.
-// ============================================================
 export type { GalleryImage, GalleryVideo, GalleryEvent } from './galleryTypes';

@@ -1,0 +1,148 @@
+{
+  "title": "International Focus",
+  "tagline": "Building Global Resilience. Advancing Innovation. Creating Sustainable Opportunities.",
+  "intro": "Climate change, health emergencies, food insecurity and economic instability are interconnected, and so are their solutions. LDII bridges knowledge and resource gaps between the Global North and Global South, so that institutions and communities can work together on lasting social, economic and environmental progress.",
+  "principles": [
+    {
+      "title": "Knowledge Exchange & Research",
+      "text": "Sharing research, expertise and proven practices across countries and sectors.",
+      "icon": "ri-book-open-line"
+    },
+    {
+      "title": "Technology Transfer & Innovation",
+      "text": "Improving access to appropriate technologies and technical expertise.",
+      "icon": "ri-cpu-line"
+    },
+    {
+      "title": "Capacity Building",
+      "text": "Strengthening leadership, professional skills and institutional effectiveness.",
+      "icon": "ri-building-4-line"
+    },
+    {
+      "title": "Partnerships & Resource Mobilization",
+      "text": "Connecting partners and resources to collaborative initiatives.",
+      "icon": "ri-links-line"
+    },
+    {
+      "title": "Inclusive Development",
+      "text": "Putting the needs of disadvantaged communities at the centre.",
+      "icon": "ri-team-line"
+    }
+  ],
+  "delivery": "We deliver these through conferences, workshops, policy dialogues, research collaborations and professional exchanges.",
+  "stakeholders": [
+    "Universities and colleges",
+    "Research institutions",
+    "Governments and diplomatic missions",
+    "Healthcare institutions",
+    "Businesses and investors",
+    "International organizations",
+    "Community stakeholders"
+  ],
+  "areas": [
+    {
+      "slug": "climate",
+      "title": "Climate Action & Environmental Resilience",
+      "tagline": "Protecting Communities. Safeguarding Our Planet.",
+      "summary": "Climate and environmental crises threaten livelihoods, food security and economic stability, and they hit vulnerable populations hardest. We help communities and institutions anticipate, withstand and recover from them.",
+      "bullets": [
+        "Climate change adaptation and mitigation",
+        "Disaster preparedness and community resilience",
+        "Drought, water scarcity and sustainable water management",
+        "Biodiversity conservation and ecosystem restoration",
+        "Climate education, with a focus on women, children and marginalized communities"
+      ],
+      "icon": "ri-leaf-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-11-12_at_19.43.21_2_oirpuf",
+      "imageAlt": "The LDII delegation outdoors in Greater Sudbury, a city known worldwide for its regreening"
+    },
+    {
+      "slug": "mining",
+      "title": "Mining Innovation & Sustainable Resource Development",
+      "tagline": "Connecting Global Expertise. Empowering Sustainable Development.",
+      "summary": "We partner with Canadian universities, colleges, mining companies and technology providers to give mining professionals from the Global South access to modern expertise and practical training.",
+      "bullets": [
+        "Specialized training for engineers, technicians and researchers",
+        "Modern exploration and extraction technologies",
+        "Environmental management and mine rehabilitation",
+        "Occupational health and safety",
+        "Responsible investment in the mining sector"
+      ],
+      "icon": "ri-hammer-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu",
+      "imageAlt": "The LDII delegation underground in hard hats during the Greater Sudbury mining visit",
+      "link": {
+        "href": "/programs/mining-technology-exchange",
+        "label": "Global South–Canada Mining & Technology Transfer Mission"
+      }
+    },
+    {
+      "slug": "trade",
+      "title": "International Trade & Economic Empowerment",
+      "tagline": "Connecting Markets. Expanding Opportunity.",
+      "summary": "Tariffs, trade wars and supply-chain disruptions fall hardest on developing economies and small businesses. We promote inclusive trade frameworks that build long-term stability.",
+      "bullets": [
+        "Trade diplomacy and policy dialogue",
+        "Fair trade and equitable market access",
+        "Economic diversification and trade resilience",
+        "Sustainable, resilient supply chains",
+        "Business forums and cross-border investment partnerships"
+      ],
+      "icon": "ri-exchange-funds-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/untitled-6617_1_iqswnj",
+      "imageAlt": "Delegates before the Canadian and South African flags at the Canada–South Africa economic outlook seminar"
+    },
+    {
+      "slug": "health",
+      "title": "Global Health & Pandemic Preparedness",
+      "tagline": "Strengthening Health Systems. Advancing Health Equity.",
+      "summary": "COVID-19 showed that strong public health infrastructure and international cooperation save lives. We support better-prepared, more equitable health systems.",
+      "bullets": [
+        "Pandemic preparedness and emergency response",
+        "Public health infrastructure",
+        "Healthcare research and medical innovation",
+        "Health equity and access",
+        "Disease prevention and health education"
+      ],
+      "icon": "ri-heart-pulse-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-10-19_at_18.38.57_9_qa73aa",
+      "imageAlt": "IGAD’s Director of Health and Social Development speaking beside the EU-IGAD COVID-19 response banner, Toronto, July 2024"
+    },
+    {
+      "slug": "food",
+      "title": "Food Security & Resilient Food Systems",
+      "tagline": "Securing Sustainable Livelihoods.",
+      "summary": "Climate change, conflict, rising costs and fragile supply chains threaten food availability and affordability. We work toward food systems that can withstand these shocks.",
+      "bullets": [
+        "Food security and nutrition",
+        "Climate-resilient food production",
+        "Food supply chains and market stability",
+        "Food security policy and advocacy",
+        "Community food security for vulnerable populations"
+      ],
+      "icon": "ri-plant-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-05-25_at_4.02.44_PM_1_n6jony",
+      "imageAlt": "Delegates visiting a food store stocked with sacks of produce, Toronto, July 2024"
+    },
+    {
+      "slug": "investment",
+      "title": "Sustainable Investment & Social Enterprise",
+      "tagline": "Mobilizing Investment. Creating Lasting Impact.",
+      "summary": "Lasting development needs investment that serves communities as well as balance sheets. We connect capital to local priorities, with transparency and accountability.",
+      "bullets": [
+        "Social enterprise development",
+        "Responsible investment and ESG principles",
+        "Public-private partnerships",
+        "Entrepreneurship and small-business growth",
+        "Economic participation for underserved communities"
+      ],
+      "icon": "ri-hand-coin-line",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/Brampton_Board_of_Trade_noll70",
+      "imageAlt": "A handshake with the Brampton Board of Trade"
+    }
+  ],
+  "cta": {
+    "title": "Partner With Us",
+    "text": "Whether you represent a university, government, business or community organization, we would welcome the chance to explore how we can work together."
+  }
+}

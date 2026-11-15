@@ -1,0 +1,227 @@
+{
+  "local": {
+    "title": "Local Community Development & Empowerment",
+    "tagline": "Empowering Individuals. Supporting Youth. Strengthening Communities.",
+    "intro": [
+      "LDII is committed to improving livelihoods, empowering individuals, supporting youth development, and strengthening communities through inclusive, community-based programmes.",
+      "Our current local programme focus is Ontario, Canada, with a vision for future expansion throughout Canada. Through partnerships with community organizations, educational institutions, government agencies, police services, businesses and other stakeholders, we seek to address social and economic challenges while building stronger, safer, and more resilient communities."
+    ],
+    "programmes": [
+      {
+        "slug": "newcomers",
+        "title": "Newcomer Settlement, Integration & Housing Support",
+        "tagline": "Welcoming Newcomers. Supporting Integration. Building Stable Communities.",
+        "summary": "We help newcomers, youth and immigrant families build confidence, access essential information, and participate meaningfully in Canadian society, because successful settlement also requires stable housing, social connections, educational opportunities and supportive communities.",
+        "bullets": [
+          "Newcomer orientation and settlement support",
+          "Housing stability and housing navigation",
+          "Youth settlement and integration",
+          "Community integration and access to community services",
+          "Family and community support",
+          "Cultural awareness and inclusion",
+          "Settlement partnerships with agencies, schools and service providers"
+        ],
+        "icon": "ri-home-heart-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-10-19_at_10.53.33_6_w42eol",
+        "imageAlt": "Community members gathered at the LDII offices in Toronto",
+        "detail": true
+      },
+      {
+        "slug": "youth-employment",
+        "title": "Youth Employment, Career Development & Economic Empowerment",
+        "tagline": "Developing Skills. Expanding Opportunities. Building Economic Independence.",
+        "summary": "We equip young people with the knowledge, confidence and practical skills to succeed in education, employment, entrepreneurship and community leadership.",
+        "bullets": [
+          "Employment readiness and career development: job search, résumés, interviews, workplace readiness",
+          "Computer training and digital literacy",
+          "Vocational and practical skills development",
+          "Financial literacy and money management",
+          "Youth entrepreneurship and small-business development",
+          "Youth leadership, mentorship and professional networking",
+          "Partnerships with colleges, universities, employers and training institutions"
+        ],
+        "icon": "ri-briefcase-4-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-11-12_at_19.43.17_k9kxst",
+        "imageAlt": "Two students in school blazers with LDII hosts"
+      },
+      {
+        "slug": "youth-safety",
+        "title": "Youth Development, Community Safety & Crime Prevention",
+        "tagline": "Empowering Youth. Preventing Crime. Building Safer Communities.",
+        "summary": "Effective crime prevention begins with education, mentorship, positive youth engagement and access to meaningful opportunities. We work with youth, families, schools, police services and community organizations to build safer, more inclusive neighbourhoods across Ontario.",
+        "bullets": [
+          "Youth crime prevention and awareness",
+          "Positive youth development, mentorship and guidance",
+          "Community safety education",
+          "Community–police partnerships",
+          "Violence prevention and conflict resolution",
+          "School and community partnerships",
+          "Neighbourhood safety and community engagement"
+        ],
+        "icon": "ri-shield-user-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/Brampton_council_3_zhgvl1",
+        "imageAlt": "LDII at Brampton City Hall"
+      },
+      {
+        "slug": "youth-wellbeing",
+        "title": "Youth Education, Mental Health & Social Inclusion",
+        "tagline": "Promoting Wellbeing. Expanding Knowledge. Building Inclusive Communities.",
+        "summary": "Education, supportive relationships and community engagement can reduce social isolation, address mental health stigma and create opportunities for meaningful participation.",
+        "bullets": [
+          "Youth education and lifelong learning",
+          "Mental health awareness, education and stigma reduction",
+          "Youth emotional wellbeing",
+          "Social inclusion and community participation",
+          "Digital inclusion and community learning",
+          "Youth workshops and awareness campaigns",
+          "Partnerships with schools, mental health organizations and youth-serving agencies"
+        ],
+        "icon": "ri-mental-health-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-10-19_at_18.38.56oplm_suwsaa",
+        "imageAlt": "Participants in conversation around a table"
+      },
+      {
+        "slug": "partnerships",
+        "title": "Community Partnerships & Collaborative Development",
+        "tagline": "Connecting Organizations. Strengthening Partnerships. Advancing Community Development.",
+        "summary": "LDII brings together community organizations, educational institutions, government agencies, businesses and development partners to identify shared priorities and explore collaborative solutions to local challenges.",
+        "bullets": [
+          "Community partnership development",
+          "Collaboration with universities, colleges and research institutions",
+          "Government and community engagement",
+          "Community capacity building",
+          "Resource sharing and knowledge exchange",
+          "Business and community partnerships",
+          "Community networking and development forums"
+        ],
+        "icon": "ri-community-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/Brampton_counci_kryhsj",
+        "imageAlt": "Community partners in Brampton with a certificate of recognition"
+      },
+      {
+        "slug": "seniors",
+        "title": "Seniors’ Support, Wellbeing & Social Inclusion",
+        "tagline": "Supporting Seniors. Promoting Dignity. Strengthening Community Connections.",
+        "summary": "Many older adults face social isolation, limited access to information and digital exclusion. We promote seniors’ wellbeing, dignity, independence and meaningful participation in community life.",
+        "bullets": [
+          "Social inclusion and community engagement",
+          "Social isolation prevention",
+          "Digital literacy and computer training for seniors",
+          "Health and wellbeing awareness",
+          "Intergenerational learning and engagement",
+          "Safety and fraud awareness",
+          "Partnerships with seniors’ organizations and community centres"
+        ],
+        "icon": "ri-user-heart-line",
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/Braceley_n_Journalist_g9575z",
+        "imageAlt": "Two guests sharing something on a phone"
+      }
+    ],
+    "approach": [
+      {
+        "title": "Community Engagement & Needs Identification",
+        "text": "Encouraging meaningful participation and identifying challenges, priorities and opportunities within local communities."
+      },
+      {
+        "title": "Education, Training & Skills Development",
+        "text": "Workshops, computer training, financial literacy, career development, leadership training and community learning, particularly for youth."
+      },
+      {
+        "title": "Youth Development & Community Safety",
+        "text": "Positive youth engagement, mentorship, crime prevention education and collaborative community safety initiatives."
+      },
+      {
+        "title": "Social Inclusion & Community Wellbeing",
+        "text": "Mental health awareness, community participation and supportive relationships for vulnerable and underserved populations."
+      },
+      {
+        "title": "Community Partnerships & Capacity Building",
+        "text": "Connecting organizations, institutions and stakeholders to strengthen local initiatives and build community resilience."
+      },
+      {
+        "title": "Seniors’ Wellbeing & Community Engagement",
+        "text": "Social inclusion, lifelong learning, digital literacy and wellbeing education for older adults."
+      }
+    ]
+  },
+  "newcomer": {
+    "title": "Newcomer Settlement & Integration Programme",
+    "closing": "Supporting New Beginnings. Empowering Newcomers. Strengthening Communities.",
+    "areas": [
+      {
+        "title": "Settlement Orientation & Information",
+        "text": "Helping newcomers understand essential aspects of life in Canada, including public services, community resources, Canadian institutions, and everyday responsibilities.",
+        "icon": "ri-compass-3-line"
+      },
+      {
+        "title": "Community Integration & Social Inclusion",
+        "text": "Encouraging newcomers to establish social connections, participate in community activities, develop a sense of belonging, and build supportive relationships.",
+        "icon": "ri-group-line"
+      },
+      {
+        "title": "Employment & Career Pathway Information",
+        "text": "Providing information about Canadian employment systems, job-search resources, workplace expectations, professional development opportunities, and relevant employment support organizations.",
+        "icon": "ri-briefcase-line"
+      },
+      {
+        "title": "Housing Information & Community Resources",
+        "text": "Helping newcomers understand housing-related information, tenant rights and responsibilities, available housing resources, and appropriate sources of assistance.",
+        "icon": "ri-home-4-line"
+      },
+      {
+        "title": "Financial Literacy & Banking Awareness",
+        "text": "Promoting understanding of Canadian banking systems, budgeting, saving, credit, and responsible financial decision-making.",
+        "icon": "ri-bank-line"
+      },
+      {
+        "title": "Access to Community Services",
+        "text": "Helping newcomers identify relevant community organizations and resources related to healthcare, education, language learning, settlement services, and family support.",
+        "icon": "ri-service-line"
+      },
+      {
+        "title": "Cultural Orientation & Community Participation",
+        "text": "Promoting awareness of Canadian cultural diversity, civic responsibilities, community engagement, mutual respect, and peaceful coexistence.",
+        "icon": "ri-global-line"
+      },
+      {
+        "title": "Personal Development & Community Empowerment",
+        "text": "Encouraging newcomers to develop confidence, practical knowledge, leadership potential, and the skills needed to participate meaningfully in their communities.",
+        "icon": "ri-medal-line"
+      }
+    ],
+    "beneficiaries": [
+      "Newly arrived immigrants and permanent residents",
+      "Refugees and other eligible newcomers",
+      "Newcomer families and individuals",
+      "Internationally trained professionals navigating settlement and workforce integration",
+      "Seniors",
+      "Marginalized families",
+      "Indigenous community members",
+      "Individuals experiencing barriers to social and economic integration"
+    ],
+    "eligibility": "Eligibility for particular activities may depend on programme requirements and available resources.",
+    "approach": [
+      "LDII recognizes that successful settlement requires more than access to information. It involves developing confidence, building relationships, understanding available opportunities, and participating actively in community life.",
+      "Our approach emphasizes community education, practical guidance, information sharing, capacity building, and collaboration with relevant community organizations and service providers. We seek to help newcomers overcome settlement barriers while encouraging independence, inclusion, and long-term community participation."
+    ],
+    "commitment": "At LDII, we believe every newcomer deserves the opportunity to feel welcomed, informed, supported, and empowered, and to develop their potential, establish meaningful connections, and contribute to Canada’s social and economic development."
+  },
+  "youthDimensions": [
+    {
+      "title": "Personal & Psychological",
+      "text": "Builds self-esteem, resilience and independent decision-making skills."
+    },
+    {
+      "title": "Economic",
+      "text": "Access to job training, employment, entrepreneurship and financial literacy."
+    },
+    {
+      "title": "Civic & Political",
+      "text": "Participation in public policy, community service and leadership roles."
+    },
+    {
+      "title": "Social & Cultural",
+      "text": "Inclusion, equality and representation across diverse backgrounds."
+    }
+  ]
+}
