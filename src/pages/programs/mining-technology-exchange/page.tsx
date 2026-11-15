@@ -49,7 +49,7 @@ const ecosystem = [
   },
   {
     label: 'Supply and services',
-    body: 'MineConnect, the association for Northern Ontario mining supply firms. Equipment, automation, battery electric fleets, software and engineering, from suppliers who can follow up in Africa.',
+    body: 'MineConnect, the association for Northern Ontario mining supply firms. Equipment, automation, battery electric fleets, software and engineering, from suppliers who can follow up in delegates’ home countries.',
     icon: 'ri-tools-line',
   },
   {
@@ -159,15 +159,18 @@ export default function MiningTechnologyExchangePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/90" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <span className="inline-block text-xs md:text-sm tracking-[0.25em] uppercase text-[#3CCB7F] font-semibold mb-5">
-            Mission · June 2027
+            Annual Global South Mining Mission to Greater Sudbury
           </span>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Africa–Canada Mining &amp; Technology Transfer Mission
+            Global South–Canada Mining &amp; Technology Transfer Mission
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Government and industry delegations from Kenya, Uganda, South Africa, Botswana and
-            other African nations, based in Greater Sudbury and travelling north to the Canadian
-            Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc.
+            Every June, government and industry delegations from across the Global South come to
+            Greater Sudbury to see one of the world’s leading mining ecosystems at work: its mines,
+            suppliers, technologies and research institutions. They meet the people behind them and
+            look for partnerships that bring proven Canadian know-how to mining in their own
+            countries. The mission then travels north and ends at the Canadian Mining Expo in
+            Timmins. Co-hosted by LDII and Thrive Tours Inc. Next mission: June 2027.
           </p>
         </div>
       </section>
@@ -214,7 +217,7 @@ export default function MiningTechnologyExchangePage() {
               <p className="text-gray-700 leading-relaxed text-sm">
                 A Canadian nonprofit organization that facilitates technology
                 transfer from the Global North to the Global South. LDII works directly with
-                African diplomatic missions, ministries responsible for mining, and chambers of
+                diplomatic missions of Global South countries, ministries responsible for mining, and chambers of
                 mines to build practical, lasting partnerships.
               </p>
             </div>
@@ -229,13 +232,13 @@ export default function MiningTechnologyExchangePage() {
             The premise: capability, not equipment
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-5">
-            The constraint in much of African mining is not the absence of equipment. It is the
+            The constraint in much of mining across the Global South is not the absence of equipment. It is the
             capability to operate, maintain and sustain it. Suppliers sell machinery and leave.
             Training is sold separately, if at all, and rarely delivered on site.
           </p>
           <div className="border-l-4 border-green-600 pl-6 py-2 mb-5">
             <p className="text-gray-800 italic leading-relaxed">
-              That observation comes from our conversations with African diplomatic missions in
+              That observation comes from our conversations with Global South diplomatic missions in
               Canada.
             </p>
           </div>
@@ -352,7 +355,7 @@ export default function MiningTechnologyExchangePage() {
             <p className="text-lg text-gray-600 leading-relaxed">
               Delegates should leave with relationships and capability, not brochures. An expo
               visit on its own sends people home with documents and little else; this programme
-              is built so that every week in Canada opens work that continues in Africa.
+              is built so that every week in Canada opens work that continues at home.
             </p>
           </div>
 
@@ -443,7 +446,7 @@ export default function MiningTechnologyExchangePage() {
             },
             {
               title: 'Artisanal and small-scale mining',
-              body: 'ASM supports livelihoods across the continent on a scale no industrial operation approaches, and is where the most serious safety, mercury and child labour harms concentrate. What transfers is narrower and more useful: cooperative organisation and aggregation, mercury-free processing at small scale, geological data access, and regulatory design that licenses activity already happening.',
+              body: 'ASM supports livelihoods across the Global South on a scale no industrial operation approaches, and is where the most serious safety, mercury and child labour harms concentrate. What transfers is narrower and more useful: cooperative organisation and aggregation, mercury-free processing at small scale, geological data access, and regulatory design that licenses activity already happening.',
               icon: 'ri-hammer-line',
             },
             {
@@ -522,7 +525,7 @@ export default function MiningTechnologyExchangePage() {
               are drawn from ministries, geological surveys and private-sector mining leadership.
             </p>
             <p className="text-gray-600 leading-relaxed">
-              Representatives of African missions in Canada are invited to visit Greater Sudbury
+              Representatives of Global South missions in Canada are invited to visit Greater Sudbury
               and Timmins ahead of the delegations, to see the programme before recommending it
               home.
             </p>
@@ -588,7 +591,7 @@ export default function MiningTechnologyExchangePage() {
             </div>
             <div className="bg-white/5 border border-white/15 rounded-2xl p-7">
               <span className="block text-xs uppercase tracking-widest text-white/50 mb-3">
-                Co-host and African partnerships
+                Co-host and Global South partnerships
               </span>
               <h3 className="text-white font-bold mb-1">
                 Livelihood Development International Initiatives

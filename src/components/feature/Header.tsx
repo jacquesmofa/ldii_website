@@ -26,7 +26,7 @@ export const NAV: Group[] = [
       { title: 'International Focus', href: '/international-focus', note: 'Six areas of Global North–South partnership' },
       { title: 'Local Programmes', href: '/local-programmes', note: 'Community development across Ontario' },
       { title: 'Newcomer Settlement', href: '/local-programmes#newcomers-programme', note: 'Supporting new beginnings' },
-      { title: 'Mining & Technology Mission', href: '/programs/mining-technology-exchange', note: 'Africa–Canada, June 2027' },
+      { title: 'Mining & Technology Mission', href: '/programs/mining-technology-exchange', note: 'Global South–Canada, every June' },
     ],
   },
   {

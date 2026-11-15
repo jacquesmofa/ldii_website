@@ -44,8 +44,8 @@
     },
     {
       "path": "/programs/mining-technology-exchange",
-      "title": "Africa–Canada Mining & Technology Mission | LDII",
-      "description": "June 2027: African government and industry delegations visit Greater Sudbury and the Canadian Mining Expo in Timmins, co-hosted by LDII and Thrive Tours.",
+      "title": "Global South–Canada Mining & Technology Mission | LDII",
+      "description": "Every June, delegations from across the Global South visit Greater Sudbury’s mining ecosystem and the Canadian Mining Expo in Timmins. Co-hosted by LDII.",
       "label": "Mining & Technology Mission",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg"
     },
@@ -59,14 +59,14 @@
     {
       "path": "/events",
       "title": "Events | LDII Conferences and Delegations",
-      "description": "Upcoming and past LDII events: the International Post-COVID conferences, diplomatic engagements and the Africa–Canada Mining and Technology Mission.",
+      "description": "Upcoming and past LDII events: the International Post-COVID conferences, diplomatic engagements and the annual Global South mining mission to Sudbury.",
       "label": "Events",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/General_aiu2gv.jpg"
     },
     {
       "path": "/events/upcoming",
       "title": "Upcoming Events | LDII",
-      "description": "What LDII is preparing next, including the Africa–Canada Mining & Technology Transfer Mission to Greater Sudbury and Timmins in June 2027.",
+      "description": "What LDII is preparing next, including the annual Global South mining mission to Greater Sudbury and Timmins (June 2027).",
       "label": "Upcoming Events",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg"
     },
@@ -171,9 +171,9 @@
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/2nd_Post_covid_cvdox1.jpg"
     },
     {
-      "path": "/events/gallery/angola-diplomatic-engagement-2026",
-      "title": "Angola Diplomatic Engagement | LDII",
-      "description": "Photographs from Angola Diplomatic Engagement, an LDII engagement. Open the album to browse every photo full size.",
+      "path": "/events/gallery/angola-diplomatic-engagement-2025",
+      "title": "Angola Diplomatic Engagement, 2025 | LDII Gallery",
+      "description": "Photos from LDII’s 2025 diplomatic engagement with representatives of Angola in Canada.",
       "label": "Angola Diplomatic Engagement",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/Angola_Diplomatic_Engagement_ypufxv.jpg"
     },

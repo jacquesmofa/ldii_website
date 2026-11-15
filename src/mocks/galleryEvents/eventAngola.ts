@@ -1,16 +1,16 @@
 /**
- * Angola Diplomatic Engagement (November 2026). Photos: Cloudinary (cloud dzppzxpad), sent by the CEO.
+ * Angola Diplomatic Engagement (2025). Photos: Cloudinary (cloud dzppzxpad), sent by the CEO.
  * Add a photo: copy one block below and change the public ID and caption.
  */
 import { cld } from '../galleryTypes';
 import type { GalleryEvent } from '../galleryTypes';
 
 export const eventAngola: GalleryEvent = {
-  slug: 'angola-diplomatic-engagement-2026',
+  slug: 'angola-diplomatic-engagement-2025',
   title: "Angola Diplomatic Engagement",
   shortTitle: 'Angola Engagement',
-  year: '2026',
-  date: 'November 2026',
+  year: '2025',
+  date: '2025',
   location: "Canada",
   description:
     "A diplomatic engagement with representatives of Angola, strengthening ties between LDII, Angola and Canada.",

@@ -101,7 +101,7 @@ export const featuredImages: GalleryImage[] = [
   },
   {
     url: cld('Angola_Diplomatic_Engagement_2_jmvzbi'),
-    title: 'Angola Diplomatic Engagement (November 2026)',
+    title: 'Angola Diplomatic Engagement (2025)',
     width: 2000,
     height: 1126,
   },
@@ -137,13 +137,13 @@ export const featuredImages: GalleryImage[] = [
   },
   {
     url: cld('Brampton_counci_kryhsj'),
-    title: 'LDII at Brampton City Hall',
+    title: 'Brampton City Council · Partnership ceremony',
     width: 1200,
     height: 900
   },
   {
     url: cld('Dr_victor_bkpass'),
-    title: 'Speaker at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'Dr. Victor, keynote speaker',
     width: 900,
     height: 1200
   },
@@ -185,7 +185,7 @@ export const featuredImages: GalleryImage[] = [
 export const galleryEvents: GalleryEvent[] = [
   eventSudburyMining,       // Greater Sudbury mining ecosystem trip (November 2026)
   eventCanadaSouthAfrica,   // Canada and South Africa seminar (November 2026)
-  eventAngola,              // Angola Diplomatic Engagement (November 2026)
+  eventAngola,              // Angola Diplomatic Engagement (2025)
   event2ndPostCovid,        // Event 1: 2nd Post-COVID Conference (Brampton, Sep 2025)
   event1stPostCovid,        // 1st Post-COVID Conference (Toronto, July 2024)
   eventDiplomatic,          // Event 3: Diplomatic Engagements & Partnerships

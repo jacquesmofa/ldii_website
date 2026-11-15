@@ -159,7 +159,7 @@ const GalleryPage = () => {
     return (
       <button
         onClick={() => enterCategory(cat.id)}
-        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 max-w-full sm:whitespace-nowrap cursor-pointer ${
+        className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 cursor-pointer ${
           isActive
             ? 'bg-[#0A1E3D] text-white shadow-lg'
             : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 hover:border-green-300'
@@ -172,10 +172,6 @@ const GalleryPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <title>Gallery | LDII — Events &amp; Photo Collections</title>
-      <meta name="description" content="Browse the LDII gallery showcasing international conferences, diplomatic engagements, community programs, and behind-the-scenes moments." />
-      <meta name="keywords" content="LDII gallery, conference photos, diplomatic events, community programs, international gatherings" />
-      <link rel="canonical" href="/events/gallery" />
 
       {/* ═══════════════════════════════════════════════════════════════════
           HERO SECTION
@@ -221,9 +217,9 @@ const GalleryPage = () => {
       {/* ═══════════════════════════════════════════════════════════════════
           NAVIGATION TABS  +  BACK BUTTON
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="py-8 bg-gray-50 border-b border-gray-100 sticky top-[72px] z-40">
+      <section className="py-4 bg-white border-b border-gray-200" aria-label="Photo albums">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex items-center gap-2 overflow-x-auto md:flex-wrap md:justify-center pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {/* Overview tab — only visible when in category mode */}
             <AnimatePresence>
               {viewMode === 'category' && (
@@ -247,23 +243,6 @@ const GalleryPage = () => {
             ))}
           </div>
 
-          {/* Stats / breadcrumb bar */}
-          <div className="mt-4 text-center">
-            {viewMode === 'overview' ? (
-              <p className="text-sm text-gray-500">
-                Scroll down to explore each collection. Click &quot;View All&quot; to see the complete set.
-              </p>
-            ) : (
-              <p className="text-sm text-gray-600">
-                Showing <span className="font-semibold text-[#0A1E3D]">{categoryImages.length}</span> photos in{' '}
-                <span className="font-semibold text-[#0A1E3D]">{categoryName}</span>
-                <span className="text-gray-400 mx-2">|</span>
-                <span className="text-xs text-gray-400 italic">
-                  Titles auto-hide after 4 seconds — hover any photo to reveal details
-                </span>
-              </p>
-            )}
-          </div>
         </div>
       </section>
 
@@ -376,16 +355,16 @@ const GalleryPage = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
-            className="py-14 md:py-20 bg-white"
+            className="py-8 md:py-10 bg-white"
           >
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+            <div className="max-w-[1800px] mx-auto px-3 md:px-5">
               {/* Section title */}
-              <div className="text-center mb-10">
-                <h2 className="text-2xl md:text-3xl font-bold text-[#0A1E3D] mb-2">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0A1E3D] mb-1">
                   {categoryName}
                 </h2>
                 <p className="text-gray-500 text-sm">
-                  {categoryImages.length} {categoryImages.length === 1 ? 'photo' : 'photos'} — click any to view full size
+                  {categoryImages.length} {categoryImages.length === 1 ? 'photo' : 'photos'}
                 </p>
               </div>
 

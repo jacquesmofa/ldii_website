@@ -93,7 +93,10 @@ export default function Footer() {
               </li>
               <li className="flex gap-3">
                 <i className="ri-mail-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
-                <a href={`mailto:${ORG.email}`} className="hover:text-white break-all">{ORG.email}</a>
+                <span className="flex flex-col gap-1">
+                  <a href={`mailto:${ORG.email}`} className="hover:text-white break-all">{ORG.email}</a>
+                  <a href={`mailto:${ORG.emailInfo}`} className="hover:text-white break-all">{ORG.emailInfo}</a>
+                </span>
               </li>
             </ul>
             <div className="flex gap-2 mt-6">

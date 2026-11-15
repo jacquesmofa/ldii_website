@@ -128,7 +128,7 @@ export default function GalleryEventPage() {
 
       {/* Tab Switcher (only when the album has videos) */}
       {event.videos.length > 0 && (
-      <section className="py-6 bg-white border-b border-gray-200 sticky top-[72px] z-30">
+      <section className="py-4 bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-center">
             <div className="inline-flex bg-gray-100 rounded-full p-1">

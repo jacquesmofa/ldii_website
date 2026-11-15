@@ -55,6 +55,7 @@ const pages: RouteObject[] = [
 
 /** Old addresses (Nov 2026 restructure) and where they now live. public/.htaccess sends the same 301s. */
 export const REDIRECTS: Record<string, string> = {
+  '/events/gallery/angola-diplomatic-engagement-2026': '/events/gallery/angola-diplomatic-engagement-2025',
   '/about/who-we-are': '/about',
   '/about/our-work': '/international-focus',
   '/about/past-projects': '/impact',

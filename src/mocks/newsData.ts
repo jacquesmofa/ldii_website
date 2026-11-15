@@ -36,13 +36,13 @@ export const newsArticles: NewsArticle[] = [
   },
   {
     title: 'Angola Diplomatic Engagement',
-    date: 'November 2026',
+    date: '2025',
     category: 'Diplomacy',
     image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_900,h_700,q_auto,f_auto/Angola_Diplomatic_Engagement_2_jmvzbi.jpg',
     excerpt: 'LDII met with representatives of Angola to strengthen ties between LDII, Angola and Canada.',
-    content: 'The engagement continues LDII\'s work with diplomatic missions to build partnerships between African nations and Canada.',
+    content: 'The engagement continues LDII\'s work with diplomatic missions to build partnerships between the Global South and Canada.',
     author: 'LDII',
-    link: '/events/gallery/angola-diplomatic-engagement-2026',
+    link: '/events/gallery/angola-diplomatic-engagement-2025',
     linkLabel: 'See the photos',
   },
   {

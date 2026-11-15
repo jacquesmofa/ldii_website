@@ -55,20 +55,20 @@ export const allEvents: EventItem[] = [
 
   {
     id: 'africa-canada-mining-technology-exchange-2027',
-    title: 'Africa–Canada Mining & Technology Transfer Mission',
+    title: 'Global South–Canada Mining & Technology Transfer Mission',
     date: '2027-06-01',
     displayDate: 'June 2027',
     location: 'Greater Sudbury & Timmins, Ontario',
     venue: 'Concludes at the Canadian Mining Expo, Timmins',
     description:
-      'Co-hosted by LDII and Thrive Tours Inc., an Indigenous-led experiential tourism and education company based at Batchewana First Nation, the mission brings government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations to Northern Ontario. Delegates are based in Greater Sudbury and travel north to the Canadian Mining Expo in Timmins.\n\nThe Sudbury programme covers the story of the city’s regreening, mining innovation including automation, battery-electric equipment and research at Laurentian, Cambrian and NORCAT, and business-to-business meetings with local mining suppliers and service companies. The delegations are looking for partners who deliver training and technical know-how, not just equipment.',
+      "Every June, government and industry delegations from across the Global South come to Greater Sudbury to see one of the world’s leading mining ecosystems at work: its mines, suppliers, technologies and research institutions. They meet the people behind them and look for partnerships that bring proven Canadian know-how to mining in their own countries. The mission then travels north and ends at the Canadian Mining Expo in Timmins.\n\nCo-hosted by LDII and Thrive Tours Inc., an Indigenous-led experiential tourism and education company based at Batchewana First Nation. The Sudbury programme covers the story of the city’s regreening, mining innovation including automation, battery-electric equipment and research at Laurentian, Cambrian and NORCAT, and business-to-business meetings with local mining suppliers and service companies.",
     shortDescription:
-      'Government and industry delegations from Kenya, Uganda, South Africa, Botswana and more visit Greater Sudbury and the Canadian Mining Expo in Timmins.',
+      'The annual Global South mining mission to Greater Sudbury, ending at the Canadian Mining Expo in Timmins.',
     image:
       'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg',
     type: 'International Delegation',
     highlights: [
-      'Government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations',
+      'Government and industry delegations from across the Global South',
       'Northern Ontario mining suppliers and service companies',
       'Laurentian University, Cambrian College and NORCAT',
     ],
@@ -117,7 +117,7 @@ export const allEvents: EventItem[] = [
     location: 'Sydney, Australia',
     description: 'Exploring the vital role of cultural heritage and traditional knowledge in building community resilience and sustainable development. This unique conference brings together cultural practitioners, Indigenous leaders, researchers, and policy makers to examine how cultural assets can strengthen community resilience against global shocks while preserving invaluable heritage for future generations.',
     shortDescription: 'Exploring the role of cultural heritage and traditional knowledge in building community resilience and sustainable development.',
-    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_800,h_500,q_auto,f_auto/crop2026_speaker_mpjaow.jpg',
+    image: 'https://res.cloudinary.com/dhjajm7ru/image/upload/c_pad,b_rgb:0A1E3D,w_800,h_500,q_auto,f_auto/v1781706372/Crop_rounded_big_zgkob2.png',
     type: 'Cultural Conference',
     highlights: [
       'Indigenous knowledge keepers',
@@ -144,7 +144,7 @@ export const allEvents: EventItem[] = [
     location: 'Ontario, Canada',
     description: 'Building on the success of CROP 2026 in Australia, this conference brings together cultural heritage practitioners, Indigenous leaders, and resilience experts to explore how cultural identity and traditional knowledge strengthen community resilience across the Americas. This landmark event in Ontario will examine cultural preservation strategies, indigenous-led climate adaptation, and the role of arts in healing communities affected by global shocks.',
     shortDescription: 'Building on CROP 2026 Australia, exploring cultural identity and traditional knowledge in strengthening community resilience across the Americas.',
-    image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_face,w_800,h_500,q_auto,f_auto/crop2026_speaker_mpjaow.jpg',
+    image: 'https://res.cloudinary.com/dhjajm7ru/image/upload/c_pad,b_rgb:0A1E3D,w_800,h_500,q_auto,f_auto/v1781706372/Crop_rounded_big_zgkob2.png',
     type: 'Cultural Conference',
     highlights: [
       'Indigenous knowledge keepers from North and South America',
@@ -249,16 +249,16 @@ export const allEvents: EventItem[] = [
     isFeatured: true
   },
   {
-    id: 'angola-diplomatic-engagement-2026',
+    id: 'angola-diplomatic-engagement-2025',
     title: 'Angola Diplomatic Engagement',
-    date: '2026-11-03',
-    displayDate: 'November 2026',
+    date: '2025-06-01',
+    displayDate: '2025',
     location: 'Canada',
     description: 'A diplomatic engagement with representatives of Angola, strengthening ties between LDII, Angola and Canada.',
     shortDescription: 'A diplomatic engagement with representatives of Angola.',
     image: 'https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_800,h_500,q_auto,f_auto/Angola_Diplomatic_Engagement_2_jmvzbi.jpg',
     type: 'Diplomatic',
-    linkUrl: '/events/gallery/angola-diplomatic-engagement-2026',
+    linkUrl: '/events/gallery/angola-diplomatic-engagement-2025',
     linkLabel: 'See the photos',
     isFeatured: false
   },

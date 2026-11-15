@@ -48,8 +48,8 @@ export default function FAQPage() {
     },
     {
       category: 'Partnerships',
-      question: 'What is the Africa–Canada Mining & Technology Transfer Mission?',
-      answer: 'A mission planned for June 2027, co-hosted with Thrive Tours Inc., that brings government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations to Greater Sudbury and the Canadian Mining Expo in Timmins.'
+      question: 'What is the Global South–Canada Mining & Technology Transfer Mission?',
+      answer: "Every June, government and industry delegations from across the Global South visit Greater Sudbury to see its mining ecosystem at work: its mines, suppliers, technology and research. The mission then heads north and ends at the Canadian Mining Expo in Timmins. Co-hosted by LDII and Thrive Tours Inc. The next mission is in June 2027."
     },
     {
       category: 'Support',

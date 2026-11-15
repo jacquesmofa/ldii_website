@@ -16,6 +16,7 @@ AddType application/manifest+json .webmanifest
 
   # Old addresses from the previous site layout move permanently to their new pages
   # (keep in step with REDIRECTS in src/router/config.tsx)
+  RewriteRule ^events/gallery/angola-diplomatic-engagement-2026/?$ /events/gallery/angola-diplomatic-engagement-2025 [R=301,L,NE]
   RewriteRule ^about/who\-we\-are/?$ /about [R=301,L,NE]
   RewriteRule ^about/our\-work/?$ /international-focus [R=301,L,NE]
   RewriteRule ^about/past\-projects/?$ /impact [R=301,L,NE]

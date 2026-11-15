@@ -19,6 +19,7 @@ export const ORG = {
   hq: 'Toronto, Ontario',
   president: 'Ronald Lwabaayi',
   email: 'admin@ldiinitiatives.org',
+  emailInfo: 'info@ldiinitiatives.org',
   phone: '+1 647 656 3026',
   phoneHref: 'tel:+16476563026',
   address: '3701 Chesswood Drive, Unit 315, Toronto, ON M3J 2P6',
@@ -150,7 +151,7 @@ export const INTERNATIONAL = {
       icon: 'ri-hammer-line',
       image: 'WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu',
       imageAlt: 'The LDII delegation underground in hard hats during the Greater Sudbury mining visit',
-      link: { href: '/programs/mining-technology-exchange', label: 'Africa–Canada Mining & Technology Transfer Mission' },
+      link: { href: '/programs/mining-technology-exchange', label: 'Global South–Canada Mining & Technology Transfer Mission' },
     },
     {
       slug: 'trade',
@@ -513,7 +514,7 @@ export const POSTS: Post[] = [
       'On October 1, 2023, Toronto hosted the world’s first COVID-19 Remembrance Parade and Candlelight Vigil, organized by Livelihood Development International Initiatives (LDII) under the theme “Walking for Humanity, Healing, and Compassion, with Unity, Hope, and Renewal Beyond COVID-19.”',
       'The parade began at Christie Pits Park, where participants representing nations from around the world gathered to pay tribute to the impact of the pandemic, led by St. Andrews Pipes & Drums from Mississauga.',
       'Rev. Dr. Wendell Gibbs offered words of solace and led an interfaith prayer, and City Councillor Chris Moise conveyed the local government’s support. During the parade, LDII announced its plan to extend the annual event to other countries, including Uganda, the UK, the USA, Italy and Spain.',
-      'Student Jordan Katuntu recited a poem as the parade became a candlelight vigil. Candles arranged on the ground formed a tribute symbolizing unity, hope, healing and compassion. Participants from many backgrounds, including representatives of RBC and the Ethiopian community, honoured the lives lost and the healthcare workers and volunteers who served during the pandemic.',
+      'Student Jordan Katuntu recited a poem as the parade became a candlelight vigil. Candles arranged on the ground formed a tribute symbolizing unity, hope, healing and compassion. Participants from many backgrounds, including members of the Ethiopian community, honoured the lives lost and the healthcare workers and volunteers who served during the pandemic.',
     ],
     video: true,
   },
@@ -521,12 +522,13 @@ export const POSTS: Post[] = [
 
 /** Upcoming flagship engagement, from Thrive Tours' letter (6 Oct 2026). */
 export const MINING_MISSION = {
-  title: 'Africa–Canada Mining & Technology Transfer Mission',
-  when: 'June 2027',
+  title: 'Global South–Canada Mining & Technology Transfer Mission',
+  kicker: 'Annual Global South Mining Mission to Greater Sudbury',
+  when: 'Every June · next mission June 2027',
   where: 'Greater Sudbury and Timmins, Northern Ontario',
   partner: 'Co-hosted with Thrive Tours Inc., an Indigenous-led experiential tourism and education company based at Batchewana First Nation',
   summary:
-    'Government and industry delegations from Kenya, Uganda, South Africa, Botswana and other African nations travel to Northern Ontario. Delegates are based in Sudbury and the mission concludes at the Canadian Mining Expo in Timmins.',
+    "Every June, government and industry delegations from across the Global South come to Greater Sudbury to see one of the world’s leading mining ecosystems at work: its mines, suppliers, technologies and research institutions. They meet the people behind them and look for partnerships that bring proven Canadian know-how to mining in their own countries. The mission then travels north and ends at the Canadian Mining Expo in Timmins.",
   programme: [
     'The story of Sudbury’s regreening, from environmental damage to one of the world’s best-known recoveries',
     'Mining innovation, including automation, battery-electric equipment and research at Laurentian, Cambrian and NORCAT',

@@ -27,10 +27,18 @@ export const confirmedPartners: Partner[] = [
     icon: 'ri-government-line',
   },
   {
+    name: 'City of Brampton',
+    role: 'Host city and supporter, 2nd International Post-COVID-19 Conference',
+    description:
+      'The City of Brampton endorsed LDII’s 2nd International Post-COVID-19 Conference, held in Brampton in September 2025, and presented certificates of recognition to LDII and its partners.',
+    website: 'https://www.brampton.ca/',
+    icon: 'ri-building-4-line',
+  },
+  {
     name: 'Thrive Tours Inc.',
     role: 'Indigenous-led partner',
     description:
-      'An Indigenous-led experiential tourism and education company based at Batchewana First Nation in Northern Ontario, and co-host with LDII of the Africa–Canada Mining & Technology Transfer Mission (June 2027).',
+      'An Indigenous-led experiential tourism and education company based at Batchewana First Nation in Northern Ontario, and co-host with LDII of the annual Global South–Canada Mining & Technology Transfer Mission.',
     website: 'https://www.thrivetours.ca/',
     logo: 'https://res.cloudinary.com/dzppzxpad/image/upload/f_auto,q_auto,w_420/v1792410688/logo-2026_thrive_tours_kbecbo.webp',
     icon: 'ri-compass-3-line',
@@ -41,6 +49,7 @@ export const confirmedPartners: Partner[] = [
     description:
       'Sydney-based consultancy on cultural heritage, health equity and community resilience, and host of the Cultural Resilience One Planet (CROP) Conference 2026 in which LDII took part.',
     website: 'https://kwetuconnect.com',
+    logo: 'https://res.cloudinary.com/dhjajm7ru/image/upload/w_420,q_auto,f_auto/v1780004656/Kwetu_connect_Logo_-_best_size_for_favicon_ilrvqn.jpg',
     icon: 'ri-earth-line',
   },
   {

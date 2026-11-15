@@ -34,7 +34,7 @@ export const eventDiplomatic: GalleryEvent = {
   date: '2024–2025',
   location: 'Canada & International',
   description:
-    'Meetings between LDII and diplomatic missions, delegations and organizations in Canada, including the High Commissions of Kenya and South Africa.',
+    'LDII’s outreach to diplomatic missions and international organizations in Canada, among them Angola, the Democratic Republic of Congo, Gabon, Uganda, Kenya, South Africa and the Community of Portuguese Language Countries (CPLP).',
   images: [
     {
       url: cld('HE_Ambassador_OF_KENYA_slpwkj'),
@@ -56,25 +56,25 @@ export const eventDiplomatic: GalleryEvent = {
     },
     {
       url: cld('Iftika_gc4ksu'),
-      title: 'Diplomatic guest with LDII',
+      title: 'Iftika, diplomatic delegate',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_2_ka6io7'),
-      title: 'Diplomatic guest in discussion with LDII',
+      title: 'Iftika in discussion with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_3_oix5fe'),
-      title: 'Diplomatic guest with LDII',
+      title: 'Iftika, diplomatic delegate, with LDII',
       width: 900,
       height: 1200
     },
     {
       url: cld('Iftika_4_izigrc'),
-      title: 'Diplomatic guest with LDII',
+      title: 'Iftika, diplomatic delegate',
       width: 900,
       height: 1200
     },
@@ -104,13 +104,13 @@ export const eventDiplomatic: GalleryEvent = {
     },
     {
       url: cld('Albertine_Angola_dlaepr'),
-      title: 'Representative of the Angola delegation · Brampton, September 2025',
+      title: 'Albertine, representative of the Angola delegation',
       width: 900,
       height: 1200
     },
     {
       url: cld('Albertine_Angola.2jpg_qvcq24'),
-      title: 'Representative of the Angola delegation',
+      title: 'Albertine, Angola delegation',
       width: 900,
       height: 1200
     },
@@ -122,37 +122,37 @@ export const eventDiplomatic: GalleryEvent = {
     },
     {
       url: cld('Dei_Bio_phama_prssgi'),
-      title: 'Meeting with guests',
+      title: 'DEI Bio-Pharma · Strategic alliance',
       width: 1200,
       height: 900
     },
     {
       url: cld('ABDU_K_2_nogu02'),
-      title: 'Delegate with LDII',
+      title: 'Abdu K, delegate',
       width: 900,
       height: 1200
     },
     {
       url: cld('ABDU_K_2_fnfwsc'),
-      title: 'Delegate with LDII',
+      title: 'Abdu K, delegate',
       width: 900,
       height: 1200
     },
     {
       url: cld('christopher_Barcey_l9mg1u'),
-      title: 'Media guest with LDII',
+      title: 'Chris Bracey, journalist',
       width: 900,
       height: 1200
     },
     {
       url: cld('Bracey_Chris_t32jrw'),
-      title: 'Media guest with LDII',
+      title: 'Chris Bracey, journalist',
       width: 900,
       height: 1200
     },
     {
       url: cld('Braceley_n_Journalist_g9575z'),
-      title: 'Guests with LDII',
+      title: 'Chris Bracey with members of the press',
       width: 1200,
       height: 900
     },

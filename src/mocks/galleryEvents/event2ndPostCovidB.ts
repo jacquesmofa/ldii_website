@@ -51,25 +51,25 @@ export const event2ndPostCovidBImages = [
   },
   {
     url: cld('Iftika_gc4ksu'),
-    title: 'Diplomatic guest at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'Iftika, diplomatic delegate, arriving at the conference',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_2_ka6io7'),
-    title: 'Diplomatic guest in discussion at the conference · Brampton, September 2025',
+    title: 'Iftika in discussion at the conference',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_3_oix5fe'),
-    title: 'Diplomatic guest at the conference · Brampton, September 2025',
+    title: 'Iftika, diplomatic delegate, at the conference',
     width: 900,
     height: 1200
   },
   {
     url: cld('Iftika_4_izigrc'),
-    title: 'Diplomatic guest at the closing session · Brampton, September 2025',
+    title: 'Iftika at the closing session',
     width: 900,
     height: 1200
   },
@@ -95,25 +95,25 @@ export const event2ndPostCovidBImages = [
   // --- BRAMPTON CITY PARTNERSHIP ---
   {
     url: cld('Brampton_counci_kryhsj'),
-    title: 'LDII at Brampton City Hall',
+    title: 'Brampton City Council · Official partnership',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_2_wnwcx5'),
-    title: 'LDII at Brampton City Hall',
+    title: 'Brampton City Council · Signing ceremony',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_3_zhgvl1'),
-    title: 'LDII at Brampton City Hall',
+    title: 'Brampton City Council · Award presentation',
     width: 1200,
     height: 900
   },
   {
     url: cld('Brampton_council_4_pz8w6d'),
-    title: 'Community leaders at Brampton City Hall',
+    title: 'Brampton City Council · Community leaders',
     width: 1200,
     height: 900
   },
@@ -203,19 +203,19 @@ export const event2ndPostCovidBImages = [
   // --- MEDIA & JOURNALISTS ---
   {
     url: cld('christopher_Barcey_l9mg1u'),
-    title: 'Media coverage of the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'Chris Bracey, journalist',
     width: 900,
     height: 1200
   },
   {
     url: cld('Bracey_Chris_t32jrw'),
-    title: 'Media coverage of the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'Chris Bracey, journalist',
     width: 900,
     height: 1200
   },
   {
     url: cld('Braceley_n_Journalist_g9575z'),
-    title: 'Guests at the conference · Brampton, September 2025',
+    title: 'Chris Bracey with members of the press',
     width: 1200,
     height: 900
   },
@@ -223,13 +223,13 @@ export const event2ndPostCovidBImages = [
   // --- PARTNERSHIPS & ORGANIZATIONS ---
   {
     url: cld('Albertine_Angola_dlaepr'),
-    title: 'Representative of the Angola delegation · Brampton, September 2025',
+    title: 'Albertine, representative of the Angola delegation',
     width: 900,
     height: 1200
   },
   {
     url: cld('Albertine_Angola.2jpg_qvcq24'),
-    title: 'Representative of the Angola delegation · Brampton, September 2025',
+    title: 'Albertine, Angola delegation',
     width: 900,
     height: 1200
   },
@@ -241,13 +241,13 @@ export const event2ndPostCovidBImages = [
   },
   {
     url: cld('Dei_Bio_phama_prssgi'),
-    title: 'Guests at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'DEI Bio-Pharma · Partnership',
     width: 1200,
     height: 900
   },
   {
     url: cld('ABDU_K_2_nogu02'),
-    title: 'Delegate at the 2nd International Post-COVID-19 Conference · Brampton, September 2025',
+    title: 'Abdu K, delegate',
     width: 900,
     height: 1200
   },
