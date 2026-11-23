@@ -1,7 +1,7 @@
 {
   "main": {
     "label": "LDII",
-    "text": "A Canadian nonprofit with a social enterprise approach, headquartered in ",
+    "text": "A Canadian not-for-profit organization with a social enterprise, headquartered in ",
     "fieldLabel": "Newsletter",
     "placeholder": "Your email",
     "heading": "Contact",
@@ -10,6 +10,8 @@
     "text4": "Terms",
     "text5": "Accessibility",
     "text6": "FAQ",
-    "text7": "Site map"
+    "text7": "Site map",
+    "liaisonLabel": "Africa Regional Liaison Offices",
+    "liaisonCountries": "South Africa · Uganda · Kenya"
   }
 }

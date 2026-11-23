@@ -75,6 +75,12 @@ export const ENTRIES = [
 
 /** Labels and help text by field name, used wherever that field name appears. */
 export const FIELD_HINTS = {
+  tiles: { label: 'Home photo mosaic (6 tiles)', itemName: 'tile', description: 'The first tile is the large one. Each tile opens its link, usually an album like /events/gallery/<album>.' },
+  liaisonOffices: { label: 'Africa Regional Liaison Offices' },
+  lines: { label: 'Address lines', itemName: 'line' },
+  missionOverview: { label: 'The mission (President’s text)' },
+  paragraphs: { label: 'Paragraphs', itemName: 'paragraph' },
+
   // organisation
   org: { label: 'Organisation and contact details' },
   short: { label: 'Short name' },

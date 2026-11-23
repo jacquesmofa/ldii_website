@@ -2,7 +2,7 @@
   "hero": {
     "title": "Local Impact,",
     "label": "Global Partnerships.",
-    "text": "We empower communities in Ontario and around the world to thrive amidst systemic crises, through leadership, research, strategic partnership and human capital development that build resilience against global shocks.",
+    "text": "We empower communities in Canada and around the world to thrive amidst systemic crises, through leadership, research, strategic partnership and human capital development that build resilience against global shocks.",
     "text2": "Explore our work ",
     "button": " Watch the parade film",
     "text3": "In the background: the world’s first international Post-COVID parade and candlelight vigil, organized by LDII in Toronto on October 1, 2023.",
@@ -10,7 +10,7 @@
   },
   "doors": [
     {
-      "kicker": "In Ontario",
+      "kicker": "In Canada",
       "title": "Local programmes",
       "text": "Newcomers, youth and seniors.",
       "href": "/local-programmes",
@@ -35,7 +35,7 @@
     "ariaLabel": "Start here"
   },
   "localStrip": {
-    "text": "Local programmes · Ontario",
+    "text": "Local programmes · Canada",
     "label": "All local programmes",
     "label2": "0"
   },
@@ -53,7 +53,7 @@
     },
     {
       "value": "Toronto",
-      "label": "headquarters, Ontario"
+      "label": "headquarters, Canada"
     },
     {
       "value": "2",
@@ -91,7 +91,39 @@
   "mosaic": {
     "text": "Gallery",
     "heading": "Our work in pictures",
-    "text2": "Open the gallery "
+    "text2": "Open the gallery ",
+    "tiles": [
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/v1795398381/VIKI8551_Custom_lenru0",
+        "alt": "With the Mayor of Brampton, Patrick Brown, and CAWAP CEO Rev. Irine Ashu at the Sankofa Royale Awards 2025",
+        "link": "/events/gallery/brampton-mayor-sankofa-royale-awards-2025"
+      },
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu",
+        "alt": "The LDII delegation underground in hard hats, Greater Sudbury",
+        "link": "/events/gallery/greater-sudbury-mining-ecosystem-2026"
+      },
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/v1795393142/WhatsApp_Image_2026-11-15_at_11.19.53_6_qxkoli",
+        "alt": "The speakers’ table at the Food Security Summit",
+        "link": "/events/gallery/food-security-summit-ccaea"
+      },
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/v1795393397/WhatsApp_Image_2026-11-15_at_11.19.55_5_dtuktp",
+        "alt": "Pupils planting fruit trees in Eastern Uganda",
+        "link": "/events/gallery/fruit-tree-planting-eastern-uganda"
+      },
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/untitled-6588_1_pr49ja",
+        "alt": "Participants of the Canada–South Africa seminar celebrating together",
+        "link": "/events/gallery/canada-south-africa-economic-outlook-2026"
+      },
+      {
+        "image": "https://res.cloudinary.com/dzppzxpad/image/upload/Angola_Diplomatic_Engagement_3_y20i5v",
+        "alt": "The delegation with Angolan officials",
+        "link": "/events/gallery/angola-diplomatic-engagement-2025"
+      }
+    ]
   },
   "partnerBand": {
     "text": "Partners",

@@ -30,6 +30,32 @@ export default function MiningTechnologyExchangePage() {
         </div>
       </section>
 
+      {/* The mission (President's wording) */}
+      {copy.missionOverview && (
+        <section className="py-16 md:py-20 bg-white border-b border-gray-100">
+          <div className="max-w-4xl mx-auto px-6 lg:px-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">{copy.missionOverview.heading}</h2>
+            {(copy.missionOverview.paragraphs || []).map((t) => (
+              <p key={t} className="text-lg text-gray-700 leading-relaxed mb-5">{t}</p>
+            ))}
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {copy.missionOverview.when && (
+                <div className="border-l-4 border-green-600 pl-5 py-2">
+                  <i className="ri-calendar-event-line text-green-700 mr-2" aria-hidden="true"></i>
+                  <span className="text-gray-900 font-semibold">{copy.missionOverview.when}</span>
+                </div>
+              )}
+              {copy.missionOverview.cohost && (
+                <div className="border-l-4 border-[#0A1E3D] pl-5 py-2">
+                  <i className="ri-shake-hands-line text-[#0A1E3D] mr-2" aria-hidden="true"></i>
+                  <span className="text-gray-900 font-semibold">{copy.missionOverview.cohost}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Delivery partners */}
       <section className="py-14 md:py-16 bg-gray-50 border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-6 lg:px-8">

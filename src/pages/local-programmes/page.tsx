@@ -5,7 +5,7 @@ import { LOCAL, NEWCOMER, ORG, PHOTOS, YOUTH_DIMENSIONS, photo } from '../../con
 import copy from '../../content/pages/local-programmes.json';
 // Text, images and links: src/content/pages/local-programmes.json (editable in the website editors).
 
-/** Local Community Development & Empowerment: six programmes across Ontario, plus the Newcomer Settlement programme in detail. */
+/** Local Community Development & Empowerment: six programmes across Canada, plus the Newcomer Settlement programme in detail. */
 export default function LocalProgrammesPage() {
   const { hash } = useLocation();
   const [openProg, setOpenProg] = useState<string | null>(null);

@@ -10,14 +10,14 @@
     {
       "path": "/",
       "title": "LDII | Local Impact, Global Partnerships",
-      "description": "LDII is a Toronto nonprofit empowering communities in Ontario and building partnerships between Canada and the Global South. Local impact, global partnerships.",
+      "description": "LDII is a Canadian not-for-profit organization with a social enterprise, strengthening communities in Canada and building partnerships with the Global South.",
       "label": "Home",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-05-25_at_3.59.39_PM_k4yy3g.jpg"
     },
     {
       "path": "/about",
-      "title": "About LDII | Canadian Nonprofit, Toronto",
-      "description": "Who LDII is: a Canadian nonprofit founded in Toronto that strengthens communities at home and builds practical partnerships across the Global North and South.",
+      "title": "About LDII | Canadian Not-for-Profit Organization",
+      "description": "Who LDII is: a Canadian not-for-profit organization with a social enterprise that strengthens communities at home and builds practical partnerships across the Global North and South.",
       "label": "About",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-10-19_at_18.42.29oilk_dd4872.jpg"
     },
@@ -37,8 +37,8 @@
     },
     {
       "path": "/local-programmes",
-      "title": "Local Programmes in Ontario | LDII",
-      "description": "Newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships and seniors’ wellbeing across Ontario.",
+      "title": "Local Programmes in Canada | LDII",
+      "description": "Newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships and seniors’ wellbeing across Canada.",
       "label": "Local Programmes",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/Brampton_counci_kryhsj.jpg"
     },
@@ -66,7 +66,7 @@
     {
       "path": "/events/upcoming",
       "title": "Upcoming Events | LDII",
-      "description": "What LDII is preparing next, including the annual Global South mining mission to Greater Sudbury and Timmins (June 2027).",
+      "description": "What LDII is preparing next, including the annual Global South mining mission to Greater Sudbury and Timmins (first week of June 2027).",
       "label": "Upcoming Events",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.20_7_rimlmd.jpg"
     },
@@ -108,7 +108,7 @@
     {
       "path": "/donate",
       "title": "Donate to LDII",
-      "description": "Support LDII’s conferences, exchanges and community programmes for youth, newcomers, families and seniors in Ontario and internationally.",
+      "description": "Support LDII’s conferences, exchanges and community programmes for youth, newcomers, families and seniors in Canada and internationally.",
       "label": "Donate",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.17_k9kxst.jpg"
     },
@@ -147,7 +147,7 @@
     {
       "path": "/faq",
       "title": "Frequently Asked Questions | LDII",
-      "description": "Answers to common questions about LDII, our programmes in Ontario, our international work, events, partnerships and donations.",
+      "description": "Answers to common questions about LDII, our programmes in Canada, our international work, events, partnerships and donations.",
       "label": "FAQ"
     },
     {
@@ -204,6 +204,27 @@
       "description": "Photographs from Trip to the Mining Capital of Canada: the Greater Sudbury Mining Ecosystem, an LDII engagement. Open the album to browse every photo full size.",
       "label": "Trip to the Mining Capital of Canada: the Greater Sudbury Mining Ecosystem",
       "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/WhatsApp_Image_2026-11-12_at_19.43.21_oegqfu.jpg"
+    },
+    {
+      "path": "/events/gallery/brampton-mayor-sankofa-royale-awards-2025",
+      "title": "With the Mayor of Brampton, Sankofa Royale Awards 2025 | LDII",
+      "description": "LDII at the Sankofa Royale Awards ceremony 2025 with the Mayor of Brampton, Patrick Brown, and CAWAP CEO Rev. Irine Ashu.",
+      "label": "With the Mayor of Brampton",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/v1795398381/VIKI8551_Custom_lenru0.jpg"
+    },
+    {
+      "path": "/events/gallery/food-security-summit-ccaea",
+      "title": "Food Security Summit with CCAEA | LDII Gallery",
+      "description": "The Food Security Summit, in partnership with Climate Change Action East Africa, launching the Food Security Project in Global South countries.",
+      "label": "Food Security Summit",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/v1795393142/WhatsApp_Image_2026-11-15_at_11.19.53_6_qxkoli.jpg"
+    },
+    {
+      "path": "/events/gallery/fruit-tree-planting-eastern-uganda",
+      "title": "Fruit Tree Planting in Eastern Uganda | LDII Gallery",
+      "description": "Planting fruit trees with school children in Eastern Uganda, with Climate Change Action East Africa, the Institute of Bankers and Stanbic Bank Uganda.",
+      "label": "Fruit Tree Planting",
+      "image": "https://res.cloudinary.com/dzppzxpad/image/upload/c_fill,g_auto,w_1200,h_630,q_auto:good,f_jpg/v1795393397/WhatsApp_Image_2026-11-15_at_11.19.55_5_dtuktp.jpg"
     }
   ]
 }

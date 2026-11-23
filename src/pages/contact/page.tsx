@@ -306,6 +306,30 @@ export default function ContactPage() {
             ))}
           </div>
 
+          {/* Africa Regional Liaison Offices */}
+          {copy.liaisonOffices?.items?.length > 0 && (
+            <div className="mb-12">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-900">{copy.liaisonOffices.heading}</h3>
+                {copy.liaisonOffices.text && <p className="mt-3 text-lg text-gray-600 max-w-2xl mx-auto">{copy.liaisonOffices.text}</p>}
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {copy.liaisonOffices.items.map((o: { country: string; lines: string[] }) => (
+                  <div key={o.country} className="border border-gray-200 border-t-4 border-t-green-600 rounded-lg p-6 bg-white">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-green-700">{copy.liaisonOffices.heading.replace(/s$/, '')}</p>
+                    <h4 className="mt-2 text-xl font-bold text-gray-900">{o.country}</h4>
+                    <div className="mt-4 flex items-start gap-3 text-sm text-gray-700">
+                      <i className="ri-map-pin-line text-gray-500 mt-0.5" aria-hidden="true"></i>
+                      <address className="not-italic leading-relaxed">
+                        {(o.lines || []).map((l) => <span key={l} className="block">{l}</span>)}
+                      </address>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Map */}
           <div className="bg-white rounded-2xl overflow-hidden shadow-lg">
             <iframe

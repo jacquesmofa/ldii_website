@@ -62,3 +62,10 @@ Connects African missions, ministries and chambers of mines with Northern Ontari
 - Sveltia "Sign In with GitHub" runs on HostPapa: `public/api/auth.php` + `callback.php` (`oauth-common.php`: canonical origin https://ldiinitiatives.org). The OAuth App secret is never in the repo: the deploy workflow writes `out/api/oauth-config.php` from Actions secrets `CMS_GITHUB_CLIENT_ID` / `CMS_GITHUB_CLIENT_SECRET`. Without them, "Sign In Using Access Token" still works.
 - Safety: `scripts/prerender.mjs` opens every page at build time; if a page does not render (an edit left out something it needs), the build fails and nothing is uploaded. New gallery albums get a share page and sitemap line automatically (`scripts/social-pages.mjs`).
 - Refactors that must not change what visitors see: `scripts/studio-tools/` (snapshot before/after, compare). Editor guide for the team: `docs/editor-guide.md`.
+
+## 22 Nov 2026
+- Identity (President's wording): "Livelihood Development International Initiatives (LDII) is a Canadian not-for-profit organization with a social enterprise." Never describe LDII as an Ontario organization (it can work in any province). Ontario stays only where it is a legal or factual reference (AODA on the Accessibility page, governing law in the Terms, provincial engagement in the President's profile, event locations).
+- Africa Regional Liaison Offices (South Africa, Uganda, Kenya): `src/content/pages/contact.json > liaisonOffices`, shown under the head office on /contact; footer links to them.
+- Mining mission: the President's final text (22 Nov) in `pages/mining-mission.json` (hero + `missionOverview`), `mining-mission.json`, `events.json`, FAQ. 2027 mission: first week of June. Co-hosted by LDII and Thrive Tours Inc.
+- Gallery: albums `brampton-mayor-sankofa-royale-awards-2025`, `food-security-summit-ccaea`, `fruit-tree-planting-eastern-uganda`. Albums with no confirmed year leave `year`/`date` empty (the badges hide). Open questions in PLACEHOLDERS.md.
+- Home mosaic: `pages/home.json > mosaic.tiles` (6 tiles, first is large, each links to its album).

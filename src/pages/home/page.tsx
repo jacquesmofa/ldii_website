@@ -149,7 +149,7 @@ function TwoProgrammes() {
     {
       label: 'Local',
       title: LOCAL.title,
-      text: 'Six community programmes across Ontario: newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships, and seniors’ wellbeing.',
+      text: 'Six community programmes across Canada: newcomer settlement and housing, youth employment, youth safety, education and mental health, community partnerships, and seniors’ wellbeing.',
       href: '/local-programmes',
       cta: 'See our local programmes',
       img: photo('Brampton_counci_kryhsj', 1100, 760),
@@ -360,14 +360,11 @@ function TrackRecord() {
 }
 
 function Mosaic() {
-  const tiles = [
-    PHOTOS.cheer,
-    PHOTOS.sudbury,
-    PHOTOS.angola,
-    PHOTOS.igad,
-    PHOTOS.hall2nd,
-    PHOTOS.kenya,
-  ];
+  // Tiles come from home.json > mosaic.tiles (photo, description, album link); the old fixed set is the fallback.
+  const fromContent = ((copy.mosaic as { tiles?: { image: string; alt: string; link?: string }[] }).tiles || []).filter((t) => t.image);
+  const tiles = fromContent.length
+    ? fromContent.map((t) => ({ id: t.image, alt: t.alt, link: t.link || '/events/gallery' }))
+    : [PHOTOS.cheer, PHOTOS.sudbury, PHOTOS.angola, PHOTOS.igad, PHOTOS.hall2nd, PHOTOS.kenya].map((t) => ({ ...t, link: '/events/gallery' }));
   return (
     <section className="bg-ldii-ink text-white py-20 md:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -383,7 +380,7 @@ function Mosaic() {
           {tiles.map((t, i) => (
             <Link
               key={t.id}
-              to="/events/gallery"
+              to={t.link}
               className={`overflow-hidden rounded-xl ${i === 0 ? 'col-span-2 row-span-2' : i === 3 ? 'md:col-span-2' : ''}`}
             >
               <img src={photo(t.id, i === 0 ? 1100 : 700, i === 0 ? 820 : 420)} alt={t.alt} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />

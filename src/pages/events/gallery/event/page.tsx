@@ -88,9 +88,11 @@ export default function GalleryEventPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1E3D]/85 via-[#0A1E3D]/75 to-[#0A1E3D]/85"></div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-8 text-center">
-          <div className="inline-block bg-[#3CCB7F]/20 text-[#3CCB7F] border border-[#3CCB7F]/30 px-4 py-1.5 rounded-[3px] text-sm font-semibold mb-5">
-            {event.year}
-          </div>
+          {event.year && (
+            <div className="inline-block bg-[#3CCB7F]/20 text-[#3CCB7F] border border-[#3CCB7F]/30 px-4 py-1.5 rounded-[3px] text-sm font-semibold mb-5">
+              {event.year}
+            </div>
+          )}
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
             {event.title}
           </h1>
@@ -98,10 +100,12 @@ export default function GalleryEventPage() {
             {event.description}
           </p>
           <div className="flex items-center justify-center gap-6 text-white/80 text-sm">
-            <span className="flex items-center gap-1.5">
-              <i className="ri-calendar-line w-4 h-4 flex items-center justify-center"></i>
-              {event.date}
-            </span>
+            {event.date && (
+              <span className="flex items-center gap-1.5">
+                <i className="ri-calendar-line w-4 h-4 flex items-center justify-center"></i>
+                {event.date}
+              </span>
+            )}
             <span className="flex items-center gap-1.5">
               <i className="ri-map-pin-line w-4 h-4 flex items-center justify-center"></i>
               {event.location}

@@ -88,6 +88,15 @@ export default function Footer() {
                 <i className="ri-map-pin-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
                 <a href={ORG.mapUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">{ORG.address}</a>
               </li>
+              {copy.main.liaisonLabel && (
+                <li className="flex gap-3">
+                  <i className="ri-global-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
+                  <Link to="/contact#our-locations" className="hover:text-white">
+                    <span className="block">{copy.main.liaisonLabel}</span>
+                    <span className="block text-white/65 text-sm">{copy.main.liaisonCountries}</span>
+                  </Link>
+                </li>
+              )}
               <li className="flex gap-3">
                 <i className="ri-phone-line text-tech-teal-300 mt-0.5" aria-hidden="true" />
                 <a href={ORG.phoneHref} className="hover:text-white">{ORG.phone}</a>

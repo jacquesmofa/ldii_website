@@ -1,7 +1,7 @@
 {
   "heroSection": {
     "title": "Make a Difference Today",
-    "text": "Your gift supports newcomers, youth and seniors in Ontario and the partnerships we build abroad."
+    "text": "Your gift supports newcomers, youth and seniors in Canada and the partnerships we build abroad."
   },
   "donationForm": {
     "heading": "Pledge a Donation",
@@ -58,12 +58,12 @@
     "item4": "SWIFT/BIC code (for international transfers)"
   },
   "taxReceiptNotice": {
-    "text": "LDII is a Canadian nonprofit organization, not a registered charity, so gifts are not eligible for a charitable tax receipt. We acknowledge every gift by email."
+    "text": "LDII is a Canadian not-for-profit organization, not a registered charity, so gifts are not eligible for a charitable tax receipt. We acknowledge every gift by email."
   },
   "whyDonateSection": {
     "heading": "Why Your Donation Matters",
     "subheading": "Direct Impact",
-    "text": "Your gift goes to LDII’s local programmes in Ontario: newcomers, youth and seniors.",
+    "text": "Your gift goes to LDII’s local programmes in Canada: newcomers, youth and seniors.",
     "subheading2": "Transparency",
     "text2": "Ask us at any time how your gift was used. Annual reports will be published on our Impact page.",
     "subheading3": "Global Reach",

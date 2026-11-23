@@ -88,3 +88,11 @@ Open:
 - One line describing the DEI Bio-Pharma partnership (and its website) to add it to the Partners list.
 - City of Brampton logo, if LDII has permission to show it.
 - A real photo from CROP 2026 in Sydney (the CROP logo is used for now).
+
+## Added 22 Nov 2026 (to confirm with the President)
+- **Food Security Summit year.** Ronald wrote "2018", but the signature board in the photos reads "The East Africa Food Security Symposium & Expo 2020, August 26–29" (with MAAIF, Uganda's Ministry of Agriculture). The album shows no year until confirmed; the signature-board photo is left out for the same reason (`WhatsApp_Image_2026-11-15_at_11.19.55_6_xsx17s`).
+- **Fruit tree planting year.** Ronald wrote "2018"; the photos came in the same batch as the 2020 board. No year shown until confirmed.
+- **"The Institute of Bankers"**: the banners show the "Uganda Bankers' Association". Confirm the partner's exact name.
+- **Left out of the fruit-tree album:** two group photos in front of "Maasai Mara University" (Kenya), which does not match "Eastern Uganda" (`…11.19.55_10_pc9kbc`, `…11.19.56_omvrlv`); a duplicate of the 2020 signature board; and the CCAEA logo (not an event photo). Add back with the right album once confirmed.
+- **Food summit location**: shown as "East Africa". Confirm the city and country.
+- The three albums are in the gallery only; they are not in the Past Events list because that list needs a date.

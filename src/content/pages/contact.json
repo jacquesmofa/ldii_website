@@ -74,8 +74,36 @@
   },
   "officeLocations": {
     "heading": "Our Locations",
-    "text": "Visit our Toronto office, or reach us by phone or email — we serve communities across Ontario and beyond.",
+    "text": "Visit our head office in Toronto or reach our regional liaison offices in Africa. We serve communities across Canada and beyond.",
     "label": "HQ"
+  },
+  "liaisonOffices": {
+    "heading": "Africa Regional Liaison Offices",
+    "text": "Our regional liaison offices connect LDII with partners, governments and communities across Africa.",
+    "items": [
+      {
+        "country": "South Africa",
+        "lines": [
+          "399 Thaba ya Batho",
+          "Bosplaas, North West 0400",
+          "South Africa"
+        ]
+      },
+      {
+        "country": "Uganda",
+        "lines": [
+          "Amber Court, Plot 20 Faraday Road",
+          "Jinja, Uganda"
+        ]
+      },
+      {
+        "country": "Kenya",
+        "lines": [
+          "84 Kays East, Kenyatta Road",
+          "Juja, Kenya"
+        ]
+      }
+    ]
   },
   "map": {
     "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.1234567890123!2d-79.4568!3d43.7532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDQ1JzExLjUiTiA3OcKwMjcnMjQuNSJX!5e0!3m2!1sen!2sca!4v1234567890123!5m2!1sen!2sca",

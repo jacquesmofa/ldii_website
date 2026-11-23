@@ -1283,6 +1283,14 @@ collections:
                 label: "Text7"
                 required: false
                 widget: "string"
+              - name: "liaisonLabel"
+                label: "Liaison label"
+                required: false
+                widget: "string"
+              - name: "liaisonCountries"
+                label: "Liaison countries"
+                required: false
+                widget: "string"
       - name: "seo"
         label: "Google and sharing: page titles, descriptions, pictures"
         file: "src/content/seo.json"
@@ -1610,6 +1618,27 @@ collections:
                 label: "Text2"
                 required: false
                 widget: "string"
+              - name: "tiles"
+                label: "Home photo mosaic (6 tiles)"
+                required: false
+                hint: "The first tile is the large one. Each tile opens its link, usually an album like /events/gallery/<album>."
+                widget: "list"
+                summary: "{{fields.link}}"
+                fields:
+                  - name: "image"
+                    label: "Picture"
+                    required: false
+                    hint: "JPG or PNG, landscape, under 2 MB. Choose it for what it shows."
+                    widget: "image"
+                  - name: "alt"
+                    label: "Picture description (for blind visitors and social apps)"
+                    required: false
+                    widget: "text"
+                  - name: "link"
+                    label: "Link to the original"
+                    required: false
+                    hint: "Full https:// address, or a page like /events/gallery."
+                    widget: "string"
           - name: "partnerBand"
             label: "Partner band"
             required: false
@@ -2303,6 +2332,32 @@ collections:
                 label: "Text"
                 required: false
                 widget: "text"
+          - name: "missionOverview"
+            label: "The mission (President’s text)"
+            required: false
+            widget: "object"
+            fields:
+              - name: "heading"
+                label: "Heading"
+                required: false
+                widget: "string"
+              - name: "paragraphs"
+                label: "Paragraphs"
+                required: false
+                widget: "list"
+                field:
+                  name: "item"
+                  label: "Item"
+                  required: false
+                  widget: "text"
+              - name: "when"
+                label: "When"
+                required: false
+                widget: "string"
+              - name: "cohost"
+                label: "Cohost"
+                required: false
+                widget: "string"
           - name: "deliveryPartners"
             label: "Delivery partners"
             required: false
@@ -4058,6 +4113,38 @@ collections:
                 label: "Text"
                 required: false
                 widget: "string"
+          - name: "liaisonOffices"
+            label: "Africa Regional Liaison Offices"
+            required: false
+            widget: "object"
+            fields:
+              - name: "heading"
+                label: "Heading"
+                required: false
+                widget: "string"
+              - name: "text"
+                label: "Text"
+                required: false
+                widget: "text"
+              - name: "items"
+                label: "Items"
+                required: false
+                widget: "list"
+                summary: "{{fields.country}}"
+                fields:
+                  - name: "country"
+                    label: "Country"
+                    required: false
+                    widget: "string"
+                  - name: "lines"
+                    label: "Address lines"
+                    required: false
+                    widget: "list"
+                    field:
+                      name: "item"
+                      label: "Item"
+                      required: false
+                      widget: "string"
           - name: "map"
             label: "Map"
             required: false
