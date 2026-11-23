@@ -8,4 +8,4 @@
 ## Team cards (23 Nov 2026): the team adopted the two-sided design (concept A)
 - People, titles and contact details: `TEAM` in `team.py` → `python3 team.py` writes `team.html` + one `qr-<name>.svg` each → `node render-team.mjs` → `team-bleed.pdf` (2 pages per person).
 - Ronald Lwabaayi (President & Founder), Elvis Tanwie, PMP (Project Manager), Jacques N. Mofa (Communications Coordinator & IT Lead).
-- Open: all three cards carry the office phone and admin@ldiinitiatives.org until each person's own email/phone is confirmed.
+- Phones (23 Nov): Ronald +1 647 656 3026, Elvis +1 437 551 3155, Jacques +1 647 303 8471. Email: admin@ldiinitiatives.org on all three until personal addresses are confirmed. `python3 build-team.py` makes every print file.
