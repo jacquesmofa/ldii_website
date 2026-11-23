@@ -21,8 +21,8 @@ function Hero() {
         title={PARADE_VIDEO.title}
         className="absolute inset-0 -z-20 w-full h-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink via-ldii-ink/80 to-ldii-ink/30" aria-hidden="true" />
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 md:pt-32 md:pb-28 min-h-[78vh] flex flex-col justify-center">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ldii-ink/55 via-ldii-ink/25 to-transparent" aria-hidden="true" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-20 md:pt-32 md:pb-28 min-h-[78vh] flex flex-col justify-center [text-shadow:0_2px_18px_rgba(0,0,0,0.6)]">
         <Eyebrow light>{ORG.name}</Eyebrow>
         <h1 className="mt-6 font-display text-5xl md:text-7xl font-semibold leading-[1.02] max-w-3xl">{copy.hero.title}<br />
           <span className="text-tech-teal-500">{copy.hero.label}</span>
