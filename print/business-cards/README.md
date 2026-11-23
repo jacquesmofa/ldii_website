@@ -6,6 +6,6 @@
 - Open: which email goes on the card (admin@ldiinitiatives.org now; ronaldlwabaayi@gmail.com also exists) and whether +1 647 656 3026 is his direct line.
 
 ## Team cards (23 Nov 2026): the team adopted the two-sided design (concept A)
-- People, titles and contact details: `TEAM` in `team.py` → `python3 team.py` writes `team.html` + one `qr-<name>.svg` each → `node render-team.mjs` → `team-bleed.pdf` (2 pages per person).
+- People, titles and contact details: `team-contacts.json` (kept out of git because this repo is public; ask Jacques for it, format in `team-contacts.example.json`) → `python3 team.py` writes `team.html` + one `qr-<name>.svg` each → `node render-team.mjs` → `team-bleed.pdf` (2 pages per person).
 - Ronald Lwabaayi (President & Founder), Elvis Tanwie, PMP (Project Manager), Jacques N. Mofa (Communications Coordinator & IT Lead).
-- Phones (23 Nov): Ronald +1 647 656 3026, Elvis +1 437 551 3155, Jacques +1 647 303 8471. Email: admin@ldiinitiatives.org on all three until personal addresses are confirmed. `python3 build-team.py` makes every print file.
+- Each card carries the person's own phone and email (23 Nov); they are only in `team-contacts.json` and the print files, never in this repo.
