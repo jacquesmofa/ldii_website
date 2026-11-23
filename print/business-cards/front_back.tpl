@@ -13,8 +13,9 @@
     <div class="rule meridian"><i></i><b></b><i></i></div>
     <div class="contact">
       <div>
-        <div><span>T</span>+1 647 656 3026</div>
+        <div><span>T</span>{{PHONE}}</div>
         <div><span>E</span>admin@ldiinitiatives.org</div>
+        <div><span>E</span>{{EMAIL}}</div>
         <div><span>W</span>ldiinitiatives.org</div>
       </div>
       <div class="addr">
@@ -42,7 +43,7 @@
       <div class="tile"><img src="qr.svg" alt=""></div>
       <p>Scan to save contact</p>
     </div>
-    <p class="web">ldiinitiatives.org</p>
+    <p class="web">ldiinitiatives.org<span>info@ldiinitiatives.org</span></p>
   </div>
 </section>
 

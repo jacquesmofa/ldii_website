@@ -8,7 +8,7 @@ pages=[]
 for p in TEAM:
     fn=p["name"].split(",")[0]
     v=(f"BEGIN:VCARD\nVERSION:3.0\nN:{p['last']};{p['first']}\nFN:{fn}\nORG:LDII\nTITLE:{p['title']}\n"
-       f"TEL:{p['phone'].replace(' ','')}\nEMAIL:{p['email']}\nURL:ldiinitiatives.org\nADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada\nEND:VCARD")
+       f"TEL:{p['phone'].replace(' ','')}\nEMAIL:{EMAIL}\nEMAIL:{p['email']}\nEMAIL:info@ldiinitiatives.org\nURL:ldiinitiatives.org\nADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada\nEND:VCARD")
     q=qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_L,border=0); q.add_data(v); q.make(fit=True)
     m=q.get_matrix(); n=len(m)
     d="".join(f"M{x},{y}h1v1h-1z" for y,row in enumerate(m) for x,c in enumerate(row) if c)
@@ -16,8 +16,7 @@ for p in TEAM:
     p["vcard"]=v; p["modules"]=n
     t=(tpl.replace('<h1 class="name">Ronald Lwabaayi</h1>',f'<h1 class="name">{html.escape(p["name"])}</h1>')
           .replace('<p class="role">President &amp; Founder</p>',f'<p class="role">{html.escape(p["title"])}</p>')
-          .replace('<span>T</span>+1 647 656 3026',f'<span>T</span>{p["phone"]}')
-          .replace('<span>E</span>admin@ldiinitiatives.org',f'<span>E</span>{p["email"]}')
+          .replace('{{PHONE}}',p["phone"]).replace('{{EMAIL}}',p["email"])
           .replace('src="qr.svg"',f'src="qr-{p["slug"]}.svg"'))
     assert p["name"] in t or html.escape(p["name"]) in t
     pages.append(t)

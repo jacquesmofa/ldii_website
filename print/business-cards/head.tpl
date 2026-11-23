@@ -43,11 +43,11 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-family:"Plex
 .a-front .head{position:absolute;left:.3in;top:.22in;right:.2in;display:flex;align-items:center;gap:7pt}
 .a-front .head .mark{font-size:22pt;color:var(--leaf)}
 .a-front .head .org{font-size:5.6pt;font-weight:500;letter-spacing:.06em;text-transform:uppercase;line-height:1.35;color:var(--navy);opacity:.85;border-left:.6pt solid var(--line);padding-left:7pt}
-.a-front .who{position:absolute;left:.3in;top:.78in}
+.a-front .who{position:absolute;left:.3in;top:.7in}
 .a-front .name{font-family:"Source Serif 4";font-weight:600;font-size:16.5pt;letter-spacing:-.005em;line-height:1}
 .a-front .role{margin-top:4pt;font-size:6.3pt;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--deep)}
-.a-front .rule{position:absolute;left:.3in;right:.2in;top:1.33in}
-.a-front .contact{position:absolute;left:.3in;right:.2in;top:1.45in;display:grid;grid-template-columns:1.32in 1fr;column-gap:.14in;font-size:6.6pt;line-height:1.45}
+.a-front .rule{position:absolute;left:.3in;right:.2in;top:1.2in}
+.a-front .contact{position:absolute;left:.3in;right:.2in;top:1.3in;display:grid;grid-template-columns:1.36in 1fr;column-gap:.13in;font-size:6.5pt;line-height:1.42}
 .a-front .contact span{color:var(--deep);font-weight:600;display:inline-block;width:8pt}
 .a-front .contact .addr{border-left:.6pt solid var(--line);padding-left:.12in}
 
@@ -66,7 +66,8 @@ body{-webkit-print-color-adjust:exact;print-color-adjust:exact;font-family:"Plex
 .a-back .qr .tile{background:var(--sand);padding:.07in;border-radius:2pt}
 .a-back .qr img{display:block;width:100%}
 .a-back .qr p{margin-top:5pt;font-size:5.2pt;letter-spacing:.1em;white-space:nowrap;text-transform:uppercase;color:#C9D3DF}
-.a-back .web{position:absolute;right:.2in;bottom:.2in;font-size:6.6pt;font-weight:500;letter-spacing:.04em;color:#fff}
+.a-back .web{position:absolute;right:.2in;bottom:.2in;text-align:right;font-size:6.6pt;font-weight:500;letter-spacing:.04em;line-height:1.35;color:#fff}
+.a-back .web span{display:block;font-weight:400;letter-spacing:.02em;color:#C9D3DF}
 
 /* ---------- Concept B · single front ---------- */
 .b-front{background:#fff}
