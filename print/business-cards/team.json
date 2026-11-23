@@ -1,0 +1,29 @@
+[
+ {
+  "slug": "Ronald-Lwabaayi",
+  "name": "Ronald Lwabaayi",
+  "first": "Ronald",
+  "last": "Lwabaayi",
+  "title": "President & Founder",
+  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Lwabaayi;Ronald\nFN:Ronald Lwabaayi\nORG:LDII\nTITLE:President & Founder\nTEL:+16476563026\nEMAIL:admin@ldiinitiatives.org\nURL:ldiinitiatives.org\nADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada\nEND:VCARD",
+  "modules": 57
+ },
+ {
+  "slug": "Elvis-Tanwie",
+  "name": "Elvis Tanwie, PMP",
+  "first": "Elvis",
+  "last": "Tanwie",
+  "title": "Project Manager",
+  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Tanwie;Elvis\nFN:Elvis Tanwie\nORG:LDII\nTITLE:Project Manager\nTEL:+16476563026\nEMAIL:admin@ldiinitiatives.org\nURL:ldiinitiatives.org\nADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada\nEND:VCARD",
+  "modules": 53
+ },
+ {
+  "slug": "Jacques-N-Mofa",
+  "name": "Jacques N. Mofa",
+  "first": "Jacques",
+  "last": "Mofa",
+  "title": "Communications Coordinator & IT Lead",
+  "vcard": "BEGIN:VCARD\nVERSION:3.0\nN:Mofa;Jacques\nFN:Jacques N. Mofa\nORG:LDII\nTITLE:Communications Coordinator & IT Lead\nTEL:+16476563026\nEMAIL:admin@ldiinitiatives.org\nURL:ldiinitiatives.org\nADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada\nEND:VCARD",
+  "modules": 57
+ }
+]

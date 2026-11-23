@@ -1,0 +1,10 @@
+import { chromium } from 'playwright-core';
+const b = await chromium.launch({ executablePath: '/usr/bin/google-chrome', args:['--allow-file-access-from-files'] });
+const p = await b.newPage({ deviceScaleFactor: 4, viewport:{width:1400,height:900} });
+await p.goto('file:///home/claude/bizcard/team.html'); await p.evaluate(()=>document.fonts.ready);
+await p.emulateMedia({ media: 'print' });
+const cards = await p.$$('.card');
+const names=['Ronald-front','Ronald-back','Elvis-front','Elvis-back','Jacques-front','Jacques-back'];
+for (let i=0;i<cards.length;i++) await cards[i].screenshot({ path:`team-${names[i]}.png` });
+await p.pdf({ path:'team-bleed.pdf', width:'3.75in', height:'2.25in', printBackground:true, preferCSSPageSize:true });
+await b.close();
