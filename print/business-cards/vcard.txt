@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Lwabaayi;Ronald
+FN:Ronald Lwabaayi
+ORG:LDII
+TITLE:President & Founder
+TEL:+16476563026
+EMAIL:admin@ldiinitiatives.org
+URL:ldiinitiatives.org
+ADR:;Unit 315;3701 Chesswood Dr;Toronto;ON;M3J 2P6;Canada
+END:VCARD
